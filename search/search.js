@@ -13,9 +13,10 @@ var indexSectionsWithContent =
   3: "dims",
   4: "_abcdefghiklmnopqrstuvw~",
   5: "abcdefghilmnoprstuvw",
-  6: "adr",
-  7: "abcdeghikmnpstu",
-  8: "1_abcdfiklmprstuxåæ"
+  6: "admr",
+  7: "m",
+  8: "abcdeghikmnpstu",
+  9: "1_abcdfiklmprstuxåæ"
 };
 
 var indexSectionNames =
@@ -27,8 +28,9 @@ var indexSectionNames =
   4: "functions",
   5: "variables",
   6: "enums",
-  7: "groups",
-  8: "pages"
+  7: "enumvalues",
+  8: "groups",
+  9: "pages"
 };
 
 function convertToId(search)

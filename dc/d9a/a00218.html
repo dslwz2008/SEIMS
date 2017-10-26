@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: clsReaches Class Reference</title>
+<title>SEIMS: NutrCommon Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -103,7 +103,7 @@ $(document).ready(function(){initNavTree('dc/d9a/a00218.html','../../');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -115,85 +115,67 @@ $(document).ready(function(){initNavTree('dc/d9a/a00218.html','../../');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
-<a href="../../d9/d34/a01524.html">List of all members</a>  </div>
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="../../d8/d2b/a01236.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">clsReaches Class Reference<div class="ingroups"><a class="el" href="../../d2/db1/a01428.html">Data</a></div></div>  </div>
+<div class="title">NutrCommon Class Reference<div class="ingroups"><a class="el" href="../../d7/df7/a01074.html">Data</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Read and store all reaches information as input parameters.  
+<p>Define some common used function in Nutrient cycling modules, e.g., NUTRMV, NUTRSED.  
  <a href="../../dc/d9a/a00218.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="../../d7/ded/a01009_source.html">clsReach.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="../../dd/d85/a00702_source.html">NutrientCommon.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2754aac3afd7db4cc6e836408f0ade8f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d9a/a00218.html#a2754aac3afd7db4cc6e836408f0ade8f">clsReaches</a> (<a class="el" href="../../db/da2/a00300.html">MongoClient</a> *conn, string &amp;dbName, string collectionName)</td></tr>
-<tr class="memdesc:a2754aac3afd7db4cc6e836408f0ade8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor, query reach table from MongoDB.  <a href="#a2754aac3afd7db4cc6e836408f0ade8f">More...</a><br/></td></tr>
-<tr class="separator:a2754aac3afd7db4cc6e836408f0ade8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa5ce9087a754b495eab16f5fe50edcc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afa5ce9087a754b495eab16f5fe50edcc"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d9a/a00218.html#afa5ce9087a754b495eab16f5fe50edcc">~clsReaches</a> (void)</td></tr>
-<tr class="memdesc:afa5ce9087a754b495eab16f5fe50edcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br/></td></tr>
-<tr class="separator:afa5ce9087a754b495eab16f5fe50edcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17293258a41c5dfb9c5c4439b12a35ab"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a17293258a41c5dfb9c5c4439b12a35ab"></a>
-<a class="el" href="../../df/d24/a00217.html">clsReach</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d9a/a00218.html#a17293258a41c5dfb9c5c4439b12a35ab">GetReachByID</a> (int id)</td></tr>
-<tr class="memdesc:a17293258a41c5dfb9c5c4439b12a35ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get single reach information by subbasin ID. <br/></td></tr>
-<tr class="separator:a17293258a41c5dfb9c5c4439b12a35ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab99b0f921db10091568a8593a57a852e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab99b0f921db10091568a8593a57a852e"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d9a/a00218.html#ab99b0f921db10091568a8593a57a852e">GetReachNumber</a> (void) const </td></tr>
-<tr class="memdesc:ab99b0f921db10091568a8593a57a852e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get reach number. <br/></td></tr>
-<tr class="separator:ab99b0f921db10091568a8593a57a852e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82d7589a871f0809fb0115e10a26760e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a82d7589a871f0809fb0115e10a26760e"></a>
-vector&lt; int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d9a/a00218.html#a82d7589a871f0809fb0115e10a26760e">GetReachIDs</a> (void)</td></tr>
-<tr class="memdesc:a82d7589a871f0809fb0115e10a26760e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get reach IDs (vector) <br/></td></tr>
-<tr class="separator:a82d7589a871f0809fb0115e10a26760e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ac42c032cfc32845207c11479367b68"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8ac42c032cfc32845207c11479367b68"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d9a/a00218.html#a8ac42c032cfc32845207c11479367b68">GetReachesSingleProperty</a> (const char *key, float **data)</td></tr>
-<tr class="memdesc:a8ac42c032cfc32845207c11479367b68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get 1D array of reach property  Implement later. LJ. <br/></td></tr>
-<tr class="separator:a8ac42c032cfc32845207c11479367b68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85da2638da5e74825b3e093c4dd376bc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a85da2638da5e74825b3e093c4dd376bc"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d9a/a00218.html#a85da2638da5e74825b3e093c4dd376bc">NutrCommon</a> (void)</td></tr>
+<tr class="memdesc:a85da2638da5e74825b3e093c4dd376bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. <br/></td></tr>
+<tr class="separator:a85da2638da5e74825b3e093c4dd376bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72018258681a4955354768caae5cc3a6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a72018258681a4955354768caae5cc3a6"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d9a/a00218.html#a72018258681a4955354768caae5cc3a6">~NutrCommon</a> (void)</td></tr>
+<tr class="memdesc:a72018258681a4955354768caae5cc3a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br/></td></tr>
+<tr class="separator:a72018258681a4955354768caae5cc3a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:a117f5587922d8fbd78e3a9ca81eef0bd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a117f5587922d8fbd78e3a9ca81eef0bd"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d9a/a00218.html#a117f5587922d8fbd78e3a9ca81eef0bd">m_reachNum</a></td></tr>
-<tr class="memdesc:a117f5587922d8fbd78e3a9ca81eef0bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">reaches number <br/></td></tr>
-<tr class="separator:a117f5587922d8fbd78e3a9ca81eef0bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad1fd9b346df408f7fec90b74f2ab633"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aad1fd9b346df408f7fec90b74f2ab633"></a>
-vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d9a/a00218.html#aad1fd9b346df408f7fec90b74f2ab633">m_reachIDs</a></td></tr>
-<tr class="memdesc:aad1fd9b346df408f7fec90b74f2ab633"><td class="mdescLeft">&#160;</td><td class="mdescRight">reach IDs <br/></td></tr>
-<tr class="separator:aad1fd9b346df408f7fec90b74f2ab633"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b4705b4deb3732264ae4219a05b7797"><td class="memItemLeft" align="right" valign="top">map&lt; int, <a class="el" href="../../df/d24/a00217.html">clsReach</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d9a/a00218.html#a4b4705b4deb3732264ae4219a05b7797">m_reachesMap</a></td></tr>
-<tr class="separator:a4b4705b4deb3732264ae4219a05b7797"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc60bf8d7d713af679058ab86dc973f9"><td class="memItemLeft" align="right" valign="top">float **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d9a/a00218.html#afc60bf8d7d713af679058ab86dc973f9">m_reachesProperties</a></td></tr>
-<tr class="separator:afc60bf8d7d713af679058ab86dc973f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a5bd3575c6ad1a946cb9ec440927ef95e"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d9a/a00218.html#a5bd3575c6ad1a946cb9ec440927ef95e">CalEnrichmentRatio</a> (float sedyld, float surfq, float area)</td></tr>
+<tr class="memdesc:a5bd3575c6ad1a946cb9ec440927ef95e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate enrichment ratio for nutrient transport with runoff and sediment enrsb.f of SWAT.  <a href="#a5bd3575c6ad1a946cb9ec440927ef95e">More...</a><br/></td></tr>
+<tr class="separator:a5bd3575c6ad1a946cb9ec440927ef95e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Read and store all reaches information as input parameters. </p>
+<div class="textblock"><p>Define some common used function in Nutrient cycling modules, e.g., NUTRMV, NUTRSED. </p>
+<dl class="section author"><dt>Author</dt><dd>Liang-Jun Zhu </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2016-9-28</dd></dl>
+<p>A basic class for nutrient cycling modules </p>
 
-<p>Definition at line <a class="el" href="../../d7/ded/a01009_source.html#l00221">221</a> of file <a class="el" href="../../d7/ded/a01009_source.html">clsReach.h</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a2754aac3afd7db4cc6e836408f0ade8f"></a>
+<p>Definition at line <a class="el" href="../../dd/d85/a00702_source.html#l00017">17</a> of file <a class="el" href="../../dd/d85/a00702_source.html">NutrientCommon.h</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a5bd3575c6ad1a946cb9ec440927ef95e"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">clsReaches::clsReaches </td>
+          <td class="memname">float NutrCommon::CalEnrichmentRatio </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../db/da2/a00300.html">MongoClient</a> *&#160;</td>
-          <td class="paramname"><em>conn</em>, </td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>sedyld</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">string &amp;&#160;</td>
-          <td class="paramname"><em>dbName</em>, </td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>surfq</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>collectionName</em>&#160;</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>area</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -201,82 +183,40 @@ vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class=
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Constructor, query reach table from MongoDB. </p>
+<p>Calculate enrichment ratio for nutrient transport with runoff and sediment enrsb.f of SWAT. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">conn</td><td><a class="el" href="../../db/da2/a00300.html" title="Create a MongoDB Client. ">MongoClient</a> instance </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">dbName</td><td>Database name </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">collectionName</td><td>Reach collection name </td></tr>
+    <tr><td class="paramname">sedyld</td><td>sediment yield, kg </td></tr>
+    <tr><td class="paramname">surfq</td><td>surface runoff, mm </td></tr>
+    <tr><td class="paramname">area</td><td>area, ha </td></tr>
   </table>
   </dd>
 </dl>
-<p>query all records</p>
-<p>and order by subbasin ID </p>
+<p>if no surface runoff, or very little sediment, then no nutrient will be attached to sediment, and loss with surface runoff</p>
+<p>Mg sed/m^3 H2O </p>
 
-<p>Definition at line <a class="el" href="../../dd/dac/a01008_source.html#l00170">170</a> of file <a class="el" href="../../dd/dac/a01008_source.html">clsReach.cpp</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a4b4705b4deb3732264ae4219a05b7797"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">map&lt;int, <a class="el" href="../../df/d24/a00217.html">clsReach</a> *&gt; clsReaches::m_reachesMap</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Map container to store all reaches information key: reach ID value: <a class="el" href="../../df/d24/a00217.html" title="Class to store reach related parameters from REACHES table. ">clsReach</a> instance (pointer) </p>
-
-<p>Definition at line <a class="el" href="../../d7/ded/a01009_source.html#l00259">259</a> of file <a class="el" href="../../d7/ded/a01009_source.html">clsReach.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="afc60bf8d7d713af679058ab86dc973f9"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">float** clsReaches::m_reachesProperties</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>2D array to store all reaches properties Row index is the index of reach property Col index is the index of m_reachIDs </p>
-
-<p>Definition at line <a class="el" href="../../d7/ded/a01009_source.html#l00265">265</a> of file <a class="el" href="../../d7/ded/a01009_source.html">clsReach.h</a>.</p>
+<p>Definition at line <a class="el" href="../../dd/d57/a00701_source.html#l00009">9</a> of file <a class="el" href="../../dd/d57/a00701_source.html">NutrientCommon.cpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>seims/src/seims_main/base/data/<a class="el" href="../../d7/ded/a01009_source.html">clsReach.h</a></li>
-<li>seims/src/seims_main/base/data/<a class="el" href="../../dd/dac/a01008_source.html">clsReach.cpp</a></li>
+<li>seims/src/seims_main/base/data/<a class="el" href="../../dd/d85/a00702_source.html">NutrientCommon.h</a></li>
+<li>seims/src/seims_main/base/data/<a class="el" href="../../dd/d57/a00701_source.html">NutrientCommon.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dc/d9a/a00218.html">clsReaches</a></li>
-    <li class="footer">Generated on Tue Sep 5 2017 00:11:22 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dc/d9a/a00218.html">NutrCommon</a></li>
+    <li class="footer">Generated on Thu Oct 26 2017 12:50:39 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

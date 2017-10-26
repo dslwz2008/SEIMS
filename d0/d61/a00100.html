@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: SEIMS 开发环境</title>
+<title>SEIMS: upload.AbstractRpcServer Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -52,10 +52,10 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="../../index.html"><span>Main&#160;Page</span></a></li>
-      <li class="current"><a href="../../pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="../../pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="../../modules.html"><span>Modules</span></a></li>
       <li><a href="../../namespaces.html"><span>Packages</span></a></li>
-      <li><a href="../../annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Classes</span></a></li>
       <li><a href="../../files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -73,6 +73,14 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
           </span>
         </div>
       </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../annotated.html"><span>Class&#160;List</span></a></li>
+      <li><a href="../../classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="../../inherits.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -95,7 +103,7 @@ $(document).ready(function(){initNavTree('d0/d61/a00100.html','../../');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -105,85 +113,851 @@ $(document).ready(function(){initNavTree('d0/d61/a00100.html','../../');});
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="../../d3/da3/a01450.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">SEIMS 开发环境 </div>  </div>
+<div class="title">upload.AbstractRpcServer Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>by Huiran Gao</p>
-<p>Latest Updated：May.31, 2016 </p>
-<hr/>
- <h1>目录</h1>
-<p><a href="../../#1-windows下vs编译">**1. Windows下VS编译**</a></p>
-<p><a href="../../#2-开发辅助工具-vassistx介绍">**2. 开发辅助工具-VAssistX介绍**</a></p>
-<ol type="1">
-<li><a href="../../#i-vassistx安装与说明">VAssistX安装与说明</a></li>
-<li><a href="../../#ii-vassistx的使用">VAssistX的使用</a></li>
-</ol>
-<h1>Windows下VS编译</h1>
-<p>SEIMS模型采用C++编写，开发工具主要是**VS 2010**。</p>
-<p>安装Microsoft Visual Studio 2010后，打开“开始” -&gt; Microsoft Visual Studio 2010 -&gt; Visual Studio Tools-&gt;Visual Studio 命令提示 (2010)，以**管理员方式运行**，切换到VS工程目录，VS工程目录是在SEIMS源码外新建的一个文件夹，比如 <code>D:\SEIMS\SEIMS_prj</code>。</p>
-<p>然后使用CMake命令生成VS 2010工程，详细参考<a href="../../Windows#ii-windows下seims主程序的编译">**Windows下SEIMS主程序的编译**</a></p>
-<p>编译完成后，打开VS工程，生成解决方案，工程目录结构如下：</p>
-<div class="image">
-<img src="http://i.imgur.com/hR7E7ZN.png" />
+<div class="dynheader">
+Inheritance diagram for upload.AbstractRpcServer:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/dbc/a01451.png" border="0" usemap="#upload_8_abstract_rpc_server_inherit__map" alt="Inheritance graph"/></div>
+<map name="upload_8_abstract_rpc_server_inherit__map" id="upload_8_abstract_rpc_server_inherit__map">
+<area shape="rect" id="node2" href="../../dd/dae/a00163.html" title="elif e.code &gt;= 500 and e.code &lt; 600: Server Error &#45; try again." alt="" coords="19,470,199,642"/></map>
 </div>
-<h1>开发辅助工具-VAssistX介绍</h1>
-<p><b>VAssistX</b>（Visual Assist X）是开发环境的辅助工具，具有强大的编辑特色，可以完全集成到开发环境中，使用该工具可以更加轻松地编写代码。支持C/C++，C#，Java和HTML等语言，能自动识别各种关键字、系统函数、成员变量、自动给出输入提示、自动标示错误等，有助于提高开发过程的自动化和开发效率。</p>
-<p>在SEIMS中，为了使模型代码具有更好的可读性、传承性，我们使用<a href="http://www.doxygen.nl/">doxygen</a>规则对代码进行注释，在VS2010中借助VAssistX进行快速添加注释。</p>
-<h2>i. VAssistX安装与说明</h2>
-<p>VAssistX（破解版）下载地址：<a href="http://pan.baidu.com/s/1qXI4UPe">http://pan.baidu.com/s/1qXI4UPe</a></p>
-<p>选择本地安装的VS版本 -&gt; Install。</p>
-<div class="image">
-<img src="http://i.imgur.com/htMVHUl.png" />
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a87618fdb401f36dd7aaf2196bb65d35e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d61/a00100.html#a87618fdb401f36dd7aaf2196bb65d35e">__init__</a></td></tr>
+<tr class="separator:a87618fdb401f36dd7aaf2196bb65d35e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bb81f2d1e7e41fa7a8a1eb4aa6d5313"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d61/a00100.html#a4bb81f2d1e7e41fa7a8a1eb4aa6d5313">Send</a></td></tr>
+<tr class="separator:a4bb81f2d1e7e41fa7a8a1eb4aa6d5313"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87618fdb401f36dd7aaf2196bb65d35e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d61/a00100.html#a87618fdb401f36dd7aaf2196bb65d35e">__init__</a></td></tr>
+<tr class="separator:a87618fdb401f36dd7aaf2196bb65d35e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bb81f2d1e7e41fa7a8a1eb4aa6d5313"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d61/a00100.html#a4bb81f2d1e7e41fa7a8a1eb4aa6d5313">Send</a></td></tr>
+<tr class="separator:a4bb81f2d1e7e41fa7a8a1eb4aa6d5313"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ace97e242b0e9e2c3d44ae4a910c17384"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d61/a00100.html#ace97e242b0e9e2c3d44ae4a910c17384">_GetOpener</a></td></tr>
+<tr class="separator:ace97e242b0e9e2c3d44ae4a910c17384"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69359b54dfb723e0501b8aa1b369898f"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d61/a00100.html#a69359b54dfb723e0501b8aa1b369898f">_CreateRequest</a></td></tr>
+<tr class="separator:a69359b54dfb723e0501b8aa1b369898f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bea4c537b28e70f9de17e94a0892e7e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d61/a00100.html#a5bea4c537b28e70f9de17e94a0892e7e">_GetAuthToken</a></td></tr>
+<tr class="separator:a5bea4c537b28e70f9de17e94a0892e7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8f9b739789afa3c476084bbc796ea25"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d61/a00100.html#aa8f9b739789afa3c476084bbc796ea25">_GetAuthCookie</a></td></tr>
+<tr class="separator:aa8f9b739789afa3c476084bbc796ea25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b0c9ff26d82638b04fb601901967ae5"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d61/a00100.html#a6b0c9ff26d82638b04fb601901967ae5">_Authenticate</a></td></tr>
+<tr class="separator:a6b0c9ff26d82638b04fb601901967ae5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace97e242b0e9e2c3d44ae4a910c17384"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d61/a00100.html#ace97e242b0e9e2c3d44ae4a910c17384">_GetOpener</a></td></tr>
+<tr class="separator:ace97e242b0e9e2c3d44ae4a910c17384"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69359b54dfb723e0501b8aa1b369898f"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d61/a00100.html#a69359b54dfb723e0501b8aa1b369898f">_CreateRequest</a></td></tr>
+<tr class="separator:a69359b54dfb723e0501b8aa1b369898f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bea4c537b28e70f9de17e94a0892e7e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d61/a00100.html#a5bea4c537b28e70f9de17e94a0892e7e">_GetAuthToken</a></td></tr>
+<tr class="separator:a5bea4c537b28e70f9de17e94a0892e7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8f9b739789afa3c476084bbc796ea25"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d61/a00100.html#aa8f9b739789afa3c476084bbc796ea25">_GetAuthCookie</a></td></tr>
+<tr class="separator:aa8f9b739789afa3c476084bbc796ea25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b0c9ff26d82638b04fb601901967ae5"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d61/a00100.html#a6b0c9ff26d82638b04fb601901967ae5">_Authenticate</a></td></tr>
+<tr class="separator:a6b0c9ff26d82638b04fb601901967ae5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><pre class="fragment">Provides a common interface for a simple RPC server.</pre> 
+<p>Definition at line <a class="el" href="../../de/df7/a00418_source.html#l00124">124</a> of file <a class="el" href="../../de/df7/a00418_source.html">upload.py</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a87618fdb401f36dd7aaf2196bb65d35e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def upload.AbstractRpcServer.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>host</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>auth_function</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>host_override</em> = <code>None</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>extra_headers</em> = <code>{}</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>save_cookies</em> = <code>False</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Creates a new HttpRpcServer.
+
+Args:
+  host: The host to send requests to.
+  auth_function: A function that takes no arguments and returns an
+(email, password) tuple when called. Will be called if authentication
+is required.
+  host_override: The host header to send to the server (defaults to host).
+  extra_headers: A dict of extra headers to append to every request.
+  save_cookies: If True, save the authentication cookies to local disk.
+If False, use an in-memory cookiejar instead.  Subclasses must
+implement this functionality.  Defaults to False.
+</pre> 
+<p>Definition at line <a class="el" href="../../de/df7/a00418_source.html#l00128">128</a> of file <a class="el" href="../../de/df7/a00418_source.html">upload.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d0/d61/a00100_a87618fdb401f36dd7aaf2196bb65d35e_cgraph.png" border="0" usemap="#d0/d61/a00100_a87618fdb401f36dd7aaf2196bb65d35e_cgraph" alt=""/></div>
+<map name="d0/d61/a00100_a87618fdb401f36dd7aaf2196bb65d35e_cgraph" id="d0/d61/a00100_a87618fdb401f36dd7aaf2196bb65d35e_cgraph">
+<area shape="rect" id="node2" href="../../d0/d61/a00100.html#ace97e242b0e9e2c3d44ae4a910c17384" title="upload.AbstractRpcServer.\l_GetOpener" alt="" coords="267,5,480,51"/></map>
 </div>
-<p>安装完成后，打开VS2010，菜单栏中会出现VAssistX菜单项，说明安装成功。</p>
-<div class="image">
-<img src="http://i.imgur.com/G62YwdG.png" />
+</p>
+
 </div>
-<h2>ii. VAssistX的使用</h2>
-<p>打开VAssistX选项自定义注释，Suggestion -&gt; Edit VA Snippets,自定义注释方法如图所示：</p>
-<div class="image">
-<img src="http://i.imgur.com/3I0xXvB.jpg" />
 </div>
-<p>添加一些符合doxygen规则的C++注释模板，为了方便起见，快捷键Shortcut统一设置为<code>/ *!</code>，这样，当需要输入注释模板时，输入<code>/*!</code>后便会出现只能提示，如下图，选择合适的便可快速插入注释。</p>
-<div class="image">
-<img src="http://gaohr.win/site/blogs/2016/2016-04-20-VAssistX/image006.png" />
+<a class="anchor" id="a87618fdb401f36dd7aaf2196bb65d35e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def upload.AbstractRpcServer.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>host</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>auth_function</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>host_override</em> = <code>None</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>extra_headers</em> = <code>{}</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>save_cookies</em> = <code>False</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Creates a new HttpRpcServer.
+
+Args:
+  host: The host to send requests to.
+  auth_function: A function that takes no arguments and returns an
+(email, password) tuple when called. Will be called if authentication
+is required.
+  host_override: The host header to send to the server (defaults to host).
+  extra_headers: A dict of extra headers to append to every request.
+  save_cookies: If True, save the authentication cookies to local disk.
+If False, use an in-memory cookiejar instead.  Subclasses must
+implement this functionality.  Defaults to False.
+</pre> 
+<p>Definition at line <a class="el" href="../../d3/d29/a00419_source.html#l00128">128</a> of file <a class="el" href="../../d3/d29/a00419_source.html">upload.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d0/d61/a00100_a87618fdb401f36dd7aaf2196bb65d35e_cgraph.png" border="0" usemap="#d0/d61/a00100_a87618fdb401f36dd7aaf2196bb65d35e_cgraph" alt=""/></div>
+<map name="d0/d61/a00100_a87618fdb401f36dd7aaf2196bb65d35e_cgraph" id="d0/d61/a00100_a87618fdb401f36dd7aaf2196bb65d35e_cgraph">
+<area shape="rect" id="node2" href="../../d0/d61/a00100.html#ace97e242b0e9e2c3d44ae4a910c17384" title="upload.AbstractRpcServer.\l_GetOpener" alt="" coords="267,5,480,51"/></map>
 </div>
-<h3>VAssistX规范注释示例</h3>
-<ul>
-<li><p class="startli">最基本的注释，对任何对象（file，function，class…）均适用，使用格式如下:</p>
-<p class="startli">```cpp //! Brief description, can span only 1 line /*!</p>
-<ul>
-<li>More detailed description.</li>
-<li>Feel free to span as many lines</li>
-<li>as you wish... All allowed.</li>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a6b0c9ff26d82638b04fb601901967ae5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def upload.AbstractRpcServer._Authenticate </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Authenticates the user.
+
+The authentication process works as follows:
+ 1) We get a username and password from the user
+ 2) We use ClientLogin to obtain an AUTH token for the user
+(see http://code.google.com/apis/accounts/AuthForInstalledApps.html).
+ 3) We pass the auth token to /_ah/login on the server to obtain an
+authentication cookie. If login was successful, it tries to redirect
+us to the URL we provided.
+
+If we attempt to access the upload API without first obtaining an
+authentication cookie, it returns a 401 response and directs us to
+authenticate ourselves with ClientLogin.
+</pre> 
+<p>Definition at line <a class="el" href="../../de/df7/a00418_source.html#l00239">239</a> of file <a class="el" href="../../de/df7/a00418_source.html">upload.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d0/d61/a00100_a6b0c9ff26d82638b04fb601901967ae5_cgraph.png" border="0" usemap="#d0/d61/a00100_a6b0c9ff26d82638b04fb601901967ae5_cgraph" alt=""/></div>
+<map name="d0/d61/a00100_a6b0c9ff26d82638b04fb601901967ae5_cgraph" id="d0/d61/a00100_a6b0c9ff26d82638b04fb601901967ae5_cgraph">
+<area shape="rect" id="node2" href="../../d0/d61/a00100.html#a5bea4c537b28e70f9de17e94a0892e7e" title="upload.AbstractRpcServer.\l_GetAuthToken" alt="" coords="285,5,499,51"/><area shape="rect" id="node4" href="../../d0/d61/a00100.html#aa8f9b739789afa3c476084bbc796ea25" title="upload.AbstractRpcServer.\l_GetAuthCookie" alt="" coords="285,75,499,122"/><area shape="rect" id="node5" href="../../d0/d61/a00100.html#a4bb81f2d1e7e41fa7a8a1eb4aa6d5313" title="upload.AbstractRpcServer.Send" alt="" coords="267,147,517,176"/><area shape="rect" id="node3" href="../../d0/d61/a00100.html#a69359b54dfb723e0501b8aa1b369898f" title="upload.AbstractRpcServer.\l_CreateRequest" alt="" coords="565,75,779,122"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a6b0c9ff26d82638b04fb601901967ae5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def upload.AbstractRpcServer._Authenticate </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Authenticates the user.
+
+The authentication process works as follows:
+ 1) We get a username and password from the user
+ 2) We use ClientLogin to obtain an AUTH token for the user
+(see http://code.google.com/apis/accounts/AuthForInstalledApps.html).
+ 3) We pass the auth token to /_ah/login on the server to obtain an
+authentication cookie. If login was successful, it tries to redirect
+us to the URL we provided.
+
+If we attempt to access the upload API without first obtaining an
+authentication cookie, it returns a 401 response and directs us to
+authenticate ourselves with ClientLogin.
+</pre> 
+<p>Definition at line <a class="el" href="../../d3/d29/a00419_source.html#l00239">239</a> of file <a class="el" href="../../d3/d29/a00419_source.html">upload.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d0/d61/a00100_a6b0c9ff26d82638b04fb601901967ae5_cgraph.png" border="0" usemap="#d0/d61/a00100_a6b0c9ff26d82638b04fb601901967ae5_cgraph" alt=""/></div>
+<map name="d0/d61/a00100_a6b0c9ff26d82638b04fb601901967ae5_cgraph" id="d0/d61/a00100_a6b0c9ff26d82638b04fb601901967ae5_cgraph">
+<area shape="rect" id="node2" href="../../d0/d61/a00100.html#a5bea4c537b28e70f9de17e94a0892e7e" title="upload.AbstractRpcServer.\l_GetAuthToken" alt="" coords="285,5,499,51"/><area shape="rect" id="node4" href="../../d0/d61/a00100.html#aa8f9b739789afa3c476084bbc796ea25" title="upload.AbstractRpcServer.\l_GetAuthCookie" alt="" coords="285,75,499,122"/><area shape="rect" id="node5" href="../../d0/d61/a00100.html#a4bb81f2d1e7e41fa7a8a1eb4aa6d5313" title="upload.AbstractRpcServer.Send" alt="" coords="267,147,517,176"/><area shape="rect" id="node3" href="../../d0/d61/a00100.html#a69359b54dfb723e0501b8aa1b369898f" title="upload.AbstractRpcServer.\l_CreateRequest" alt="" coords="565,75,779,122"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a69359b54dfb723e0501b8aa1b369898f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def upload.AbstractRpcServer._CreateRequest </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>url</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>data</em> = <code>None</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Creates a new urllib request.</pre> 
+<p>Definition at line <a class="el" href="../../d3/d29/a00419_source.html#l00162">162</a> of file <a class="el" href="../../d3/d29/a00419_source.html">upload.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d0/d61/a00100_a69359b54dfb723e0501b8aa1b369898f_cgraph.png" border="0" usemap="#d0/d61/a00100_a69359b54dfb723e0501b8aa1b369898f_cgraph" alt=""/></div>
+<map name="d0/d61/a00100_a69359b54dfb723e0501b8aa1b369898f_cgraph" id="d0/d61/a00100_a69359b54dfb723e0501b8aa1b369898f_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a69359b54dfb723e0501b8aa1b369898f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def upload.AbstractRpcServer._CreateRequest </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>url</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>data</em> = <code>None</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Creates a new urllib request.</pre> 
+<p>Definition at line <a class="el" href="../../de/df7/a00418_source.html#l00162">162</a> of file <a class="el" href="../../de/df7/a00418_source.html">upload.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa8f9b739789afa3c476084bbc796ea25"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def upload.AbstractRpcServer._GetAuthCookie </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>auth_token</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Fetches authentication cookies for an authentication token.
+
+Args:
+  auth_token: The authentication token returned by ClientLogin.
+
+Raises:
+  HTTPError: If there was an error fetching the authentication cookies.
+</pre> 
+<p>Definition at line <a class="el" href="../../d3/d29/a00419_source.html#l00215">215</a> of file <a class="el" href="../../d3/d29/a00419_source.html">upload.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d0/d61/a00100_aa8f9b739789afa3c476084bbc796ea25_cgraph.png" border="0" usemap="#d0/d61/a00100_aa8f9b739789afa3c476084bbc796ea25_cgraph" alt=""/></div>
+<map name="d0/d61/a00100_aa8f9b739789afa3c476084bbc796ea25_cgraph" id="d0/d61/a00100_aa8f9b739789afa3c476084bbc796ea25_cgraph">
+<area shape="rect" id="node2" href="../../d0/d61/a00100.html#a69359b54dfb723e0501b8aa1b369898f" title="upload.AbstractRpcServer.\l_CreateRequest" alt="" coords="267,5,480,51"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aa8f9b739789afa3c476084bbc796ea25"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def upload.AbstractRpcServer._GetAuthCookie </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>auth_token</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Fetches authentication cookies for an authentication token.
+
+Args:
+  auth_token: The authentication token returned by ClientLogin.
+
+Raises:
+  HTTPError: If there was an error fetching the authentication cookies.
+</pre> 
+<p>Definition at line <a class="el" href="../../de/df7/a00418_source.html#l00215">215</a> of file <a class="el" href="../../de/df7/a00418_source.html">upload.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d0/d61/a00100_aa8f9b739789afa3c476084bbc796ea25_cgraph.png" border="0" usemap="#d0/d61/a00100_aa8f9b739789afa3c476084bbc796ea25_cgraph" alt=""/></div>
+<map name="d0/d61/a00100_aa8f9b739789afa3c476084bbc796ea25_cgraph" id="d0/d61/a00100_aa8f9b739789afa3c476084bbc796ea25_cgraph">
+<area shape="rect" id="node2" href="../../d0/d61/a00100.html#a69359b54dfb723e0501b8aa1b369898f" title="upload.AbstractRpcServer.\l_CreateRequest" alt="" coords="267,5,480,51"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a5bea4c537b28e70f9de17e94a0892e7e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def upload.AbstractRpcServer._GetAuthToken </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>email</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>password</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Uses ClientLogin to authenticate the user, returning an auth token.
+
+Args:
+  email:    The user's email address
+  password: The user's password
+
+Raises:
+  ClientLoginError: If there was an error authenticating with ClientLogin.
+  HTTPError: If there was some other form of HTTP error.
+
+Returns:
+  The authentication token returned by ClientLogin.
+</pre> 
+<p>Definition at line <a class="el" href="../../d3/d29/a00419_source.html#l00172">172</a> of file <a class="el" href="../../d3/d29/a00419_source.html">upload.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d0/d61/a00100_a5bea4c537b28e70f9de17e94a0892e7e_cgraph.png" border="0" usemap="#d0/d61/a00100_a5bea4c537b28e70f9de17e94a0892e7e_cgraph" alt=""/></div>
+<map name="d0/d61/a00100_a5bea4c537b28e70f9de17e94a0892e7e_cgraph" id="d0/d61/a00100_a5bea4c537b28e70f9de17e94a0892e7e_cgraph">
+<area shape="rect" id="node2" href="../../d0/d61/a00100.html#a69359b54dfb723e0501b8aa1b369898f" title="upload.AbstractRpcServer.\l_CreateRequest" alt="" coords="267,5,480,51"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a5bea4c537b28e70f9de17e94a0892e7e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def upload.AbstractRpcServer._GetAuthToken </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>email</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>password</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Uses ClientLogin to authenticate the user, returning an auth token.
+
+Args:
+  email:    The user's email address
+  password: The user's password
+
+Raises:
+  ClientLoginError: If there was an error authenticating with ClientLogin.
+  HTTPError: If there was some other form of HTTP error.
+
+Returns:
+  The authentication token returned by ClientLogin.
+</pre> 
+<p>Definition at line <a class="el" href="../../de/df7/a00418_source.html#l00172">172</a> of file <a class="el" href="../../de/df7/a00418_source.html">upload.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d0/d61/a00100_a5bea4c537b28e70f9de17e94a0892e7e_cgraph.png" border="0" usemap="#d0/d61/a00100_a5bea4c537b28e70f9de17e94a0892e7e_cgraph" alt=""/></div>
+<map name="d0/d61/a00100_a5bea4c537b28e70f9de17e94a0892e7e_cgraph" id="d0/d61/a00100_a5bea4c537b28e70f9de17e94a0892e7e_cgraph">
+<area shape="rect" id="node2" href="../../d0/d61/a00100.html#a69359b54dfb723e0501b8aa1b369898f" title="upload.AbstractRpcServer.\l_CreateRequest" alt="" coords="267,5,480,51"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ace97e242b0e9e2c3d44ae4a910c17384"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def upload.AbstractRpcServer._GetOpener </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Returns an OpenerDirector for making HTTP requests.
+
+Returns:
+  A urllib2.OpenerDirector object.
+</pre> 
+<p>Definition at line <a class="el" href="../../d3/d29/a00419_source.html#l00154">154</a> of file <a class="el" href="../../d3/d29/a00419_source.html">upload.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d0/d61/a00100_ace97e242b0e9e2c3d44ae4a910c17384_cgraph.png" border="0" usemap="#d0/d61/a00100_ace97e242b0e9e2c3d44ae4a910c17384_cgraph" alt=""/></div>
+<map name="d0/d61/a00100_ace97e242b0e9e2c3d44ae4a910c17384_cgraph" id="d0/d61/a00100_ace97e242b0e9e2c3d44ae4a910c17384_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ace97e242b0e9e2c3d44ae4a910c17384"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def upload.AbstractRpcServer._GetOpener </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Returns an OpenerDirector for making HTTP requests.
+
+Returns:
+  A urllib2.OpenerDirector object.
+</pre> 
+<p>Definition at line <a class="el" href="../../de/df7/a00418_source.html#l00154">154</a> of file <a class="el" href="../../de/df7/a00418_source.html">upload.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4bb81f2d1e7e41fa7a8a1eb4aa6d5313"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def upload.AbstractRpcServer.Send </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>request_path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>payload</em> = <code>None</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>content_type</em> = <code>&quot;application/octet-stream&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>timeout</em> = <code>None</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>kwargs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Sends an RPC and returns the response.
+
+Args:
+  request_path: The path to send the request to, eg /api/appversion/create.
+  payload: The body of the request, or None to send an empty request.
+  content_type: The Content-Type header to use.
+  timeout: timeout in seconds; default None i.e. no timeout.
+(Note: for large requests on OS X, the timeout doesn't work right.)
+  kwargs: Any keyword arguments are converted into query string parameters.
+
+Returns:
+  The response body, as a string.
+</pre> 
+<p>Definition at line <a class="el" href="../../de/df7/a00418_source.html#l00294">294</a> of file <a class="el" href="../../de/df7/a00418_source.html">upload.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d0/d61/a00100_a4bb81f2d1e7e41fa7a8a1eb4aa6d5313_cgraph.png" border="0" usemap="#d0/d61/a00100_a4bb81f2d1e7e41fa7a8a1eb4aa6d5313_cgraph" alt=""/></div>
+<map name="d0/d61/a00100_a4bb81f2d1e7e41fa7a8a1eb4aa6d5313_cgraph" id="d0/d61/a00100_a4bb81f2d1e7e41fa7a8a1eb4aa6d5313_cgraph">
+<area shape="rect" id="node2" href="../../d0/d61/a00100.html#a6b0c9ff26d82638b04fb601901967ae5" title="upload.AbstractRpcServer.\l_Authenticate" alt="" coords="304,75,517,122"/><area shape="rect" id="node4" href="../../d0/d61/a00100.html#a69359b54dfb723e0501b8aa1b369898f" title="upload.AbstractRpcServer.\l_CreateRequest" alt="" coords="827,75,1040,122"/><area shape="rect" id="node3" href="../../d0/d61/a00100.html#a5bea4c537b28e70f9de17e94a0892e7e" title="upload.AbstractRpcServer.\l_GetAuthToken" alt="" coords="565,5,779,51"/><area shape="rect" id="node5" href="../../d0/d61/a00100.html#aa8f9b739789afa3c476084bbc796ea25" title="upload.AbstractRpcServer.\l_GetAuthCookie" alt="" coords="565,75,779,122"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a4bb81f2d1e7e41fa7a8a1eb4aa6d5313"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def upload.AbstractRpcServer.Send </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>request_path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>payload</em> = <code>None</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>content_type</em> = <code>&quot;application/octet-stream&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>timeout</em> = <code>None</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>kwargs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Sends an RPC and returns the response.
+
+Args:
+  request_path: The path to send the request to, eg /api/appversion/create.
+  payload: The body of the request, or None to send an empty request.
+  content_type: The Content-Type header to use.
+  timeout: timeout in seconds; default None i.e. no timeout.
+(Note: for large requests on OS X, the timeout doesn't work right.)
+  kwargs: Any keyword arguments are converted into query string parameters.
+
+Returns:
+  The response body, as a string.
+</pre> 
+<p>Definition at line <a class="el" href="../../d3/d29/a00419_source.html#l00294">294</a> of file <a class="el" href="../../d3/d29/a00419_source.html">upload.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d0/d61/a00100_a4bb81f2d1e7e41fa7a8a1eb4aa6d5313_cgraph.png" border="0" usemap="#d0/d61/a00100_a4bb81f2d1e7e41fa7a8a1eb4aa6d5313_cgraph" alt=""/></div>
+<map name="d0/d61/a00100_a4bb81f2d1e7e41fa7a8a1eb4aa6d5313_cgraph" id="d0/d61/a00100_a4bb81f2d1e7e41fa7a8a1eb4aa6d5313_cgraph">
+<area shape="rect" id="node2" href="../../d0/d61/a00100.html#a6b0c9ff26d82638b04fb601901967ae5" title="upload.AbstractRpcServer.\l_Authenticate" alt="" coords="304,75,517,122"/><area shape="rect" id="node4" href="../../d0/d61/a00100.html#a69359b54dfb723e0501b8aa1b369898f" title="upload.AbstractRpcServer.\l_CreateRequest" alt="" coords="827,75,1040,122"/><area shape="rect" id="node3" href="../../d0/d61/a00100.html#a5bea4c537b28e70f9de17e94a0892e7e" title="upload.AbstractRpcServer.\l_GetAuthToken" alt="" coords="565,5,779,51"/><area shape="rect" id="node5" href="../../d0/d61/a00100.html#aa8f9b739789afa3c476084bbc796ea25" title="upload.AbstractRpcServer.\l_GetAuthCookie" alt="" coords="565,75,779,122"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>buildRel/googletest-src/googlemock/scripts/<a class="el" href="../../de/df7/a00418_source.html">upload.py</a></li>
 </ul>
-<p class="startli">``` 在VA中设置如下（Title，Description可以按照自己想法设置，下面均不再重复）：</p>
-<p class="startli">``` Title: generalCommentBlock Shortcut: /*! Descrition: General Doxygen Commen Block Code: ```</p>
-<p class="startli">```cpp //! <a class="el" href="../../dd/df4/a00193.html">$end</a>$ /*!</p>
-<ul>
-<li></li>
-<li>```</li>
-</ul>
-</li>
-<li><p class="startli">对于一些变量或函数的定义，希望在一行内对其注释，使用格式如下：</p>
-<p class="startli">```cpp void function1(); //!&lt; Correct void function2(int i); //!&lt; WRONG! Comment on parameter i, but function not documented! void function3(int i); //!&lt; Some int. Correct - both function and parameter documented ```</p>
-<p class="startli">上面的例子说明，对于含有参数的函数定义，VA中的设置如下：</p>
-<p class="startli">```cpp //!&lt; ```</p>
-</li>
-<li><p class="startli">在<code>*.h</code>, <code>*.cpp</code>文件头部的注释,使用格式：</p>
-<p class="startli">```cpp /*!</p>
-<ul>
-<li></li>
-</ul>
-</li>
-</ul>
-</div></div><!-- contents -->
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Sep 5 2017 00:11:22 for SEIMS by
+    <li class="navelem"><b>upload</b></li><li class="navelem"><a class="el" href="../../d0/d61/a00100.html">AbstractRpcServer</a></li>
+    <li class="footer">Generated on Thu Oct 26 2017 12:50:41 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims_longterm_linux_gcc48/seims/bin/include/gtest/internal/custom/gtest-port.h Source File</title>
+<title>SEIMS: seims/src/seims_main/base/bmps/BMPPlantMgtFactory.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -101,7 +101,7 @@ $(document).ready(function(){initNavTree('d4/d4f/a00673_source.html','../../');}
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -112,88 +112,93 @@ $(document).ready(function(){initNavTree('d4/d4f/a00673_source.html','../../');}
 
 <div class="header">
   <div class="headertitle">
-<div class="title">gtest-port.h</div>  </div>
+<div class="title">BMPPlantMgtFactory.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// Copyright 2015, Google Inc.</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// All rights reserved.</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// Redistribution and use in source and binary forms, with or without</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// modification, are permitted provided that the following conditions are</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// met:</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">//     * Redistributions of source code must retain the above copyright</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">// notice, this list of conditions and the following disclaimer.</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">//     * Redistributions in binary form must reproduce the above</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// copyright notice, this list of conditions and the following disclaimer</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// in the documentation and/or other materials provided with the</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// distribution.</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">//     * Neither the name of Google Inc. nor the names of its</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// contributors may be used to endorse or promote products derived from</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// this software without specific prior written permission.</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">// &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">// LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">// Injection point for custom user configurations.</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// The following macros can be defined:</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">//   Flag related macros:</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">//     GTEST_FLAG(flag_name)</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">//     GTEST_USE_OWN_FLAGFILE_FLAG_  - Define to 0 when the system provides its</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">//                                     own flagfile flag parsing.</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">//     GTEST_DECLARE_bool_(name)</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">//     GTEST_DECLARE_int32_(name)</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">//     GTEST_DECLARE_string_(name)</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">//     GTEST_DEFINE_bool_(name, default_val, doc)</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">//     GTEST_DEFINE_int32_(name, default_val, doc)</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">//     GTEST_DEFINE_string_(name, default_val, doc)</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">//   Test filtering:</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">//     GTEST_TEST_FILTER_ENV_VAR_ - The name of an environment variable that</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">//                                  will be used if --GTEST_FLAG(test_filter)</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">//                                  is not provided.</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">//   Logging:</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">//     GTEST_LOG_(severity)</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">//     GTEST_CHECK_(condition)</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">//     Functions LogToStderr() and FlushInfoLog() have to be provided too.</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">//   Threading:</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">//     GTEST_HAS_NOTIFICATION_ - Enabled if Notification is already provided.</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">//     GTEST_HAS_MUTEX_AND_THREAD_LOCAL_ - Enabled if Mutex and ThreadLocal are</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">//                                         already provided.</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">//     Must also provide GTEST_DECLARE_STATIC_MUTEX_(mutex) and</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">//     GTEST_DEFINE_STATIC_MUTEX_(mutex)</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">//     GTEST_EXCLUSIVE_LOCK_REQUIRED_(locks)</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">//     GTEST_LOCK_EXCLUDED_(locks)</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">//   Exporting API symbols:</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">//     GTEST_API_ - Specifier for exported symbols.</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">// ** Custom implementation starts here **</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#ifndef GTEST_INCLUDE_GTEST_INTERNAL_CUSTOM_GTEST_PORT_H_</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define GTEST_INCLUDE_GTEST_INTERNAL_CUSTOM_GTEST_PORT_H_</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#endif  // GTEST_INCLUDE_GTEST_INTERNAL_CUSTOM_GTEST_PORT_H_</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef SEIMS_BMP_PLANTMGT_H</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SEIMS_BMP_PLANTMGT_H</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;utilities.h&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;BMPFactory.h&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;PlantManagementOperation.h&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">using namespace </span>MainBMP;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">using namespace </span>PlantManagement;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace </span>MainBMP {</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="../../dd/d6d/a00111.html">   25</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../dd/d6d/a00111.html">BMPPlantMgtFactory</a> : <span class="keyword">public</span> <a class="code" href="../../d4/d81/a00110.html">BMPFactory</a> {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="../../dd/d6d/a00111.html">BMPPlantMgtFactory</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> scenarioId, <span class="keyword">const</span> <span class="keywordtype">int</span> bmpId, <span class="keyword">const</span> <span class="keywordtype">int</span> subScenario,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                       <span class="keyword">const</span> <span class="keywordtype">int</span> bmpType, <span class="keyword">const</span> <span class="keywordtype">int</span> bmpPriority, vector&lt;string&gt; &amp;distribution,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                       <span class="keyword">const</span> <span class="keywordtype">string</span> collection, <span class="keyword">const</span> <span class="keywordtype">string</span> location);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    ~<a class="code" href="../../dd/d6d/a00111.html">BMPPlantMgtFactory</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> loadBMP(MongoClient* conn, <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;bmpDBName);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> Dump(ostream *fs);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span> setRasterData(map&lt;string, FloatRaster*&gt; &amp;sceneRsMap);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="../../dd/d6d/a00111.html#ae1a2f7bd25fbddf4122f225c51a02f63">   45</a></span>&#160;    <span class="keywordtype">float</span>* <a class="code" href="../../dd/d6d/a00111.html#ae1a2f7bd25fbddf4122f225c51a02f63">getRasterData</a>() { <span class="keywordflow">return</span> m_mgtFieldsRs; };</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="../../dd/d6d/a00111.html#a8ab76f9fdffa3dc51bd1014748586893">   48</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../dd/d6d/a00111.html#a8ab76f9fdffa3dc51bd1014748586893">GetLUCCID</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">return</span> m_luccID;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="../../dd/d6d/a00111.html#a048fa92ec9ce582ba4cba494042d0382">   53</a></span>&#160;    vector&lt;int&gt; &amp;<a class="code" href="../../dd/d6d/a00111.html#a048fa92ec9ce582ba4cba494042d0382">GetLocations</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">return</span> m_location;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="../../dd/d6d/a00111.html#afbb25efcb4e5cce0de711bd2164eb035">   58</a></span>&#160;    vector&lt;int&gt; &amp;<a class="code" href="../../dd/d6d/a00111.html#afbb25efcb4e5cce0de711bd2164eb035">GetOperationSequence</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">return</span> m_bmpSequence;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="../../dd/d6d/a00111.html#a13e81073f43061b26d463f670d040cf8">   63</a></span>&#160;    map&lt;int, PlantManagementOperation *&gt; &amp;<a class="code" href="../../dd/d6d/a00111.html#a13e81073f43061b26d463f670d040cf8">GetOperations</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">return</span> m_bmpPlantOps;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="../../dd/d6d/a00111.html#a3e7e83111acf1fa32cf8f65941feabdd">   68</a></span>&#160;    <a class="code" href="../../d3/d42/a00235.html">PlantManagementOperation</a> *<a class="code" href="../../dd/d6d/a00111.html#a3e7e83111acf1fa32cf8f65941feabdd">GetOperation</a>(<span class="keywordtype">int</span> ID) {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">return</span> m_bmpPlantOps.at(ID);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="../../dd/d6d/a00111.html#a9b36d475cdb1b002f4933c3168f4c1ef">   74</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="../../dd/d6d/a00111.html#a9b36d475cdb1b002f4933c3168f4c1ef">m_name</a>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="../../dd/d6d/a00111.html#abb8b0a2a0b11cd4876e5938e0dc49703">   76</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="../../dd/d6d/a00111.html#abb8b0a2a0b11cd4876e5938e0dc49703">m_mgtFieldsName</a>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="../../dd/d6d/a00111.html#ac5b29647f12a938fbab26438efc5280e">   78</a></span>&#160;    <span class="keywordtype">float</span>* <a class="code" href="../../dd/d6d/a00111.html#ac5b29647f12a938fbab26438efc5280e">m_mgtFieldsRs</a>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="../../dd/d6d/a00111.html#a0c9286037905fd4d3623261bf8e7d84e">   80</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../dd/d6d/a00111.html#a0c9286037905fd4d3623261bf8e7d84e">m_luccID</a>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="../../dd/d6d/a00111.html#a1073943191193c6eb899ee9a3a9ec90a">   82</a></span>&#160;    <span class="keywordtype">float</span> *<a class="code" href="../../dd/d6d/a00111.html#a1073943191193c6eb899ee9a3a9ec90a">m_parameters</a>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="../../dd/d6d/a00111.html#a514c51623eeb813de414b0dbcac9e8e5">   84</a></span>&#160;    vector&lt;int&gt; <a class="code" href="../../dd/d6d/a00111.html#a514c51623eeb813de414b0dbcac9e8e5">m_location</a>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="../../dd/d6d/a00111.html#a6ced6c110b41852c3931a3a9ed503b28">   90</a></span>&#160;    vector&lt;int&gt; <a class="code" href="../../dd/d6d/a00111.html#a6ced6c110b41852c3931a3a9ed503b28">m_bmpSequence</a>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="../../dd/d6d/a00111.html#a85082e4d199b12b63d83b24934322312">   95</a></span>&#160;    map&lt;int, PlantManagementOperation *&gt; <a class="code" href="../../dd/d6d/a00111.html#a85082e4d199b12b63d83b24934322312">m_bmpPlantOps</a>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;};</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SEIMS_BMP_PLANTMGT_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="a00110_html"><div class="ttname"><a href="../../d4/d81/a00110.html">MainBMP::BMPFactory</a></div><div class="ttdoc">Base class to initiate a BMP data. </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d13/a00671_source.html#l00028">BMPFactory.h:28</a></div></div>
+<div class="ttc" id="a00111_html_a6ced6c110b41852c3931a3a9ed503b28"><div class="ttname"><a href="../../dd/d6d/a00111.html#a6ced6c110b41852c3931a3a9ed503b28">MainBMP::BMPPlantMgtFactory::m_bmpSequence</a></div><div class="ttdeci">vector&lt; int &gt; m_bmpSequence</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d4f/a00673_source.html#l00090">BMPPlantMgtFactory.h:90</a></div></div>
+<div class="ttc" id="a00235_html"><div class="ttname"><a href="../../d3/d42/a00235.html">MainBMP::PlantManagement::PlantManagementOperation</a></div><div class="ttdoc">Base class of plant management operation. </div><div class="ttdef"><b>Definition:</b> <a href="../../da/d31/a00678_source.html#l00023">PlantManagementOperation.h:23</a></div></div>
+<div class="ttc" id="a00111_html_a8ab76f9fdffa3dc51bd1014748586893"><div class="ttname"><a href="../../dd/d6d/a00111.html#a8ab76f9fdffa3dc51bd1014748586893">MainBMP::BMPPlantMgtFactory::GetLUCCID</a></div><div class="ttdeci">int GetLUCCID(void)</div><div class="ttdoc">Get landuse / landcover ID. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d4f/a00673_source.html#l00048">BMPPlantMgtFactory.h:48</a></div></div>
+<div class="ttc" id="a00111_html_ae1a2f7bd25fbddf4122f225c51a02f63"><div class="ttname"><a href="../../dd/d6d/a00111.html#ae1a2f7bd25fbddf4122f225c51a02f63">MainBMP::BMPPlantMgtFactory::getRasterData</a></div><div class="ttdeci">float * getRasterData()</div><div class="ttdoc">Get management fields data. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d4f/a00673_source.html#l00045">BMPPlantMgtFactory.h:45</a></div></div>
+<div class="ttc" id="a00111_html_afbb25efcb4e5cce0de711bd2164eb035"><div class="ttname"><a href="../../dd/d6d/a00111.html#afbb25efcb4e5cce0de711bd2164eb035">MainBMP::BMPPlantMgtFactory::GetOperationSequence</a></div><div class="ttdeci">vector&lt; int &gt; &amp; GetOperationSequence(void)</div><div class="ttdoc">Get operation sequence. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d4f/a00673_source.html#l00058">BMPPlantMgtFactory.h:58</a></div></div>
+<div class="ttc" id="a00111_html_a048fa92ec9ce582ba4cba494042d0382"><div class="ttname"><a href="../../dd/d6d/a00111.html#a048fa92ec9ce582ba4cba494042d0382">MainBMP::BMPPlantMgtFactory::GetLocations</a></div><div class="ttdeci">vector&lt; int &gt; &amp; GetLocations(void)</div><div class="ttdoc">Get locations. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d4f/a00673_source.html#l00053">BMPPlantMgtFactory.h:53</a></div></div>
+<div class="ttc" id="a00111_html_abb8b0a2a0b11cd4876e5938e0dc49703"><div class="ttname"><a href="../../dd/d6d/a00111.html#abb8b0a2a0b11cd4876e5938e0dc49703">MainBMP::BMPPlantMgtFactory::m_mgtFieldsName</a></div><div class="ttdeci">string m_mgtFieldsName</div><div class="ttdoc">management fields name, defined in &#39;distribution&#39; </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d4f/a00673_source.html#l00076">BMPPlantMgtFactory.h:76</a></div></div>
+<div class="ttc" id="a00111_html_a85082e4d199b12b63d83b24934322312"><div class="ttname"><a href="../../dd/d6d/a00111.html#a85082e4d199b12b63d83b24934322312">MainBMP::BMPPlantMgtFactory::m_bmpPlantOps</a></div><div class="ttdeci">map&lt; int, PlantManagementOperation * &gt; m_bmpPlantOps</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d4f/a00673_source.html#l00095">BMPPlantMgtFactory.h:95</a></div></div>
+<div class="ttc" id="a00111_html_ac5b29647f12a938fbab26438efc5280e"><div class="ttname"><a href="../../dd/d6d/a00111.html#ac5b29647f12a938fbab26438efc5280e">MainBMP::BMPPlantMgtFactory::m_mgtFieldsRs</a></div><div class="ttdeci">float * m_mgtFieldsRs</div><div class="ttdoc">management fields data (1D array raster) </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d4f/a00673_source.html#l00078">BMPPlantMgtFactory.h:78</a></div></div>
+<div class="ttc" id="a00111_html_a1073943191193c6eb899ee9a3a9ec90a"><div class="ttname"><a href="../../dd/d6d/a00111.html#a1073943191193c6eb899ee9a3a9ec90a">MainBMP::BMPPlantMgtFactory::m_parameters</a></div><div class="ttdeci">float * m_parameters</div><div class="ttdoc">parameters </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d4f/a00673_source.html#l00082">BMPPlantMgtFactory.h:82</a></div></div>
+<div class="ttc" id="a00111_html"><div class="ttname"><a href="../../dd/d6d/a00111.html">MainBMP::BMPPlantMgtFactory</a></div><div class="ttdoc">Initiate a plant management BMP Actually, it contains a series BMPs, such as plant, fertilize, harvest, etc. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d4f/a00673_source.html#l00025">BMPPlantMgtFactory.h:25</a></div></div>
+<div class="ttc" id="a00111_html_a9b36d475cdb1b002f4933c3168f4c1ef"><div class="ttname"><a href="../../dd/d6d/a00111.html#a9b36d475cdb1b002f4933c3168f4c1ef">MainBMP::BMPPlantMgtFactory::m_name</a></div><div class="ttdeci">string m_name</div><div class="ttdoc">subSecenario name </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d4f/a00673_source.html#l00074">BMPPlantMgtFactory.h:74</a></div></div>
+<div class="ttc" id="a00111_html_a3e7e83111acf1fa32cf8f65941feabdd"><div class="ttname"><a href="../../dd/d6d/a00111.html#a3e7e83111acf1fa32cf8f65941feabdd">MainBMP::BMPPlantMgtFactory::GetOperation</a></div><div class="ttdeci">PlantManagementOperation * GetOperation(int ID)</div><div class="ttdoc">Get operation by ID. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d4f/a00673_source.html#l00068">BMPPlantMgtFactory.h:68</a></div></div>
+<div class="ttc" id="a00111_html_a514c51623eeb813de414b0dbcac9e8e5"><div class="ttname"><a href="../../dd/d6d/a00111.html#a514c51623eeb813de414b0dbcac9e8e5">MainBMP::BMPPlantMgtFactory::m_location</a></div><div class="ttdeci">vector&lt; int &gt; m_location</div><div class="ttdoc">field index for where to apply the subScenario </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d4f/a00673_source.html#l00084">BMPPlantMgtFactory.h:84</a></div></div>
+<div class="ttc" id="a00111_html_a0c9286037905fd4d3623261bf8e7d84e"><div class="ttname"><a href="../../dd/d6d/a00111.html#a0c9286037905fd4d3623261bf8e7d84e">MainBMP::BMPPlantMgtFactory::m_luccID</a></div><div class="ttdeci">int m_luccID</div><div class="ttdoc">landuse / landcover </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d4f/a00673_source.html#l00080">BMPPlantMgtFactory.h:80</a></div></div>
+<div class="ttc" id="a00111_html_a13e81073f43061b26d463f670d040cf8"><div class="ttname"><a href="../../dd/d6d/a00111.html#a13e81073f43061b26d463f670d040cf8">MainBMP::BMPPlantMgtFactory::GetOperations</a></div><div class="ttdeci">map&lt; int, PlantManagementOperation * &gt; &amp; GetOperations(void)</div><div class="ttdoc">Get operations. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d4f/a00673_source.html#l00063">BMPPlantMgtFactory.h:63</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_b3c2efebf85602a670bfa8ecc5e50a7d.html">seims_longterm_linux_gcc48</a></li><li class="navelem"><a class="el" href="../../dir_ed16674693235890c7cb51a5b1a1dba7.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_2b9061aab15e833eb4855efc90c3e222.html">bin</a></li><li class="navelem"><a class="el" href="../../dir_237470728da0ee4609413923c5aaa365.html">include</a></li><li class="navelem"><a class="el" href="../../dir_0269cdc427c89aa809209e3028f27f22.html">gtest</a></li><li class="navelem"><a class="el" href="../../dir_ec5545ba310ce30db3b6508ca6a9689d.html">internal</a></li><li class="navelem"><a class="el" href="../../dir_e2ee13c0aa61c27f26a1c3f58b344e61.html">custom</a></li><li class="navelem"><b>gtest-port.h</b></li>
-    <li class="footer">Generated on Tue Sep 5 2017 00:11:13 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_d9d8c03d94c229237348b60b53b769ac.html">base</a></li><li class="navelem"><a class="el" href="../../dir_c4eaa6a6e6c4ee7b087e3de60cab1bbc.html">bmps</a></li><li class="navelem"><b>BMPPlantMgtFactory.h</b></li>
+    <li class="footer">Generated on Thu Oct 26 2017 12:50:36 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

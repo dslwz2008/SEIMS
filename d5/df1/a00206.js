@@ -1,16 +1,12 @@
 var a00206 =
 [
-    [ "BMPPointSrcFactory", "d5/df1/a00206.html#a8ccd4c60371c3fedec45e4c0f5b541c8", null ],
-    [ "~BMPPointSrcFactory", "d5/df1/a00206.html#a89be8aadd8636d7104c64fecaf6e6710", null ],
-    [ "Dump", "d5/df1/a00206.html#ae104f57487b6582e36a525f3ddd3f3f9", null ],
-    [ "loadBMP", "d5/df1/a00206.html#a5f1b8bf0be27add974ddca1380cbc5b6", null ],
-    [ "ReadPointSourceLocations", "d5/df1/a00206.html#a00dd7e00d4e6b52394014bd79afb71b4", null ],
-    [ "ReadPointSourceManagements", "d5/df1/a00206.html#a33cff88a565b727800b9683bb31d23f8", null ],
-    [ "m_pointSrc", "d5/df1/a00206.html#aa9659202207c7ab6cccebd22bb5c8cbf", null ],
-    [ "m_pointSrcDistTab", "d5/df1/a00206.html#aabc09e9823e06780ca9bb94e82cdfe78", null ],
-    [ "m_pointSrcIDs", "d5/df1/a00206.html#a76bdd3fb6e14a9854447ecaa454de28c", null ],
-    [ "m_pointSrcLocsMap", "d5/df1/a00206.html#a2c2f10751d48bd7f6696ac0bd3dc0fd0", null ],
-    [ "m_pointSrcMgtMap", "d5/df1/a00206.html#a0b41fda0a47b9101c10ebcd47a6d537a", null ],
-    [ "m_pointSrcMgtSeqs", "d5/df1/a00206.html#ae590ca3ab41a36931cba253aeb1f28e1", null ],
-    [ "m_pointSrcMgtTab", "d5/df1/a00206.html#a6a2ff89e33f61e0b0ef8e70931fe1525", null ]
+    [ "MongoClient", "d5/df1/a00206.html#a103f61d194bb4652ddbf141a66ff7e85", null ],
+    [ "~MongoClient", "d5/df1/a00206.html#ab0ee0aa8eae19ec07ffd09c5c1c6d08c", null ],
+    [ "getCollection", "d5/df1/a00206.html#a9dbd71ac7598b9d3a24369004485315c", null ],
+    [ "getCollectionNames", "d5/df1/a00206.html#a715a0bc9019d8a3e972f9ed43a37aa34", null ],
+    [ "getConn", "d5/df1/a00206.html#a59abe6355d4affc3502367a9982087e4", null ],
+    [ "getDatabase", "d5/df1/a00206.html#a0406f6c05f05545b9f6b9dc0c28333cc", null ],
+    [ "getDatabaseNames", "d5/df1/a00206.html#ad7ed3ef088adf2781b78d9547ae8a0eb", null ],
+    [ "getGridFS", "d5/df1/a00206.html#a240cc92449bdf68d3dbe45bd617268ff", null ],
+    [ "getGridFSFileNames", "d5/df1/a00206.html#a54dbe4c45c29fa2c938bc5acecbf2af3", null ]
 ];

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: gtest_catch_exceptions_test.CatchCxxExceptionsTest Class Reference</title>
+<title>SEIMS: seims.preprocess.db_mongodb.MongoQuery Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -103,7 +103,7 @@ $(document).ready(function(){initNavTree('d3/de5/a00209.html','../../');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -114,32 +114,130 @@ $(document).ready(function(){initNavTree('d3/de5/a00209.html','../../');});
 
 <div class="header">
   <div class="summary">
-<a href="../../dc/d42/a01674.html">List of all members</a>  </div>
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="../../d7/d1c/a01397.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">gtest_catch_exceptions_test.CatchCxxExceptionsTest Class Reference</div>  </div>
+<div class="title">seims.preprocess.db_mongodb.MongoQuery Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Inherits TestCase, and TestCase.</p>
+<p>Inherits object, and object.</p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:acd94eeb24f9384c2c2e7403b26250dfb"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de5/a00209.html#acd94eeb24f9384c2c2e7403b26250dfb">get_init_parameter_value</a></td></tr>
+<tr class="separator:acd94eeb24f9384c2c2e7403b26250dfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd94eeb24f9384c2c2e7403b26250dfb"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de5/a00209.html#acd94eeb24f9384c2c2e7403b26250dfb">get_init_parameter_value</a></td></tr>
+<tr class="separator:acd94eeb24f9384c2c2e7403b26250dfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><pre class="fragment">Tests C++ exception-catching behavior.
-
-   Tests in this test case verify that:
-   * C++ exceptions are caught and logged as C++ (not SEH) exceptions
-   * Exception thrown affect the remainder of the test work flow in the
-     expected manner.
+<div class="textblock"><pre class="fragment">Query data from MongoDB
 </pre> 
-<p>Definition at line <a class="el" href="../../d5/d68/a00747_source.html#l00114">114</a> of file <a class="el" href="../../d5/d68/a00747_source.html">gtest_catch_exceptions_test.py</a>.</p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
-<li>seims/buildlongterm/googletest-src/googletest/test/<a class="el" href="../../d5/d68/a00747_source.html">gtest_catch_exceptions_test.py</a></li>
+<p>Definition at line <a class="el" href="../../dc/d2b/a00546_source.html#l00036">36</a> of file <a class="el" href="../../dc/d2b/a00546_source.html">db_mongodb.py</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="acd94eeb24f9384c2c2e7403b26250dfb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.db_mongodb.MongoQuery.get_init_parameter_value </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>db_model</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>param_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>field</em> = <code>ModelParamFields.value</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Query initial parameter value, raise exception if error occurs.</pre> 
+<p>Definition at line <a class="el" href="../../dc/d2b/a00546_source.html#l00042">42</a> of file <a class="el" href="../../dc/d2b/a00546_source.html">db_mongodb.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acd94eeb24f9384c2c2e7403b26250dfb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.db_mongodb.MongoQuery.get_init_parameter_value </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>db_model</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>param_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>field</em> = <code>ModelParamFields.value</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Query initial parameter value, raise exception if error occurs.</pre> 
+<p>Definition at line <a class="el" href="../../d9/d8b/a00547_source.html#l00042">42</a> of file <a class="el" href="../../d9/d8b/a00547_source.html">db_mongodb.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/de5/a00209_acd94eeb24f9384c2c2e7403b26250dfb_cgraph.png" border="0" usemap="#d3/de5/a00209_acd94eeb24f9384c2c2e7403b26250dfb_cgraph" alt=""/></div>
+<map name="d3/de5/a00209_acd94eeb24f9384c2c2e7403b26250dfb_cgraph" id="d3/de5/a00209_acd94eeb24f9384c2c2e7403b26250dfb_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>seims/preprocess/<a class="el" href="../../dc/d2b/a00546_source.html">db_mongodb.py</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>gtest_catch_exceptions_test</b></li><li class="navelem"><a class="el" href="../../d3/de5/a00209.html">CatchCxxExceptionsTest</a></li>
-    <li class="footer">Generated on Tue Sep 5 2017 00:11:23 for SEIMS by
+    <li class="navelem"><b>seims</b></li><li class="navelem"><b>preprocess</b></li><li class="navelem"><b>db_mongodb</b></li><li class="navelem"><a class="el" href="../../d3/de5/a00209.html">MongoQuery</a></li>
+    <li class="footer">Generated on Thu Oct 26 2017 12:50:40 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

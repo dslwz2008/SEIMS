@@ -95,7 +95,7 @@ $(document).ready(function(){initNavTree('d7/d46/a00002.html','../../');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -116,7 +116,7 @@ $(document).ready(function(){initNavTree('d7/d46/a00002.html','../../');});
 <h2>Mocking a Class Template</h2>
 <p>To mock ``` template &lt;typename elem&gt;=""&gt; class StackInterface { public: ... virtual ~StackInterface(); virtual int GetSize() const = 0; virtual void Push(const Elem&amp; x) = 0; }; ``<code> (note that</code>~StackInterface()<code>**must** be virtual) just append</code>_T<code>to the</code>MOCK_*<code>macros: </code>`` template &lt;typename elem&gt;=""&gt; class MockStack : public StackInterface&lt;Elem&gt; { public: ... MOCK_CONST_METHOD0_T(GetSize, int()); MOCK_METHOD1_T(Push, void(const Elem&amp; x)); }; ```</p>
 <h2>Specifying Calling Conventions for Mock Functions</h2>
-<p>If your mock function doesn't use the default calling convention, you can specify it by appending <code>_WITH_CALLTYPE</code> to any of the macros described in the previous two sections and supplying the calling convention as the first argument to the macro. For example, ``` MOCK_METHOD_1_WITH_CALLTYPE(STDMETHODCALLTYPE, Foo, bool(int n)); MOCK_CONST_METHOD2_WITH_CALLTYPE(STDMETHODCALLTYPE, Bar, int(double x, double y)); ``<code> where</code>STDMETHODCALLTYPE<code>is defined by</code>&lt;objbase.h&gt;` on Windows.</p>
+<p>If your mock function doesn't use the default calling convention, you can specify it by appending <code>_WITH_CALLTYPE</code> to any of the macros described in the previous two sections and supplying the calling convention as the first argument to the macro. For example, ``` MOCK_METHOD1_WITH_CALLTYPE(STDMETHODCALLTYPE, Foo, bool(int n)); MOCK_CONST_METHOD2_WITH_CALLTYPE(STDMETHODCALLTYPE, Bar, int(double x, double y)); ``<code> where</code>STDMETHODCALLTYPE<code>is defined by</code>&lt;objbase.h&gt;` on Windows.</p>
 <h1>Using Mocks in Tests</h1>
 <p>The typical flow is:</p>
 <ol type="1">
@@ -509,7 +509,7 @@ $(document).ready(function(){initNavTree('d7/d46/a00002.html','../../');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Sep 5 2017 00:11:19 for SEIMS by
+    <li class="footer">Generated on Thu Oct 26 2017 12:50:37 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

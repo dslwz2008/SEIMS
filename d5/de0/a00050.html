@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: KnownIssues</title>
+<title>SEIMS: _Sidebar</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -95,7 +95,7 @@ $(document).ready(function(){initNavTree('d5/de0/a00050.html','../../');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -106,24 +106,55 @@ $(document).ready(function(){initNavTree('d5/de0/a00050.html','../../');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">KnownIssues </div>  </div>
+<div class="title">_Sidebar </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>As any non-trivial software system, Google Mock has some known limitations and problems. We are working on improving it, and welcome your help! The follow is a list of issues we know about.</p>
-<h2>README contains outdated information on Google Mock's compatibility with other testing frameworks</h2>
-<p>The <code>README</code> file in release 1.1.0 still says that Google Mock only works with Google Test. Actually, you can configure Google Mock to work with any testing framework you choose.</p>
-<h2>Tests failing on machines using Power PC CPUs (e.g. some Macs)</h2>
-<p><code>gmock_output_test</code> and <code>gmock-printers_test</code> are known to fail with Power PC CPUs. This is due to portability issues with these tests, and is not an indication of problems in Google Mock itself. You can safely ignore them.</p>
-<h2>Failed to resolve libgtest.so.0 in tests when built against installed Google Test</h2>
-<p>This only applies if you manually built and installed Google Test, and then built a Google Mock against it (either explicitly, or because gtest-config was in your path post-install). In this situation, Libtool has a known issue with certain systems' ldconfig setup:</p>
-<p><a href="http://article.gmane.org/gmane.comp.sysutils.automake.general/9025">http://article.gmane.org/gmane.comp.sysutils.automake.general/9025</a></p>
-<p>This requires a manual run of "sudo ldconfig" after the "sudo make install" for Google Test before any binaries which link against it can be executed. This isn't a bug in our install, but we should at least have documented it or hacked a work-around into our install. We should have one of these solutions in our next release. </p>
+<div class="textblock"><ul>
+<li>SEIMS原理<ul>
+<li>[总体介绍](TheoryOverall)</li>
+</ul>
+</li>
+<li>编译和安装<ul>
+<li>[Windows](Windows)</li>
+<li>[Linux](Linux)</li>
+<li>[macOS](macOS)</li>
+</ul>
+</li>
+<li>运行SEIMS<ul>
+<li>[预处理程序配置](Construct-python-env)</li>
+<li>[数据准备](Data-preparation)</li>
+<li>[数据预处理](Data-preprocess)</li>
+<li>[模型配置及运行](Executation-and-calibration)</li>
+<li>[数据后处理](result-postprocess)</li>
+</ul>
+</li>
+<li>SEIMS开发指南<ul>
+<li>[总体介绍](Tech-Introduction)</li>
+<li>[开发环境配置](Develop-environment)</li>
+<li>[开发规范](Coding-protocol)</li>
+<li>[模块开发Demo](Module-demo)</li>
+<li>[模块开发状态](Module-in-development)</li>
+<li>[名词缩写规范](Global-abbreviation)</li>
+<li>[更新日志](ChangeLOG)</li>
+</ul>
+</li>
+<li>示例数据<ul>
+<li>[店埠河上游小流域](Dianbu)</li>
+</ul>
+</li>
+<li>其他<ul>
+<li>[Github简明操作指南](Git-guidance)</li>
+<li>[MongoDB安装及配置](MongoDB-install-and-config)</li>
+<li>[友情链接](useful-links) </li>
+</ul>
+</li>
+</ul>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Sep 5 2017 00:11:21 for SEIMS by
+    <li class="footer">Generated on Thu Oct 26 2017 12:50:38 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

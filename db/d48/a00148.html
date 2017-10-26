@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: Linux下SEIMS模型的编译与运行</title>
+<title>SEIMS: seims.pygeoc.pygeoc.utils.utils.FileClass Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -52,10 +52,10 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="../../index.html"><span>Main&#160;Page</span></a></li>
-      <li class="current"><a href="../../pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="../../pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="../../modules.html"><span>Modules</span></a></li>
       <li><a href="../../namespaces.html"><span>Packages</span></a></li>
-      <li><a href="../../annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Classes</span></a></li>
       <li><a href="../../files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -73,6 +73,14 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
           </span>
         </div>
       </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../annotated.html"><span>Class&#160;List</span></a></li>
+      <li><a href="../../classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="../../inherits.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -95,7 +103,7 @@ $(document).ready(function(){initNavTree('db/d48/a00148.html','../../');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -105,62 +113,954 @@ $(document).ready(function(){initNavTree('db/d48/a00148.html','../../');});
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="../../dc/d85/a01436.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">Linux下SEIMS模型的编译与运行 </div>  </div>
+<div class="title">seims.pygeoc.pygeoc.utils.utils.FileClass Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><blockquote class="doxtable">
-<p>Latest update: 2017-3-23</p>
-<p></p>
-</blockquote>
-<h2>1. 准备工作</h2>
-<p>以192.168.6.55服务器上zhulj账号下的配置为例：</p>
-<ul>
-<li>CMake 版本更新为3.7.2，路径<code>~/CMake/bin/cmake</code>;</li>
-<li>GCC编译器版本至4.8.4，路径<code>~/gcc4.8.4/bin</code>，在CMake命令中加入<code>-DCMAKE_C_COMPILER=~/gcc4.8.4/bin/gcc -DCMAKE_CXX_COMPILER=~/gcc4.8.4/bin/g++</code>以显示定义GCC编译器路径；</li>
-<li>MPICH版本至3.1.4，路径<code>~/mpich/bin</code>,同理，如果编译MPI版本，则需显示定义编译器路径：<code>-DCMAKE_CXX_COMPILER=~/mpich/bin/mpic++</code>;</li>
-<li>mongo-c-driver版本至1.6.0，路径<code>~/code/mongo-c-driver</code>，并在<code>~/.bash_profile</code>中更新了环境变量<code>MONGOC_ROOT_DIR</code>、<code>PKG_CONFIG_PATH</code>和<code>LD_LIBRARY_PATH</code>，以确保基于mongo-c-driver的程序能够顺利编译、链接、安装、运行。</li>
-<li>GDAL采用服务器现有版本1.9.0，并新建环境变量<code>export GDAL_ROOT=/soft/share</code></li>
-<li>Python版本至2.7.9，路径<code>/usr/bin</code>（软链接至2.7.9，旧版本为<code>/usr/bin/python2.6</code>）</li>
+
+<p>Inherits object, and object.</p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a12520347cd4b39e868e759271949bbde"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d48/a00148.html#a12520347cd4b39e868e759271949bbde">__init__</a></td></tr>
+<tr class="separator:a12520347cd4b39e868e759271949bbde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12520347cd4b39e868e759271949bbde"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d48/a00148.html#a12520347cd4b39e868e759271949bbde">__init__</a></td></tr>
+<tr class="separator:a12520347cd4b39e868e759271949bbde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:acec11b54919df27e8f8aed3d463e8d18"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d48/a00148.html#acec11b54919df27e8f8aed3d463e8d18">is_file_exists</a></td></tr>
+<tr class="separator:acec11b54919df27e8f8aed3d463e8d18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a339a4722c68a1e35c99b0086bfed73e6"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d48/a00148.html#a339a4722c68a1e35c99b0086bfed73e6">is_dir_exists</a></td></tr>
+<tr class="separator:a339a4722c68a1e35c99b0086bfed73e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a986f07a0f9501657c95efc97afdb7724"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d48/a00148.html#a986f07a0f9501657c95efc97afdb7724">check_file_exists</a></td></tr>
+<tr class="separator:a986f07a0f9501657c95efc97afdb7724"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9a8bed924e3498599d7a97254bc46b2"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d48/a00148.html#ac9a8bed924e3498599d7a97254bc46b2">copy_files</a></td></tr>
+<tr class="separator:ac9a8bed924e3498599d7a97254bc46b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a180f366884572089b252280667b0dc7f"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d48/a00148.html#a180f366884572089b252280667b0dc7f">remove_files</a></td></tr>
+<tr class="separator:a180f366884572089b252280667b0dc7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bcb23f8f0e21edd01f145365bf302ce"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d48/a00148.html#a6bcb23f8f0e21edd01f145365bf302ce">is_up_to_date</a></td></tr>
+<tr class="separator:a6bcb23f8f0e21edd01f145365bf302ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e725f49fccda26c17775d63f6e6093a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d48/a00148.html#a4e725f49fccda26c17775d63f6e6093a">get_executable_fullpath</a></td></tr>
+<tr class="separator:a4e725f49fccda26c17775d63f6e6093a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb61e7ebc04b062a6817fae5a8f7ef22"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d48/a00148.html#acb61e7ebc04b062a6817fae5a8f7ef22">get_filename_by_suffixes</a></td></tr>
+<tr class="separator:acb61e7ebc04b062a6817fae5a8f7ef22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87b84f3cc967200f2cb62bdf15320c79"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d48/a00148.html#a87b84f3cc967200f2cb62bdf15320c79">get_full_filename_by_suffixes</a></td></tr>
+<tr class="separator:a87b84f3cc967200f2cb62bdf15320c79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5480246de470ca0f739734282a71c879"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d48/a00148.html#a5480246de470ca0f739734282a71c879">get_core_name_without_suffix</a></td></tr>
+<tr class="separator:a5480246de470ca0f739734282a71c879"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29612e714378988916549de31096e3fa"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d48/a00148.html#a29612e714378988916549de31096e3fa">add_postfix</a></td></tr>
+<tr class="separator:a29612e714378988916549de31096e3fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acec11b54919df27e8f8aed3d463e8d18"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d48/a00148.html#acec11b54919df27e8f8aed3d463e8d18">is_file_exists</a></td></tr>
+<tr class="separator:acec11b54919df27e8f8aed3d463e8d18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a339a4722c68a1e35c99b0086bfed73e6"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d48/a00148.html#a339a4722c68a1e35c99b0086bfed73e6">is_dir_exists</a></td></tr>
+<tr class="separator:a339a4722c68a1e35c99b0086bfed73e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a986f07a0f9501657c95efc97afdb7724"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d48/a00148.html#a986f07a0f9501657c95efc97afdb7724">check_file_exists</a></td></tr>
+<tr class="separator:a986f07a0f9501657c95efc97afdb7724"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9a8bed924e3498599d7a97254bc46b2"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d48/a00148.html#ac9a8bed924e3498599d7a97254bc46b2">copy_files</a></td></tr>
+<tr class="separator:ac9a8bed924e3498599d7a97254bc46b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a180f366884572089b252280667b0dc7f"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d48/a00148.html#a180f366884572089b252280667b0dc7f">remove_files</a></td></tr>
+<tr class="separator:a180f366884572089b252280667b0dc7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bcb23f8f0e21edd01f145365bf302ce"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d48/a00148.html#a6bcb23f8f0e21edd01f145365bf302ce">is_up_to_date</a></td></tr>
+<tr class="separator:a6bcb23f8f0e21edd01f145365bf302ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e725f49fccda26c17775d63f6e6093a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d48/a00148.html#a4e725f49fccda26c17775d63f6e6093a">get_executable_fullpath</a></td></tr>
+<tr class="separator:a4e725f49fccda26c17775d63f6e6093a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb61e7ebc04b062a6817fae5a8f7ef22"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d48/a00148.html#acb61e7ebc04b062a6817fae5a8f7ef22">get_filename_by_suffixes</a></td></tr>
+<tr class="separator:acb61e7ebc04b062a6817fae5a8f7ef22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87b84f3cc967200f2cb62bdf15320c79"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d48/a00148.html#a87b84f3cc967200f2cb62bdf15320c79">get_full_filename_by_suffixes</a></td></tr>
+<tr class="separator:a87b84f3cc967200f2cb62bdf15320c79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5480246de470ca0f739734282a71c879"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d48/a00148.html#a5480246de470ca0f739734282a71c879">get_core_name_without_suffix</a></td></tr>
+<tr class="separator:a5480246de470ca0f739734282a71c879"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29612e714378988916549de31096e3fa"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d48/a00148.html#a29612e714378988916549de31096e3fa">add_postfix</a></td></tr>
+<tr class="separator:a29612e714378988916549de31096e3fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><pre class="fragment">File IO related</pre> 
+<p>Definition at line <a class="el" href="../../d4/dbc/a00414_source.html#l00328">328</a> of file <a class="el" href="../../d4/dbc/a00414_source.html">utils.py</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a12520347cd4b39e868e759271949bbde"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.pygeoc.pygeoc.utils.utils.FileClass.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Empty</pre> 
+<p>Definition at line <a class="el" href="../../d4/dbc/a00414_source.html#l00331">331</a> of file <a class="el" href="../../d4/dbc/a00414_source.html">utils.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a12520347cd4b39e868e759271949bbde"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.pygeoc.pygeoc.utils.utils.FileClass.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Empty</pre> 
+<p>Definition at line <a class="el" href="../../d0/dd6/a00415_source.html#l00331">331</a> of file <a class="el" href="../../d0/dd6/a00415_source.html">utils.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../db/d48/a00148_a12520347cd4b39e868e759271949bbde_cgraph.png" border="0" usemap="#db/d48/a00148_a12520347cd4b39e868e759271949bbde_cgraph" alt=""/></div>
+<map name="db/d48/a00148_a12520347cd4b39e868e759271949bbde_cgraph" id="db/d48/a00148_a12520347cd4b39e868e759271949bbde_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a29612e714378988916549de31096e3fa"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.pygeoc.pygeoc.utils.utils.FileClass.add_postfix </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>file_path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>postfix</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Add postfix for a full file path.
+
+Examples:
+    input: '/home/zhulj/dem.tif', 'filled'
+    output: '/home/zhulj/dem_filled.tif'
+</pre> 
+<p>Definition at line <a class="el" href="../../d4/dbc/a00414_source.html#l00450">450</a> of file <a class="el" href="../../d4/dbc/a00414_source.html">utils.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a29612e714378988916549de31096e3fa"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.pygeoc.pygeoc.utils.utils.FileClass.add_postfix </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>file_path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>postfix</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Add postfix for a full file path.
+
+Examples:
+    input: '/home/zhulj/dem.tif', 'filled'
+    output: '/home/zhulj/dem_filled.tif'
+</pre> 
+<p>Definition at line <a class="el" href="../../d0/dd6/a00415_source.html#l00450">450</a> of file <a class="el" href="../../d0/dd6/a00415_source.html">utils.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../db/d48/a00148_a29612e714378988916549de31096e3fa_cgraph.png" border="0" usemap="#db/d48/a00148_a29612e714378988916549de31096e3fa_cgraph" alt=""/></div>
+<map name="db/d48/a00148_a29612e714378988916549de31096e3fa_cgraph" id="db/d48/a00148_a29612e714378988916549de31096e3fa_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a986f07a0f9501657c95efc97afdb7724"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.pygeoc.pygeoc.utils.utils.FileClass.check_file_exists </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Throw exception if the file not existed</pre> 
+<p>Definition at line <a class="el" href="../../d4/dbc/a00414_source.html#l00352">352</a> of file <a class="el" href="../../d4/dbc/a00414_source.html">utils.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a986f07a0f9501657c95efc97afdb7724"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.pygeoc.pygeoc.utils.utils.FileClass.check_file_exists </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Throw exception if the file not existed</pre> 
+<p>Definition at line <a class="el" href="../../d0/dd6/a00415_source.html#l00352">352</a> of file <a class="el" href="../../d0/dd6/a00415_source.html">utils.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../db/d48/a00148_a986f07a0f9501657c95efc97afdb7724_cgraph.png" border="0" usemap="#db/d48/a00148_a986f07a0f9501657c95efc97afdb7724_cgraph" alt=""/></div>
+<map name="db/d48/a00148_a986f07a0f9501657c95efc97afdb7724_cgraph" id="db/d48/a00148_a986f07a0f9501657c95efc97afdb7724_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ac9a8bed924e3498599d7a97254bc46b2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.pygeoc.pygeoc.utils.utils.FileClass.copy_files </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>filename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>dstfilename</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Copy files with the same name and different suffixes, such as ESRI Shapefile.</pre> 
+<p>Definition at line <a class="el" href="../../d4/dbc/a00414_source.html#l00358">358</a> of file <a class="el" href="../../d4/dbc/a00414_source.html">utils.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac9a8bed924e3498599d7a97254bc46b2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.pygeoc.pygeoc.utils.utils.FileClass.copy_files </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>filename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>dstfilename</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Copy files with the same name and different suffixes, such as ESRI Shapefile.</pre> 
+<p>Definition at line <a class="el" href="../../d0/dd6/a00415_source.html#l00358">358</a> of file <a class="el" href="../../d0/dd6/a00415_source.html">utils.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../db/d48/a00148_ac9a8bed924e3498599d7a97254bc46b2_cgraph.png" border="0" usemap="#db/d48/a00148_ac9a8bed924e3498599d7a97254bc46b2_cgraph" alt=""/></div>
+<map name="db/d48/a00148_ac9a8bed924e3498599d7a97254bc46b2_cgraph" id="db/d48/a00148_ac9a8bed924e3498599d7a97254bc46b2_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a5480246de470ca0f739734282a71c879"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.pygeoc.pygeoc.utils.utils.FileClass.get_core_name_without_suffix </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>file_path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Return core file name without suffix.
+Examples:
+    r'/home/zhulj/1990.01.30/test.01.tif' ==&gt; test.01
+    r'C:\zhulj\igsnrr\lreis.txt' ==&gt; lreis
+    r'/home/zhulj/dta/taudem/area8' ==&gt; area8
+</pre> 
+<p>Definition at line <a class="el" href="../../d0/dd6/a00415_source.html#l00435">435</a> of file <a class="el" href="../../d0/dd6/a00415_source.html">utils.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../db/d48/a00148_a5480246de470ca0f739734282a71c879_cgraph.png" border="0" usemap="#db/d48/a00148_a5480246de470ca0f739734282a71c879_cgraph" alt=""/></div>
+<map name="db/d48/a00148_a5480246de470ca0f739734282a71c879_cgraph" id="db/d48/a00148_a5480246de470ca0f739734282a71c879_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a5480246de470ca0f739734282a71c879"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.pygeoc.pygeoc.utils.utils.FileClass.get_core_name_without_suffix </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>file_path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Return core file name without suffix.
+Examples:
+    r'/home/zhulj/1990.01.30/test.01.tif' ==&gt; test.01
+    r'C:\zhulj\igsnrr\lreis.txt' ==&gt; lreis
+    r'/home/zhulj/dta/taudem/area8' ==&gt; area8
+</pre> 
+<p>Definition at line <a class="el" href="../../d4/dbc/a00414_source.html#l00435">435</a> of file <a class="el" href="../../d4/dbc/a00414_source.html">utils.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4e725f49fccda26c17775d63f6e6093a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.pygeoc.pygeoc.utils.utils.FileClass.get_executable_fullpath </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">get the full path of a given executable name</pre> 
+<p>Definition at line <a class="el" href="../../d0/dd6/a00415_source.html#l00387">387</a> of file <a class="el" href="../../d0/dd6/a00415_source.html">utils.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../db/d48/a00148_a4e725f49fccda26c17775d63f6e6093a_cgraph.png" border="0" usemap="#db/d48/a00148_a4e725f49fccda26c17775d63f6e6093a_cgraph" alt=""/></div>
+<map name="db/d48/a00148_a4e725f49fccda26c17775d63f6e6093a_cgraph" id="db/d48/a00148_a4e725f49fccda26c17775d63f6e6093a_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a4e725f49fccda26c17775d63f6e6093a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.pygeoc.pygeoc.utils.utils.FileClass.get_executable_fullpath </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">get the full path of a given executable name</pre> 
+<p>Definition at line <a class="el" href="../../d4/dbc/a00414_source.html#l00387">387</a> of file <a class="el" href="../../d4/dbc/a00414_source.html">utils.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acb61e7ebc04b062a6817fae5a8f7ef22"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.pygeoc.pygeoc.utils.utils.FileClass.get_filename_by_suffixes </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>dir_src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>suffixes</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">get file names with the given suffixes in the given directory
+Args:
+    dir_src: directory path
+    suffixes: wanted suffixes
+
+Returns:
+    file names with the given suffixes as list
+</pre> 
+<p>Definition at line <a class="el" href="../../d4/dbc/a00414_source.html#l00402">402</a> of file <a class="el" href="../../d4/dbc/a00414_source.html">utils.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acb61e7ebc04b062a6817fae5a8f7ef22"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.pygeoc.pygeoc.utils.utils.FileClass.get_filename_by_suffixes </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>dir_src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>suffixes</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">get file names with the given suffixes in the given directory
+Args:
+    dir_src: directory path
+    suffixes: wanted suffixes
+
+Returns:
+    file names with the given suffixes as list
+</pre> 
+<p>Definition at line <a class="el" href="../../d0/dd6/a00415_source.html#l00402">402</a> of file <a class="el" href="../../d0/dd6/a00415_source.html">utils.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../db/d48/a00148_acb61e7ebc04b062a6817fae5a8f7ef22_cgraph.png" border="0" usemap="#db/d48/a00148_acb61e7ebc04b062a6817fae5a8f7ef22_cgraph" alt=""/></div>
+<map name="db/d48/a00148_acb61e7ebc04b062a6817fae5a8f7ef22_cgraph" id="db/d48/a00148_acb61e7ebc04b062a6817fae5a8f7ef22_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a87b84f3cc967200f2cb62bdf15320c79"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.pygeoc.pygeoc.utils.utils.FileClass.get_full_filename_by_suffixes </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>dir_src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>suffixes</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">get full file names with the given suffixes in the given directory
+Args:
+    dir_src: directory path
+    suffixes: wanted suffixes
+
+Returns:
+    full file names with the given suffixes as list
+</pre> 
+<p>Definition at line <a class="el" href="../../d0/dd6/a00415_source.html#l00420">420</a> of file <a class="el" href="../../d0/dd6/a00415_source.html">utils.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../db/d48/a00148_a87b84f3cc967200f2cb62bdf15320c79_cgraph.png" border="0" usemap="#db/d48/a00148_a87b84f3cc967200f2cb62bdf15320c79_cgraph" alt=""/></div>
+<map name="db/d48/a00148_a87b84f3cc967200f2cb62bdf15320c79_cgraph" id="db/d48/a00148_a87b84f3cc967200f2cb62bdf15320c79_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a87b84f3cc967200f2cb62bdf15320c79"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.pygeoc.pygeoc.utils.utils.FileClass.get_full_filename_by_suffixes </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>dir_src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>suffixes</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">get full file names with the given suffixes in the given directory
+Args:
+    dir_src: directory path
+    suffixes: wanted suffixes
+
+Returns:
+    full file names with the given suffixes as list
+</pre> 
+<p>Definition at line <a class="el" href="../../d4/dbc/a00414_source.html#l00420">420</a> of file <a class="el" href="../../d4/dbc/a00414_source.html">utils.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a339a4722c68a1e35c99b0086bfed73e6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.pygeoc.pygeoc.utils.utils.FileClass.is_dir_exists </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>dirpath</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Check the existence of folder path.</pre> 
+<p>Definition at line <a class="el" href="../../d0/dd6/a00415_source.html#l00344">344</a> of file <a class="el" href="../../d0/dd6/a00415_source.html">utils.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../db/d48/a00148_a339a4722c68a1e35c99b0086bfed73e6_cgraph.png" border="0" usemap="#db/d48/a00148_a339a4722c68a1e35c99b0086bfed73e6_cgraph" alt=""/></div>
+<map name="db/d48/a00148_a339a4722c68a1e35c99b0086bfed73e6_cgraph" id="db/d48/a00148_a339a4722c68a1e35c99b0086bfed73e6_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a339a4722c68a1e35c99b0086bfed73e6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.pygeoc.pygeoc.utils.utils.FileClass.is_dir_exists </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>dirpath</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Check the existence of folder path.</pre> 
+<p>Definition at line <a class="el" href="../../d4/dbc/a00414_source.html#l00344">344</a> of file <a class="el" href="../../d4/dbc/a00414_source.html">utils.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acec11b54919df27e8f8aed3d463e8d18"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.pygeoc.pygeoc.utils.utils.FileClass.is_file_exists </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Check the existence of file path.</pre> 
+<p>Definition at line <a class="el" href="../../d4/dbc/a00414_source.html#l00336">336</a> of file <a class="el" href="../../d4/dbc/a00414_source.html">utils.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acec11b54919df27e8f8aed3d463e8d18"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.pygeoc.pygeoc.utils.utils.FileClass.is_file_exists </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Check the existence of file path.</pre> 
+<p>Definition at line <a class="el" href="../../d0/dd6/a00415_source.html#l00336">336</a> of file <a class="el" href="../../d0/dd6/a00415_source.html">utils.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../db/d48/a00148_acec11b54919df27e8f8aed3d463e8d18_cgraph.png" border="0" usemap="#db/d48/a00148_acec11b54919df27e8f8aed3d463e8d18_cgraph" alt=""/></div>
+<map name="db/d48/a00148_acec11b54919df27e8f8aed3d463e8d18_cgraph" id="db/d48/a00148_acec11b54919df27e8f8aed3d463e8d18_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a6bcb23f8f0e21edd01f145365bf302ce"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.pygeoc.pygeoc.utils.utils.FileClass.is_up_to_date </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>outfile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>basedatetime</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Return true if outfile exists and is no older than base datetime.</pre> 
+<p>Definition at line <a class="el" href="../../d0/dd6/a00415_source.html#l00379">379</a> of file <a class="el" href="../../d0/dd6/a00415_source.html">utils.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../db/d48/a00148_a6bcb23f8f0e21edd01f145365bf302ce_cgraph.png" border="0" usemap="#db/d48/a00148_a6bcb23f8f0e21edd01f145365bf302ce_cgraph" alt=""/></div>
+<map name="db/d48/a00148_a6bcb23f8f0e21edd01f145365bf302ce_cgraph" id="db/d48/a00148_a6bcb23f8f0e21edd01f145365bf302ce_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a6bcb23f8f0e21edd01f145365bf302ce"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.pygeoc.pygeoc.utils.utils.FileClass.is_up_to_date </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>outfile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>basedatetime</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Return true if outfile exists and is no older than base datetime.</pre> 
+<p>Definition at line <a class="el" href="../../d4/dbc/a00414_source.html#l00379">379</a> of file <a class="el" href="../../d4/dbc/a00414_source.html">utils.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a180f366884572089b252280667b0dc7f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.pygeoc.pygeoc.utils.utils.FileClass.remove_files </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Delete all files with same root as fileName,
+i.e. regardless of suffix, such as ESRI shapefile
+</pre> 
+<p>Definition at line <a class="el" href="../../d4/dbc/a00414_source.html#l00369">369</a> of file <a class="el" href="../../d4/dbc/a00414_source.html">utils.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a180f366884572089b252280667b0dc7f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.pygeoc.pygeoc.utils.utils.FileClass.remove_files </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Delete all files with same root as fileName,
+i.e. regardless of suffix, such as ESRI shapefile
+</pre> 
+<p>Definition at line <a class="el" href="../../d0/dd6/a00415_source.html#l00369">369</a> of file <a class="el" href="../../d0/dd6/a00415_source.html">utils.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../db/d48/a00148_a180f366884572089b252280667b0dc7f_cgraph.png" border="0" usemap="#db/d48/a00148_a180f366884572089b252280667b0dc7f_cgraph" alt=""/></div>
+<map name="db/d48/a00148_a180f366884572089b252280667b0dc7f_cgraph" id="db/d48/a00148_a180f366884572089b252280667b0dc7f_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>seims/pygeoc/pygeoc/utils/<a class="el" href="../../d4/dbc/a00414_source.html">utils.py</a></li>
 </ul>
-<h2>2. SEIMS编译和安装</h2>
-<p>使用CMake编译SEIMS时有3个可选参数：</p>
-<ol type="1">
-<li><code>-DPARALLEL</code>，不添加则默认为编译<code>OpenMP</code>版本程序，添加<code>-DPARALLEL=MPI</code>则编译MPI/OpenMP混合版本；</li>
-<li><code>-DARCH</code>，~~用于指定编译32位还是64程序(目前仅适用于Windows)，需要与<code>GDAL</code>和<code>mongo-c-driver</code>版本匹配，不添加则默认为32位程序，添加<code>-DARCH=64</code>则为64位；~~</li>
-<li><code>-DSTROM</code>，用于指定是否编译次降水模型，不添加默认为0，即长时段模型，添加<code>-DSTROM=1</code>则编译次降水模型。</li>
-<li><code>-DUNITTEST</code>，用于指定是否编译基于Googletest的单元测试模块</li>
-<li><code>-DINSTALL_PREFIX</code>，用于指定安装路径，如不指定，默认为源码目录下的<code>bin</code>文件夹。</li>
-</ol>
-<p>```shell cd &lt;SEIMS root="" path&gt;=""&gt;/seims mkdir build cd build /home/zhulj/CMake/bin/cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_COMPILER=/home/zhulj/gcc4.8.4/bin/gcc -DCMAKE_CXX_COMPILER=/home/zhulj/gcc4.8.4/bin/g++ make (or make 2&gt;&amp;1 | tee build.log 用于保存编译日志) make install ```</p>
-<ul>
-<li>在执行<code>make</code>命令时，可追加 <code>-j 4</code>命令利用CPU多核性能并行编译程序，提高编译速度，并行进程数最好设置为物理核数的2倍。</li>
-<li>编译完成之后，SEIMS模型所有可执行文件和模块库均安装于<code>&lt;SEIMS root path&gt;/seims/bin</code>目录下。</li>
-</ul>
-<h2>3. Python for SEIMS 依赖包的安装</h2>
-<p>SEIMS预处理、后处理、率定、情景分析等所需的Python依赖库及版本要求如下：</p>
-<p>```py pygeoc </p>
-<h1>Preprocess</h1>
-<p>GDAL&gt;=1.9.0,&lt;2.0 numpy&gt;=1.9.0 pymongo&gt;=3.0 networkx&gt;=1.10 Shapely&gt;=1.5.0 </p>
-<h1>Postprocess</h1>
-<p>matplotlib&gt;=1.5.0 pathlib2&gt;=2.0.0 </p>
-<h1>Scenario analysis</h1>
-<p>deap&gt;=1.0.2 scoop&gt;=0.7.1.1 ```</p>
-<ul>
-<li>SEIMS提供了自动安装脚本，脚本依赖于pip，因此请确保pip已正确安装，<a href="https://pip.pypa.io/en/stable/installing/">参考教程</a>：<ul>
-<li>下载<a href="https://bootstrap.pypa.io/get-pip.py">get-pip.py</a></li>
-<li><code>python get-pip.py</code></li>
-</ul>
-</li>
-<li>执行<code>sudo sh pyseims_install_linux.sh</code>即可自动安装完成所有依赖库，包括SEIMS自带的<code>PyGeoC</code>。</li>
-<li>安装完成后，运行<code>python pyseims_check.py</code>检查所需python库是否已经安装成功，如果有未成功的请单独安装。 </li>
-</ul>
-</div></div><!-- contents -->
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Sep 5 2017 00:11:22 for SEIMS by
+    <li class="navelem"><b>seims</b></li><li class="navelem"><b>pygeoc</b></li><li class="navelem"><b>pygeoc</b></li><li class="navelem"><b>utils</b></li><li class="navelem"><b>utils</b></li><li class="navelem"><a class="el" href="../../db/d48/a00148.html">FileClass</a></li>
+    <li class="footer">Generated on Thu Oct 26 2017 12:50:40 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

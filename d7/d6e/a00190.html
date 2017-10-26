@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: PyGeoC</title>
+<title>SEIMS: seims.preprocess.sp_landuse.LanduseUtilClass Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -52,10 +52,10 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="../../index.html"><span>Main&#160;Page</span></a></li>
-      <li class="current"><a href="../../pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="../../pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="../../modules.html"><span>Modules</span></a></li>
       <li><a href="../../namespaces.html"><span>Packages</span></a></li>
-      <li><a href="../../annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Classes</span></a></li>
       <li><a href="../../files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -73,6 +73,14 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
           </span>
         </div>
       </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../annotated.html"><span>Class&#160;List</span></a></li>
+      <li><a href="../../classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="../../inherits.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -95,7 +103,7 @@ $(document).ready(function(){initNavTree('d7/d6e/a00190.html','../../');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -105,44 +113,943 @@ $(document).ready(function(){initNavTree('d7/d6e/a00190.html','../../');});
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="../../d2/d82/a01404.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">PyGeoC </div>  </div>
+<div class="title">seims.preprocess.sp_landuse.LanduseUtilClass Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>***Py***thon for ***GeoC***omputation &mdash; easy, convenient, and efficient.</p>
-<p><a href="https://travis-ci.org/lreis2415/PyGeoC">![Build Status](https://travis-ci.org/lreis2415/PyGeoC.svg?branch=master)</a></p>
-<h2>1.Introduction</h2>
-<p>本科快毕业的时候，接触并开始学习Python和arcpy（当时ArcGIS 9时代还是arcgisscripting）已有五六年时间了，当时写了一篇文章《<a href="http://www.docin.com/p-164282884.html">[初学入门]ArcGIS中Python脚本的使用</a>》，在各个网站、空间被转载多次。</p>
-<p>随着学习的深入，逐渐接触了Numpy, GDAL, Matplotlib等一系列优秀Python包。在日常学习工作中，Python早已成为我进行简单、复杂科学计算/地学计算的编程工具，也积累了一些常用的地学计算代码。</p>
-<p>很久以来，我就有一个念头，就是构建一个适用于地学计算的基础Python库，这个库可以包含一些现有的开源代码，但一定要保证具有以下特点：</p>
-<ul>
-<li>配置方便</li>
-<li>简单易学</li>
-<li>高效易用</li>
+
+<p>Inherits object, and object.</p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a60079de15688c3eb48b7e2dce5413d9d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d6e/a00190.html#a60079de15688c3eb48b7e2dce5413d9d">__init__</a></td></tr>
+<tr class="separator:a60079de15688c3eb48b7e2dce5413d9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60079de15688c3eb48b7e2dce5413d9d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d6e/a00190.html#a60079de15688c3eb48b7e2dce5413d9d">__init__</a></td></tr>
+<tr class="separator:a60079de15688c3eb48b7e2dce5413d9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a53a077221f94feaa6e2283988ec11440"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d6e/a00190.html#a53a077221f94feaa6e2283988ec11440">export_landuse_lookup_files_from_mongodb</a></td></tr>
+<tr class="separator:a53a077221f94feaa6e2283988ec11440"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3976fb770bb874f446469bce8ea7ba9b"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d6e/a00190.html#a3976fb770bb874f446469bce8ea7ba9b">reclassify_landuse_parameters</a></td></tr>
+<tr class="separator:a3976fb770bb874f446469bce8ea7ba9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e0584b638922d51a6852dd90d3046ab"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d6e/a00190.html#a1e0584b638922d51a6852dd90d3046ab">initialize_landcover_parameters</a></td></tr>
+<tr class="separator:a1e0584b638922d51a6852dd90d3046ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adda71b601a503e4a544c3ded875052ff"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d6e/a00190.html#adda71b601a503e4a544c3ded875052ff">read_crop_lookup_table</a></td></tr>
+<tr class="separator:adda71b601a503e4a544c3ded875052ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55f0ae726c8658f441ea19f362a2b064"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d6e/a00190.html#a55f0ae726c8658f441ea19f362a2b064">reclassify_landcover_parameters</a></td></tr>
+<tr class="separator:a55f0ae726c8658f441ea19f362a2b064"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f254063eadffc35b818d91aa5d05c2a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d6e/a00190.html#a4f254063eadffc35b818d91aa5d05c2a">generate_cn2</a></td></tr>
+<tr class="separator:a4f254063eadffc35b818d91aa5d05c2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a006015e817af09b505b86cfa531b881b"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d6e/a00190.html#a006015e817af09b505b86cfa531b881b">generate_runoff_coefficent</a></td></tr>
+<tr class="separator:a006015e817af09b505b86cfa531b881b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b74fd93925a9ba536522532d9fcca8b"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d6e/a00190.html#a2b74fd93925a9ba536522532d9fcca8b">parameters_extraction</a></td></tr>
+<tr class="separator:a2b74fd93925a9ba536522532d9fcca8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53a077221f94feaa6e2283988ec11440"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d6e/a00190.html#a53a077221f94feaa6e2283988ec11440">export_landuse_lookup_files_from_mongodb</a></td></tr>
+<tr class="separator:a53a077221f94feaa6e2283988ec11440"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3976fb770bb874f446469bce8ea7ba9b"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d6e/a00190.html#a3976fb770bb874f446469bce8ea7ba9b">reclassify_landuse_parameters</a></td></tr>
+<tr class="separator:a3976fb770bb874f446469bce8ea7ba9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e0584b638922d51a6852dd90d3046ab"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d6e/a00190.html#a1e0584b638922d51a6852dd90d3046ab">initialize_landcover_parameters</a></td></tr>
+<tr class="separator:a1e0584b638922d51a6852dd90d3046ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adda71b601a503e4a544c3ded875052ff"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d6e/a00190.html#adda71b601a503e4a544c3ded875052ff">read_crop_lookup_table</a></td></tr>
+<tr class="separator:adda71b601a503e4a544c3ded875052ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55f0ae726c8658f441ea19f362a2b064"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d6e/a00190.html#a55f0ae726c8658f441ea19f362a2b064">reclassify_landcover_parameters</a></td></tr>
+<tr class="separator:a55f0ae726c8658f441ea19f362a2b064"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f254063eadffc35b818d91aa5d05c2a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d6e/a00190.html#a4f254063eadffc35b818d91aa5d05c2a">generate_cn2</a></td></tr>
+<tr class="separator:a4f254063eadffc35b818d91aa5d05c2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a006015e817af09b505b86cfa531b881b"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d6e/a00190.html#a006015e817af09b505b86cfa531b881b">generate_runoff_coefficent</a></td></tr>
+<tr class="separator:a006015e817af09b505b86cfa531b881b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b74fd93925a9ba536522532d9fcca8b"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d6e/a00190.html#a2b74fd93925a9ba536522532d9fcca8b">parameters_extraction</a></td></tr>
+<tr class="separator:a2b74fd93925a9ba536522532d9fcca8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><pre class="fragment">Landuse/Landcover related utility functions.</pre> 
+<p>Definition at line <a class="el" href="../../d0/dc2/a00564_source.html#l00022">22</a> of file <a class="el" href="../../d0/dc2/a00564_source.html">sp_landuse.py</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a60079de15688c3eb48b7e2dce5413d9d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.sp_landuse.LanduseUtilClass.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Empty</pre> 
+<p>Definition at line <a class="el" href="../../d0/dc2/a00564_source.html#l00025">25</a> of file <a class="el" href="../../d0/dc2/a00564_source.html">sp_landuse.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a60079de15688c3eb48b7e2dce5413d9d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.sp_landuse.LanduseUtilClass.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Empty</pre> 
+<p>Definition at line <a class="el" href="../../d8/dd2/a00565_source.html#l00025">25</a> of file <a class="el" href="../../d8/dd2/a00565_source.html">sp_landuse.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d7/d6e/a00190_a60079de15688c3eb48b7e2dce5413d9d_cgraph.png" border="0" usemap="#d7/d6e/a00190_a60079de15688c3eb48b7e2dce5413d9d_cgraph" alt=""/></div>
+<map name="d7/d6e/a00190_a60079de15688c3eb48b7e2dce5413d9d_cgraph" id="d7/d6e/a00190_a60079de15688c3eb48b7e2dce5413d9d_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a53a077221f94feaa6e2283988ec11440"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.sp_landuse.LanduseUtilClass.export_landuse_lookup_files_from_mongodb </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>cfg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>maindb</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">export landuse lookup tables to txt file from MongoDB.</pre> 
+<p>Definition at line <a class="el" href="../../d0/dc2/a00564_source.html#l00030">30</a> of file <a class="el" href="../../d0/dc2/a00564_source.html">sp_landuse.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d7/d6e/a00190_a53a077221f94feaa6e2283988ec11440_cgraph.png" border="0" usemap="#d7/d6e/a00190_a53a077221f94feaa6e2283988ec11440_cgraph" alt=""/></div>
+<map name="d7/d6e/a00190_a53a077221f94feaa6e2283988ec11440_cgraph" id="d7/d6e/a00190_a53a077221f94feaa6e2283988ec11440_cgraph">
+<area shape="rect" id="node2" href="../../d7/d6e/a00190.html#a3976fb770bb874f446469bce8ea7ba9b" title="seims.preprocess.sp\l_landuse.LanduseUtilClass.reclassify\l_landuse_parameters" alt="" coords="352,29,643,93"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a53a077221f94feaa6e2283988ec11440"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.sp_landuse.LanduseUtilClass.export_landuse_lookup_files_from_mongodb </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>cfg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>maindb</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">export landuse lookup tables to txt file from MongoDB.</pre> 
+<p>Definition at line <a class="el" href="../../d8/dd2/a00565_source.html#l00030">30</a> of file <a class="el" href="../../d8/dd2/a00565_source.html">sp_landuse.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d7/d6e/a00190_a53a077221f94feaa6e2283988ec11440_cgraph.png" border="0" usemap="#d7/d6e/a00190_a53a077221f94feaa6e2283988ec11440_cgraph" alt=""/></div>
+<map name="d7/d6e/a00190_a53a077221f94feaa6e2283988ec11440_cgraph" id="d7/d6e/a00190_a53a077221f94feaa6e2283988ec11440_cgraph">
+<area shape="rect" id="node2" href="../../d7/d6e/a00190.html#a3976fb770bb874f446469bce8ea7ba9b" title="seims.preprocess.sp\l_landuse.LanduseUtilClass.reclassify\l_landuse_parameters" alt="" coords="352,29,643,93"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a4f254063eadffc35b818d91aa5d05c2a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.sp_landuse.LanduseUtilClass.generate_cn2 </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>maindb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>landuse_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>hydrogroup_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>cn2_filename</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Generate CN2 raster.</pre> 
+<p>Definition at line <a class="el" href="../../d0/dc2/a00564_source.html#l00166">166</a> of file <a class="el" href="../../d0/dc2/a00564_source.html">sp_landuse.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d7/d6e/a00190_a4f254063eadffc35b818d91aa5d05c2a_cgraph.png" border="0" usemap="#d7/d6e/a00190_a4f254063eadffc35b818d91aa5d05c2a_cgraph" alt=""/></div>
+<map name="d7/d6e/a00190_a4f254063eadffc35b818d91aa5d05c2a_cgraph" id="d7/d6e/a00190_a4f254063eadffc35b818d91aa5d05c2a_cgraph">
+<area shape="rect" id="node2" href="../../d7/d6e/a00190.html#a006015e817af09b505b86cfa531b881b" title="seims.preprocess.sp\l_landuse.LanduseUtilClass.generate\l_runoff_coefficent" alt="" coords="377,20,663,84"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a4f254063eadffc35b818d91aa5d05c2a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.sp_landuse.LanduseUtilClass.generate_cn2 </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>maindb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>landuse_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>hydrogroup_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>cn2_filename</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Generate CN2 raster.</pre> 
+<p>Definition at line <a class="el" href="../../d8/dd2/a00565_source.html#l00166">166</a> of file <a class="el" href="../../d8/dd2/a00565_source.html">sp_landuse.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d7/d6e/a00190_a4f254063eadffc35b818d91aa5d05c2a_cgraph.png" border="0" usemap="#d7/d6e/a00190_a4f254063eadffc35b818d91aa5d05c2a_cgraph" alt=""/></div>
+<map name="d7/d6e/a00190_a4f254063eadffc35b818d91aa5d05c2a_cgraph" id="d7/d6e/a00190_a4f254063eadffc35b818d91aa5d05c2a_cgraph">
+<area shape="rect" id="node2" href="../../d7/d6e/a00190.html#a006015e817af09b505b86cfa531b881b" title="seims.preprocess.sp\l_landuse.LanduseUtilClass.generate\l_runoff_coefficent" alt="" coords="377,20,663,84"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a006015e817af09b505b86cfa531b881b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.sp_landuse.LanduseUtilClass.generate_runoff_coefficent </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>maindb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>landuse_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>slope_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>soil_texture_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>runoff_coeff_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>imper_perc</em> = <code>0.3</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Generate potential runoff coefficient.</pre> 
+<p>Definition at line <a class="el" href="../../d0/dc2/a00564_source.html#l00203">203</a> of file <a class="el" href="../../d0/dc2/a00564_source.html">sp_landuse.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a006015e817af09b505b86cfa531b881b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.sp_landuse.LanduseUtilClass.generate_runoff_coefficent </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>maindb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>landuse_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>slope_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>soil_texture_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>runoff_coeff_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>imper_perc</em> = <code>0.3</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Generate potential runoff coefficient.</pre> 
+<p>Definition at line <a class="el" href="../../d8/dd2/a00565_source.html#l00203">203</a> of file <a class="el" href="../../d8/dd2/a00565_source.html">sp_landuse.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1e0584b638922d51a6852dd90d3046ab"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.sp_landuse.LanduseUtilClass.initialize_landcover_parameters </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>landcover_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>landcover_initial_fields_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>dst_dir</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">generate initial landcover_init_param parameters</pre> 
+<p>Definition at line <a class="el" href="../../d8/dd2/a00565_source.html#l00086">86</a> of file <a class="el" href="../../d8/dd2/a00565_source.html">sp_landuse.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d7/d6e/a00190_a1e0584b638922d51a6852dd90d3046ab_cgraph.png" border="0" usemap="#d7/d6e/a00190_a1e0584b638922d51a6852dd90d3046ab_cgraph" alt=""/></div>
+<map name="d7/d6e/a00190_a1e0584b638922d51a6852dd90d3046ab_cgraph" id="d7/d6e/a00190_a1e0584b638922d51a6852dd90d3046ab_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a1e0584b638922d51a6852dd90d3046ab"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.sp_landuse.LanduseUtilClass.initialize_landcover_parameters </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>landcover_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>landcover_initial_fields_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>dst_dir</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">generate initial landcover_init_param parameters</pre> 
+<p>Definition at line <a class="el" href="../../d0/dc2/a00564_source.html#l00086">86</a> of file <a class="el" href="../../d0/dc2/a00564_source.html">sp_landuse.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2b74fd93925a9ba536522532d9fcca8b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.sp_landuse.LanduseUtilClass.parameters_extraction </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>cfg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>maindb</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Landuse spatial parameters extraction.</pre> 
+<p>Definition at line <a class="el" href="../../d0/dc2/a00564_source.html#l00261">261</a> of file <a class="el" href="../../d0/dc2/a00564_source.html">sp_landuse.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2b74fd93925a9ba536522532d9fcca8b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.sp_landuse.LanduseUtilClass.parameters_extraction </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>cfg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>maindb</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Landuse spatial parameters extraction.</pre> 
+<p>Definition at line <a class="el" href="../../d8/dd2/a00565_source.html#l00261">261</a> of file <a class="el" href="../../d8/dd2/a00565_source.html">sp_landuse.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d7/d6e/a00190_a2b74fd93925a9ba536522532d9fcca8b_cgraph.png" border="0" usemap="#d7/d6e/a00190_a2b74fd93925a9ba536522532d9fcca8b_cgraph" alt=""/></div>
+<map name="d7/d6e/a00190_a2b74fd93925a9ba536522532d9fcca8b_cgraph" id="d7/d6e/a00190_a2b74fd93925a9ba536522532d9fcca8b_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="adda71b601a503e4a544c3ded875052ff"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.sp_landuse.LanduseUtilClass.read_crop_lookup_table </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>crop_lookup_file</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">read crop lookup table</pre> 
+<p>Definition at line <a class="el" href="../../d0/dc2/a00564_source.html#l00115">115</a> of file <a class="el" href="../../d0/dc2/a00564_source.html">sp_landuse.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d7/d6e/a00190_adda71b601a503e4a544c3ded875052ff_cgraph.png" border="0" usemap="#d7/d6e/a00190_adda71b601a503e4a544c3ded875052ff_cgraph" alt=""/></div>
+<map name="d7/d6e/a00190_adda71b601a503e4a544c3ded875052ff_cgraph" id="d7/d6e/a00190_adda71b601a503e4a544c3ded875052ff_cgraph">
+<area shape="rect" id="node2" href="../../d7/d6e/a00190.html#a55f0ae726c8658f441ea19f362a2b064" title="seims.preprocess.sp\l_landuse.LanduseUtilClass.reclassify\l_landcover_parameters" alt="" coords="309,29,600,93"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="adda71b601a503e4a544c3ded875052ff"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.sp_landuse.LanduseUtilClass.read_crop_lookup_table </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>crop_lookup_file</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">read crop lookup table</pre> 
+<p>Definition at line <a class="el" href="../../d8/dd2/a00565_source.html#l00115">115</a> of file <a class="el" href="../../d8/dd2/a00565_source.html">sp_landuse.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d7/d6e/a00190_adda71b601a503e4a544c3ded875052ff_cgraph.png" border="0" usemap="#d7/d6e/a00190_adda71b601a503e4a544c3ded875052ff_cgraph" alt=""/></div>
+<map name="d7/d6e/a00190_adda71b601a503e4a544c3ded875052ff_cgraph" id="d7/d6e/a00190_adda71b601a503e4a544c3ded875052ff_cgraph">
+<area shape="rect" id="node2" href="../../d7/d6e/a00190.html#a55f0ae726c8658f441ea19f362a2b064" title="seims.preprocess.sp\l_landuse.LanduseUtilClass.reclassify\l_landcover_parameters" alt="" coords="309,29,600,93"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a55f0ae726c8658f441ea19f362a2b064"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.sp_landuse.LanduseUtilClass.reclassify_landcover_parameters </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>landuse_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>landcover_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>landcover_initial_fields_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>landcover_lookup_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>attr_names</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>dst_dir</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">relassify landcover_init_param parameters</pre> 
+<p>Definition at line <a class="el" href="../../d0/dc2/a00564_source.html#l00137">137</a> of file <a class="el" href="../../d0/dc2/a00564_source.html">sp_landuse.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a55f0ae726c8658f441ea19f362a2b064"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.sp_landuse.LanduseUtilClass.reclassify_landcover_parameters </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>landuse_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>landcover_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>landcover_initial_fields_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>landcover_lookup_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>attr_names</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>dst_dir</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">relassify landcover_init_param parameters</pre> 
+<p>Definition at line <a class="el" href="../../d8/dd2/a00565_source.html#l00137">137</a> of file <a class="el" href="../../d8/dd2/a00565_source.html">sp_landuse.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3976fb770bb874f446469bce8ea7ba9b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.sp_landuse.LanduseUtilClass.reclassify_landuse_parameters </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>bin_dir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>config_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>dst_dir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>landuse_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>lookup_dir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>landuse_attr_list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>default_landuse_id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Reclassify landuse parameters by lookup table.
+TODO(LJ): this function should be replaced by replaceByDict() function!
+</pre> 
+<p>Definition at line <a class="el" href="../../d8/dd2/a00565_source.html#l00068">68</a> of file <a class="el" href="../../d8/dd2/a00565_source.html">sp_landuse.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3976fb770bb874f446469bce8ea7ba9b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.sp_landuse.LanduseUtilClass.reclassify_landuse_parameters </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>bin_dir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>config_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>dst_dir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>landuse_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>lookup_dir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>landuse_attr_list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>default_landuse_id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Reclassify landuse parameters by lookup table.
+TODO(LJ): this function should be replaced by replaceByDict() function!
+</pre> 
+<p>Definition at line <a class="el" href="../../d0/dc2/a00564_source.html#l00068">68</a> of file <a class="el" href="../../d0/dc2/a00564_source.html">sp_landuse.py</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>seims/preprocess/<a class="el" href="../../d0/dc2/a00564_source.html">sp_landuse.py</a></li>
 </ul>
-<h2>2.Download and Installation</h2>
-<p>PyGeoC采用纯Python开发（仅在Python2.x下测试），利用<a href="http://pythonwheels.com/">Wheels</a>打包<a href="http://python-packaging-user-guide.readthedocs.org/en/latest/distributing/#working-in-development-mode">发布</a>，可从PyPI项目主页下载。 也可从<a href="https://github.com/crazyzlj/PyGeoC">PyGeoC</a>库的dist目录中下载。 </p>
-<pre class="fragment">```python
-1.source distribution:
-python setup.py sdist
-2.wheel
-python setup.py bdist_wheel
-3.wheel(py27, I just test in py27 currently)
-python setup.py bdist_wheel --python-tag py2
-```
-</pre><p>安装：</p>
-<ul>
-<li>确认本机已经安装python2.6+</li>
-<li>安装pip: please refer to the <a href="https://pip.pypa.io/en/latest/installing/">installation page</a></li>
-<li><code>pip install &lt;path to PyGeoC .whl&gt;/PyGeoC&lt;version&gt;.whl</code></li>
-</ul>
-<h2>3.Structure</h2>
-</div></div><!-- contents -->
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Sep 5 2017 00:11:22 for SEIMS by
+    <li class="navelem"><b>seims</b></li><li class="navelem"><b>preprocess</b></li><li class="navelem"><b>sp_landuse</b></li><li class="navelem"><a class="el" href="../../d7/d6e/a00190.html">LanduseUtilClass</a></li>
+    <li class="footer">Generated on Thu Oct 26 2017 12:50:40 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

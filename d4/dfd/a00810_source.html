@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims_storm_linux_gcc48/seims/preprocess/db_build_mongodb.py Source File</title>
+<title>SEIMS: seims/src/seims_main/modules/erosion/IUH_SED_OL/IUH_SED_OL.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -101,7 +101,7 @@ $(document).ready(function(){initNavTree('d4/dfd/a00810_source.html','../../');}
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -112,200 +112,93 @@ $(document).ready(function(){initNavTree('d4/dfd/a00810_source.html','../../');}
 
 <div class="header">
   <div class="headertitle">
-<div class="title">db_build_mongodb.py</div>  </div>
+<div class="title">IUH_SED_OL.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">#! /usr/bin/env python</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"># -*- coding: utf-8 -*-</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="stringliteral">&quot;&quot;&quot;Import all model parameters and spatial datasets to MongoDB</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="stringliteral">    @author   : Liangjun Zhu, Junzhi Liu</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="stringliteral">    @changelog: 16-12-07  lj - rewrite for version 2.0</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="stringliteral">                17-06-26  lj - reformat according to pylint and google style</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="stringliteral">                17-07-07  lj - remove sqlite3 database file as intermediate data</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="stringliteral">&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">from</span> os <span class="keyword">import</span> sep <span class="keyword">as</span> SEP</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">from</span> <a class="code" href="../../d9/d79/a01360.html">seims.preprocess.bmp_import_scenario</a> <span class="keyword">import</span> ImportScenario2Mongo</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">from</span> <a class="code" href="../../dd/d8b/a01363.html">seims.preprocess.db_import_interpolation_weights</a> <span class="keyword">import</span> ImportWeightData</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">from</span> <a class="code" href="../../de/d1f/a01364.html">seims.preprocess.db_import_meteorology</a> <span class="keyword">import</span> ImportMeteoData</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">from</span> <a class="code" href="../../d7/d81/a01365.html">seims.preprocess.db_import_model_parameters</a> <span class="keyword">import</span> ImportParam2Mongo</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">from</span> <a class="code" href="../../d6/dfe/a01366.html">seims.preprocess.db_import_observed</a> <span class="keyword">import</span> ImportObservedData</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">from</span> <a class="code" href="../../dd/d86/a01367.html">seims.preprocess.db_import_precipitation</a> <span class="keyword">import</span> ImportPrecipitation</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">from</span> <a class="code" href="../../dd/d0c/a01368.html">seims.preprocess.db_import_sites</a> <span class="keyword">import</span> ImportHydroClimateSites</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">from</span> <a class="code" href="../../d1/d17/a01369.html">seims.preprocess.db_import_stream_parameters</a> <span class="keyword">import</span> ImportReaches2Mongo</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">from</span> <a class="code" href="../../d8/dbe/a01370.html">seims.preprocess.db_mongodb</a> <span class="keyword">import</span> ConnectMongoDB, MongoQuery</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">from</span> <a class="code" href="../../d0/d9b/a01379.html">seims.preprocess.sp_extraction</a> <span class="keyword">import</span> extract_spatial_parameters</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">from</span> <a class="code" href="../../de/dfe/a01383.html">seims.preprocess.text</a> <span class="keyword">import</span> DBTableNames, SubbsnStatsName</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">from</span> <a class="code" href="../../d7/dde/a01384.html">seims.preprocess.utility</a> <span class="keyword">import</span> status_output</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">from</span> <a class="code" href="../../d6/d2f/a01394.html">seims.pygeoc.pygeoc.utils.utils</a> <span class="keyword">import</span> UtilClass</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">class </span>ImportMongodbClass(object):</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;Separated function to import data into MongoDB.&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="../../d3/dcc/a00264.html#ad5fc6f1afc8c22ce13dbf3e2928e7eb2">   29</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d3/dcc/a00264.html#ad5fc6f1afc8c22ce13dbf3e2928e7eb2">__init__</a>(self):</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Empty&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">pass</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    @staticmethod</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="../../d3/dcc/a00264.html#adfbe97062368e43c6becdd2583fda016">   34</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d3/dcc/a00264.html#adfbe97062368e43c6becdd2583fda016">climate_data</a>(cfg, main_db, clim_db):</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Climate data.&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        ImportHydroClimateSites.workflow(cfg, main_db, clim_db)</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        ImportMeteoData.workflow(cfg, clim_db)</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        ImportPrecipitation.workflow(cfg, clim_db)</div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;SimulationModule.h&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="../../de/df3/a00185.html">   26</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../de/df3/a00185.html">IUH_SED_OL</a> : <span class="keyword">public</span> <a class="code" href="../../d9/d39/a00257.html">SimulationModule</a> {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="../../de/df3/a00185.html">IUH_SED_OL</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    ~<a class="code" href="../../de/df3/a00185.html">IUH_SED_OL</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> Execute(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> SetValue(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">float</span> data);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> Set1DData(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">int</span> n, <span class="keywordtype">float</span> *data);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> Set2DData(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">int</span> nRows, <span class="keywordtype">int</span> nCols, <span class="keywordtype">float</span> **data);</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    @staticmethod</div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="../../d3/dcc/a00264.html#a9faea1b7a46ce844f158d9c4844da8c4">   41</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d3/dcc/a00264.html#a9faea1b7a46ce844f158d9c4844da8c4">spatial_rasters</a>(cfg, subbasin_num):</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Import spatial raster data.&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        UtilClass.mkdir(cfg.dirs.import2db)</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> cfg.cluster:  <span class="comment"># changed by LJ, SubbasinID is 0 means the whole basin!</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            subbasin_num = 0</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            start_id = 0</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            subbasin_file = cfg.spatials.mask</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">else</span>:</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            start_id = 1</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            subbasin_file = cfg.spatials.subbsn</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(start_id, subbasin_num + 1):</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            subdir = cfg.dirs.import2db + SEP + str(i)</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            UtilClass.rmmkdir(subdir)</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        str_cmd = <span class="stringliteral">&#39;&quot;%s/import_raster&quot; %s %s %s %s %s %d %s&#39;</span> % (cfg.seims_bin, subbasin_file,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                                               cfg.dirs.geodata2db,</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                                               cfg.spatial_db,</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                                               DBTableNames.gridfs_spatial,</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                                               cfg.hostname, cfg.port,</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                                                               cfg.dirs.import2db)</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="comment"># print (str_cmd)</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        UtilClass.run_command(str_cmd)</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    @staticmethod</div>
-<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="../../d3/dcc/a00264.html#ab5f368e0fdf47a191a91d99dfa127c32">   64</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d3/dcc/a00264.html#ab5f368e0fdf47a191a91d99dfa127c32">iuh</a>(cfg, n_subbasins):</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Invoke IUH program&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> cfg.cluster:</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            n_subbasins = 0</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">if</span> cfg.gen_iuh:</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            dt = 24</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            str_cmd = <span class="stringliteral">&#39;&quot;%s/iuh&quot; %s %d %s %s %s %d&#39;</span> % (cfg.seims_bin, cfg.hostname, cfg.port,</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                                                      cfg.spatial_db,</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                                                      DBTableNames.gridfs_spatial,</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                                                      dt, n_subbasins)</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="comment"># print (str_cmd)</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            UtilClass.run_command(str_cmd)</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    @staticmethod</div>
-<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="../../d3/dcc/a00264.html#afed639509abc2da6b890208e25b52d1f">   78</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d3/dcc/a00264.html#afed639509abc2da6b890208e25b52d1f">grid_layering</a>(cfg, n_subbasins):</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Invoke grid layering program.&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        layering_dir = cfg.dirs.layerinfo</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        UtilClass.rmmkdir(layering_dir)</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> cfg.cluster:</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            n_subbasins = 0</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        str_cmd = <span class="stringliteral">&#39;&quot;%s/grid_layering&quot; %s %d %s %s %s %d&#39;</span> % (</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            cfg.seims_bin, cfg.hostname, cfg.port, layering_dir,</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            cfg.spatial_db, DBTableNames.gridfs_spatial, n_subbasins)</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="comment"># print (str_cmd)</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        UtilClass.run_command(str_cmd)</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    @staticmethod</div>
-<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="../../d3/dcc/a00264.html#ad1ff36e535a0989c84ae12598c0cd675">   91</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d3/dcc/a00264.html#ad1ff36e535a0989c84ae12598c0cd675">workflow</a>(cfg):</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Building MongoDB workflow&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        f = open(cfg.logs.build_mongo, <span class="stringliteral">&#39;w&#39;</span>)</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="comment"># build a connection to mongodb database</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        client = <a class="code" href="../../d0/d24/a00222.html">ConnectMongoDB</a>(cfg.hostname, cfg.port)</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        conn = client.get_conn()</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        maindb = conn[cfg.spatial_db]</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        climatedb = conn[cfg.climate_db]</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        scenariodb = <span class="keywordtype">None</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">if</span> cfg.use_scernario:</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            scenariodb = conn[cfg.bmp_scenario_db]</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="comment"># import model parameters information to MongoDB</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        status_output(<span class="stringliteral">&#39;Import model parameters&#39;</span>, 10, f)</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        ImportParam2Mongo.workflow(cfg, maindb)</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        n_subbasins = MongoQuery.get_init_parameter_value(maindb, SubbsnStatsName.subbsn_num)</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordflow">print</span> (<span class="stringliteral">&#39;Number of subbasins: %d&#39;</span> % n_subbasins)</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="comment"># Extract spatial parameters for reaches, landuse, soil, etc.</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        status_output(<span class="stringliteral">&#39;Extract spatial parameters for reaches, landuse, soil, etc...&#39;</span>, 20, f)</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        extract_spatial_parameters(cfg, maindb)</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="comment"># import stream parameters</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        status_output(<span class="stringliteral">&#39;Generating reach table with initialized parameters...&#39;</span>, 40, f)</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        ImportReaches2Mongo.generate_reach_table(cfg, maindb)</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="comment"># import raster data to MongoDB</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        status_output(<span class="stringliteral">&#39;Importing raster to MongoDB....&#39;</span>, 50, f)</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        ImportMongodbClass.spatial_rasters(cfg, n_subbasins)</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="comment"># Import IUH</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        status_output(<span class="stringliteral">&#39;Generating and importing IUH (Instantaneous Unit Hydrograph)....&#39;</span>, 60, f)</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        ImportMongodbClass.iuh(cfg, n_subbasins)</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="comment"># Import grid layering data</span></div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        status_output(<span class="stringliteral">&#39;Generating and importing grid layering....&#39;</span>, 70, f)</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        ImportMongodbClass.grid_layering(cfg, n_subbasins)</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="comment"># Import hydro-climate data</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        status_output(<span class="stringliteral">&#39;Import climate data....&#39;</span>, 80, f)</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        ImportMongodbClass.climate_data(cfg, maindb, climatedb)</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="comment"># Import weight and related data, this should after ImportMongodbClass.climate_data()</span></div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        status_output(<span class="stringliteral">&#39;Generating weight data for interpolation of meteorology data &#39;</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                      <span class="stringliteral">&#39;and weight dependent parameters....&#39;</span>, 85, f)</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        ImportWeightData.workflow(cfg, conn)</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="comment"># Measurement Data, such as discharge, sediment yield.</span></div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        status_output(<span class="stringliteral">&#39;Import observed data, such as discharge, sediment yield....&#39;</span>, 90, f)</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        ImportObservedData.workflow(cfg, maindb, climatedb)</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="comment"># Import BMP scenario database to MongoDB</span></div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        status_output(<span class="stringliteral">&#39;Importing bmp scenario....&#39;</span>, 95, f)</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        ImportScenario2Mongo.scenario_from_texts(cfg, maindb, scenariodb)</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        status_output(<span class="stringliteral">&#39;Build DB: %s finished!&#39;</span> % cfg.spatial_db, 100, f)</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        f.close()</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="comment"># close connection to MongoDB</span></div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        client.close()</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="keyword">def </span>main():</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;TEST CODE&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keyword">from</span> <a class="code" href="../../d2/d1f/a01361.html">seims.preprocess.config</a> <span class="keyword">import</span> parse_ini_configuration</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    seims_cfg = parse_ini_configuration()</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="comment">#ImportMongodbClass.workflow(seims_cfg)</span></div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    ImportMongodbClass.iuh(seims_cfg, 0)</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="keywordflow">if</span> __name__ == <span class="stringliteral">&quot;__main__&quot;</span>:</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    main()</div>
-<div class="ttc" id="a00222_html"><div class="ttname"><a href="../../d0/d24/a00222.html">seims.preprocess.db_mongodb.ConnectMongoDB</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d08/a00832_source.html#l00016">db_mongodb.py:16</a></div></div>
-<div class="ttc" id="a01368_html"><div class="ttname"><a href="../../dd/d0c/a01368.html">seims.preprocess.db_import_sites</a></div><div class="ttdef"><b>Definition:</b> <a href="../../da/d90/a00826_source.html#l00001">db_import_sites.py:1</a></div></div>
-<div class="ttc" id="a00264_html_ad5fc6f1afc8c22ce13dbf3e2928e7eb2"><div class="ttname"><a href="../../d3/dcc/a00264.html#ad5fc6f1afc8c22ce13dbf3e2928e7eb2">seims.preprocess.db_build_mongodb.ImportMongodbClass.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/dc8/a00808_source.html#l00029">db_build_mongodb.py:29</a></div></div>
-<div class="ttc" id="a01364_html"><div class="ttname"><a href="../../de/d1f/a01364.html">seims.preprocess.db_import_meteorology</a></div><div class="ttdef"><b>Definition:</b> <a href="../../da/d71/a00814_source.html#l00001">db_import_meteorology.py:1</a></div></div>
-<div class="ttc" id="a01379_html"><div class="ttname"><a href="../../d0/d9b/a01379.html">seims.preprocess.sp_extraction</a></div><div class="ttdef"><b>Definition:</b> <a href="../../da/de3/a00856_source.html#l00001">sp_extraction.py:1</a></div></div>
-<div class="ttc" id="a01367_html"><div class="ttname"><a href="../../dd/d86/a01367.html">seims.preprocess.db_import_precipitation</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d3/db4/a00823_source.html#l00001">db_import_precipitation.py:1</a></div></div>
-<div class="ttc" id="a01384_html"><div class="ttname"><a href="../../d7/dde/a01384.html">seims.preprocess.utility</a></div><div class="ttdef"><b>Definition:</b> <a href="../../dd/de1/a00871_source.html#l00001">utility.py:1</a></div></div>
-<div class="ttc" id="a01370_html"><div class="ttname"><a href="../../d8/dbe/a01370.html">seims.preprocess.db_mongodb</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d08/a00832_source.html#l00001">db_mongodb.py:1</a></div></div>
-<div class="ttc" id="a01363_html"><div class="ttname"><a href="../../dd/d8b/a01363.html">seims.preprocess.db_import_interpolation_weights</a></div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d07/a00811_source.html#l00001">db_import_interpolation_weights.py:1</a></div></div>
-<div class="ttc" id="a01361_html"><div class="ttname"><a href="../../d2/d1f/a01361.html">seims.preprocess.config</a></div><div class="ttdef"><b>Definition:</b> <a href="../../da/d96/a00782_source.html#l00001">config.py:1</a></div></div>
-<div class="ttc" id="a00264_html_ad1ff36e535a0989c84ae12598c0cd675"><div class="ttname"><a href="../../d3/dcc/a00264.html#ad1ff36e535a0989c84ae12598c0cd675">seims.preprocess.db_build_mongodb.ImportMongodbClass.workflow</a></div><div class="ttdeci">def workflow</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/dc8/a00808_source.html#l00091">db_build_mongodb.py:91</a></div></div>
-<div class="ttc" id="a00264_html_adfbe97062368e43c6becdd2583fda016"><div class="ttname"><a href="../../d3/dcc/a00264.html#adfbe97062368e43c6becdd2583fda016">seims.preprocess.db_build_mongodb.ImportMongodbClass.climate_data</a></div><div class="ttdeci">def climate_data</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/dc8/a00808_source.html#l00034">db_build_mongodb.py:34</a></div></div>
-<div class="ttc" id="a01383_html"><div class="ttname"><a href="../../de/dfe/a01383.html">seims.preprocess.text</a></div><div class="ttdef"><b>Definition:</b> <a href="../../da/d5b/a00868_source.html#l00001">text.py:1</a></div></div>
-<div class="ttc" id="a01366_html"><div class="ttname"><a href="../../d6/dfe/a01366.html">seims.preprocess.db_import_observed</a></div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d00/a00820_source.html#l00001">db_import_observed.py:1</a></div></div>
-<div class="ttc" id="a00264_html_a9faea1b7a46ce844f158d9c4844da8c4"><div class="ttname"><a href="../../d3/dcc/a00264.html#a9faea1b7a46ce844f158d9c4844da8c4">seims.preprocess.db_build_mongodb.ImportMongodbClass.spatial_rasters</a></div><div class="ttdeci">def spatial_rasters</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/dc8/a00808_source.html#l00041">db_build_mongodb.py:41</a></div></div>
-<div class="ttc" id="a01369_html"><div class="ttname"><a href="../../d1/d17/a01369.html">seims.preprocess.db_import_stream_parameters</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d1/dea/a00829_source.html#l00001">db_import_stream_parameters.py:1</a></div></div>
-<div class="ttc" id="a00264_html_ab5f368e0fdf47a191a91d99dfa127c32"><div class="ttname"><a href="../../d3/dcc/a00264.html#ab5f368e0fdf47a191a91d99dfa127c32">seims.preprocess.db_build_mongodb.ImportMongodbClass.iuh</a></div><div class="ttdeci">def iuh</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/dc8/a00808_source.html#l00064">db_build_mongodb.py:64</a></div></div>
-<div class="ttc" id="a00264_html_afed639509abc2da6b890208e25b52d1f"><div class="ttname"><a href="../../d3/dcc/a00264.html#afed639509abc2da6b890208e25b52d1f">seims.preprocess.db_build_mongodb.ImportMongodbClass.grid_layering</a></div><div class="ttdeci">def grid_layering</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/dc8/a00808_source.html#l00078">db_build_mongodb.py:78</a></div></div>
-<div class="ttc" id="a01360_html"><div class="ttname"><a href="../../d9/d79/a01360.html">seims.preprocess.bmp_import_scenario</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d7/dff/a00805_source.html#l00001">bmp_import_scenario.py:1</a></div></div>
-<div class="ttc" id="a01394_html"><div class="ttname"><a href="../../d6/d2f/a01394.html">seims.pygeoc.pygeoc.utils.utils</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d92/a00586_source.html#l00001">utils.py:1</a></div></div>
-<div class="ttc" id="a01365_html"><div class="ttname"><a href="../../d7/d81/a01365.html">seims.preprocess.db_import_model_parameters</a></div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d5e/a00817_source.html#l00001">db_import_model_parameters.py:1</a></div></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> SetSubbasins(<a class="code" href="../../d7/d12/a00126.html">clsSubbasins</a> *);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> Get1DData(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">int</span> *n, <span class="keywordtype">float</span> **data);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">bool</span> CheckInputSize(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">int</span> n);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">bool</span> CheckInputData(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="../../de/df3/a00185.html#a003460d0a8af09766524f71f56462e75">   51</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../de/df3/a00185.html#a003460d0a8af09766524f71f56462e75">m_TimeStep</a>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="../../de/df3/a00185.html#a22af7db574a746bd721febaa9e193d03">   53</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../de/df3/a00185.html#a22af7db574a746bd721febaa9e193d03">m_nCells</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="../../de/df3/a00185.html#a8e58b4259fd178effde20fae5b4c29ce">   55</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="../../de/df3/a00185.html#a8e58b4259fd178effde20fae5b4c29ce">m_CellWidth</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="../../de/df3/a00185.html#aa683f278ed268d40b39359547808e649">   57</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="../../de/df3/a00185.html#aa683f278ed268d40b39359547808e649">m_cellArea</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="../../de/df3/a00185.html#a8194c9f0a9b9dce163418a42b7723e3e">   59</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../de/df3/a00185.html#a8194c9f0a9b9dce163418a42b7723e3e">m_nSubbasins</a>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="../../de/df3/a00185.html#acd3481dd04622d776f57c1995a8d259d">   61</a></span>&#160;    vector&lt;int&gt; <a class="code" href="../../de/df3/a00185.html#acd3481dd04622d776f57c1995a8d259d">m_subbasinIDs</a>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="../../de/df3/a00185.html#ae8cae71d5ac8b9242c09675c4c987ba6">   63</a></span>&#160;    <span class="keywordtype">float</span> *<a class="code" href="../../de/df3/a00185.html#ae8cae71d5ac8b9242c09675c4c987ba6">m_subbasin</a>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="../../de/df3/a00185.html#ab977e15442d371e5866dc4169e2bd03e">   66</a></span>&#160;    <a class="code" href="../../d7/d12/a00126.html">clsSubbasins</a> *<a class="code" href="../../de/df3/a00185.html#ab977e15442d371e5866dc4169e2bd03e">m_subbasinsInfo</a>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="../../de/df3/a00185.html#acb0a2268f01e060d7aef13bf9d27d799">   73</a></span>&#160;    <span class="keywordtype">float</span> **<a class="code" href="../../de/df3/a00185.html#acb0a2268f01e060d7aef13bf9d27d799">m_iuhCell</a>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="../../de/df3/a00185.html#af24883a72015b1017b48868dfd335052">   75</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../de/df3/a00185.html#af24883a72015b1017b48868dfd335052">m_iuhCols</a>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="../../de/df3/a00185.html#a3c4bcf0e0e5be4be4f3e1ca98f9b6f30">   77</a></span>&#160;    <span class="keywordtype">float</span> *<a class="code" href="../../de/df3/a00185.html#a3c4bcf0e0e5be4be4f3e1ca98f9b6f30">m_sedYield</a>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">/*/// length of rainfall series</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">    int m_nr;*/</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">//temporary</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="../../de/df3/a00185.html#ad85b3bfcc3dc39bada80373d1b74dde6">   87</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../de/df3/a00185.html#ad85b3bfcc3dc39bada80373d1b74dde6">m_cellFlowCols</a>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="../../de/df3/a00185.html#aba13e8923effe2998ddf2f8275ecbd70">   89</a></span>&#160;    <span class="keywordtype">float</span> **<a class="code" href="../../de/df3/a00185.html#aba13e8923effe2998ddf2f8275ecbd70">m_cellSed</a>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">//output</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="../../de/df3/a00185.html#a8de4de6d5923265f1569551f194b2817">   94</a></span>&#160;<span class="comment"></span>    <span class="keywordtype">float</span> *<a class="code" href="../../de/df3/a00185.html#a8de4de6d5923265f1569551f194b2817">m_sedtoCh</a>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="../../de/df3/a00185.html#a5931d27be34c15c25d6d0f38e082b6f5">   96</a></span>&#160;    <span class="keywordtype">float</span> *<a class="code" href="../../de/df3/a00185.html#a5931d27be34c15c25d6d0f38e082b6f5">m_sedOL</a>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordtype">void</span> initialOutputs(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;};</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="ttc" id="a00185_html_aa683f278ed268d40b39359547808e649"><div class="ttname"><a href="../../de/df3/a00185.html#aa683f278ed268d40b39359547808e649">IUH_SED_OL::m_cellArea</a></div><div class="ttdeci">float m_cellArea</div><div class="ttdoc">cell area </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dfd/a00810_source.html#l00057">IUH_SED_OL.h:57</a></div></div>
+<div class="ttc" id="a00185_html_a3c4bcf0e0e5be4be4f3e1ca98f9b6f30"><div class="ttname"><a href="../../de/df3/a00185.html#a3c4bcf0e0e5be4be4f3e1ca98f9b6f30">IUH_SED_OL::m_sedYield</a></div><div class="ttdeci">float * m_sedYield</div><div class="ttdoc">sediment yield in each cell </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dfd/a00810_source.html#l00077">IUH_SED_OL.h:77</a></div></div>
+<div class="ttc" id="a00185_html_ad85b3bfcc3dc39bada80373d1b74dde6"><div class="ttname"><a href="../../de/df3/a00185.html#ad85b3bfcc3dc39bada80373d1b74dde6">IUH_SED_OL::m_cellFlowCols</a></div><div class="ttdeci">int m_cellFlowCols</div><div class="ttdoc">the maximum of second column of OL_IUH plus 1. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dfd/a00810_source.html#l00087">IUH_SED_OL.h:87</a></div></div>
+<div class="ttc" id="a00185_html_acb0a2268f01e060d7aef13bf9d27d799"><div class="ttname"><a href="../../de/df3/a00185.html#acb0a2268f01e060d7aef13bf9d27d799">IUH_SED_OL::m_iuhCell</a></div><div class="ttdeci">float ** m_iuhCell</div><div class="ttdoc">IUH of each grid cell (1/s) </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dfd/a00810_source.html#l00073">IUH_SED_OL.h:73</a></div></div>
+<div class="ttc" id="a00185_html_ae8cae71d5ac8b9242c09675c4c987ba6"><div class="ttname"><a href="../../de/df3/a00185.html#ae8cae71d5ac8b9242c09675c4c987ba6">IUH_SED_OL::m_subbasin</a></div><div class="ttdeci">float * m_subbasin</div><div class="ttdoc">subbasin grid (subbasins ID) </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dfd/a00810_source.html#l00063">IUH_SED_OL.h:63</a></div></div>
+<div class="ttc" id="a00185_html_acd3481dd04622d776f57c1995a8d259d"><div class="ttname"><a href="../../de/df3/a00185.html#acd3481dd04622d776f57c1995a8d259d">IUH_SED_OL::m_subbasinIDs</a></div><div class="ttdeci">vector&lt; int &gt; m_subbasinIDs</div><div class="ttdoc">subbasin IDs </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dfd/a00810_source.html#l00061">IUH_SED_OL.h:61</a></div></div>
+<div class="ttc" id="a00126_html"><div class="ttname"><a href="../../d7/d12/a00126.html">clsSubbasins</a></div><div class="ttdoc">Manager all Subbasin related parameters and methods. </div><div class="ttdef"><b>Definition:</b> <a href="../../d0/db6/a00692_source.html#l00236">clsSubbasin.h:236</a></div></div>
+<div class="ttc" id="a00185_html_a003460d0a8af09766524f71f56462e75"><div class="ttname"><a href="../../de/df3/a00185.html#a003460d0a8af09766524f71f56462e75">IUH_SED_OL::m_TimeStep</a></div><div class="ttdeci">int m_TimeStep</div><div class="ttdoc">time step (sec) </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dfd/a00810_source.html#l00051">IUH_SED_OL.h:51</a></div></div>
+<div class="ttc" id="a00185_html_a8e58b4259fd178effde20fae5b4c29ce"><div class="ttname"><a href="../../de/df3/a00185.html#a8e58b4259fd178effde20fae5b4c29ce">IUH_SED_OL::m_CellWidth</a></div><div class="ttdeci">float m_CellWidth</div><div class="ttdoc">cell width of the grid (m) </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dfd/a00810_source.html#l00055">IUH_SED_OL.h:55</a></div></div>
+<div class="ttc" id="a00185_html_a8194c9f0a9b9dce163418a42b7723e3e"><div class="ttname"><a href="../../de/df3/a00185.html#a8194c9f0a9b9dce163418a42b7723e3e">IUH_SED_OL::m_nSubbasins</a></div><div class="ttdeci">int m_nSubbasins</div><div class="ttdoc">the total number of subbasins </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dfd/a00810_source.html#l00059">IUH_SED_OL.h:59</a></div></div>
+<div class="ttc" id="a00257_html"><div class="ttname"><a href="../../d9/d39/a00257.html">SimulationModule</a></div><div class="ttdoc">Base module for all simulation modules in SEIMS. </div><div class="ttdef"><b>Definition:</b> <a href="../../dc/ddc/a00727_source.html#l00047">SimulationModule.h:47</a></div></div>
+<div class="ttc" id="a00185_html_af24883a72015b1017b48868dfd335052"><div class="ttname"><a href="../../de/df3/a00185.html#af24883a72015b1017b48868dfd335052">IUH_SED_OL::m_iuhCols</a></div><div class="ttdeci">int m_iuhCols</div><div class="ttdoc">the number of columns of Ol_iuh </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dfd/a00810_source.html#l00075">IUH_SED_OL.h:75</a></div></div>
+<div class="ttc" id="a00185_html_ab977e15442d371e5866dc4169e2bd03e"><div class="ttname"><a href="../../de/df3/a00185.html#ab977e15442d371e5866dc4169e2bd03e">IUH_SED_OL::m_subbasinsInfo</a></div><div class="ttdeci">clsSubbasins * m_subbasinsInfo</div><div class="ttdoc">subbasins information </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dfd/a00810_source.html#l00066">IUH_SED_OL.h:66</a></div></div>
+<div class="ttc" id="a00185_html_aba13e8923effe2998ddf2f8275ecbd70"><div class="ttname"><a href="../../de/df3/a00185.html#aba13e8923effe2998ddf2f8275ecbd70">IUH_SED_OL::m_cellSed</a></div><div class="ttdeci">float ** m_cellSed</div><div class="ttdoc">store the sediment of each cell in each day between min time and max time </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dfd/a00810_source.html#l00089">IUH_SED_OL.h:89</a></div></div>
+<div class="ttc" id="a00185_html_a22af7db574a746bd721febaa9e193d03"><div class="ttname"><a href="../../de/df3/a00185.html#a22af7db574a746bd721febaa9e193d03">IUH_SED_OL::m_nCells</a></div><div class="ttdeci">int m_nCells</div><div class="ttdoc">validate cells number </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dfd/a00810_source.html#l00053">IUH_SED_OL.h:53</a></div></div>
+<div class="ttc" id="a00185_html_a5931d27be34c15c25d6d0f38e082b6f5"><div class="ttname"><a href="../../de/df3/a00185.html#a5931d27be34c15c25d6d0f38e082b6f5">IUH_SED_OL::m_sedOL</a></div><div class="ttdeci">float * m_sedOL</div><div class="ttdoc">sediment to channel at each cell at current time step </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dfd/a00810_source.html#l00096">IUH_SED_OL.h:96</a></div></div>
+<div class="ttc" id="a00185_html_a8de4de6d5923265f1569551f194b2817"><div class="ttname"><a href="../../de/df3/a00185.html#a8de4de6d5923265f1569551f194b2817">IUH_SED_OL::m_sedtoCh</a></div><div class="ttdeci">float * m_sedtoCh</div><div class="ttdoc">sediment to streams </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dfd/a00810_source.html#l00094">IUH_SED_OL.h:94</a></div></div>
+<div class="ttc" id="a00185_html"><div class="ttname"><a href="../../de/df3/a00185.html">IUH_SED_OL</a></div><div class="ttdoc">IUH overland method to calculate overland flow routing. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dfd/a00810_source.html#l00026">IUH_SED_OL.h:26</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_9acb163bfc580721a7f3d6aabfda8dbb.html">seims_storm_linux_gcc48</a></li><li class="navelem"><a class="el" href="../../dir_fd8dd4f548e8390633a5614720372e6e.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_aa3842d62a7d3e0fef54ca77d04cde54.html">preprocess</a></li><li class="navelem"><b>db_build_mongodb.py</b></li>
-    <li class="footer">Generated on Tue Sep 5 2017 00:11:17 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_b89a50a3d6b2f98326f9f3f569cfd788.html">modules</a></li><li class="navelem"><a class="el" href="../../dir_0416dddcf4ae60131836efd2402708ae.html">erosion</a></li><li class="navelem"><a class="el" href="../../dir_d17211415ff8bdc124e693ec37e870e0.html">IUH_SED_OL</a></li><li class="navelem"><b>IUH_SED_OL.h</b></li>
+    <li class="footer">Generated on Thu Oct 26 2017 12:50:36 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

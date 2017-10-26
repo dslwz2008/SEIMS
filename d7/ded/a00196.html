@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: MainBMP::ArealSourceLocations Class Reference</title>
+<title>SEIMS: MetadataInfo Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -103,7 +103,7 @@ $(document).ready(function(){initNavTree('d7/ded/a00196.html','../../');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -114,96 +114,64 @@ $(document).ready(function(){initNavTree('d7/ded/a00196.html','../../');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
-<a href="../../d0/d31/a01686.html">List of all members</a>  </div>
+<a href="../../da/d3f/a01215.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">MainBMP::ArealSourceLocations Class Reference</div>  </div>
+<div class="title">MetadataInfo Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Base class of point BMP, mainly store location related parameters.  
+<p>Metadata information of module.  
  <a href="../../d7/ded/a00196.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="../../d6/d48/a00988_source.html">BMPArealSourceFactory.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="../../de/de6/a00723_source.html">MetadataInfo.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a16bc19582ad47e4ca5591f7661baac79"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a16bc19582ad47e4ca5591f7661baac79"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ded/a00196.html#a16bc19582ad47e4ca5591f7661baac79">ArealSourceLocations</a> (const bson_t *&amp;bsonTab, bson_iter_t &amp;iter)</td></tr>
-<tr class="memdesc:a16bc19582ad47e4ca5591f7661baac79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor, read and calculate areal BMP locations related parameters from Raster. <br/></td></tr>
-<tr class="separator:a16bc19582ad47e4ca5591f7661baac79"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67718a78ba782d831f7fbd156f5179c8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a67718a78ba782d831f7fbd156f5179c8"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ded/a00196.html#a67718a78ba782d831f7fbd156f5179c8">~ArealSourceLocations</a> (void)</td></tr>
-<tr class="memdesc:a67718a78ba782d831f7fbd156f5179c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br/></td></tr>
-<tr class="separator:a67718a78ba782d831f7fbd156f5179c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a399dbcf5e788c29a3d73de021c9d442d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a399dbcf5e788c29a3d73de021c9d442d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ded/a00196.html#a399dbcf5e788c29a3d73de021c9d442d">SetValidCells</a> (int n, float *mgtFieldIDs)</td></tr>
-<tr class="memdesc:a399dbcf5e788c29a3d73de021c9d442d"><td class="mdescLeft">&#160;</td><td class="mdescRight">load valid cells index <br/></td></tr>
-<tr class="separator:a399dbcf5e788c29a3d73de021c9d442d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0299c66b40ee7914b9f0a4b49867189b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0299c66b40ee7914b9f0a4b49867189b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ded/a00196.html#a0299c66b40ee7914b9f0a4b49867189b">Dump</a> (ostream *fs)</td></tr>
-<tr class="memdesc:a0299c66b40ee7914b9f0a4b49867189b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output. <br/></td></tr>
-<tr class="separator:a0299c66b40ee7914b9f0a4b49867189b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4fd104aee46ee3c9d6058cffb09e4438"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4fd104aee46ee3c9d6058cffb09e4438"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ded/a00196.html#a4fd104aee46ee3c9d6058cffb09e4438">GetArealSourceID</a> (void)</td></tr>
-<tr class="memdesc:a4fd104aee46ee3c9d6058cffb09e4438"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get point source ID. <br/></td></tr>
-<tr class="separator:a4fd104aee46ee3c9d6058cffb09e4438"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a138662f7f5948efb3ae60ec21a8ca1b2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a138662f7f5948efb3ae60ec21a8ca1b2"></a>
-string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ded/a00196.html#a138662f7f5948efb3ae60ec21a8ca1b2">GetArealSourceName</a> (void)</td></tr>
-<tr class="memdesc:a138662f7f5948efb3ae60ec21a8ca1b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">name <br/></td></tr>
-<tr class="separator:a138662f7f5948efb3ae60ec21a8ca1b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a165c995ca9e8ce12cb29b2758d1077a1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a165c995ca9e8ce12cb29b2758d1077a1"></a>
-vector&lt; int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ded/a00196.html#a165c995ca9e8ce12cb29b2758d1077a1">GetCellsIndex</a> (void)</td></tr>
-<tr class="memdesc:a165c995ca9e8ce12cb29b2758d1077a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">index of valid cells <br/></td></tr>
-<tr class="separator:a165c995ca9e8ce12cb29b2758d1077a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93400578a26ea7f94c1c1743ed40b6fe"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a93400578a26ea7f94c1c1743ed40b6fe"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ded/a00196.html#a93400578a26ea7f94c1c1743ed40b6fe">GetValidCells</a> (void)</td></tr>
-<tr class="memdesc:a93400578a26ea7f94c1c1743ed40b6fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Located subbasin ID. <br/></td></tr>
-<tr class="separator:a93400578a26ea7f94c1c1743ed40b6fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a6fc2eb40d4f61bff48aa760c12ed97"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8a6fc2eb40d4f61bff48aa760c12ed97"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ded/a00196.html#a8a6fc2eb40d4f61bff48aa760c12ed97">GetSize</a> (void)</td></tr>
-<tr class="memdesc:a8a6fc2eb40d4f61bff48aa760c12ed97"><td class="mdescLeft">&#160;</td><td class="mdescRight">size <br/></td></tr>
-<tr class="separator:a8a6fc2eb40d4f61bff48aa760c12ed97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:ab487de6934750f32ddb1c810aa94d928"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab487de6934750f32ddb1c810aa94d928"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ded/a00196.html#ab487de6934750f32ddb1c810aa94d928">m_arealSrcID</a></td></tr>
-<tr class="memdesc:ab487de6934750f32ddb1c810aa94d928"><td class="mdescLeft">&#160;</td><td class="mdescRight">ID of point source. <br/></td></tr>
-<tr class="separator:ab487de6934750f32ddb1c810aa94d928"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0195d5db00328313e4e950b013da2008"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0195d5db00328313e4e950b013da2008"></a>
-string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ded/a00196.html#a0195d5db00328313e4e950b013da2008">m_name</a></td></tr>
-<tr class="memdesc:a0195d5db00328313e4e950b013da2008"><td class="mdescLeft">&#160;</td><td class="mdescRight">name <br/></td></tr>
-<tr class="separator:a0195d5db00328313e4e950b013da2008"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff43f13dc8e6912584d984d2bd49c993"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aff43f13dc8e6912584d984d2bd49c993"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ded/a00196.html#aff43f13dc8e6912584d984d2bd49c993">m_nCells</a></td></tr>
-<tr class="memdesc:aff43f13dc8e6912584d984d2bd49c993"><td class="mdescLeft">&#160;</td><td class="mdescRight">valid cell number <br/></td></tr>
-<tr class="separator:aff43f13dc8e6912584d984d2bd49c993"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c9456bae94a09993ffc89792b0a2484"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3c9456bae94a09993ffc89792b0a2484"></a>
-vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ded/a00196.html#a3c9456bae94a09993ffc89792b0a2484">m_cellsIndex</a></td></tr>
-<tr class="memdesc:a3c9456bae94a09993ffc89792b0a2484"><td class="mdescLeft">&#160;</td><td class="mdescRight">index of valid cells <br/></td></tr>
-<tr class="separator:a3c9456bae94a09993ffc89792b0a2484"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4d342707bb8f6b6803ffa6515a10024"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa4d342707bb8f6b6803ffa6515a10024"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ded/a00196.html#aa4d342707bb8f6b6803ffa6515a10024">m_size</a></td></tr>
-<tr class="memdesc:aa4d342707bb8f6b6803ffa6515a10024"><td class="mdescLeft">&#160;</td><td class="mdescRight">size, used to calculate amount of pollutants <br/></td></tr>
-<tr class="separator:aa4d342707bb8f6b6803ffa6515a10024"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0991113a1ad420c68e3475bf5d4b830"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae0991113a1ad420c68e3475bf5d4b830"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ded/a00196.html#ae0991113a1ad420c68e3475bf5d4b830">m_strSchemaVersion</a></td></tr>
+<tr class="memdesc:ae0991113a1ad420c68e3475bf5d4b830"><td class="mdescLeft">&#160;</td><td class="mdescRight">latest XML schema version supported by this class <br/></td></tr>
+<tr class="separator:ae0991113a1ad420c68e3475bf5d4b830"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a8276b621b77495068b9a4a9f3d098c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1a8276b621b77495068b9a4a9f3d098c"></a>
+<a class="el" href="../../d3/db1/a00200.html">ModelClass</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ded/a00196.html#a1a8276b621b77495068b9a4a9f3d098c">m_oClass</a></td></tr>
+<tr class="memdesc:a1a8276b621b77495068b9a4a9f3d098c"><td class="mdescLeft">&#160;</td><td class="mdescRight">class name for the module <br/></td></tr>
+<tr class="separator:a1a8276b621b77495068b9a4a9f3d098c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a198c06e1084efade404ae7cb0c8b2920"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a198c06e1084efade404ae7cb0c8b2920"></a>
+<a class="el" href="../../dd/d4c/a00177.html">Information</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ded/a00196.html#a198c06e1084efade404ae7cb0c8b2920">m_Info</a></td></tr>
+<tr class="memdesc:a198c06e1084efade404ae7cb0c8b2920"><td class="mdescLeft">&#160;</td><td class="mdescRight">the general information for the module <br/></td></tr>
+<tr class="separator:a198c06e1084efade404ae7cb0c8b2920"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37676224841b1dfb9e6e8b7e55ba4c76"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a37676224841b1dfb9e6e8b7e55ba4c76"></a>
+vector&lt; <a class="el" href="../../db/dd9/a00179.html">InputVariable</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ded/a00196.html#a37676224841b1dfb9e6e8b7e55ba4c76">m_vInputs</a></td></tr>
+<tr class="memdesc:a37676224841b1dfb9e6e8b7e55ba4c76"><td class="mdescLeft">&#160;</td><td class="mdescRight">list of input parameters for the module <br/></td></tr>
+<tr class="separator:a37676224841b1dfb9e6e8b7e55ba4c76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab01cd84b9e3e756ad9716ad679c2b472"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab01cd84b9e3e756ad9716ad679c2b472"></a>
+vector&lt; <a class="el" href="../../d5/ddf/a00224.html">OutputVariable</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ded/a00196.html#ab01cd84b9e3e756ad9716ad679c2b472">m_vOutputs</a></td></tr>
+<tr class="memdesc:ab01cd84b9e3e756ad9716ad679c2b472"><td class="mdescLeft">&#160;</td><td class="mdescRight">list of output parameters for the module <br/></td></tr>
+<tr class="separator:ab01cd84b9e3e756ad9716ad679c2b472"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9b5c3ff81df63f0451f444cd16c12f9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae9b5c3ff81df63f0451f444cd16c12f9"></a>
+vector&lt; <a class="el" href="../../d3/db1/a00200.html">ModelClass</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ded/a00196.html#ae9b5c3ff81df63f0451f444cd16c12f9">m_vDependencies</a></td></tr>
+<tr class="memdesc:ae9b5c3ff81df63f0451f444cd16c12f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">list of dependency classes for the module <br/></td></tr>
+<tr class="separator:ae9b5c3ff81df63f0451f444cd16c12f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96dd309d3ec5f6d9056114fcb6e9c15f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a96dd309d3ec5f6d9056114fcb6e9c15f"></a>
+vector&lt; <a class="el" href="../../dc/d98/a00225.html">Parameter</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ded/a00196.html#a96dd309d3ec5f6d9056114fcb6e9c15f">m_vParameters</a></td></tr>
+<tr class="memdesc:a96dd309d3ec5f6d9056114fcb6e9c15f"><td class="mdescLeft">&#160;</td><td class="mdescRight">list of parameters for the module <br/></td></tr>
+<tr class="separator:a96dd309d3ec5f6d9056114fcb6e9c15f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Base class of point BMP, mainly store location related parameters. </p>
+<div class="textblock"><p>Metadata information of module. </p>
 
-<p>Definition at line <a class="el" href="../../d6/d48/a00988_source.html#l00024">24</a> of file <a class="el" href="../../d6/d48/a00988_source.html">BMPArealSourceFactory.h</a>.</p>
+<p>Definition at line <a class="el" href="../../de/de6/a00723_source.html#l00091">91</a> of file <a class="el" href="../../de/de6/a00723_source.html">MetadataInfo.h</a>.</p>
 </div><hr/>The documentation for this class was generated from the following files:<ul>
-<li>seims/src/seims_main/base/bmps/<a class="el" href="../../d6/d48/a00988_source.html">BMPArealSourceFactory.h</a></li>
-<li>seims/src/seims_main/base/bmps/<a class="el" href="../../d4/d21/a00987_source.html">BMPArealSourceFactory.cpp</a></li>
+<li>seims/src/seims_main/base/util/<a class="el" href="../../de/de6/a00723_source.html">MetadataInfo.h</a></li>
+<li>seims/src/seims_main/base/util/<a class="el" href="../../db/d7c/a00722_source.html">MetadataInfo.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../d3/da4/a01343.html">MainBMP</a></li><li class="navelem"><a class="el" href="../../d7/ded/a00196.html">ArealSourceLocations</a></li>
-    <li class="footer">Generated on Tue Sep 5 2017 00:11:23 for SEIMS by
+    <li class="navelem"><a class="el" href="../../d7/ded/a00196.html">MetadataInfo</a></li>
+    <li class="footer">Generated on Thu Oct 26 2017 12:50:39 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

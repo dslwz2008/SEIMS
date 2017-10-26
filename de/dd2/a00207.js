@@ -1,5 +1,7 @@
 var a00207 =
 [
-    [ "BurningOperation", "de/dd2/a00207.html#a1015b775b0292a85865350a117f086c7", null ],
-    [ "dump", "de/dd2/a00207.html#a95f9c4c40592b0410190b67cc6666039", null ]
+    [ "MongoDatabase", "de/dd2/a00207.html#a04692f857d460e32aecd116b867efd62", null ],
+    [ "MongoDatabase", "de/dd2/a00207.html#a3bcf61fba8915358219432d52673d9ca", null ],
+    [ "~MongoDatabase", "de/dd2/a00207.html#a7170a66190e86d2314fca1fd938aa8cd", null ],
+    [ "getCollectionNames", "de/dd2/a00207.html#a782c2d6acfc61bab6dabce7e0ac3e3e5", null ]
 ];

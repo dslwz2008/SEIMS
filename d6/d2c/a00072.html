@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: Brief introduction to NSGA-II algorithm</title>
+<title>SEIMS: Modules status in SEIMS</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -95,7 +95,7 @@ $(document).ready(function(){initNavTree('d6/d2c/a00072.html','../../');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -106,61 +106,109 @@ $(document).ready(function(){initNavTree('d6/d2c/a00072.html','../../');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Brief introduction to NSGA-II algorithm </div>  </div>
+<div class="title">Modules status in SEIMS </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1>带精英策略的非支配排序的遗传算法(NSGA-II)简介</h1>
-<p>by Huiran Gao, Liangjun Zhu</p>
-<p>Latest Updated：Aug.18, 2017 </p>
+<div class="textblock"><p>Initial created : Liang-Jun Zhu</p>
+<p>Corporate editors :</p>
+<p>Last Updated: 2016-5-30 </p>
 <hr/>
- <h2>目录</h2>
-<p><a href="../../#1-nsga-ii原理">**1. NSGA-II原理**</a></p>
-<p><a href="../../#11-遗传算法ga">1.1. 遗传算法（GA）</a></p>
-<p><a href="../../#12-非支配排序遗传算法nsga">1.2. 非支配排序遗传算法（NSGA）</a></p>
-<p><a href="../../#13-带精英策略的非支配排序的遗传算法nsga-ii">1.3. 带精英策略的非支配排序的遗传算法（NSGA-II）</a></p>
-<p><a href="../../#2-nsga-ii基本概念">**2. NSGA-II基本概念**</a></p>
-<p><a href="../../#21-pareto支配关系与pareto解">2.1. Pareto支配关系与Pareto解</a></p>
-<p><a href="../../#3-nsga-ii主要流程">**3. NSGA-II主要流程**</a></p>
-<h1>1. NSGA-II原理</h1>
-<h2>1.1. 遗传算法（GA）</h2>
-<p>**遗传算法(Genecit Algorihtnis, GA)**是一类借鉴生物界自然选择和自然遗传机制的随机的搜索算法,由Hollnad教授于1975年提出。其基本思想来源于达尔文(Darum)的进化论和孟德尔(Mendel)的遗传学说。达尔文的进化论认为:每个物种都是朝着越来越适应环境的方向进化的;物种的每个个体都继承了其父代的基本特征,但又不完全与之相同;更能适应环境的个体在进化过程中生存下来,其特征也被保留下来,体现了适者生存的原理。与此相应,孟德尔的遗传学认为:遗传是以基因的形式包含在染色体中的;每个基因有自己特定的位置并控制着个体的某个特性,而由这些基因控制的特性使个体对环境具有一定的适应性;通过基因杂交和基因突变可能产生对环境适应性更强的后代,通过优胜劣汰的自然选择,适应值高的基因结构被保存下来。 遗传算法正是受这两种学说的启发而发展起来的，通过计算机编程,将待求问题表示成二进制码串或数码串(也称作个体),并将产生的一群串(称作种群)置于问题的求解环境中,根据适者生存的原则,从种群中选出适应环境的串进行复制,且通过交叉!变异两种基因操作产生新的一代更适应环境的种群,经过这样一代一代地不断进化,收敛到一个最适应环境的串上,便求得了问题的最优解。</p>
-<h2>1.2. 非支配排序遗传算法（NSGA）</h2>
-<p>1995年,Srinivas和Deb提出了**非支配排序遗传算法(Non一dominated Sorting Genetic Algorihtms, NSGA)**。这是一种基于Pareto最优概念的遗传算法,是众多的多目标优化遗传算法中体现Goldberg思想最直接的方法。 NSGA与简单的遗传算法的主要区别在于:该算法在选择算子执行之前根据个体之间的支配关系进行了分层。其选择算子、交叉算子和变异算子与简单遗传算法没有区别。NSGA采用的非支配分层方法,可以使好的个体有更大的机会遗传到下一代;适应度共享策略则使得准Pareto面上的个体均匀分布,保持了群体多样性,克服了超级个体的过度繁殖,防止了早熟收敛。</p>
-<h2>1.3. 带精英策略的非支配排序的遗传算法（NSGA-II）</h2>
-<p>非支配排序遗传算法(NSGA)在许多问题上得到了应用,但NSGA仍存在一些问题：</p>
-<ol type="1">
-<li>计算复杂度较高,为o(mn3)(m为目标函数个数,N为种群大小),所以当种群较大时,计算相当耗时；</li>
-<li>没有精英策略;精英策略可以加速算法的执行速度,在一定程度上确保己经找到的满意解不被丢失；</li>
-<li>需要指定共享半径。</li>
-</ol>
-<p>**带精英策略的非支配排序的遗传算法（NSGA-II）**针对以上的缺陷通过以下三个方面进行了改进：</p>
-<ol type="1">
-<li>提出了快速非支配排序法,降低了算法的计算复杂度,由原来的o(mn3)降到o(mn2)；</li>
-<li>提出了拥挤度和拥挤度比较算子,代替了需要指定共享半径的适应度共享策略,并在快速排序后的同级比较中作为胜出标准,使准Pareto域中的个体能扩展到整个Pareto域,并均匀分布,保持了种群的多样性；</li>
-<li>引入精英策略,扩大采样空间。</li>
-</ol>
-<h1>2. NSGA-II基本概念</h1>
-<h2>2.1. Pareto支配关系与Pareto解</h2>
-<p>多目标规划中，由于存在目标之间的冲突和无法比较的现象，一个解在某个目标上是最好的，在其他的目标上可能比较差。Pareto 在1986 年提出多目标的解不受支配解(Non-dominated set)的概念。其定义为：假设任何二解S1 及S2 对所有目标而言，S1均优于S2，则我们称S1支配S2，若S1的解没有被其他解所支配，则S1称为**非支配解（不受支配解）**，也称Pareto解。这些非支配解的集合即所谓的Pareto front。所有座落在Pareto front 中的所有解皆不受Pareto Front 之外的解（以及Pareto Front 曲线以内的其它解）所支配，因此这些非支配解较其他解而言拥有最少的目标冲突，可提供决策者一个较佳的选择空间。在某个非支配解的基础上改进任何目标函数的同时，必然会削弱至少一个其他目标函数。</p>
-<h1>3. NSGA-II主要流程</h1>
-<p>首先,随机初始化一个父代种群<code>P0</code>,并将所有个体按非支配关系排序且指定一个适应度值,如:可以指定适应度值等于其非支配序i,则1是最佳适应度值。然后,采用选择、交叉、变异算子产生下一代种群<code>Q0</code>,大小为N。</p>
-<p>如图，</p>
-<ol type="1">
-<li>将第t代产生的新种群<code>Qt</code>与父代<code>Pt</code>合并组成<code>Rt</code>,种群大小为2N；</li>
-<li>然后<code>Rt</code>进行非支配排序,产生一系列非支配集<code>Fi</code>并计算拥挤度；</li>
-<li>由于子代和父代个体都包含在<code>Rt</code>中,则经过非支配排序以后的非支配集名中包含的个体是<code>Rt</code>中最好的,所以先将<code>F1</code>放入新的父代种群<code>Pt+1</code>中；</li>
-<li>如果<code>F1</code>的大小小于N,则继续向<code>Pt+1</code>中填充下一级非支配集<code>F2</code>,直到添加<code>F4</code>时,种群的大小超出N,对<code>F4</code>中的个体进行拥挤度排序,取前<code>N-|Pt+1|</code>个个体,使<code>Pt+1</code>个体数量达到N；</li>
-<li>然后通过遗传算子(选择、交叉、变异)产生新的子代种群<code>Qt+1</code>。</li>
-</ol>
-<div class="image">
-<img src="http://i.imgur.com/9Scwo1B.png" />
-</div>
- </div></div><!-- contents -->
+<h2>表格填写说明</h2>
+<ul>
+<li>1.过程名：对应于C++代码中<code><a class="el" href="../../df/d3b/a00728_source.html">text.h</a></code>中宏定义前缀为<code>MCLS_</code>的分类，细分到每一种流域过程。</li>
+<li>2.模块ID：对应于源码中的模块ID</li>
+<li>3.方法：简要描述改模块所用算法，有参考的增加参考</li>
+<li>4.开发状态：清晰描述开发状态，如Bug修复、原理确认、代码编写等</li>
+<li>5.测试状态：清晰描述测试状态，如OMP版本测试、MPI版本测试等</li>
+<li>6.TODO：将来做出哪些改进，或现有的处理不足之处等 <hr/>
+</li>
+</ul>
+<table class="doxtable">
+<tr>
+<th>过程名</th><th>模块ID</th><th>方法</th><th>开发状态</th><th>测试状态</th><th>TODO  </th></tr>
+<tr>
+<td>气象数据</td><td>TSD_RD</td><td>逐时间步长读取站点气象观测数据</td><td>完成</td><td>完成 </td></tr>
+<tr>
+<td></td><td>ITP</td><td>泰森多边形插值</td><td>完成</td><td>完成 </td></tr>
+<tr>
+<td>蒸散发</td><td>PET_H</td><td>Hargreaves</td><td>完成</td><td>完成 </td></tr>
+<tr>
+<td></td><td>PET_PT</td><td>PriestleyTaylor</td><td>完成</td><td>完成 </td></tr>
+<tr>
+<td></td><td>PET_PM</td><td>Penman-Monteith</td><td>完成</td><td>待测试</td><td>待生态模块完成之后测试 </td></tr>
+<tr>
+<td>土壤温度</td><td>STP_FP</td><td>Finn Plauborg</td><td>完成</td><td>完成 </td></tr>
+<tr>
+<td>截留</td><td>PI_MSM</td><td>Maximum Storage</td><td>完成</td><td>完成 </td></tr>
+<tr>
+<td></td><td>PI_STORM</td><td>Maximum Storage</td><td>未更新</td><td>尚未检查 </td></tr>
+<tr>
+<td>融雪</td><td><a class="el" href="../../dd/d86/a00271.html" title="Soil redistribution calculation. ">SRD_MB</a></td><td>Snow redistribution</td><td>完成</td><td>未测试</td><td>缺少输入数据 </td></tr>
+<tr>
+<td></td><td><a class="el" href="../../d9/dd6/a00272.html" title="Calculate distribution of snow sublimation. ">SSM_PE</a></td><td>Snow Sublimation(WetSpa)</td><td>完成</td><td>完成 </td></tr>
+<tr>
+<td></td><td><a class="el" href="../../dd/dd7/a00260.html" title="Calculate snow melt by Degree-Day method. ">SNO_DD</a></td><td>Degree-Day</td><td>完成</td><td>完成 </td></tr>
+<tr>
+<td></td><td><a class="el" href="../../d9/d8d/a00262.html" title="Calculate snow water balance. ">SNO_WB</a></td><td>Water balance</td><td>完成</td><td>完成</td><td>需确认输入输出是否必须依赖SNO_DD </td></tr>
+<tr>
+<td></td><td><a class="el" href="../../dc/d6a/a00261.html" title="Calculate snow melt by snowpack daily method from SWAT. ">SNO_SP</a></td><td>Snowpeak Daily(SWAT)</td><td>完成</td><td>完成</td><td>需确认输入输出是否必须依赖SNO_DD </td></tr>
+<tr>
+<td>入渗、产流</td><td><a class="el" href="../../dc/dc9/a00282.html" title="Modified Rational Method to calculate infiltration and excess precipitation. ">SUR_MR</a></td><td>Modified rational（WetSpa）</td><td>完成</td><td>完成 </td></tr>
+<tr>
+<td></td><td><a class="el" href="../../d0/dcd/a00280.html" title="SCS Curve Number Method to calculate infiltration and excess precipitation. ">SUR_CN</a></td><td>SCS-CN</td><td>完成</td><td>完成 </td></tr>
+<tr>
+<td></td><td>SUR_SGA</td><td>Green-Ampt</td><td>未更新</td><td>未测试 </td></tr>
+<tr>
+<td>填洼</td><td>DEP_LINSLEY</td><td>Linsley method</td><td>完成</td><td>完成 </td></tr>
+<tr>
+<td></td><td>DEP_FS</td><td>Fill and Spill</td><td>未更新</td><td>未测试 </td></tr>
+<tr>
+<td>渗漏</td><td><a class="el" href="../../d9/d01/a00227.html" title="Calculate water percolated from the soil water reservoir. ">PER_PI</a></td><td>Darcy's Law and Brooks-Corey</td><td>未完成</td><td>测试出问题</td><td>模拟时段内某天土壤水分为负，需检查算法的正确性 </td></tr>
+<tr>
+<td></td><td><a class="el" href="../../de/dc2/a00228.html" title="Percolation calculated by storage routing method. ">PER_STR</a></td><td>Storage routing</td><td>未完成</td><td>测试出问题</td><td>同PER_PI </td></tr>
+<tr>
+<td></td><td>PER_DARCY</td><td>Darcy's Law</td><td>未更新</td><td>未测试 </td></tr>
+<tr>
+<td>地下径流</td><td>SSR_DA</td><td>Darcy's Law and Kinematic</td><td>未更新</td><td>未测试 </td></tr>
+<tr>
+<td>土壤蒸发</td><td><a class="el" href="../../d7/d03/a00254.html" title="Calculate soil Temperature. ">SET_LM</a></td><td>Linear method</td><td>未更新</td><td>未测试 </td></tr>
+<tr>
+<td>地下水</td><td>GWA_RE</td><td>Linear reservoir</td><td>未更新</td><td>未测试 </td></tr>
+<tr>
+<td></td><td>GW_RSVR</td><td>Linear reservoir</td><td>未更新</td><td>未测试</td><td>与GWA_RE有何区别，命名待统一 </td></tr>
+<tr>
+<td>坡面侵蚀</td><td><a class="el" href="../../d1/de1/a00213.html" title="use MUSLE method to calculate sediment yield of each cell ">MUSLE_AS</a></td><td>MUSLE model</td><td>未更新</td><td>未测试 </td></tr>
+<tr>
+<td>溅蚀</td><td><a class="el" href="../../d5/d42/a00269.html" title="Park Equation for splash erosion, and Foster Equation for overland flow soil detachment use the USLE_...">SplashEro_Park</a></td><td>Park Equation</td><td>未更新</td><td>未测试</td><td>模块ID需简写 </td></tr>
+<tr>
+<td>坡面泥沙汇流</td><td><a class="el" href="../../da/deb/a00189.html" title="Kinematic wave method for overland flow erosion and deposition. ">KinWavSed_OL</a></td><td>Energy function(Govers) method</td><td>未更新</td><td>未测试</td><td>确定原理、简写模块ID </td></tr>
+<tr>
+<td>河道泥沙汇流</td><td><a class="el" href="../../da/d15/a00188.html" title="Kinematic wave method for channel flow erosion and deposition. ">KinWavSed_CH</a></td><td>Srinivasan &amp; Galvao function</td><td>未更新</td><td>未测试</td><td>确定原理、简写模块ID </td></tr>
+<tr>
+<td></td><td>SEDR_VCD</td><td>Variable channel dimension</td><td>未更新</td><td>未测试 </td></tr>
+<tr>
+<td>坡面汇流</td><td><a class="el" href="../../d2/d94/a00184.html" title="IUH overland method to calculate overland flow routing. ">IUH_OL</a></td><td>Instantaneous unit hydrograph(WetSpa)</td><td>未更新</td><td>未测试</td><td>应更名OL_IUH </td></tr>
+<tr>
+<td></td><td>IKW_OL</td><td>Kinematic wave</td><td>未更新</td><td>未测试</td><td>应更名OL_IKW </td></tr>
+<tr>
+<td>河道汇流</td><td><a class="el" href="../../dd/ded/a00211.html" title="channel flow routing using Muskingum method ">MUSK_CH</a></td><td><a class="el" href="../../dd/dc1/a00212.html" title="Channel routing using Muskingum-Cunge method. ">Muskingum</a></td><td>未更新</td><td>未测试</td><td>应更名为CH_MUSK </td></tr>
+<tr>
+<td></td><td>IKW_CH</td><td>Kinematic wave</td><td>未更新</td><td>未测试</td><td>应更名为CH_IKW </td></tr>
+<tr>
+<td></td><td>CH_DW</td><td>Diffusive wave</td><td>未更新</td><td>未测试 </td></tr>
+<tr>
+<td></td><td></td><td></td><td></td><td></td></tr>
+</table>
+<h2>重要的问题</h2>
+<h3>Hydrology和Hydrology_longterm</h3>
+<p>这两个模块分组原意为前者为次暴雨模块组，后者为长时段模块组，目前看二者用的算法高度重叠，比如河道汇流方法马斯京根法、运动波法、四点隐式差分法等，模块命名仅前后顺序相反，如CH_MSK和MUSK_CH。</p>
+<p>这样很容易造成使用混淆，能否将二者合二为一？或在模块命名时加以区分？ </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Sep 5 2017 00:11:21 for SEIMS by
+    <li class="footer">Generated on Thu Oct 26 2017 12:50:38 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

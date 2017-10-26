@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims/preprocess/db_mongodb.py Source File</title>
+<title>SEIMS: seims/src/seims_main/modules/hydrology/HS_WB/HS_WB.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -101,7 +101,7 @@ $(document).ready(function(){initNavTree('d0/d08/a00832_source.html','../../');}
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -112,86 +112,95 @@ $(document).ready(function(){initNavTree('d0/d08/a00832_source.html','../../');}
 
 <div class="header">
   <div class="headertitle">
-<div class="title">db_mongodb.py</div>  </div>
+<div class="title">HS_WB.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">#! /usr/bin/env python</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"># -*- coding: utf-8 -*-</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="stringliteral">&quot;&quot;&quot;MongoDB utility</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="stringliteral">    @author   : Liangjun Zhu</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="stringliteral">    @changelog: 16-12-07  lj - rewrite for version 2.0</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="stringliteral">                17-06-27  lj - reorganize as basic class other than Global variables</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="stringliteral">&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">import</span> sys</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">from</span> pymongo <span class="keyword">import</span> MongoClient</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">from</span> pymongo.errors <span class="keyword">import</span> ConnectionFailure, InvalidOperation</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">from</span> <a class="code" href="../../de/dfe/a01383.html">seims.preprocess.text</a> <span class="keyword">import</span> DBTableNames, ModelParamFields, SubbsnStatsName</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="../../d0/d24/a00222.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d0/d24/a00222.html">ConnectMongoDB</a>(object):</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;Connect to MongoDB, and close when finished.&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="../../d0/d24/a00222.html#aeb589833b276ea3670b5e01e752d2f3b">   19</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d0/d24/a00222.html#aeb589833b276ea3670b5e01e752d2f3b">__init__</a>(self, ip, port, maxPoolSize=None):</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;initial mongodb client by IP address and port.&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordflow">try</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            self.<a class="code" href="../../d0/d24/a00222.html#aee1e4d52ca8bc52c0cf3dd9749633281">conn</a> = MongoClient(ip, port, maxPoolSize=maxPoolSize)</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordflow">except</span> ConnectionFailure:</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            sys.stderr.write(<span class="stringliteral">&#39;Could not connect to MongoDB: %s&#39;</span> % ConnectionFailure.message)</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            sys.exit(1)</div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;SimulationModule.h&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">class </span>HS_WB : <span class="keyword">public</span> <a class="code" href="../../d9/d39/a00257.html">SimulationModule</a> {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">int</span> m_nCells;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    time_t m_date;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="../../d0/d24/a00222.html#a236384426c1f9e1d8f14948acee3cd8c">   27</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d0/d24/a00222.html#a236384426c1f9e1d8f14948acee3cd8c">get_conn</a>(self):</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;get MongoDB connection.&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordflow">return</span> self.<a class="code" href="../../d0/d24/a00222.html#aee1e4d52ca8bc52c0cf3dd9749633281">conn</a></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="../../d0/d24/a00222.html#a31056a344b03832cac4725c5403816ec">   31</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d0/d24/a00222.html#a31056a344b03832cac4725c5403816ec">close</a>(self):</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Close collection.&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        self.conn.close()</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="../../dc/d0f/a00303.html">   36</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../dc/d0f/a00303.html">MongoQuery</a>(object):</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="stringliteral">    Query data from MongoDB</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="stringliteral">    &quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    @staticmethod</div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="../../dc/d0f/a00303.html#acd94eeb24f9384c2c2e7403b26250dfb">   42</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dc/d0f/a00303.html#acd94eeb24f9384c2c2e7403b26250dfb">get_init_parameter_value</a>(db_model, param_name, field=ModelParamFields.value):</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Query initial parameter value, raise exception if error occurs.&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        coll_param = db_model[DBTableNames.main_parameter]</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        param_dict = coll_param.find_one({ModelParamFields.name: param_name})</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">if</span> param_dict <span class="keywordflow">is</span> <span class="keywordtype">None</span> <span class="keywordflow">or</span> param_dict.get(field) <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keywordflow">raise</span> RuntimeError(<span class="stringliteral">&#39;%s item is not existed in MongoDB!&#39;</span> % param_name)</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">return</span> param_dict.get(field)</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="../../d8/d17/a00304.html">   51</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d8/d17/a00304.html">MongoUtil</a>(object):</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;Some utility functions.&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    @staticmethod</div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="../../d8/d17/a00304.html#a89085d501f1b08989c284d60d22684a9">   55</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d8/d17/a00304.html#a89085d501f1b08989c284d60d22684a9">run_bulk</a>(bulk, errmsg=&#39;&#39;):</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Execute bulk operations, do not raise exception.&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">try</span>:</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            bulk.execute()</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">except</span> InvalidOperation:</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keywordflow">print</span> (<span class="stringliteral">&#39;WARNING: %s&#39;</span> % errmsg)</div>
-<div class="ttc" id="a00222_html"><div class="ttname"><a href="../../d0/d24/a00222.html">seims.preprocess.db_mongodb.ConnectMongoDB</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d08/a00832_source.html#l00016">db_mongodb.py:16</a></div></div>
-<div class="ttc" id="a00222_html_aeb589833b276ea3670b5e01e752d2f3b"><div class="ttname"><a href="../../d0/d24/a00222.html#aeb589833b276ea3670b5e01e752d2f3b">seims.preprocess.db_mongodb.ConnectMongoDB.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d08/a00832_source.html#l00019">db_mongodb.py:19</a></div></div>
-<div class="ttc" id="a00303_html"><div class="ttname"><a href="../../dc/d0f/a00303.html">seims.preprocess.db_mongodb.MongoQuery</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d08/a00832_source.html#l00036">db_mongodb.py:36</a></div></div>
-<div class="ttc" id="a00222_html_a31056a344b03832cac4725c5403816ec"><div class="ttname"><a href="../../d0/d24/a00222.html#a31056a344b03832cac4725c5403816ec">seims.preprocess.db_mongodb.ConnectMongoDB.close</a></div><div class="ttdeci">def close</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d08/a00832_source.html#l00031">db_mongodb.py:31</a></div></div>
-<div class="ttc" id="a00303_html_acd94eeb24f9384c2c2e7403b26250dfb"><div class="ttname"><a href="../../dc/d0f/a00303.html#acd94eeb24f9384c2c2e7403b26250dfb">seims.preprocess.db_mongodb.MongoQuery.get_init_parameter_value</a></div><div class="ttdeci">def get_init_parameter_value</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d08/a00832_source.html#l00042">db_mongodb.py:42</a></div></div>
-<div class="ttc" id="a00304_html_a89085d501f1b08989c284d60d22684a9"><div class="ttname"><a href="../../d8/d17/a00304.html#a89085d501f1b08989c284d60d22684a9">seims.preprocess.db_mongodb.MongoUtil.run_bulk</a></div><div class="ttdeci">def run_bulk</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d08/a00832_source.html#l00055">db_mongodb.py:55</a></div></div>
-<div class="ttc" id="a00222_html_a236384426c1f9e1d8f14948acee3cd8c"><div class="ttname"><a href="../../d0/d24/a00222.html#a236384426c1f9e1d8f14948acee3cd8c">seims.preprocess.db_mongodb.ConnectMongoDB.get_conn</a></div><div class="ttdeci">def get_conn</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d08/a00832_source.html#l00027">db_mongodb.py:27</a></div></div>
-<div class="ttc" id="a00222_html_aee1e4d52ca8bc52c0cf3dd9749633281"><div class="ttname"><a href="../../d0/d24/a00222.html#aee1e4d52ca8bc52c0cf3dd9749633281">seims.preprocess.db_mongodb.ConnectMongoDB.conn</a></div><div class="ttdeci">conn</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d08/a00832_source.html#l00022">db_mongodb.py:22</a></div></div>
-<div class="ttc" id="a01383_html"><div class="ttname"><a href="../../de/dfe/a01383.html">seims.preprocess.text</a></div><div class="ttdef"><b>Definition:</b> <a href="../../da/d5b/a00868_source.html#l00001">text.py:1</a></div></div>
-<div class="ttc" id="a00304_html"><div class="ttname"><a href="../../d8/d17/a00304.html">seims.preprocess.db_mongodb.MongoUtil</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d08/a00832_source.html#l00051">db_mongodb.py:51</a></div></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">float</span> m_dtHs;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">float</span> m_dtCh;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">float</span> *m_streamLink;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">float</span> *m_qs;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">float</span> *m_qi;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">int</span> m_nReaches;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">float</span> *m_qsInput;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">float</span> *m_qiInput;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">float</span> *m_qsTemp;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">float</span> *m_qiTemp;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">float</span> *m_subbasin;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">float</span> *m_pNet;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">float</span> *m_rootdepth;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">float</span> *m_infil;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">float</span> *m_es;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">float</span> *m_ri;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">float</span> *m_percolation;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">float</span> *m_revap;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">float</span> *m_porosity;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">float</span> *m_fieldCapacity;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">//result</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">float</span> *m_soilMoisture;            <span class="comment">//distribution of soil moisture</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">float</span> **m_soilWaterBalance;    <span class="comment">//time series result</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">//variables used to output</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">//float* m_precipitation;</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">//float* m_interception;</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">//float* m_depression;</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">//float* m_ei;</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">//float* m_ed;</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="comment">//float* m_se;</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">//float* m_tMax;</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">//float* m_tMin;</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">//float* m_soilT;</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    HS_WB(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    ~HS_WB(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> SetValue(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">float</span> data);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> Set1DData(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">int</span> nRows, <span class="keywordtype">float</span> *data);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">//virtual void Set2DData(const char *key, int nrows, int ncols, float **data);</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> Get1DData(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">int</span> *nRows, <span class="keywordtype">float</span> **data);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> Get2DData(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">int</span> *nRows, <span class="keywordtype">int</span> *nCols, <span class="keywordtype">float</span> ***data);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> SetReaches(<a class="code" href="../../da/d72/a00124.html">clsReaches</a> *reaches);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> Execute(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordtype">void</span> initialOutputs(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">bool</span> CheckInputData(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordtype">bool</span> CheckInputSize(<span class="keyword">const</span> <span class="keywordtype">char</span> *, <span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;};</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
+<div class="ttc" id="a00124_html"><div class="ttname"><a href="../../da/d72/a00124.html">clsReaches</a></div><div class="ttdoc">Read and store all reaches information as input parameters. </div><div class="ttdef"><b>Definition:</b> <a href="../../d6/dd3/a00688_source.html#l00221">clsReach.h:221</a></div></div>
+<div class="ttc" id="a00257_html"><div class="ttname"><a href="../../d9/d39/a00257.html">SimulationModule</a></div><div class="ttdoc">Base module for all simulation modules in SEIMS. </div><div class="ttdef"><b>Definition:</b> <a href="../../dc/ddc/a00727_source.html#l00047">SimulationModule.h:47</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_e83ca20770e7fbc90f1c071d86067ace.html">preprocess</a></li><li class="navelem"><b>db_mongodb.py</b></li>
-    <li class="footer">Generated on Tue Sep 5 2017 00:11:17 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_b89a50a3d6b2f98326f9f3f569cfd788.html">modules</a></li><li class="navelem"><a class="el" href="../../dir_e30ec826fc85f262bf1bcce3dde65013.html">hydrology</a></li><li class="navelem"><a class="el" href="../../dir_c9edb4490799c8df88b13ff538dfd80d.html">HS_WB</a></li><li class="navelem"><b>HS_WB.h</b></li>
+    <li class="footer">Generated on Thu Oct 26 2017 12:50:36 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

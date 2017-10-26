@@ -1,5 +1,5 @@
 var a00245 =
 [
-    [ "GrazingOperation", "d6/d22/a00245.html#a4b53bfd13b799f079dfd835b0f068dac", null ],
-    [ "dump", "d6/d22/a00245.html#af37d8e17a8eba8d4e9722dd017438ff4", null ]
+    [ "ReleaseImpoundOperation", "d6/d22/a00245.html#a307b2068adef362e6f2a5e703b1eccf6", null ],
+    [ "dump", "d6/d22/a00245.html#a5f576fc437bce9c2b1045be098769f11", null ]
 ];

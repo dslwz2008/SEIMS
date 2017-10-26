@@ -1,11 +1,10 @@
 var a00271 =
 [
-    [ "Author", "dd/d86/a00271.html#a1b8fa5ae955f80cbd549cd3186788d3f", null ],
-    [ "Description", "dd/d86/a00271.html#a9f0b0e91a740ff0e1f3d0b48b069983a", null ],
-    [ "EMail", "dd/d86/a00271.html#a0ea3ec0a518e6f2a6afcfe5a47e6a092", null ],
-    [ "Helpfile", "dd/d86/a00271.html#a8e1e2fee4394c6306a3fd80387281d94", null ],
-    [ "Id", "dd/d86/a00271.html#a648bb8c9d3e9459afe4f131fa389352a", null ],
-    [ "Name", "dd/d86/a00271.html#aa411bbe0edd95d200b59c0b7606173d3", null ],
-    [ "Version", "dd/d86/a00271.html#a0fea44ad14e758340799fe8ce77b8330", null ],
-    [ "Website", "dd/d86/a00271.html#af713e5818c8dff3d1c81c2dbd711e4c4", null ]
+    [ "SRD_MB", "dd/d86/a00271.html#a95f57ae7573b03c257fe6efada54707d", null ],
+    [ "~SRD_MB", "dd/d86/a00271.html#a452e6f79f089c0dd07e8b416d8880924", null ],
+    [ "Execute", "dd/d86/a00271.html#a2097b6f7d6331b1be0706c291fbb5aff", null ],
+    [ "Get1DData", "dd/d86/a00271.html#ae9aeb1f9d46f75fee24fd0bbfe03fb28", null ],
+    [ "Set1DData", "dd/d86/a00271.html#a51a512b0b0b07e6be39c9811df2c9c98", null ],
+    [ "SetValue", "dd/d86/a00271.html#afca7a737f73c03c2bdf993deab61c271", null ],
+    [ "m_nCells", "dd/d86/a00271.html#a70ea482503388c2648af82962161b36f", null ]
 ];

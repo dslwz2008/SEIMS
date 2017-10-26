@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: MongoClient Class Reference</title>
+<title>SEIMS: utilsString Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -103,7 +103,7 @@ $(document).ready(function(){initNavTree('db/da2/a00300.html','../../');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -114,187 +114,52 @@ $(document).ready(function(){initNavTree('db/da2/a00300.html','../../');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="../../d4/d2c/a01575.html">List of all members</a>  </div>
+<a href="../../d7/d8c/a01306.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">MongoClient Class Reference</div>  </div>
+<div class="title">utilsString Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Create a MongoDB Client.  
+<p>String related functions.  
  <a href="../../db/da2/a00300.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="../../de/d49/a00952_source.html">MongoUtil.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="../../d1/daa/a00638_source.html">utils.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a103f61d194bb4652ddbf141a66ff7e85"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a103f61d194bb4652ddbf141a66ff7e85"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/da2/a00300.html#a103f61d194bb4652ddbf141a66ff7e85">MongoClient</a> (const char *host, uint16_t port)</td></tr>
-<tr class="memdesc:a103f61d194bb4652ddbf141a66ff7e85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor Get a client for a MongoDB instance using ip address and port number Caution: The constructor should be used with caution, since it does not check the validation of IP address and the status of the database. So, <code><a class="el" href="../../db/da2/a00300.html" title="Create a MongoDB Client. ">MongoClient</a> *client = MongoClient::Init(host, port)</code> is highly recommended. <br/></td></tr>
-<tr class="separator:a103f61d194bb4652ddbf141a66ff7e85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0ee0aa8eae19ec07ffd09c5c1c6d08c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab0ee0aa8eae19ec07ffd09c5c1c6d08c"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/da2/a00300.html#ab0ee0aa8eae19ec07ffd09c5c1c6d08c">~MongoClient</a> (void)</td></tr>
-<tr class="memdesc:ab0ee0aa8eae19ec07ffd09c5c1c6d08c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br/></td></tr>
-<tr class="separator:ab0ee0aa8eae19ec07ffd09c5c1c6d08c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a59abe6355d4affc3502367a9982087e4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a59abe6355d4affc3502367a9982087e4"></a>
-mongoc_client_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/da2/a00300.html#a59abe6355d4affc3502367a9982087e4">getConn</a> (void)</td></tr>
-<tr class="memdesc:a59abe6355d4affc3502367a9982087e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get mongoc_client instance. <br/></td></tr>
-<tr class="separator:a59abe6355d4affc3502367a9982087e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0406f6c05f05545b9f6b9dc0c28333cc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0406f6c05f05545b9f6b9dc0c28333cc"></a>
-mongoc_database_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/da2/a00300.html#a0406f6c05f05545b9f6b9dc0c28333cc">getDatabase</a> (string const &amp;dbname)</td></tr>
-<tr class="memdesc:a0406f6c05f05545b9f6b9dc0c28333cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get existed Database instance Besides, Databases are automatically created on the MongoDB server upon insertion of the first document into a collection. Therefore, there is no need to create a database manually. <br/></td></tr>
-<tr class="separator:a0406f6c05f05545b9f6b9dc0c28333cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9dbd71ac7598b9d3a24369004485315c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9dbd71ac7598b9d3a24369004485315c"></a>
-mongoc_collection_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/da2/a00300.html#a9dbd71ac7598b9d3a24369004485315c">getCollection</a> (string const &amp;dbname, string const &amp;collectionname)</td></tr>
-<tr class="memdesc:a9dbd71ac7598b9d3a24369004485315c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get Collection instance. <br/></td></tr>
-<tr class="separator:a9dbd71ac7598b9d3a24369004485315c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a240cc92449bdf68d3dbe45bd617268ff"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a240cc92449bdf68d3dbe45bd617268ff"></a>
-mongoc_gridfs_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/da2/a00300.html#a240cc92449bdf68d3dbe45bd617268ff">getGridFS</a> (string const &amp;dbname, string const &amp;gfsname)</td></tr>
-<tr class="memdesc:a240cc92449bdf68d3dbe45bd617268ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get GridFS instance. <br/></td></tr>
-<tr class="separator:a240cc92449bdf68d3dbe45bd617268ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7ed3ef088adf2781b78d9547ae8a0eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/da2/a00300.html#ad7ed3ef088adf2781b78d9547ae8a0eb">getDatabaseNames</a> (vector&lt; string &gt; &amp;dbnames)</td></tr>
-<tr class="memdesc:ad7ed3ef088adf2781b78d9547ae8a0eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get database names.  <a href="#ad7ed3ef088adf2781b78d9547ae8a0eb">More...</a><br/></td></tr>
-<tr class="separator:ad7ed3ef088adf2781b78d9547ae8a0eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a715a0bc9019d8a3e972f9ed43a37aa34"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/da2/a00300.html#a715a0bc9019d8a3e972f9ed43a37aa34">getCollectionNames</a> (string const &amp;dbName, vector&lt; string &gt; &amp;collNames)</td></tr>
-<tr class="memdesc:a715a0bc9019d8a3e972f9ed43a37aa34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get collection names in MongoDB database.  <a href="#a715a0bc9019d8a3e972f9ed43a37aa34">More...</a><br/></td></tr>
-<tr class="separator:a715a0bc9019d8a3e972f9ed43a37aa34"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54dbe4c45c29fa2c938bc5acecbf2af3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/da2/a00300.html#a54dbe4c45c29fa2c938bc5acecbf2af3">getGridFSFileNames</a> (string const &amp;dbname, string const &amp;gfsname, vector&lt; string &gt; &amp;fileExisted)</td></tr>
-<tr class="memdesc:a54dbe4c45c29fa2c938bc5acecbf2af3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get GridFs file names in MongoDB database.  <a href="#a54dbe4c45c29fa2c938bc5acecbf2af3">More...</a><br/></td></tr>
-<tr class="separator:a54dbe4c45c29fa2c938bc5acecbf2af3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:aeced16f71369981407785747585d7fac"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../db/da2/a00300.html">MongoClient</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/da2/a00300.html#aeced16f71369981407785747585d7fac">Init</a> (const char *host, uint16_t port)</td></tr>
-<tr class="memdesc:aeced16f71369981407785747585d7fac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validation check before the constructor of <a class="el" href="../../db/da2/a00300.html" title="Create a MongoDB Client. ">MongoClient</a>.  <a href="#aeced16f71369981407785747585d7fac">More...</a><br/></td></tr>
-<tr class="separator:aeced16f71369981407785747585d7fac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad14bafbee773085214535879df58fec9"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/da2/a00300.html#ad14bafbee773085214535879df58fec9">GetUpper</a> (string const &amp;s)</td></tr>
+<tr class="memdesc:ad14bafbee773085214535879df58fec9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get Uppercase of given string.  <a href="#ad14bafbee773085214535879df58fec9">More...</a><br/></td></tr>
+<tr class="separator:ad14bafbee773085214535879df58fec9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae06d2920296a29303fb9797c599c9a6f"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/da2/a00300.html#ae06d2920296a29303fb9797c599c9a6f">StringMatch</a> (const char *a, const char *b)</td></tr>
+<tr class="memdesc:ae06d2920296a29303fb9797c599c9a6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Match <em>char</em> ignore cases.  <a href="#ae06d2920296a29303fb9797c599c9a6f">More...</a><br/></td></tr>
+<tr class="separator:ae06d2920296a29303fb9797c599c9a6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4004ac346da209fade074ec73401bd0d"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/da2/a00300.html#a4004ac346da209fade074ec73401bd0d">StringMatch</a> (string const &amp;text1, string const &amp;text2)</td></tr>
+<tr class="memdesc:a4004ac346da209fade074ec73401bd0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Match Strings in UPPERCASE manner.  <a href="#a4004ac346da209fade074ec73401bd0d">More...</a><br/></td></tr>
+<tr class="separator:a4004ac346da209fade074ec73401bd0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92cdaffedac67e87d27ce9f61ba5f74d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/da2/a00300.html#a92cdaffedac67e87d27ce9f61ba5f74d">TrimSpaces</a> (string &amp;str)</td></tr>
+<tr class="memdesc:a92cdaffedac67e87d27ce9f61ba5f74d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trim Both leading and trailing spaces.  <a href="#a92cdaffedac67e87d27ce9f61ba5f74d">More...</a><br/></td></tr>
+<tr class="separator:a92cdaffedac67e87d27ce9f61ba5f74d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41b3085ee9d2b67824196f0d1a6b22b0"><td class="memItemLeft" align="right" valign="top">static string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/da2/a00300.html#a41b3085ee9d2b67824196f0d1a6b22b0">trim</a> (string &amp;s)</td></tr>
+<tr class="memdesc:a41b3085ee9d2b67824196f0d1a6b22b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trim given string's heading and tailing by "&lt;space&gt;,\n,\t,\r".  <a href="#a41b3085ee9d2b67824196f0d1a6b22b0">More...</a><br/></td></tr>
+<tr class="separator:a41b3085ee9d2b67824196f0d1a6b22b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acde5b9097cbee1b0eb6b6972f7a509d9"><td class="memItemLeft" align="right" valign="top">static vector&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/da2/a00300.html#acde5b9097cbee1b0eb6b6972f7a509d9">SplitString</a> (string const &amp;item)</td></tr>
+<tr class="memdesc:acde5b9097cbee1b0eb6b6972f7a509d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits the given string by spaces.  <a href="#acde5b9097cbee1b0eb6b6972f7a509d9">More...</a><br/></td></tr>
+<tr class="separator:acde5b9097cbee1b0eb6b6972f7a509d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92b89e60524c8769d0f8a8dd4666eca8"><td class="memItemLeft" align="right" valign="top">static vector&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/da2/a00300.html#a92b89e60524c8769d0f8a8dd4666eca8">SplitString</a> (string const &amp;item, char delimiter)</td></tr>
+<tr class="memdesc:a92b89e60524c8769d0f8a8dd4666eca8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits the given string based on the given delimiter.  <a href="#a92b89e60524c8769d0f8a8dd4666eca8">More...</a><br/></td></tr>
+<tr class="separator:a92b89e60524c8769d0f8a8dd4666eca8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00c351e73dc9743ff87e8e7e13a05ee7"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a00c351e73dc9743ff87e8e7e13a05ee7"><td class="memTemplItemLeft" align="right" valign="top">static string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/da2/a00300.html#a00c351e73dc9743ff87e8e7e13a05ee7">ValueToString</a> (const T val)</td></tr>
+<tr class="memdesc:a00c351e73dc9743ff87e8e7e13a05ee7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert value to string.  <a href="#a00c351e73dc9743ff87e8e7e13a05ee7">More...</a><br/></td></tr>
+<tr class="separator:a00c351e73dc9743ff87e8e7e13a05ee7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Create a MongoDB Client. </p>
+<div class="textblock"><p>String related functions. </p>
 
-<p>Definition at line <a class="el" href="../../de/d49/a00952_source.html#l00039">39</a> of file <a class="el" href="../../de/d49/a00952_source.html">MongoUtil.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d1/daa/a00638_source.html#l00259">259</a> of file <a class="el" href="../../d1/daa/a00638_source.html">utils.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a715a0bc9019d8a3e972f9ed43a37aa34"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void MongoClient::getCollectionNames </td>
-          <td>(</td>
-          <td class="paramtype">string const &amp;&#160;</td>
-          <td class="paramname"><em>dbName</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">vector&lt; string &gt; &amp;&#160;</td>
-          <td class="paramname"><em>collNames</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get collection names in MongoDB database. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">dbName</td><td>database name </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Definition at line <a class="el" href="../../dc/da0/a00951_source.html#l00066">66</a> of file <a class="el" href="../../dc/da0/a00951_source.html">MongoUtil.cpp</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../db/da2/a00300_a715a0bc9019d8a3e972f9ed43a37aa34_cgraph.png" border="0" usemap="#db/da2/a00300_a715a0bc9019d8a3e972f9ed43a37aa34_cgraph" alt=""/></div>
-<map name="db/da2/a00300_a715a0bc9019d8a3e972f9ed43a37aa34_cgraph" id="db/da2/a00300_a715a0bc9019d8a3e972f9ed43a37aa34_cgraph">
-<area shape="rect" id="node2" href="../../da/d50/a00301.html#a782c2d6acfc61bab6dabce7e0ac3e3e5" title="Get collection names in current database. " alt="" coords="269,5,512,51"/><area shape="rect" id="node3" href="../../d9/d5e/a00295.html#af1e727d462200d9bfaf44ee15921b7b5" title="Construct error information (string version) " alt="" coords="560,13,760,43"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="ad7ed3ef088adf2781b78d9547ae8a0eb"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void MongoClient::getDatabaseNames </td>
-          <td>(</td>
-          <td class="paramtype">vector&lt; string &gt; &amp;&#160;</td>
-          <td class="paramname"><em>dbnames</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get database names. </p>
-<dl class="section return"><dt>Returns</dt><dd>Database names, vector&lt;string&gt; </dd></dl>
-<p>get clear before push database names </p>
-
-<p>Definition at line <a class="el" href="../../dc/da0/a00951_source.html#l00048">48</a> of file <a class="el" href="../../dc/da0/a00951_source.html">MongoUtil.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a54dbe4c45c29fa2c938bc5acecbf2af3"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void MongoClient::getGridFSFileNames </td>
-          <td>(</td>
-          <td class="paramtype">string const &amp;&#160;</td>
-          <td class="paramname"><em>dbname</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">string const &amp;&#160;</td>
-          <td class="paramname"><em>gfsname</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">vector&lt; string &gt; &amp;&#160;</td>
-          <td class="paramname"><em>fileExisted</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get GridFs file names in MongoDB database. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">dbName</td><td>database name </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">gfs</td><td>GridFS name </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>filenames vector&lt;string&gt; </dd></dl>
-
-<p>Definition at line <a class="el" href="../../dc/da0/a00951_source.html#l00102">102</a> of file <a class="el" href="../../dc/da0/a00951_source.html">MongoUtil.cpp</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../db/da2/a00300_a54dbe4c45c29fa2c938bc5acecbf2af3_cgraph.png" border="0" usemap="#db/da2/a00300_a54dbe4c45c29fa2c938bc5acecbf2af3_cgraph" alt=""/></div>
-<map name="db/da2/a00300_a54dbe4c45c29fa2c938bc5acecbf2af3_cgraph" id="db/da2/a00300_a54dbe4c45c29fa2c938bc5acecbf2af3_cgraph">
-<area shape="rect" id="node2" href="../../d0/d61/a00302.html#af1e8ad99d6bdb84805c4adb2fe4ca63a" title="Get GridFS file names. " alt="" coords="275,13,506,43"/><area shape="rect" id="node3" href="../../d9/d5e/a00295.html#af1e727d462200d9bfaf44ee15921b7b5" title="Construct error information (string version) " alt="" coords="555,13,755,43"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="aeced16f71369981407785747585d7fac"></a>
+<a class="anchor" id="ad14bafbee773085214535879df58fec9"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -302,16 +167,86 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../db/da2/a00300.html">MongoClient</a> * MongoClient::Init </td>
+          <td class="memname">string utilsString::GetUpper </td>
           <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>host</em>, </td>
+          <td class="paramtype">string const &amp;&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get Uppercase of given string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">string</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Uppercase string </dd></dl>
+
+<p>Definition at line <a class="el" href="../../de/dbb/a00637_source.html#l00209">209</a> of file <a class="el" href="../../de/dbb/a00637_source.html">utils.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acde5b9097cbee1b0eb6b6972f7a509d9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; string &gt; utilsString::SplitString </td>
+          <td>(</td>
+          <td class="paramtype">string const &amp;&#160;</td>
+          <td class="paramname"><em>item</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Splits the given string by spaces. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">item</td><td><em>string</em> information </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The split strings vector </dd></dl>
+
+<p>Definition at line <a class="el" href="../../de/dbb/a00637_source.html#l00259">259</a> of file <a class="el" href="../../de/dbb/a00637_source.html">utils.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a92b89e60524c8769d0f8a8dd4666eca8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; string &gt; utilsString::SplitString </td>
+          <td>(</td>
+          <td class="paramtype">string const &amp;&#160;</td>
+          <td class="paramname"><em>item</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>port</em>&#160;</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>delimiter</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -326,28 +261,239 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Validation check before the constructor of <a class="el" href="../../db/da2/a00300.html" title="Create a MongoDB Client. ">MongoClient</a>. </p>
-<ol type="1">
-<li>Check IP address</li>
-<li>Check database status  <a class="el" href="../../db/da2/a00300.html" title="Create a MongoDB Client. ">MongoClient</a> *client = MongoClient::Init(host, port) if (NULL == client) { throw exception("MongoClient initialization failed!"); // or other error handling code. } </li>
-</ol>
-<p>Check the connection to MongoDB is success or not </p>
+<p>Splits the given string based on the given delimiter. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">item</td><td><em>string</em> information </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">delimiter</td><td><em>char</em> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The split strings vector </dd></dl>
 
-<p>Definition at line <a class="el" href="../../dc/da0/a00951_source.html#l00018">18</a> of file <a class="el" href="../../dc/da0/a00951_source.html">MongoUtil.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../de/dbb/a00637_source.html#l00228">228</a> of file <a class="el" href="../../de/dbb/a00637_source.html">utils.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae06d2920296a29303fb9797c599c9a6f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool utilsString::StringMatch </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Match <em>char</em> ignore cases. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">a,b</td><td><em>char*</em> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true or false </dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../db/da2/a00300.html#ae06d2920296a29303fb9797c599c9a6f" title="Match char ignore cases. ">StringMatch()</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="../../de/dbb/a00637_source.html#l00274">274</a> of file <a class="el" href="../../de/dbb/a00637_source.html">utils.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4004ac346da209fade074ec73401bd0d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool utilsString::StringMatch </td>
+          <td>(</td>
+          <td class="paramtype">string const &amp;&#160;</td>
+          <td class="paramname"><em>text1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string const &amp;&#160;</td>
+          <td class="paramname"><em>text2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Match Strings in UPPERCASE manner. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">text1,text2</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true or false </dd></dl>
+
+<p>Definition at line <a class="el" href="../../de/dbb/a00637_source.html#l00278">278</a> of file <a class="el" href="../../de/dbb/a00637_source.html">utils.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../db/da2/a00300_a4004ac346da209fade074ec73401bd0d_cgraph.png" border="0" usemap="#db/da2/a00300_a4004ac346da209fade074ec73401bd0d_cgraph" alt=""/></div>
+<map name="db/da2/a00300_a4004ac346da209fade074ec73401bd0d_cgraph" id="db/da2/a00300_a4004ac346da209fade074ec73401bd0d_cgraph">
+<area shape="rect" id="node2" href="../../db/da2/a00300.html#ad14bafbee773085214535879df58fec9" title="Get Uppercase of given string. " alt="" coords="240,4,411,33"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a41b3085ee9d2b67824196f0d1a6b22b0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string &amp; utilsString::trim </td>
+          <td>(</td>
+          <td class="paramtype">string &amp;&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Trim given string's heading and tailing by "&lt;space&gt;,\n,\t,\r". </p>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../db/da2/a00300.html#a92cdaffedac67e87d27ce9f61ba5f74d" title="Trim Both leading and trailing spaces. ">TrimSpaces</a> </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">s</td><td><em>string</em> information </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Trimmed string </dd></dl>
+
+<p>Definition at line <a class="el" href="../../de/dbb/a00637_source.html#l00285">285</a> of file <a class="el" href="../../de/dbb/a00637_source.html">utils.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a92cdaffedac67e87d27ce9f61ba5f74d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void utilsString::TrimSpaces </td>
+          <td>(</td>
+          <td class="paramtype">string &amp;&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Trim Both leading and trailing spaces. </p>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../db/da2/a00300.html#a41b3085ee9d2b67824196f0d1a6b22b0" title="Trim given string&#39;s heading and tailing by &quot;&lt;space&gt;,\n,\t,\r&quot;. ">trim</a> </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td><em>string</em> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="../../de/dbb/a00637_source.html#l00215">215</a> of file <a class="el" href="../../de/dbb/a00637_source.html">utils.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a00c351e73dc9743ff87e8e7e13a05ee7"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string utilsString::ValueToString </td>
+          <td>(</td>
+          <td class="paramtype">const T&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert value to string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">val</td><td>value, e.g., a int, or float </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>converted string </dd></dl>
+
+<p>Definition at line <a class="el" href="../../d1/daa/a00638_source.html#l00758">758</a> of file <a class="el" href="../../d1/daa/a00638_source.html">utils.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>seims/src/commonlibs/MongoUtilClass/<a class="el" href="../../de/d49/a00952_source.html">MongoUtil.h</a></li>
-<li>seims/src/commonlibs/MongoUtilClass/<a class="el" href="../../dc/da0/a00951_source.html">MongoUtil.cpp</a></li>
+<li>seims/src/commonlibs/UtilsClass/<a class="el" href="../../d1/daa/a00638_source.html">utils.h</a></li>
+<li>seims/src/commonlibs/UtilsClass/<a class="el" href="../../de/dbb/a00637_source.html">utils.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../db/da2/a00300.html">MongoClient</a></li>
-    <li class="footer">Generated on Tue Sep 5 2017 00:11:23 for SEIMS by
+    <li class="navelem"><a class="el" href="../../db/da2/a00300.html">utilsString</a></li>
+    <li class="footer">Generated on Thu Oct 26 2017 12:50:40 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
