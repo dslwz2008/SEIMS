@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: ParamInfo Class Reference</title>
+<title>SEIMS: cpp.ast.Type Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -115,152 +115,80 @@ $(document).ready(function(){initNavTree('dc/d55/a00226.html','../../');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="../../da/de0/a01248.html">List of all members</a>  </div>
+<a href="../../d4/d13/a01162.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ParamInfo Class Reference<div class="ingroups"><a class="el" href="../../d6/d80/a01076.html">Module_setting</a></div></div>  </div>
+<div class="title">cpp.ast.Type Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Class to store and manage parameter information from the parameter database.  
- <a href="../../dc/d55/a00226.html#details">More...</a></p>
-
-<p><code>#include &lt;<a class="el" href="../../de/d4c/a00711_source.html">ParamInfo.h</a>&gt;</code></p>
+<p>Inherits cpp.ast._GenericDeclaration.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a15ad9d14f6328ecf026b5e4e04dbba88"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a15ad9d14f6328ecf026b5e4e04dbba88"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d55/a00226.html#a15ad9d14f6328ecf026b5e4e04dbba88">ParamInfo</a> (void)</td></tr>
-<tr class="memdesc:a15ad9d14f6328ecf026b5e4e04dbba88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an empty instance. <br/></td></tr>
-<tr class="separator:a15ad9d14f6328ecf026b5e4e04dbba88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5acc8010c5db8b46f36c34bfd4be0209"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5acc8010c5db8b46f36c34bfd4be0209"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d55/a00226.html#a5acc8010c5db8b46f36c34bfd4be0209">~ParamInfo</a> (void)</td></tr>
-<tr class="memdesc:a5acc8010c5db8b46f36c34bfd4be0209"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br/></td></tr>
-<tr class="separator:a5acc8010c5db8b46f36c34bfd4be0209"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86b59d5285b7826b2b98b8afac9732e3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a86b59d5285b7826b2b98b8afac9732e3"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d55/a00226.html#a86b59d5285b7826b2b98b8afac9732e3">Reset</a> (void)</td></tr>
-<tr class="memdesc:a86b59d5285b7826b2b98b8afac9732e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the contents of the object to default values. <br/></td></tr>
-<tr class="separator:a86b59d5285b7826b2b98b8afac9732e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a66a29538097694a8427613b19a942a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d55/a00226.html#a6a66a29538097694a8427613b19a942a">GetAdjustedValue</a> (float pre_value=NODATA_VALUE)</td></tr>
-<tr class="memdesc:a6a66a29538097694a8427613b19a942a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the adjusted value for this parameter.  <a href="#a6a66a29538097694a8427613b19a942a">More...</a><br/></td></tr>
-<tr class="separator:a6a66a29538097694a8427613b19a942a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaee91ca6510c999cd689171a704575e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d55/a00226.html#aaee91ca6510c999cd689171a704575e8">Adjust1DArray</a> (int n, float *data)</td></tr>
-<tr class="memdesc:aaee91ca6510c999cd689171a704575e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adjust 1D array.  <a href="#aaee91ca6510c999cd689171a704575e8">More...</a><br/></td></tr>
-<tr class="separator:aaee91ca6510c999cd689171a704575e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80511ea5a368997e89066aee66788e2e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d55/a00226.html#a80511ea5a368997e89066aee66788e2e">Adjust1DRaster</a> (int n, float *data)</td></tr>
-<tr class="memdesc:a80511ea5a368997e89066aee66788e2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adjust 1D Raster,.  <a href="#a80511ea5a368997e89066aee66788e2e">More...</a><br/></td></tr>
-<tr class="separator:a80511ea5a368997e89066aee66788e2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5892a250785ef0bac039867d42be3d2a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d55/a00226.html#a5892a250785ef0bac039867d42be3d2a">Adjust1DRaster</a> (int n, float *data, float *units, vector&lt; int &gt; selunits, float *lu, vector&lt; int &gt; sellu)</td></tr>
-<tr class="memdesc:a5892a250785ef0bac039867d42be3d2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adjust 1D Raster on selected area.  <a href="#a5892a250785ef0bac039867d42be3d2a">More...</a><br/></td></tr>
-<tr class="separator:a5892a250785ef0bac039867d42be3d2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25d08aee0e83774468aaebfeb7f6e3e5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a25d08aee0e83774468aaebfeb7f6e3e5"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d55/a00226.html#a25d08aee0e83774468aaebfeb7f6e3e5">Adjust2DArray</a> (int n, float **data)</td></tr>
-<tr class="memdesc:a25d08aee0e83774468aaebfeb7f6e3e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adjust 2D array. <br/></td></tr>
-<tr class="separator:a25d08aee0e83774468aaebfeb7f6e3e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a32f9eead1547f38be571ae13d164d627"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a32f9eead1547f38be571ae13d164d627"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d55/a00226.html#a32f9eead1547f38be571ae13d164d627">Adjust2DRaster</a> (int n, int lyr, float **data)</td></tr>
-<tr class="memdesc:a32f9eead1547f38be571ae13d164d627"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adjust 2D Raster. <br/></td></tr>
-<tr class="separator:a32f9eead1547f38be571ae13d164d627"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ffa4ad20d7b05b1dbf4a932807046e8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1ffa4ad20d7b05b1dbf4a932807046e8"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d55/a00226.html#a1ffa4ad20d7b05b1dbf4a932807046e8">Adjust2DRaster</a> (int n, int lyr, float **data, float *units, vector&lt; int &gt; selunits, float *lu, vector&lt; int &gt; sellu)</td></tr>
-<tr class="memdesc:a1ffa4ad20d7b05b1dbf4a932807046e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adjust 1D Raster on selected area. <br/></td></tr>
-<tr class="separator:a1ffa4ad20d7b05b1dbf4a932807046e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a4aa99ac42f641ff345421f4a09c43d96"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4aa99ac42f641ff345421f4a09c43d96"></a>
-string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d55/a00226.html#a4aa99ac42f641ff345421f4a09c43d96">Name</a></td></tr>
-<tr class="memdesc:a4aa99ac42f641ff345421f4a09c43d96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name. <br/></td></tr>
-<tr class="separator:a4aa99ac42f641ff345421f4a09c43d96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad24cdb755575319abde9c186a34920de"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad24cdb755575319abde9c186a34920de"></a>
-string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d55/a00226.html#ad24cdb755575319abde9c186a34920de">Units</a></td></tr>
-<tr class="memdesc:ad24cdb755575319abde9c186a34920de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Units. <br/></td></tr>
-<tr class="separator:ad24cdb755575319abde9c186a34920de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3a3033becc4c70b37e273e76c37bcee"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac3a3033becc4c70b37e273e76c37bcee"></a>
-string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d55/a00226.html#ac3a3033becc4c70b37e273e76c37bcee">Description</a></td></tr>
-<tr class="memdesc:ac3a3033becc4c70b37e273e76c37bcee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Description. <br/></td></tr>
-<tr class="separator:ac3a3033becc4c70b37e273e76c37bcee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7fff4547600ebc1df4054a5337aaeab3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7fff4547600ebc1df4054a5337aaeab3"></a>
-string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d55/a00226.html#a7fff4547600ebc1df4054a5337aaeab3">ModuleID</a></td></tr>
-<tr class="memdesc:a7fff4547600ebc1df4054a5337aaeab3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used by Module Ids. <br/></td></tr>
-<tr class="separator:a7fff4547600ebc1df4054a5337aaeab3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae67c0395380ce7ec6424c8ac379560c4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae67c0395380ce7ec6424c8ac379560c4"></a>
-<a class="el" href="../../dd/d80/a01075.html#gac6cf78ef837450cfb19495fe34976b8c">dimensionTypes</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d55/a00226.html#ae67c0395380ce7ec6424c8ac379560c4">Dimension</a></td></tr>
-<tr class="memdesc:ae67c0395380ce7ec6424c8ac379560c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data dimension type. <br/></td></tr>
-<tr class="separator:ae67c0395380ce7ec6424c8ac379560c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75b10030638c69b20262b5a1a39ec67e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a75b10030638c69b20262b5a1a39ec67e"></a>
-string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d55/a00226.html#a75b10030638c69b20262b5a1a39ec67e">Source</a></td></tr>
-<tr class="memdesc:a75b10030638c69b20262b5a1a39ec67e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Source, to identify which the parameters can be derived. <br/></td></tr>
-<tr class="separator:a75b10030638c69b20262b5a1a39ec67e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a698d9a7a6b8fad7c2aabdc7c64428f26"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a698d9a7a6b8fad7c2aabdc7c64428f26"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d55/a00226.html#a698d9a7a6b8fad7c2aabdc7c64428f26">Value</a></td></tr>
-<tr class="memdesc:a698d9a7a6b8fad7c2aabdc7c64428f26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Value. <br/></td></tr>
-<tr class="separator:a698d9a7a6b8fad7c2aabdc7c64428f26"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a425eb6b82f198365698c84f5f830b73b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a425eb6b82f198365698c84f5f830b73b"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d55/a00226.html#a425eb6b82f198365698c84f5f830b73b">Impact</a></td></tr>
-<tr class="memdesc:a425eb6b82f198365698c84f5f830b73b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Impact value. <br/></td></tr>
-<tr class="separator:a425eb6b82f198365698c84f5f830b73b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aade23df743899af61f36a76dd257b0df"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aade23df743899af61f36a76dd257b0df"></a>
-string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d55/a00226.html#aade23df743899af61f36a76dd257b0df">Change</a></td></tr>
-<tr class="memdesc:aade23df743899af61f36a76dd257b0df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change type. <br/></td></tr>
-<tr class="separator:aade23df743899af61f36a76dd257b0df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a752f09515c81e1159c225fbc14668a58"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a752f09515c81e1159c225fbc14668a58"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d55/a00226.html#a752f09515c81e1159c225fbc14668a58">Maximum</a></td></tr>
-<tr class="memdesc:a752f09515c81e1159c225fbc14668a58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Absolute maximum value. <br/></td></tr>
-<tr class="separator:a752f09515c81e1159c225fbc14668a58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b79895b2e6a6a4853f1786fdd3b369f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3b79895b2e6a6a4853f1786fdd3b369f"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d55/a00226.html#a3b79895b2e6a6a4853f1786fdd3b369f">Minimun</a></td></tr>
-<tr class="memdesc:a3b79895b2e6a6a4853f1786fdd3b369f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Absolute minimum value. <br/></td></tr>
-<tr class="separator:a3b79895b2e6a6a4853f1786fdd3b369f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae356227ba8d20639ed0ca4171bd8641a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae356227ba8d20639ed0ca4171bd8641a"></a>
-<a class="el" href="../../dc/d55/a00226.html">ParamInfo</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d55/a00226.html#ae356227ba8d20639ed0ca4171bd8641a">DependPara</a></td></tr>
-<tr class="memdesc:ae356227ba8d20639ed0ca4171bd8641a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dependence parameters. <br/></td></tr>
-<tr class="separator:ae356227ba8d20639ed0ca4171bd8641a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c615ed4e44899b451debfc09a332d48"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3c615ed4e44899b451debfc09a332d48"></a>
-string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d55/a00226.html#a3c615ed4e44899b451debfc09a332d48">ClimateType</a></td></tr>
-<tr class="memdesc:a3c615ed4e44899b451debfc09a332d48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Climate type. <br/></td></tr>
-<tr class="separator:a3c615ed4e44899b451debfc09a332d48"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7bced3619362c2e409dedec1e92e190"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae7bced3619362c2e409dedec1e92e190"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d55/a00226.html#ae7bced3619362c2e409dedec1e92e190">IsConstant</a></td></tr>
-<tr class="memdesc:ae7bced3619362c2e409dedec1e92e190"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is constant or not. <br/></td></tr>
-<tr class="separator:ae7bced3619362c2e409dedec1e92e190"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42595f7deafb51cf7d6853afb23d46f7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a42595f7deafb51cf7d6853afb23d46f7"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d55/a00226.html#a42595f7deafb51cf7d6853afb23d46f7">IsOutput</a></td></tr>
-<tr class="memdesc:a42595f7deafb51cf7d6853afb23d46f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is output or not. <br/></td></tr>
-<tr class="separator:a42595f7deafb51cf7d6853afb23d46f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ddbf5d8c944f7753d085f9608074bb0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5ddbf5d8c944f7753d085f9608074bb0"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d55/a00226.html#a5ddbf5d8c944f7753d085f9608074bb0">OutputToOthers</a></td></tr>
-<tr class="memdesc:a5ddbf5d8c944f7753d085f9608074bb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is output to other modules or not. <br/></td></tr>
-<tr class="separator:a5ddbf5d8c944f7753d085f9608074bb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d2574f1f2a900afdb13187151711459"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5d2574f1f2a900afdb13187151711459"></a>
-string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d55/a00226.html#a5d2574f1f2a900afdb13187151711459">BasicName</a></td></tr>
-<tr class="memdesc:a5d2574f1f2a900afdb13187151711459"><td class="mdescLeft">&#160;</td><td class="mdescRight">Basic name. <br/></td></tr>
-<tr class="separator:a5d2574f1f2a900afdb13187151711459"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70a61323cb067362136148b1ca21d353"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a70a61323cb067362136148b1ca21d353"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d55/a00226.html#a70a61323cb067362136148b1ca21d353">initialized</a></td></tr>
-<tr class="memdesc:a70a61323cb067362136148b1ca21d353"><td class="mdescLeft">&#160;</td><td class="mdescRight">whether is initialized <br/></td></tr>
-<tr class="separator:a70a61323cb067362136148b1ca21d353"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a779bef8620c7432760fcb16cc4ab7613"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d55/a00226.html#a779bef8620c7432760fcb16cc4ab7613">__init__</a></td></tr>
+<tr class="separator:a779bef8620c7432760fcb16cc4ab7613"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Class to store and manage parameter information from the parameter database. </p>
-
-<p>Definition at line <a class="el" href="../../de/d4c/a00711_source.html#l00025">25</a> of file <a class="el" href="../../de/d4c/a00711_source.html">ParamInfo.h</a>.</p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="aaee91ca6510c999cd689171a704575e8"></a>
+<div class="textblock"><pre class="fragment">Type used for any variable (eg class, primitive, struct, etc).</pre> 
+<p>Definition at line <a class="el" href="../../d8/d23/a00326_source.html#l00409">409</a> of file <a class="el" href="../../d8/d23/a00326_source.html">ast.py</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a779bef8620c7432760fcb16cc4ab7613"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void ParamInfo::Adjust1DArray </td>
+          <td class="memname">def cpp.ast.Type.__init__ </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>n</em>, </td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float *&#160;</td>
-          <td class="paramname"><em>data</em>&#160;</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>templated_types</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>modifiers</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>reference</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>pointer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>array</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -269,139 +197,35 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
         </tr>
       </table>
 </div><div class="memdoc">
+<pre class="fragment">Args:
+  name: str name of main type
+  templated_types: [Class (Type?)] template type info between &lt;&gt;
+  modifiers: [str] type modifiers (keywords) eg, const, mutable, etc.
+  reference, pointer, array: bools
+</pre> 
+<p>Definition at line <a class="el" href="../../d8/d23/a00326_source.html#l00413">413</a> of file <a class="el" href="../../d8/d23/a00326_source.html">ast.py</a>.</p>
 
-<p>Adjust 1D array. </p>
-<p>Do not change NoData value </p>
-
-<p>Definition at line <a class="el" href="../../d4/deb/a00710_source.html#l00033">33</a> of file <a class="el" href="../../d4/deb/a00710_source.html">ParamInfo.cpp</a>.</p>
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d55/a00226_a779bef8620c7432760fcb16cc4ab7613_cgraph.png" border="0" usemap="#dc/d55/a00226_a779bef8620c7432760fcb16cc4ab7613_cgraph" alt=""/></div>
+<map name="dc/d55/a00226_a779bef8620c7432760fcb16cc4ab7613_cgraph" id="dc/d55/a00226_a779bef8620c7432760fcb16cc4ab7613_cgraph">
+<area shape="rect" id="node2" href="../../d4/dd0/a00994.html#ab6cfea74e26bf8833b158ad6c41fc1c4" title="cpp.ast._GenericDeclaration.\l_TypeStringHelper" alt="" coords="250,5,478,51"/><area shape="rect" id="node3" href="../../d6/d27/a01163.html#a953b42f31b1c1e8a002e27238fd1de6d" title="cpp.ast.TypeConverter.\l_GetTemplateEnd" alt="" coords="271,75,457,122"/><area shape="rect" id="node4" href="../../d6/d27/a01163.html#a55b6e96d4923d90c398417670f019b46" title="cpp.ast.TypeConverter.ToType" alt="" coords="243,147,485,176"/><area shape="rect" id="node5" href="../../d6/d27/a01163.html#aace860bed039be7a362176c798059e1d" title="cpp.ast.TypeConverter.Declaration\lToParts" alt="" coords="229,201,499,247"/><area shape="rect" id="node6" href="../../d2/dd2/a01164.html#a4451ccadcd128551566eace587a73303" title="cpp.ast.AstBuilder.\l_GetNextToken" alt="" coords="287,271,441,318"/><area shape="rect" id="node7" href="../../d2/dd2/a01164.html#a26b4a5cb50766ddad6d70272d917d2a0" title="cpp.ast.AstBuilder.\l_GenerateOne" alt="" coords="287,342,441,389"/><area shape="rect" id="node8" href="../../d2/dd2/a01164.html#a46ce435a34425a27408e41052e45487d" title="cpp.ast.AstBuilder.Handle\lError" alt="" coords="261,413,467,459"/><area shape="rect" id="node9" href="../../d2/dd2/a01164.html#a5216c6b144ebeb228f938f4246a0b8db" title="cpp.ast.AstBuilder.\l_AddBackToken" alt="" coords="287,483,441,530"/><area shape="rect" id="node10" href="../../d2/dd2/a01164.html#ac1dc5ab210bf5ddce0b586543a9b1fb7" title="cpp.ast.AstBuilder.\l_GetMethod" alt="" coords="287,554,441,601"/><area shape="rect" id="node11" href="../../d2/dd2/a01164.html#a4f3074ec2b00dfc828618a0aa0ab4209" title="cpp.ast.AstBuilder.\l_GetVarTokensUpTo" alt="" coords="277,625,451,671"/><area shape="rect" id="node12" href="../../d2/dd2/a01164.html#acbc81ecc9298f347073b00803558138a" title="cpp.ast.AstBuilder.\l_GetTokensUpTo" alt="" coords="287,695,441,742"/><area shape="rect" id="node13" href="../../d2/dd2/a01164.html#a58283095a2e0bdaf72ba73a2ba58cd54" title="cpp.ast.AstBuilder.\l_CreateVariable" alt="" coords="287,766,441,813"/><area shape="rect" id="node14" href="../../d2/dd2/a01164.html#ae7552ab27bda2c431c6e1f6082007aa3" title="cpp.ast.AstBuilder.\l_AddBackTokens" alt="" coords="287,837,441,883"/><area shape="rect" id="node15" href="../../d2/dd2/a01164.html#ad2f2e1440445f57ffcad8c1e2c323965" title="cpp.ast.AstBuilder.\l_SkipIf0Blocks" alt="" coords="287,907,441,954"/><area shape="rect" id="node16" href="../../d2/dd2/a01164.html#af820c48c4875aabdd30cc36f53be4272" title="cpp.ast.AstBuilder.\l_GetMatchingChar" alt="" coords="286,978,442,1025"/><area shape="rect" id="node17" href="../../d2/dd2/a01164.html#a342a3880f9abd89c58481edda0ada949" title="cpp.ast.AstBuilder.\l_GetParameters" alt="" coords="287,1049,441,1095"/><area shape="rect" id="node18" href="../../d2/dd2/a01164.html#a9092c7b5f11fef2dd9ce17f147944f7e" title="cpp.ast.AstBuilder.GetScope" alt="" coords="251,1120,477,1149"/><area shape="rect" id="node19" href="../../d2/dd2/a01164.html#ac1d3db77a45d83be06a509f28349f670" title="cpp.ast.AstBuilder.\l_GetReturnTypeAndClassName" alt="" coords="237,1174,491,1221"/><area shape="rect" id="node20" href="../../d2/dd2/a01164.html#a13301fe6483e2e145df97dc10ca4efa6" title="cpp.ast.AstBuilder.GetName" alt="" coords="253,1245,475,1275"/><area shape="rect" id="node21" href="../../d5/d5b/a00135.html#aeecd2761b17459281170015fd50c1117" title="MetadataInfo::GetName" alt="" coords="269,1299,459,1328"/></map>
+</div>
+</p>
 
 </div>
 </div>
-<a class="anchor" id="a80511ea5a368997e89066aee66788e2e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ParamInfo::Adjust1DRaster </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>n</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float *&#160;</td>
-          <td class="paramname"><em>data</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Adjust 1D Raster,. </p>
-<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../dc/d55/a00226.html#aaee91ca6510c999cd689171a704575e8" title="Adjust 1D array. ">Adjust1DArray()</a> </dd></dl>
-
-<p>Definition at line <a class="el" href="../../d4/deb/a00710_source.html#l00042">42</a> of file <a class="el" href="../../d4/deb/a00710_source.html">ParamInfo.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a5892a250785ef0bac039867d42be3d2a"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ParamInfo::Adjust1DRaster </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>n</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float *&#160;</td>
-          <td class="paramname"><em>data</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float *&#160;</td>
-          <td class="paramname"><em>units</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">vector&lt; int &gt;&#160;</td>
-          <td class="paramname"><em>selunits</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float *&#160;</td>
-          <td class="paramname"><em>lu</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">vector&lt; int &gt;&#160;</td>
-          <td class="paramname"><em>sellu</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Adjust 1D Raster on selected area. </p>
-<p>Do not change NoData value </p>
-
-<p>Definition at line <a class="el" href="../../d4/deb/a00710_source.html#l00046">46</a> of file <a class="el" href="../../d4/deb/a00710_source.html">ParamInfo.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a6a66a29538097694a8427613b19a942a"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float ParamInfo::GetAdjustedValue </td>
-          <td>(</td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>pre_value</em> = <code>NODATA_VALUE</code></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Return the adjusted value for this parameter. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">pre_value</td><td>Default is NODATA_VALUE which will be treated as <a class="el" href="../../dc/d55/a00226.html#a698d9a7a6b8fad7c2aabdc7c64428f26" title="Value. ">ParamInfo.Value</a>, otherwise adjust the given value. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>adjusted float value </dd></dl>
-<p>Do not change NoData value </p>
-
-<p>Definition at line <a class="el" href="../../d4/deb/a00710_source.html#l00012">12</a> of file <a class="el" href="../../d4/deb/a00710_source.html">ParamInfo.cpp</a>.</p>
-
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following files:<ul>
-<li>seims/src/seims_main/base/module_setting/<a class="el" href="../../de/d4c/a00711_source.html">ParamInfo.h</a></li>
-<li>seims/src/seims_main/base/module_setting/<a class="el" href="../../d4/deb/a00710_source.html">ParamInfo.cpp</a></li>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>buildRel/googletest-src/googlemock/scripts/generator/cpp/<a class="el" href="../../d8/d23/a00326_source.html">ast.py</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dc/d55/a00226.html">ParamInfo</a></li>
-    <li class="footer">Generated on Thu Oct 26 2017 12:50:40 for SEIMS by
+    <li class="navelem"><b>cpp</b></li><li class="navelem"><b>ast</b></li><li class="navelem"><a class="el" href="../../dc/d55/a00226.html">Type</a></li>
+    <li class="footer">Generated on Fri Oct 27 2017 15:28:53 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

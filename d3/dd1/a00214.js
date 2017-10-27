@@ -1,7 +1,13 @@
 var a00214 =
 [
-    [ "IsDeclaration", "d3/dd1/a00214.html#a63666daffe37fba3bdf0732725278844", null ],
-    [ "IsDefinition", "d3/dd1/a00214.html#a0ad6097a96713cf457ccf34e5ce1eb0d", null ],
-    [ "IsExportable", "d3/dd1/a00214.html#af9f9ef398f8bce0a6fb57dc90a5ae4e3", null ],
-    [ "Requires", "d3/dd1/a00214.html#a6bc6fbf9cce3d7244ce7ce3d591a2760", null ]
+    [ "_CollapseKeywords", "d3/dd1/a00214.html#a120e8517dd73ab5ad5fdf534e9801c11", null ],
+    [ "_CollapseKeywords", "d3/dd1/a00214.html#a120e8517dd73ab5ad5fdf534e9801c11", null ],
+    [ "_GuessBase", "d3/dd1/a00214.html#ad90a3eed8b4d6a49fa1f66821c65861f", null ],
+    [ "_GuessBase", "d3/dd1/a00214.html#ad90a3eed8b4d6a49fa1f66821c65861f", null ],
+    [ "GetStatus", "d3/dd1/a00214.html#aab365f71ddee062d3ff54ae669a1a09e", null ],
+    [ "GetStatus", "d3/dd1/a00214.html#aab365f71ddee062d3ff54ae669a1a09e", null ],
+    [ "GuessBase", "d3/dd1/a00214.html#a14ccef7a1ccf94ca4bdadb6d9ccf7732", null ],
+    [ "GuessBase", "d3/dd1/a00214.html#a14ccef7a1ccf94ca4bdadb6d9ccf7732", null ],
+    [ "ReadFile", "d3/dd1/a00214.html#a082fc715dabc8ccf2f1340a01fd94d34", null ],
+    [ "ReadFile", "d3/dd1/a00214.html#a082fc715dabc8ccf2f1340a01fd94d34", null ]
 ];

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: gtest_catch_exceptions_test.CatchCxxExceptionsTest Class Reference</title>
+<title>SEIMS: seims.preprocess.bmp_import_scenario.ImportScenario2Mongo Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -114,32 +114,144 @@ $(document).ready(function(){initNavTree('d2/da3/a00115.html','../../');});
 
 <div class="header">
   <div class="summary">
-<a href="../../df/dec/a01320.html">List of all members</a>  </div>
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="../../dd/dad/a01235.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">gtest_catch_exceptions_test.CatchCxxExceptionsTest Class Reference</div>  </div>
+<div class="title">seims.preprocess.bmp_import_scenario.ImportScenario2Mongo Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Inherits TestCase.</p>
+<p>Inherits object, and object.</p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a0de09a3e9b11777935b0184d6e5d61f7"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/da3/a00115.html#a0de09a3e9b11777935b0184d6e5d61f7">scenario_from_texts</a></td></tr>
+<tr class="separator:a0de09a3e9b11777935b0184d6e5d61f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0de09a3e9b11777935b0184d6e5d61f7"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/da3/a00115.html#a0de09a3e9b11777935b0184d6e5d61f7">scenario_from_texts</a></td></tr>
+<tr class="separator:a0de09a3e9b11777935b0184d6e5d61f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><pre class="fragment">Tests C++ exception-catching behavior.
-
-   Tests in this test case verify that:
-   * C++ exceptions are caught and logged as C++ (not SEH) exceptions
-   * Exception thrown affect the remainder of the test work flow in the
-     expected manner.
+<div class="textblock"><pre class="fragment">Import scenario data to MongoDB
 </pre> 
-<p>Definition at line <a class="el" href="../../db/dc4/a00495_source.html#l00114">114</a> of file <a class="el" href="../../db/dc4/a00495_source.html">gtest_catch_exceptions_test.py</a>.</p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
-<li>buildRel/googletest-src/googletest/test/<a class="el" href="../../db/dc4/a00495_source.html">gtest_catch_exceptions_test.py</a></li>
+<p>Definition at line <a class="el" href="../../d3/dea/a00444_source.html#l00017">17</a> of file <a class="el" href="../../d3/dea/a00444_source.html">bmp_import_scenario.py</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a0de09a3e9b11777935b0184d6e5d61f7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.bmp_import_scenario.ImportScenario2Mongo.scenario_from_texts </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>cfg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>main_db</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>scenario_db</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Import BMPs Scenario data to MongoDB
+Args:
+    cfg: SEIMS configuration object
+    main_db: climate database
+    scenario_db: scenario database
+Returns:
+    False if failed, otherwise True.
+</pre> 
+<p>Definition at line <a class="el" href="../../d3/dea/a00444_source.html#l00027">27</a> of file <a class="el" href="../../d3/dea/a00444_source.html">bmp_import_scenario.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0de09a3e9b11777935b0184d6e5d61f7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.bmp_import_scenario.ImportScenario2Mongo.scenario_from_texts </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>cfg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>main_db</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>scenario_db</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Import BMPs Scenario data to MongoDB
+Args:
+    cfg: SEIMS configuration object
+    main_db: climate database
+    scenario_db: scenario database
+Returns:
+    False if failed, otherwise True.
+</pre> 
+<p>Definition at line <a class="el" href="../../dd/d47/a00445_source.html#l00027">27</a> of file <a class="el" href="../../dd/d47/a00445_source.html">bmp_import_scenario.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/da3/a00115_a0de09a3e9b11777935b0184d6e5d61f7_cgraph.png" border="0" usemap="#d2/da3/a00115_a0de09a3e9b11777935b0184d6e5d61f7_cgraph" alt=""/></div>
+<map name="d2/da3/a00115_a0de09a3e9b11777935b0184d6e5d61f7_cgraph" id="d2/da3/a00115_a0de09a3e9b11777935b0184d6e5d61f7_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>seims/preprocess/<a class="el" href="../../d3/dea/a00444_source.html">bmp_import_scenario.py</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>gtest_catch_exceptions_test</b></li><li class="navelem"><a class="el" href="../../d2/da3/a00115.html">CatchCxxExceptionsTest</a></li>
-    <li class="footer">Generated on Thu Oct 26 2017 12:50:40 for SEIMS by
+    <li class="navelem"><b>seims</b></li><li class="navelem"><b>preprocess</b></li><li class="navelem"><b>bmp_import_scenario</b></li><li class="navelem"><a class="el" href="../../d2/da3/a00115.html">ImportScenario2Mongo</a></li>
+    <li class="footer">Generated on Fri Oct 27 2017 15:28:53 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

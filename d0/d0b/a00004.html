@@ -109,7 +109,7 @@ $(document).ready(function(){initNavTree('d0/d0b/a00004.html','../../');});
 <div class="title">CookBook </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>You can find recipes for using Google Mock here. If you haven't yet, please read the <a class="el" href="../../da/de0/a00317_source.html">ForDummies</a> document first to make sure you understand the basics.</p>
+<div class="textblock"><p>You can find recipes for using Google Mock here. If you haven't yet, please read the <a class="el" href="../../d0/d1f/a00247_source.html">ForDummies</a> document first to make sure you understand the basics.</p>
 <p><b>Note:</b> Google Mock lives in the <code>testing</code> name space. For readability, it is recommended to write <code>using ::testing::Foo;</code> once in your file before using the name <code>Foo</code> defined by Google Mock. We omit such <code>using</code> statements in this page for brevity, but you should do it in your own code.</p>
 <h1>Creating Mock Classes</h1>
 <h2>Mocking Private or Protected Methods</h2>
@@ -324,7 +324,7 @@ to interfaces": instead of talking to the <code>Concrete</code> class, your code
 <p>You can use <code>Args&lt;k1, ..., kn&gt;(m)</code> to match the <code>n</code> selected arguments (as a tuple) against <code>m</code>. For example,</p>
 <p>``` using ::testing::_; using ::testing::AllOf; using ::testing::Args; using ::testing::Lt; ... EXPECT_CALL(foo, Blah(_, _, _)) .With(AllOf(Args&lt;0, 1&gt;(Lt()), Args&lt;1, 2&gt;(Lt()))); ```</p>
 <p>says that <code>Blah()</code> will be called with arguments <code>x</code>, <code>y</code>, and <code>z</code> where <code>x &lt; y &lt; z</code>.</p>
-<p>As a convenience and example, Google Mock provides some matchers for 2-tuples, including the <code>Lt()</code> matcher above. See the <a class="el" href="../../d1/d67/a00310_source.html">CheatSheet</a> for the complete list.</p>
+<p>As a convenience and example, Google Mock provides some matchers for 2-tuples, including the <code>Lt()</code> matcher above. See the <a class="el" href="../../d9/d21/a00240_source.html">CheatSheet</a> for the complete list.</p>
 <p>Note that if you want to pass the arguments to a predicate of your own (e.g. <code>.With(Args&lt;0, 1&gt;(Truly(&amp;MyPredicate)))</code>), that predicate MUST be written to take a <code>::testing::tuple</code> as its argument; Google Mock will pass the <code>n</code> selected arguments as <em>one</em> single tuple to the predicate.</p>
 <h2>Using Matchers as Predicates</h2>
 <p>Have you noticed that a matcher is just a fancy predicate that also knows how to describe itself? Many existing algorithms take predicates as arguments (e.g. those defined in STL's <code>&lt;algorithm&gt;</code> header), and it would be a shame if Google Mock matchers are not allowed to participate.</p>
@@ -784,7 +784,7 @@ from Mock Methods"). However, Google Mock doesn't let you use <code>ReturnRef()<
 <p>if <code>Foo(1)</code> is called in thread 1 and <code>Foo(2)</code> is called in thread 2, Google Mock will execute <code>action1</code> in thread 1 and <code>action2</code> in thread 2.</p>
 <p>Google Mock does <em>not</em> impose a sequence on actions performed in different threads (doing so may create deadlocks as the actions may need to cooperate). This means that the execution of <code>action1</code> and <code>action2</code> in the above example <em>may</em> interleave. If this is a problem, you should add proper synchronization logic to <code>action1</code> and <code>action2</code> to make the test thread-safe.</p>
 <p>Also, remember that <code>DefaultValue&lt;T&gt;</code> is a global resource that potentially affects <em>all</em> living mock objects in your program. Naturally, you won't want to mess with it from multiple threads or when there still are mocks in action.</p>
-<h2>Controlling How Much <a class="el" href="../../dd/d4c/a00177.html" title="Module development information class. ">Information</a> Google Mock Prints</h2>
+<h2>Controlling How Much <a class="el" href="../../d9/d4b/a00117.html" title="Module development information class. ">Information</a> Google Mock Prints</h2>
 <p>When Google Mock sees something that has the potential of being an error (e.g. a mock function with no expectation is called, a.k.a. an uninteresting call, which is allowed but perhaps you forgot to explicitly ban the call), it prints some warning messages, including the arguments of the function and the return value. Hopefully this will remind you to take a look and see if there is indeed a problem.</p>
 <p>Sometimes you are confident that your tests are correct and may not appreciate such friendly messages. Some other times, you are debugging your tests or learning about the behavior of the code you are testing, and wish you could observe every mock call that happens (including argument values and the return value). Clearly, one size doesn't fit all.</p>
 <p>You can control how much Google Mock tells you using the <code>--gmock_verbose=LEVEL</code> command-line flag, where <code>LEVEL</code> is a string with three possible values:</p>
@@ -814,7 +814,7 @@ from Mock Methods"). However, Google Mock doesn't let you use <code>ReturnRef()<
 <p>``` (global-set-key "\M-m" 'compile) ; m is for make (global-set-key [M-down] 'next-error) (global-set-key [M-up] '(lambda () (interactive) (next-error -1))) ```</p>
 <p>Then you can type <code>M-m</code> to start a build, or <code>M-up</code>/<code>M-down</code> to move back and forth between errors.</p>
 <h2>Fusing Google Mock Source Files</h2>
-<p>Google Mock's implementation consists of dozens of files (excluding its own tests). Sometimes you may want them to be packaged up in fewer files instead, such that you can easily copy them to a new machine and start hacking there. For this we provide an experimental Python script <code><a class="el" href="../../d3/d45/a00382_source.html">fuse_gmock_files.py</a></code> in the <code>scripts/</code> directory (starting with release 1.2.0). Assuming you have Python 2.4 or above installed on your machine, just go to that directory and run ``` python <a class="el" href="../../d3/d45/a00382_source.html">fuse_gmock_files.py</a> OUTPUT_DIR ```</p>
+<p>Google Mock's implementation consists of dozens of files (excluding its own tests). Sometimes you may want them to be packaged up in fewer files instead, such that you can easily copy them to a new machine and start hacking there. For this we provide an experimental Python script <code><a class="el" href="../../d7/df2/a00312_source.html">fuse_gmock_files.py</a></code> in the <code>scripts/</code> directory (starting with release 1.2.0). Assuming you have Python 2.4 or above installed on your machine, just go to that directory and run ``` python <a class="el" href="../../d7/df2/a00312_source.html">fuse_gmock_files.py</a> OUTPUT_DIR ```</p>
 <p>and you should see an <code>OUTPUT_DIR</code> directory being created with files <code>gtest/gtest.h</code>, <code>gmock/gmock.h</code>, and <code>gmock-gtest-all.cc</code> in it. These three files contain everything you need to use Google Mock (and Google Test). Just copy them to anywhere you want and you are ready to write tests and use mocks. You can use the <a href="../../../scripts/test/Makefile">scrpts/test/Makefile</a> file as an example on how to compile your tests against them.</p>
 <h1>Extending Google Mock</h1>
 <h2>Writing New Matchers Quickly</h2>
@@ -941,7 +941,7 @@ by 7)"<code>are automatically calculated from the matcher name </code>IsDivisibl
 <p><em>You can view <code>ACTION</code> as a degenerated parameterized action where the number of parameters is 0.</em></p>
 <p><em>You can also easily define actions overloaded on the number of parameters: ``` ACTION_P(Plus, a) { ... } ACTION_P2(Plus, a, b) { ... } ```</em></p>
 <p><em></p>
-<h2>Restricting the Type of an Argument or <a class="el" href="../../dc/d98/a00225.html" title="Model parameter information class. ">Parameter</a> in an ACTION</h2>
+<h2>Restricting the Type of an Argument or <a class="el" href="../../db/ddf/a00164.html" title="Model parameter information class. ">Parameter</a> in an ACTION</h2>
 <p></em></p>
 <p><em></em></p>
 <p><em>For maximum brevity and reusability, the <code>ACTION*</code> macros don't ask you to provide the types of the mock function arguments and the action parameters. Instead, we let the compiler infer the types for us.</em></p>
@@ -1030,7 +1030,7 @@ by 7)"<code>are automatically calculated from the matcher name </code>IsDivisibl
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu Oct 26 2017 12:50:38 for SEIMS by
+    <li class="footer">Generated on Fri Oct 27 2017 15:28:50 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

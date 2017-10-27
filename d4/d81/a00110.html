@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: MainBMP::BMPFactory Class Reference</title>
+<title>SEIMS: seims.preprocess.db_build_mongodb.ImportMongodbClass Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -115,149 +115,119 @@ $(document).ready(function(){initNavTree('d4/d81/a00110.html','../../');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a> &#124;
-<a href="../../d2/d4d/a01338.html">List of all members</a>  </div>
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="../../dc/dab/a01237.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">MainBMP::BMPFactory Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+<div class="title">seims.preprocess.db_build_mongodb.ImportMongodbClass Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Base class to initiate a BMP data.  
- <a href="../../d4/d81/a00110.html#details">More...</a></p>
-
-<p><code>#include &lt;<a class="el" href="../../d8/d13/a00671_source.html">BMPFactory.h</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for MainBMP::BMPFactory:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../dd/d6e/a01339.png" border="0" usemap="#_main_b_m_p_1_1_b_m_p_factory_inherit__map" alt="Inheritance graph"/></div>
-<map name="_main_b_m_p_1_1_b_m_p_factory_inherit__map" id="_main_b_m_p_1_1_b_m_p_factory_inherit__map">
-<area shape="rect" id="node2" href="../../df/d98/a00107.html" title="Base class of areal source BMPs. Such as chicken farm. " alt="" coords="5,401,280,885"/><area shape="rect" id="node3" href="../../dd/d42/a00109.html" title="Initiate Areal Structural BMPs. " alt="" coords="304,513,571,772"/><area shape="rect" id="node4" href="../../dd/d6d/a00111.html" title="Initiate a plant management BMP Actually, it contains a series BMPs, such as plant, fertilize, harvest, etc. " alt="" coords="595,453,845,833"/><area shape="rect" id="node5" href="../../db/d57/a00112.html" title="Base class of point source BMPs. Actually, include point pollution sources, such as sewage outlet of ..." alt="" coords="870,470,1143,815"/></map>
-</div>
+<p>Inherits object, and object.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac8dfe5287c813519da202a479633767b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d81/a00110.html#ac8dfe5287c813519da202a479633767b">BMPFactory</a> (const int scenarioId, const int bmpId, const int subScenario, const int <a class="el" href="../../d4/d81/a00110.html#a8513b02f8c9e77da5b48ce2dbd2af0db">bmpType</a>, const int <a class="el" href="../../d4/d81/a00110.html#a6daaf63e7f03960049f61c3a75e19878">bmpPriority</a>, vector&lt; string &gt; distribution, const string collection, const string location)</td></tr>
-<tr class="memdesc:ac8dfe5287c813519da202a479633767b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#ac8dfe5287c813519da202a479633767b">More...</a><br/></td></tr>
-<tr class="separator:ac8dfe5287c813519da202a479633767b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ede2a305a872f11257bdc7a2afc7799"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d81/a00110.html#a6ede2a305a872f11257bdc7a2afc7799">~BMPFactory</a> (void)</td></tr>
-<tr class="memdesc:a6ede2a305a872f11257bdc7a2afc7799"><td class="mdescLeft">&#160;</td><td class="mdescRight">virtual Destructor  <a href="#a6ede2a305a872f11257bdc7a2afc7799">More...</a><br/></td></tr>
-<tr class="separator:a6ede2a305a872f11257bdc7a2afc7799"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad929112a33a93587a1a9eb7ea0b259df"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad929112a33a93587a1a9eb7ea0b259df"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d81/a00110.html#ad929112a33a93587a1a9eb7ea0b259df">loadBMP</a> (<a class="el" href="../../d5/df1/a00206.html">MongoClient</a> *conn, const string &amp;bmpDBName)=0</td></tr>
-<tr class="memdesc:ad929112a33a93587a1a9eb7ea0b259df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load BMP parameters from MongoDB. <br/></td></tr>
-<tr class="separator:ad929112a33a93587a1a9eb7ea0b259df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1fd368560f401941e0c67e15de17fe9a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1fd368560f401941e0c67e15de17fe9a"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d81/a00110.html#a1fd368560f401941e0c67e15de17fe9a">setRasterData</a> (map&lt; string, FloatRaster * &gt; &amp;sceneRsMap)</td></tr>
-<tr class="memdesc:a1fd368560f401941e0c67e15de17fe9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set raster data if needed This function is not required for each BMP, so DO NOT define as pure virtual function. <br/></td></tr>
-<tr class="separator:a1fd368560f401941e0c67e15de17fe9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a684fb32eb4f7bf36d6d8427bd05530d2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a684fb32eb4f7bf36d6d8427bd05530d2"></a>
-FloatRaster *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d81/a00110.html#a684fb32eb4f7bf36d6d8427bd05530d2">getRasterData</a> ()</td></tr>
-<tr class="memdesc:a684fb32eb4f7bf36d6d8427bd05530d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get raster data if needed This function is not required for each BMP, so DO NOT define as pure virtual function. <br/></td></tr>
-<tr class="separator:a684fb32eb4f7bf36d6d8427bd05530d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8513b02f8c9e77da5b48ce2dbd2af0db"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d81/a00110.html#a8513b02f8c9e77da5b48ce2dbd2af0db">bmpType</a> (void)</td></tr>
-<tr class="separator:a8513b02f8c9e77da5b48ce2dbd2af0db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6daaf63e7f03960049f61c3a75e19878"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6daaf63e7f03960049f61c3a75e19878"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d81/a00110.html#a6daaf63e7f03960049f61c3a75e19878">bmpPriority</a> (void)</td></tr>
-<tr class="memdesc:a6daaf63e7f03960049f61c3a75e19878"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get BMP priority. <br/></td></tr>
-<tr class="separator:a6daaf63e7f03960049f61c3a75e19878"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa262b4b5ee9bbaa8bd013fc31626d12b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa262b4b5ee9bbaa8bd013fc31626d12b"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d81/a00110.html#aa262b4b5ee9bbaa8bd013fc31626d12b">GetSubScenarioId</a> (void)</td></tr>
-<tr class="memdesc:aa262b4b5ee9bbaa8bd013fc31626d12b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get subScenario ID. <br/></td></tr>
-<tr class="separator:aa262b4b5ee9bbaa8bd013fc31626d12b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6076fb64d01de5f66056b9dab2b2d8f0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6076fb64d01de5f66056b9dab2b2d8f0"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d81/a00110.html#a6076fb64d01de5f66056b9dab2b2d8f0">Dump</a> (ostream *fs)=0</td></tr>
-<tr class="memdesc:a6076fb64d01de5f66056b9dab2b2d8f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output. <br/></td></tr>
-<tr class="separator:a6076fb64d01de5f66056b9dab2b2d8f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5fc6f1afc8c22ce13dbf3e2928e7eb2"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d81/a00110.html#ad5fc6f1afc8c22ce13dbf3e2928e7eb2">__init__</a></td></tr>
+<tr class="separator:ad5fc6f1afc8c22ce13dbf3e2928e7eb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5fc6f1afc8c22ce13dbf3e2928e7eb2"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d81/a00110.html#ad5fc6f1afc8c22ce13dbf3e2928e7eb2">__init__</a></td></tr>
+<tr class="separator:ad5fc6f1afc8c22ce13dbf3e2928e7eb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr class="memitem:a29f21807a3a3185e6d94cb0296a09a5c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a29f21807a3a3185e6d94cb0296a09a5c"></a>
-const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d81/a00110.html#a29f21807a3a3185e6d94cb0296a09a5c">m_scenarioId</a></td></tr>
-<tr class="memdesc:a29f21807a3a3185e6d94cb0296a09a5c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d3/d1a/a00251.html" title="Main class of scenario in BMP database. ">Scenario</a> ID. <br/></td></tr>
-<tr class="separator:a29f21807a3a3185e6d94cb0296a09a5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2847aac6ff859f70fcdb4330e35e6a60"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2847aac6ff859f70fcdb4330e35e6a60"></a>
-const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d81/a00110.html#a2847aac6ff859f70fcdb4330e35e6a60">m_bmpId</a></td></tr>
-<tr class="memdesc:a2847aac6ff859f70fcdb4330e35e6a60"><td class="mdescLeft">&#160;</td><td class="mdescRight">BMP ID. <br/></td></tr>
-<tr class="separator:a2847aac6ff859f70fcdb4330e35e6a60"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a779426b1e43efb2835af551d0ba98285"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a779426b1e43efb2835af551d0ba98285"></a>
-const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d81/a00110.html#a779426b1e43efb2835af551d0ba98285">m_subScenarioId</a></td></tr>
-<tr class="memdesc:a779426b1e43efb2835af551d0ba98285"><td class="mdescLeft">&#160;</td><td class="mdescRight">SubScenario ID within one BMP iD. <br/></td></tr>
-<tr class="separator:a779426b1e43efb2835af551d0ba98285"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a227caa35587f18299d857d9b1a2b4bad"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a227caa35587f18299d857d9b1a2b4bad"></a>
-const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d81/a00110.html#a227caa35587f18299d857d9b1a2b4bad">m_bmpType</a></td></tr>
-<tr class="memdesc:a227caa35587f18299d857d9b1a2b4bad"><td class="mdescLeft">&#160;</td><td class="mdescRight">BMP Type. <br/></td></tr>
-<tr class="separator:a227caa35587f18299d857d9b1a2b4bad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc76edc7053f0e396c9984bf229f5e7b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acc76edc7053f0e396c9984bf229f5e7b"></a>
-const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d81/a00110.html#acc76edc7053f0e396c9984bf229f5e7b">m_bmpPriority</a></td></tr>
-<tr class="memdesc:acc76edc7053f0e396c9984bf229f5e7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">BMP Priority. <br/></td></tr>
-<tr class="separator:acc76edc7053f0e396c9984bf229f5e7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa349b6776b9754eae4096f7608ae09a0"><td class="memItemLeft" align="right" valign="top">vector&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d81/a00110.html#aa349b6776b9754eae4096f7608ae09a0">m_distribution</a></td></tr>
-<tr class="separator:aa349b6776b9754eae4096f7608ae09a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43cb16434d2caa7245ebca352a950f62"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a43cb16434d2caa7245ebca352a950f62"></a>
-const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d81/a00110.html#a43cb16434d2caa7245ebca352a950f62">m_bmpCollection</a></td></tr>
-<tr class="memdesc:a43cb16434d2caa7245ebca352a950f62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collection name. <br/></td></tr>
-<tr class="separator:a43cb16434d2caa7245ebca352a950f62"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f0264c0b8732258fffed5395f10de0e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8f0264c0b8732258fffed5395f10de0e"></a>
-const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d81/a00110.html#a8f0264c0b8732258fffed5395f10de0e">m_location</a></td></tr>
-<tr class="memdesc:a8f0264c0b8732258fffed5395f10de0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define where the BMP will be applied. <br/></td></tr>
-<tr class="separator:a8f0264c0b8732258fffed5395f10de0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:adfbe97062368e43c6becdd2583fda016"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d81/a00110.html#adfbe97062368e43c6becdd2583fda016">climate_data</a></td></tr>
+<tr class="separator:adfbe97062368e43c6becdd2583fda016"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9faea1b7a46ce844f158d9c4844da8c4"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d81/a00110.html#a9faea1b7a46ce844f158d9c4844da8c4">spatial_rasters</a></td></tr>
+<tr class="separator:a9faea1b7a46ce844f158d9c4844da8c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5f368e0fdf47a191a91d99dfa127c32"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d81/a00110.html#ab5f368e0fdf47a191a91d99dfa127c32">iuh</a></td></tr>
+<tr class="separator:ab5f368e0fdf47a191a91d99dfa127c32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afed639509abc2da6b890208e25b52d1f"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d81/a00110.html#afed639509abc2da6b890208e25b52d1f">grid_layering</a></td></tr>
+<tr class="separator:afed639509abc2da6b890208e25b52d1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1ff36e535a0989c84ae12598c0cd675"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d81/a00110.html#ad1ff36e535a0989c84ae12598c0cd675">workflow</a></td></tr>
+<tr class="separator:ad1ff36e535a0989c84ae12598c0cd675"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfbe97062368e43c6becdd2583fda016"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d81/a00110.html#adfbe97062368e43c6becdd2583fda016">climate_data</a></td></tr>
+<tr class="separator:adfbe97062368e43c6becdd2583fda016"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9faea1b7a46ce844f158d9c4844da8c4"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d81/a00110.html#a9faea1b7a46ce844f158d9c4844da8c4">spatial_rasters</a></td></tr>
+<tr class="separator:a9faea1b7a46ce844f158d9c4844da8c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5f368e0fdf47a191a91d99dfa127c32"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d81/a00110.html#ab5f368e0fdf47a191a91d99dfa127c32">iuh</a></td></tr>
+<tr class="separator:ab5f368e0fdf47a191a91d99dfa127c32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afed639509abc2da6b890208e25b52d1f"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d81/a00110.html#afed639509abc2da6b890208e25b52d1f">grid_layering</a></td></tr>
+<tr class="separator:afed639509abc2da6b890208e25b52d1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1ff36e535a0989c84ae12598c0cd675"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d81/a00110.html#ad1ff36e535a0989c84ae12598c0cd675">workflow</a></td></tr>
+<tr class="separator:ad1ff36e535a0989c84ae12598c0cd675"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Base class to initiate a BMP data. </p>
-
-<p>Definition at line <a class="el" href="../../d8/d13/a00671_source.html#l00028">28</a> of file <a class="el" href="../../d8/d13/a00671_source.html">BMPFactory.h</a>.</p>
+<div class="textblock"><pre class="fragment">Separated function to import data into MongoDB.</pre> 
+<p>Definition at line <a class="el" href="../../d3/def/a00446_source.html#l00027">27</a> of file <a class="el" href="../../d3/def/a00446_source.html">db_build_mongodb.py</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ac8dfe5287c813519da202a479633767b"></a>
+<a class="anchor" id="ad5fc6f1afc8c22ce13dbf3e2928e7eb2"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">BMPFactory::BMPFactory </td>
+          <td class="memname">def seims.preprocess.db_build_mongodb.ImportMongodbClass.__init__ </td>
           <td>(</td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>scenarioId</em>, </td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Empty</pre> 
+<p>Definition at line <a class="el" href="../../d3/def/a00446_source.html#l00030">30</a> of file <a class="el" href="../../d3/def/a00446_source.html">db_build_mongodb.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad5fc6f1afc8c22ce13dbf3e2928e7eb2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.db_build_mongodb.ImportMongodbClass.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Empty</pre> 
+<p>Definition at line <a class="el" href="../../de/d84/a00447_source.html#l00030">30</a> of file <a class="el" href="../../de/d84/a00447_source.html">db_build_mongodb.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d4/d81/a00110_ad5fc6f1afc8c22ce13dbf3e2928e7eb2_cgraph.png" border="0" usemap="#d4/d81/a00110_ad5fc6f1afc8c22ce13dbf3e2928e7eb2_cgraph" alt=""/></div>
+<map name="d4/d81/a00110_ad5fc6f1afc8c22ce13dbf3e2928e7eb2_cgraph" id="d4/d81/a00110_ad5fc6f1afc8c22ce13dbf3e2928e7eb2_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="adfbe97062368e43c6becdd2583fda016"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.db_build_mongodb.ImportMongodbClass.climate_data </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>cfg</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>bmpId</em>, </td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>main_db</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>subScenario</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>bmpType</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>bmpPriority</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">vector&lt; string &gt;&#160;</td>
-          <td class="paramname"><em>distribution</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const string&#160;</td>
-          <td class="paramname"><em>collection</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const string&#160;</td>
-          <td class="paramname"><em>location</em>&#160;</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>clim_db</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -265,16 +235,18 @@ const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-
-<p>Constructor. </p>
-<p>Do nothing. </p>
-
-<p>Definition at line <a class="el" href="../../d1/d97/a00670_source.html#l00005">5</a> of file <a class="el" href="../../d1/d97/a00670_source.html">BMPFactory.cpp</a>.</p>
+<pre class="fragment">Climate data.</pre> 
+<p>Definition at line <a class="el" href="../../d3/def/a00446_source.html#l00035">35</a> of file <a class="el" href="../../d3/def/a00446_source.html">db_build_mongodb.py</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a6ede2a305a872f11257bdc7a2afc7799"></a>
+<a class="anchor" id="adfbe97062368e43c6becdd2583fda016"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -282,49 +254,50 @@ const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">BMPFactory::~BMPFactory </td>
+          <td class="memname">def seims.preprocess.db_build_mongodb.ImportMongodbClass.climate_data </td>
           <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>cfg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>main_db</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>clim_db</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
+<pre class="fragment">Climate data.</pre> 
+<p>Definition at line <a class="el" href="../../de/d84/a00447_source.html#l00035">35</a> of file <a class="el" href="../../de/d84/a00447_source.html">db_build_mongodb.py</a>.</p>
 
-<p>virtual Destructor </p>
-<p>There are no allocated memory to release! </p>
-
-<p>Definition at line <a class="el" href="../../d1/d97/a00670_source.html#l00014">14</a> of file <a class="el" href="../../d1/d97/a00670_source.html">BMPFactory.cpp</a>.</p>
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d4/d81/a00110_adfbe97062368e43c6becdd2583fda016_cgraph.png" border="0" usemap="#d4/d81/a00110_adfbe97062368e43c6becdd2583fda016_cgraph" alt=""/></div>
+<map name="d4/d81/a00110_adfbe97062368e43c6becdd2583fda016_cgraph" id="d4/d81/a00110_adfbe97062368e43c6becdd2583fda016_cgraph">
+</map>
+</div>
+</p>
 
 </div>
 </div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a8513b02f8c9e77da5b48ce2dbd2af0db"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int MainBMP::BMPFactory::bmpType </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Get BMP type 1 - reach BMPs which are attached to specific reaches and will change the character of the reach. 2 - areal structural BMPs which are corresponding to a specific structure in the watershed and will change the character of subbasins/cells. 3 - areal non-structure BMPs which are NOT corresponding to a specific structure in the watershed and will change the character of subbasins/cells. 4 - point structural BMPs </p>
-
-<p>Definition at line <a class="el" href="../../d8/d13/a00671_source.html#l00058">58</a> of file <a class="el" href="../../d8/d13/a00671_source.html">BMPFactory.h</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="aa349b6776b9754eae4096f7608ae09a0"></a>
+<a class="anchor" id="afed639509abc2da6b890208e25b52d1f"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -332,32 +305,312 @@ const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt;string&gt; MainBMP::BMPFactory::m_distribution</td>
+          <td class="memname">def seims.preprocess.db_build_mongodb.ImportMongodbClass.grid_layering </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>cfg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>n_subbasins</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Distribution vector of BMP Origin format is [distribution data type]|[distribution parameter name]|Collection name|... </p>
-
-<p>Definition at line <a class="el" href="../../d8/d13/a00671_source.html#l00078">78</a> of file <a class="el" href="../../d8/d13/a00671_source.html">BMPFactory.h</a>.</p>
+<pre class="fragment">Invoke grid layering program.</pre> 
+<p>Definition at line <a class="el" href="../../d3/def/a00446_source.html#l00079">79</a> of file <a class="el" href="../../d3/def/a00446_source.html">db_build_mongodb.py</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
-<li>seims/src/seims_main/base/bmps/<a class="el" href="../../d8/d13/a00671_source.html">BMPFactory.h</a></li>
-<li>seims/src/seims_main/base/bmps/<a class="el" href="../../d1/d97/a00670_source.html">BMPFactory.cpp</a></li>
+<a class="anchor" id="afed639509abc2da6b890208e25b52d1f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.db_build_mongodb.ImportMongodbClass.grid_layering </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>cfg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>n_subbasins</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Invoke grid layering program.</pre> 
+<p>Definition at line <a class="el" href="../../de/d84/a00447_source.html#l00079">79</a> of file <a class="el" href="../../de/d84/a00447_source.html">db_build_mongodb.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d4/d81/a00110_afed639509abc2da6b890208e25b52d1f_cgraph.png" border="0" usemap="#d4/d81/a00110_afed639509abc2da6b890208e25b52d1f_cgraph" alt=""/></div>
+<map name="d4/d81/a00110_afed639509abc2da6b890208e25b52d1f_cgraph" id="d4/d81/a00110_afed639509abc2da6b890208e25b52d1f_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ab5f368e0fdf47a191a91d99dfa127c32"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.db_build_mongodb.ImportMongodbClass.iuh </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>cfg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>n_subbasins</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Invoke IUH program</pre> 
+<p>Definition at line <a class="el" href="../../de/d84/a00447_source.html#l00065">65</a> of file <a class="el" href="../../de/d84/a00447_source.html">db_build_mongodb.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d4/d81/a00110_ab5f368e0fdf47a191a91d99dfa127c32_cgraph.png" border="0" usemap="#d4/d81/a00110_ab5f368e0fdf47a191a91d99dfa127c32_cgraph" alt=""/></div>
+<map name="d4/d81/a00110_ab5f368e0fdf47a191a91d99dfa127c32_cgraph" id="d4/d81/a00110_ab5f368e0fdf47a191a91d99dfa127c32_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ab5f368e0fdf47a191a91d99dfa127c32"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.db_build_mongodb.ImportMongodbClass.iuh </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>cfg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>n_subbasins</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Invoke IUH program</pre> 
+<p>Definition at line <a class="el" href="../../d3/def/a00446_source.html#l00065">65</a> of file <a class="el" href="../../d3/def/a00446_source.html">db_build_mongodb.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9faea1b7a46ce844f158d9c4844da8c4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.db_build_mongodb.ImportMongodbClass.spatial_rasters </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>cfg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>subbasin_num</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Import spatial raster data.</pre> 
+<p>Definition at line <a class="el" href="../../de/d84/a00447_source.html#l00042">42</a> of file <a class="el" href="../../de/d84/a00447_source.html">db_build_mongodb.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d4/d81/a00110_a9faea1b7a46ce844f158d9c4844da8c4_cgraph.png" border="0" usemap="#d4/d81/a00110_a9faea1b7a46ce844f158d9c4844da8c4_cgraph" alt=""/></div>
+<map name="d4/d81/a00110_a9faea1b7a46ce844f158d9c4844da8c4_cgraph" id="d4/d81/a00110_a9faea1b7a46ce844f158d9c4844da8c4_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a9faea1b7a46ce844f158d9c4844da8c4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.db_build_mongodb.ImportMongodbClass.spatial_rasters </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>cfg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>subbasin_num</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Import spatial raster data.</pre> 
+<p>Definition at line <a class="el" href="../../d3/def/a00446_source.html#l00042">42</a> of file <a class="el" href="../../d3/def/a00446_source.html">db_build_mongodb.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad1ff36e535a0989c84ae12598c0cd675"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.db_build_mongodb.ImportMongodbClass.workflow </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>cfg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Building MongoDB workflow</pre> 
+<p>Definition at line <a class="el" href="../../de/d84/a00447_source.html#l00092">92</a> of file <a class="el" href="../../de/d84/a00447_source.html">db_build_mongodb.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d4/d81/a00110_ad1ff36e535a0989c84ae12598c0cd675_cgraph.png" border="0" usemap="#d4/d81/a00110_ad1ff36e535a0989c84ae12598c0cd675_cgraph" alt=""/></div>
+<map name="d4/d81/a00110_ad1ff36e535a0989c84ae12598c0cd675_cgraph" id="d4/d81/a00110_ad1ff36e535a0989c84ae12598c0cd675_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ad1ff36e535a0989c84ae12598c0cd675"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.db_build_mongodb.ImportMongodbClass.workflow </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>cfg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Building MongoDB workflow</pre> 
+<p>Definition at line <a class="el" href="../../d3/def/a00446_source.html#l00092">92</a> of file <a class="el" href="../../d3/def/a00446_source.html">db_build_mongodb.py</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>seims/preprocess/<a class="el" href="../../d3/def/a00446_source.html">db_build_mongodb.py</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../d4/d95/a00989.html">MainBMP</a></li><li class="navelem"><a class="el" href="../../d4/d81/a00110.html">BMPFactory</a></li>
-    <li class="footer">Generated on Thu Oct 26 2017 12:50:40 for SEIMS by
+    <li class="navelem"><b>seims</b></li><li class="navelem"><b>preprocess</b></li><li class="navelem"><b>db_build_mongodb</b></li><li class="navelem"><a class="el" href="../../d4/d81/a00110.html">ImportMongodbClass</a></li>
+    <li class="footer">Generated on Fri Oct 27 2017 15:28:53 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

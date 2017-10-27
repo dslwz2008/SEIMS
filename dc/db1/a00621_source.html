@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims/src/seims_main/main/main_mpi/main.cpp Source File</title>
+<title>SEIMS: seims/src/seims_main/base/util/SimulationModule.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -112,234 +112,191 @@ $(document).ready(function(){initNavTree('dc/db1/a00621_source.html','../../');}
 
 <div class="header">
   <div class="headertitle">
-<div class="title">main.cpp</div>  </div>
+<div class="title">SimulationModule.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;mpi.h&gt;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;cstdio&gt;</span> </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;cstdlib&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;sstream&gt;</span> </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;ctime&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;set&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//gdal</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;ogrsf_frmts.h&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;gdal.h&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;gdal_priv.h&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;cpl_string.h&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;ReadData.h&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;utilities.h&quot;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;ModelException.h&quot;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;invoke.h&quot;</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;mongoc.h&quot;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">//#include &quot;mongo.h&quot;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;bson.h&quot;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">//#include &quot;gridfs.h&quot;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;parallel.h&quot;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> * Deprecated</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keywordtype">void</span> WriteFileInOut(<span class="keywordtype">string</span> &amp;projectPath, <span class="keywordtype">string</span> &amp;startTime, <span class="keywordtype">string</span> &amp;endTime) {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">string</span> fileInName = projectPath + <span class="stringliteral">&quot;file.in&quot;</span>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">string</span> fileOutName = projectPath + <span class="stringliteral">&quot;file.out&quot;</span>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    ofstream fin(fileInName.c_str());</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    fin &lt;&lt; <span class="stringliteral">&quot;MODE|Daily\nINTERVAL|1\n&quot;</span>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    fin &lt;&lt; <span class="stringliteral">&quot;STARTTIME|&quot;</span> &lt;&lt; startTime &lt;&lt; <span class="stringliteral">&quot; 00:00:00\n&quot;</span>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    fin &lt;&lt; <span class="stringliteral">&quot;ENDTIME|&quot;</span> &lt;&lt; endTime &lt;&lt; <span class="stringliteral">&quot; 00:00:00&quot;</span>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    fin.close();</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    ofstream fout(fileOutName.c_str());</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">//fout &lt;&lt; &quot;OUTPUTID|SOER\nCOUNT | 1\nTYPE | SUM\n&quot;;</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">//fout &lt;&lt; &quot;STARTTIME|&quot; &lt;&lt; startTime &lt;&lt; &quot; 00:00:00\n&quot;;</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">//fout &lt;&lt; &quot;ENDTIME|&quot; &lt;&lt; endTime &lt;&lt; &quot; 00:00:00\n&quot;;</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">//fout &lt;&lt; &quot;FILENAME|SOER\n\n&quot;;</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    fout &lt;&lt; <span class="stringliteral">&quot;OUTPUTID|SURU\nCOUNT | 1\nTYPE | SUM\n&quot;</span>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    fout &lt;&lt; <span class="stringliteral">&quot;STARTTIME|&quot;</span> &lt;&lt; startTime &lt;&lt; <span class="stringliteral">&quot; 00:00:00\n&quot;</span>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    fout &lt;&lt; <span class="stringliteral">&quot;ENDTIME|&quot;</span> &lt;&lt; endTime &lt;&lt; <span class="stringliteral">&quot; 00:00:00\n&quot;</span>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    fout &lt;&lt; <span class="stringliteral">&quot;FILENAME|SURU\n\n&quot;</span>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">//fout &lt;&lt; &quot;OUTPUTID|SOET\nCOUNT | 1\nTYPE | SUM\n&quot;;</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">//fout &lt;&lt; &quot;STARTTIME|&quot; &lt;&lt; startTime &lt;&lt; &quot; 00:00:00\n&quot;;</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">//fout &lt;&lt; &quot;ENDTIME|&quot; &lt;&lt; endTime &lt;&lt; &quot; 00:00:00\n&quot;;</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">//fout &lt;&lt; &quot;FILENAME|SOET\n\n&quot;;</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#ifndef SIMULATION_MOUDULE_BASE</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SIMULATION_MOUDULE_BASE</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;ModelException.h&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;Scenario.h&quot;</span>  </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;clsReach.h&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;clsSubbasin.h&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;ostream&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;ctime&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;iomanip&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#ifdef SUPPORT_OMP</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &lt;omp.h&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">using namespace </span>MainBMP;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">enum</span> TimeStepType {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    TIMESTEP_HILLSLOPE,   </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    TIMESTEP_CHANNEL,     </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    TIMESTEP_ECOLOGY,     </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    TIMESTEP_SIMULATION   </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="../../dc/d57/a00194.html">   47</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../dc/d57/a00194.html">SimulationModule</a> {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="../../dc/d57/a00194.html">SimulationModule</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="../../dc/d57/a00194.html">SimulationModule</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="../../dc/d57/a00194.html#aeeec0ab34636df859c0b3116db18942f">   56</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="../../dc/d57/a00194.html#aeeec0ab34636df859c0b3116db18942f">Execute</a>(<span class="keywordtype">void</span>) { <span class="keywordflow">return</span> -1; };</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">//fout &lt;&lt; &quot;OUTPUTID|INLO\nCOUNT | 1\nTYPE | SUM\n&quot;;</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">//fout &lt;&lt; &quot;STARTTIME|&quot; &lt;&lt; startTime &lt;&lt; &quot; 00:00:00\n&quot;;</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">//fout &lt;&lt; &quot;ENDTIME|&quot; &lt;&lt; endTime &lt;&lt; &quot; 00:00:00\n&quot;;</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">//fout &lt;&lt; &quot;FILENAME|INLO\n&quot;;</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    fout.close();</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[]) {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">if</span> (argc &lt; 2) {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;Usage: mpiexec -n [threadsNum] seims_mpi configFile [outputQFile]\n&quot;</span>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        exit(-1);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    OGRRegisterAll();</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    GDALAllRegister();</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="../../dc/d57/a00194.html#a8526abbeed3f49071f39e0c17559e522">   59</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../dc/d57/a00194.html#a8526abbeed3f49071f39e0c17559e522">SetDate</a>(time_t t, <span class="keywordtype">int</span> yearIdx) {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        m_date = t;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        m_yearIdx = yearIdx;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    };</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="../../dc/d57/a00194.html#a46191d743a839a5290fd42d318b500d0">   65</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../dc/d57/a00194.html#a46191d743a839a5290fd42d318b500d0">SetTheadNumber</a>(<span class="keywordtype">int</span> threadNum) {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#ifdef SUPPORT_OMP</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor"></span>        omp_set_num_threads(threadNum);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor"></span>    };</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="../../dc/d57/a00194.html#af7b9caed16e56bf880b171040981403e">   72</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../dc/d57/a00194.html#af7b9caed16e56bf880b171040981403e">SetClimateDataType</a>(<span class="keywordtype">float</span> value) {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    };</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *configFile = argv[1];</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">string</span> outputFile = <span class="stringliteral">&quot;q.txt&quot;</span>;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">if</span> (argc &gt;= 3) {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        outputFile = argv[2];</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="../../dc/d57/a00194.html#afcfef6ce1ce8761a961f694e3a7969bb">   76</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../dc/d57/a00194.html#afcfef6ce1ce8761a961f694e3a7969bb">SetValue</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">float</span> data) {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../d5/db1/a00140.html">ModelException</a>(<span class="stringliteral">&quot;SimulationModule&quot;</span>, <span class="stringliteral">&quot;SetValue&quot;</span>,</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                             <span class="stringliteral">&quot;Set function of parameter &quot;</span> + <span class="keywordtype">string</span>(key) + <span class="stringliteral">&quot; is not implemented.&quot;</span>);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    };</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">// read info from config file</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    ifstream ifsConfig(configFile);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">string</span> tmp, dbAddress, modelName, projectPath, modulePath;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">int</span> dbPort = 27017;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">int</span> nThread = 1;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">int</span> layering = 0;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    ifsConfig &gt;&gt; tmp &gt;&gt; modelName;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    ifsConfig &gt;&gt; tmp &gt;&gt; projectPath;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    ifsConfig &gt;&gt; tmp &gt;&gt; modulePath;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    ifsConfig &gt;&gt; tmp &gt;&gt; dbAddress;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    ifsConfig &gt;&gt; tmp &gt;&gt; dbPort;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    ifsConfig &gt;&gt; tmp &gt;&gt; nThread;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    ifsConfig &gt;&gt; tmp &gt;&gt; layering;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="comment">//ifsConfig &gt;&gt; outputFile;</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    ifsConfig.close();</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">if</span> (argc &gt;= 4) {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        nThread = atoi(argv[3]);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">if</span> (argc &gt;= 5) {</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        layering = atoi(argv[4]);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    LayeringMethod layeringMethod = DOWN_UP;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">if</span> (layering == 0) {</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        layeringMethod = UP_DOWN;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        layeringMethod = DOWN_UP;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    }</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordtype">int</span> nLen = projectPath.length();</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordflow">if</span> (projectPath.substr(nLen - 1, 1) != SEP) {</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        projectPath = projectPath + SEP;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    }</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    nLen = modulePath.length();</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">if</span> (modulePath.substr(nLen - 1, 1) != SEP) {</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        modulePath = modulePath + SEP;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    }</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="../../dc/d57/a00194.html#aba2d6fc2b0e4f8ccf202e0752c45d55c">   82</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../dc/d57/a00194.html#aba2d6fc2b0e4f8ccf202e0752c45d55c">Set1DData</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">int</span> n, <span class="keywordtype">float</span> *data) {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../d5/db1/a00140.html">ModelException</a>(<span class="stringliteral">&quot;SimulationModule&quot;</span>, <span class="stringliteral">&quot;Set1DData&quot;</span>,</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                             <span class="stringliteral">&quot;Set function of parameter &quot;</span> + <span class="keywordtype">string</span>(key) + <span class="stringliteral">&quot; is not implemented.&quot;</span>);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    };</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="../../dc/d57/a00194.html#a497fa950bc9c4d85cfb1ae13d83f06c9">   88</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../dc/d57/a00194.html#a497fa950bc9c4d85cfb1ae13d83f06c9">Set2DData</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">int</span> nRows, <span class="keywordtype">int</span> nCols, <span class="keywordtype">float</span> **data) {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../d5/db1/a00140.html">ModelException</a>(<span class="stringliteral">&quot;SimulationModule&quot;</span>, <span class="stringliteral">&quot;Set2DData&quot;</span>,</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                             <span class="stringliteral">&quot;Set function of parameter &quot;</span> + <span class="keywordtype">string</span>(key) + <span class="stringliteral">&quot; is not implemented.&quot;</span>);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    };</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="../../dc/d57/a00194.html#ac3c60349cd6720bb66e58fa4cd31a999">   94</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../dc/d57/a00194.html#ac3c60349cd6720bb66e58fa4cd31a999">Set1DArrayData</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">int</span> n, <span class="keywordtype">float</span> *data) {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../d5/db1/a00140.html">ModelException</a>(<span class="stringliteral">&quot;SimulationModule&quot;</span>, <span class="stringliteral">&quot;Set1DArrayData&quot;</span>,</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                             <span class="stringliteral">&quot;Set function of parameter &quot;</span> + <span class="keywordtype">string</span>(key) + <span class="stringliteral">&quot; is not implemented.&quot;</span>);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    };</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="../../dc/d57/a00194.html#a1f7470f5f4f831b9053e3ff2d92c1813">  100</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../dc/d57/a00194.html#a1f7470f5f4f831b9053e3ff2d92c1813">Set2DArrayData</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">int</span> nRows, <span class="keywordtype">int</span> nCols, <span class="keywordtype">float</span> **data) {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../d5/db1/a00140.html">ModelException</a>(<span class="stringliteral">&quot;SimulationModule&quot;</span>, <span class="stringliteral">&quot;Set2DArrayData&quot;</span>,</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                             <span class="stringliteral">&quot;Set function of parameter &quot;</span> + <span class="keywordtype">string</span>(key) + <span class="stringliteral">&quot; is not implemented.&quot;</span>);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    };</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="../../dc/d57/a00194.html#aafd60bc9d4176a0cf64af01aed881980">  106</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../dc/d57/a00194.html#aafd60bc9d4176a0cf64af01aed881980">GetValue</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">float</span> *value) {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../d5/db1/a00140.html">ModelException</a>(<span class="stringliteral">&quot;SimulationModule&quot;</span>, <span class="stringliteral">&quot;GetValue&quot;</span>,</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                             <span class="stringliteral">&quot;Get function of parameter &quot;</span> + <span class="keywordtype">string</span>(key) + <span class="stringliteral">&quot; is not implemented.&quot;</span>);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    };</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="../../dc/d57/a00194.html#ad834fe6ed6d11b333fd34e1ff605ebb7">  112</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../dc/d57/a00194.html#ad834fe6ed6d11b333fd34e1ff605ebb7">Get1DData</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">int</span> *n, <span class="keywordtype">float</span> **data) {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../d5/db1/a00140.html">ModelException</a>(<span class="stringliteral">&quot;SimulationModule&quot;</span>, <span class="stringliteral">&quot;Get1DData&quot;</span>,</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                             <span class="stringliteral">&quot;Get function of parameter &quot;</span> + <span class="keywordtype">string</span>(key) + <span class="stringliteral">&quot; is not implemented.&quot;</span>);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    };</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="../../dc/d57/a00194.html#ab6dc960ad0a7bd7714e9644b64dc0acb">  118</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../dc/d57/a00194.html#ab6dc960ad0a7bd7714e9644b64dc0acb">Get2DData</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">int</span> *nRows, <span class="keywordtype">int</span> *nCols, <span class="keywordtype">float</span> ***data) {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../d5/db1/a00140.html">ModelException</a>(<span class="stringliteral">&quot;SimulationModule&quot;</span>, <span class="stringliteral">&quot;Get2DData&quot;</span>,</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                             <span class="stringliteral">&quot;Get function of parameter &quot;</span> + <span class="keywordtype">string</span>(key) + <span class="stringliteral">&quot; is not implemented.&quot;</span>);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    };</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordtype">int</span> numprocs, rank, nameLen;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    MPI_Init(&amp;argc, &amp;argv);</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    MPI_Comm_size(MPI_COMM_WORLD, &amp;numprocs);</div>
+<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="../../dc/d57/a00194.html#aeb23e43dd78e4fb8ce5d25a9855dd748">  124</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../dc/d57/a00194.html#aeb23e43dd78e4fb8ce5d25a9855dd748">Get1DArrayData</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">int</span> *n, <span class="keywordtype">float</span> **data) {</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../d5/db1/a00140.html">ModelException</a>(<span class="stringliteral">&quot;SimulationModule&quot;</span>, <span class="stringliteral">&quot;Get1DArrayData&quot;</span>,</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                             <span class="stringliteral">&quot;Get function of parameter &quot;</span> + <span class="keywordtype">string</span>(key) + <span class="stringliteral">&quot; is not implemented.&quot;</span>);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    };</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    MPI_Comm_rank(MPI_COMM_WORLD, &amp;rank);</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordtype">char</span> processor_name[MPI_MAX_PROCESSOR_NAME];</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    MPI_Get_processor_name(processor_name, &amp;nameLen);</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    MPI_Group MPI_GROUP_WORLD, slaveGroup;</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    MPI_Comm slaveComm;</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    MPI_Comm_group(MPI_COMM_WORLD, &amp;MPI_GROUP_WORLD);</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="comment">// create the master, transfer and calculation groups</span></div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> notSlaveRanks[] = {0};</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    MPI_Group_excl(MPI_GROUP_WORLD, 1, notSlaveRanks, &amp;slaveGroup);</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    MPI_Comm_create(MPI_COMM_WORLD, slaveGroup, &amp;slaveComm);</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordtype">int</span> nSlaves = numprocs - 1;</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="comment">//cout &lt;&lt; &quot;nSlaves:&quot; &lt;&lt; nSlaves &lt;&lt; endl;</span></div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordflow">if</span> (rank == MASTER_RANK) {</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="comment">//mongo conn[1];</span></div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="comment">//int status = mongo_connect(conn, dbAddress.c_str(), dbPort);</span></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="comment">//if (MONGO_OK != status)</span></div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="comment">//{</span></div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="comment">//    cout &lt;&lt; &quot;can not connect to mongodb at &quot; &lt;&lt; dbAddress &lt;&lt; &quot;:&quot; &lt;&lt; dbPort &lt;&lt; endl;</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <span class="comment">//    exit(-1);</span></div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <span class="comment">//}</span></div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="comment"></span>        mongoc_client_t *conn;</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">char</span> *host = dbAddress.c_str();</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="keywordflow">if</span> (!isIPAddress(host)) {</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="../../dd/de3/a00201.html">ModelException</a>(<span class="stringliteral">&quot;MainMPI&quot;</span>, <span class="stringliteral">&quot;Connect to MongoDB&quot;</span>,</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                                 <span class="stringliteral">&quot;IP address: &quot;</span> + <span class="keywordtype">string</span>(host) + <span class="stringliteral">&quot;is invalid, Please check!\n&quot;</span>);</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        }</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        mongoc_init();</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        mongoc_uri_t *uri = mongoc_uri_new_for_host_port(host, dbPort);</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        conn = mongoc_client_new_from_uri(uri);</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        bson_t *reply = bson_new();</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        bson_error_t *err = NULL;</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <span class="keywordflow">if</span> (!mongoc_client_get_server_status(conn, NULL, reply, err)) {</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="../../dd/de3/a00201.html">ModelException</a>(MODEL_NAME, <span class="stringliteral">&quot;MainMongoDB&quot;</span>, <span class="stringliteral">&quot;Failed to connect to MongoDB!\n&quot;</span>);</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        }</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        bson_destroy(reply);</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <span class="comment">// read river topology data</span></div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        map &lt; int, SubbasinStruct * &gt; subbasinMap;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        set&lt;int&gt; groupSet;</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="comment">//ReadRiverTopology(reachFile, subbasinMap, groupSet);</span></div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="keywordtype">string</span> groupMethod = <span class="stringliteral">&quot;KMETIS&quot;</span>;</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        ReadReachTopologyFromMongoDB(conn, modelName.c_str(), subbasinMap, groupSet, nSlaves, REACH_KMETIS);</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="keywordflow">if</span> ((<span class="keywordtype">size_t</span>) nSlaves != groupSet.size()) {</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;            groupSet.clear();</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            groupMethod = <span class="stringliteral">&quot;PMETIS&quot;</span>;</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            ReadReachTopologyFromMongoDB(conn, modelName.c_str(), subbasinMap, groupSet, nSlaves, REACH_PMETIS);</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            <span class="keywordflow">if</span> ((<span class="keywordtype">size_t</span>) nSlaves != groupSet.size()) {</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                groupSet.clear();</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                groupMethod = <span class="stringliteral">&quot;GROUP&quot;</span>;</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                ReadReachTopologyFromMongoDB(conn, modelName.c_str(), subbasinMap, groupSet, nSlaves, REACH_GROUP);</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                <span class="keywordflow">if</span> ((<span class="keywordtype">size_t</span>) nSlaves != groupSet.size()) {</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                    cout &lt;&lt; <span class="stringliteral">&quot;The number of slave processes (&quot;</span> &lt;&lt; nSlaves &lt;&lt; <span class="stringliteral">&quot;) is not consist with the group number(&quot;</span> &lt;&lt;</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                         groupSet.size() &lt;&lt; <span class="stringliteral">&quot;).\n&quot;</span>;</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                    exit(-1);</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                }</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            }</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        }</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        cout &lt;&lt; groupMethod &lt;&lt; <span class="stringliteral">&quot;, Number of Groups:&quot;</span> &lt;&lt; groupSet.size() &lt;&lt; endl;</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            MasterProcess(subbasinMap, groupSet, projectPath, outputFile);</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        }</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        <span class="keywordflow">catch</span> (<a class="code" href="../../dd/de3/a00201.html">ModelException</a> e) {</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            cout &lt;&lt; e.<a class="code" href="../../dd/de3/a00201.html#af1e727d462200d9bfaf44ee15921b7b5">toString</a>() &lt;&lt; endl;</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        }</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        mongoc_uri_destroy(uri);</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        <span class="comment">// mongo_destroy(conn);</span></div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        MPI_Finalize();</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    }</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        CalculateProcess(rank, numprocs, nSlaves, slaveComm, projectPath, modulePath, dbAddress.c_str(), dbPort,</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                         modelName.c_str(), nThread, layeringMethod);</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    }</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keywordflow">catch</span> (<a class="code" href="../../dd/de3/a00201.html">ModelException</a> e) {</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        cout &lt;&lt; e.<a class="code" href="../../dd/de3/a00201.html#af1e727d462200d9bfaf44ee15921b7b5">toString</a>() &lt;&lt; endl;</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    }</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    MPI_Finalize();</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;}</div>
-<div class="ttc" id="a00201_html"><div class="ttname"><a href="../../dd/de3/a00201.html">ModelException</a></div><div class="ttdoc">Print the exception message. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d10/a00635_source.html#l00020">ModelException.h:20</a></div></div>
-<div class="ttc" id="a00201_html_af1e727d462200d9bfaf44ee15921b7b5"><div class="ttname"><a href="../../dd/de3/a00201.html#af1e727d462200d9bfaf44ee15921b7b5">ModelException::toString</a></div><div class="ttdeci">string toString(void)</div><div class="ttdoc">Construct error information (string version) </div><div class="ttdef"><b>Definition:</b> <a href="../../d7/de4/a00634_source.html#l00013">ModelException.cpp:13</a></div></div>
+<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="../../dc/d57/a00194.html#a3330ba74e63c5e2e6368d5d62d4048ea">  130</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../dc/d57/a00194.html#a3330ba74e63c5e2e6368d5d62d4048ea">Get2DArrayData</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">int</span> *nRows, <span class="keywordtype">int</span> *nCols, <span class="keywordtype">float</span> ***data) {</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../d5/db1/a00140.html">ModelException</a>(<span class="stringliteral">&quot;SimulationModule&quot;</span>, <span class="stringliteral">&quot;Get2DArrayData&quot;</span>,</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                             <span class="stringliteral">&quot;Get function of parameter &quot;</span> + <span class="keywordtype">string</span>(key) + <span class="stringliteral">&quot; is not implemented.&quot;</span>);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    };</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
+<div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="../../dc/d57/a00194.html#ae6dfd515de376498a12a22724e57650a">  136</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../dc/d57/a00194.html#ae6dfd515de376498a12a22724e57650a">SetScenario</a>(<a class="code" href="../../da/d15/a00188.html">Scenario</a> *) {</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../d5/db1/a00140.html">ModelException</a>(<span class="stringliteral">&quot;SimulationModule&quot;</span>, <span class="stringliteral">&quot;SetScenario&quot;</span>, <span class="stringliteral">&quot;Set scenario function is not implemented.&quot;</span>);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    }</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;</div>
+<div class="line"><a name="l00141"></a><span class="lineno"><a class="line" href="../../dc/d57/a00194.html#aa4115c5f61d71efde62d3b62c70b51ec">  141</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../dc/d57/a00194.html#aa4115c5f61d71efde62d3b62c70b51ec">SetReaches</a>(<a class="code" href="../../d4/d31/a00069.html">clsReaches</a> *) {</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../d5/db1/a00140.html">ModelException</a>(<span class="stringliteral">&quot;SimulationModule&quot;</span>, <span class="stringliteral">&quot;SetReaches&quot;</span>, <span class="stringliteral">&quot;Set reaches function is not implemented.&quot;</span>);</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    }</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;</div>
+<div class="line"><a name="l00146"></a><span class="lineno"><a class="line" href="../../dc/d57/a00194.html#a97da293bca13cf5934d9ef6da34d9290">  146</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../dc/d57/a00194.html#a97da293bca13cf5934d9ef6da34d9290">SetSubbasins</a>(<a class="code" href="../../d0/d89/a00071.html">clsSubbasins</a> *) {</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../d5/db1/a00140.html">ModelException</a>(<span class="stringliteral">&quot;SimulationModule&quot;</span>, <span class="stringliteral">&quot;SetSubbasins&quot;</span>, <span class="stringliteral">&quot;Set subbasins function is not implemented.&quot;</span>);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    }</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;</div>
+<div class="line"><a name="l00151"></a><span class="lineno"><a class="line" href="../../dc/d57/a00194.html#abd96e67e4e6d1c6f50bc51e69aad4a96">  151</a></span>&#160;    <span class="keyword">virtual</span> TimeStepType <a class="code" href="../../dc/d57/a00194.html#abd96e67e4e6d1c6f50bc51e69aad4a96">GetTimeStepType</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="keywordflow">return</span> TIMESTEP_HILLSLOPE;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    };</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;</div>
+<div class="line"><a name="l00156"></a><span class="lineno"><a class="line" href="../../dc/d57/a00194.html#abbcc7144125d11f1da27da05f4a94338">  156</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../dc/d57/a00194.html#abbcc7144125d11f1da27da05f4a94338">ResetSubTimeStep</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        m_tsCounter = 1;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    };</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;</div>
+<div class="line"><a name="l00161"></a><span class="lineno"><a class="line" href="../../dc/d57/a00194.html#a4b1e6030fa901ac2bfa4350a819b4ecb">  161</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../dc/d57/a00194.html#a4b1e6030fa901ac2bfa4350a819b4ecb">IsInputsSetDone</a>(<span class="keywordtype">void</span>) { <span class="keywordflow">return</span> m_inputsSetDone; }</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div>
+<div class="line"><a name="l00164"></a><span class="lineno"><a class="line" href="../../dc/d57/a00194.html#a94457cc066581e7ecd1d3c88ebdf3163">  164</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dc/d57/a00194.html#a94457cc066581e7ecd1d3c88ebdf3163">SetInputsDone</a>(<span class="keywordtype">bool</span> setDone) { m_inputsSetDone = setDone; }</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00168"></a><span class="lineno"><a class="line" href="../../dc/d57/a00194.html#aabd631c05d3e74aa9970f7415f2f5de7">  168</a></span>&#160;    time_t <a class="code" href="../../dc/d57/a00194.html#aabd631c05d3e74aa9970f7415f2f5de7">m_date</a>;</div>
+<div class="line"><a name="l00170"></a><span class="lineno"><a class="line" href="../../dc/d57/a00194.html#addfe4dd5800efd0bb827338daf65d64c">  170</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../dc/d57/a00194.html#addfe4dd5800efd0bb827338daf65d64c">m_yearIdx</a>;</div>
+<div class="line"><a name="l00172"></a><span class="lineno"><a class="line" href="../../dc/d57/a00194.html#adee1865c86a9761af76cec98cac30a44">  172</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../dc/d57/a00194.html#adee1865c86a9761af76cec98cac30a44">m_tsCounter</a>;</div>
+<div class="line"><a name="l00174"></a><span class="lineno"><a class="line" href="../../dc/d57/a00194.html#a68422923210ead26b1651bf0e0a339f6">  174</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../dc/d57/a00194.html#a68422923210ead26b1651bf0e0a339f6">m_inputsSetDone</a>;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;};</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="preprocessor">#define CHECK_DATA(moduleID, expression, param, desc) if ((expression)) \</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="preprocessor">                   throw ModelException(moduleID, &quot;CheckInputData&quot;, string(#param) + string(&quot; has not been set: &quot;) + string(desc))</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CHECK_POINTER(moduleID, param, desc) if (NULL == param) \</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="preprocessor">                   throw ModelException(moduleID, &quot;CheckInputData&quot;, string(#param) + string(&quot; has not been set: &quot;) + string(desc))</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CHECK_POSITIVE(moduleID, param, desc) if (param &lt;= 0) \</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="preprocessor">                   throw ModelException(moduleID, &quot;CheckInputData&quot;, string(#param) + string(&quot; has not been set: &quot;) + string(desc))</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CHECK_NEGATIVE(moduleID, param, desc) if (param &gt;= 0) \</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="preprocessor">                   throw ModelException(moduleID, &quot;CheckInputData&quot;, string(#param) + string(&quot; has not been set: &quot;) + string(desc))</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CHECK_ZERO(moduleID, param, desc) if (param == 0 || FloatEqual(float(param), 0.f)) \</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="preprocessor">                   throw ModelException(moduleID, &quot;CheckInputData&quot;, string(#param) + string(&quot; has not been set: &quot;) + string(desc))</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SIMULATION_MOUDULE_BASE */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="a00194_html_ab6dc960ad0a7bd7714e9644b64dc0acb"><div class="ttname"><a href="../../dc/d57/a00194.html#ab6dc960ad0a7bd7714e9644b64dc0acb">SimulationModule::Get2DData</a></div><div class="ttdeci">virtual void Get2DData(const char *key, int *nRows, int *nCols, float ***data)</div><div class="ttdoc">Get 2D data, by default, DT_Raster2D. </div><div class="ttdef"><b>Definition:</b> <a href="../../dc/db1/a00621_source.html#l00118">SimulationModule.h:118</a></div></div>
+<div class="ttc" id="a00194_html_a68422923210ead26b1651bf0e0a339f6"><div class="ttname"><a href="../../dc/d57/a00194.html#a68422923210ead26b1651bf0e0a339f6">SimulationModule::m_inputsSetDone</a></div><div class="ttdeci">bool m_inputsSetDone</div><div class="ttdoc">Whether the inputs parameters (i.e., parameters derived from other modules) have been set...</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/db1/a00621_source.html#l00174">SimulationModule.h:174</a></div></div>
+<div class="ttc" id="a00194_html_aafd60bc9d4176a0cf64af01aed881980"><div class="ttname"><a href="../../dc/d57/a00194.html#aafd60bc9d4176a0cf64af01aed881980">SimulationModule::GetValue</a></div><div class="ttdeci">virtual void GetValue(const char *key, float *value)</div><div class="ttdoc">Get value, DT_Single. </div><div class="ttdef"><b>Definition:</b> <a href="../../dc/db1/a00621_source.html#l00106">SimulationModule.h:106</a></div></div>
+<div class="ttc" id="a00194_html_a46191d743a839a5290fd42d318b500d0"><div class="ttname"><a href="../../dc/d57/a00194.html#a46191d743a839a5290fd42d318b500d0">SimulationModule::SetTheadNumber</a></div><div class="ttdeci">virtual void SetTheadNumber(int threadNum)</div><div class="ttdoc">Set thread number for OpenMP. </div><div class="ttdef"><b>Definition:</b> <a href="../../dc/db1/a00621_source.html#l00065">SimulationModule.h:65</a></div></div>
+<div class="ttc" id="a00188_html"><div class="ttname"><a href="../../da/d15/a00188.html">MainBMP::Scenario</a></div><div class="ttdoc">Main class of scenario in BMP database. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dbe/a00574_source.html#l00039">Scenario.h:39</a></div></div>
+<div class="ttc" id="a00194_html_abbcc7144125d11f1da27da05f4a94338"><div class="ttname"><a href="../../dc/d57/a00194.html#abbcc7144125d11f1da27da05f4a94338">SimulationModule::ResetSubTimeStep</a></div><div class="ttdeci">virtual void ResetSubTimeStep(void)</div><div class="ttdoc">Reset subtime step. </div><div class="ttdef"><b>Definition:</b> <a href="../../dc/db1/a00621_source.html#l00156">SimulationModule.h:156</a></div></div>
+<div class="ttc" id="a00194_html_aa4115c5f61d71efde62d3b62c70b51ec"><div class="ttname"><a href="../../dc/d57/a00194.html#aa4115c5f61d71efde62d3b62c70b51ec">SimulationModule::SetReaches</a></div><div class="ttdeci">virtual void SetReaches(clsReaches *)</div><div class="ttdoc">Set pointer of clsReaches class which contains all reaches information. Added by LJ, 2016-7-2. </div><div class="ttdef"><b>Definition:</b> <a href="../../dc/db1/a00621_source.html#l00141">SimulationModule.h:141</a></div></div>
+<div class="ttc" id="a00194_html_ae6dfd515de376498a12a22724e57650a"><div class="ttname"><a href="../../dc/d57/a00194.html#ae6dfd515de376498a12a22724e57650a">SimulationModule::SetScenario</a></div><div class="ttdeci">virtual void SetScenario(Scenario *)</div><div class="ttdoc">Set pointer of Scenario class which contains all BMP information. Added by LJ, 2016-6-14. </div><div class="ttdef"><b>Definition:</b> <a href="../../dc/db1/a00621_source.html#l00136">SimulationModule.h:136</a></div></div>
+<div class="ttc" id="a00194_html_af7b9caed16e56bf880b171040981403e"><div class="ttname"><a href="../../dc/d57/a00194.html#af7b9caed16e56bf880b171040981403e">SimulationModule::SetClimateDataType</a></div><div class="ttdeci">virtual void SetClimateDataType(float value)</div><div class="ttdoc">Set climate data type, P, M, PET etc. </div><div class="ttdef"><b>Definition:</b> <a href="../../dc/db1/a00621_source.html#l00072">SimulationModule.h:72</a></div></div>
+<div class="ttc" id="a00194_html_aabd631c05d3e74aa9970f7415f2f5de7"><div class="ttname"><a href="../../dc/d57/a00194.html#aabd631c05d3e74aa9970f7415f2f5de7">SimulationModule::m_date</a></div><div class="ttdeci">time_t m_date</div><div class="ttdoc">date time </div><div class="ttdef"><b>Definition:</b> <a href="../../dc/db1/a00621_source.html#l00168">SimulationModule.h:168</a></div></div>
+<div class="ttc" id="a00194_html_addfe4dd5800efd0bb827338daf65d64c"><div class="ttname"><a href="../../dc/d57/a00194.html#addfe4dd5800efd0bb827338daf65d64c">SimulationModule::m_yearIdx</a></div><div class="ttdeci">int m_yearIdx</div><div class="ttdoc">index of current year of simulation, e.g., the simulation period from 2010 to 2015, m_yearIdx is 2 when simulate 2012. </div><div class="ttdef"><b>Definition:</b> <a href="../../dc/db1/a00621_source.html#l00170">SimulationModule.h:170</a></div></div>
+<div class="ttc" id="a00194_html_a3330ba74e63c5e2e6368d5d62d4048ea"><div class="ttname"><a href="../../dc/d57/a00194.html#a3330ba74e63c5e2e6368d5d62d4048ea">SimulationModule::Get2DArrayData</a></div><div class="ttdeci">virtual void Get2DArrayData(const char *key, int *nRows, int *nCols, float ***data)</div><div class="ttdoc">Get 2D Array data, by default, DT_Array2D. </div><div class="ttdef"><b>Definition:</b> <a href="../../dc/db1/a00621_source.html#l00130">SimulationModule.h:130</a></div></div>
+<div class="ttc" id="a00194_html_aeeec0ab34636df859c0b3116db18942f"><div class="ttname"><a href="../../dc/d57/a00194.html#aeeec0ab34636df859c0b3116db18942f">SimulationModule::Execute</a></div><div class="ttdeci">virtual int Execute(void)</div><div class="ttdoc">Execute the simulation. </div><div class="ttdef"><b>Definition:</b> <a href="../../dc/db1/a00621_source.html#l00056">SimulationModule.h:56</a></div></div>
+<div class="ttc" id="a00194_html_a1f7470f5f4f831b9053e3ff2d92c1813"><div class="ttname"><a href="../../dc/d57/a00194.html#a1f7470f5f4f831b9053e3ff2d92c1813">SimulationModule::Set2DArrayData</a></div><div class="ttdeci">virtual void Set2DArrayData(const char *key, int nRows, int nCols, float **data)</div><div class="ttdoc">Set 2D array data, by default, DT_Array2D. </div><div class="ttdef"><b>Definition:</b> <a href="../../dc/db1/a00621_source.html#l00100">SimulationModule.h:100</a></div></div>
+<div class="ttc" id="a00194_html_aeb23e43dd78e4fb8ce5d25a9855dd748"><div class="ttname"><a href="../../dc/d57/a00194.html#aeb23e43dd78e4fb8ce5d25a9855dd748">SimulationModule::Get1DArrayData</a></div><div class="ttdeci">virtual void Get1DArrayData(const char *key, int *n, float **data)</div><div class="ttdoc">Get 1D Array data, by default, DT_Array1D. </div><div class="ttdef"><b>Definition:</b> <a href="../../dc/db1/a00621_source.html#l00124">SimulationModule.h:124</a></div></div>
+<div class="ttc" id="a00194_html_a94457cc066581e7ecd1d3c88ebdf3163"><div class="ttname"><a href="../../dc/d57/a00194.html#a94457cc066581e7ecd1d3c88ebdf3163">SimulationModule::SetInputsDone</a></div><div class="ttdeci">void SetInputsDone(bool setDone)</div><div class="ttdoc">Change the status of setting inputs parameters. </div><div class="ttdef"><b>Definition:</b> <a href="../../dc/db1/a00621_source.html#l00164">SimulationModule.h:164</a></div></div>
+<div class="ttc" id="a00194_html_a4b1e6030fa901ac2bfa4350a819b4ecb"><div class="ttname"><a href="../../dc/d57/a00194.html#a4b1e6030fa901ac2bfa4350a819b4ecb">SimulationModule::IsInputsSetDone</a></div><div class="ttdeci">bool IsInputsSetDone(void)</div><div class="ttdoc">Whether the inputs parameters (i.e., parameters derived from other modules) have been set...</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/db1/a00621_source.html#l00161">SimulationModule.h:161</a></div></div>
+<div class="ttc" id="a00194_html_a8526abbeed3f49071f39e0c17559e522"><div class="ttname"><a href="../../dc/d57/a00194.html#a8526abbeed3f49071f39e0c17559e522">SimulationModule::SetDate</a></div><div class="ttdeci">virtual void SetDate(time_t t, int yearIdx)</div><div class="ttdoc">Set date time, as well as the sequence number of the entire simulation. Added by LJ for statistics co...</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/db1/a00621_source.html#l00059">SimulationModule.h:59</a></div></div>
+<div class="ttc" id="a00194_html_a497fa950bc9c4d85cfb1ae13d83f06c9"><div class="ttname"><a href="../../dc/d57/a00194.html#a497fa950bc9c4d85cfb1ae13d83f06c9">SimulationModule::Set2DData</a></div><div class="ttdeci">virtual void Set2DData(const char *key, int nRows, int nCols, float **data)</div><div class="ttdoc">Set 2D data, by default, DT_Raster2D. </div><div class="ttdef"><b>Definition:</b> <a href="../../dc/db1/a00621_source.html#l00088">SimulationModule.h:88</a></div></div>
+<div class="ttc" id="a00194_html_afcfef6ce1ce8761a961f694e3a7969bb"><div class="ttname"><a href="../../dc/d57/a00194.html#afcfef6ce1ce8761a961f694e3a7969bb">SimulationModule::SetValue</a></div><div class="ttdeci">virtual void SetValue(const char *key, float data)</div><div class="ttdoc">Set data, DT_Single. </div><div class="ttdef"><b>Definition:</b> <a href="../../dc/db1/a00621_source.html#l00076">SimulationModule.h:76</a></div></div>
+<div class="ttc" id="a00194_html_adee1865c86a9761af76cec98cac30a44"><div class="ttname"><a href="../../dc/d57/a00194.html#adee1865c86a9761af76cec98cac30a44">SimulationModule::m_tsCounter</a></div><div class="ttdeci">int m_tsCounter</div><div class="ttdoc">sub-timestep counter </div><div class="ttdef"><b>Definition:</b> <a href="../../dc/db1/a00621_source.html#l00172">SimulationModule.h:172</a></div></div>
+<div class="ttc" id="a00140_html"><div class="ttname"><a href="../../d5/db1/a00140.html">ModelException</a></div><div class="ttdoc">Print the exception message. </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d0b/a00529_source.html#l00020">ModelException.h:20</a></div></div>
+<div class="ttc" id="a00069_html"><div class="ttname"><a href="../../d4/d31/a00069.html">clsReaches</a></div><div class="ttdoc">Read and store all reaches information as input parameters. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d2f/a00582_source.html#l00221">clsReach.h:221</a></div></div>
+<div class="ttc" id="a00194_html_ac3c60349cd6720bb66e58fa4cd31a999"><div class="ttname"><a href="../../dc/d57/a00194.html#ac3c60349cd6720bb66e58fa4cd31a999">SimulationModule::Set1DArrayData</a></div><div class="ttdeci">virtual void Set1DArrayData(const char *key, int n, float *data)</div><div class="ttdoc">Set 1D array data, DT_Array1D. </div><div class="ttdef"><b>Definition:</b> <a href="../../dc/db1/a00621_source.html#l00094">SimulationModule.h:94</a></div></div>
+<div class="ttc" id="a00194_html"><div class="ttname"><a href="../../dc/d57/a00194.html">SimulationModule</a></div><div class="ttdoc">Base module for all simulation modules in SEIMS. </div><div class="ttdef"><b>Definition:</b> <a href="../../dc/db1/a00621_source.html#l00047">SimulationModule.h:47</a></div></div>
+<div class="ttc" id="a00194_html_abd96e67e4e6d1c6f50bc51e69aad4a96"><div class="ttname"><a href="../../dc/d57/a00194.html#abd96e67e4e6d1c6f50bc51e69aad4a96">SimulationModule::GetTimeStepType</a></div><div class="ttdeci">virtual TimeStepType GetTimeStepType(void)</div><div class="ttdoc">Get time step type. </div><div class="ttdef"><b>Definition:</b> <a href="../../dc/db1/a00621_source.html#l00151">SimulationModule.h:151</a></div></div>
+<div class="ttc" id="a00194_html_ad834fe6ed6d11b333fd34e1ff605ebb7"><div class="ttname"><a href="../../dc/d57/a00194.html#ad834fe6ed6d11b333fd34e1ff605ebb7">SimulationModule::Get1DData</a></div><div class="ttdeci">virtual void Get1DData(const char *key, int *n, float **data)</div><div class="ttdoc">Get 1D data, by default, DT_Raster1D. </div><div class="ttdef"><b>Definition:</b> <a href="../../dc/db1/a00621_source.html#l00112">SimulationModule.h:112</a></div></div>
+<div class="ttc" id="a00194_html_aba2d6fc2b0e4f8ccf202e0752c45d55c"><div class="ttname"><a href="../../dc/d57/a00194.html#aba2d6fc2b0e4f8ccf202e0752c45d55c">SimulationModule::Set1DData</a></div><div class="ttdeci">virtual void Set1DData(const char *key, int n, float *data)</div><div class="ttdoc">Set 1D data, by default, DT_Raster1D. </div><div class="ttdef"><b>Definition:</b> <a href="../../dc/db1/a00621_source.html#l00082">SimulationModule.h:82</a></div></div>
+<div class="ttc" id="a00071_html"><div class="ttname"><a href="../../d0/d89/a00071.html">clsSubbasins</a></div><div class="ttdoc">Manager all Subbasin related parameters and methods. </div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d92/a00586_source.html#l00236">clsSubbasin.h:236</a></div></div>
+<div class="ttc" id="a00194_html_a97da293bca13cf5934d9ef6da34d9290"><div class="ttname"><a href="../../dc/d57/a00194.html#a97da293bca13cf5934d9ef6da34d9290">SimulationModule::SetSubbasins</a></div><div class="ttdeci">virtual void SetSubbasins(clsSubbasins *)</div><div class="ttdoc">Set pointer of clsSubbasins class which contains all subbasins information. Added by LJ...</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/db1/a00621_source.html#l00146">SimulationModule.h:146</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_c151e3c36c54954dcb4737f82d8a1963.html">main</a></li><li class="navelem"><a class="el" href="../../dir_c959c6c529103227cdb83d2a16e8fd6e.html">main_mpi</a></li><li class="navelem"><b>main.cpp</b></li>
-    <li class="footer">Generated on Thu Oct 26 2017 12:50:35 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_d9d8c03d94c229237348b60b53b769ac.html">base</a></li><li class="navelem"><a class="el" href="../../dir_16f99eef7c51cef769cb6e51b0647be9.html">util</a></li><li class="navelem"><b>SimulationModule.h</b></li>
+    <li class="footer">Generated on Fri Oct 27 2017 15:28:49 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

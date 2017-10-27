@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: 气象、径流、泥沙等观测数据整理注意事项：</title>
+<title>SEIMS: upload.GitVCS Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -52,10 +52,10 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="../../index.html"><span>Main&#160;Page</span></a></li>
-      <li class="current"><a href="../../pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="../../pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="../../modules.html"><span>Modules</span></a></li>
       <li><a href="../../namespaces.html"><span>Packages</span></a></li>
-      <li><a href="../../annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Classes</span></a></li>
       <li><a href="../../files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -73,6 +73,14 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
           </span>
         </div>
       </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../annotated.html"><span>Class&#160;List</span></a></li>
+      <li><a href="../../classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="../../inherits.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -105,36 +113,69 @@ $(document).ready(function(){initNavTree('d9/dec/a00090.html','../../');});
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="../../dc/ded/a01290.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">气象、径流、泥沙等观测数据整理注意事项： </div>  </div>
+<div class="title">upload.GitVCS Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><ol type="1">
-<li>**数据一致性检查**。如次降水数据与日值数据相互验证，日值数据与月统计值相互验证，找出明显错误值，并合理处理。</li>
-<li><p class="startli">**时制的问题**。日值数据很可能已经按照UTC时间整理了，而次降水数据是按照当地时间整理的。最新版本的SEIMS数据导入程序在降水（或气象、径流等观测数据）数据文本文件的第一行，均以#开头，按照如下格式注明所用时制：</p>
-<p class="startli">```python #&lt;TIME unit&gt;=""&gt; [&lt;TIMEZONE&gt;], 如果不指定时区, 则按照操作系统时间确定时区. e.g., #LOCALTIME 8 #LOCALTIME #UTCTIME ```</p>
-</li>
-<li>**日界的问题**。中国气象共享网的中国地面气象站点日值数据，明确规定其数据采用的是“北京时，日界为20时”，也即该数据集中的时间“2013-01-01”实际为“2013-01-01 20:00 UTC+8”。</li>
-<li><p class="startli">**降雨、径流及泥沙数据匹配检查**。</p>
-<ul>
-<li>观察降雨-径流关系，可发现一些异常值，很多情况下是由于数据录入时小数点错误导致，比如溧阳小流域的部分数据：</li>
+<div class="dynheader">
+Inheritance diagram for upload.GitVCS:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d4/da0/a01291.png" border="0" usemap="#upload_8_git_v_c_s_inherit__map" alt="Inheritance graph"/></div>
+<map name="upload_8_git_v_c_s_inherit__map" id="upload_8_git_v_c_s_inherit__map">
+<area shape="rect" id="node2" href="../../d3/d42/a00235.html" title="{upload.VersionControlSystem\n|+ options\l|+ __init__()\l+ GenerateDiff()\l+ GetUnknownFiles()\l+ CheckForUnknownFiles()\l+ GetBaseFile()\l+ GetBaseFiles()\l+ UploadBaseFiles()\l+ IsImage()\l+ __init__()\l+ GenerateDiff()\land 6 more...\l}" alt="" coords="4,5,237,264"/></map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_methods_a00235"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a00235')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d3/d42/a00235.html">upload.VersionControlSystem</a></td></tr>
+<tr class="memitem:a30bbede8d03e41a50708a006a5638b2e inherit pub_methods_a00235"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d42/a00235.html#a30bbede8d03e41a50708a006a5638b2e">__init__</a></td></tr>
+<tr class="separator:a30bbede8d03e41a50708a006a5638b2e inherit pub_methods_a00235"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12ac47b38e3d139d18794564cebe1bce inherit pub_methods_a00235"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d42/a00235.html#a12ac47b38e3d139d18794564cebe1bce">GenerateDiff</a></td></tr>
+<tr class="separator:a12ac47b38e3d139d18794564cebe1bce inherit pub_methods_a00235"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b607766189a90f8e919d84ea3b68ecf inherit pub_methods_a00235"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d42/a00235.html#a8b607766189a90f8e919d84ea3b68ecf">GetUnknownFiles</a></td></tr>
+<tr class="separator:a8b607766189a90f8e919d84ea3b68ecf inherit pub_methods_a00235"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac82bef48c32d710dcaf9f2dfcc41dc57 inherit pub_methods_a00235"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d42/a00235.html#ac82bef48c32d710dcaf9f2dfcc41dc57">CheckForUnknownFiles</a></td></tr>
+<tr class="separator:ac82bef48c32d710dcaf9f2dfcc41dc57 inherit pub_methods_a00235"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb681bf8200b1f8e6547f1224bd6e798 inherit pub_methods_a00235"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d42/a00235.html#afb681bf8200b1f8e6547f1224bd6e798">GetBaseFile</a></td></tr>
+<tr class="separator:afb681bf8200b1f8e6547f1224bd6e798 inherit pub_methods_a00235"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6319565fee2579a82afc869a88e33aee inherit pub_methods_a00235"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d42/a00235.html#a6319565fee2579a82afc869a88e33aee">GetBaseFiles</a></td></tr>
+<tr class="separator:a6319565fee2579a82afc869a88e33aee inherit pub_methods_a00235"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf66efd1e926e7a9c9275d03063606d0 inherit pub_methods_a00235"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d42/a00235.html#adf66efd1e926e7a9c9275d03063606d0">UploadBaseFiles</a></td></tr>
+<tr class="separator:adf66efd1e926e7a9c9275d03063606d0 inherit pub_methods_a00235"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a333c9ae640318c3a4d27eb1b914c0f inherit pub_methods_a00235"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d42/a00235.html#a2a333c9ae640318c3a4d27eb1b914c0f">IsImage</a></td></tr>
+<tr class="separator:a2a333c9ae640318c3a4d27eb1b914c0f inherit pub_methods_a00235"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30bbede8d03e41a50708a006a5638b2e inherit pub_methods_a00235"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d42/a00235.html#a30bbede8d03e41a50708a006a5638b2e">__init__</a></td></tr>
+<tr class="separator:a30bbede8d03e41a50708a006a5638b2e inherit pub_methods_a00235"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12ac47b38e3d139d18794564cebe1bce inherit pub_methods_a00235"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d42/a00235.html#a12ac47b38e3d139d18794564cebe1bce">GenerateDiff</a></td></tr>
+<tr class="separator:a12ac47b38e3d139d18794564cebe1bce inherit pub_methods_a00235"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b607766189a90f8e919d84ea3b68ecf inherit pub_methods_a00235"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d42/a00235.html#a8b607766189a90f8e919d84ea3b68ecf">GetUnknownFiles</a></td></tr>
+<tr class="separator:a8b607766189a90f8e919d84ea3b68ecf inherit pub_methods_a00235"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac82bef48c32d710dcaf9f2dfcc41dc57 inherit pub_methods_a00235"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d42/a00235.html#ac82bef48c32d710dcaf9f2dfcc41dc57">CheckForUnknownFiles</a></td></tr>
+<tr class="separator:ac82bef48c32d710dcaf9f2dfcc41dc57 inherit pub_methods_a00235"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb681bf8200b1f8e6547f1224bd6e798 inherit pub_methods_a00235"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d42/a00235.html#afb681bf8200b1f8e6547f1224bd6e798">GetBaseFile</a></td></tr>
+<tr class="separator:afb681bf8200b1f8e6547f1224bd6e798 inherit pub_methods_a00235"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6319565fee2579a82afc869a88e33aee inherit pub_methods_a00235"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d42/a00235.html#a6319565fee2579a82afc869a88e33aee">GetBaseFiles</a></td></tr>
+<tr class="separator:a6319565fee2579a82afc869a88e33aee inherit pub_methods_a00235"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf66efd1e926e7a9c9275d03063606d0 inherit pub_methods_a00235"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d42/a00235.html#adf66efd1e926e7a9c9275d03063606d0">UploadBaseFiles</a></td></tr>
+<tr class="separator:adf66efd1e926e7a9c9275d03063606d0 inherit pub_methods_a00235"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a333c9ae640318c3a4d27eb1b914c0f inherit pub_methods_a00235"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d42/a00235.html#a2a333c9ae640318c3a4d27eb1b914c0f">IsImage</a></td></tr>
+<tr class="separator:a2a333c9ae640318c3a4d27eb1b914c0f inherit pub_methods_a00235"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><pre class="fragment">Implementation of the VersionControlSystem interface for Git.</pre> 
+<p>Definition at line <a class="el" href="../../da/d75/a00334_source.html#l00985">985</a> of file <a class="el" href="../../da/d75/a00334_source.html">upload.py</a>.</p>
+</div><hr/>The documentation for this class was generated from the following file:<ul>
+<li>buildRel/googletest-src/googlemock/scripts/<a class="el" href="../../da/d75/a00334_source.html">upload.py</a></li>
 </ul>
-<p class="startli">```python Data Pcp_mm Runoff(m3/s) 2014/7/27 54.5 23.8-&gt;2.38 2014/7/28 0 14.1-&gt;1.41 2014/8/6 7 14.9-&gt;1.49 2014/8/7 6.5 26.5-&gt;2.65 2014/8/8 0.5 10.2-&gt;1.02 Date Pcp_mm Runoff(m3/s) Sediment(kg/m3) 2012/8/8 138.3 9.27 0.677-&gt;0.0677 2012/8/9 47 8.46 1.02-&gt;0.102 2014/4/21 14.7 1.05 0.31-&gt;0.031 2014/4/22 6 1.13 0.443-&gt;0.0443 2014/4/23 0 0.966 0.329-&gt;0.0329 ```</p>
-<ul>
-<li>一般地，径流和泥沙数据同时存在才合理，至少在有泥沙数据的时候，应当有对应的径流值（而非缺测或零值），因此数据校核时暂定如下规则：<ul>
-<li>对于连续多天没有径流（或泥沙）观测值的，判断之后，删除对应泥沙（或径流）观测值</li>
-<li>对于缺失3天以内、且缺失值前后均合理的，线性插值出缺失值 </li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-</div></div><!-- contents -->
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu Oct 26 2017 12:50:38 for SEIMS by
+    <li class="navelem"><b>upload</b></li><li class="navelem"><a class="el" href="../../d9/dec/a00090.html">GitVCS</a></li>
+    <li class="footer">Generated on Fri Oct 27 2017 15:28:53 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
