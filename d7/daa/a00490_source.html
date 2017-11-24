@@ -130,7 +130,7 @@ $(document).ready(function(){initNavTree('d7/daa/a00490_source.html','../../');}
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;DEFAULT_NODATA = -9999.</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;SQ2 = 1.4142135623730951</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;PI = 3.141592653589793</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;LFs = [<span class="stringliteral">&#39;\r&#39;</span>, <span class="stringliteral">&#39;\n&#39;</span>, <span class="stringliteral">&#39;\r\n&#39;</span>]</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"># LFs = [&#39;\r&#39;, &#39;\n&#39;, &#39;\r\n&#39;]</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">def </span>status_output(status_msg, percent, file_object):</div>
@@ -156,19 +156,18 @@ $(document).ready(function(){initNavTree('d7/daa/a00490_source.html','../../');}
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    f = open(txt_file)</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    data_items = []</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">for</span> line <span class="keywordflow">in</span> f:</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        str_line = line</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">for</span> LF <span class="keywordflow">in</span> LFs:</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keywordflow">if</span> LF <span class="keywordflow">in</span> line:</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                str_line = line.split(LF)[0]</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <span class="keywordflow">break</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">if</span> str_line != <span class="stringliteral">&#39;&#39;</span> <span class="keywordflow">and</span> str_line.find(<span class="stringliteral">&#39;#&#39;</span>) &lt; 0:</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            line_list = StringClass.split_string(str_line, [<span class="stringliteral">&#39;\t&#39;</span>])</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keywordflow">if</span> len(line_list) &lt;= 1:</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                line_list = StringClass.split_string(str_line, [<span class="stringliteral">&#39;,&#39;</span>])</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            data_items.append(line_list)</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    f.close()</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">return</span> data_items</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        str_line = line.strip()</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="comment"># for LF in LFs:</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="comment">#     if LF in line:</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="comment">#         str_line = line.split(LF)[0]</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="comment">#         break</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">if</span> str_line != <span class="stringliteral">&#39;&#39;</span> <span class="keywordflow">and</span> str_line.find(<span class="stringliteral">&#39;#&#39;</span>) &lt; 0:</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            line_list = StringClass.split_string(str_line, [<span class="stringliteral">&#39;\t&#39;</span>])</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordflow">if</span> len(line_list) &lt;= 1:</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                line_list = StringClass.split_string(str_line, [<span class="stringliteral">&#39;,&#39;</span>])</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            data_items.append(line_list)</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    f.close()</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">return</span> data_items</div>
 <div class="ttc" id="a00862_html"><div class="ttname"><a href="../../dc/d41/a00862.html">utils</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -176,7 +175,7 @@ $(document).ready(function(){initNavTree('d7/daa/a00490_source.html','../../');}
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_483bc1739a16b87563cca23e7a392c1e.html">seims_linux_gcc48</a></li><li class="navelem"><a class="el" href="../../dir_a45053e29f104e67e5be28f13679e3c2.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_88ee9ccb3eda13ad093e0105c15391c0.html">preprocess</a></li><li class="navelem"><b>utility.py</b></li>
-    <li class="footer">Generated on Fri Oct 27 2017 15:28:48 for SEIMS by
+    <li class="footer">Generated on Fri Nov 24 2017 09:10:19 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

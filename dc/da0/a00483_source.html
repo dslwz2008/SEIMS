@@ -632,10 +632,10 @@ $(document).ready(function(){initNavTree('dc/da0/a00483_source.html','../../');}
 <div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
 <div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;        cbn = om * 0.58</div>
 <div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;        sn = 1. - sand * 0.01</div>
-<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;        a = (0.2 + 0.3 * math.exp(-0.0256 * sand * (1. - silt * 0.01)))</div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;        a = (0.2 + 0.3 * math.exp(-0.256 * sand * (1. - silt * 0.01)))</div>
 <div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;        b = math.pow(silt / (clay + silt), 0.3)</div>
 <div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;        c = (1. - 0.25 * cbn / (cbn + math.exp(3.72 - 2.95 * cbn)))</div>
-<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;        d = (1. - 0.25 * sn / (sn + math.exp(-5.51 + 22.9 * sn)))</div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;        d = (1. - 0.7 * sn / (sn + math.exp(-5.51 + 22.9 * sn)))</div>
 <div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;        k = a * b * c * d</div>
 <div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;        <span class="keywordflow">return</span> k</div>
 <div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;</div>
@@ -994,7 +994,7 @@ $(document).ready(function(){initNavTree('dc/da0/a00483_source.html','../../');}
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_483bc1739a16b87563cca23e7a392c1e.html">seims_linux_gcc48</a></li><li class="navelem"><a class="el" href="../../dir_a45053e29f104e67e5be28f13679e3c2.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_88ee9ccb3eda13ad093e0105c15391c0.html">preprocess</a></li><li class="navelem"><b>sp_soil.py</b></li>
-    <li class="footer">Generated on Fri Oct 27 2017 15:28:48 for SEIMS by
+    <li class="footer">Generated on Fri Nov 24 2017 09:10:19 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

@@ -1695,10 +1695,10 @@ $(document).ready(function(){initNavTree('df/d0e/a00800_source.html','../../');}
 <div class="line"><a name="l01762"></a><span class="lineno"> 1762</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d0/d5e/a00136.html#a999256c0880b1c405f134331a7daf211">m_potVol</a> == NULL) {</div>
 <div class="line"><a name="l01763"></a><span class="lineno"> 1763</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l01764"></a><span class="lineno"> 1764</span>&#160;    }</div>
-<div class="line"><a name="l01767"></a><span class="lineno"> 1767</span>&#160;    <a class="code" href="../../d0/d5e/a00136.html#a551ec8b0fabd5613ac33114fd09f9f03">m_potVolMax</a>[i] = curOperation-&gt;MaxDepth();</div>
-<div class="line"><a name="l01768"></a><span class="lineno"> 1768</span>&#160;    <a class="code" href="../../d0/d5e/a00136.html#adc4399a80324dbe16ca2f21cc7a0b18e">m_potVolLow</a>[i] = curOperation-&gt;LowDepth();</div>
+<div class="line"><a name="l01767"></a><span class="lineno"> 1767</span>&#160;    <a class="code" href="../../d0/d5e/a00136.html#a551ec8b0fabd5613ac33114fd09f9f03">m_potVolMax</a>[i] = curOperation-&gt;MaxPondDepth();</div>
+<div class="line"><a name="l01768"></a><span class="lineno"> 1768</span>&#160;    <a class="code" href="../../d0/d5e/a00136.html#adc4399a80324dbe16ca2f21cc7a0b18e">m_potVolLow</a>[i] = curOperation-&gt;MinFitDepth();</div>
 <div class="line"><a name="l01769"></a><span class="lineno"> 1769</span>&#160;    <span class="keywordflow">if</span> (FloatEqual(<a class="code" href="../../d0/d5e/a00136.html#ad98006890c6fe2a81ff5150e1a18ad95">m_impoundTriger</a>[i], 0.f)) {</div>
-<div class="line"><a name="l01772"></a><span class="lineno"> 1772</span>&#160;        <a class="code" href="../../d0/d5e/a00136.html#a999256c0880b1c405f134331a7daf211">m_potVol</a>[i] = curOperation-&gt;MaxDepth();</div>
+<div class="line"><a name="l01772"></a><span class="lineno"> 1772</span>&#160;        <a class="code" href="../../d0/d5e/a00136.html#a999256c0880b1c405f134331a7daf211">m_potVol</a>[i] = curOperation-&gt;MaxPondDepth();</div>
 <div class="line"><a name="l01774"></a><span class="lineno"> 1774</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ly = 0; ly &lt; (int) <a class="code" href="../../d0/d5e/a00136.html#abbec4572744701e61c94f0afa5956738">m_nSoilLayers</a>[i]; ly++) {</div>
 <div class="line"><a name="l01775"></a><span class="lineno"> 1775</span>&#160;            <span class="comment">// float dep2cap = m_sol_sat[i][ly] - m_soilStorage[i][ly];</span></div>
 <div class="line"><a name="l01776"></a><span class="lineno"> 1776</span>&#160;            <span class="keywordtype">float</span> dep2cap = <a class="code" href="../../d0/d5e/a00136.html#a2a84d631cf92017d9c58bc5bfe29086d">m_sol_fc</a>[i][ly] - <a class="code" href="../../d0/d5e/a00136.html#ab71e944051ba82ecec190a0f5969cf2a">m_soilStorage</a>[i][ly];</div>
@@ -1708,8 +1708,8 @@ $(document).ready(function(){initNavTree('df/d0e/a00800_source.html','../../');}
 <div class="line"><a name="l01780"></a><span class="lineno"> 1780</span>&#160;                <a class="code" href="../../d0/d5e/a00136.html#a999256c0880b1c405f134331a7daf211">m_potVol</a>[i] -= dep2cap;</div>
 <div class="line"><a name="l01781"></a><span class="lineno"> 1781</span>&#160;            }</div>
 <div class="line"><a name="l01782"></a><span class="lineno"> 1782</span>&#160;        }</div>
-<div class="line"><a name="l01783"></a><span class="lineno"> 1783</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../d0/d5e/a00136.html#a999256c0880b1c405f134331a7daf211">m_potVol</a>[i] &lt; curOperation-&gt;UpDepth()) {</div>
-<div class="line"><a name="l01784"></a><span class="lineno"> 1784</span>&#160;            <a class="code" href="../../d0/d5e/a00136.html#a999256c0880b1c405f134331a7daf211">m_potVol</a>[i] = curOperation-&gt;UpDepth();</div>
+<div class="line"><a name="l01783"></a><span class="lineno"> 1783</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../d0/d5e/a00136.html#a999256c0880b1c405f134331a7daf211">m_potVol</a>[i] &lt; curOperation-&gt;MaxFitDepth()) {</div>
+<div class="line"><a name="l01784"></a><span class="lineno"> 1784</span>&#160;            <a class="code" href="../../d0/d5e/a00136.html#a999256c0880b1c405f134331a7daf211">m_potVol</a>[i] = curOperation-&gt;MaxFitDepth();</div>
 <div class="line"><a name="l01785"></a><span class="lineno"> 1785</span>&#160;        } </div>
 <div class="line"><a name="l01786"></a><span class="lineno"> 1786</span>&#160;        <a class="code" href="../../d0/d5e/a00136.html#a33c972988fa2efd309487dc83530bd9f">m_soilStorageProfile</a>[i] = 0.f;</div>
 <div class="line"><a name="l01788"></a><span class="lineno"> 1788</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ly = 0; ly &lt; (int) <a class="code" href="../../d0/d5e/a00136.html#abbec4572744701e61c94f0afa5956738">m_nSoilLayers</a>[i]; ly++)</div>
@@ -2147,7 +2147,7 @@ $(document).ready(function(){initNavTree('df/d0e/a00800_source.html','../../');}
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_b89a50a3d6b2f98326f9f3f569cfd788.html">modules</a></li><li class="navelem"><a class="el" href="../../dir_c45a69ff562c5683ce5320a99c4bd799.html">management</a></li><li class="navelem"><a class="el" href="../../dir_9ede7ec900cc24fdb19d654bd61cf6cf.html">PLTMGT_SWAT</a></li><li class="navelem"><b>managementOperation_SWAT.cpp</b></li>
-    <li class="footer">Generated on Fri Oct 27 2017 15:28:50 for SEIMS by
+    <li class="footer">Generated on Fri Nov 24 2017 09:10:21 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

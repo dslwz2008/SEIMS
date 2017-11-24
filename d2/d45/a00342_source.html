@@ -611,7 +611,7 @@ $(document).ready(function(){initNavTree('d2/d45/a00342.html','../../');});
 <div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;However, <span class="keyword">this</span> will work:</div>
 <div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;</div>
 <div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;``` cpp</div>
-<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;EXPECT_PRED1(*<span class="keyword">static_cast&lt;</span><span class="keywordtype">bool</span> (*)(<span class="keywordtype">int</span>)<span class="keyword">&gt;</span>*(IsPositive), 5);</div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;EXPECT_PRED1(<span class="keyword">static_cast&lt;</span><span class="keywordtype">bool</span> (*)(<span class="keywordtype">int</span>)<span class="keyword">&gt;</span>(IsPositive), 5);</div>
 <div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;```</div>
 <div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;</div>
 <div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;(The stuff inside the angled brackets <span class="keywordflow">for</span> the `static_cast` <span class="keyword">operator</span> is the</div>
@@ -629,14 +629,14 @@ $(document).ready(function(){initNavTree('d2/d45/a00342.html','../../');});
 <div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;you can use it in a predicate assertion like <span class="keyword">this</span>:</div>
 <div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;</div>
 <div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;``` cpp</div>
-<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;ASSERT_PRED1(IsNegative*&lt;<span class="keywordtype">int</span>&gt;*, -5);</div>
+<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;ASSERT_PRED1(IsNegative&lt;int&gt;, -5);</div>
 <div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;```</div>
 <div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;</div>
 <div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;Things are more interesting <span class="keywordflow">if</span> your <span class="keyword">template</span> has more than one parameters. The</div>
 <div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;following won<span class="stringliteral">&#39;t compile:</span></div>
 <div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;<span class="stringliteral"></span></div>
 <div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;<span class="stringliteral">``` cpp</span></div>
-<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;<span class="stringliteral">ASSERT_PRED2(*GreaterThan&lt;int, int&gt;*, 5, 0);</span></div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;<span class="stringliteral">ASSERT_PRED2(GreaterThan&lt;int, int&gt;, 5, 0);</span></div>
 <div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;<span class="stringliteral">```</span></div>
 <div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;<span class="stringliteral"></span></div>
 <div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;<span class="stringliteral"></span></div>
@@ -645,7 +645,7 @@ $(document).ready(function(){initNavTree('d2/d45/a00342.html','../../');});
 <div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;<span class="stringliteral">function in parentheses:</span></div>
 <div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;<span class="stringliteral"></span></div>
 <div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;<span class="stringliteral">``` cpp</span></div>
-<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;<span class="stringliteral">ASSERT_PRED2(*(GreaterThan&lt;int, int&gt;)*, 5, 0);</span></div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;<span class="stringliteral">ASSERT_PRED2((GreaterThan&lt;int, int&gt;), 5, 0);</span></div>
 <div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;<span class="stringliteral">```</span></div>
 <div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;<span class="stringliteral"></span></div>
 <div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;<span class="stringliteral"></span></div>
@@ -1213,7 +1213,7 @@ $(document).ready(function(){initNavTree('d2/d45/a00342.html','../../');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><b>FAQ.md</b></li>
-    <li class="footer">Generated on Fri Oct 27 2017 15:28:46 for SEIMS by
+    <li class="footer">Generated on Fri Nov 24 2017 09:10:17 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

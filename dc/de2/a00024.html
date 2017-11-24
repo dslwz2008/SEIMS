@@ -279,16 +279,16 @@ $(document).ready(function(){initNavTree('dc/de2/a00024.html','../../');});
 <p>you will get a compiler error if you write</p>
 <p>``` cpp EXPECT_PRED1(IsPositive, 5); ```</p>
 <p>However, this will work:</p>
-<p>``` cpp EXPECT_PRED1(<em>static_cast&lt;bool (*)(int)&gt;</em>(IsPositive), 5); ```</p>
+<p>``` cpp EXPECT_PRED1(static_cast&lt;bool (*)(int)&gt;(IsPositive), 5); ```</p>
 <p>(The stuff inside the angled brackets for the <code>static_cast</code> operator is the type of the function pointer for the <code>int</code>-version of <code>IsPositive()</code>.)</p>
 <p>As another example, when you have a template function</p>
 <p>``` cpp template &lt;typename t&gt;=""&gt; bool IsNegative(T x) { return x &lt; 0; } ```</p>
 <p>you can use it in a predicate assertion like this:</p>
-<p>``` cpp ASSERT_PRED1(IsNegative*&lt;int&gt;*, -5); ```</p>
+<p>``` cpp ASSERT_PRED1(IsNegative&lt;int&gt;, -5); ```</p>
 <p>Things are more interesting if your template has more than one parameters. The following won't compile:</p>
-<p>``` cpp ASSERT_PRED2(<em>GreaterThan&lt;int, int&gt;</em>, 5, 0); ```</p>
+<p>``` cpp ASSERT_PRED2(GreaterThan&lt;int, int&gt;, 5, 0); ```</p>
 <p>as the C++ pre-processor thinks you are giving <code>ASSERT_PRED2</code> 4 arguments, which is one more than expected. The workaround is to wrap the predicate function in parentheses:</p>
-<p>``` cpp ASSERT_PRED2(*(GreaterThan&lt;int, int&gt;)*, 5, 0); ```</p>
+<p>``` cpp ASSERT_PRED2((GreaterThan&lt;int, int&gt;), 5, 0); ```</p>
 <h2>My compiler complains about "ignoring return value" when I call RUN_ALL_TESTS(). Why?</h2>
 <p>Some people had been ignoring the return value of <code>RUN_ALL_TESTS()</code>. That is, instead of</p>
 <p>``` cpp return RUN_ALL_TESTS(); ```</p>
@@ -481,7 +481,7 @@ $(document).ready(function(){initNavTree('dc/de2/a00024.html','../../');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Oct 27 2017 15:28:51 for SEIMS by
+    <li class="footer">Generated on Fri Nov 24 2017 09:10:22 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

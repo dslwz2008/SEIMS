@@ -129,7 +129,7 @@ $(document).ready(function(){initNavTree('db/d2c/a00466_source.html','../../');}
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">from</span> <a class="code" href="../../dc/d41/a00862.html">pygeoc.utils</a> <span class="keyword">import</span> StringClass, MathClass</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">from</span> preprocess.text <span class="keyword">import</span> DBTableNames, StationFields, DataValueFields</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">from</span> preprocess.utility <span class="keyword">import</span> LFs</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"># from preprocess.utility import LFs</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
 <div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="../../d0/dc2/a00104.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d0/dc2/a00104.html">HydroClimateUtilClass</a>(object):</div>
@@ -160,7 +160,7 @@ $(document).ready(function(){initNavTree('db/d2c/a00466_source.html','../../');}
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    @staticmethod</div>
 <div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="../../d0/dc2/a00104.html#a325a25292045b2470b78356d86491dbf">   45</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d0/dc2/a00104.html#a325a25292045b2470b78356d86491dbf">rs</a>(doy, n, lat):</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;solar radiation, n is sunshine duration&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;solar radiation (MJ/m2), n is sunshine duration (hour)&quot;&quot;&quot;</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        lat = lat * math.pi / 180.</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        a = 0.25</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        b = 0.5</div>
@@ -198,11 +198,11 @@ $(document).ready(function(){initNavTree('db/d2c/a00466_source.html','../../');}
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        time_zone = time.timezone / -3600</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        f = open(in_file)</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">for</span> line <span class="keywordflow">in</span> f:</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            str_line = line</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordflow">for</span> LF <span class="keywordflow">in</span> LFs:</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                <span class="keywordflow">if</span> LF <span class="keywordflow">in</span> line:</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                    str_line = line.split(LF)[0]</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                    <span class="keywordflow">break</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            str_line = line.strip()</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="comment"># for LF in LFs:</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="comment">#     if LF in line:</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="comment">#         str_line = line.split(LF)[0]</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <span class="comment">#         break</span></div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="keywordflow">if</span> str_line[0] != <span class="stringliteral">&#39;#&#39;</span>:</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                <span class="keywordflow">break</span></div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <span class="keywordflow">if</span> str_line.lower().find(<span class="stringliteral">&#39;utc&#39;</span>) &gt;= 0:</div>
@@ -293,7 +293,7 @@ $(document).ready(function(){initNavTree('db/d2c/a00466_source.html','../../');}
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_e83ca20770e7fbc90f1c071d86067ace.html">preprocess</a></li><li class="navelem"><b>hydro_climate_utility.py</b></li>
-    <li class="footer">Generated on Fri Oct 27 2017 15:28:48 for SEIMS by
+    <li class="footer">Generated on Fri Nov 24 2017 09:10:19 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
