@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims/scenario_analysis/slpposunits/scenario.py Source File</title>
+<title>SEIMS: seims_linux_gcc48/seims/scenario_analysis/slpposunits/scenario.py Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -130,8 +130,8 @@ $(document).ready(function(){initNavTree('d8/d67/a00499_source.html','../../');}
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">import</span> numpy</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">from</span> gridfs <span class="keyword">import</span> GridFS</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">from</span> osgeo <span class="keyword">import</span> osr</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">from</span> <a class="code" href="../../dd/dd5/a00861.html">pygeoc.raster</a> <span class="keyword">import</span> RasterUtilClass</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">from</span> <a class="code" href="../../dc/d41/a00862.html">pygeoc.utils</a> <span class="keyword">import</span> FileClass, StringClass, get_config_parser</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">from</span> <a class="code" href="../../d2/d21/a00895.html">pygeoc.raster</a> <span class="keyword">import</span> RasterUtilClass</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">from</span> <a class="code" href="../../da/dd6/a00896.html">pygeoc.utils</a> <span class="keyword">import</span> FileClass, StringClass, get_config_parser</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">from</span> pymongo.errors <span class="keyword">import</span> NetworkTimeout</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">from</span> preprocess.db_mongodb <span class="keyword">import</span> ConnectMongoDB</div>
@@ -141,23 +141,23 @@ $(document).ready(function(){initNavTree('d8/d67/a00499_source.html','../../');}
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">from</span> scenario_analysis.slpposunits.config <span class="keyword">import</span> SASPUConfig</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="../../de/dd2/a00207.html">   27</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../de/dd2/a00207.html">SPScenario</a>(Scenario):</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">class </span>SPScenario(Scenario):</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;Scenario analysis based on slope position units.&quot;&quot;&quot;</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="../../de/dd2/a00207.html#a9dcf4f55779fde0eda40d9c9561ffabe">   30</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../de/dd2/a00207.html#a9dcf4f55779fde0eda40d9c9561ffabe">__init__</a>(self, cf):</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="../../d5/d13/a00205.html#a9dcf4f55779fde0eda40d9c9561ffabe">   30</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d5/d13/a00205.html#a9dcf4f55779fde0eda40d9c9561ffabe">__init__</a>(self, cf):</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Initialization.&quot;&quot;&quot;</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        Scenario.__init__(self, cf)</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        self.<a class="code" href="../../de/dd2/a00207.html#ad1aba2ffc91761a55e9a0ffc44a35af4">gene_num</a> = cf.slppos_unit_num</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        self.<a class="code" href="../../de/dd2/a00207.html#a662dc3e6af32794b5d5a148b6a73ee62">gene_values</a> = [0] * self.<a class="code" href="../../de/dd2/a00207.html#ad1aba2ffc91761a55e9a0ffc44a35af4">gene_num</a>  <span class="comment"># 0 means not config BMP</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        self.<a class="code" href="../../de/dd2/a00207.html#a9630f8de26af62d072feb8455a872215">unit2gene</a> = cf.slppos_to_gene</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        self.<a class="code" href="../../de/dd2/a00207.html#a22638c4b52da06a803d008704973c9c0">slppos_tagnames</a> = cf.slppos_tagnames</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        self.<a class="code" href="../../de/dd2/a00207.html#af6bbadd71ebd5155d9355663e64a0b69">units_infos</a> = cf.units_infos</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        self.<a class="code" href="../../de/dd2/a00207.html#a585f99318508134599779233b2bb1764">bmp_ids</a> = cf.bmps_subids</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        self.<a class="code" href="../../de/dd2/a00207.html#a1d66b363a16e728fea890fb73c85b115">bmp_params</a> = cf.bmps_params</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        self.<a class="code" href="../../de/dd2/a00207.html#a1685d21c23735c8f90c3d4936916cea6">suit_bmps</a> = cf.slppos_suit_bmps</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        self.<a class="code" href="../../de/dd2/a00207.html#a5c66d1d638149a910c6837d2fac59070">unit_to_gene</a> = cf.slppos_to_gene</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        self.<a class="code" href="../../de/dd2/a00207.html#a699cf7badf39a4ded04c12182c4ae9bf">gene_to_unit</a> = cf.gene_to_slppos</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        self.<a class="code" href="../../de/dd2/a00207.html#ad868aa0cb690628428e6f9d987e6add4">cfg_years</a> = cf.runtime_years</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        self.<a class="code" href="../../d5/d13/a00205.html#ad1aba2ffc91761a55e9a0ffc44a35af4">gene_num</a> = cf.slppos_unit_num</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        self.<a class="code" href="../../d5/d13/a00205.html#a662dc3e6af32794b5d5a148b6a73ee62">gene_values</a> = [0] * self.<a class="code" href="../../d5/d13/a00205.html#ad1aba2ffc91761a55e9a0ffc44a35af4">gene_num</a>  <span class="comment"># 0 means not config BMP</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        self.<a class="code" href="../../d5/d13/a00205.html#a9630f8de26af62d072feb8455a872215">unit2gene</a> = cf.slppos_to_gene</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        self.<a class="code" href="../../d5/d13/a00205.html#a22638c4b52da06a803d008704973c9c0">slppos_tagnames</a> = cf.slppos_tagnames</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        self.<a class="code" href="../../d5/d13/a00205.html#af6bbadd71ebd5155d9355663e64a0b69">units_infos</a> = cf.units_infos</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        self.<a class="code" href="../../d5/d13/a00205.html#a585f99318508134599779233b2bb1764">bmp_ids</a> = cf.bmps_subids</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        self.<a class="code" href="../../d5/d13/a00205.html#a1d66b363a16e728fea890fb73c85b115">bmp_params</a> = cf.bmps_params</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        self.<a class="code" href="../../d5/d13/a00205.html#a1685d21c23735c8f90c3d4936916cea6">suit_bmps</a> = cf.slppos_suit_bmps</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        self.<a class="code" href="../../d5/d13/a00205.html#a5c66d1d638149a910c6837d2fac59070">unit_to_gene</a> = cf.slppos_to_gene</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        self.<a class="code" href="../../d5/d13/a00205.html#a699cf7badf39a4ded04c12182c4ae9bf">gene_to_unit</a> = cf.gene_to_slppos</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        self.<a class="code" href="../../d5/d13/a00205.html#ad868aa0cb690628428e6f9d987e6add4">cfg_years</a> = cf.runtime_years</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">def </span>rule_based_config(self, conf_rate=0.5):</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="comment"># from the bottom slope position of each hillslope, trace upslope</span></div>
@@ -176,9 +176,9 @@ $(document).ready(function(){initNavTree('d8/d67/a00499_source.html','../../');}
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="stringliteral">                If configured, return (True, BMPID), otherwise return (False, 0).</span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="stringliteral">            &quot;&quot;&quot;</span></div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="comment"># print (&#39;slppos: %d, unit: %d&#39; % (slppostag, unit_id))</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            genidx = self.<a class="code" href="../../de/dd2/a00207.html#a5c66d1d638149a910c6837d2fac59070">unit_to_gene</a>[unit_id]</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            genidx = self.<a class="code" href="../../d5/d13/a00205.html#a5c66d1d638149a910c6837d2fac59070">unit_to_gene</a>[unit_id]</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            bmps = get_potential_bmps(self.<a class="code" href="../../de/dd2/a00207.html#a1685d21c23735c8f90c3d4936916cea6">suit_bmps</a>, slppostag, upsid, upgid,</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            bmps = get_potential_bmps(self.<a class="code" href="../../d5/d13/a00205.html#a1685d21c23735c8f90c3d4936916cea6">suit_bmps</a>, slppostag, upsid, upgid,</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                                      downsid, downgid, method)</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="comment"># print (&#39;Config for unit: %d&#39; % unitid)</span></div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            configed = <span class="keyword">False</span></div>
@@ -193,7 +193,7 @@ $(document).ready(function(){initNavTree('d8/d67/a00499_source.html','../../');}
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="comment"># config BMP</span></div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keywordflow">if</span> len(bmps) &gt;= 1:</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                cfg_bmp = bmps[random.randint(0, len(bmps) - 1)]</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                self.<a class="code" href="../../de/dd2/a00207.html#a662dc3e6af32794b5d5a148b6a73ee62">gene_values</a>[genidx] = cfg_bmp</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                self.<a class="code" href="../../d5/d13/a00205.html#a662dc3e6af32794b5d5a148b6a73ee62">gene_values</a>[genidx] = cfg_bmp</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <span class="keywordflow">if</span> cfg_bmp != 0:</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                    configed = <span class="keyword">True</span></div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="comment"># print (&#39;Config for unit: %d, slppos: %d, upgv: %d, downgv: %d, potBMPs: %s, &#39;</span></div>
@@ -203,12 +203,12 @@ $(document).ready(function(){initNavTree('d8/d67/a00499_source.html','../../');}
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="comment">#            % (unit_id, slppostag, upgid, downgid))</span></div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="keywordflow">return</span> configed, cfg_bmp</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        spname = self.<a class="code" href="../../de/dd2/a00207.html#a22638c4b52da06a803d008704973c9c0">slppos_tagnames</a>[-1][1]  <span class="comment"># the bottom slope position</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">for</span> unitid, spdict <span class="keywordflow">in</span> self.<a class="code" href="../../de/dd2/a00207.html#af6bbadd71ebd5155d9355663e64a0b69">units_infos</a>[spname].iteritems():</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        spname = self.<a class="code" href="../../d5/d13/a00205.html#a22638c4b52da06a803d008704973c9c0">slppos_tagnames</a>[-1][1]  <span class="comment"># the bottom slope position</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">for</span> unitid, spdict <span class="keywordflow">in</span> self.<a class="code" href="../../d5/d13/a00205.html#af6bbadd71ebd5155d9355663e64a0b69">units_infos</a>[spname].iteritems():</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            up_spid = spdict[<span class="stringliteral">&#39;upslope&#39;</span>]</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            down_spid = spdict[<span class="stringliteral">&#39;downslope&#39;</span>]</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            spidx = len(self.<a class="code" href="../../de/dd2/a00207.html#a22638c4b52da06a803d008704973c9c0">slppos_tagnames</a>) - 1</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            sptag = self.<a class="code" href="../../de/dd2/a00207.html#a22638c4b52da06a803d008704973c9c0">slppos_tagnames</a>[spidx][0]</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            spidx = len(self.<a class="code" href="../../d5/d13/a00205.html#a22638c4b52da06a803d008704973c9c0">slppos_tagnames</a>) - 1</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            sptag = self.<a class="code" href="../../d5/d13/a00205.html#a22638c4b52da06a803d008704973c9c0">slppos_tagnames</a>[spidx][0]</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            up_gv = 0</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            down_gv = -1</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            config_bmp_for_unit(unitid, sptag, up_spid, up_gv, down_spid, down_gv, self.rule_mtd)</div>
@@ -219,37 +219,37 @@ $(document).ready(function(){initNavTree('d8/d67/a00499_source.html','../../');}
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                up_gv = -1</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                down_gv = -1</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                spidx -= 1</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                sptag = self.<a class="code" href="../../de/dd2/a00207.html#a22638c4b52da06a803d008704973c9c0">slppos_tagnames</a>[spidx][0]</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                spname = self.<a class="code" href="../../de/dd2/a00207.html#a22638c4b52da06a803d008704973c9c0">slppos_tagnames</a>[spidx][1]</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                spdict = self.<a class="code" href="../../de/dd2/a00207.html#af6bbadd71ebd5155d9355663e64a0b69">units_infos</a>[spname][up_spid]</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                sptag = self.<a class="code" href="../../d5/d13/a00205.html#a22638c4b52da06a803d008704973c9c0">slppos_tagnames</a>[spidx][0]</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                spname = self.<a class="code" href="../../d5/d13/a00205.html#a22638c4b52da06a803d008704973c9c0">slppos_tagnames</a>[spidx][1]</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                spdict = self.<a class="code" href="../../d5/d13/a00205.html#af6bbadd71ebd5155d9355663e64a0b69">units_infos</a>[spname][up_spid]</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                up_spid = spdict[<span class="stringliteral">&#39;upslope&#39;</span>]</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                down_spid = spdict[<span class="stringliteral">&#39;downslope&#39;</span>]</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                <span class="keywordflow">if</span> up_spid &gt;= 0:</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                    up_gv = self.<a class="code" href="../../de/dd2/a00207.html#a662dc3e6af32794b5d5a148b6a73ee62">gene_values</a>[self.<a class="code" href="../../de/dd2/a00207.html#a5c66d1d638149a910c6837d2fac59070">unit_to_gene</a>[up_spid]]</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                    up_gv = self.<a class="code" href="../../d5/d13/a00205.html#a662dc3e6af32794b5d5a148b6a73ee62">gene_values</a>[self.<a class="code" href="../../d5/d13/a00205.html#a5c66d1d638149a910c6837d2fac59070">unit_to_gene</a>[up_spid]]</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                <span class="keywordflow">if</span> down_spid &gt;= 0:</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                    down_gv = self.<a class="code" href="../../de/dd2/a00207.html#a662dc3e6af32794b5d5a148b6a73ee62">gene_values</a>[self.<a class="code" href="../../de/dd2/a00207.html#a5c66d1d638149a910c6837d2fac59070">unit_to_gene</a>[down_spid]]</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                    down_gv = self.<a class="code" href="../../d5/d13/a00205.html#a662dc3e6af32794b5d5a148b6a73ee62">gene_values</a>[self.<a class="code" href="../../d5/d13/a00205.html#a5c66d1d638149a910c6837d2fac59070">unit_to_gene</a>[down_spid]]</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                config_bmp_for_unit(unitid, sptag, up_spid, up_gv,</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                                    down_spid, down_gv, self.rule_mtd)</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keyword">def </span>random_based_config(self, conf_rate=0.5):</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        pot_bmps = self.<a class="code" href="../../de/dd2/a00207.html#a585f99318508134599779233b2bb1764">bmp_ids</a>[:]</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        pot_bmps = self.<a class="code" href="../../d5/d13/a00205.html#a585f99318508134599779233b2bb1764">bmp_ids</a>[:]</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keywordflow">if</span> 0 <span class="keywordflow">not</span> <span class="keywordflow">in</span> pot_bmps:</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            pot_bmps.append(0)</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(self.<a class="code" href="../../de/dd2/a00207.html#ad1aba2ffc91761a55e9a0ffc44a35af4">gene_num</a>):</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(self.<a class="code" href="../../d5/d13/a00205.html#ad1aba2ffc91761a55e9a0ffc44a35af4">gene_num</a>):</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            <span class="keywordflow">if</span> random.random() &gt;= conf_rate:</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                <span class="keywordflow">continue</span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            self.<a class="code" href="../../de/dd2/a00207.html#a662dc3e6af32794b5d5a148b6a73ee62">gene_values</a>[i] = pot_bmps[random.randint(0, len(pot_bmps) - 1)]</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            self.<a class="code" href="../../d5/d13/a00205.html#a662dc3e6af32794b5d5a148b6a73ee62">gene_values</a>[i] = pot_bmps[random.randint(0, len(pot_bmps) - 1)]</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keyword">def </span>decoding(self):</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keywordflow">if</span> self.ID &lt; 0:</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            self.set_unique_id()</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        bmp_units = dict()</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keywordflow">for</span> i, gene_v <span class="keywordflow">in</span> enumerate(self.<a class="code" href="../../de/dd2/a00207.html#a662dc3e6af32794b5d5a148b6a73ee62">gene_values</a>):</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keywordflow">for</span> i, gene_v <span class="keywordflow">in</span> enumerate(self.<a class="code" href="../../d5/d13/a00205.html#a662dc3e6af32794b5d5a148b6a73ee62">gene_values</a>):</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            <span class="keywordflow">if</span> gene_v == 0:</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                <span class="keywordflow">continue</span></div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            <span class="keywordflow">if</span> gene_v <span class="keywordflow">not</span> <span class="keywordflow">in</span> bmp_units:</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                bmp_units[gene_v] = list()</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            unit_id = self.<a class="code" href="../../de/dd2/a00207.html#a699cf7badf39a4ded04c12182c4ae9bf">gene_to_unit</a>[i]</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            unit_id = self.<a class="code" href="../../d5/d13/a00205.html#a699cf7badf39a4ded04c12182c4ae9bf">gene_to_unit</a>[i]</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            bmp_units[gene_v].append(unit_id)</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        sce_item_count = 0</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="keywordflow">for</span> k, v <span class="keywordflow">in</span> bmp_units.iteritems():</div>
@@ -344,7 +344,7 @@ $(document).ready(function(){initNavTree('d8/d67/a00499_source.html','../../');}
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            self.environment = self.worst_env</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            <span class="keywordflow">return</span></div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;</div>
-<div class="line"><a name="l00230"></a><span class="lineno"><a class="line" href="../../de/dd2/a00207.html#a82ce20f02f4393978d5a6f36af15a329">  230</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../de/dd2/a00207.html#a82ce20f02f4393978d5a6f36af15a329">export_scenario_to_gtiff</a>(self, outpath=None):</div>
+<div class="line"><a name="l00230"></a><span class="lineno"><a class="line" href="../../d5/d13/a00205.html#a82ce20f02f4393978d5a6f36af15a329">  230</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d5/d13/a00205.html#a82ce20f02f4393978d5a6f36af15a329">export_scenario_to_gtiff</a>(self, outpath=None):</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Export scenario to GTiff.</span></div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="stringliteral"></span></div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="stringliteral">        TODO: Read Raster from MongoDB should be extracted to pygeoc.</span></div>
@@ -393,8 +393,8 @@ $(document).ready(function(){initNavTree('d8/d67/a00499_source.html','../../');}
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            slppos_data = numpy.reshape(slppos_data, (ysize, xsize))</div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;            v_dict = dict()</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;            <span class="keywordflow">for</span> idx, gene_v <span class="keywordflow">in</span> enumerate(self.<a class="code" href="../../de/dd2/a00207.html#a662dc3e6af32794b5d5a148b6a73ee62">gene_values</a>):</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                v_dict[self.<a class="code" href="../../de/dd2/a00207.html#a699cf7badf39a4ded04c12182c4ae9bf">gene_to_unit</a>[idx]] = gene_v</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;            <span class="keywordflow">for</span> idx, gene_v <span class="keywordflow">in</span> enumerate(self.<a class="code" href="../../d5/d13/a00205.html#a662dc3e6af32794b5d5a148b6a73ee62">gene_values</a>):</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                v_dict[self.<a class="code" href="../../d5/d13/a00205.html#a699cf7badf39a4ded04c12182c4ae9bf">gene_to_unit</a>[idx]] = gene_v</div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;</div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;            <span class="keywordflow">for</span> k, v <span class="keywordflow">in</span> v_dict.iteritems():</div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                slppos_data[slppos_data == k] = v</div>
@@ -440,13 +440,13 @@ $(document).ready(function(){initNavTree('d8/d67/a00499_source.html','../../');}
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;</div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;<span class="keyword">def </span>initialize_scenario(cf):</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    sce = <a class="code" href="../../de/dd2/a00207.html">SPScenario</a>(cf)</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    sce = <a class="code" href="../../d5/d13/a00205.html">SPScenario</a>(cf)</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    <span class="keywordflow">return</span> sce.initialize()</div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;</div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;<span class="keyword">def </span>scenario_effectiveness(cf, individual):</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    <span class="comment"># 1. instantiate the inherited Scenario class.</span></div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    sce = <a class="code" href="../../de/dd2/a00207.html">SPScenario</a>(cf)</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    sce = <a class="code" href="../../d5/d13/a00205.html">SPScenario</a>(cf)</div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    curid = sce.set_unique_id()</div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    setattr(sce, <span class="stringliteral">&#39;gene_values&#39;</span>, individual)</div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    <span class="comment"># 2. decoding gene values to BMP items and exporting to MongoDB.</span></div>
@@ -476,7 +476,7 @@ $(document).ready(function(){initNavTree('d8/d67/a00499_source.html','../../');}
 <div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(100):</div>
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;        init_gene_values = initialize_scenario(cfg)</div>
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        <span class="comment"># print (init_gene_values.__str__())</span></div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        sce = <a class="code" href="../../de/dd2/a00207.html">SPScenario</a>(cfg)</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        sce = <a class="code" href="../../d5/d13/a00205.html">SPScenario</a>(cfg)</div>
 <div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        curid = sce.set_unique_id()</div>
 <div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;        setattr(sce, <span class="stringliteral">&#39;gene_values&#39;</span>, init_gene_values)</div>
 <div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        sce.calculate_economy()</div>
@@ -494,29 +494,29 @@ $(document).ready(function(){initNavTree('d8/d67/a00499_source.html','../../');}
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;</div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;<span class="keywordflow">if</span> __name__ == <span class="stringliteral">&#39;__main__&#39;</span>:</div>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    main()</div>
-<div class="ttc" id="a00207_html_a1d66b363a16e728fea890fb73c85b115"><div class="ttname"><a href="../../de/dd2/a00207.html#a1d66b363a16e728fea890fb73c85b115">seims.scenario_analysis.slpposunits.scenario.SPScenario.bmp_params</a></div><div class="ttdeci">bmp_params</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d67/a00499_source.html#l00039">scenario.py:39</a></div></div>
-<div class="ttc" id="a00207_html_a9dcf4f55779fde0eda40d9c9561ffabe"><div class="ttname"><a href="../../de/dd2/a00207.html#a9dcf4f55779fde0eda40d9c9561ffabe">seims.scenario_analysis.slpposunits.scenario.SPScenario.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d67/a00499_source.html#l00030">scenario.py:30</a></div></div>
-<div class="ttc" id="a00207_html_a662dc3e6af32794b5d5a148b6a73ee62"><div class="ttname"><a href="../../de/dd2/a00207.html#a662dc3e6af32794b5d5a148b6a73ee62">seims.scenario_analysis.slpposunits.scenario.SPScenario.gene_values</a></div><div class="ttdeci">gene_values</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d67/a00499_source.html#l00034">scenario.py:34</a></div></div>
-<div class="ttc" id="a00207_html_a5c66d1d638149a910c6837d2fac59070"><div class="ttname"><a href="../../de/dd2/a00207.html#a5c66d1d638149a910c6837d2fac59070">seims.scenario_analysis.slpposunits.scenario.SPScenario.unit_to_gene</a></div><div class="ttdeci">unit_to_gene</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d67/a00499_source.html#l00041">scenario.py:41</a></div></div>
-<div class="ttc" id="a00862_html"><div class="ttname"><a href="../../dc/d41/a00862.html">utils</a></div></div>
-<div class="ttc" id="a00207_html_a9630f8de26af62d072feb8455a872215"><div class="ttname"><a href="../../de/dd2/a00207.html#a9630f8de26af62d072feb8455a872215">seims.scenario_analysis.slpposunits.scenario.SPScenario.unit2gene</a></div><div class="ttdeci">unit2gene</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d67/a00499_source.html#l00035">scenario.py:35</a></div></div>
-<div class="ttc" id="a00207_html_ad1aba2ffc91761a55e9a0ffc44a35af4"><div class="ttname"><a href="../../de/dd2/a00207.html#ad1aba2ffc91761a55e9a0ffc44a35af4">seims.scenario_analysis.slpposunits.scenario.SPScenario.gene_num</a></div><div class="ttdeci">gene_num</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d67/a00499_source.html#l00033">scenario.py:33</a></div></div>
-<div class="ttc" id="a00207_html_a699cf7badf39a4ded04c12182c4ae9bf"><div class="ttname"><a href="../../de/dd2/a00207.html#a699cf7badf39a4ded04c12182c4ae9bf">seims.scenario_analysis.slpposunits.scenario.SPScenario.gene_to_unit</a></div><div class="ttdeci">gene_to_unit</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d67/a00499_source.html#l00042">scenario.py:42</a></div></div>
-<div class="ttc" id="a00861_html"><div class="ttname"><a href="../../dd/dd5/a00861.html">raster</a></div></div>
-<div class="ttc" id="a00207_html_a1685d21c23735c8f90c3d4936916cea6"><div class="ttname"><a href="../../de/dd2/a00207.html#a1685d21c23735c8f90c3d4936916cea6">seims.scenario_analysis.slpposunits.scenario.SPScenario.suit_bmps</a></div><div class="ttdeci">suit_bmps</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d67/a00499_source.html#l00040">scenario.py:40</a></div></div>
-<div class="ttc" id="a00207_html_ad868aa0cb690628428e6f9d987e6add4"><div class="ttname"><a href="../../de/dd2/a00207.html#ad868aa0cb690628428e6f9d987e6add4">seims.scenario_analysis.slpposunits.scenario.SPScenario.cfg_years</a></div><div class="ttdeci">cfg_years</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d67/a00499_source.html#l00043">scenario.py:43</a></div></div>
-<div class="ttc" id="a00207_html_a585f99318508134599779233b2bb1764"><div class="ttname"><a href="../../de/dd2/a00207.html#a585f99318508134599779233b2bb1764">seims.scenario_analysis.slpposunits.scenario.SPScenario.bmp_ids</a></div><div class="ttdeci">bmp_ids</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d67/a00499_source.html#l00038">scenario.py:38</a></div></div>
-<div class="ttc" id="a00207_html_a82ce20f02f4393978d5a6f36af15a329"><div class="ttname"><a href="../../de/dd2/a00207.html#a82ce20f02f4393978d5a6f36af15a329">seims.scenario_analysis.slpposunits.scenario.SPScenario.export_scenario_to_gtiff</a></div><div class="ttdeci">def export_scenario_to_gtiff</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d67/a00499_source.html#l00230">scenario.py:230</a></div></div>
-<div class="ttc" id="a00207_html_af6bbadd71ebd5155d9355663e64a0b69"><div class="ttname"><a href="../../de/dd2/a00207.html#af6bbadd71ebd5155d9355663e64a0b69">seims.scenario_analysis.slpposunits.scenario.SPScenario.units_infos</a></div><div class="ttdeci">units_infos</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d67/a00499_source.html#l00037">scenario.py:37</a></div></div>
-<div class="ttc" id="a00207_html_a22638c4b52da06a803d008704973c9c0"><div class="ttname"><a href="../../de/dd2/a00207.html#a22638c4b52da06a803d008704973c9c0">seims.scenario_analysis.slpposunits.scenario.SPScenario.slppos_tagnames</a></div><div class="ttdeci">slppos_tagnames</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d67/a00499_source.html#l00036">scenario.py:36</a></div></div>
-<div class="ttc" id="a00207_html"><div class="ttname"><a href="../../de/dd2/a00207.html">seims.scenario_analysis.slpposunits.scenario.SPScenario</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d67/a00499_source.html#l00027">scenario.py:27</a></div></div>
+<div class="ttc" id="a00205_html_a22638c4b52da06a803d008704973c9c0"><div class="ttname"><a href="../../d5/d13/a00205.html#a22638c4b52da06a803d008704973c9c0">seims.scenario_analysis.slpposunits.scenario.SPScenario.slppos_tagnames</a></div><div class="ttdeci">slppos_tagnames</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d1e/a00497_source.html#l00036">scenario.py:36</a></div></div>
+<div class="ttc" id="a00205_html_ad868aa0cb690628428e6f9d987e6add4"><div class="ttname"><a href="../../d5/d13/a00205.html#ad868aa0cb690628428e6f9d987e6add4">seims.scenario_analysis.slpposunits.scenario.SPScenario.cfg_years</a></div><div class="ttdeci">cfg_years</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d1e/a00497_source.html#l00043">scenario.py:43</a></div></div>
+<div class="ttc" id="a00205_html_ad1aba2ffc91761a55e9a0ffc44a35af4"><div class="ttname"><a href="../../d5/d13/a00205.html#ad1aba2ffc91761a55e9a0ffc44a35af4">seims.scenario_analysis.slpposunits.scenario.SPScenario.gene_num</a></div><div class="ttdeci">gene_num</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d1e/a00497_source.html#l00033">scenario.py:33</a></div></div>
+<div class="ttc" id="a00205_html_a699cf7badf39a4ded04c12182c4ae9bf"><div class="ttname"><a href="../../d5/d13/a00205.html#a699cf7badf39a4ded04c12182c4ae9bf">seims.scenario_analysis.slpposunits.scenario.SPScenario.gene_to_unit</a></div><div class="ttdeci">gene_to_unit</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d1e/a00497_source.html#l00042">scenario.py:42</a></div></div>
+<div class="ttc" id="a00205_html_a585f99318508134599779233b2bb1764"><div class="ttname"><a href="../../d5/d13/a00205.html#a585f99318508134599779233b2bb1764">seims.scenario_analysis.slpposunits.scenario.SPScenario.bmp_ids</a></div><div class="ttdeci">bmp_ids</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d1e/a00497_source.html#l00038">scenario.py:38</a></div></div>
+<div class="ttc" id="a00205_html_a82ce20f02f4393978d5a6f36af15a329"><div class="ttname"><a href="../../d5/d13/a00205.html#a82ce20f02f4393978d5a6f36af15a329">seims.scenario_analysis.slpposunits.scenario.SPScenario.export_scenario_to_gtiff</a></div><div class="ttdeci">def export_scenario_to_gtiff</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d1e/a00497_source.html#l00230">scenario.py:230</a></div></div>
+<div class="ttc" id="a00205_html_a1d66b363a16e728fea890fb73c85b115"><div class="ttname"><a href="../../d5/d13/a00205.html#a1d66b363a16e728fea890fb73c85b115">seims.scenario_analysis.slpposunits.scenario.SPScenario.bmp_params</a></div><div class="ttdeci">bmp_params</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d1e/a00497_source.html#l00039">scenario.py:39</a></div></div>
+<div class="ttc" id="a00205_html_af6bbadd71ebd5155d9355663e64a0b69"><div class="ttname"><a href="../../d5/d13/a00205.html#af6bbadd71ebd5155d9355663e64a0b69">seims.scenario_analysis.slpposunits.scenario.SPScenario.units_infos</a></div><div class="ttdeci">units_infos</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d1e/a00497_source.html#l00037">scenario.py:37</a></div></div>
+<div class="ttc" id="a00205_html_a1685d21c23735c8f90c3d4936916cea6"><div class="ttname"><a href="../../d5/d13/a00205.html#a1685d21c23735c8f90c3d4936916cea6">seims.scenario_analysis.slpposunits.scenario.SPScenario.suit_bmps</a></div><div class="ttdeci">suit_bmps</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d1e/a00497_source.html#l00040">scenario.py:40</a></div></div>
+<div class="ttc" id="a00896_html"><div class="ttname"><a href="../../da/dd6/a00896.html">utils</a></div></div>
+<div class="ttc" id="a00895_html"><div class="ttname"><a href="../../d2/d21/a00895.html">raster</a></div></div>
+<div class="ttc" id="a00205_html"><div class="ttname"><a href="../../d5/d13/a00205.html">seims.scenario_analysis.slpposunits.scenario.SPScenario</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d1e/a00497_source.html#l00027">scenario.py:27</a></div></div>
+<div class="ttc" id="a00205_html_a662dc3e6af32794b5d5a148b6a73ee62"><div class="ttname"><a href="../../d5/d13/a00205.html#a662dc3e6af32794b5d5a148b6a73ee62">seims.scenario_analysis.slpposunits.scenario.SPScenario.gene_values</a></div><div class="ttdeci">gene_values</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d1e/a00497_source.html#l00034">scenario.py:34</a></div></div>
+<div class="ttc" id="a00205_html_a5c66d1d638149a910c6837d2fac59070"><div class="ttname"><a href="../../d5/d13/a00205.html#a5c66d1d638149a910c6837d2fac59070">seims.scenario_analysis.slpposunits.scenario.SPScenario.unit_to_gene</a></div><div class="ttdeci">unit_to_gene</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d1e/a00497_source.html#l00041">scenario.py:41</a></div></div>
+<div class="ttc" id="a00205_html_a9630f8de26af62d072feb8455a872215"><div class="ttname"><a href="../../d5/d13/a00205.html#a9630f8de26af62d072feb8455a872215">seims.scenario_analysis.slpposunits.scenario.SPScenario.unit2gene</a></div><div class="ttdeci">unit2gene</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d1e/a00497_source.html#l00035">scenario.py:35</a></div></div>
+<div class="ttc" id="a00205_html_a9dcf4f55779fde0eda40d9c9561ffabe"><div class="ttname"><a href="../../d5/d13/a00205.html#a9dcf4f55779fde0eda40d9c9561ffabe">seims.scenario_analysis.slpposunits.scenario.SPScenario.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d1e/a00497_source.html#l00030">scenario.py:30</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_e9804dfb28c80687c0b1771681283077.html">scenario_analysis</a></li><li class="navelem"><a class="el" href="../../dir_fb953fad34f000c3fba666fdcab80fe4.html">slpposunits</a></li><li class="navelem"><b>scenario.py</b></li>
-    <li class="footer">Generated on Fri Nov 24 2017 09:10:19 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_483bc1739a16b87563cca23e7a392c1e.html">seims_linux_gcc48</a></li><li class="navelem"><a class="el" href="../../dir_a45053e29f104e67e5be28f13679e3c2.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_a6ab78b4873b008194eded6561a8f41e.html">scenario_analysis</a></li><li class="navelem"><a class="el" href="../../dir_2ce252a2aba24868922f1b4b7462a30e.html">slpposunits</a></li><li class="navelem"><b>scenario.py</b></li>
+    <li class="footer">Generated on Mon Dec 11 2017 12:43:08 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

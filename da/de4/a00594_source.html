@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims/src/seims_main/base/data/NotRegularMeasurement.h Source File</title>
+<title>SEIMS: seims/src/seims_main/base/data/ClimateParams.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -112,48 +112,42 @@ $(document).ready(function(){initNavTree('da/de4/a00594_source.html','../../');}
 
 <div class="header">
   <div class="headertitle">
-<div class="title">NotRegularMeasurement.h</div>  </div>
+<div class="title">ClimateParams.h</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef SEIMS_NOTREGULAR_MEASUREMENT_H</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SEIMS_NOTREGULAR_MEASUREMENT_H</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;Measurement.h&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;text.h&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;utilities.h&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;MongoUtil.h&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="../../d3/d65/a00154.html">   21</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d3/d65/a00154.html">NotRegularMeasurement</a> : <span class="keyword">public</span> <a class="code" href="../../d5/deb/a00132.html">Measurement</a> {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="../../d3/d65/a00154.html#a428a959f6aa4e431690f4f21bca348d8">NotRegularMeasurement</a>(MongoClient *conn, <span class="keywordtype">string</span> hydroDBName, <span class="keywordtype">string</span> sitesList, <span class="keywordtype">string</span> siteType,</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                          time_t startTime, time_t endTime);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="../../d3/d65/a00154.html#a156ee633e6dfc626a362bb826525ea6e">~NotRegularMeasurement</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">float</span> *<a class="code" href="../../d3/d65/a00154.html#af77a1b276a9f174603a977b2a6e4c5cc">GetSiteDataByTime</a>(time_t t);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="../../d3/d65/a00154.html#a0bddb0412550642b2236f4cd9d9fd457">   46</a></span>&#160;    vector&lt;vector&lt;time_t&gt;&gt; <a class="code" href="../../d3/d65/a00154.html#a0bddb0412550642b2236f4cd9d9fd457">m_timeList</a>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="../../d3/d65/a00154.html#a89f4a689586991fb7e05c5d6f6ce6805">   48</a></span>&#160;    vector&lt;vector&lt;float&gt;&gt; <a class="code" href="../../d3/d65/a00154.html#a89f4a689586991fb7e05c5d6f6ce6805">m_valueList</a>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="../../d3/d65/a00154.html#abb545ecf27b9011ea628ad92bc0ac697">   50</a></span>&#160;    vector&lt;int&gt; <a class="code" href="../../d3/d65/a00154.html#abb545ecf27b9011ea628ad92bc0ac697">m_curIndexList</a>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;};</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SEIMS_NOTREGULAR_MEASUREMENT_H */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="a00154_html_a0bddb0412550642b2236f4cd9d9fd457"><div class="ttname"><a href="../../d3/d65/a00154.html#a0bddb0412550642b2236f4cd9d9fd457">NotRegularMeasurement::m_timeList</a></div><div class="ttdeci">vector&lt; vector&lt; time_t &gt; &gt; m_timeList</div><div class="ttdoc">time list of site data </div><div class="ttdef"><b>Definition:</b> <a href="../../da/de4/a00594_source.html#l00046">NotRegularMeasurement.h:46</a></div></div>
-<div class="ttc" id="a00154_html_a428a959f6aa4e431690f4f21bca348d8"><div class="ttname"><a href="../../d3/d65/a00154.html#a428a959f6aa4e431690f4f21bca348d8">NotRegularMeasurement::NotRegularMeasurement</a></div><div class="ttdeci">NotRegularMeasurement(MongoClient *conn, string hydroDBName, string sitesList, string siteType, time_t startTime, time_t endTime)</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> <a href="../../d2/da3/a00593_source.html#l00003">NotRegularMeasurement.cpp:3</a></div></div>
-<div class="ttc" id="a00154_html_a156ee633e6dfc626a362bb826525ea6e"><div class="ttname"><a href="../../d3/d65/a00154.html#a156ee633e6dfc626a362bb826525ea6e">NotRegularMeasurement::~NotRegularMeasurement</a></div><div class="ttdeci">~NotRegularMeasurement(void)</div><div class="ttdoc">Destructor. </div><div class="ttdef"><b>Definition:</b> <a href="../../d2/da3/a00593_source.html#l00090">NotRegularMeasurement.cpp:90</a></div></div>
-<div class="ttc" id="a00154_html_a89f4a689586991fb7e05c5d6f6ce6805"><div class="ttname"><a href="../../d3/d65/a00154.html#a89f4a689586991fb7e05c5d6f6ce6805">NotRegularMeasurement::m_valueList</a></div><div class="ttdeci">vector&lt; vector&lt; float &gt; &gt; m_valueList</div><div class="ttdoc">site data corresponding to m_timeList </div><div class="ttdef"><b>Definition:</b> <a href="../../da/de4/a00594_source.html#l00048">NotRegularMeasurement.h:48</a></div></div>
-<div class="ttc" id="a00154_html_abb545ecf27b9011ea628ad92bc0ac697"><div class="ttname"><a href="../../d3/d65/a00154.html#abb545ecf27b9011ea628ad92bc0ac697">NotRegularMeasurement::m_curIndexList</a></div><div class="ttdeci">vector&lt; int &gt; m_curIndexList</div><div class="ttdoc">index </div><div class="ttdef"><b>Definition:</b> <a href="../../da/de4/a00594_source.html#l00050">NotRegularMeasurement.h:50</a></div></div>
-<div class="ttc" id="a00132_html"><div class="ttname"><a href="../../d5/deb/a00132.html">Measurement</a></div><div class="ttdoc">Get HydroClimate measurement data from MongoDB. </div><div class="ttdef"><b>Definition:</b> <a href="../../d0/dec/a00592_source.html#l00021">Measurement.h:21</a></div></div>
-<div class="ttc" id="a00154_html_af77a1b276a9f174603a977b2a6e4c5cc"><div class="ttname"><a href="../../d3/d65/a00154.html#af77a1b276a9f174603a977b2a6e4c5cc">NotRegularMeasurement::GetSiteDataByTime</a></div><div class="ttdeci">virtual float * GetSiteDataByTime(time_t t)</div><div class="ttdoc">Get site date by time pData. </div><div class="ttdef"><b>Definition:</b> <a href="../../d2/da3/a00593_source.html#l00099">NotRegularMeasurement.cpp:99</a></div></div>
-<div class="ttc" id="a00154_html"><div class="ttname"><a href="../../d3/d65/a00154.html">NotRegularMeasurement</a></div><div class="ttdoc">Not Regular hydroclimate data, i.e., for storm model. </div><div class="ttdef"><b>Definition:</b> <a href="../../da/de4/a00594_source.html#l00021">NotRegularMeasurement.h:21</a></div></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef SEIMS_CLIMATE_PARAMS_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SEIMS_CLIMATE_PARAMS_H</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keywordtype">int</span> GetYear(time_t &amp;);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keywordtype">int</span> GetMonth(time_t &amp;);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keywordtype">int</span> GetDay(time_t &amp;);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keywordtype">int</span> JulianDay(time_t &amp;);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keywordtype">float</span> LatentHeatVapor(<span class="keywordtype">float</span> &amp;tmean);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keywordtype">void</span> MaxSolarRadiation(<span class="keywordtype">int</span> &amp;jDay, <span class="keywordtype">float</span> &amp;lat, <span class="keywordtype">float</span> &amp;dayL, <span class="keywordtype">float</span> &amp;maxSR);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keywordtype">float</span> MeanBarometricPressure(<span class="keywordtype">float</span> &amp;elev);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keywordtype">float</span> PsychrometricConst(<span class="keywordtype">float</span> &amp;tmean, <span class="keywordtype">float</span> &amp;elev);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keywordtype">float</span> SaturationVaporPressure(<span class="keywordtype">float</span> &amp;t);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SEIMS_CLIMATE_PARAMS_H */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_d9d8c03d94c229237348b60b53b769ac.html">base</a></li><li class="navelem"><a class="el" href="../../dir_24d0af58b2644ad205aa9a0d9adbb65a.html">data</a></li><li class="navelem"><b>NotRegularMeasurement.h</b></li>
-    <li class="footer">Generated on Fri Nov 24 2017 09:10:20 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_d9d8c03d94c229237348b60b53b769ac.html">base</a></li><li class="navelem"><a class="el" href="../../dir_24d0af58b2644ad205aa9a0d9adbb65a.html">data</a></li><li class="navelem"><b>ClimateParams.h</b></li>
+    <li class="footer">Generated on Mon Dec 11 2017 12:43:09 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

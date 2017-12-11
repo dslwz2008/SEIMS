@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims/pyseims_check.py Source File</title>
+<title>SEIMS: seims/run_seims.py Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -112,104 +112,69 @@ $(document).ready(function(){initNavTree('da/d7e/a00492_source.html','../../');}
 
 <div class="header">
   <div class="headertitle">
-<div class="title">pyseims_check.py</div>  </div>
+<div class="title">run_seims.py</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="../../de/d01/a00897.html">    1</a></span>&#160;<span class="stringliteral">&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="stringliteral">   This file is part of SEIMS and for checking the dependent packages.</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="stringliteral">&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"># 1. pygeoc</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keywordflow">try</span>:</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keyword">import</span> pygeoc</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">from</span> <a class="code" href="../../dd/dd5/a00861.html">pygeoc.raster</a> <span class="keyword">import</span> *</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">from</span> <a class="code" href="../../d7/d49/a00863.html">pygeoc.vector</a> <span class="keyword">import</span> *</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">from</span> <a class="code" href="../../d2/d5e/a00860.html">pygeoc.hydro</a> <span class="keyword">import</span> *</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">from</span> <a class="code" href="../../dc/d41/a00862.html">pygeoc.utils</a> <span class="keyword">import</span> *</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keywordflow">except</span> ImportError:</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordflow">print</span> (<span class="stringliteral">&quot;ERROR: PyGeoC is not successfully installed, please check and retry!&quot;</span>)</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keywordflow">else</span>:</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">print</span> (<span class="stringliteral">&quot;PyGeoC-%s has been installed!&quot;</span> % pygeoc.__version__)</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"># 2. gdal</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keywordflow">try</span>:</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">import</span> osgeo</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">from</span> osgeo <span class="keyword">import</span> ogr</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">from</span> osgeo <span class="keyword">import</span> osr</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">from</span> osgeo <span class="keyword">import</span> gdalconst</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">from</span> osgeo <span class="keyword">import</span> gdal_array</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">from</span> osgeo <span class="keyword">import</span> gdal</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keywordflow">except</span> ImportError:</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">print</span> (<span class="stringliteral">&quot;ERROR: GDAL is not successfully installed, please check and retry!&quot;</span>)</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keywordflow">else</span>:</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">print</span> (<span class="stringliteral">&quot;GDAL-%s has been installed!&quot;</span> % osgeo.__version__)</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"># 3. numpy</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordflow">try</span>:</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">import</span> numpy</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keywordflow">except</span> ImportError:</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">print</span> (<span class="stringliteral">&quot;ERROR: NumPy is not successfully installed, please check and retry!&quot;</span>)</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keywordflow">else</span>:</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">print</span> (<span class="stringliteral">&quot;NumPy-%s has been installed!&quot;</span> % numpy.__version__)</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"># 4. pymongo</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keywordflow">try</span>:</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">import</span> pymongo</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">from</span> pymongo <span class="keyword">import</span> MongoClient</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keywordflow">except</span> ImportError:</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">print</span> (<span class="stringliteral">&quot;ERROR: pymongo is not successfully installed, please check and retry!&quot;</span>)</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keywordflow">else</span>:</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">print</span> (<span class="stringliteral">&quot;pymongo-%s has been installed!&quot;</span> % pymongo.__version__)</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"># 5. networkx</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keywordflow">try</span>:</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">import</span> networkx</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keywordflow">except</span> ImportError:</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">print</span> (<span class="stringliteral">&quot;ERROR: networkx is not successfully installed, please check and retry!&quot;</span>)</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keywordflow">else</span>:</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">print</span> (<span class="stringliteral">&quot;networkx-%s has been installed!&quot;</span> % networkx.__version__)</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment"># 6. shapely</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keywordflow">try</span>:</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">import</span> shapely</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keywordflow">except</span> ImportError:</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">print</span> (<span class="stringliteral">&quot;ERROR: shapely is not successfully installed, please check and retry!&quot;</span>)</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keywordflow">else</span>:</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">print</span> (<span class="stringliteral">&quot;shapely-%s has been installed!&quot;</span> % shapely.__version__)</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment"># 7. matplotlib</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keywordflow">try</span>:</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">import</span> matplotlib</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keywordflow">except</span> ImportError:</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">print</span> (<span class="stringliteral">&quot;ERROR: matplotlib is not successfully installed, please check and retry!&quot;</span>)</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keywordflow">else</span>:</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">print</span> (<span class="stringliteral">&quot;matplotlib-%s has been installed!&quot;</span> % matplotlib.__version__)</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment"># 8. pathlib2</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keywordflow">try</span>:</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">import</span> pathlib2</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keywordflow">except</span> ImportError:</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">print</span> (<span class="stringliteral">&quot;ERROR: pathlib2 is not successfully installed, please check and retry!&quot;</span>)</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keywordflow">else</span>:</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">print</span> (<span class="stringliteral">&quot;pathlib2 has been installed!&quot;</span>)</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment"># 9. deap</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keywordflow">try</span>:</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keyword">import</span> deap</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keywordflow">except</span> ImportError:</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">print</span> (<span class="stringliteral">&quot;ERROR: deap is not successfully installed, please check and retry!&quot;</span>)</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keywordflow">else</span>:</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">print</span> (<span class="stringliteral">&quot;deap-%s has been installed!&quot;</span> % deap.__version__)</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment"># 10. scoop</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keywordflow">try</span>:</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">import</span> scoop</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keywordflow">except</span> ImportError:</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">print</span> (<span class="stringliteral">&quot;ERROR: scoop is not successfully installed, please check and retry!&quot;</span>)</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keywordflow">else</span>:</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">print</span> (<span class="stringliteral">&quot;scoop-%s.%s has been installed!&quot;</span> % (scoop.__version__, scoop.__revision__))</div>
-<div class="ttc" id="a00862_html"><div class="ttname"><a href="../../dc/d41/a00862.html">utils</a></div></div>
-<div class="ttc" id="a00863_html"><div class="ttname"><a href="../../d7/d49/a00863.html">vector</a></div></div>
-<div class="ttc" id="a00861_html"><div class="ttname"><a href="../../dd/dd5/a00861.html">raster</a></div></div>
-<div class="ttc" id="a00860_html"><div class="ttname"><a href="../../d2/d5e/a00860.html">hydro</a></div></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">#! /usr/bin/env python</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"># -*- coding: utf-8 -*-</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="stringliteral">  Run SEIMS model.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="stringliteral">  Author: Liangjun Zhu</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="stringliteral">  Date: 2017-12-7</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">import</span> os</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">from</span> subprocess <span class="keyword">import</span> CalledProcessError</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">from</span> <a class="code" href="../../da/dd6/a00896.html">pygeoc.utils</a> <span class="keyword">import</span> UtilClass</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="../../d9/d47/a00129.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d9/d47/a00129.html">MainSEIMS</a>(object):</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="stringliteral">    Main entrance to SEIMS model.</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="stringliteral">    &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">def </span>__init__(self, bin_dir, model_dir, nthread=4, lyrmtd=0,</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                 ip=<span class="stringliteral">&#39;127.0.0.1&#39;</span>, port=27017, sceid=0, ver=<span class="stringliteral">&#39;OMP&#39;</span>):</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordflow">if</span> ver == <span class="stringliteral">&#39;MPI&#39;</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            self.<a class="code" href="../../d9/d47/a00129.html#adbb55d98990c7b0ae76a817d8257845f">seims_exec</a> = bin_dir + os.sep + <span class="stringliteral">&#39;seims_mpi&#39;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            self.<a class="code" href="../../d9/d47/a00129.html#adbb55d98990c7b0ae76a817d8257845f">seims_exec</a> = bin_dir + os.sep + <span class="stringliteral">&#39;seims_omp&#39;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        self.<a class="code" href="../../d9/d47/a00129.html#ad36c0cd84d27f8e014220001bf49ef62">model_dir</a> = model_dir</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        self.<a class="code" href="../../d9/d47/a00129.html#a863bec43c74fd5a5caa87e1ec99ef8f9">nthread</a> = nthread</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        self.<a class="code" href="../../d9/d47/a00129.html#a2bf0bd9c9b448f8cc2f0578335feb320">lyrmtd</a> = lyrmtd</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        self.<a class="code" href="../../d9/d47/a00129.html#af9848b5f1c5fe6568d59a59f8025651d">host</a> = ip</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        self.<a class="code" href="../../d9/d47/a00129.html#aac46a4ce834fb795a9057ab77f4681cf">port</a> = port</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        self.<a class="code" href="../../d9/d47/a00129.html#acc2d1f0223cdc6556465a82022020a15">scenario</a> = sceid</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        self.<a class="code" href="../../d9/d47/a00129.html#aac42a941bf7859e17203b9d7c0211f1f">version</a> = ver</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        self.<a class="code" href="../../d9/d47/a00129.html#a4bfa231cfde15ebf9bad13eebfbc5981">run_success</a> = <span class="keyword">False</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">def </span>run(self):</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        cmd_str = <span class="stringliteral">&#39;%s %s %d %d %s %d %d&#39;</span> % (self.<a class="code" href="../../d9/d47/a00129.html#adbb55d98990c7b0ae76a817d8257845f">seims_exec</a>, self.<a class="code" href="../../d9/d47/a00129.html#ad36c0cd84d27f8e014220001bf49ef62">model_dir</a>, self.<a class="code" href="../../d9/d47/a00129.html#a863bec43c74fd5a5caa87e1ec99ef8f9">nthread</a>,</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                                            self.<a class="code" href="../../d9/d47/a00129.html#a2bf0bd9c9b448f8cc2f0578335feb320">lyrmtd</a>, self.<a class="code" href="../../d9/d47/a00129.html#af9848b5f1c5fe6568d59a59f8025651d">host</a>, self.<a class="code" href="../../d9/d47/a00129.html#aac46a4ce834fb795a9057ab77f4681cf">port</a>, self.<a class="code" href="../../d9/d47/a00129.html#acc2d1f0223cdc6556465a82022020a15">scenario</a>)</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">try</span>:</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            UtilClass.run_command(cmd_str)</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            self.<a class="code" href="../../d9/d47/a00129.html#a4bfa231cfde15ebf9bad13eebfbc5981">run_success</a> = <span class="keyword">True</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordflow">except</span> CalledProcessError <span class="keywordflow">or</span> Exception:</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keywordflow">print</span> (<span class="stringliteral">&#39;Run SEIMS model failed!&#39;</span>)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            self.<a class="code" href="../../d9/d47/a00129.html#a4bfa231cfde15ebf9bad13eebfbc5981">run_success</a> = <span class="keyword">False</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">return</span> self.<a class="code" href="../../d9/d47/a00129.html#a4bfa231cfde15ebf9bad13eebfbc5981">run_success</a></div>
+<div class="ttc" id="a00129_html_acc2d1f0223cdc6556465a82022020a15"><div class="ttname"><a href="../../d9/d47/a00129.html#acc2d1f0223cdc6556465a82022020a15">seims.run_seims.MainSEIMS.scenario</a></div><div class="ttdeci">scenario</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d7e/a00492_source.html#l00029">run_seims.py:29</a></div></div>
+<div class="ttc" id="a00129_html_a4bfa231cfde15ebf9bad13eebfbc5981"><div class="ttname"><a href="../../d9/d47/a00129.html#a4bfa231cfde15ebf9bad13eebfbc5981">seims.run_seims.MainSEIMS.run_success</a></div><div class="ttdeci">run_success</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d7e/a00492_source.html#l00031">run_seims.py:31</a></div></div>
+<div class="ttc" id="a00129_html_adbb55d98990c7b0ae76a817d8257845f"><div class="ttname"><a href="../../d9/d47/a00129.html#adbb55d98990c7b0ae76a817d8257845f">seims.run_seims.MainSEIMS.seims_exec</a></div><div class="ttdeci">seims_exec</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d7e/a00492_source.html#l00021">run_seims.py:21</a></div></div>
+<div class="ttc" id="a00896_html"><div class="ttname"><a href="../../da/dd6/a00896.html">utils</a></div></div>
+<div class="ttc" id="a00129_html_a2bf0bd9c9b448f8cc2f0578335feb320"><div class="ttname"><a href="../../d9/d47/a00129.html#a2bf0bd9c9b448f8cc2f0578335feb320">seims.run_seims.MainSEIMS.lyrmtd</a></div><div class="ttdeci">lyrmtd</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d7e/a00492_source.html#l00026">run_seims.py:26</a></div></div>
+<div class="ttc" id="a00129_html_af9848b5f1c5fe6568d59a59f8025651d"><div class="ttname"><a href="../../d9/d47/a00129.html#af9848b5f1c5fe6568d59a59f8025651d">seims.run_seims.MainSEIMS.host</a></div><div class="ttdeci">host</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d7e/a00492_source.html#l00027">run_seims.py:27</a></div></div>
+<div class="ttc" id="a00129_html"><div class="ttname"><a href="../../d9/d47/a00129.html">seims.run_seims.MainSEIMS</a></div><div class="ttdef"><b>Definition:</b> <a href="../../da/d7e/a00492_source.html#l00013">run_seims.py:13</a></div></div>
+<div class="ttc" id="a00129_html_aac46a4ce834fb795a9057ab77f4681cf"><div class="ttname"><a href="../../d9/d47/a00129.html#aac46a4ce834fb795a9057ab77f4681cf">seims.run_seims.MainSEIMS.port</a></div><div class="ttdeci">port</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d7e/a00492_source.html#l00028">run_seims.py:28</a></div></div>
+<div class="ttc" id="a00129_html_a863bec43c74fd5a5caa87e1ec99ef8f9"><div class="ttname"><a href="../../d9/d47/a00129.html#a863bec43c74fd5a5caa87e1ec99ef8f9">seims.run_seims.MainSEIMS.nthread</a></div><div class="ttdeci">nthread</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d7e/a00492_source.html#l00025">run_seims.py:25</a></div></div>
+<div class="ttc" id="a00129_html_aac42a941bf7859e17203b9d7c0211f1f"><div class="ttname"><a href="../../d9/d47/a00129.html#aac42a941bf7859e17203b9d7c0211f1f">seims.run_seims.MainSEIMS.version</a></div><div class="ttdeci">version</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d7e/a00492_source.html#l00030">run_seims.py:30</a></div></div>
+<div class="ttc" id="a00129_html_ad36c0cd84d27f8e014220001bf49ef62"><div class="ttname"><a href="../../d9/d47/a00129.html#ad36c0cd84d27f8e014220001bf49ef62">seims.run_seims.MainSEIMS.model_dir</a></div><div class="ttdeci">model_dir</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d7e/a00492_source.html#l00024">run_seims.py:24</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><b>pyseims_check.py</b></li>
-    <li class="footer">Generated on Fri Nov 24 2017 09:10:19 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><b>run_seims.py</b></li>
+    <li class="footer">Generated on Mon Dec 11 2017 12:43:08 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

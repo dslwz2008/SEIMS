@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: SimulationModule Class Reference</title>
+<title>SEIMS: seims.preprocess.sd_slopeposition_units.SlopePositionUnits Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -115,149 +115,681 @@ $(document).ready(function(){initNavTree('dc/d57/a00194.html','../../');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a> &#124;
-<a href="../../d9/d5b/a01127.html">List of all members</a>  </div>
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="../../d7/d8d/a01288.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">SimulationModule Class Reference</div>  </div>
+<div class="title">seims.preprocess.sd_slopeposition_units.SlopePositionUnits Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Base module for all simulation modules in SEIMS.  
- <a href="../../dc/d57/a00194.html#details">More...</a></p>
-
-<p><code>#include &lt;<a class="el" href="../../dc/db1/a00621_source.html">SimulationModule.h</a>&gt;</code></p>
-
-<p>Inherited by <a class="el" href="../../d4/dca/a00048.html">AET_PT_H</a>, AtmosphericDeposition, <a class="el" href="../../dc/dee/a00053.html">Biomass_EPIC</a>, <a class="el" href="../../de/de1/a00065.html">clsPI_MCS</a>, <a class="el" href="../../d9/db3/a00066.html">clsPI_SVSC</a>, <a class="el" href="../../d6/d2c/a00072.html">clsTSD_RD</a>, <a class="el" href="../../d2/d1f/a00083.html">DepressionFS</a>, <a class="el" href="../../df/d5d/a00084.html">DepressionFSDaily</a>, <a class="el" href="../../df/d13/a00085.html">DiffusiveWave</a>, <a class="el" href="../../d1/d1e/a00087.html">ExcessRunoff</a>, <a class="el" href="../../d1/d1e/a00087.html">ExcessRunoff</a>, <a class="el" href="../../d0/d61/a00100.html">GWaterReservoir</a>, HS_WB, <a class="el" href="../../d3/d32/a00105.html">IKW_REACH</a>, IMP_SWAT, <a class="el" href="../../d7/d70/a00106.html">ImplicitKinematicWave_CH</a>, <a class="el" href="../../df/d98/a00107.html">ImplicitKinematicWave_OL</a>, <a class="el" href="../../d4/d98/a00120.html">InterFlow_IKW</a>, <a class="el" href="../../d8/dfa/a00121.html">Interpolate</a>, IO_TEST, <a class="el" href="../../de/d36/a00123.html">IUH_IF</a>, <a class="el" href="../../da/d72/a00124.html">IUH_OL</a>, <a class="el" href="../../dc/dfe/a00125.html">IUH_SED_OL</a>, <a class="el" href="../../d1/d88/a00128.html">KinWavSed_CH</a>, <a class="el" href="../../d9/d47/a00129.html">KinWavSed_OL</a>, <a class="el" href="../../d0/d5e/a00136.html">MGTOpt_SWAT</a>, ModulesTest, <a class="el" href="../../d9/d7d/a00150.html">MUSK_CH</a>, <a class="el" href="../../dd/db2/a00151.html">Muskingum</a>, <a class="el" href="../../d7/d9a/a00152.html">MUSLE_AS</a>, MUSLE_I30, <a class="el" href="../../d3/df8/a00155.html">NPS_Management</a>, <a class="el" href="../../d2/d34/a00156.html">NutrCH_QUAL2E</a>, <a class="el" href="../../d6/db8/a00158.html">Nutrient_Transformation</a>, <a class="el" href="../../de/db9/a00159.html">NutrientinGroundwater</a>, <a class="el" href="../../de/d38/a00160.html">NutrientMovementViaWater</a>, <a class="el" href="../../d6/d7d/a00161.html">NutrientTransportSediment</a>, <a class="el" href="../../d9/d38/a00166.html">PER_PI</a>, <a class="el" href="../../dc/de6/a00167.html">PER_STR</a>, <a class="el" href="../../dd/da7/a00168.html">Percolation_DARCY</a>, <a class="el" href="../../d5/dcb/a00170.html">PETHargreaves</a>, <a class="el" href="../../d1/d0d/a00171.html">PETPenmanMonteith</a>, <a class="el" href="../../d6/dfb/a00172.html">PETPriestleyTaylor</a>, <a class="el" href="../../dc/d52/a00183.html">ReservoirMethod</a>, <a class="el" href="../../da/deb/a00189.html">SEDR_SBAGNOLD</a>, <a class="el" href="../../d9/dd0/a00191.html">SET_LM</a>, <a class="el" href="../../de/db1/a00197.html">SNO_DD</a>, <a class="el" href="../../d7/da0/a00198.html">SNO_SP</a>, <a class="el" href="../../d8/d72/a00199.html">SNO_WB</a>, <a class="el" href="../../dd/de3/a00201.html">SoilTemperatureFINPL</a>, <a class="el" href="../../de/d79/a00203.html">SOL_WB</a>, <a class="el" href="../../d5/df1/a00206.html">SplashEro_Park</a>, <a class="el" href="../../dc/d31/a00208.html">SRD_MB</a>, <a class="el" href="../../d3/de5/a00209.html">SSM_PE</a>, SSR_DA, <a class="el" href="../../dd/ded/a00211.html">StormGreenAmpt</a>, <a class="el" href="../../d3/dd5/a00215.html">SUR_CN</a>, <a class="el" href="../../d6/d43/a00216.html">SUR_GreenAmpt</a>, <a class="el" href="../../df/d24/a00217.html">SUR_MR</a>, and UnsaturatedFlow.</p>
+<p>Inherits object, and object.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa9934866122995dc98611de6515f47c5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa9934866122995dc98611de6515f47c5"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d57/a00194.html#aa9934866122995dc98611de6515f47c5">SimulationModule</a> (void)</td></tr>
-<tr class="memdesc:aa9934866122995dc98611de6515f47c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. <br/></td></tr>
-<tr class="separator:aa9934866122995dc98611de6515f47c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75fc67bcf8bc5a1dc0eb467af5a9861c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a75fc67bcf8bc5a1dc0eb467af5a9861c"></a>
-virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d57/a00194.html#a75fc67bcf8bc5a1dc0eb467af5a9861c">~SimulationModule</a> (void)</td></tr>
-<tr class="memdesc:a75fc67bcf8bc5a1dc0eb467af5a9861c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br/></td></tr>
-<tr class="separator:a75fc67bcf8bc5a1dc0eb467af5a9861c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeeec0ab34636df859c0b3116db18942f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeeec0ab34636df859c0b3116db18942f"></a>
-virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d57/a00194.html#aeeec0ab34636df859c0b3116db18942f">Execute</a> (void)</td></tr>
-<tr class="memdesc:aeeec0ab34636df859c0b3116db18942f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute the simulation. <br/></td></tr>
-<tr class="separator:aeeec0ab34636df859c0b3116db18942f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8526abbeed3f49071f39e0c17559e522"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8526abbeed3f49071f39e0c17559e522"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d57/a00194.html#a8526abbeed3f49071f39e0c17559e522">SetDate</a> (time_t t, int yearIdx)</td></tr>
-<tr class="memdesc:a8526abbeed3f49071f39e0c17559e522"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set date time, as well as the sequence number of the entire simulation. Added by LJ for statistics convenient. <br/></td></tr>
-<tr class="separator:a8526abbeed3f49071f39e0c17559e522"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46191d743a839a5290fd42d318b500d0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a46191d743a839a5290fd42d318b500d0"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d57/a00194.html#a46191d743a839a5290fd42d318b500d0">SetTheadNumber</a> (int threadNum)</td></tr>
-<tr class="memdesc:a46191d743a839a5290fd42d318b500d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set thread number for OpenMP. <br/></td></tr>
-<tr class="separator:a46191d743a839a5290fd42d318b500d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af7b9caed16e56bf880b171040981403e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af7b9caed16e56bf880b171040981403e"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d57/a00194.html#af7b9caed16e56bf880b171040981403e">SetClimateDataType</a> (float value)</td></tr>
-<tr class="memdesc:af7b9caed16e56bf880b171040981403e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set climate data type, P, M, PET etc. <br/></td></tr>
-<tr class="separator:af7b9caed16e56bf880b171040981403e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afcfef6ce1ce8761a961f694e3a7969bb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afcfef6ce1ce8761a961f694e3a7969bb"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d57/a00194.html#afcfef6ce1ce8761a961f694e3a7969bb">SetValue</a> (const char *key, float data)</td></tr>
-<tr class="memdesc:afcfef6ce1ce8761a961f694e3a7969bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set data, DT_Single. <br/></td></tr>
-<tr class="separator:afcfef6ce1ce8761a961f694e3a7969bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba2d6fc2b0e4f8ccf202e0752c45d55c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aba2d6fc2b0e4f8ccf202e0752c45d55c"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d57/a00194.html#aba2d6fc2b0e4f8ccf202e0752c45d55c">Set1DData</a> (const char *key, int n, float *data)</td></tr>
-<tr class="memdesc:aba2d6fc2b0e4f8ccf202e0752c45d55c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set 1D data, by default, DT_Raster1D. <br/></td></tr>
-<tr class="separator:aba2d6fc2b0e4f8ccf202e0752c45d55c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a497fa950bc9c4d85cfb1ae13d83f06c9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a497fa950bc9c4d85cfb1ae13d83f06c9"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d57/a00194.html#a497fa950bc9c4d85cfb1ae13d83f06c9">Set2DData</a> (const char *key, int nRows, int nCols, float **data)</td></tr>
-<tr class="memdesc:a497fa950bc9c4d85cfb1ae13d83f06c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set 2D data, by default, DT_Raster2D. <br/></td></tr>
-<tr class="separator:a497fa950bc9c4d85cfb1ae13d83f06c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3c60349cd6720bb66e58fa4cd31a999"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac3c60349cd6720bb66e58fa4cd31a999"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d57/a00194.html#ac3c60349cd6720bb66e58fa4cd31a999">Set1DArrayData</a> (const char *key, int n, float *data)</td></tr>
-<tr class="memdesc:ac3c60349cd6720bb66e58fa4cd31a999"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set 1D array data, DT_Array1D. <br/></td></tr>
-<tr class="separator:ac3c60349cd6720bb66e58fa4cd31a999"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f7470f5f4f831b9053e3ff2d92c1813"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1f7470f5f4f831b9053e3ff2d92c1813"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d57/a00194.html#a1f7470f5f4f831b9053e3ff2d92c1813">Set2DArrayData</a> (const char *key, int nRows, int nCols, float **data)</td></tr>
-<tr class="memdesc:a1f7470f5f4f831b9053e3ff2d92c1813"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set 2D array data, by default, DT_Array2D. <br/></td></tr>
-<tr class="separator:a1f7470f5f4f831b9053e3ff2d92c1813"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aafd60bc9d4176a0cf64af01aed881980"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aafd60bc9d4176a0cf64af01aed881980"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d57/a00194.html#aafd60bc9d4176a0cf64af01aed881980">GetValue</a> (const char *key, float *value)</td></tr>
-<tr class="memdesc:aafd60bc9d4176a0cf64af01aed881980"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get value, DT_Single. <br/></td></tr>
-<tr class="separator:aafd60bc9d4176a0cf64af01aed881980"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad834fe6ed6d11b333fd34e1ff605ebb7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad834fe6ed6d11b333fd34e1ff605ebb7"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d57/a00194.html#ad834fe6ed6d11b333fd34e1ff605ebb7">Get1DData</a> (const char *key, int *n, float **data)</td></tr>
-<tr class="memdesc:ad834fe6ed6d11b333fd34e1ff605ebb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get 1D data, by default, DT_Raster1D. <br/></td></tr>
-<tr class="separator:ad834fe6ed6d11b333fd34e1ff605ebb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab6dc960ad0a7bd7714e9644b64dc0acb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab6dc960ad0a7bd7714e9644b64dc0acb"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d57/a00194.html#ab6dc960ad0a7bd7714e9644b64dc0acb">Get2DData</a> (const char *key, int *nRows, int *nCols, float ***data)</td></tr>
-<tr class="memdesc:ab6dc960ad0a7bd7714e9644b64dc0acb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get 2D data, by default, DT_Raster2D. <br/></td></tr>
-<tr class="separator:ab6dc960ad0a7bd7714e9644b64dc0acb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb23e43dd78e4fb8ce5d25a9855dd748"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeb23e43dd78e4fb8ce5d25a9855dd748"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d57/a00194.html#aeb23e43dd78e4fb8ce5d25a9855dd748">Get1DArrayData</a> (const char *key, int *n, float **data)</td></tr>
-<tr class="memdesc:aeb23e43dd78e4fb8ce5d25a9855dd748"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get 1D Array data, by default, DT_Array1D. <br/></td></tr>
-<tr class="separator:aeb23e43dd78e4fb8ce5d25a9855dd748"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3330ba74e63c5e2e6368d5d62d4048ea"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3330ba74e63c5e2e6368d5d62d4048ea"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d57/a00194.html#a3330ba74e63c5e2e6368d5d62d4048ea">Get2DArrayData</a> (const char *key, int *nRows, int *nCols, float ***data)</td></tr>
-<tr class="memdesc:a3330ba74e63c5e2e6368d5d62d4048ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get 2D Array data, by default, DT_Array2D. <br/></td></tr>
-<tr class="separator:a3330ba74e63c5e2e6368d5d62d4048ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6dfd515de376498a12a22724e57650a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae6dfd515de376498a12a22724e57650a"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d57/a00194.html#ae6dfd515de376498a12a22724e57650a">SetScenario</a> (<a class="el" href="../../da/d15/a00188.html">Scenario</a> *)</td></tr>
-<tr class="memdesc:ae6dfd515de376498a12a22724e57650a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set pointer of Scenario class which contains all BMP information. Added by LJ, 2016-6-14. <br/></td></tr>
-<tr class="separator:ae6dfd515de376498a12a22724e57650a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4115c5f61d71efde62d3b62c70b51ec"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa4115c5f61d71efde62d3b62c70b51ec"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d57/a00194.html#aa4115c5f61d71efde62d3b62c70b51ec">SetReaches</a> (<a class="el" href="../../d4/d31/a00069.html">clsReaches</a> *)</td></tr>
-<tr class="memdesc:aa4115c5f61d71efde62d3b62c70b51ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set pointer of <a class="el" href="../../d4/d31/a00069.html" title="Read and store all reaches information as input parameters. ">clsReaches</a> class which contains all reaches information. Added by LJ, 2016-7-2. <br/></td></tr>
-<tr class="separator:aa4115c5f61d71efde62d3b62c70b51ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97da293bca13cf5934d9ef6da34d9290"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a97da293bca13cf5934d9ef6da34d9290"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d57/a00194.html#a97da293bca13cf5934d9ef6da34d9290">SetSubbasins</a> (<a class="el" href="../../d0/d89/a00071.html">clsSubbasins</a> *)</td></tr>
-<tr class="memdesc:a97da293bca13cf5934d9ef6da34d9290"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set pointer of <a class="el" href="../../d0/d89/a00071.html" title="Manager all Subbasin related parameters and methods. ">clsSubbasins</a> class which contains all subbasins information. Added by LJ, 2016-7-28. <br/></td></tr>
-<tr class="separator:a97da293bca13cf5934d9ef6da34d9290"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd96e67e4e6d1c6f50bc51e69aad4a96"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abd96e67e4e6d1c6f50bc51e69aad4a96"></a>
-virtual TimeStepType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d57/a00194.html#abd96e67e4e6d1c6f50bc51e69aad4a96">GetTimeStepType</a> (void)</td></tr>
-<tr class="memdesc:abd96e67e4e6d1c6f50bc51e69aad4a96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get time step type. <br/></td></tr>
-<tr class="separator:abd96e67e4e6d1c6f50bc51e69aad4a96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abbcc7144125d11f1da27da05f4a94338"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abbcc7144125d11f1da27da05f4a94338"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d57/a00194.html#abbcc7144125d11f1da27da05f4a94338">ResetSubTimeStep</a> (void)</td></tr>
-<tr class="memdesc:abbcc7144125d11f1da27da05f4a94338"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset subtime step. <br/></td></tr>
-<tr class="separator:abbcc7144125d11f1da27da05f4a94338"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b1e6030fa901ac2bfa4350a819b4ecb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4b1e6030fa901ac2bfa4350a819b4ecb"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d57/a00194.html#a4b1e6030fa901ac2bfa4350a819b4ecb">IsInputsSetDone</a> (void)</td></tr>
-<tr class="memdesc:a4b1e6030fa901ac2bfa4350a819b4ecb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the inputs parameters (i.e., parameters derived from other modules) have been set. <br/></td></tr>
-<tr class="separator:a4b1e6030fa901ac2bfa4350a819b4ecb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94457cc066581e7ecd1d3c88ebdf3163"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a94457cc066581e7ecd1d3c88ebdf3163"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d57/a00194.html#a94457cc066581e7ecd1d3c88ebdf3163">SetInputsDone</a> (bool setDone)</td></tr>
-<tr class="memdesc:a94457cc066581e7ecd1d3c88ebdf3163"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the status of setting inputs parameters. <br/></td></tr>
-<tr class="separator:a94457cc066581e7ecd1d3c88ebdf3163"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a213fbf9a8832b11de4e4185e6600275c"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d57/a00194.html#a213fbf9a8832b11de4e4185e6600275c">__init__</a></td></tr>
+<tr class="separator:a213fbf9a8832b11de4e4185e6600275c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3d1d46eb2780ba1e44987e88d918833"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d57/a00194.html#ab3d1d46eb2780ba1e44987e88d918833">extract_subbasin_updown</a></td></tr>
+<tr class="separator:ab3d1d46eb2780ba1e44987e88d918833"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b8c91316ebc99514805cb60ef8edd4c"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d57/a00194.html#a1b8c91316ebc99514805cb60ef8edd4c">assign_uniqueid_slppos_units</a></td></tr>
+<tr class="separator:a1b8c91316ebc99514805cb60ef8edd4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5fb50ea1829e24346fc5eb6a2ead626"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d57/a00194.html#ab5fb50ea1829e24346fc5eb6a2ead626">check_unit_id</a></td></tr>
+<tr class="separator:ab5fb50ea1829e24346fc5eb6a2ead626"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75ad25e39c5a5b5be12fdcfd3272fa37"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d57/a00194.html#a75ad25e39c5a5b5be12fdcfd3272fa37">merge_slopeposition_units</a></td></tr>
+<tr class="separator:a75ad25e39c5a5b5be12fdcfd3272fa37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9135ef5a0f7fa578880ae1b79d0cb3db"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d57/a00194.html#a9135ef5a0f7fa578880ae1b79d0cb3db">extract_subbasin_hillslope_slppos</a></td></tr>
+<tr class="separator:a9135ef5a0f7fa578880ae1b79d0cb3db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4b53cf55861a8a55c3f877592c291b1"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d57/a00194.html#ae4b53cf55861a8a55c3f877592c291b1">output</a></td></tr>
+<tr class="separator:ae4b53cf55861a8a55c3f877592c291b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6e880681b5a93a3ed1fe118888de2e0"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d57/a00194.html#ad6e880681b5a93a3ed1fe118888de2e0">run</a></td></tr>
+<tr class="separator:ad6e880681b5a93a3ed1fe118888de2e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a213fbf9a8832b11de4e4185e6600275c"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d57/a00194.html#a213fbf9a8832b11de4e4185e6600275c">__init__</a></td></tr>
+<tr class="separator:a213fbf9a8832b11de4e4185e6600275c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3d1d46eb2780ba1e44987e88d918833"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d57/a00194.html#ab3d1d46eb2780ba1e44987e88d918833">extract_subbasin_updown</a></td></tr>
+<tr class="separator:ab3d1d46eb2780ba1e44987e88d918833"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b8c91316ebc99514805cb60ef8edd4c"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d57/a00194.html#a1b8c91316ebc99514805cb60ef8edd4c">assign_uniqueid_slppos_units</a></td></tr>
+<tr class="separator:a1b8c91316ebc99514805cb60ef8edd4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5fb50ea1829e24346fc5eb6a2ead626"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d57/a00194.html#ab5fb50ea1829e24346fc5eb6a2ead626">check_unit_id</a></td></tr>
+<tr class="separator:ab5fb50ea1829e24346fc5eb6a2ead626"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75ad25e39c5a5b5be12fdcfd3272fa37"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d57/a00194.html#a75ad25e39c5a5b5be12fdcfd3272fa37">merge_slopeposition_units</a></td></tr>
+<tr class="separator:a75ad25e39c5a5b5be12fdcfd3272fa37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9135ef5a0f7fa578880ae1b79d0cb3db"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d57/a00194.html#a9135ef5a0f7fa578880ae1b79d0cb3db">extract_subbasin_hillslope_slppos</a></td></tr>
+<tr class="separator:a9135ef5a0f7fa578880ae1b79d0cb3db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4b53cf55861a8a55c3f877592c291b1"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d57/a00194.html#ae4b53cf55861a8a55c3f877592c291b1">output</a></td></tr>
+<tr class="separator:ae4b53cf55861a8a55c3f877592c291b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6e880681b5a93a3ed1fe118888de2e0"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d57/a00194.html#ad6e880681b5a93a3ed1fe118888de2e0">run</a></td></tr>
+<tr class="separator:ad6e880681b5a93a3ed1fe118888de2e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr class="memitem:aabd631c05d3e74aa9970f7415f2f5de7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aabd631c05d3e74aa9970f7415f2f5de7"></a>
-time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d57/a00194.html#aabd631c05d3e74aa9970f7415f2f5de7">m_date</a></td></tr>
-<tr class="memdesc:aabd631c05d3e74aa9970f7415f2f5de7"><td class="mdescLeft">&#160;</td><td class="mdescRight">date time <br/></td></tr>
-<tr class="separator:aabd631c05d3e74aa9970f7415f2f5de7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:addfe4dd5800efd0bb827338daf65d64c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="addfe4dd5800efd0bb827338daf65d64c"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d57/a00194.html#addfe4dd5800efd0bb827338daf65d64c">m_yearIdx</a></td></tr>
-<tr class="memdesc:addfe4dd5800efd0bb827338daf65d64c"><td class="mdescLeft">&#160;</td><td class="mdescRight">index of current year of simulation, e.g., the simulation period from 2010 to 2015, m_yearIdx is 2 when simulate 2012. <br/></td></tr>
-<tr class="separator:addfe4dd5800efd0bb827338daf65d64c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adee1865c86a9761af76cec98cac30a44"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adee1865c86a9761af76cec98cac30a44"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d57/a00194.html#adee1865c86a9761af76cec98cac30a44">m_tsCounter</a></td></tr>
-<tr class="memdesc:adee1865c86a9761af76cec98cac30a44"><td class="mdescLeft">&#160;</td><td class="mdescRight">sub-timestep counter <br/></td></tr>
-<tr class="separator:adee1865c86a9761af76cec98cac30a44"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68422923210ead26b1651bf0e0a339f6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a68422923210ead26b1651bf0e0a339f6"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d57/a00194.html#a68422923210ead26b1651bf0e0a339f6">m_inputsSetDone</a></td></tr>
-<tr class="memdesc:a68422923210ead26b1651bf0e0a339f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the inputs parameters (i.e., parameters derived from other modules) have been set. <br/></td></tr>
-<tr class="separator:a68422923210ead26b1651bf0e0a339f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:aef350966005defa957ee278e779cc603"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d57/a00194.html#aef350966005defa957ee278e779cc603">check_slppos_sequence</a></td></tr>
+<tr class="separator:aef350966005defa957ee278e779cc603"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef350966005defa957ee278e779cc603"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d57/a00194.html#aef350966005defa957ee278e779cc603">check_slppos_sequence</a></td></tr>
+<tr class="separator:aef350966005defa957ee278e779cc603"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Base module for all simulation modules in SEIMS. </p>
+<div class="textblock"><pre class="fragment">Construct hillslope-slope position units.
+</pre> 
+<p>Definition at line <a class="el" href="../../d5/d26/a00474_source.html#l00030">30</a> of file <a class="el" href="../../d5/d26/a00474_source.html">sd_slopeposition_units.py</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a213fbf9a8832b11de4e4185e6600275c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.sd_slopeposition_units.SlopePositionUnits.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>tag_names</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>slpposf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>reach_shp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>hillslpf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>landusef</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Initialization.
 
-<p>Definition at line <a class="el" href="../../dc/db1/a00621_source.html#l00047">47</a> of file <a class="el" href="../../dc/db1/a00621_source.html">SimulationModule.h</a>.</p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
-<li>seims/src/seims_main/base/util/<a class="el" href="../../dc/db1/a00621_source.html">SimulationModule.h</a></li>
-<li>seims/src/seims_main/base/util/<a class="el" href="../../dc/d4d/a00620_source.html">SimulationModule.cpp</a></li>
+Args:
+    tag_names: [tag(integer), name(str)], tag should be ascending from up to bottom.
+    slpposf: Crisp classification of slope position.
+    reach_shp: Reach shapefile used to extract the up-down relationships of subbasins
+    hillslpf: Delineated hillslope file by sd_hillslope.py.
+    landusef: Landuse, used to statistics areas of each landuse types within
+      slope position units
+
+Attributes:
+    slppos_tags(OrderedDict): {tag: name}
+    subbsin_tree: up-down stream relationships of subbasins.
+          {subbsnID: {'upstream': [], 'downstream': []}}
+    units_updown_info: Output json data of slope position units.
+{"slppos_1": {id:{"downslope": [ids], "upslope": [ids], "landuse": {luID: area}
+                  "hillslope": [hillslpID], "subbasin": [subbsnID], "area": area
+                 }
+             }
+ "slppos_2": ...
+}
+</pre> 
+<p>Definition at line <a class="el" href="../../d5/d26/a00474_source.html#l00034">34</a> of file <a class="el" href="../../d5/d26/a00474_source.html">sd_slopeposition_units.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a213fbf9a8832b11de4e4185e6600275c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.sd_slopeposition_units.SlopePositionUnits.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>tag_names</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>slpposf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>reach_shp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>hillslpf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>landusef</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Initialization.
+
+Args:
+    tag_names: [tag(integer), name(str)], tag should be ascending from up to bottom.
+    slpposf: Crisp classification of slope position.
+    reach_shp: Reach shapefile used to extract the up-down relationships of subbasins
+    hillslpf: Delineated hillslope file by sd_hillslope.py.
+    landusef: Landuse, used to statistics areas of each landuse types within
+      slope position units
+
+Attributes:
+    slppos_tags(OrderedDict): {tag: name}
+    subbsin_tree: up-down stream relationships of subbasins.
+          {subbsnID: {'upstream': [], 'downstream': []}}
+    units_updown_info: Output json data of slope position units.
+{"slppos_1": {id:{"downslope": [ids], "upslope": [ids], "landuse": {luID: area}
+                  "hillslope": [hillslpID], "subbasin": [subbsnID], "area": area
+                 }
+             }
+ "slppos_2": ...
+}
+</pre> 
+<p>Definition at line <a class="el" href="../../d1/d92/a00475_source.html#l00034">34</a> of file <a class="el" href="../../d1/d92/a00475_source.html">sd_slopeposition_units.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d57/a00194_a213fbf9a8832b11de4e4185e6600275c_cgraph.png" border="0" usemap="#dc/d57/a00194_a213fbf9a8832b11de4e4185e6600275c_cgraph" alt=""/></div>
+<map name="dc/d57/a00194_a213fbf9a8832b11de4e4185e6600275c_cgraph" id="dc/d57/a00194_a213fbf9a8832b11de4e4185e6600275c_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a1b8c91316ebc99514805cb60ef8edd4c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.sd_slopeposition_units.SlopePositionUnits.assign_uniqueid_slppos_units </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Get unique ID by multiply slope position value and hillslope ID</pre> 
+<p>Definition at line <a class="el" href="../../d5/d26/a00474_source.html#l00128">128</a> of file <a class="el" href="../../d5/d26/a00474_source.html">sd_slopeposition_units.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1b8c91316ebc99514805cb60ef8edd4c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.sd_slopeposition_units.SlopePositionUnits.assign_uniqueid_slppos_units </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Get unique ID by multiply slope position value and hillslope ID</pre> 
+<p>Definition at line <a class="el" href="../../d1/d92/a00475_source.html#l00128">128</a> of file <a class="el" href="../../d1/d92/a00475_source.html">sd_slopeposition_units.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d57/a00194_a1b8c91316ebc99514805cb60ef8edd4c_cgraph.png" border="0" usemap="#dc/d57/a00194_a1b8c91316ebc99514805cb60ef8edd4c_cgraph" alt=""/></div>
+<map name="dc/d57/a00194_a1b8c91316ebc99514805cb60ef8edd4c_cgraph" id="dc/d57/a00194_a1b8c91316ebc99514805cb60ef8edd4c_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aef350966005defa957ee278e779cc603"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.sd_slopeposition_units.SlopePositionUnits.check_slppos_sequence </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>seqs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>slppos_tags</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Check the slope position sequence is complete or not.</pre> 
+<p>Definition at line <a class="el" href="../../d5/d26/a00474_source.html#l00199">199</a> of file <a class="el" href="../../d5/d26/a00474_source.html">sd_slopeposition_units.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aef350966005defa957ee278e779cc603"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.sd_slopeposition_units.SlopePositionUnits.check_slppos_sequence </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>seqs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>slppos_tags</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Check the slope position sequence is complete or not.</pre> 
+<p>Definition at line <a class="el" href="../../d1/d92/a00475_source.html#l00199">199</a> of file <a class="el" href="../../d1/d92/a00475_source.html">sd_slopeposition_units.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d57/a00194_aef350966005defa957ee278e779cc603_cgraph.png" border="0" usemap="#dc/d57/a00194_aef350966005defa957ee278e779cc603_cgraph" alt=""/></div>
+<map name="dc/d57/a00194_aef350966005defa957ee278e779cc603_cgraph" id="dc/d57/a00194_aef350966005defa957ee278e779cc603_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ab5fb50ea1829e24346fc5eb6a2ead626"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.sd_slopeposition_units.SlopePositionUnits.check_unit_id </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">check the existence of upslope and downslope units.</pre> 
+<p>Definition at line <a class="el" href="../../d1/d92/a00475_source.html#l00173">173</a> of file <a class="el" href="../../d1/d92/a00475_source.html">sd_slopeposition_units.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d57/a00194_ab5fb50ea1829e24346fc5eb6a2ead626_cgraph.png" border="0" usemap="#dc/d57/a00194_ab5fb50ea1829e24346fc5eb6a2ead626_cgraph" alt=""/></div>
+<map name="dc/d57/a00194_ab5fb50ea1829e24346fc5eb6a2ead626_cgraph" id="dc/d57/a00194_ab5fb50ea1829e24346fc5eb6a2ead626_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ab5fb50ea1829e24346fc5eb6a2ead626"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.sd_slopeposition_units.SlopePositionUnits.check_unit_id </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">check the existence of upslope and downslope units.</pre> 
+<p>Definition at line <a class="el" href="../../d5/d26/a00474_source.html#l00173">173</a> of file <a class="el" href="../../d5/d26/a00474_source.html">sd_slopeposition_units.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9135ef5a0f7fa578880ae1b79d0cb3db"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.sd_slopeposition_units.SlopePositionUnits.extract_subbasin_hillslope_slppos </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Extract the hierarchical relationship of spatial units, i.e.,
+   Subbasin-Hillslope-Slope position
+</pre> 
+<p>Definition at line <a class="el" href="../../d5/d26/a00474_source.html#l00321">321</a> of file <a class="el" href="../../d5/d26/a00474_source.html">sd_slopeposition_units.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9135ef5a0f7fa578880ae1b79d0cb3db"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.sd_slopeposition_units.SlopePositionUnits.extract_subbasin_hillslope_slppos </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Extract the hierarchical relationship of spatial units, i.e.,
+   Subbasin-Hillslope-Slope position
+</pre> 
+<p>Definition at line <a class="el" href="../../d1/d92/a00475_source.html#l00321">321</a> of file <a class="el" href="../../d1/d92/a00475_source.html">sd_slopeposition_units.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d57/a00194_a9135ef5a0f7fa578880ae1b79d0cb3db_cgraph.png" border="0" usemap="#dc/d57/a00194_a9135ef5a0f7fa578880ae1b79d0cb3db_cgraph" alt=""/></div>
+<map name="dc/d57/a00194_a9135ef5a0f7fa578880ae1b79d0cb3db_cgraph" id="dc/d57/a00194_a9135ef5a0f7fa578880ae1b79d0cb3db_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ab3d1d46eb2780ba1e44987e88d918833"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.sd_slopeposition_units.SlopePositionUnits.extract_subbasin_updown </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Extract the up-down relationship of subbasins.</pre> 
+<p>Definition at line <a class="el" href="../../d5/d26/a00474_source.html#l00123">123</a> of file <a class="el" href="../../d5/d26/a00474_source.html">sd_slopeposition_units.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab3d1d46eb2780ba1e44987e88d918833"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.sd_slopeposition_units.SlopePositionUnits.extract_subbasin_updown </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Extract the up-down relationship of subbasins.</pre> 
+<p>Definition at line <a class="el" href="../../d1/d92/a00475_source.html#l00123">123</a> of file <a class="el" href="../../d1/d92/a00475_source.html">sd_slopeposition_units.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d57/a00194_ab3d1d46eb2780ba1e44987e88d918833_cgraph.png" border="0" usemap="#dc/d57/a00194_ab3d1d46eb2780ba1e44987e88d918833_cgraph" alt=""/></div>
+<map name="dc/d57/a00194_ab3d1d46eb2780ba1e44987e88d918833_cgraph" id="dc/d57/a00194_ab3d1d46eb2780ba1e44987e88d918833_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a75ad25e39c5a5b5be12fdcfd3272fa37"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.sd_slopeposition_units.SlopePositionUnits.merge_slopeposition_units </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Merge hillslope/subbasin with incomplete slope position sequences</pre> 
+<p>Definition at line <a class="el" href="../../d1/d92/a00475_source.html#l00208">208</a> of file <a class="el" href="../../d1/d92/a00475_source.html">sd_slopeposition_units.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d57/a00194_a75ad25e39c5a5b5be12fdcfd3272fa37_cgraph.png" border="0" usemap="#dc/d57/a00194_a75ad25e39c5a5b5be12fdcfd3272fa37_cgraph" alt=""/></div>
+<map name="dc/d57/a00194_a75ad25e39c5a5b5be12fdcfd3272fa37_cgraph" id="dc/d57/a00194_a75ad25e39c5a5b5be12fdcfd3272fa37_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a75ad25e39c5a5b5be12fdcfd3272fa37"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.sd_slopeposition_units.SlopePositionUnits.merge_slopeposition_units </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Merge hillslope/subbasin with incomplete slope position sequences</pre> 
+<p>Definition at line <a class="el" href="../../d5/d26/a00474_source.html#l00208">208</a> of file <a class="el" href="../../d5/d26/a00474_source.html">sd_slopeposition_units.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae4b53cf55861a8a55c3f877592c291b1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.sd_slopeposition_units.SlopePositionUnits.output </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>jfile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>unitraster</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>unitshp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">output json file and slope position units raster file</pre> 
+<p>Definition at line <a class="el" href="../../d5/d26/a00474_source.html#l00342">342</a> of file <a class="el" href="../../d5/d26/a00474_source.html">sd_slopeposition_units.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae4b53cf55861a8a55c3f877592c291b1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.sd_slopeposition_units.SlopePositionUnits.output </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>jfile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>unitraster</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>unitshp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">output json file and slope position units raster file</pre> 
+<p>Definition at line <a class="el" href="../../d1/d92/a00475_source.html#l00342">342</a> of file <a class="el" href="../../d1/d92/a00475_source.html">sd_slopeposition_units.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d57/a00194_ae4b53cf55861a8a55c3f877592c291b1_cgraph.png" border="0" usemap="#dc/d57/a00194_ae4b53cf55861a8a55c3f877592c291b1_cgraph" alt=""/></div>
+<map name="dc/d57/a00194_ae4b53cf55861a8a55c3f877592c291b1_cgraph" id="dc/d57/a00194_ae4b53cf55861a8a55c3f877592c291b1_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ad6e880681b5a93a3ed1fe118888de2e0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.sd_slopeposition_units.SlopePositionUnits.run </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Workflow.</pre> 
+<p>Definition at line <a class="el" href="../../d5/d26/a00474_source.html#l00354">354</a> of file <a class="el" href="../../d5/d26/a00474_source.html">sd_slopeposition_units.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d57/a00194_ad6e880681b5a93a3ed1fe118888de2e0_cgraph.png" border="0" usemap="#dc/d57/a00194_ad6e880681b5a93a3ed1fe118888de2e0_cgraph" alt=""/></div>
+<map name="dc/d57/a00194_ad6e880681b5a93a3ed1fe118888de2e0_cgraph" id="dc/d57/a00194_ad6e880681b5a93a3ed1fe118888de2e0_cgraph">
+<area shape="rect" id="node2" href="../../dc/d57/a00194.html#ab3d1d46eb2780ba1e44987e88d918833" title="seims.preprocess.sd\l_slopeposition_units.Slope\lPositionUnits.extract_subbasin_updown" alt="" coords="273,5,581,69"/><area shape="rect" id="node3" href="../../dc/d57/a00194.html#a1b8c91316ebc99514805cb60ef8edd4c" title="seims.preprocess.sd\l_slopeposition_units.Slope\lPositionUnits.assign_uniqueid\l_slppos_units" alt="" coords="307,94,546,175"/><area shape="rect" id="node4" href="../../dc/d57/a00194.html#ab5fb50ea1829e24346fc5eb6a2ead626" title="seims.preprocess.sd\l_slopeposition_units.Slope\lPositionUnits.check_unit_id" alt="" coords="317,200,537,264"/><area shape="rect" id="node5" href="../../dc/d57/a00194.html#ae4b53cf55861a8a55c3f877592c291b1" title="seims.preprocess.sd\l_slopeposition_units.Slope\lPositionUnits.output" alt="" coords="319,288,534,352"/><area shape="rect" id="node6" href="../../dc/d57/a00194.html#a75ad25e39c5a5b5be12fdcfd3272fa37" title="seims.preprocess.sd\l_slopeposition_units.Slope\lPositionUnits.merge_slopeposition_units" alt="" coords="270,376,583,440"/><area shape="rect" id="node7" href="../../dc/d57/a00194.html#a9135ef5a0f7fa578880ae1b79d0cb3db" title="seims.preprocess.sd\l_slopeposition_units.Slope\lPositionUnits.extract_subbasin\l_hillslope_slppos" alt="" coords="305,465,548,546"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ad6e880681b5a93a3ed1fe118888de2e0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.sd_slopeposition_units.SlopePositionUnits.run </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Workflow.</pre> 
+<p>Definition at line <a class="el" href="../../d1/d92/a00475_source.html#l00354">354</a> of file <a class="el" href="../../d1/d92/a00475_source.html">sd_slopeposition_units.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d57/a00194_ad6e880681b5a93a3ed1fe118888de2e0_cgraph.png" border="0" usemap="#dc/d57/a00194_ad6e880681b5a93a3ed1fe118888de2e0_cgraph" alt=""/></div>
+<map name="dc/d57/a00194_ad6e880681b5a93a3ed1fe118888de2e0_cgraph" id="dc/d57/a00194_ad6e880681b5a93a3ed1fe118888de2e0_cgraph">
+<area shape="rect" id="node2" href="../../dc/d57/a00194.html#ab3d1d46eb2780ba1e44987e88d918833" title="seims.preprocess.sd\l_slopeposition_units.Slope\lPositionUnits.extract_subbasin_updown" alt="" coords="273,5,581,69"/><area shape="rect" id="node3" href="../../dc/d57/a00194.html#a1b8c91316ebc99514805cb60ef8edd4c" title="seims.preprocess.sd\l_slopeposition_units.Slope\lPositionUnits.assign_uniqueid\l_slppos_units" alt="" coords="307,94,546,175"/><area shape="rect" id="node4" href="../../dc/d57/a00194.html#ab5fb50ea1829e24346fc5eb6a2ead626" title="seims.preprocess.sd\l_slopeposition_units.Slope\lPositionUnits.check_unit_id" alt="" coords="317,200,537,264"/><area shape="rect" id="node5" href="../../dc/d57/a00194.html#ae4b53cf55861a8a55c3f877592c291b1" title="seims.preprocess.sd\l_slopeposition_units.Slope\lPositionUnits.output" alt="" coords="319,288,534,352"/><area shape="rect" id="node6" href="../../dc/d57/a00194.html#a75ad25e39c5a5b5be12fdcfd3272fa37" title="seims.preprocess.sd\l_slopeposition_units.Slope\lPositionUnits.merge_slopeposition_units" alt="" coords="270,376,583,440"/><area shape="rect" id="node7" href="../../dc/d57/a00194.html#a9135ef5a0f7fa578880ae1b79d0cb3db" title="seims.preprocess.sd\l_slopeposition_units.Slope\lPositionUnits.extract_subbasin\l_hillslope_slppos" alt="" coords="305,465,548,546"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>seims/preprocess/<a class="el" href="../../d5/d26/a00474_source.html">sd_slopeposition_units.py</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dc/d57/a00194.html">SimulationModule</a></li>
-    <li class="footer">Generated on Fri Nov 24 2017 09:10:23 for SEIMS by
+    <li class="navelem"><b>seims</b></li><li class="navelem"><b>preprocess</b></li><li class="navelem"><b>sd_slopeposition_units</b></li><li class="navelem"><a class="el" href="../../dc/d57/a00194.html">SlopePositionUnits</a></li>
+    <li class="footer">Generated on Mon Dec 11 2017 12:43:13 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

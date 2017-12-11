@@ -1,15 +1,16 @@
 var a00056 =
 [
-    [ "BMPArealStructFactory", "d9/d2e/a00056.html#a4f18520756c2d4936bf207e34d34e22a", null ],
-    [ "~BMPArealStructFactory", "d9/d2e/a00056.html#a2d5588b9eb90fbbf7bf0a19f4293110e", null ],
-    [ "Dump", "d9/d2e/a00056.html#a506982fea04c09cc9713b5cc7d67d84a", null ],
-    [ "getBMPsSettings", "d9/d2e/a00056.html#a641357b30a92ba34527601d1a8a0f028", null ],
-    [ "getRasterData", "d9/d2e/a00056.html#adfb81bb770b13c5755b2b8a6b8c75e9f", null ],
-    [ "getUnitIDs", "d9/d2e/a00056.html#a729748af766d9cffc9a8b4567cf1c52d", null ],
-    [ "loadBMP", "d9/d2e/a00056.html#a770958df0bcb31b97d914fcbaf1d48fc", null ],
-    [ "setRasterData", "d9/d2e/a00056.html#a308b2d6c24a5c1ecdfcb0a3637f4b874", null ],
-    [ "m_bmpStructMap", "d9/d2e/a00056.html#a1fdf5561d0e3e219d686e3ecda1f54d2", null ],
-    [ "m_mgtFieldsName", "d9/d2e/a00056.html#a16e683aa29dfad59c7adbfa192ca5953", null ],
-    [ "m_mgtFieldsRs", "d9/d2e/a00056.html#aa4e14cbfe034e83f077d54ef72497c4a", null ],
-    [ "m_unitIDs", "d9/d2e/a00056.html#a9324b979066d6ccb0dbeffd3d6d2aedc", null ]
+    [ "BMPPointSrcFactory", "d9/d2e/a00056.html#a2075d2309571a318c216ab47f1d5ac85", null ],
+    [ "~BMPPointSrcFactory", "d9/d2e/a00056.html#a5748a828512a2054baf0d48d54a33d5e", null ],
+    [ "Dump", "d9/d2e/a00056.html#a04ffd7eeceae9acd6d023c5c4706c84a", null ],
+    [ "loadBMP", "d9/d2e/a00056.html#afcdfdc6978296cc1773ecc84e52d5871", null ],
+    [ "ReadPointSourceLocations", "d9/d2e/a00056.html#a00dd7e00d4e6b52394014bd79afb71b4", null ],
+    [ "ReadPointSourceManagements", "d9/d2e/a00056.html#a33cff88a565b727800b9683bb31d23f8", null ],
+    [ "m_pointSrc", "d9/d2e/a00056.html#aa9659202207c7ab6cccebd22bb5c8cbf", null ],
+    [ "m_pointSrcDistTab", "d9/d2e/a00056.html#aabc09e9823e06780ca9bb94e82cdfe78", null ],
+    [ "m_pointSrcIDs", "d9/d2e/a00056.html#a76bdd3fb6e14a9854447ecaa454de28c", null ],
+    [ "m_pointSrcLocsMap", "d9/d2e/a00056.html#a2c2f10751d48bd7f6696ac0bd3dc0fd0", null ],
+    [ "m_pointSrcMgtMap", "d9/d2e/a00056.html#a0b41fda0a47b9101c10ebcd47a6d537a", null ],
+    [ "m_pointSrcMgtSeqs", "d9/d2e/a00056.html#ae590ca3ab41a36931cba253aeb1f28e1", null ],
+    [ "m_pointSrcMgtTab", "d9/d2e/a00056.html#a6a2ff89e33f61e0b0ef8e70931fe1525", null ]
 ];

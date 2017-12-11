@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: SUR_SGA</title>
+<title>SEIMS: Data</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -106,37 +106,92 @@ $(document).ready(function(){initNavTree('da/d45/a00961.html','../../');});
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle">
-<div class="title">SUR_SGA<div class="ingroups"><a class="el" href="../../d0/df0/a00934.html">Hydrology</a></div></div>  </div>
+<div class="title">Data<div class="ingroups"><a class="el" href="../../dd/d11/a00960.html">Base</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Green-Ampt Method to calculate infiltration and excess precipitation.  
+<p>Include data related classes, e.g. <a class="el" href="../../d6/db3/a00130.html" title="Get HydroClimate measurement data from MongoDB. ">Measurement</a>, HydroClimateData etc.  
 <a href="#details">More...</a></p>
 <div class="dynheader">
-Collaboration diagram for SUR_SGA:</div>
+Collaboration diagram for Data:</div>
 <div class="dyncontent">
 <center><table><tr><td><img src="../../da/d45/a00961.png" border="0" alt="" usemap="#da_2d45_2a00961"/>
 <map name="da_2d45_2a00961" id="da_2d45_2a00961">
-<area shape="rect" id="node2" href="../../d0/df0/a00934.html" title="Hydrology related modules, include storm processes. " alt="" coords="6,4,101,33"/></map>
+<area shape="rect" id="node1" href="../../dd/d11/a00960.html" title="Base modules, e.g., data, util, module_setting. " alt="" coords="5,4,64,33"/></map>
 </td></tr></table></center>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/ded/a00211.html">StormGreenAmpt</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Green-Ampt Method to calculate infiltration and excess precipitation.  <a href="../../dd/ded/a00211.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d5f/a00064.html">clsRasterData&lt; T, MaskT &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raster data (1D and 2D) I/O class Support I/O between TIFF, ASCII file or/and MongoBD database.  <a href="../../df/d5f/a00064.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/de1/a00065.html">clsReach</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class to store reach related parameters from REACHES table.  <a href="../../de/de1/a00065.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db3/a00066.html">clsReaches</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read and store all reaches information as input parameters.  <a href="../../d9/db3/a00066.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/ddf/a00067.html">clsSimpleTxtData</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">read string line from text file  <a href="../../dc/ddf/a00067.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/db6/a00074.html">DataCenter</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class of Data center for SEIMS.  <a href="../../db/db6/a00074.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html">DataCenterMongoDB</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class of Data center inherited from <a class="el" href="../../db/db6/a00074.html" title="Base class of Data center for SEIMS. ">DataCenter</a> based on MongoDB.  <a href="../../d9/da5/a00075.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/da3/a00115.html">InputStation</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">HydroClimate sites information.  <a href="../../d2/da3/a00115.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/db3/a00130.html">Measurement</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get HydroClimate measurement data from MongoDB.  <a href="../../d6/db3/a00130.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d01/a00153.html">NotRegularMeasurement</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Not Regular hydroclimate data, i.e., for storm model.  <a href="../../da/d01/a00153.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d34/a00156.html">NutrCommon</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define some common used function in Nutrient cycling modules, e.g., NUTRMV, NUTRSED.  <a href="../../d2/d34/a00156.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dfb/a00172.html">PGCommon</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A basic class for plant growth modules using a simplified version of EPIC model.  <a href="../../d6/dfb/a00172.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d81/a00180.html">RegularMeasurement</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Regular hydroclimate data, e.g., daily data.  <a href="../../d0/d81/a00180.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:gae4de54e91606a4d7077a4e1b5f633ef2"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/a00961.html#gae4de54e91606a4d7077a4e1b5f633ef2">ReachAttr</a> </td></tr>
+<tr class="separator:gae4de54e91606a4d7077a4e1b5f633ef2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Green-Ampt Method to calculate infiltration and excess precipitation. </p>
+<p>Include data related classes, e.g. <a class="el" href="../../d6/db3/a00130.html" title="Get HydroClimate measurement data from MongoDB. ">Measurement</a>, HydroClimateData etc. </p>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a class="anchor" id="gae4de54e91606a4d7077a4e1b5f633ef2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../da/d45/a00961.html#gae4de54e91606a4d7077a4e1b5f633ef2">ReachAttr</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Find a more elegant way to read, store, and get reaches attributes. </p>
+
+<p>Definition at line <a class="el" href="../../d7/dd2/a00598_source.html#l00023">23</a> of file <a class="el" href="../../d7/dd2/a00598_source.html">clsReach.h</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Nov 24 2017 09:10:22 for SEIMS by
+    <li class="footer">Generated on Mon Dec 11 2017 12:43:11 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

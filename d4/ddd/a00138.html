@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims.preprocess.text.ModelCfgUtils Class Reference</title>
+<title>SEIMS: ModelException Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -115,40 +115,61 @@ $(document).ready(function(){initNavTree('d4/ddd/a00138.html','../../');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="../../d7/da3/a01260.html">List of all members</a>  </div>
+<a href="../../de/d1d/a01105.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">seims.preprocess.text.ModelCfgUtils Class Reference</div>  </div>
+<div class="title">ModelException Class Reference<div class="ingroups"><a class="el" href="../../df/d88/a00962.html">Util</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Inherits object, and object.</p>
+<p>Print the exception message.  
+ <a href="../../d4/ddd/a00138.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../db/d44/a00533_source.html">ModelException.h</a>&gt;</code></p>
+
+<p>Inherits exception.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a05c27e9350ffaf325d62f2e3ffe114c1"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/ddd/a00138.html#a05c27e9350ffaf325d62f2e3ffe114c1">__init__</a></td></tr>
-<tr class="separator:a05c27e9350ffaf325d62f2e3ffe114c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05c27e9350ffaf325d62f2e3ffe114c1"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/ddd/a00138.html#a05c27e9350ffaf325d62f2e3ffe114c1">__init__</a></td></tr>
-<tr class="separator:a05c27e9350ffaf325d62f2e3ffe114c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60fa24a31edef1abcda4930a18717057"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/ddd/a00138.html#a60fa24a31edef1abcda4930a18717057">ModelException</a> (string className, string functionName, string msg)</td></tr>
+<tr class="memdesc:a60fa24a31edef1abcda4930a18717057"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a60fa24a31edef1abcda4930a18717057">More...</a><br/></td></tr>
+<tr class="separator:a60fa24a31edef1abcda4930a18717057"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fc9ce077d3b0762583e5945f676841a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6fc9ce077d3b0762583e5945f676841a"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/ddd/a00138.html#a6fc9ce077d3b0762583e5945f676841a">~ModelException</a> () override  throw ()</td></tr>
+<tr class="memdesc:a6fc9ce077d3b0762583e5945f676841a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor (void) <br/></td></tr>
+<tr class="separator:a6fc9ce077d3b0762583e5945f676841a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee5445c8d05c17a796a7bd40654d62fd"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/ddd/a00138.html#aee5445c8d05c17a796a7bd40654d62fd">toString</a> ()</td></tr>
+<tr class="memdesc:aee5445c8d05c17a796a7bd40654d62fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct error information (string version)  <a href="#aee5445c8d05c17a796a7bd40654d62fd">More...</a><br/></td></tr>
+<tr class="separator:aee5445c8d05c17a796a7bd40654d62fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad628c8e55ba32a0a106b66174ebdc725"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/ddd/a00138.html#ad628c8e55ba32a0a106b66174ebdc725">what</a> () const   throw ()</td></tr>
+<tr class="memdesc:ad628c8e55ba32a0a106b66174ebdc725"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload function to construct error information.  <a href="#ad628c8e55ba32a0a106b66174ebdc725">More...</a><br/></td></tr>
+<tr class="separator:ad628c8e55ba32a0a106b66174ebdc725"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><pre class="fragment">Model configuration utility names</pre> 
-<p>Definition at line <a class="el" href="../../db/df1/a00486_source.html#l00042">42</a> of file <a class="el" href="../../db/df1/a00486_source.html">text.py</a>.</p>
+<div class="textblock"><p>Print the exception message. </p>
+
+<p>Definition at line <a class="el" href="../../db/d44/a00533_source.html#l00020">20</a> of file <a class="el" href="../../db/d44/a00533_source.html">ModelException.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a05c27e9350ffaf325d62f2e3ffe114c1"></a>
+<a class="anchor" id="a60fa24a31edef1abcda4930a18717057"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">def seims.preprocess.text.ModelCfgUtils.__init__ </td>
+          <td class="memname">ModelException::ModelException </td>
           <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>className</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>model_dir</em>&#160;</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>functionName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>msg</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -157,58 +178,77 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">assign model config file paths</pre> 
-<p>Definition at line <a class="el" href="../../db/df1/a00486_source.html#l00049">49</a> of file <a class="el" href="../../db/df1/a00486_source.html">text.py</a>.</p>
+
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">className,functionName,msg</td><td><em>string</em> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="../../d7/d41/a00532_source.html#l00003">3</a> of file <a class="el" href="../../d7/d41/a00532_source.html">ModelException.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a05c27e9350ffaf325d62f2e3ffe114c1"></a>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="aee5445c8d05c17a796a7bd40654d62fd"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">def seims.preprocess.text.ModelCfgUtils.__init__ </td>
+          <td class="memname">string ModelException::toString </td>
           <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>model_dir</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">assign model config file paths</pre> 
-<p>Definition at line <a class="el" href="../../dd/d9c/a00487_source.html#l00049">49</a> of file <a class="el" href="../../dd/d9c/a00487_source.html">text.py</a>.</p>
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../d4/ddd/a00138_a05c27e9350ffaf325d62f2e3ffe114c1_cgraph.png" border="0" usemap="#d4/ddd/a00138_a05c27e9350ffaf325d62f2e3ffe114c1_cgraph" alt=""/></div>
-<map name="d4/ddd/a00138_a05c27e9350ffaf325d62f2e3ffe114c1_cgraph" id="d4/ddd/a00138_a05c27e9350ffaf325d62f2e3ffe114c1_cgraph">
-</map>
-</div>
-</p>
+<p>Construct error information (string version) </p>
+<dl class="section return"><dt>Returns</dt><dd>error information </dd></dl>
+
+<p>Definition at line <a class="el" href="../../d7/d41/a00532_source.html#l00010">10</a> of file <a class="el" href="../../d7/d41/a00532_source.html">ModelException.cpp</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>seims/preprocess/<a class="el" href="../../db/df1/a00486_source.html">text.py</a></li>
+<a class="anchor" id="ad628c8e55ba32a0a106b66174ebdc725"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* ModelException::what </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+        <tr>
+          <td align="right">throw </td><td>(</td><td colspan="2"></td>
+        </tr>
+        <tr>
+          <td align="right"></td><td>)</td><td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Overload function to construct error information. </p>
+<dl class="section return"><dt>Returns</dt><dd><em>char*</em> error information </dd></dl>
+
+<p>Definition at line <a class="el" href="../../db/d44/a00533_source.html#l00041">41</a> of file <a class="el" href="../../db/d44/a00533_source.html">ModelException.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>seims/src/commonlibs/UtilsClass/<a class="el" href="../../db/d44/a00533_source.html">ModelException.h</a></li>
+<li>seims/src/commonlibs/UtilsClass/<a class="el" href="../../d7/d41/a00532_source.html">ModelException.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>seims</b></li><li class="navelem"><b>preprocess</b></li><li class="navelem"><b>text</b></li><li class="navelem"><a class="el" href="../../d4/ddd/a00138.html">ModelCfgUtils</a></li>
-    <li class="footer">Generated on Fri Nov 24 2017 09:10:24 for SEIMS by
+    <li class="navelem"><a class="el" href="../../d4/ddd/a00138.html">ModelException</a></li>
+    <li class="footer">Generated on Mon Dec 11 2017 12:43:12 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

@@ -1,23 +1,13 @@
 var a00066 =
 [
-    [ "clsPI_SVSC", "d9/db3/a00066.html#ae4c449087a16d86bfa483c216af24d9c", null ],
-    [ "~clsPI_SVSC", "d9/db3/a00066.html#a35e1d400ad34af02b178dac7ce4c0c68", null ],
-    [ "CheckInputData", "d9/db3/a00066.html#a5a9f76646caca96e413e3cc27d161a11", null ],
-    [ "CheckInputSize", "d9/db3/a00066.html#a383fa5850b81b25f0457e480b48f9a3a", null ],
-    [ "Execute", "d9/db3/a00066.html#aa65bc2c5244a6d535df48beeb21415b6", null ],
-    [ "Get1DData", "d9/db3/a00066.html#a5e90018ea698936d5ed3b035c8bb446a", null ],
-    [ "initialOutputs", "d9/db3/a00066.html#a143b3cd4f911a8512d8539dc2829a1cc", null ],
-    [ "Set1DData", "d9/db3/a00066.html#a51f4ed67a2e29745197dc3f476c740e8", null ],
-    [ "SetValue", "d9/db3/a00066.html#a4bed06d99a23df637ce3874425ae74e8", null ],
-    [ "m_evaporationLoss", "d9/db3/a00066.html#a752e59c2658630805190e0d11565c3ca", null ],
-    [ "m_Init_IS", "d9/db3/a00066.html#af952310a0c2571b7c93754e513291d2d", null ],
-    [ "m_interceptionLoss", "d9/db3/a00066.html#aec81822a95a2fc89e7fa206399becaae", null ],
-    [ "m_maxSt", "d9/db3/a00066.html#af87d9e5d9ccbd8e9506a7e8bef81ca8b", null ],
-    [ "m_minSt", "d9/db3/a00066.html#a71b7ec08c197207d321fd54fd160490a", null ],
-    [ "m_nCells", "d9/db3/a00066.html#ab19ae726154b0c2bbbba2ba1482fc61d", null ],
-    [ "m_netPrecipitation", "d9/db3/a00066.html#ac8cb57f2d16f92b6f1ff51bd672106f7", null ],
-    [ "m_P", "d9/db3/a00066.html#a8561283fc75fef43bb23b65132edc248", null ],
-    [ "m_PET", "d9/db3/a00066.html#a0628767d5eaadcd093ee894fb6073203", null ],
-    [ "m_Pi_b", "d9/db3/a00066.html#a53e2b3e5043c89821ef99dde1e1892c2", null ],
-    [ "m_st", "d9/db3/a00066.html#abaf14df7b53ec896e0093274845510c6", null ]
+    [ "clsReaches", "d9/db3/a00066.html#a2754aac3afd7db4cc6e836408f0ade8f", null ],
+    [ "~clsReaches", "d9/db3/a00066.html#ab53547bb1ed55bfff10b4e9f7dfc320c", null ],
+    [ "GetReachByID", "d9/db3/a00066.html#a17293258a41c5dfb9c5c4439b12a35ab", null ],
+    [ "GetReachesSingleProperty", "d9/db3/a00066.html#a8ac42c032cfc32845207c11479367b68", null ],
+    [ "GetReachIDs", "d9/db3/a00066.html#ad61adb1581f7693f9ff4ee6d7fd8694c", null ],
+    [ "GetReachNumber", "d9/db3/a00066.html#a2c7915b93c49d8482aea4dd059b1cdb2", null ],
+    [ "m_reachesMap", "d9/db3/a00066.html#a4b4705b4deb3732264ae4219a05b7797", null ],
+    [ "m_reachesProperties", "d9/db3/a00066.html#afc60bf8d7d713af679058ab86dc973f9", null ],
+    [ "m_reachIDs", "d9/db3/a00066.html#aad1fd9b346df408f7fec90b74f2ab633", null ],
+    [ "m_reachNum", "d9/db3/a00066.html#a117f5587922d8fbd78e3a9ca81eef0bd", null ]
 ];

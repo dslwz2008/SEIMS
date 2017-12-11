@@ -1,17 +1,17 @@
 var a00047 =
 [
-    [ "__init__", "d6/d2d/a00047.html#a87618fdb401f36dd7aaf2196bb65d35e", null ],
-    [ "__init__", "d6/d2d/a00047.html#a87618fdb401f36dd7aaf2196bb65d35e", null ],
-    [ "_Authenticate", "d6/d2d/a00047.html#a6b0c9ff26d82638b04fb601901967ae5", null ],
-    [ "_Authenticate", "d6/d2d/a00047.html#a6b0c9ff26d82638b04fb601901967ae5", null ],
-    [ "_CreateRequest", "d6/d2d/a00047.html#a69359b54dfb723e0501b8aa1b369898f", null ],
-    [ "_CreateRequest", "d6/d2d/a00047.html#a69359b54dfb723e0501b8aa1b369898f", null ],
-    [ "_GetAuthCookie", "d6/d2d/a00047.html#aa8f9b739789afa3c476084bbc796ea25", null ],
-    [ "_GetAuthCookie", "d6/d2d/a00047.html#aa8f9b739789afa3c476084bbc796ea25", null ],
-    [ "_GetAuthToken", "d6/d2d/a00047.html#a5bea4c537b28e70f9de17e94a0892e7e", null ],
-    [ "_GetAuthToken", "d6/d2d/a00047.html#a5bea4c537b28e70f9de17e94a0892e7e", null ],
-    [ "_GetOpener", "d6/d2d/a00047.html#ace97e242b0e9e2c3d44ae4a910c17384", null ],
-    [ "_GetOpener", "d6/d2d/a00047.html#ace97e242b0e9e2c3d44ae4a910c17384", null ],
-    [ "Send", "d6/d2d/a00047.html#a4bb81f2d1e7e41fa7a8a1eb4aa6d5313", null ],
-    [ "Send", "d6/d2d/a00047.html#a4bb81f2d1e7e41fa7a8a1eb4aa6d5313", null ]
+    [ "ArealSourceLocations", "d6/d2d/a00047.html#a16bc19582ad47e4ca5591f7661baac79", null ],
+    [ "~ArealSourceLocations", "d6/d2d/a00047.html#a7469830879f0db97486002ada6aa562a", null ],
+    [ "Dump", "d6/d2d/a00047.html#a0299c66b40ee7914b9f0a4b49867189b", null ],
+    [ "GetArealSourceID", "d6/d2d/a00047.html#aa4f1d91e4729ace2fc08a4acab968821", null ],
+    [ "GetArealSourceName", "d6/d2d/a00047.html#ac416bb4ef75f15be081a20eb06cefad5", null ],
+    [ "GetCellsIndex", "d6/d2d/a00047.html#a1965f18259b9d9dfacf785473ef7280b", null ],
+    [ "GetSize", "d6/d2d/a00047.html#af8f83649016c77dd1b6453684837c791", null ],
+    [ "GetValidCells", "d6/d2d/a00047.html#a685a31046f34b612e2f748a6a5aaa580", null ],
+    [ "SetValidCells", "d6/d2d/a00047.html#a399dbcf5e788c29a3d73de021c9d442d", null ],
+    [ "m_arealSrcID", "d6/d2d/a00047.html#ab487de6934750f32ddb1c810aa94d928", null ],
+    [ "m_cellsIndex", "d6/d2d/a00047.html#a3c9456bae94a09993ffc89792b0a2484", null ],
+    [ "m_name", "d6/d2d/a00047.html#a0195d5db00328313e4e950b013da2008", null ],
+    [ "m_nCells", "d6/d2d/a00047.html#aff43f13dc8e6912584d984d2bd49c993", null ],
+    [ "m_size", "d6/d2d/a00047.html#aa4d342707bb8f6b6803ffa6515a10024", null ]
 ];

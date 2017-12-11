@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims/src/commonlibs/MongoUtilClass/MongoUtil.h Source File</title>
+<title>SEIMS: seims/src/commonlibs/RasterClass/test/Test_default-blank-ctor.cpp Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -112,162 +112,176 @@ $(document).ready(function(){initNavTree('d7/db7/a00525_source.html','../../');}
 
 <div class="header">
   <div class="headertitle">
-<div class="title">MongoUtil.h</div>  </div>
+<div class="title">Test_default-blank-ctor.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef MONGO_UTILS</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define MONGO_UTILS</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;set&gt;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;mongoc.h&gt;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;utilities.h&quot;</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">//template&lt;typename T&gt; class clsRasterData;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;gtest/gtest.h&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;utilities.h&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;clsRasterData.h&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span>{</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;TEST(clsRasterDataTestBlankCtor, ValidateAccess) {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="../../df/d5f/a00064.html">clsRasterData&lt;float, int&gt;</a> *rs = <span class="keyword">new</span> <a class="code" href="../../df/d5f/a00064.html">clsRasterData&lt;float, int&gt;</a>();</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    EXPECT_EQ(-1, rs-&gt;<a class="code" href="../../df/d5f/a00064.html#a0057cdae5089f8458183ea2c96eaa5c4">getDataLength</a>());  <span class="comment">// m_nCells</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    EXPECT_EQ(-1, rs-&gt;<a class="code" href="../../df/d5f/a00064.html#a32aef1b833ead02eafd0509548105eae">getCellNumber</a>());  <span class="comment">// m_nCells</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    EXPECT_FLOAT_EQ(-9999.f, rs-&gt;<a class="code" href="../../df/d5f/a00064.html#ac2467bfa204b08f7c6600d33e3c9736e">getNoDataValue</a>());  <span class="comment">// m_noDataValue</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    EXPECT_FLOAT_EQ(-9999.f, rs-&gt;<a class="code" href="../../df/d5f/a00064.html#a02aa5f0e9865b0f33fa4b7bd74b2723c">getDefaultValue</a>());  <span class="comment">// m_defaultValue</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#define MONG_GRIDFS_FN                &quot;filename&quot;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define MONG_GRIDFS_WEIGHT_CELLS      &quot;NUM_CELLS&quot;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define MONG_GRIDFS_WEIGHT_SITES      &quot;NUM_SITES&quot;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define MONG_GRIDFS_ID                &quot;ID&quot;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define MONG_GRIDFS_SUBBSN            &quot;SUBBASIN&quot;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="../../da/ddb/a00145.html">   39</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../da/ddb/a00145.html#a103f61d194bb4652ddbf141a66ff7e85">MongoClient</a> {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    MongoClient(<span class="keyword">const</span> <span class="keywordtype">char</span> *host, uint16_t port);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">static</span> MongoClient* Init(<span class="keyword">const</span> <span class="keywordtype">char</span> *host, uint16_t port);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    ~MongoClient(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    EXPECT_EQ(<span class="stringliteral">&quot;&quot;</span>, rs-&gt;<a class="code" href="../../df/d5f/a00064.html#a96d3bbb52d31c1782d5ef67ed3217663">getFilePath</a>());  <span class="comment">// m_filePathName</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    EXPECT_EQ(<span class="stringliteral">&quot;&quot;</span>, rs-&gt;<a class="code" href="../../df/d5f/a00064.html#af56d4b6b6375b282ad738805f3f2d434">getCoreName</a>());  <span class="comment">// m_coreFileName</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    EXPECT_TRUE(rs-&gt;<a class="code" href="../../df/d5f/a00064.html#a544b560386fd6dc6b163308bae0029b2">Initialized</a>());  <span class="comment">// m_initialized</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    EXPECT_FALSE(rs-&gt;<a class="code" href="../../df/d5f/a00064.html#a714e2d8f7ab2c270c9285ba3f6ea2116">is2DRaster</a>());  <span class="comment">// m_is2DRaster</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    EXPECT_FALSE(rs-&gt;<a class="code" href="../../df/d5f/a00064.html#ab1c9e3329f600885728cd74b962343af">PositionsCalculated</a>());  <span class="comment">// m_calcPositions</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    EXPECT_FALSE(rs-&gt;<a class="code" href="../../df/d5f/a00064.html#aeeb54e27c3e08969a595cc6b93549573">PositionsAllocated</a>());  <span class="comment">// m_storePositions</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    EXPECT_FALSE(rs-&gt;<a class="code" href="../../df/d5f/a00064.html#aa15a1b8fd494687def95d021b6475541">MaskExtented</a>());  <span class="comment">// m_useMaskExtent</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    EXPECT_FALSE(rs-&gt;<a class="code" href="../../df/d5f/a00064.html#ac740a1d166a400a83f0c8310e13acdee">StatisticsCalculated</a>());  <span class="comment">// m_statisticsCalculated</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    EXPECT_FALSE(rs-&gt;<a class="code" href="../../df/d5f/a00064.html#a18e3b262fed5755b23b797e987efe98f">validate_raster_data</a>());</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    EXPECT_EQ(<span class="keyword">nullptr</span>, rs-&gt;<a class="code" href="../../df/d5f/a00064.html#acb5ab29b11ea12b4ee3113fdbb2af807">getRasterDataPointer</a>());  <span class="comment">// m_rasterData</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    EXPECT_EQ(<span class="keyword">nullptr</span>, rs-&gt;<a class="code" href="../../df/d5f/a00064.html#a2cbbdaa07fb93c68409e8d16ad740ad6">get2DRasterDataPointer</a>());  <span class="comment">// m_raster2DData</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    EXPECT_EQ(<span class="keyword">nullptr</span>, rs-&gt;<a class="code" href="../../df/d5f/a00064.html#aebc22c066499cc80170629d9d3f20db8">getRasterPositionDataPointer</a>());  <span class="comment">// m_rasterPositionData</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    EXPECT_EQ(-9999, rs-&gt;<a class="code" href="../../df/d5f/a00064.html#a7f34b331928f958e8ea39869418e625d">getRows</a>());</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    EXPECT_EQ(-9999, rs-&gt;<a class="code" href="../../df/d5f/a00064.html#acb5495688824c16b05736c821cbd4fc9">getCols</a>());</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    EXPECT_FLOAT_EQ(-9999.f, rs-&gt;<a class="code" href="../../df/d5f/a00064.html#a9256d4394f6fd164a310ab09cb439bb7">getXllCenter</a>());</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    EXPECT_FLOAT_EQ(-9999.f, rs-&gt;<a class="code" href="../../df/d5f/a00064.html#a51f8df074f9abdc552949d9a39bfc0b8">getYllCenter</a>());</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    EXPECT_FLOAT_EQ(-9999.f, rs-&gt;<a class="code" href="../../df/d5f/a00064.html#ada2737c79bb09b6046230cec81fb5667">getCellWidth</a>());</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    EXPECT_EQ(-1, rs-&gt;getLayers());</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    EXPECT_STREQ(<span class="stringliteral">&quot;&quot;</span>, rs-&gt;<a class="code" href="../../df/d5f/a00064.html#a8a0cc10f26bab559a0b00fd68a8c9a33">getSRS</a>());</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    EXPECT_EQ(<span class="stringliteral">&quot;&quot;</span>, rs-&gt;<a class="code" href="../../df/d5f/a00064.html#a5fab05c0afd1359507cda3557e7cd0de">getSRSString</a>());</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    EXPECT_EQ(-9999, rs-&gt;<a class="code" href="../../df/d5f/a00064.html#adc23af9884defc6c44d51c198ff558a9">getValidNumber</a>());</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    EXPECT_FLOAT_EQ(-9999.f, rs-&gt;<a class="code" href="../../df/d5f/a00064.html#ad2b312e0498da1425cab886c22f44bbd">getMinimum</a>());</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    EXPECT_FLOAT_EQ(-9999.f, rs-&gt;<a class="code" href="../../df/d5f/a00064.html#a51dde0c5d566a9df5bea803dfc1bd9fc">getMaximum</a>());</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    EXPECT_FLOAT_EQ(-9999.f, rs-&gt;<a class="code" href="../../df/d5f/a00064.html#a912eb58447c6558296ece2ce30ec6e52">getAverage</a>());</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    EXPECT_FLOAT_EQ(-9999.f, rs-&gt;<a class="code" href="../../df/d5f/a00064.html#ae808358fa3fddba8baa6b3e01a8b45bc">getSTD</a>());</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    EXPECT_FLOAT_EQ(-9999.f, rs-&gt;<a class="code" href="../../df/d5f/a00064.html#a1a8739ea690e86d56d341199d6418eb4">getRange</a>());</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    EXPECT_FALSE(rs-&gt;<a class="code" href="../../df/d5f/a00064.html#ac740a1d166a400a83f0c8310e13acdee">StatisticsCalculated</a>());</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    EXPECT_EQ(<span class="keyword">nullptr</span>, rs-&gt;<a class="code" href="../../df/d5f/a00064.html#abe5a7fa09b81dd8f69c585708196d612">getMask</a>());  <span class="comment">// m_mask</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">int</span> ncells = -1;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">int</span> **positions = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    rs-&gt;<a class="code" href="../../df/d5f/a00064.html#aaf507b95fc98acd0e0e471d2ca626030">getRasterPositionData</a>(&amp;ncells, &amp;positions);  <span class="comment">// m_rasterPositionData</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    EXPECT_EQ(-1, ncells);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    EXPECT_EQ(<span class="keyword">nullptr</span>, positions);</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="../../da/ddb/a00145.html#a59abe6355d4affc3502367a9982087e4">   71</a></span>&#160;    mongoc_client_t *<a class="code" href="../../da/ddb/a00145.html#a59abe6355d4affc3502367a9982087e4">getConn</a>(<span class="keywordtype">void</span>) { <span class="keywordflow">return</span> m_conn; }</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    mongoc_database_t* getDatabase(<span class="keywordtype">string</span> <span class="keyword">const</span> &amp;dbname);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">float</span> *rs_data = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    EXPECT_FALSE(rs-&gt;<a class="code" href="../../df/d5f/a00064.html#a6d066beca1635ffbe8638758ca479637">getRasterData</a>(&amp;ncells, &amp;rs_data));  <span class="comment">// m_rasterData</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    EXPECT_EQ(-1, ncells);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    EXPECT_EQ(<span class="keyword">nullptr</span>, rs_data);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">float</span> **rs_2ddata = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">int</span> nlyrs = -1;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    EXPECT_FALSE(rs-&gt;<a class="code" href="../../df/d5f/a00064.html#a2f77d4d286c293a338b242c9a8073cf5">get2DRasterData</a>(&amp;ncells, &amp;nlyrs, &amp;rs_2ddata));  <span class="comment">// m_raster2DData</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    EXPECT_EQ(-1, ncells);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    EXPECT_EQ(-1, nlyrs);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    EXPECT_EQ(<span class="keyword">nullptr</span>, rs_2ddata);</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    mongoc_collection_t* getCollection(<span class="keywordtype">string</span> <span class="keyword">const</span> &amp;dbname, <span class="keywordtype">string</span> <span class="keyword">const</span> &amp;collectionname);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    mongoc_gridfs_t *getGridFS(<span class="keywordtype">string</span> <span class="keyword">const</span> &amp;dbname, <span class="keywordtype">string</span> <span class="keyword">const</span> &amp;gfsname);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    EXPECT_FLOAT_EQ(-9999.f, rs-&gt;<a class="code" href="../../df/d5f/a00064.html#aed1b4e551e31425717d45738891c4eaf">getValueByIndex</a>(-1));</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    EXPECT_FLOAT_EQ(-9999.f, rs-&gt;<a class="code" href="../../df/d5f/a00064.html#aed1b4e551e31425717d45738891c4eaf">getValueByIndex</a>(0));</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    EXPECT_FLOAT_EQ(-9999.f, rs-&gt;<a class="code" href="../../df/d5f/a00064.html#aed1b4e551e31425717d45738891c4eaf">getValueByIndex</a>(540, 1));</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    EXPECT_FLOAT_EQ(-9999.f, rs-&gt;<a class="code" href="../../df/d5f/a00064.html#aed1b4e551e31425717d45738891c4eaf">getValueByIndex</a>(541, 1));</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    EXPECT_FLOAT_EQ(-9999.f, rs-&gt;<a class="code" href="../../df/d5f/a00064.html#aed1b4e551e31425717d45738891c4eaf">getValueByIndex</a>(29));</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    EXPECT_FLOAT_EQ(-9999.f, rs-&gt;<a class="code" href="../../df/d5f/a00064.html#aed1b4e551e31425717d45738891c4eaf">getValueByIndex</a>(29, 0));</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    EXPECT_FLOAT_EQ(-9999.f, rs-&gt;<a class="code" href="../../df/d5f/a00064.html#aed1b4e551e31425717d45738891c4eaf">getValueByIndex</a>(-1, 2));</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    EXPECT_FLOAT_EQ(-9999.f, rs-&gt;<a class="code" href="../../df/d5f/a00064.html#aed1b4e551e31425717d45738891c4eaf">getValueByIndex</a>(541, 2));</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordtype">void</span> getDatabaseNames(vector&lt;string&gt; &amp;dbnames);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordtype">void</span> getCollectionNames(<span class="keywordtype">string</span> <span class="keyword">const</span> &amp;dbName, vector&lt;string&gt; &amp;collNames);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">void</span> getGridFSFileNames(<span class="keywordtype">string</span> <span class="keyword">const</span> &amp;dbname, <span class="keywordtype">string</span> <span class="keyword">const</span> &amp;gfsname, vector&lt;string&gt;&amp; fileExisted);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *m_host;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    uint16_t m_port;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    mongoc_client_t *m_conn;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;};</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
-<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="../../d9/db6/a00146.html">  121</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d9/db6/a00146.html">MongoDatabase</a> {</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <a class="code" href="../../d9/db6/a00146.html">MongoDatabase</a>(mongoc_database_t *db);</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <a class="code" href="../../d9/db6/a00146.html">MongoDatabase</a>(mongoc_client_t *conn, <span class="keywordtype">string</span> <span class="keyword">const</span> &amp;dbname);</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    ~<a class="code" href="../../d9/db6/a00146.html">MongoDatabase</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keywordtype">void</span> getCollectionNames(vector&lt;string&gt;&amp; collNames);</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    mongoc_database_t *m_db;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordtype">string</span> m_dbname;</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;};</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="keyword">class </span>MongoCollection {</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    MongoCollection(mongoc_collection_t* coll);</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    ~MongoCollection();</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    mongoc_cursor_t* ExecuteQuery(<span class="keyword">const</span> bson_t* b);</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordtype">int</span> QueryRecordsCount(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    mongoc_collection_t*      m_collection;</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;};</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;</div>
-<div class="line"><a name="l00172"></a><span class="lineno"><a class="line" href="../../d0/d4a/a00147.html">  172</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d0/d4a/a00147.html">MongoGridFS</a> {</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <a class="code" href="../../d0/d4a/a00147.html">MongoGridFS</a>(mongoc_gridfs_t *gfs = NULL);</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    ~<a class="code" href="../../d0/d4a/a00147.html">MongoGridFS</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    mongoc_gridfs_t *getGridFS(<span class="keywordtype">void</span>) { <span class="keywordflow">return</span> m_gfs; }</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    mongoc_gridfs_file_t *getFile(<span class="keywordtype">string</span> <span class="keyword">const</span> &amp;gfilename, mongoc_gridfs_t *gfs = NULL);</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordtype">bool</span> removeFile(<span class="keywordtype">string</span> <span class="keyword">const</span> &amp;gfilename, mongoc_gridfs_t *gfs = NULL);</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="keywordtype">void</span> getFileNames(vector&lt;string&gt;&amp;fileExisted, mongoc_gridfs_t *gfs = NULL);</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    bson_t *getFileMetadata(<span class="keywordtype">string</span> <span class="keyword">const</span> &amp;gfilename, mongoc_gridfs_t *gfs = NULL);</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keywordtype">void</span> getStreamData(<span class="keywordtype">string</span> <span class="keyword">const</span> &amp;gfilename, <span class="keywordtype">char</span> *&amp;databuf, <span class="keywordtype">size_t</span> &amp;datalength, </div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                       mongoc_gridfs_t *gfs = NULL);</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="keywordtype">void</span> writeStreamData(<span class="keywordtype">string</span> <span class="keyword">const</span> &amp;gfilename, <span class="keywordtype">char</span> *&amp;buf, <span class="keywordtype">size_t</span> &amp;length, </div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                         <span class="keyword">const</span> bson_t *p, mongoc_gridfs_t *gfs = NULL);</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    mongoc_gridfs_t *m_gfs;</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;};</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="keywordtype">bool</span> GetNumericFromBsonIterator(bson_iter_t *iter, T &amp;numericvalue) {</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="keyword">const</span> bson_value_t *vv = bson_iter_value(iter);</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="keywordflow">if</span> (vv-&gt;value_type == BSON_TYPE_INT32) {</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        numericvalue = (T) vv-&gt;value.v_int32;</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (vv-&gt;value_type == BSON_TYPE_INT64) {</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        numericvalue = (T) vv-&gt;value.v_int64;</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (vv-&gt;value_type == BSON_TYPE_DOUBLE) {</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        numericvalue = (T) vv-&gt;value.v_double;</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (vv-&gt;value_type == BSON_TYPE_UTF8) {</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        <span class="keywordtype">string</span> tmp = vv-&gt;value.v_utf8.str;</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        numericvalue = (T) atof(tmp.c_str());</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;bson iterator isn&#39;t or not contains a numeric value.&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    }</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;}</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;<span class="keywordtype">bool</span> GetNumericFromBson(bson_t *bmeta, <span class="keyword">const</span> <span class="keywordtype">char</span> *key, T &amp;numericvalue) {</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    bson_iter_t iter;</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <span class="keywordflow">if</span> (bson_iter_init(&amp;iter, bmeta) &amp;&amp; bson_iter_find(&amp;iter, key)) {</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        <span class="keywordflow">return</span> GetNumericFromBsonIterator(&amp;iter, numericvalue);</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        StatusMessage((<span class="stringliteral">&quot;WARNING: GetNumericFromBson, Failed in get value of: &quot;</span> + <span class="keywordtype">string</span>(key) + <span class="stringliteral">&quot;\n&quot;</span>).c_str());</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    }</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;}</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="keywordtype">string</span> GetStringFromBsonIterator(bson_iter_t *iter);</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;<span class="keywordtype">string</span> GetStringFromBson(bson_t *bmeta, <span class="keyword">const</span> <span class="keywordtype">char</span> *key);</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;<span class="keywordtype">bool</span> GetBoolFromBsonIterator(bson_iter_t *iter);</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;<span class="keywordtype">bool</span> GetBoolFromBson(bson_t *bmeta, <span class="keyword">const</span> <span class="keywordtype">char</span> *key);</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;time_t GetDatetimeFromBsonIterator(bson_iter_t *iter);</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;time_t GetDatetimeFromBson(bson_t *bmeta, <span class="keyword">const</span> <span class="keywordtype">char</span> *key);</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="a00145_html_a59abe6355d4affc3502367a9982087e4"><div class="ttname"><a href="../../da/ddb/a00145.html#a59abe6355d4affc3502367a9982087e4">MongoClient::getConn</a></div><div class="ttdeci">mongoc_client_t * getConn(void)</div><div class="ttdoc">Get mongoc_client instance. </div><div class="ttdef"><b>Definition:</b> <a href="../../d7/db7/a00525_source.html#l00071">MongoUtil.h:71</a></div></div>
-<div class="ttc" id="a00147_html"><div class="ttname"><a href="../../d0/d4a/a00147.html">MongoGridFS</a></div><div class="ttdoc">Create a MongoDB GridFS instance. </div><div class="ttdef"><b>Definition:</b> <a href="../../d7/db7/a00525_source.html#l00172">MongoUtil.h:172</a></div></div>
-<div class="ttc" id="a00146_html"><div class="ttname"><a href="../../d9/db6/a00146.html">MongoDatabase</a></div><div class="ttdoc">Create a MongoDB database instance. </div><div class="ttdef"><b>Definition:</b> <a href="../../d7/db7/a00525_source.html#l00121">MongoUtil.h:121</a></div></div>
-<div class="ttc" id="a00145_html_a103f61d194bb4652ddbf141a66ff7e85"><div class="ttname"><a href="../../da/ddb/a00145.html#a103f61d194bb4652ddbf141a66ff7e85">MongoClient::MongoClient</a></div><div class="ttdeci">MongoClient(const char *host, uint16_t port)</div><div class="ttdoc">Constructor Get a client for a MongoDB instance using ip address and port number Caution: The constru...</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d24/a00524_source.html#l00008">MongoUtil.cpp:8</a></div></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">int</span> tmp_lyr;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">float</span> *tmp_values;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    rs-&gt;<a class="code" href="../../df/d5f/a00064.html#aed1b4e551e31425717d45738891c4eaf">getValueByIndex</a>(-1, &amp;tmp_lyr, &amp;tmp_values);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    EXPECT_EQ(-1, tmp_lyr);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    EXPECT_EQ(<span class="keyword">nullptr</span>, tmp_values);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    rs-&gt;<a class="code" href="../../df/d5f/a00064.html#aed1b4e551e31425717d45738891c4eaf">getValueByIndex</a>(0, &amp;tmp_lyr, &amp;tmp_values);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    EXPECT_EQ(-1, tmp_lyr);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    EXPECT_EQ(<span class="keyword">nullptr</span>, tmp_values);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    EXPECT_FLOAT_EQ(-9999.f, rs-&gt;<a class="code" href="../../df/d5f/a00064.html#a6993cd7c23744992e3d4c3a563d3824c">getValue</a>(-1, 0));</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    EXPECT_FLOAT_EQ(-9999.f, rs-&gt;<a class="code" href="../../df/d5f/a00064.html#a6993cd7c23744992e3d4c3a563d3824c">getValue</a>(20, 0));</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    EXPECT_FLOAT_EQ(-9999.f, rs-&gt;<a class="code" href="../../df/d5f/a00064.html#a6993cd7c23744992e3d4c3a563d3824c">getValue</a>(0, -1));</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    EXPECT_FLOAT_EQ(-9999.f, rs-&gt;<a class="code" href="../../df/d5f/a00064.html#a6993cd7c23744992e3d4c3a563d3824c">getValue</a>(0, 30));</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    EXPECT_FLOAT_EQ(-9999.f, rs-&gt;<a class="code" href="../../df/d5f/a00064.html#a6993cd7c23744992e3d4c3a563d3824c">getValue</a>(2, 4, -1));</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    EXPECT_FLOAT_EQ(-9999.f, rs-&gt;<a class="code" href="../../df/d5f/a00064.html#a6993cd7c23744992e3d4c3a563d3824c">getValue</a>(2, 4, 2));</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    EXPECT_FLOAT_EQ(-9999.f, rs-&gt;<a class="code" href="../../df/d5f/a00064.html#a6993cd7c23744992e3d4c3a563d3824c">getValue</a>(2, 4));</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    EXPECT_FLOAT_EQ(-9999.f, rs-&gt;<a class="code" href="../../df/d5f/a00064.html#a6993cd7c23744992e3d4c3a563d3824c">getValue</a>(2, 4, 1));</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    rs-&gt;<a class="code" href="../../df/d5f/a00064.html#a6993cd7c23744992e3d4c3a563d3824c">getValue</a>(-1, 0, &amp;tmp_lyr, &amp;tmp_values);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    EXPECT_EQ(-1, tmp_lyr);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    EXPECT_EQ(<span class="keyword">nullptr</span>, tmp_values);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    rs-&gt;<a class="code" href="../../df/d5f/a00064.html#a6993cd7c23744992e3d4c3a563d3824c">getValue</a>(0, -1, &amp;tmp_lyr, &amp;tmp_values);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    EXPECT_EQ(-1, tmp_lyr);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    EXPECT_EQ(<span class="keyword">nullptr</span>, tmp_values);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    rs-&gt;<a class="code" href="../../df/d5f/a00064.html#a6993cd7c23744992e3d4c3a563d3824c">getValue</a>(0, 0, &amp;tmp_lyr, &amp;tmp_values);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    EXPECT_EQ(-1, tmp_lyr);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    EXPECT_EQ(<span class="keyword">nullptr</span>, tmp_values);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    rs-&gt;<a class="code" href="../../df/d5f/a00064.html#a6993cd7c23744992e3d4c3a563d3824c">getValue</a>(0, 1, &amp;tmp_lyr, &amp;tmp_values);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    EXPECT_EQ(-1, tmp_lyr);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    EXPECT_EQ(<span class="keyword">nullptr</span>, tmp_values);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="comment">// Get position</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    EXPECT_EQ(-2, rs-&gt;<a class="code" href="../../df/d5f/a00064.html#accd9b342516f5741e201f2f0c60e016c">getPosition</a>(4.05f, 37.95f));</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    EXPECT_EQ(-2, rs-&gt;<a class="code" href="../../df/d5f/a00064.html#accd9b342516f5741e201f2f0c60e016c">getPosition</a>(5.95f, 36.05f));</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="comment">// Set raster data value</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    rs-&gt;<a class="code" href="../../df/d5f/a00064.html#ae9a1ab9ebd05dac441e895edcb7ab83f">setValue</a>(2, 4, 18.06f);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    EXPECT_FLOAT_EQ(-9999.f, rs-&gt;<a class="code" href="../../df/d5f/a00064.html#a6993cd7c23744992e3d4c3a563d3824c">getValue</a>(2, 4));</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    rs-&gt;<a class="code" href="../../df/d5f/a00064.html#ae9a1ab9ebd05dac441e895edcb7ab83f">setValue</a>(0, 0, 1.f);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    EXPECT_FLOAT_EQ(-9999.f, rs-&gt;<a class="code" href="../../df/d5f/a00064.html#a6993cd7c23744992e3d4c3a563d3824c">getValue</a>(0, 0));</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordtype">string</span> newfullname = GetAppPath() + SEP + <span class="stringliteral">&quot;no_output.tif&quot;</span>;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    EXPECT_FALSE(rs-&gt;<a class="code" href="../../df/d5f/a00064.html#ab63034a59da6a74574187653d65efe74">outputToFile</a>(newfullname));</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;}</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;} <span class="comment">/* namespace */</span></div>
+<div class="ttc" id="a00064_html_ada2737c79bb09b6046230cec81fb5667"><div class="ttname"><a href="../../df/d5f/a00064.html#ada2737c79bb09b6046230cec81fb5667">clsRasterData::getCellWidth</a></div><div class="ttdeci">float getCellWidth() const </div><div class="ttdoc">Get cell size of raster data. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/a00509_source.html#l00447">clsRasterData.h:447</a></div></div>
+<div class="ttc" id="a00064_html_aeeb54e27c3e08969a595cc6b93549573"><div class="ttname"><a href="../../df/d5f/a00064.html#aeeb54e27c3e08969a595cc6b93549573">clsRasterData::PositionsAllocated</a></div><div class="ttdeci">bool PositionsAllocated() const </div><div class="ttdoc">raster position data is stored as array (true), or just a pointer </div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/a00509_source.html#l00565">clsRasterData.h:565</a></div></div>
+<div class="ttc" id="a00064_html_a18e3b262fed5755b23b797e987efe98f"><div class="ttname"><a href="../../df/d5f/a00064.html#a18e3b262fed5755b23b797e987efe98f">clsRasterData::validate_raster_data</a></div><div class="ttdeci">bool validate_raster_data()</div><div class="ttdoc">Validate the available of raster data, both 1D and 2D data. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/a00509_source.html#l00579">clsRasterData.h:579</a></div></div>
+<div class="ttc" id="a00064_html_a0057cdae5089f8458183ea2c96eaa5c4"><div class="ttname"><a href="../../df/d5f/a00064.html#a0057cdae5089f8458183ea2c96eaa5c4">clsRasterData::getDataLength</a></div><div class="ttdeci">int getDataLength() const </div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/a00509_source.html#l00438">clsRasterData.h:438</a></div></div>
+<div class="ttc" id="a00064_html_acb5495688824c16b05736c821cbd4fc9"><div class="ttname"><a href="../../df/d5f/a00064.html#acb5495688824c16b05736c821cbd4fc9">clsRasterData::getCols</a></div><div class="ttdeci">int getCols() const </div><div class="ttdoc">Get column number of raster data. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/a00509_source.html#l00441">clsRasterData.h:441</a></div></div>
+<div class="ttc" id="a00064_html_a32aef1b833ead02eafd0509548105eae"><div class="ttname"><a href="../../df/d5f/a00064.html#a32aef1b833ead02eafd0509548105eae">clsRasterData::getCellNumber</a></div><div class="ttdeci">int getCellNumber() const </div><div class="ttdoc">Get stored cell number of raster data. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/a00509_source.html#l00434">clsRasterData.h:434</a></div></div>
+<div class="ttc" id="a00064_html_ac740a1d166a400a83f0c8310e13acdee"><div class="ttname"><a href="../../df/d5f/a00064.html#ac740a1d166a400a83f0c8310e13acdee">clsRasterData::StatisticsCalculated</a></div><div class="ttdeci">bool StatisticsCalculated() const </div><div class="ttdoc">Basic statistics has been calculated or not. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/a00509_source.html#l00571">clsRasterData.h:571</a></div></div>
+<div class="ttc" id="a00064_html_af56d4b6b6375b282ad738805f3f2d434"><div class="ttname"><a href="../../df/d5f/a00064.html#af56d4b6b6375b282ad738805f3f2d434">clsRasterData::getCoreName</a></div><div class="ttdeci">string getCoreName() const </div><div class="ttdoc">Get core name. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/a00509_source.html#l00502">clsRasterData.h:502</a></div></div>
+<div class="ttc" id="a00064_html_ae9a1ab9ebd05dac441e895edcb7ab83f"><div class="ttname"><a href="../../df/d5f/a00064.html#ae9a1ab9ebd05dac441e895edcb7ab83f">clsRasterData::setValue</a></div><div class="ttdeci">void setValue(int row, int col, T value, int lyr=1)</div><div class="ttdoc">Set value to the given position and layer. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/a00509_source.html#l01404">clsRasterData.h:1404</a></div></div>
+<div class="ttc" id="a00064_html_aed1b4e551e31425717d45738891c4eaf"><div class="ttname"><a href="../../df/d5f/a00064.html#aed1b4e551e31425717d45738891c4eaf">clsRasterData::getValueByIndex</a></div><div class="ttdeci">T getValueByIndex(int cellIndex, int lyr=1)</div><div class="ttdoc">Get raster data at the valid cell index The default lyr is 1, which means the 1D raster data...</div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/a00509_source.html#l01311">clsRasterData.h:1311</a></div></div>
+<div class="ttc" id="a00064_html"><div class="ttname"><a href="../../df/d5f/a00064.html">clsRasterData</a></div><div class="ttdoc">Raster data (1D and 2D) I/O class Support I/O between TIFF, ASCII file or/and MongoBD database...</div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/a00509_source.html#l00129">clsRasterData.h:129</a></div></div>
+<div class="ttc" id="a00064_html_a51f8df074f9abdc552949d9a39bfc0b8"><div class="ttname"><a href="../../df/d5f/a00064.html#a51f8df074f9abdc552949d9a39bfc0b8">clsRasterData::getYllCenter</a></div><div class="ttdeci">double getYllCenter() const </div><div class="ttdoc">Get Y coordinate of left lower corner of raster data. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/a00509_source.html#l00453">clsRasterData.h:453</a></div></div>
+<div class="ttc" id="a00064_html_a7f34b331928f958e8ea39869418e625d"><div class="ttname"><a href="../../df/d5f/a00064.html#a7f34b331928f958e8ea39869418e625d">clsRasterData::getRows</a></div><div class="ttdeci">int getRows() const </div><div class="ttdoc">Get row number of raster data. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/a00509_source.html#l00444">clsRasterData.h:444</a></div></div>
+<div class="ttc" id="a00064_html_a02aa5f0e9865b0f33fa4b7bd74b2723c"><div class="ttname"><a href="../../df/d5f/a00064.html#a02aa5f0e9865b0f33fa4b7bd74b2723c">clsRasterData::getDefaultValue</a></div><div class="ttdeci">T getDefaultValue() const </div><div class="ttdoc">Get NoDATA value of raster data. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/a00509_source.html#l00464">clsRasterData.h:464</a></div></div>
+<div class="ttc" id="a00064_html_a6d066beca1635ffbe8638758ca479637"><div class="ttname"><a href="../../df/d5f/a00064.html#a6d066beca1635ffbe8638758ca479637">clsRasterData::getRasterData</a></div><div class="ttdeci">bool getRasterData(int *nCells, T **data)</div><div class="ttdoc">Get raster data, include valid cell number and data. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/a00509_source.html#l01268">clsRasterData.h:1268</a></div></div>
+<div class="ttc" id="a00064_html_ad2b312e0498da1425cab886c22f44bbd"><div class="ttname"><a href="../../df/d5f/a00064.html#ad2b312e0498da1425cab886c22f44bbd">clsRasterData::getMinimum</a></div><div class="ttdeci">float getMinimum(int lyr=1)</div><div class="ttdoc">Get the minimum of raster data. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/a00509_source.html#l00376">clsRasterData.h:376</a></div></div>
+<div class="ttc" id="a00064_html_a912eb58447c6558296ece2ce30ec6e52"><div class="ttname"><a href="../../df/d5f/a00064.html#a912eb58447c6558296ece2ce30ec6e52">clsRasterData::getAverage</a></div><div class="ttdeci">float getAverage(int lyr=1)</div><div class="ttdoc">Get the average of raster data. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/a00509_source.html#l00364">clsRasterData.h:364</a></div></div>
+<div class="ttc" id="a00064_html_a5fab05c0afd1359507cda3557e7cd0de"><div class="ttname"><a href="../../df/d5f/a00064.html#a5fab05c0afd1359507cda3557e7cd0de">clsRasterData::getSRSString</a></div><div class="ttdeci">string getSRSString()</div><div class="ttdoc">Get the spatial reference string. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/a00509_source.html#l00524">clsRasterData.h:524</a></div></div>
+<div class="ttc" id="a00064_html_adc23af9884defc6c44d51c198ff558a9"><div class="ttname"><a href="../../df/d5f/a00064.html#adc23af9884defc6c44d51c198ff558a9">clsRasterData::getValidNumber</a></div><div class="ttdeci">void getValidNumber(int *lyrnum, double **values)</div><div class="ttdoc">Get the non-NoDATA number of 2D raster data. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/a00509_source.html#l00425">clsRasterData.h:425</a></div></div>
+<div class="ttc" id="a00064_html_a96d3bbb52d31c1782d5ef67ed3217663"><div class="ttname"><a href="../../df/d5f/a00064.html#a96d3bbb52d31c1782d5ef67ed3217663">clsRasterData::getFilePath</a></div><div class="ttdeci">string getFilePath() const </div><div class="ttdoc">Get full path name. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/a00509_source.html#l00499">clsRasterData.h:499</a></div></div>
+<div class="ttc" id="a00064_html_ae808358fa3fddba8baa6b3e01a8b45bc"><div class="ttname"><a href="../../df/d5f/a00064.html#ae808358fa3fddba8baa6b3e01a8b45bc">clsRasterData::getSTD</a></div><div class="ttdeci">float getSTD(int lyr=1)</div><div class="ttdoc">Get the stand derivation of raster data. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/a00509_source.html#l00382">clsRasterData.h:382</a></div></div>
+<div class="ttc" id="a00064_html_a714e2d8f7ab2c270c9285ba3f6ea2116"><div class="ttname"><a href="../../df/d5f/a00064.html#a714e2d8f7ab2c270c9285ba3f6ea2116">clsRasterData::is2DRaster</a></div><div class="ttdeci">bool is2DRaster() const </div><div class="ttdoc">Is 2D raster data? </div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/a00509_source.html#l00559">clsRasterData.h:559</a></div></div>
+<div class="ttc" id="a00064_html_a1a8739ea690e86d56d341199d6418eb4"><div class="ttname"><a href="../../df/d5f/a00064.html#a1a8739ea690e86d56d341199d6418eb4">clsRasterData::getRange</a></div><div class="ttdeci">float getRange(int lyr=1)</div><div class="ttdoc">Get the range of raster data. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/a00509_source.html#l00388">clsRasterData.h:388</a></div></div>
+<div class="ttc" id="a00064_html_ab1c9e3329f600885728cd74b962343af"><div class="ttname"><a href="../../df/d5f/a00064.html#ab1c9e3329f600885728cd74b962343af">clsRasterData::PositionsCalculated</a></div><div class="ttdeci">bool PositionsCalculated() const </div><div class="ttdoc">Calculate positions or not. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/a00509_source.html#l00562">clsRasterData.h:562</a></div></div>
+<div class="ttc" id="a00064_html_aebc22c066499cc80170629d9d3f20db8"><div class="ttname"><a href="../../df/d5f/a00064.html#aebc22c066499cc80170629d9d3f20db8">clsRasterData::getRasterPositionDataPointer</a></div><div class="ttdeci">int ** getRasterPositionDataPointer() const </div><div class="ttdoc">Get pointer of position data. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/a00509_source.html#l00515">clsRasterData.h:515</a></div></div>
+<div class="ttc" id="a00064_html_ac2467bfa204b08f7c6600d33e3c9736e"><div class="ttname"><a href="../../df/d5f/a00064.html#ac2467bfa204b08f7c6600d33e3c9736e">clsRasterData::getNoDataValue</a></div><div class="ttdeci">T getNoDataValue() const </div><div class="ttdoc">Get NoDATA value of raster data. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/a00509_source.html#l00461">clsRasterData.h:461</a></div></div>
+<div class="ttc" id="a00064_html_ab63034a59da6a74574187653d65efe74"><div class="ttname"><a href="../../df/d5f/a00064.html#ab63034a59da6a74574187653d65efe74">clsRasterData::outputToFile</a></div><div class="ttdeci">bool outputToFile(string filename)</div><div class="ttdoc">Write raster to raster file, if 2D raster, output name will be filename_LyrNum. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/a00509_source.html#l01425">clsRasterData.h:1425</a></div></div>
+<div class="ttc" id="a00064_html_a8a0cc10f26bab559a0b00fd68a8c9a33"><div class="ttname"><a href="../../df/d5f/a00064.html#a8a0cc10f26bab559a0b00fd68a8c9a33">clsRasterData::getSRS</a></div><div class="ttdeci">const char * getSRS()</div><div class="ttdoc">Get the spatial reference. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/a00509_source.html#l00521">clsRasterData.h:521</a></div></div>
+<div class="ttc" id="a00064_html_a6993cd7c23744992e3d4c3a563d3824c"><div class="ttname"><a href="../../df/d5f/a00064.html#a6993cd7c23744992e3d4c3a563d3824c">clsRasterData::getValue</a></div><div class="ttdeci">T getValue(int row, int col, int lyr=1)</div><div class="ttdoc">Get raster data via row and col The default lyr is 1, which means the 1D raster data, or the first layer of 2D data. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/a00509_source.html#l01346">clsRasterData.h:1346</a></div></div>
+<div class="ttc" id="a00064_html_aaf507b95fc98acd0e0e471d2ca626030"><div class="ttname"><a href="../../df/d5f/a00064.html#aaf507b95fc98acd0e0e471d2ca626030">clsRasterData::getRasterPositionData</a></div><div class="ttdeci">void getRasterPositionData(int *datalength, int ***positiondata)</div><div class="ttdoc">Get position index data and the data length. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/a00509_source.html#l01294">clsRasterData.h:1294</a></div></div>
+<div class="ttc" id="a00064_html_a544b560386fd6dc6b163308bae0029b2"><div class="ttname"><a href="../../df/d5f/a00064.html#a544b560386fd6dc6b163308bae0029b2">clsRasterData::Initialized</a></div><div class="ttdeci">bool Initialized() const </div><div class="ttdoc">The instance of clsRasterData has been initialized or not. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/a00509_source.html#l00574">clsRasterData.h:574</a></div></div>
+<div class="ttc" id="a00064_html_a2f77d4d286c293a338b242c9a8073cf5"><div class="ttname"><a href="../../df/d5f/a00064.html#a2f77d4d286c293a338b242c9a8073cf5">clsRasterData::get2DRasterData</a></div><div class="ttdeci">bool get2DRasterData(int *nCells, int *nLyrs, T ***data)</div><div class="ttdoc">Get 2D raster data, include valid cell number of each layer, layer number, and data. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/a00509_source.html#l01280">clsRasterData.h:1280</a></div></div>
+<div class="ttc" id="a00064_html_a9256d4394f6fd164a310ab09cb439bb7"><div class="ttname"><a href="../../df/d5f/a00064.html#a9256d4394f6fd164a310ab09cb439bb7">clsRasterData::getXllCenter</a></div><div class="ttdeci">double getXllCenter() const </div><div class="ttdoc">Get X coordinate of left lower corner of raster data. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/a00509_source.html#l00450">clsRasterData.h:450</a></div></div>
+<div class="ttc" id="a00064_html_accd9b342516f5741e201f2f0c60e016c"><div class="ttname"><a href="../../df/d5f/a00064.html#accd9b342516f5741e201f2f0c60e016c">clsRasterData::getPosition</a></div><div class="ttdeci">int getPosition(int row, int col)</div><div class="ttdoc">Get position index in 1D raster data for specific row and column. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/a00509_source.html#l01213">clsRasterData.h:1213</a></div></div>
+<div class="ttc" id="a00064_html_acb5ab29b11ea12b4ee3113fdbb2af807"><div class="ttname"><a href="../../df/d5f/a00064.html#acb5ab29b11ea12b4ee3113fdbb2af807">clsRasterData::getRasterDataPointer</a></div><div class="ttdeci">T * getRasterDataPointer() const </div><div class="ttdoc">Get pointer of raster data. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/a00509_source.html#l00512">clsRasterData.h:512</a></div></div>
+<div class="ttc" id="a00064_html_a51dde0c5d566a9df5bea803dfc1bd9fc"><div class="ttname"><a href="../../df/d5f/a00064.html#a51dde0c5d566a9df5bea803dfc1bd9fc">clsRasterData::getMaximum</a></div><div class="ttdeci">float getMaximum(int lyr=1)</div><div class="ttdoc">Get the maximum of raster data. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/a00509_source.html#l00370">clsRasterData.h:370</a></div></div>
+<div class="ttc" id="a00064_html_a2cbbdaa07fb93c68409e8d16ad740ad6"><div class="ttname"><a href="../../df/d5f/a00064.html#a2cbbdaa07fb93c68409e8d16ad740ad6">clsRasterData::get2DRasterDataPointer</a></div><div class="ttdeci">T ** get2DRasterDataPointer() const </div><div class="ttdoc">Get pointer of 2D raster data. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/a00509_source.html#l00518">clsRasterData.h:518</a></div></div>
+<div class="ttc" id="a00064_html_aa15a1b8fd494687def95d021b6475541"><div class="ttname"><a href="../../df/d5f/a00064.html#aa15a1b8fd494687def95d021b6475541">clsRasterData::MaskExtented</a></div><div class="ttdeci">bool MaskExtented() const </div><div class="ttdoc">Use mask extent or not. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/a00509_source.html#l00568">clsRasterData.h:568</a></div></div>
+<div class="ttc" id="a00064_html_abe5a7fa09b81dd8f69c585708196d612"><div class="ttname"><a href="../../df/d5f/a00064.html#abe5a7fa09b81dd8f69c585708196d612">clsRasterData::getMask</a></div><div class="ttdeci">clsRasterData&lt; MaskT &gt; * getMask() const </div><div class="ttdoc">Get mask data pointer. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/a00509_source.html#l00625">clsRasterData.h:625</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_56b1596c4d72ede71823cdba70d715a1.html">commonlibs</a></li><li class="navelem"><a class="el" href="../../dir_6c8659227d40b2417dce38dbeff5e81f.html">MongoUtilClass</a></li><li class="navelem"><b>MongoUtil.h</b></li>
-    <li class="footer">Generated on Fri Nov 24 2017 09:10:19 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_56b1596c4d72ede71823cdba70d715a1.html">commonlibs</a></li><li class="navelem"><a class="el" href="../../dir_a738b5009a9ca0544eb950f14bd370fe.html">RasterClass</a></li><li class="navelem"><a class="el" href="../../dir_fa2ccf777db2a6858eea5f1fdca7bf97.html">test</a></li><li class="navelem"><b>Test_default-blank-ctor.cpp</b></li>
+    <li class="footer">Generated on Mon Dec 11 2017 12:43:08 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
