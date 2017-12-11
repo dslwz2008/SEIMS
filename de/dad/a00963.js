@@ -78,8 +78,8 @@ var a00963 =
     ] ],
     [ "SettingsInput", "d9/dd0/a00191.html", [
       [ "SettingsInput", "d9/dd0/a00191.html#ab25381ae2ee8ac400864fa7224bd5332", null ],
-      [ "~SettingsInput", "d9/dd0/a00191.html#a38d026eb44fabdd3fc2ceab00612b54f", null ],
-      [ "Dump", "d9/dd0/a00191.html#a6856bd165e0ea867ab60dd936ec7b99b", null ],
+      [ "~SettingsInput", "d9/dd0/a00191.html#a9458058e990fd16d220b925082607c20", null ],
+      [ "Dump", "d9/dd0/a00191.html#aeb7b9bb43f5b37d59e3cbc155589a1dd", null ],
       [ "getDtChannel", "d9/dd0/a00191.html#ad7101c381420f6ab59862b085647f21b", null ],
       [ "getDtDaily", "d9/dd0/a00191.html#a69c16babc6f91db1fb907c7045ae3e09", null ],
       [ "getDtHillslope", "d9/dd0/a00191.html#a17ed459d318f4ec26f9b3a66cfdbe3a4", null ],

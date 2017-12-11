@@ -150,11 +150,11 @@ $(document).ready(function(){initNavTree('d5/de3/a00631_source.html','../../');}
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    SettingsOutput(<span class="keywordtype">int</span> subbasinNum, <span class="keywordtype">int</span> outletID, vector&lt;OrgOutItem&gt; &amp;outputItems);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    ~SettingsOutput() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">virtual</span> ~SettingsOutput();</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">static</span> SettingsOutput *Init(<span class="keywordtype">int</span> subbasinNum, <span class="keywordtype">int</span> outletID, vector&lt;OrgOutItem&gt; &amp;outputItems);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d7/d6e/a00190.html#adc77ac14b8e27d209a3b362e678bfdbe">Dump</a>(<span class="keywordtype">string</span>&amp; filename) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d7/d6e/a00190.html#adc77ac14b8e27d209a3b362e678bfdbe">Dump</a>(<span class="keywordtype">string</span>&amp; filename);</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">void</span> checkDate(time_t, time_t);</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
@@ -176,7 +176,7 @@ $(document).ready(function(){initNavTree('d5/de3/a00631_source.html','../../');}
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_d9d8c03d94c229237348b60b53b769ac.html">base</a></li><li class="navelem"><a class="el" href="../../dir_cce2c0ac50386f26b5b526fa8626cc77.html">module_setting</a></li><li class="navelem"><b>SettingsOutput.h</b></li>
-    <li class="footer">Generated on Mon Dec 11 2017 12:43:09 for SEIMS by
+    <li class="footer">Generated on Mon Dec 11 2017 13:48:58 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

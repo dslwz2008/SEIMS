@@ -140,13 +140,13 @@ $(document).ready(function(){initNavTree('dc/d19/a00515_source.html','../../');}
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">class </span>clsRasterDataTestPosNoMask : <span class="keyword">public</span> TestWithParam&lt;const char *&gt; {</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    clsRasterDataTestPosNoMask() : rs(nullptr) {}</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    ~clsRasterDataTestPosNoMask()<span class="keyword"> override </span>{ <span class="keyword">delete</span> rs; }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> SetUp()<span class="keyword"> override </span>{</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">virtual</span> ~clsRasterDataTestPosNoMask() { <span class="keyword">delete</span> rs; }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> SetUp() {</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        rs = <a class="code" href="../../df/d5f/a00064.html#a10c6e8da422d236c805762b223db1084">clsRasterData&lt;float&gt;::Init</a>(GetParam());  <span class="comment">// recommended way</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="comment">//rs = new clsRasterData&lt;float&gt;(GetParam());  // unsafe way</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        ASSERT_NE(<span class="keyword">nullptr</span>, rs);</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> TearDown()<span class="keyword"> override </span>{</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> TearDown() {</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keyword">delete</span> rs;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        rs = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
@@ -352,7 +352,7 @@ $(document).ready(function(){initNavTree('dc/d19/a00515_source.html','../../');}
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_56b1596c4d72ede71823cdba70d715a1.html">commonlibs</a></li><li class="navelem"><a class="el" href="../../dir_a738b5009a9ca0544eb950f14bd370fe.html">RasterClass</a></li><li class="navelem"><a class="el" href="../../dir_fa2ccf777db2a6858eea5f1fdca7bf97.html">test</a></li><li class="navelem"><b>Test_1D-pos-nomask.cpp</b></li>
-    <li class="footer">Generated on Mon Dec 11 2017 12:43:08 for SEIMS by
+    <li class="footer">Generated on Mon Dec 11 2017 13:48:57 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
