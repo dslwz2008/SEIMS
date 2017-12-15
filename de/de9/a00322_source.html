@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims_linux_gcc48/seims/scenario_analysis/__init__.py Source File</title>
+<title>SEIMS: seims_linux_gcc48/seims/__init__.py Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -121,9 +121,9 @@ $(document).ready(function(){initNavTree('de/de9/a00322_source.html','../../');}
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="stringliteral">/***************************************************************************</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="stringliteral"> pySEIMS</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="stringliteral">                             Python APIs for SEIMS</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="stringliteral"> Scenario Analysis by NSGA-II algorithm of DEAP, parallellized by SCOOP</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="stringliteral"> Preprocess, postprocess, calibration, and scenario_analysis</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="stringliteral">                              -------------------</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="stringliteral">        author               : Liangjun Zhu, Huiran Gao</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="stringliteral">        author               : Liangjun Zhu, Junzhi Liu</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="stringliteral">        copyright            : (C) 2017 by Lreis, IGSNRR, CAS</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="stringliteral">        email                : zlj@lreis.ac.cn</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="stringliteral"> ******************************************************************************</span></div>
@@ -137,18 +137,18 @@ $(document).ready(function(){initNavTree('de/de9/a00322_source.html','../../');}
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="stringliteral"> ******************************************************************************/</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="stringliteral">&quot;&quot;&quot;</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;__author__ = <span class="stringliteral">&quot;Huiran Gao, Liangjun Zhu&quot;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;__description__ = <span class="stringliteral">&quot;Scenario Analysis by NSGA-II algorithm&quot;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;__version__ = <span class="stringliteral">&quot;1.1&quot;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;__revision__ = <span class="stringliteral">&quot;1.1.0&quot;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;__all__ = [<span class="stringliteral">&quot;slpposunits&quot;</span>]</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;__author__ = <span class="stringliteral">&quot;SEIMS Team&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;__version__ = <span class="stringliteral">&quot;2.1&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;__revision__ = <span class="stringliteral">&quot;2.1.1&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;__all__ = [<span class="stringliteral">&quot;preprocess&quot;</span>, <span class="stringliteral">&quot;postprocess&quot;</span>, <span class="stringliteral">&quot;calibration&quot;</span>, <span class="stringliteral">&quot;scenario_analysis&quot;</span>,</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;           <span class="stringliteral">&quot;test&quot;</span>, <span class="stringliteral">&quot;nogit&quot;</span>]</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_483bc1739a16b87563cca23e7a392c1e.html">seims_linux_gcc48</a></li><li class="navelem"><a class="el" href="../../dir_a45053e29f104e67e5be28f13679e3c2.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_a6ab78b4873b008194eded6561a8f41e.html">scenario_analysis</a></li><li class="navelem"><b>__init__.py</b></li>
-    <li class="footer">Generated on Mon Dec 11 2017 13:48:55 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_483bc1739a16b87563cca23e7a392c1e.html">seims_linux_gcc48</a></li><li class="navelem"><a class="el" href="../../dir_a45053e29f104e67e5be28f13679e3c2.html">seims</a></li><li class="navelem"><b>__init__.py</b></li>
+    <li class="footer">Generated on Fri Dec 15 2017 09:55:29 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

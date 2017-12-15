@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['base',['Base',['../dd/d11/a00960.html',1,'']]],
+  ['base',['Base',['../da/d17/a00964.html',1,'']]],
   ['basicname',['BasicName',['../db/ddf/a00164.html#a5d2574f1f2a900afdb13187151711459',1,'ParamInfo']]],
   ['basicstatistics',['basicStatistics',['../d9/d01/a00227.html#a1adfb040fbad85453cdf37d5b470def8',1,'utilsMath::basicStatistics(const T *values, int num, double **derivedvalues, T exclude=(T) NODATA_VALUE)'],['../d9/d01/a00227.html#af4da89b09885e8eef01fb10d64345aa5',1,'utilsMath::basicStatistics(const T *const *values, int num, int lyrs, double ***derivedvalues, T exclude=(T) NODATA_VALUE)']]],
   ['batchrelease1darray',['BatchRelease1DArray',['../dc/d98/a00225.html#a3f43bd0f74f9438b7ba248cec18facbb',1,'utilsArray']]],
@@ -9,7 +9,7 @@ var searchData=
   ['bc2',['bc2',['../de/de1/a00065.html#a1bcdfb2a90d6dc8a42a979a53196a9c1',1,'clsReach']]],
   ['bc3',['bc3',['../de/de1/a00065.html#a3de1b00d0c46c162320e3ffecfece7eb',1,'clsReach']]],
   ['bc4',['bc4',['../de/de1/a00065.html#aa303cfb68955721061de6d6f0f17dc02',1,'clsReach']]],
-  ['bio_5fepic',['BIO_EPIC',['../d8/d49/a00979.html',1,'']]],
+  ['bio_5fepic',['BIO_EPIC',['../d7/d98/a00983.html',1,'']]],
   ['biomass_5fepic',['Biomass_EPIC',['../d5/de0/a00050.html',1,'Biomass_EPIC'],['../d5/de0/a00050.html#a1e9ddb27730463b84e08447779b2bd38',1,'Biomass_EPIC::Biomass_EPIC()']]],
   ['bmparealsrcfactory',['BMPArealSrcFactory',['../d2/d79/a00051.html',1,'MainBMP']]],
   ['bmparealsrcfactory',['BMPArealSrcFactory',['../d2/d79/a00051.html#a8296f5d6106f28e0e99a6f7e9c5f5c2e',1,'MainBMP::BMPArealSrcFactory']]],
@@ -24,7 +24,7 @@ var searchData=
   ['bmppointsrcfactory',['BMPPointSrcFactory',['../d9/d2e/a00056.html#a2075d2309571a318c216ab47f1d5ac85',1,'MainBMP::BMPPointSrcFactory']]],
   ['bmppointsrcfactory',['BMPPointSrcFactory',['../d9/d2e/a00056.html',1,'MainBMP']]],
   ['bmppriority',['bmpPriority',['../d1/dea/a00054.html#a59a7384e669a81a974cc0fef48df242c',1,'MainBMP::BMPFactory']]],
-  ['bmps',['Bmps',['../da/d17/a00964.html',1,'']]],
+  ['bmps',['Bmps',['../d7/dd4/a00968.html',1,'']]],
   ['bmptype',['bmpType',['../d1/dea/a00054.html#ab4a0152607557d70ca21d89fafb94822',1,'MainBMP::BMPFactory']]],
   ['branchfiles',['BranchFiles',['../d6/de1/a00233.html#ade7758492a8ff054359c9dac675a307b',1,'release_docs::WikiBrancher']]],
   ['build_5fquery_5fbson',['build_query_bson',['../d2/da3/a00115.html#aaef33c01b2bb328720173a063312a48c',1,'InputStation']]],
