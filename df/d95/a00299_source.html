@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims/src/commonlibs/UtilsClass/README.md Source File</title>
+<title>SEIMS: seims/src/import_raster/README.md Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -112,43 +112,17 @@ $(document).ready(function(){initNavTree('df/d95/a00299.html','../../');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">seims/src/commonlibs/UtilsClass/README.md</div>  </div>
+<div class="title">seims/src/import_raster/README.md</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor"># UtilsClass</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span>------------</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;Utilities <span class="keyword">class</span>, including operations of string, datetime, etc.</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;Selected build environments:</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;+ Windows-MSVC 2013-64bit: [![Build status](https:<span class="comment">//ci.appveyor.com/api/projects/status/b3eu2hfca1mte3ta?svg=true)](https://ci.appveyor.com/project/lreis-2415/utilsclass)</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;+ Linux(Ubuntu trusty)-GCC-4.8: [![Build Status](http:<span class="comment">//badges.herokuapp.com/travis/lreis2415/UtilsClass?branch=master&amp;env=BUILD_NAME=linux_gcc48&amp;label=linux_gcc48)](https://travis-ci.org/lreis2415/UtilsClass)</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;+ macOS-Clang-7.3: [![Build Status](http:<span class="comment">//badges.herokuapp.com/travis/lreis2415/UtilsClass?branch=master&amp;env=BUILD_NAME=osx_xcode&amp;label=osx_clang)](https://travis-ci.org/lreis2415/UtilsClass)</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;Code coverage: [![codecov](https:<span class="comment">//codecov.io/gh/lreis2415/UtilsClass/branch/master/graph/badge.svg)](https://codecov.io/gh/lreis2415/UtilsClass)</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">## 单元测试</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor"></span>+ UtilsClass采用CMake进行跨平台编译。</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;+ UtilsClass采用[Google Test](https:<span class="comment">//github.com/google/googletest)单元测试框架。</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;+ 所有单元测试代码统一存放在`test`文件夹下，并以`Test_XX.cpp`格式命名。</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;+ 通用编译命令</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    ```shell</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    cd &lt;path-to-UtilsClass&gt;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    mkdir build</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    cd build</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    cmake .. -DUNITTEST=1</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    make</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    ./test/UnitTests_Utils</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    ```</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;+ 强烈推荐CLion，直接打开UtilsClass目录并在CMake Options中添加`-DUNITTEST=1`，</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;即可自动构建工程，方便且跨平台。</div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;Import raster data to MongoDB as GridFS.</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><b>README.md</b></li>
-    <li class="footer">Generated on Fri Dec 15 2017 09:55:29 for SEIMS by
+    <li class="footer">Generated on Mon Dec 18 2017 11:41:07 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

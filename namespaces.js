@@ -1,7 +1,7 @@
 var namespaces =
 [
-    [ "MainBMP", "dc/dfa/a00894.html", "dc/dfa/a00894" ],
+    [ "MainBMP", "d0/de2/a00892.html", "d0/de2/a00892" ],
     [ "seims", null, [
-      [ "pyseims_check", "d8/d19/a00935.html", null ]
+      [ "pyseims_check", "d0/d5b/a00933.html", null ]
     ] ]
 ];

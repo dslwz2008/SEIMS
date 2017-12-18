@@ -155,7 +155,7 @@ $(document).ready(function(){initNavTree('index.html','');});
 <li>../../master/googlemock/docs/CheatSheet.md "CheatSheet" - all the commonly used stuff at a glance.</li>
 <li>../../master/googlemock/docs/CookBook.md "CookBook" - recipes for getting things done, including advanced techniques.</li>
 </ul>
-<p>If you need help, please check the <a class="el" href="d0/da7/a00250_source.html">KnownIssues</a> and <a class="el" href="de/dbc/a00249_source.html">FrequentlyAskedQuestions</a> before posting a question on the <a href="http://groups.google.com/group/googlemock">discussion group</a>.</p>
+<p>If you need help, please check the <a class="el" href="d0/d1f/a00247_source.html">KnownIssues</a> and <a class="el" href="d4/d9a/a00246_source.html">FrequentlyAskedQuestions</a> before posting a question on the <a href="http://groups.google.com/group/googlemock">discussion group</a>.</p>
 <h3>Using Google Mock Without Google Test</h3>
 <p>Google Mock is not a testing framework itself. Instead, it needs a testing framework for writing tests. Google Mock works seamlessly with <a href="https://github.com/google/googletest">Google Test</a>, but you can also use it with <a href="../../master/googlemock/docs/ForDummies.md#using-google-mock-with-any-testing-framework">any C++ testing framework</a>.</p>
 <h3>Requirements for End Users</h3>
@@ -270,24 +270,13 @@ Library](../googletest/#choosing-a-tr1-tuple-library)".</p>
 <p>On platforms where the pthread library is available, Google Test and Google Mock use it in order to be thread-safe. For this to work, you may need to tweak your compiler and/or linker flags. Please see the "[Multi-threaded Tests](../googletest#multi-threaded-tests
 )" section in file Google Test's README for what you may need to do.</p>
 <p>If you have custom matchers defined using <code>MatcherInterface</code> or <code>MakePolymorphicMatcher()</code>, you'll need to update their definitions to use the new matcher API ( <a href="./docs/CookBook.md#writing-new-monomorphic-matchers">monomorphic</a>, <a href="./docs/CookBook.md#writing-new-polymorphic-matchers">polymorphic</a>). Matchers defined using <code>MATCHER()</code> or <code>MATCHER_P*()</code> aren't affected.</p>
-<h3>Developing Google Mock</h3>
-<p>This section discusses how to make your own changes to Google Mock.</p>
-<h4>Testing Google Mock Itself</h4>
-<p>To make sure your changes work as intended and don't break existing functionality, you'll want to compile and run Google Test's own tests. For that you'll need Autotools. First, make sure you have followed the instructions above to configure Google Mock. Then, create a build output directory and enter it. Next, </p>
-<pre class="fragment">${GMOCK_DIR}/configure  # try --help for more info
-</pre><p>Once you have successfully configured Google Mock, the build steps are standard for GNU-style OSS packages. </p>
-<pre class="fragment">make        # Standard makefile following GNU conventions
-make check  # Builds and runs all tests - all should pass.
-</pre><p>Note that when building your project against Google Mock, you are building against Google Test as well. There is no need to configure Google Test separately.</p>
-<h4>Contributing a Patch</h4>
-<p>We welcome patches. Please read the Developer's Guide for how you can contribute. In particular, make sure you have signed the Contributor License Agreement, or we won't be able to accept the patch.</p>
 <p>Happy testing! </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Dec 15 2017 09:55:36 for SEIMS by
+    <li class="footer">Generated on Mon Dec 18 2017 11:41:15 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

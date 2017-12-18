@@ -1,9 +1,7 @@
 var a00067 =
 [
-    [ "clsSimpleTxtData", "dc/ddf/a00067.html#a9890dc862e7f48c11d634165a9820553", null ],
-    [ "~clsSimpleTxtData", "dc/ddf/a00067.html#a3cb5bdab12480096e0e5e09100316fbd", null ],
-    [ "dump", "dc/ddf/a00067.html#a6b54efebcd02f985015177e44f3de4be", null ],
-    [ "getData", "dc/ddf/a00067.html#a3631ad13cb1773ca283015c078ef7229", null ],
-    [ "m_data", "dc/ddf/a00067.html#ac60fad8ef1dcc286a7b87e825714b3f9", null ],
-    [ "m_row", "dc/ddf/a00067.html#a5d47df1c4be351606574455954384264", null ]
+    [ "Get1DData", "dc/ddf/a00067.html#a1b2832f37325e31503995626135bdb67", null ],
+    [ "Set1DData", "dc/ddf/a00067.html#a06bb50257ea4080511c1d6448684f9f3", null ],
+    [ "m_Data", "dc/ddf/a00067.html#ab896e92ea639d8981eb1a16d89264f16", null ],
+    [ "m_Rows", "dc/ddf/a00067.html#ac5ce2b186049bee1f70280c20a8fee6f", null ]
 ];

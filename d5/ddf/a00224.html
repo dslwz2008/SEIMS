@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: utils Class Reference</title>
+<title>SEIMS: utilsFileIO Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -115,45 +115,73 @@ $(document).ready(function(){initNavTree('d5/ddf/a00224.html','../../');});
 <div class="header">
   <div class="summary">
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="../../d1/d0d/a01191.html">List of all members</a>  </div>
+<a href="../../d9/d2e/a01194.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">utils Class Reference</div>  </div>
+<div class="title">utilsFileIO Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Utility functions excluding time, string, math, and file IO. For example, omp thread setting.  
+<p>File Input and output related functions.  
  <a href="../../d5/ddf/a00224.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="../../dd/d72/a00541_source.html">utils.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="../../dd/d5a/a00538_source.html">utils.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a9e96f05bfee82413ee5f624b91c70bd9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9e96f05bfee82413ee5f624b91c70bd9"></a>
-static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/ddf/a00224.html#a9e96f05bfee82413ee5f624b91c70bd9">isIPAddress</a> (const char *ip)</td></tr>
-<tr class="memdesc:a9e96f05bfee82413ee5f624b91c70bd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the IP address is valid. <br/></td></tr>
-<tr class="separator:a9e96f05bfee82413ee5f624b91c70bd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3438665009c9bbe5b142e41eeb56600"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/ddf/a00224.html#ad3438665009c9bbe5b142e41eeb56600">Log</a> (string msg, string logpath=&quot;debugInfo.log&quot;)</td></tr>
-<tr class="memdesc:ad3438665009c9bbe5b142e41eeb56600"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes an entry to the log file. Normally only used for debug.  <a href="#ad3438665009c9bbe5b142e41eeb56600">More...</a><br/></td></tr>
-<tr class="separator:ad3438665009c9bbe5b142e41eeb56600"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48d1b678ed7e0ac5bb7aa483757a94a8"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/ddf/a00224.html#a48d1b678ed7e0ac5bb7aa483757a94a8">GetAvailableThreadNum</a> ()</td></tr>
-<tr class="memdesc:a48d1b678ed7e0ac5bb7aa483757a94a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detect the available threads number reference:  <a href="#a48d1b678ed7e0ac5bb7aa483757a94a8">More...</a><br/></td></tr>
-<tr class="separator:a48d1b678ed7e0ac5bb7aa483757a94a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb949c8b99b2b2a27e5dd96bae4f6c86"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/ddf/a00224.html#acb949c8b99b2b2a27e5dd96bae4f6c86">SetDefaultOpenMPThread</a> ()</td></tr>
-<tr class="memdesc:acb949c8b99b2b2a27e5dd96bae4f6c86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the default omp thread number if necessary.  <a href="#acb949c8b99b2b2a27e5dd96bae4f6c86">More...</a><br/></td></tr>
-<tr class="separator:acb949c8b99b2b2a27e5dd96bae4f6c86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b3a16894558b5be3d403608557400bf"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/ddf/a00224.html#a1b3a16894558b5be3d403608557400bf">SetOpenMPThread</a> (int n)</td></tr>
-<tr class="memdesc:a1b3a16894558b5be3d403608557400bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the omp thread number by given thread number.  <a href="#a1b3a16894558b5be3d403608557400bf">More...</a><br/></td></tr>
-<tr class="separator:a1b3a16894558b5be3d403608557400bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afbaad0573d71702f2fe7a2999280f519"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/ddf/a00224.html#afbaad0573d71702f2fe7a2999280f519">StatusMessage</a> (const char *msg)</td></tr>
-<tr class="memdesc:afbaad0573d71702f2fe7a2999280f519"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print status messages for Debug.  <a href="#afbaad0573d71702f2fe7a2999280f519">More...</a><br/></td></tr>
-<tr class="separator:afbaad0573d71702f2fe7a2999280f519"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab584be2fdb9e96ad871a432020288294"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/ddf/a00224.html#ab584be2fdb9e96ad871a432020288294">copyfile_unix</a> (const char *srcfile, const char *dstfile)</td></tr>
+<tr class="memdesc:ab584be2fdb9e96ad871a432020288294"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy file in unix-based platform.  <a href="#ab584be2fdb9e96ad871a432020288294">More...</a><br/></td></tr>
+<tr class="separator:ab584be2fdb9e96ad871a432020288294"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c8d17b69ced7da6fffc732b7bc18f55"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7c8d17b69ced7da6fffc732b7bc18f55"></a>
+static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/ddf/a00224.html#a7c8d17b69ced7da6fffc732b7bc18f55">DirectoryExists</a> (const string &amp;dirpath)</td></tr>
+<tr class="memdesc:a7c8d17b69ced7da6fffc732b7bc18f55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check the given directory path is exists or not. <br/></td></tr>
+<tr class="separator:a7c8d17b69ced7da6fffc732b7bc18f55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a054fa5bd074d8741710ea3b42bf591e5"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/ddf/a00224.html#a054fa5bd074d8741710ea3b42bf591e5">CleanDirectory</a> (const string &amp;dirpath)</td></tr>
+<tr class="memdesc:a054fa5bd074d8741710ea3b42bf591e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clean a directory if exists, otherwise create it.  <a href="#a054fa5bd074d8741710ea3b42bf591e5">More...</a><br/></td></tr>
+<tr class="separator:a054fa5bd074d8741710ea3b42bf591e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b48fe5c48a27c780c7a93ce071f7b14"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7b48fe5c48a27c780c7a93ce071f7b14"></a>
+static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/ddf/a00224.html#a7b48fe5c48a27c780c7a93ce071f7b14">DeleteDirectory</a> (const string &amp;dirpath, bool delSubdirs=true)</td></tr>
+<tr class="memdesc:a7b48fe5c48a27c780c7a93ce071f7b14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete a directory if exists.  Windows: <a href="https://stackoverflow.com/questions/734717/how-to-delete-a-folder-in-c">https://stackoverflow.com/questions/734717/how-to-delete-a-folder-in-c</a> Linux: <a href="https://www.linuxquestions.org/questions/programming-9/deleting-a-directory-using-c-in-linux-248696/">https://www.linuxquestions.org/questions/programming-9/deleting-a-directory-using-c-in-linux-248696/</a>. <br/></td></tr>
+<tr class="separator:a7b48fe5c48a27c780c7a93ce071f7b14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeaa2e7c7c5aaa9cf56fa0578cd179934"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/ddf/a00224.html#aeaa2e7c7c5aaa9cf56fa0578cd179934">GetAppPath</a> ()</td></tr>
+<tr class="memdesc:aeaa2e7c7c5aaa9cf56fa0578cd179934"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the root path of the current executable file.  <a href="#aeaa2e7c7c5aaa9cf56fa0578cd179934">More...</a><br/></td></tr>
+<tr class="separator:aeaa2e7c7c5aaa9cf56fa0578cd179934"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45dc37e886f8406e7cb94c592cfdc815"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/ddf/a00224.html#a45dc37e886f8406e7cb94c592cfdc815">GetAbsolutePath</a> (string const &amp;fullFileName)</td></tr>
+<tr class="memdesc:a45dc37e886f8406e7cb94c592cfdc815"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the absolute file path from a given file path.  <a href="#a45dc37e886f8406e7cb94c592cfdc815">More...</a><br/></td></tr>
+<tr class="separator:a45dc37e886f8406e7cb94c592cfdc815"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35aafee06a86a079621d32c415549a68"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/ddf/a00224.html#a35aafee06a86a079621d32c415549a68">GetCoreFileName</a> (string const &amp;fullFileName)</td></tr>
+<tr class="memdesc:a35aafee06a86a079621d32c415549a68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the file name from a given file's path.  <a href="#a35aafee06a86a079621d32c415549a68">More...</a><br/></td></tr>
+<tr class="separator:a35aafee06a86a079621d32c415549a68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae703f665e3cb825b7b9e7305be453cda"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/ddf/a00224.html#ae703f665e3cb825b7b9e7305be453cda">GetSuffix</a> (string const &amp;fullFileName)</td></tr>
+<tr class="memdesc:ae703f665e3cb825b7b9e7305be453cda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the suffix of a given file's path.  <a href="#ae703f665e3cb825b7b9e7305be453cda">More...</a><br/></td></tr>
+<tr class="separator:ae703f665e3cb825b7b9e7305be453cda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a742a176d4ee531c2ea08883d558946d1"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/ddf/a00224.html#a742a176d4ee531c2ea08883d558946d1">ReplaceSuffix</a> (string const &amp;fullFileName, string const &amp;newSuffix)</td></tr>
+<tr class="memdesc:a742a176d4ee531c2ea08883d558946d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace the suffix by a given suffix.  <a href="#a742a176d4ee531c2ea08883d558946d1">More...</a><br/></td></tr>
+<tr class="separator:a742a176d4ee531c2ea08883d558946d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a754808616a45ef8fe406104935975da8"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/ddf/a00224.html#a754808616a45ef8fe406104935975da8">GetPathFromFullName</a> (string const &amp;fullFileName)</td></tr>
+<tr class="memdesc:a754808616a45ef8fe406104935975da8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get Path From full file path string.  <a href="#a754808616a45ef8fe406104935975da8">More...</a><br/></td></tr>
+<tr class="separator:a754808616a45ef8fe406104935975da8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29a7158f1ddf80d78de8cc35ff83dfe5"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/ddf/a00224.html#a29a7158f1ddf80d78de8cc35ff83dfe5">FileExists</a> (string const &amp;FileName)</td></tr>
+<tr class="memdesc:a29a7158f1ddf80d78de8cc35ff83dfe5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a flag indicating if the given file exists.  <a href="#a29a7158f1ddf80d78de8cc35ff83dfe5">More...</a><br/></td></tr>
+<tr class="separator:a29a7158f1ddf80d78de8cc35ff83dfe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75962007a9d8f61a2b35e6613fa511a8"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/ddf/a00224.html#a75962007a9d8f61a2b35e6613fa511a8">PathExists</a> (string const &amp;path)</td></tr>
+<tr class="memdesc:a75962007a9d8f61a2b35e6613fa511a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a flag indicating if the given path exists.  <a href="#a75962007a9d8f61a2b35e6613fa511a8">More...</a><br/></td></tr>
+<tr class="separator:a75962007a9d8f61a2b35e6613fa511a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ded643f29557e1bbe1d0977fac2bb38"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/ddf/a00224.html#a3ded643f29557e1bbe1d0977fac2bb38">DeleteExistedFile</a> (const string &amp;filepath)</td></tr>
+<tr class="memdesc:a3ded643f29557e1bbe1d0977fac2bb38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete the given file if existed.  <a href="#a3ded643f29557e1bbe1d0977fac2bb38">More...</a><br/></td></tr>
+<tr class="separator:a3ded643f29557e1bbe1d0977fac2bb38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a578690be3252d413da04804c631cd90c"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/ddf/a00224.html#a578690be3252d413da04804c631cd90c">FindFiles</a> (const char *lpPath, const char *expression, vector&lt; string &gt; &amp;vecFiles)</td></tr>
+<tr class="memdesc:a578690be3252d413da04804c631cd90c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find files in given paths.  <a href="#a578690be3252d413da04804c631cd90c">More...</a><br/></td></tr>
+<tr class="separator:a578690be3252d413da04804c631cd90c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ce40993be826979ff1cda51e548962b"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/ddf/a00224.html#a1ce40993be826979ff1cda51e548962b">LoadPlainTextFile</a> (const string &amp;filepath, vector&lt; string &gt; &amp;contentStrs)</td></tr>
+<tr class="memdesc:a1ce40993be826979ff1cda51e548962b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load short plain text file as string vector, ignore comments begin with '#' and empty lines.  <a href="#a1ce40993be826979ff1cda51e548962b">More...</a><br/></td></tr>
+<tr class="separator:a1ce40993be826979ff1cda51e548962b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Utility functions excluding time, string, math, and file IO. For example, omp thread setting. </p>
+<div class="textblock"><p>File Input and output related functions. </p>
 
-<p>Definition at line <a class="el" href="../../dd/d72/a00541_source.html#l00722">722</a> of file <a class="el" href="../../dd/d72/a00541_source.html">utils.h</a>.</p>
+<p>Definition at line <a class="el" href="../../dd/d5a/a00538_source.html#l00597">597</a> of file <a class="el" href="../../dd/d5a/a00538_source.html">utils.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a48d1b678ed7e0ac5bb7aa483757a94a8"></a>
+<a class="anchor" id="a054fa5bd074d8741710ea3b42bf591e5"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -161,9 +189,10 @@ static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int utils::GetAvailableThreadNum </td>
+          <td class="memname">bool utilsFileIO::CleanDirectory </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>dirpath</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -174,17 +203,24 @@ static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 </table>
 </div><div class="memdoc">
 
-<p>Detect the available threads number reference: </p>
-<ol type="1">
-<li><a href="http://stackoverflow.com/questions/150355/programmatically-find-the-number-of-cores-on-a-machine">http://stackoverflow.com/questions/150355/programmatically-find-the-number-of-cores-on-a-machine</a></li>
-<li><a href="https://cmake.org/pipermail/cmake/2007-October/017286.html">https://cmake.org/pipermail/cmake/2007-October/017286.html</a> </li>
-</ol>
+<p>Clean a directory if exists, otherwise create it. </p>
+<p>empty the directory</p>
+<p>create new directory </p>
 
-<p>Definition at line <a class="el" href="../../d4/d79/a00540_source.html#l00812">812</a> of file <a class="el" href="../../d4/d79/a00540_source.html">utils.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d8/d6e/a00537_source.html#l00522">522</a> of file <a class="el" href="../../d8/d6e/a00537_source.html">utils.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d5/ddf/a00224_a054fa5bd074d8741710ea3b42bf591e5_cgraph.png" border="0" usemap="#d5/ddf/a00224_a054fa5bd074d8741710ea3b42bf591e5_cgraph" alt=""/></div>
+<map name="d5/ddf/a00224_a054fa5bd074d8741710ea3b42bf591e5_cgraph" id="d5/ddf/a00224_a054fa5bd074d8741710ea3b42bf591e5_cgraph">
+<area shape="rect" id="node2" href="../../d5/ddf/a00224.html#a45dc37e886f8406e7cb94c592cfdc815" title="Return the absolute file path from a given file path. " alt="" coords="758,49,981,78"/><area shape="rect" id="node3" href="../../d5/ddf/a00224.html#a7c8d17b69ced7da6fffc732b7bc18f55" title="Check the given directory path is exists or not. " alt="" coords="265,25,474,54"/><area shape="rect" id="node4" href="../../d5/ddf/a00224.html#a578690be3252d413da04804c631cd90c" title="Find files in given paths. " alt="" coords="285,102,454,131"/><area shape="rect" id="node5" href="../../d5/ddf/a00224.html#ae703f665e3cb825b7b9e7305be453cda" title="Return the suffix of a given file&#39;s path. " alt="" coords="533,126,699,155"/><area shape="rect" id="node7" href="../../dc/d55/a00226.html#ae06d2920296a29303fb9797c599c9a6f" title="Match char ignore cases. " alt="" coords="523,179,709,209"/><area shape="rect" id="node6" href="../../dc/d55/a00226.html#a29fc5b049e9afc2916c30f7e2c75ef74" title="Splits the given string by spaces. " alt="" coords="782,126,957,155"/></map>
+</div>
+</p>
 
 </div>
 </div>
-<a class="anchor" id="ad3438665009c9bbe5b142e41eeb56600"></a>
+<a class="anchor" id="ab584be2fdb9e96ad871a432020288294"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -192,16 +228,16 @@ static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void utils::Log </td>
+          <td class="memname">int utilsFileIO::copyfile_unix </td>
           <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>msg</em>, </td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>srcfile</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>logpath</em> = <code>&quot;debugInfo.log&quot;</code>&#160;</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>dstfile</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -216,20 +252,20 @@ static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 </table>
 </div><div class="memdoc">
 
-<p>Writes an entry to the log file. Normally only used for debug. </p>
+<p>Copy file in unix-based platform. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">msg</td><td><em>string</em> log message </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">logpath</td><td><em>string</em> Optional </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">srcfile</td><td><em>char</em> source file path </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dstfile</td><td><em>char</em> destination file path </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="../../d4/d79/a00540_source.html#l00788">788</a> of file <a class="el" href="../../d4/d79/a00540_source.html">utils.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d8/d6e/a00537_source.html#l00370">370</a> of file <a class="el" href="../../d8/d6e/a00537_source.html">utils.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="acb949c8b99b2b2a27e5dd96bae4f6c86"></a>
+<a class="anchor" id="a3ded643f29557e1bbe1d0977fac2bb38"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -237,7 +273,183 @@ static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void utils::SetDefaultOpenMPThread </td>
+          <td class="memname">int utilsFileIO::DeleteExistedFile </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>filepath</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Delete the given file if existed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">filepath</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if deleted successful, else return nonzero value, e.g. -1. </dd></dl>
+
+<p>Definition at line <a class="el" href="../../d8/d6e/a00537_source.html#l00440">440</a> of file <a class="el" href="../../d8/d6e/a00537_source.html">utils.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d5/ddf/a00224_a3ded643f29557e1bbe1d0977fac2bb38_cgraph.png" border="0" usemap="#d5/ddf/a00224_a3ded643f29557e1bbe1d0977fac2bb38_cgraph" alt=""/></div>
+<map name="d5/ddf/a00224_a3ded643f29557e1bbe1d0977fac2bb38_cgraph" id="d5/ddf/a00224_a3ded643f29557e1bbe1d0977fac2bb38_cgraph">
+<area shape="rect" id="node2" href="../../d5/ddf/a00224.html#a45dc37e886f8406e7cb94c592cfdc815" title="Return the absolute file path from a given file path. " alt="" coords="283,5,506,35"/><area shape="rect" id="node3" href="../../d5/ddf/a00224.html#a29a7158f1ddf80d78de8cc35ff83dfe5" title="Return a flag indicating if the given file exists. " alt="" coords="309,59,481,88"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a29a7158f1ddf80d78de8cc35ff83dfe5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool utilsFileIO::FileExists </td>
+          <td>(</td>
+          <td class="paramtype">string const &amp;&#160;</td>
+          <td class="paramname"><em>FileName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return a flag indicating if the given file exists. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">FileName</td><td>String path of file </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if Exists, and false if not. </dd></dl>
+
+<p>Definition at line <a class="el" href="../../d8/d6e/a00537_source.html#l00409">409</a> of file <a class="el" href="../../d8/d6e/a00537_source.html">utils.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a578690be3252d413da04804c631cd90c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int utilsFileIO::FindFiles </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>lpPath</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>expression</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">vector&lt; string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>vecFiles</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Find files in given paths. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">lpPath,expression</td><td></td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">vecFiles</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 means success </dd></dl>
+
+<p>Definition at line <a class="el" href="../../d8/d6e/a00537_source.html#l00449">449</a> of file <a class="el" href="../../d8/d6e/a00537_source.html">utils.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d5/ddf/a00224_a578690be3252d413da04804c631cd90c_cgraph.png" border="0" usemap="#d5/ddf/a00224_a578690be3252d413da04804c631cd90c_cgraph" alt=""/></div>
+<map name="d5/ddf/a00224_a578690be3252d413da04804c631cd90c_cgraph" id="d5/ddf/a00224_a578690be3252d413da04804c631cd90c_cgraph">
+<area shape="rect" id="node2" href="../../d5/ddf/a00224.html#a45dc37e886f8406e7cb94c592cfdc815" title="Return the absolute file path from a given file path. " alt="" coords="459,5,682,35"/><area shape="rect" id="node3" href="../../d5/ddf/a00224.html#ae703f665e3cb825b7b9e7305be453cda" title="Return the suffix of a given file&#39;s path. " alt="" coords="234,57,401,87"/><area shape="rect" id="node5" href="../../dc/d55/a00226.html#ae06d2920296a29303fb9797c599c9a6f" title="Match char ignore cases. " alt="" coords="224,111,411,140"/><area shape="rect" id="node4" href="../../dc/d55/a00226.html#a29fc5b049e9afc2916c30f7e2c75ef74" title="Splits the given string by spaces. " alt="" coords="483,59,658,88"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a45dc37e886f8406e7cb94c592cfdc815"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string utilsFileIO::GetAbsolutePath </td>
+          <td>(</td>
+          <td class="paramtype">string const &amp;&#160;</td>
+          <td class="paramname"><em>fullFileName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the absolute file path from a given file path. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">fullFileName</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>absolutePath </dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../d5/ddf/a00224.html#a754808616a45ef8fe406104935975da8" title="Get Path From full file path string. ">GetPathFromFullName</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="../../d8/d6e/a00537_source.html#l00675">675</a> of file <a class="el" href="../../d8/d6e/a00537_source.html">utils.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aeaa2e7c7c5aaa9cf56fa0578cd179934"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string utilsFileIO::GetAppPath </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -250,14 +462,14 @@ static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 </table>
 </div><div class="memdoc">
 
-<p>Set the default omp thread number if necessary. </p>
-<p>do nothing if OMP is not supported </p>
+<p>Get the root path of the current executable file. </p>
+<dl class="section return"><dt>Returns</dt><dd><em>string</em> root path </dd></dl>
 
-<p>Definition at line <a class="el" href="../../d4/d79/a00540_source.html#l00849">849</a> of file <a class="el" href="../../d4/d79/a00540_source.html">utils.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d8/d6e/a00537_source.html#l00639">639</a> of file <a class="el" href="../../d8/d6e/a00537_source.html">utils.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a1b3a16894558b5be3d403608557400bf"></a>
+<a class="anchor" id="a35aafee06a86a079621d32c415549a68"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -265,10 +477,10 @@ static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void utils::SetOpenMPThread </td>
+          <td class="memname">string utilsFileIO::GetCoreFileName </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>n</em></td><td>)</td>
+          <td class="paramtype">string const &amp;&#160;</td>
+          <td class="paramname"><em>fullFileName</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -279,14 +491,30 @@ static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 </table>
 </div><div class="memdoc">
 
-<p>Set the omp thread number by given thread number. </p>
-<p>do nothing if OMP is not supported </p>
+<p>Return the file name from a given file's path. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">fullFileName</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>CoreFileName </dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../d5/ddf/a00224.html#a754808616a45ef8fe406104935975da8" title="Get Path From full file path string. ">GetPathFromFullName</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="../../d4/d79/a00540_source.html#l00860">860</a> of file <a class="el" href="../../d4/d79/a00540_source.html">utils.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d8/d6e/a00537_source.html#l00686">686</a> of file <a class="el" href="../../d8/d6e/a00537_source.html">utils.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d5/ddf/a00224_a35aafee06a86a079621d32c415549a68_cgraph.png" border="0" usemap="#d5/ddf/a00224_a35aafee06a86a079621d32c415549a68_cgraph" alt=""/></div>
+<map name="d5/ddf/a00224_a35aafee06a86a079621d32c415549a68_cgraph" id="d5/ddf/a00224_a35aafee06a86a079621d32c415549a68_cgraph">
+<area shape="rect" id="node2" href="../../d5/ddf/a00224.html#a45dc37e886f8406e7cb94c592cfdc815" title="Return the absolute file path from a given file path. " alt="" coords="286,4,509,33"/></map>
+</div>
+</p>
 
 </div>
 </div>
-<a class="anchor" id="afbaad0573d71702f2fe7a2999280f519"></a>
+<a class="anchor" id="a754808616a45ef8fe406104935975da8"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -294,10 +522,10 @@ static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void utils::StatusMessage </td>
+          <td class="memname">string utilsFileIO::GetPathFromFullName </td>
           <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>msg</em></td><td>)</td>
+          <td class="paramtype">string const &amp;&#160;</td>
+          <td class="paramname"><em>fullFileName</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -308,24 +536,239 @@ static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 </table>
 </div><div class="memdoc">
 
-<p>Print status messages for Debug. </p>
-<p>Just for debugging /// </p>
+<p>Get Path From full file path string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">fullFileName</td><td><em>string</em> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>filePath string </dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../d5/ddf/a00224.html#a35aafee06a86a079621d32c415549a68" title="Return the file name from a given file&#39;s path. ">GetCoreFileName</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="../../d4/d79/a00540_source.html#l00867">867</a> of file <a class="el" href="../../d4/d79/a00540_source.html">utils.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d8/d6e/a00537_source.html#l00714">714</a> of file <a class="el" href="../../d8/d6e/a00537_source.html">utils.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d5/ddf/a00224_a754808616a45ef8fe406104935975da8_cgraph.png" border="0" usemap="#d5/ddf/a00224_a754808616a45ef8fe406104935975da8_cgraph" alt=""/></div>
+<map name="d5/ddf/a00224_a754808616a45ef8fe406104935975da8_cgraph" id="d5/ddf/a00224_a754808616a45ef8fe406104935975da8_cgraph">
+<area shape="rect" id="node2" href="../../d5/ddf/a00224.html#a45dc37e886f8406e7cb94c592cfdc815" title="Return the absolute file path from a given file path. " alt="" coords="251,13,474,43"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae703f665e3cb825b7b9e7305be453cda"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string utilsFileIO::GetSuffix </td>
+          <td>(</td>
+          <td class="paramtype">string const &amp;&#160;</td>
+          <td class="paramname"><em>fullFileName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the suffix of a given file's path. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">fullFileName</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Suffix </dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../d5/ddf/a00224.html#a754808616a45ef8fe406104935975da8" title="Get Path From full file path string. ">GetPathFromFullName</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="../../d8/d6e/a00537_source.html#l00696">696</a> of file <a class="el" href="../../d8/d6e/a00537_source.html">utils.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d5/ddf/a00224_ae703f665e3cb825b7b9e7305be453cda_cgraph.png" border="0" usemap="#d5/ddf/a00224_ae703f665e3cb825b7b9e7305be453cda_cgraph" alt=""/></div>
+<map name="d5/ddf/a00224_ae703f665e3cb825b7b9e7305be453cda_cgraph" id="d5/ddf/a00224_ae703f665e3cb825b7b9e7305be453cda_cgraph">
+<area shape="rect" id="node2" href="../../d5/ddf/a00224.html#a45dc37e886f8406e7cb94c592cfdc815" title="Return the absolute file path from a given file path. " alt="" coords="222,5,445,35"/><area shape="rect" id="node3" href="../../dc/d55/a00226.html#a29fc5b049e9afc2916c30f7e2c75ef74" title="Splits the given string by spaces. " alt="" coords="246,59,421,88"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a1ce40993be826979ff1cda51e548962b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool utilsFileIO::LoadPlainTextFile </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>filepath</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">vector&lt; string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>contentStrs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Load short plain text file as string vector, ignore comments begin with '#' and empty lines. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">filepath</td><td>Plain text file path </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">contentStrs</td><td>Each line without CRLF or LF stored in vector </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True when read successfully, and false with empty contentStrs when failed </dd></dl>
+
+<p>Definition at line <a class="el" href="../../d8/d6e/a00537_source.html#l00724">724</a> of file <a class="el" href="../../d8/d6e/a00537_source.html">utils.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d5/ddf/a00224_a1ce40993be826979ff1cda51e548962b_cgraph.png" border="0" usemap="#d5/ddf/a00224_a1ce40993be826979ff1cda51e548962b_cgraph" alt=""/></div>
+<map name="d5/ddf/a00224_a1ce40993be826979ff1cda51e548962b_cgraph" id="d5/ddf/a00224_a1ce40993be826979ff1cda51e548962b_cgraph">
+<area shape="rect" id="node2" href="../../d5/ddf/a00224.html#a45dc37e886f8406e7cb94c592cfdc815" title="Return the absolute file path from a given file path. " alt="" coords="289,5,511,35"/><area shape="rect" id="node3" href="../../dc/d55/a00226.html#a41b3085ee9d2b67824196f0d1a6b22b0" title="Trim given string&#39;s heading and tailing by &quot;&lt;space&gt;,\n,\t,\r&quot;. " alt="" coords="337,59,463,88"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a75962007a9d8f61a2b35e6613fa511a8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool utilsFileIO::PathExists </td>
+          <td>(</td>
+          <td class="paramtype">string const &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return a flag indicating if the given path exists. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">path</td><td>String path </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if Exists, and false if not. </dd></dl>
+
+<p>Definition at line <a class="el" href="../../d8/d6e/a00537_source.html#l00426">426</a> of file <a class="el" href="../../d8/d6e/a00537_source.html">utils.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d5/ddf/a00224_a75962007a9d8f61a2b35e6613fa511a8_cgraph.png" border="0" usemap="#d5/ddf/a00224_a75962007a9d8f61a2b35e6613fa511a8_cgraph" alt=""/></div>
+<map name="d5/ddf/a00224_a75962007a9d8f61a2b35e6613fa511a8_cgraph" id="d5/ddf/a00224_a75962007a9d8f61a2b35e6613fa511a8_cgraph">
+<area shape="rect" id="node2" href="../../d5/ddf/a00224.html#a45dc37e886f8406e7cb94c592cfdc815" title="Return the absolute file path from a given file path. " alt="" coords="233,4,455,33"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a742a176d4ee531c2ea08883d558946d1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string utilsFileIO::ReplaceSuffix </td>
+          <td>(</td>
+          <td class="paramtype">string const &amp;&#160;</td>
+          <td class="paramname"><em>fullFileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string const &amp;&#160;</td>
+          <td class="paramname"><em>newSuffix</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Replace the suffix by a given suffix. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">fullFileName</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">newSuffix</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>new fullFileName </dd></dl>
+
+<p>Definition at line <a class="el" href="../../d8/d6e/a00537_source.html#l00706">706</a> of file <a class="el" href="../../d8/d6e/a00537_source.html">utils.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d5/ddf/a00224_a742a176d4ee531c2ea08883d558946d1_cgraph.png" border="0" usemap="#d5/ddf/a00224_a742a176d4ee531c2ea08883d558946d1_cgraph" alt=""/></div>
+<map name="d5/ddf/a00224_a742a176d4ee531c2ea08883d558946d1_cgraph" id="d5/ddf/a00224_a742a176d4ee531c2ea08883d558946d1_cgraph">
+<area shape="rect" id="node2" href="../../d5/ddf/a00224.html#a754808616a45ef8fe406104935975da8" title="Get Path From full file path string. " alt="" coords="273,5,471,51"/><area shape="rect" id="node4" href="../../d5/ddf/a00224.html#a35aafee06a86a079621d32c415549a68" title="Return the file name from a given file&#39;s path. " alt="" coords="256,76,488,105"/><area shape="rect" id="node5" href="../../d5/ddf/a00224.html#ae703f665e3cb825b7b9e7305be453cda" title="Return the suffix of a given file&#39;s path. " alt="" coords="289,129,455,159"/><area shape="rect" id="node3" href="../../d5/ddf/a00224.html#a45dc37e886f8406e7cb94c592cfdc815" title="Return the absolute file path from a given file path. " alt="" coords="537,76,759,105"/><area shape="rect" id="node6" href="../../dc/d55/a00226.html#a29fc5b049e9afc2916c30f7e2c75ef74" title="Splits the given string by spaces. " alt="" coords="561,129,735,159"/></map>
+</div>
+</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>seims/src/commonlibs/UtilsClass/<a class="el" href="../../dd/d72/a00541_source.html">utils.h</a></li>
-<li>seims/src/commonlibs/UtilsClass/<a class="el" href="../../d4/d79/a00540_source.html">utils.cpp</a></li>
+<li>seims/src/commonlibs/UtilsClass/<a class="el" href="../../dd/d5a/a00538_source.html">utils.h</a></li>
+<li>seims/src/commonlibs/UtilsClass/<a class="el" href="../../d8/d6e/a00537_source.html">utils.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../d5/ddf/a00224.html">utils</a></li>
-    <li class="footer">Generated on Fri Dec 15 2017 09:55:36 for SEIMS by
+    <li class="navelem"><a class="el" href="../../d5/ddf/a00224.html">utilsFileIO</a></li>
+    <li class="footer">Generated on Mon Dec 18 2017 11:41:14 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

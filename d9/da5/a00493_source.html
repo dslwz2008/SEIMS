@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims_linux_gcc48/seims/scenario_analysis/utility.py Source File</title>
+<title>SEIMS: seims/run_seims.py Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -112,84 +112,69 @@ $(document).ready(function(){initNavTree('d9/da5/a00493_source.html','../../');}
 
 <div class="header">
   <div class="headertitle">
-<div class="title">utility.py</div>  </div>
+<div class="title">run_seims.py</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">#! /usr/bin/env python</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"># -*- coding: utf-8 -*-</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="stringliteral">&quot;&quot;&quot;Utility functions and classes for scenario analysis.</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="stringliteral">    @author   : Huiran Gao, Liangjun Zhu</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="stringliteral">    @changelog: 16-11-08  hr - initial implementation.\n</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="stringliteral">                17-08-18  lj - reorganization.\n</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="stringliteral">  Run SEIMS model.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="stringliteral">  Author: Liangjun Zhu</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="stringliteral">  Date: 2017-12-7</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="stringliteral">&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">import</span> os</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">import</span> sys</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keywordflow">if</span> os.path.abspath(os.path.join(sys.path[0], <span class="stringliteral">&#39;..&#39;</span>)) <span class="keywordflow">not</span> <span class="keywordflow">in</span> sys.path:</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    sys.path.append(os.path.abspath(os.path.join(sys.path[0], <span class="stringliteral">&#39;..&#39;</span>)))</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">import</span> shutil</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">import</span> uuid</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">import</span> scoop</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">from</span> preprocess.db_mongodb <span class="keyword">import</span> ConnectMongoDB</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">from</span> <a class="code" href="../../d9/db0/a00900.html">pygeoc.utils</a> <span class="keyword">import</span> MathClass</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">def </span>generate_uniqueid():</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;Generate unique integer ID for Scenario using uuid.</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="stringliteral">    Usage:</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="stringliteral">        uniqueid = generate_uniqueid().next()</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="stringliteral">    &quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    uid = int(str(uuid.uuid4().fields[-1])[:9])</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">while</span> <span class="keyword">True</span>:</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">yield</span> uid</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        uid += 1</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">import</span> os</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">from</span> subprocess <span class="keyword">import</span> CalledProcessError</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">from</span> <a class="code" href="../../d2/d79/a00898.html">pygeoc.utils</a> <span class="keyword">import</span> UtilClass</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="../../df/dcd/a00127.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../df/dcd/a00127.html">MainSEIMS</a>(object):</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="stringliteral">    Main entrance to SEIMS model.</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="stringliteral">    &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">def </span>__init__(self, bin_dir, model_dir, nthread=4, lyrmtd=0,</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                 ip=<span class="stringliteral">&#39;127.0.0.1&#39;</span>, port=27017, sceid=0, ver=<span class="stringliteral">&#39;OMP&#39;</span>):</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordflow">if</span> ver == <span class="stringliteral">&#39;MPI&#39;</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            self.<a class="code" href="../../df/dcd/a00127.html#adbb55d98990c7b0ae76a817d8257845f">seims_exec</a> = bin_dir + os.sep + <span class="stringliteral">&#39;seims_mpi&#39;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            self.<a class="code" href="../../df/dcd/a00127.html#adbb55d98990c7b0ae76a817d8257845f">seims_exec</a> = bin_dir + os.sep + <span class="stringliteral">&#39;seims_omp&#39;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        self.<a class="code" href="../../df/dcd/a00127.html#ad36c0cd84d27f8e014220001bf49ef62">model_dir</a> = model_dir</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        self.<a class="code" href="../../df/dcd/a00127.html#a863bec43c74fd5a5caa87e1ec99ef8f9">nthread</a> = nthread</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        self.<a class="code" href="../../df/dcd/a00127.html#a2bf0bd9c9b448f8cc2f0578335feb320">lyrmtd</a> = lyrmtd</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        self.<a class="code" href="../../df/dcd/a00127.html#af9848b5f1c5fe6568d59a59f8025651d">host</a> = ip</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        self.<a class="code" href="../../df/dcd/a00127.html#aac46a4ce834fb795a9057ab77f4681cf">port</a> = port</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        self.<a class="code" href="../../df/dcd/a00127.html#acc2d1f0223cdc6556465a82022020a15">scenario</a> = sceid</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        self.<a class="code" href="../../df/dcd/a00127.html#aac42a941bf7859e17203b9d7c0211f1f">version</a> = ver</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        self.<a class="code" href="../../df/dcd/a00127.html#a4bfa231cfde15ebf9bad13eebfbc5981">run_success</a> = <span class="keyword">False</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">def </span>print_message(msg):</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">if</span> os.name != <span class="stringliteral">&#39;nt&#39;</span>:</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        scoop.logger.warn(msg)</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">else</span>:</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">print</span> (msg)</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">def </span>delete_scenarios_by_ids(hostname, port, dbname, sids):</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;Delete scenario data by ID in MongoDB.&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    client = ConnectMongoDB(hostname, port)</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    conn = client.get_conn()</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    db = conn[dbname]</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    collection = db[<span class="stringliteral">&#39;BMP_SCENARIOS&#39;</span>]</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">for</span> _id <span class="keywordflow">in</span> sids:</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        collection.remove({<span class="stringliteral">&#39;ID&#39;</span>: _id})</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">print</span> (<span class="stringliteral">&#39;Delete scenario: %d in MongoDB completed!&#39;</span> % _id)</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    client.close()</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">def </span>delete_model_outputs(model_workdir, hostname, port, dbname):</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;Delete model outputs and scenario in MongoDB.&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    f_list = os.listdir(model_workdir)</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment"># print f_list</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    sids = list()</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">for</span> f <span class="keywordflow">in</span> f_list:</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        outfilename = model_workdir + os.sep + f</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">if</span> os.path.isdir(outfilename):</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordflow">if</span> len(f) &gt; 9:</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <span class="keywordflow">if</span> MathClass.isnumerical(f[-9:]):</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                    shutil.rmtree(outfilename)</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                    sid = int(f[-9:])</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                    sids.append(sid)</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">if</span> len(sids) &gt; 0:</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        delete_scenarios_by_ids(hostname, port, dbname, sids)</div>
-<div class="ttc" id="a00900_html"><div class="ttname"><a href="../../d9/db0/a00900.html">utils</a></div></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">def </span>run(self):</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        cmd_str = <span class="stringliteral">&#39;%s %s %d %d %s %d %d&#39;</span> % (self.<a class="code" href="../../df/dcd/a00127.html#adbb55d98990c7b0ae76a817d8257845f">seims_exec</a>, self.<a class="code" href="../../df/dcd/a00127.html#ad36c0cd84d27f8e014220001bf49ef62">model_dir</a>, self.<a class="code" href="../../df/dcd/a00127.html#a863bec43c74fd5a5caa87e1ec99ef8f9">nthread</a>,</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                                            self.<a class="code" href="../../df/dcd/a00127.html#a2bf0bd9c9b448f8cc2f0578335feb320">lyrmtd</a>, self.<a class="code" href="../../df/dcd/a00127.html#af9848b5f1c5fe6568d59a59f8025651d">host</a>, self.<a class="code" href="../../df/dcd/a00127.html#aac46a4ce834fb795a9057ab77f4681cf">port</a>, self.<a class="code" href="../../df/dcd/a00127.html#acc2d1f0223cdc6556465a82022020a15">scenario</a>)</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">try</span>:</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            UtilClass.run_command(cmd_str)</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            self.<a class="code" href="../../df/dcd/a00127.html#a4bfa231cfde15ebf9bad13eebfbc5981">run_success</a> = <span class="keyword">True</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordflow">except</span> CalledProcessError <span class="keywordflow">or</span> Exception:</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keywordflow">print</span> (<span class="stringliteral">&#39;Run SEIMS model failed!&#39;</span>)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            self.<a class="code" href="../../df/dcd/a00127.html#a4bfa231cfde15ebf9bad13eebfbc5981">run_success</a> = <span class="keyword">False</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">return</span> self.<a class="code" href="../../df/dcd/a00127.html#a4bfa231cfde15ebf9bad13eebfbc5981">run_success</a></div>
+<div class="ttc" id="a00127_html_ad36c0cd84d27f8e014220001bf49ef62"><div class="ttname"><a href="../../df/dcd/a00127.html#ad36c0cd84d27f8e014220001bf49ef62">seims.run_seims.MainSEIMS.model_dir</a></div><div class="ttdeci">model_dir</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/da5/a00493_source.html#l00024">run_seims.py:24</a></div></div>
+<div class="ttc" id="a00127_html"><div class="ttname"><a href="../../df/dcd/a00127.html">seims.run_seims.MainSEIMS</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d9/da5/a00493_source.html#l00013">run_seims.py:13</a></div></div>
+<div class="ttc" id="a00127_html_af9848b5f1c5fe6568d59a59f8025651d"><div class="ttname"><a href="../../df/dcd/a00127.html#af9848b5f1c5fe6568d59a59f8025651d">seims.run_seims.MainSEIMS.host</a></div><div class="ttdeci">host</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/da5/a00493_source.html#l00027">run_seims.py:27</a></div></div>
+<div class="ttc" id="a00127_html_adbb55d98990c7b0ae76a817d8257845f"><div class="ttname"><a href="../../df/dcd/a00127.html#adbb55d98990c7b0ae76a817d8257845f">seims.run_seims.MainSEIMS.seims_exec</a></div><div class="ttdeci">seims_exec</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/da5/a00493_source.html#l00021">run_seims.py:21</a></div></div>
+<div class="ttc" id="a00127_html_aac46a4ce834fb795a9057ab77f4681cf"><div class="ttname"><a href="../../df/dcd/a00127.html#aac46a4ce834fb795a9057ab77f4681cf">seims.run_seims.MainSEIMS.port</a></div><div class="ttdeci">port</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/da5/a00493_source.html#l00028">run_seims.py:28</a></div></div>
+<div class="ttc" id="a00127_html_aac42a941bf7859e17203b9d7c0211f1f"><div class="ttname"><a href="../../df/dcd/a00127.html#aac42a941bf7859e17203b9d7c0211f1f">seims.run_seims.MainSEIMS.version</a></div><div class="ttdeci">version</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/da5/a00493_source.html#l00030">run_seims.py:30</a></div></div>
+<div class="ttc" id="a00127_html_a2bf0bd9c9b448f8cc2f0578335feb320"><div class="ttname"><a href="../../df/dcd/a00127.html#a2bf0bd9c9b448f8cc2f0578335feb320">seims.run_seims.MainSEIMS.lyrmtd</a></div><div class="ttdeci">lyrmtd</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/da5/a00493_source.html#l00026">run_seims.py:26</a></div></div>
+<div class="ttc" id="a00898_html"><div class="ttname"><a href="../../d2/d79/a00898.html">utils</a></div></div>
+<div class="ttc" id="a00127_html_acc2d1f0223cdc6556465a82022020a15"><div class="ttname"><a href="../../df/dcd/a00127.html#acc2d1f0223cdc6556465a82022020a15">seims.run_seims.MainSEIMS.scenario</a></div><div class="ttdeci">scenario</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/da5/a00493_source.html#l00029">run_seims.py:29</a></div></div>
+<div class="ttc" id="a00127_html_a863bec43c74fd5a5caa87e1ec99ef8f9"><div class="ttname"><a href="../../df/dcd/a00127.html#a863bec43c74fd5a5caa87e1ec99ef8f9">seims.run_seims.MainSEIMS.nthread</a></div><div class="ttdeci">nthread</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/da5/a00493_source.html#l00025">run_seims.py:25</a></div></div>
+<div class="ttc" id="a00127_html_a4bfa231cfde15ebf9bad13eebfbc5981"><div class="ttname"><a href="../../df/dcd/a00127.html#a4bfa231cfde15ebf9bad13eebfbc5981">seims.run_seims.MainSEIMS.run_success</a></div><div class="ttdeci">run_success</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/da5/a00493_source.html#l00031">run_seims.py:31</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_483bc1739a16b87563cca23e7a392c1e.html">seims_linux_gcc48</a></li><li class="navelem"><a class="el" href="../../dir_a45053e29f104e67e5be28f13679e3c2.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_a6ab78b4873b008194eded6561a8f41e.html">scenario_analysis</a></li><li class="navelem"><b>utility.py</b></li>
-    <li class="footer">Generated on Fri Dec 15 2017 09:55:31 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><b>run_seims.py</b></li>
+    <li class="footer">Generated on Mon Dec 18 2017 11:41:10 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

@@ -1,20 +1,16 @@
 var a00054 =
 [
-    [ "BMPFactory", "d1/dea/a00054.html#a7219ebfd8442ee0e7123d06886e88ffd", null ],
-    [ "~BMPFactory", "d1/dea/a00054.html#ae2b6ca163103a4566cbed4417cd5becf", null ],
-    [ "bmpPriority", "d1/dea/a00054.html#a59a7384e669a81a974cc0fef48df242c", null ],
-    [ "bmpType", "d1/dea/a00054.html#ab4a0152607557d70ca21d89fafb94822", null ],
-    [ "Dump", "d1/dea/a00054.html#a6076fb64d01de5f66056b9dab2b2d8f0", null ],
-    [ "getRasterData", "d1/dea/a00054.html#a08ef94b57b12fa06bff11aae736de102", null ],
-    [ "GetSubScenarioId", "d1/dea/a00054.html#afd05fd06a9ad8d639988194566fd64ae", null ],
-    [ "loadBMP", "d1/dea/a00054.html#ad929112a33a93587a1a9eb7ea0b259df", null ],
-    [ "setRasterData", "d1/dea/a00054.html#a1fd368560f401941e0c67e15de17fe9a", null ],
-    [ "m_bmpCollection", "d1/dea/a00054.html#a43cb16434d2caa7245ebca352a950f62", null ],
-    [ "m_bmpId", "d1/dea/a00054.html#a2847aac6ff859f70fcdb4330e35e6a60", null ],
-    [ "m_bmpPriority", "d1/dea/a00054.html#acc76edc7053f0e396c9984bf229f5e7b", null ],
-    [ "m_bmpType", "d1/dea/a00054.html#a227caa35587f18299d857d9b1a2b4bad", null ],
-    [ "m_distribution", "d1/dea/a00054.html#aa349b6776b9754eae4096f7608ae09a0", null ],
-    [ "m_location", "d1/dea/a00054.html#a8f0264c0b8732258fffed5395f10de0e", null ],
-    [ "m_scenarioId", "d1/dea/a00054.html#a29f21807a3a3185e6d94cb0296a09a5c", null ],
-    [ "m_subScenarioId", "d1/dea/a00054.html#a779426b1e43efb2835af551d0ba98285", null ]
+    [ "BMPPointSrcFactory", "d1/dea/a00054.html#a2075d2309571a318c216ab47f1d5ac85", null ],
+    [ "~BMPPointSrcFactory", "d1/dea/a00054.html#a855a9adfcd9e87e5e548b379eee5e9f7", null ],
+    [ "Dump", "d1/dea/a00054.html#ae104f57487b6582e36a525f3ddd3f3f9", null ],
+    [ "loadBMP", "d1/dea/a00054.html#a5f1b8bf0be27add974ddca1380cbc5b6", null ],
+    [ "ReadPointSourceLocations", "d1/dea/a00054.html#a00dd7e00d4e6b52394014bd79afb71b4", null ],
+    [ "ReadPointSourceManagements", "d1/dea/a00054.html#a33cff88a565b727800b9683bb31d23f8", null ],
+    [ "m_pointSrc", "d1/dea/a00054.html#aa9659202207c7ab6cccebd22bb5c8cbf", null ],
+    [ "m_pointSrcDistTab", "d1/dea/a00054.html#aabc09e9823e06780ca9bb94e82cdfe78", null ],
+    [ "m_pointSrcIDs", "d1/dea/a00054.html#a76bdd3fb6e14a9854447ecaa454de28c", null ],
+    [ "m_pointSrcLocsMap", "d1/dea/a00054.html#a2c2f10751d48bd7f6696ac0bd3dc0fd0", null ],
+    [ "m_pointSrcMgtMap", "d1/dea/a00054.html#a0b41fda0a47b9101c10ebcd47a6d537a", null ],
+    [ "m_pointSrcMgtSeqs", "d1/dea/a00054.html#ae590ca3ab41a36931cba253aeb1f28e1", null ],
+    [ "m_pointSrcMgtTab", "d1/dea/a00054.html#a6a2ff89e33f61e0b0ef8e70931fe1525", null ]
 ];

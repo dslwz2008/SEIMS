@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: PGCommon Class Reference</title>
+<title>SEIMS: MainBMP::PlantManagement::PlantOperation Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -115,64 +115,124 @@ $(document).ready(function(){initNavTree('d6/dfb/a00172.html','../../');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="../../de/df1/a01151.html">List of all members</a>  </div>
+<a href="../../d8/ddf/a01238.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">PGCommon Class Reference<div class="ingroups"><a class="el" href="../../d3/dcd/a00965.html">Data</a></div></div>  </div>
+<div class="title">MainBMP::PlantManagement::PlantOperation Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>A basic class for plant growth modules using a simplified version of EPIC model.  
+<p>Plant management operation.  
  <a href="../../d6/dfb/a00172.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="../../de/d85/a00618_source.html">PlantGrowthCommon.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="../../d6/da3/a00589_source.html">PlantManagementOperation.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for MainBMP::PlantManagement::PlantOperation:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d7/dbf/a01239.png" border="0" usemap="#_main_b_m_p_1_1_plant_management_1_1_plant_operation_inherit__map" alt="Inheritance graph"/></div>
+<map name="_main_b_m_p_1_1_plant_management_1_1_plant_operation_inherit__map" id="_main_b_m_p_1_1_plant_management_1_1_plant_operation_inherit__map">
+<area shape="rect" id="node2" href="../../d1/d0d/a00171.html" title="Base class of plant management operation. " alt="" coords="5,5,259,333"/></map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a7eb595f5b7aab25c84300a310be4d282"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7eb595f5b7aab25c84300a310be4d282"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dfb/a00172.html#a7eb595f5b7aab25c84300a310be4d282">PGCommon</a> ()=default</td></tr>
-<tr class="memdesc:a7eb595f5b7aab25c84300a310be4d282"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. <br/></td></tr>
-<tr class="separator:a7eb595f5b7aab25c84300a310be4d282"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a027121d98342ddbe6fea685c3e559a4a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a027121d98342ddbe6fea685c3e559a4a"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dfb/a00172.html#a027121d98342ddbe6fea685c3e559a4a">~PGCommon</a> ()=default</td></tr>
-<tr class="memdesc:a027121d98342ddbe6fea685c3e559a4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br/></td></tr>
-<tr class="separator:a027121d98342ddbe6fea685c3e559a4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3ad78c0195c484e8965af08f5daa329"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dfb/a00172.html#af3ad78c0195c484e8965af08f5daa329">PlantOperation</a> (int mgtOp, bool usebaseHU, float husc, int year, int month, int day, float *parameters)</td></tr>
+<tr class="memdesc:af3ad78c0195c484e8965af08f5daa329"><td class="mdescLeft">&#160;</td><td class="mdescRight">Plant.  <a href="#af3ad78c0195c484e8965af08f5daa329">More...</a><br/></td></tr>
+<tr class="separator:af3ad78c0195c484e8965af08f5daa329"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc771d02de94e8756ecd92533dd0b3c3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acc771d02de94e8756ecd92533dd0b3c3"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dfb/a00172.html#acc771d02de94e8756ecd92533dd0b3c3">dump</a> (ostream *fs)</td></tr>
+<tr class="memdesc:acc771d02de94e8756ecd92533dd0b3c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output. <br/></td></tr>
+<tr class="separator:acc771d02de94e8756ecd92533dd0b3c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_a00171"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a00171')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d1/d0d/a00171.html">MainBMP::PlantManagement::PlantManagementOperation</a></td></tr>
+<tr class="memitem:a08d0d690cddb5bae8e7143f54cf0f05b inherit pub_methods_a00171"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d0d/a00171.html#a08d0d690cddb5bae8e7143f54cf0f05b">PlantManagementOperation</a> (int mgtOp, bool usebaseHU, float husc, int year, int month, int day, float *parameters)</td></tr>
+<tr class="memdesc:a08d0d690cddb5bae8e7143f54cf0f05b inherit pub_methods_a00171"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a08d0d690cddb5bae8e7143f54cf0f05b">More...</a><br/></td></tr>
+<tr class="separator:a08d0d690cddb5bae8e7143f54cf0f05b inherit pub_methods_a00171"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec133ad95d038925c7dab891140bab4f inherit pub_methods_a00171"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aec133ad95d038925c7dab891140bab4f"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d0d/a00171.html#aec133ad95d038925c7dab891140bab4f">~PlantManagementOperation</a> ()=default</td></tr>
+<tr class="memdesc:aec133ad95d038925c7dab891140bab4f inherit pub_methods_a00171"><td class="mdescLeft">&#160;</td><td class="mdescRight">virtual Destructor, there are no allocated memory to release! <br/></td></tr>
+<tr class="separator:aec133ad95d038925c7dab891140bab4f inherit pub_methods_a00171"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a7e75f09a7df9bba3726b4635fec20e51"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dfb/a00172.html#a7e75f09a7df9bba3726b4635fec20e51">calPlantStressByLimitedNP</a> (float u1, float u2, float *uu)</td></tr>
-<tr class="memdesc:a7e75f09a7df9bba3726b4635fec20e51"><td class="mdescLeft">&#160;</td><td class="mdescRight">added by Liang-Jun Zhu, 2016-6-8  <a href="#a7e75f09a7df9bba3726b4635fec20e51">More...</a><br/></td></tr>
-<tr class="separator:a7e75f09a7df9bba3726b4635fec20e51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_attribs_a00171"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_a00171')"><img src="../../closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="../../d1/d0d/a00171.html">MainBMP::PlantManagement::PlantManagementOperation</a></td></tr>
+<tr class="memitem:ac88dbda51aa7da05257c03993d4ec409 inherit pro_attribs_a00171"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac88dbda51aa7da05257c03993d4ec409"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d0d/a00171.html#ac88dbda51aa7da05257c03993d4ec409">m_useBaseHUSC</a></td></tr>
+<tr class="memdesc:ac88dbda51aa7da05257c03993d4ec409 inherit pro_attribs_a00171"><td class="mdescLeft">&#160;</td><td class="mdescRight">use base hu or plant accumulated hu <br/></td></tr>
+<tr class="separator:ac88dbda51aa7da05257c03993d4ec409 inherit pro_attribs_a00171"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a205d1060e4e5de5d5aeaffb0298964ab inherit pro_attribs_a00171"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a205d1060e4e5de5d5aeaffb0298964ab"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d0d/a00171.html#a205d1060e4e5de5d5aeaffb0298964ab">m_frHU</a></td></tr>
+<tr class="memdesc:a205d1060e4e5de5d5aeaffb0298964ab inherit pro_attribs_a00171"><td class="mdescLeft">&#160;</td><td class="mdescRight">husc <br/></td></tr>
+<tr class="separator:a205d1060e4e5de5d5aeaffb0298964ab inherit pro_attribs_a00171"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac45a30a11d48c2d1148f6aa2ee031c77 inherit pro_attribs_a00171"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac45a30a11d48c2d1148f6aa2ee031c77"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d0d/a00171.html#ac45a30a11d48c2d1148f6aa2ee031c77">m_year</a></td></tr>
+<tr class="memdesc:ac45a30a11d48c2d1148f6aa2ee031c77 inherit pro_attribs_a00171"><td class="mdescLeft">&#160;</td><td class="mdescRight">year <br/></td></tr>
+<tr class="separator:ac45a30a11d48c2d1148f6aa2ee031c77 inherit pro_attribs_a00171"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af32ba3fa08dbddf3c43c5ca929df123a inherit pro_attribs_a00171"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af32ba3fa08dbddf3c43c5ca929df123a"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d0d/a00171.html#af32ba3fa08dbddf3c43c5ca929df123a">m_month</a></td></tr>
+<tr class="memdesc:af32ba3fa08dbddf3c43c5ca929df123a inherit pro_attribs_a00171"><td class="mdescLeft">&#160;</td><td class="mdescRight">month <br/></td></tr>
+<tr class="separator:af32ba3fa08dbddf3c43c5ca929df123a inherit pro_attribs_a00171"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86dbd0fc98db4de521727bb621a591a4 inherit pro_attribs_a00171"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a86dbd0fc98db4de521727bb621a591a4"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d0d/a00171.html#a86dbd0fc98db4de521727bb621a591a4">m_day</a></td></tr>
+<tr class="memdesc:a86dbd0fc98db4de521727bb621a591a4 inherit pro_attribs_a00171"><td class="mdescLeft">&#160;</td><td class="mdescRight">day <br/></td></tr>
+<tr class="separator:a86dbd0fc98db4de521727bb621a591a4 inherit pro_attribs_a00171"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15bc6209cedadf38c05d77d0a74658d6 inherit pro_attribs_a00171"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a15bc6209cedadf38c05d77d0a74658d6"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d0d/a00171.html#a15bc6209cedadf38c05d77d0a74658d6">m_mgtOp</a></td></tr>
+<tr class="memdesc:a15bc6209cedadf38c05d77d0a74658d6 inherit pro_attribs_a00171"><td class="mdescLeft">&#160;</td><td class="mdescRight">management operation code <br/></td></tr>
+<tr class="separator:a15bc6209cedadf38c05d77d0a74658d6 inherit pro_attribs_a00171"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22a357d2e84820f077517403342ef061 inherit pro_attribs_a00171"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a22a357d2e84820f077517403342ef061"></a>
+float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d0d/a00171.html#a22a357d2e84820f077517403342ef061">m_parameters</a></td></tr>
+<tr class="memdesc:a22a357d2e84820f077517403342ef061 inherit pro_attribs_a00171"><td class="mdescLeft">&#160;</td><td class="mdescRight">parameters, mgt1~mgt10 <br/></td></tr>
+<tr class="separator:a22a357d2e84820f077517403342ef061 inherit pro_attribs_a00171"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A basic class for plant growth modules using a simplified version of EPIC model. </p>
+<div class="textblock"><p>Plant management operation. </p>
 
-<p>Definition at line <a class="el" href="../../de/d85/a00618_source.html#l00024">24</a> of file <a class="el" href="../../de/d85/a00618_source.html">PlantGrowthCommon.h</a>.</p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a7e75f09a7df9bba3726b4635fec20e51"></a>
+<p>Definition at line <a class="el" href="../../d6/da3/a00589_source.html#l00078">78</a> of file <a class="el" href="../../d6/da3/a00589_source.html">PlantManagementOperation.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="af3ad78c0195c484e8965af08f5daa329"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void PGCommon::calPlantStressByLimitedNP </td>
+          <td class="memname">PlantOperation::PlantOperation </td>
           <td>(</td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>u1</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>mgtOp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>usebaseHU</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>u2</em>, </td>
+          <td class="paramname"><em>husc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>year</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>month</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>day</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">float *&#160;</td>
-          <td class="paramname"><em>uu</em>&#160;</td>
+          <td class="paramname"><em>parameters</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -180,31 +240,26 @@ Static Public Member Functions</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>added by Liang-Jun Zhu, 2016-6-8 </p>
-<p>calculates the plant stress factor caused by limited supply of nitrogen or phosphorus from ntus.f of SWAT, rev 637 </p>
+<p>Plant. </p>
+<p>tons/ha =&gt; kg/ha </p>
 
-<p>Definition at line <a class="el" href="../../d4/dc4/a00617_source.html#l00055">55</a> of file <a class="el" href="../../d4/dc4/a00617_source.html">PlantGrowthCommon.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d8/d2e/a00588_source.html#l00014">14</a> of file <a class="el" href="../../d8/d2e/a00588_source.html">PlantManagementOperation.cpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>seims/src/seims_main/base/data/<a class="el" href="../../de/d85/a00618_source.html">PlantGrowthCommon.h</a></li>
-<li>seims/src/seims_main/base/data/<a class="el" href="../../d4/dc4/a00617_source.html">PlantGrowthCommon.cpp</a></li>
+<li>seims/src/seims_main/base/bmps/<a class="el" href="../../d6/da3/a00589_source.html">PlantManagementOperation.h</a></li>
+<li>seims/src/seims_main/base/bmps/<a class="el" href="../../d8/d2e/a00588_source.html">PlantManagementOperation.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../d6/dfb/a00172.html">PGCommon</a></li>
-    <li class="footer">Generated on Fri Dec 15 2017 09:55:36 for SEIMS by
+    <li class="navelem"><a class="el" href="../../d0/de2/a00892.html">MainBMP</a></li><li class="navelem"><a class="el" href="../../dc/d2c/a00893.html">PlantManagement</a></li><li class="navelem"><a class="el" href="../../d6/dfb/a00172.html">PlantOperation</a></li>
+    <li class="footer">Generated on Mon Dec 18 2017 11:41:15 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
