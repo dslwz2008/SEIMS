@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims/src/seims_main/base/data/NutrientCommon.cpp Source File</title>
+<title>SEIMS: seims/src/seims_main/base/data/clsReach.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -112,37 +112,81 @@ $(document).ready(function(){initNavTree('da/d6e/a00610_source.html','../../');}
 
 <div class="header">
   <div class="headertitle">
-<div class="title">NutrientCommon.cpp</div>  </div>
+<div class="title">clsReach.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;NutrientCommon.h&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="../../d3/d65/a00154.html#a5bd3575c6ad1a946cb9ec440927ef95e">    4</a></span>&#160;<span class="keywordtype">float</span> <a class="code" href="../../d3/d65/a00154.html#a5bd3575c6ad1a946cb9ec440927ef95e">NutrCommon::CalEnrichmentRatio</a>(<span class="keywordtype">float</span> sedyld, <span class="keywordtype">float</span> surfq, <span class="keywordtype">float</span> area) {</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keywordflow">if</span> (surfq &lt; UTIL_ZERO || sedyld &lt; 0.1f) {</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;        <span class="keywordflow">return</span> 0.f;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    }</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="comment">// CREAMS method for calculating enrichment ratio</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordtype">float</span> cy = 0.f, enratio = 0.f;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="comment">// Calculate sediment concentration, equation 4:2.2.3 and 4:2.2.4 in SWAT Theory 2009, p272</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    cy = sedyld / 1000.f / (10.f * area * surfq + 1.e-6f); </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">if</span> (cy &gt; 1.e-6f) {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        enratio = 0.78f * pow(cy, -0.2468f);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        enratio = 0.f;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    }</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">if</span> (enratio &gt; 3.5f) enratio = 3.5f;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">return</span> enratio;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
-<div class="ttc" id="a00154_html_a5bd3575c6ad1a946cb9ec440927ef95e"><div class="ttname"><a href="../../d3/d65/a00154.html#a5bd3575c6ad1a946cb9ec440927ef95e">NutrCommon::CalEnrichmentRatio</a></div><div class="ttdeci">static float CalEnrichmentRatio(float sedyld, float surfq, float area)</div><div class="ttdoc">Calculate enrichment ratio for nutrient transport with runoff and sediment enrsb.f of SWAT...</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d6e/a00610_source.html#l00004">NutrientCommon.cpp:4</a></div></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#ifndef SEIMS_REACH_CLS_H</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SEIMS_REACH_CLS_H</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;seims.h&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;ParamInfo.h&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;MongoUtil.h&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="../../d1/d6f/a00063.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d1/d6f/a00063.html">clsReach</a> {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="../../d1/d6f/a00063.html">clsReach</a>(<span class="keyword">const</span> bson_t *&amp;bsonTab);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    ~<a class="code" href="../../d1/d6f/a00063.html">clsReach</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">float</span> Get(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;key);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> Set(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;key, <span class="keywordtype">float</span> value);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="../../d1/d6f/a00063.html#a4a5a4db4e4be836a3759cd2cfca1aa6d">   44</a></span>&#160;    map&lt;string, float&gt; <a class="code" href="../../d1/d6f/a00063.html#a4a5a4db4e4be836a3759cd2cfca1aa6d">m_paramMap</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;};</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="../../df/d5f/a00064.html">   54</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../df/d5f/a00064.html">clsReaches</a> {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="../../df/d5f/a00064.html">clsReaches</a>(MongoClient *conn, <span class="keywordtype">string</span> &amp;dbName, <span class="keywordtype">string</span> collectionName);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    ~<a class="code" href="../../df/d5f/a00064.html">clsReaches</a>();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="../../df/d5f/a00064.html#a17293258a41c5dfb9c5c4439b12a35ab">   68</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="../../d1/d6f/a00063.html">clsReach</a> *<a class="code" href="../../df/d5f/a00064.html#a17293258a41c5dfb9c5c4439b12a35ab">GetReachByID</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>) {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">if</span> (m_reachesMap.find(<span class="keywordtype">id</span>) != m_reachesMap.end()) { <span class="keywordflow">return</span> m_reachesMap.at(<span class="keywordtype">id</span>); }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">else</span> { <span class="keywordflow">return</span> <span class="keyword">nullptr</span>; }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="../../df/d5f/a00064.html#a2c7915b93c49d8482aea4dd059b1cdb2">   74</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../df/d5f/a00064.html#a2c7915b93c49d8482aea4dd059b1cdb2">GetReachNumber</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> this-&gt;m_reachNum; }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">void</span> GetReachesSingleProperty(<span class="keywordtype">string</span> key, <span class="keywordtype">float</span> **data);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="../../df/d5f/a00064.html#aca40d476d6a14bb094d2bcefd1eb457a">   83</a></span>&#160;    vector&lt;vector&lt;int&gt; &gt; <a class="code" href="../../df/d5f/a00064.html#aca40d476d6a14bb094d2bcefd1eb457a">GetUpStreamIDs</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_reachUpStream; }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    map&lt;int, vector&lt;int&gt; &gt; GetReachLayers(LayeringMethod mtd = UP_DOWN);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">void</span> Update(<span class="keyword">const</span> map&lt;string, ParamInfo *&gt; &amp;caliparams_map);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="../../df/d5f/a00064.html#a117f5587922d8fbd78e3a9ca81eef0bd">   95</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../df/d5f/a00064.html#a117f5587922d8fbd78e3a9ca81eef0bd">m_reachNum</a>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="../../df/d5f/a00064.html#a71111bd57400f7b9abfcb2e632fcf023">  101</a></span>&#160;    vector&lt;vector&lt;int&gt; &gt; <a class="code" href="../../df/d5f/a00064.html#a71111bd57400f7b9abfcb2e632fcf023">m_reachUpStream</a>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="../../df/d5f/a00064.html#a588dcadce70c495129aa7dd636ac5748">  105</a></span>&#160;    map&lt;int, vector&lt;int&gt; &gt; <a class="code" href="../../df/d5f/a00064.html#a588dcadce70c495129aa7dd636ac5748">m_reachLayers</a>;</div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="../../df/d5f/a00064.html#a4b4705b4deb3732264ae4219a05b7797">  111</a></span>&#160;    map&lt;int, clsReach *&gt; <a class="code" href="../../df/d5f/a00064.html#a4b4705b4deb3732264ae4219a05b7797">m_reachesMap</a>;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="../../df/d5f/a00064.html#aeeec98ab06cd29df33a09f38dc5638ca">  116</a></span>&#160;    map&lt;string, float *&gt; <a class="code" href="../../df/d5f/a00064.html#aeeec98ab06cd29df33a09f38dc5638ca">m_reachesPropMap</a>;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;};</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SEIMS_REACH_CLS_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="a00064_html"><div class="ttname"><a href="../../df/d5f/a00064.html">clsReaches</a></div><div class="ttdoc">Read and store all reaches information as input parameters. </div><div class="ttdef"><b>Definition:</b> <a href="../../da/d6e/a00610_source.html#l00054">clsReach.h:54</a></div></div>
+<div class="ttc" id="a00064_html_a2c7915b93c49d8482aea4dd059b1cdb2"><div class="ttname"><a href="../../df/d5f/a00064.html#a2c7915b93c49d8482aea4dd059b1cdb2">clsReaches::GetReachNumber</a></div><div class="ttdeci">int GetReachNumber() const </div><div class="ttdoc">Get reach number. </div><div class="ttdef"><b>Definition:</b> <a href="../../da/d6e/a00610_source.html#l00074">clsReach.h:74</a></div></div>
+<div class="ttc" id="a00063_html"><div class="ttname"><a href="../../d1/d6f/a00063.html">clsReach</a></div><div class="ttdoc">Class to store reach related parameters from REACHES table. </div><div class="ttdef"><b>Definition:</b> <a href="../../da/d6e/a00610_source.html#l00024">clsReach.h:24</a></div></div>
+<div class="ttc" id="a00064_html_a71111bd57400f7b9abfcb2e632fcf023"><div class="ttname"><a href="../../df/d5f/a00064.html#a71111bd57400f7b9abfcb2e632fcf023">clsReaches::m_reachUpStream</a></div><div class="ttdeci">vector&lt; vector&lt; int &gt; &gt; m_reachUpStream</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d6e/a00610_source.html#l00101">clsReach.h:101</a></div></div>
+<div class="ttc" id="a00064_html_a4b4705b4deb3732264ae4219a05b7797"><div class="ttname"><a href="../../df/d5f/a00064.html#a4b4705b4deb3732264ae4219a05b7797">clsReaches::m_reachesMap</a></div><div class="ttdeci">map&lt; int, clsReach * &gt; m_reachesMap</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d6e/a00610_source.html#l00111">clsReach.h:111</a></div></div>
+<div class="ttc" id="a00063_html_a4a5a4db4e4be836a3759cd2cfca1aa6d"><div class="ttname"><a href="../../d1/d6f/a00063.html#a4a5a4db4e4be836a3759cd2cfca1aa6d">clsReach::m_paramMap</a></div><div class="ttdeci">map&lt; string, float &gt; m_paramMap</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d6e/a00610_source.html#l00044">clsReach.h:44</a></div></div>
+<div class="ttc" id="a00064_html_aeeec98ab06cd29df33a09f38dc5638ca"><div class="ttname"><a href="../../df/d5f/a00064.html#aeeec98ab06cd29df33a09f38dc5638ca">clsReaches::m_reachesPropMap</a></div><div class="ttdeci">map&lt; string, float * &gt; m_reachesPropMap</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d6e/a00610_source.html#l00116">clsReach.h:116</a></div></div>
+<div class="ttc" id="a00064_html_a117f5587922d8fbd78e3a9ca81eef0bd"><div class="ttname"><a href="../../df/d5f/a00064.html#a117f5587922d8fbd78e3a9ca81eef0bd">clsReaches::m_reachNum</a></div><div class="ttdeci">int m_reachNum</div><div class="ttdoc">reaches number </div><div class="ttdef"><b>Definition:</b> <a href="../../da/d6e/a00610_source.html#l00095">clsReach.h:95</a></div></div>
+<div class="ttc" id="a00064_html_a17293258a41c5dfb9c5c4439b12a35ab"><div class="ttname"><a href="../../df/d5f/a00064.html#a17293258a41c5dfb9c5c4439b12a35ab">clsReaches::GetReachByID</a></div><div class="ttdeci">clsReach * GetReachByID(int id)</div><div class="ttdoc">Get single reach information by subbasin ID (1 ~ N) </div><div class="ttdef"><b>Definition:</b> <a href="../../da/d6e/a00610_source.html#l00068">clsReach.h:68</a></div></div>
+<div class="ttc" id="a00064_html_aca40d476d6a14bb094d2bcefd1eb457a"><div class="ttname"><a href="../../df/d5f/a00064.html#aca40d476d6a14bb094d2bcefd1eb457a">clsReaches::GetUpStreamIDs</a></div><div class="ttdeci">vector&lt; vector&lt; int &gt; &gt; GetUpStreamIDs() const </div><div class="ttdoc">Get upstream IDs. </div><div class="ttdef"><b>Definition:</b> <a href="../../da/d6e/a00610_source.html#l00083">clsReach.h:83</a></div></div>
+<div class="ttc" id="a00064_html_a588dcadce70c495129aa7dd636ac5748"><div class="ttname"><a href="../../df/d5f/a00064.html#a588dcadce70c495129aa7dd636ac5748">clsReaches::m_reachLayers</a></div><div class="ttdeci">map&lt; int, vector&lt; int &gt; &gt; m_reachLayers</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d6e/a00610_source.html#l00105">clsReach.h:105</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_d9d8c03d94c229237348b60b53b769ac.html">base</a></li><li class="navelem"><a class="el" href="../../dir_24d0af58b2644ad205aa9a0d9adbb65a.html">data</a></li><li class="navelem"><b>NutrientCommon.cpp</b></li>
-    <li class="footer">Generated on Mon Dec 18 2017 11:41:11 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_d9d8c03d94c229237348b60b53b769ac.html">base</a></li><li class="navelem"><a class="el" href="../../dir_24d0af58b2644ad205aa9a0d9adbb65a.html">data</a></li><li class="navelem"><b>clsReach.h</b></li>
+    <li class="footer">Generated on Tue Jan 2 2018 00:55:52 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

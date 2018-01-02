@@ -1,5 +1,6 @@
 var a00096 =
 [
-    [ "HarvestKillOperation", "d9/df8/a00096.html#a1682b0931a5ddc0388939934bf8ebfc8", null ],
-    [ "dump", "d9/df8/a00096.html#a444c492c0a3521720d3ba70162e6cda4", null ]
+    [ "_GetChildren", "d9/df8/a00096.html#a62782ce4495c635a4319915c09fed587", null ],
+    [ "AssertEquivalentNodes", "d9/df8/a00096.html#aa9870c94fd69ef82f102dbd51eaf32b3", null ],
+    [ "NormalizeXml", "d9/df8/a00096.html#a9daed073a0d6d82c5f7b58b10683db28", null ]
 ];

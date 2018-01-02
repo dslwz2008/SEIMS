@@ -116,20 +116,20 @@ $(document).ready(function(){initNavTree('df/d5f/a00064.html','../../');});
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
-<a href="../../de/d9e/a01061.html">List of all members</a>  </div>
+<a href="../../d2/d4d/a01079.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">clsReaches Class Reference<div class="ingroups"><a class="el" href="../../d2/d6e/a00966.html">Data</a></div></div>  </div>
+<div class="title">clsReaches Class Reference<div class="ingroups"><a class="el" href="../../d2/d4c/a00984.html">Data</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
 <p>Read and store all reaches information as input parameters.  
  <a href="../../df/d5f/a00064.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="../../d8/dbd/a00597_source.html">clsReach.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="../../da/d6e/a00610_source.html">clsReach.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2754aac3afd7db4cc6e836408f0ade8f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d5f/a00064.html#a2754aac3afd7db4cc6e836408f0ade8f">clsReaches</a> (<a class="el" href="../../d2/d82/a00142.html">MongoClient</a> *conn, string &amp;dbName, string collectionName)</td></tr>
+<tr class="memitem:a2754aac3afd7db4cc6e836408f0ade8f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d5f/a00064.html#a2754aac3afd7db4cc6e836408f0ade8f">clsReaches</a> (<a class="el" href="../../d5/da7/a00144.html">MongoClient</a> *conn, string &amp;dbName, string collectionName)</td></tr>
 <tr class="memdesc:a2754aac3afd7db4cc6e836408f0ade8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor, query reach table from MongoDB.  <a href="#a2754aac3afd7db4cc6e836408f0ade8f">More...</a><br/></td></tr>
 <tr class="separator:a2754aac3afd7db4cc6e836408f0ade8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab53547bb1ed55bfff10b4e9f7dfc320c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab53547bb1ed55bfff10b4e9f7dfc320c"></a>
@@ -138,20 +138,27 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab53547bb1ed55bfff10b4e9f7dfc320c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17293258a41c5dfb9c5c4439b12a35ab"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a17293258a41c5dfb9c5c4439b12a35ab"></a>
 <a class="el" href="../../d1/d6f/a00063.html">clsReach</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d5f/a00064.html#a17293258a41c5dfb9c5c4439b12a35ab">GetReachByID</a> (int id)</td></tr>
-<tr class="memdesc:a17293258a41c5dfb9c5c4439b12a35ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get single reach information by subbasin ID. <br/></td></tr>
+<tr class="memdesc:a17293258a41c5dfb9c5c4439b12a35ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get single reach information by subbasin ID (1 ~ N) <br/></td></tr>
 <tr class="separator:a17293258a41c5dfb9c5c4439b12a35ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c7915b93c49d8482aea4dd059b1cdb2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2c7915b93c49d8482aea4dd059b1cdb2"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d5f/a00064.html#a2c7915b93c49d8482aea4dd059b1cdb2">GetReachNumber</a> () const </td></tr>
 <tr class="memdesc:a2c7915b93c49d8482aea4dd059b1cdb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get reach number. <br/></td></tr>
 <tr class="separator:a2c7915b93c49d8482aea4dd059b1cdb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad61adb1581f7693f9ff4ee6d7fd8694c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad61adb1581f7693f9ff4ee6d7fd8694c"></a>
-vector&lt; int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d5f/a00064.html#ad61adb1581f7693f9ff4ee6d7fd8694c">GetReachIDs</a> ()</td></tr>
-<tr class="memdesc:ad61adb1581f7693f9ff4ee6d7fd8694c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get reach IDs (vector) <br/></td></tr>
-<tr class="separator:ad61adb1581f7693f9ff4ee6d7fd8694c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ac42c032cfc32845207c11479367b68"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8ac42c032cfc32845207c11479367b68"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d5f/a00064.html#a8ac42c032cfc32845207c11479367b68">GetReachesSingleProperty</a> (const char *key, float **data)</td></tr>
-<tr class="memdesc:a8ac42c032cfc32845207c11479367b68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get 1D array of reach property  Implement later. LJ. <br/></td></tr>
-<tr class="separator:a8ac42c032cfc32845207c11479367b68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57053a729471cda4823e3cd08362d923"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d5f/a00064.html#a57053a729471cda4823e3cd08362d923">GetReachesSingleProperty</a> (string key, float **data)</td></tr>
+<tr class="memdesc:a57053a729471cda4823e3cd08362d923"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get 1D array of reach property.  <a href="#a57053a729471cda4823e3cd08362d923">More...</a><br/></td></tr>
+<tr class="separator:a57053a729471cda4823e3cd08362d923"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca40d476d6a14bb094d2bcefd1eb457a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aca40d476d6a14bb094d2bcefd1eb457a"></a>
+vector&lt; vector&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d5f/a00064.html#aca40d476d6a14bb094d2bcefd1eb457a">GetUpStreamIDs</a> () const </td></tr>
+<tr class="memdesc:aca40d476d6a14bb094d2bcefd1eb457a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get upstream IDs. <br/></td></tr>
+<tr class="separator:aca40d476d6a14bb094d2bcefd1eb457a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac426ea6548ee593b0830bb9d050c66ef"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac426ea6548ee593b0830bb9d050c66ef"></a>
+map&lt; int, vector&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d5f/a00064.html#ac426ea6548ee593b0830bb9d050c66ef">GetReachLayers</a> (LayeringMethod mtd=UP_DOWN)</td></tr>
+<tr class="memdesc:ac426ea6548ee593b0830bb9d050c66ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get map of reach layers. <br/></td></tr>
+<tr class="separator:ac426ea6548ee593b0830bb9d050c66ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad04f6616b4b88abe2430b95a45f5ce2e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad04f6616b4b88abe2430b95a45f5ce2e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d5f/a00064.html#ad04f6616b4b88abe2430b95a45f5ce2e">Update</a> (const map&lt; string, <a class="el" href="../../db/ddf/a00164.html">ParamInfo</a> * &gt; &amp;caliparams_map)</td></tr>
+<tr class="memdesc:ad04f6616b4b88abe2430b95a45f5ce2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update reach/channel parameters according to calibration settings. <br/></td></tr>
+<tr class="separator:ad04f6616b4b88abe2430b95a45f5ce2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -159,19 +166,19 @@ Private Attributes</h2></td></tr>
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d5f/a00064.html#a117f5587922d8fbd78e3a9ca81eef0bd">m_reachNum</a></td></tr>
 <tr class="memdesc:a117f5587922d8fbd78e3a9ca81eef0bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">reaches number <br/></td></tr>
 <tr class="separator:a117f5587922d8fbd78e3a9ca81eef0bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad1fd9b346df408f7fec90b74f2ab633"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aad1fd9b346df408f7fec90b74f2ab633"></a>
-vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d5f/a00064.html#aad1fd9b346df408f7fec90b74f2ab633">m_reachIDs</a></td></tr>
-<tr class="memdesc:aad1fd9b346df408f7fec90b74f2ab633"><td class="mdescLeft">&#160;</td><td class="mdescRight">reach IDs <br/></td></tr>
-<tr class="separator:aad1fd9b346df408f7fec90b74f2ab633"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71111bd57400f7b9abfcb2e632fcf023"><td class="memItemLeft" align="right" valign="top">vector&lt; vector&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d5f/a00064.html#a71111bd57400f7b9abfcb2e632fcf023">m_reachUpStream</a></td></tr>
+<tr class="separator:a71111bd57400f7b9abfcb2e632fcf023"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a588dcadce70c495129aa7dd636ac5748"><td class="memItemLeft" align="right" valign="top">map&lt; int, vector&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d5f/a00064.html#a588dcadce70c495129aa7dd636ac5748">m_reachLayers</a></td></tr>
+<tr class="separator:a588dcadce70c495129aa7dd636ac5748"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b4705b4deb3732264ae4219a05b7797"><td class="memItemLeft" align="right" valign="top">map&lt; int, <a class="el" href="../../d1/d6f/a00063.html">clsReach</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d5f/a00064.html#a4b4705b4deb3732264ae4219a05b7797">m_reachesMap</a></td></tr>
 <tr class="separator:a4b4705b4deb3732264ae4219a05b7797"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc60bf8d7d713af679058ab86dc973f9"><td class="memItemLeft" align="right" valign="top">float **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d5f/a00064.html#afc60bf8d7d713af679058ab86dc973f9">m_reachesProperties</a></td></tr>
-<tr class="separator:afc60bf8d7d713af679058ab86dc973f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeeec98ab06cd29df33a09f38dc5638ca"><td class="memItemLeft" align="right" valign="top">map&lt; string, float * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d5f/a00064.html#aeeec98ab06cd29df33a09f38dc5638ca">m_reachesPropMap</a></td></tr>
+<tr class="separator:aeeec98ab06cd29df33a09f38dc5638ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Read and store all reaches information as input parameters. </p>
 
-<p>Definition at line <a class="el" href="../../d8/dbd/a00597_source.html#l00221">221</a> of file <a class="el" href="../../d8/dbd/a00597_source.html">clsReach.h</a>.</p>
+<p>Definition at line <a class="el" href="../../da/d6e/a00610_source.html#l00054">54</a> of file <a class="el" href="../../da/d6e/a00610_source.html">clsReach.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a2754aac3afd7db4cc6e836408f0ade8f"></a>
 <div class="memitem">
@@ -180,7 +187,7 @@ vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class=
         <tr>
           <td class="memname">clsReaches::clsReaches </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d2/d82/a00142.html">MongoClient</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d5/da7/a00144.html">MongoClient</a> *&#160;</td>
           <td class="paramname"><em>conn</em>, </td>
         </tr>
         <tr>
@@ -206,7 +213,7 @@ vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class=
 <p>Constructor, query reach table from MongoDB. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">conn</td><td><a class="el" href="../../d2/d82/a00142.html" title="Create a MongoDB Client. ">MongoClient</a> instance </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">conn</td><td><a class="el" href="../../d5/da7/a00144.html" title="Create a MongoDB Client. ">MongoClient</a> instance </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">dbName</td><td>Database name </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">collectionName</td><td>Reach collection name </td></tr>
   </table>
@@ -215,7 +222,53 @@ vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class=
 <p>query all records</p>
 <p>and order by subbasin ID </p>
 
-<p>Definition at line <a class="el" href="../../dc/d25/a00596_source.html#l00167">167</a> of file <a class="el" href="../../dc/d25/a00596_source.html">clsReach.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../db/d3f/a00609_source.html#l00047">47</a> of file <a class="el" href="../../db/d3f/a00609_source.html">clsReach.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../df/d5f/a00064_a2754aac3afd7db4cc6e836408f0ade8f_cgraph.png" border="0" usemap="#df/d5f/a00064_a2754aac3afd7db4cc6e836408f0ade8f_cgraph" alt=""/></div>
+<map name="df/d5f/a00064_a2754aac3afd7db4cc6e836408f0ade8f_cgraph" id="df/d5f/a00064_a2754aac3afd7db4cc6e836408f0ade8f_cgraph">
+<area shape="rect" id="node2" href="../../d1/d6f/a00063.html#aad31cf639ea376c52371f6953ed80d79" title="Get parameters by name. " alt="" coords="253,4,376,33"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a57053a729471cda4823e3cd08362d923"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void clsReaches::GetReachesSingleProperty </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float **&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get 1D array of reach property. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">out[</td><td>data, 1D array with length of N+1, the first element is Reach number. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="../../db/d3f/a00609_source.html#l00111">111</a> of file <a class="el" href="../../db/d3f/a00609_source.html">clsReach.cpp</a>.</p>
 
 </div>
 </div>
@@ -237,13 +290,13 @@ vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class=
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Map container to store all reaches information key: reach ID value: <a class="el" href="../../d1/d6f/a00063.html" title="Class to store reach related parameters from REACHES table. ">clsReach</a> instance (pointer) </p>
+<p>Map container to store all reaches information key: reach ID, 1 ~ N value: <a class="el" href="../../d1/d6f/a00063.html" title="Class to store reach related parameters from REACHES table. ">clsReach</a> instance (pointer) </p>
 
-<p>Definition at line <a class="el" href="../../d8/dbd/a00597_source.html#l00259">259</a> of file <a class="el" href="../../d8/dbd/a00597_source.html">clsReach.h</a>.</p>
+<p>Definition at line <a class="el" href="../../da/d6e/a00610_source.html#l00111">111</a> of file <a class="el" href="../../da/d6e/a00610_source.html">clsReach.h</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="afc60bf8d7d713af679058ab86dc973f9"></a>
+<a class="anchor" id="aeeec98ab06cd29df33a09f38dc5638ca"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -251,7 +304,7 @@ vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class=
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">float** clsReaches::m_reachesProperties</td>
+          <td class="memname">map&lt;string, float *&gt; clsReaches::m_reachesPropMap</td>
         </tr>
       </table>
   </td>
@@ -260,15 +313,61 @@ vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class=
   </tr>
 </table>
 </div><div class="memdoc">
-<p>2D array to store all reaches properties Row index is the index of reach property Col index is the index of m_reachIDs </p>
+<p>Map of all reaches properties arranged as 1D array the first value is reach number </p>
 
-<p>Definition at line <a class="el" href="../../d8/dbd/a00597_source.html#l00265">265</a> of file <a class="el" href="../../d8/dbd/a00597_source.html">clsReach.h</a>.</p>
+<p>Definition at line <a class="el" href="../../da/d6e/a00610_source.html#l00116">116</a> of file <a class="el" href="../../da/d6e/a00610_source.html">clsReach.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a588dcadce70c495129aa7dd636ac5748"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">map&lt;int, vector&lt;int&gt; &gt; clsReaches::m_reachLayers</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Reach layers according to <em>LayeringMethod</em> </p>
+
+<p>Definition at line <a class="el" href="../../da/d6e/a00610_source.html#l00105">105</a> of file <a class="el" href="../../da/d6e/a00610_source.html">clsReach.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a71111bd57400f7b9abfcb2e632fcf023"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt;vector&lt;int&gt; &gt; clsReaches::m_reachUpStream</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Index of upstream Ids (The value is -1 if there if no upstream reach) m_reachUpStream.size() = N+1 m_reachUpStream[1] = [2, 3] means Reach 2 and Reach 3 flow into Reach 1. </p>
+
+<p>Definition at line <a class="el" href="../../da/d6e/a00610_source.html#l00101">101</a> of file <a class="el" href="../../da/d6e/a00610_source.html">clsReach.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>seims/src/seims_main/base/data/<a class="el" href="../../d8/dbd/a00597_source.html">clsReach.h</a></li>
-<li>seims/src/seims_main/base/data/<a class="el" href="../../dc/d25/a00596_source.html">clsReach.cpp</a></li>
+<li>seims/src/seims_main/base/data/<a class="el" href="../../da/d6e/a00610_source.html">clsReach.h</a></li>
+<li>seims/src/seims_main/base/data/<a class="el" href="../../db/d3f/a00609_source.html">clsReach.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -276,7 +375,7 @@ vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class=
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../df/d5f/a00064.html">clsReaches</a></li>
-    <li class="footer">Generated on Mon Dec 18 2017 11:41:13 for SEIMS by
+    <li class="footer">Generated on Tue Jan 2 2018 00:55:55 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

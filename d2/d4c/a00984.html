@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: BIO_EPIC</title>
+<title>SEIMS: Data</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -108,35 +108,68 @@ $(document).ready(function(){initNavTree('d2/d4c/a00984.html','../../');});
   <div class="summary">
 <a href="#nested-classes">Classes</a>  </div>
   <div class="headertitle">
-<div class="title">BIO_EPIC<div class="ingroups"><a class="el" href="../../d8/d49/a00979.html">Ecology</a></div></div>  </div>
+<div class="title">Data<div class="ingroups"><a class="el" href="../../d7/d98/a00983.html">Base</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Predicts daily potential growth of total plant biomass and roots and calculates leaf area index incorporated a simplified version of the EPIC plant growth model as in SWAT rev. 637.  
+<p>Include data related classes, e.g. <a class="el" href="../../d6/db3/a00130.html" title="Get HydroClimate measurement data from MongoDB. ">Measurement</a>, HydroClimateData etc.  
 <a href="#details">More...</a></p>
 <div class="dynheader">
-Collaboration diagram for BIO_EPIC:</div>
+Collaboration diagram for Data:</div>
 <div class="dyncontent">
 <center><table><tr><td><img src="../../d2/d4c/a00984.png" border="0" alt="" usemap="#d2_2d4c_2a00984"/>
 <map name="d2_2d4c_2a00984" id="d2_2d4c_2a00984">
-<area shape="rect" id="node2" href="../../d8/d49/a00979.html" title="Ecology related modules. " alt="" coords="5,4,85,33"/></map>
+<area shape="rect" id="node1" href="../../d7/d98/a00983.html" title="Base modules, e.g., data, util, module_setting. " alt="" coords="5,4,64,33"/></map>
 </td></tr></table></center>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dca/a00048.html">Biomass_EPIC</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Predicts daily potential growth of total plant biomass and roots and calculates leaf area index incorporated a simplified version of the EPIC plant growth model as in SWAT rev. 637.  <a href="../../d4/dca/a00048.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00062.html">clsRasterData&lt; T, MaskT &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raster data (1D and 2D) I/O class Support I/O between TIFF, ASCII file or/and MongoBD database.  <a href="../../df/d03/a00062.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6f/a00063.html">clsReach</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class to store reach related parameters from REACHES table.  <a href="../../d1/d6f/a00063.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d5f/a00064.html">clsReaches</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read and store all reaches information as input parameters.  <a href="../../df/d5f/a00064.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/de1/a00065.html">clsSimpleTxtData</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">read string line from text file  <a href="../../de/de1/a00065.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d2c/a00072.html">DataCenter</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class of Data center for SEIMS.  <a href="../../d6/d2c/a00072.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6e/a00073.html">DataCenterMongoDB</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class of Data center inherited from <a class="el" href="../../d6/d2c/a00072.html" title="Base class of Data center for SEIMS. ">DataCenter</a> based on MongoDB.  <a href="../../d1/d6e/a00073.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/da3/a00115.html">InputStation</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">HydroClimate sites information.  <a href="../../d2/da3/a00115.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/db3/a00130.html">Measurement</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get HydroClimate measurement data from MongoDB.  <a href="../../d6/db3/a00130.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d01/a00153.html">NotRegularMeasurement</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Not Regular hydroclimate data, i.e., for storm model.  <a href="../../da/d01/a00153.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d34/a00156.html">NutrCommon</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define some common used function in Nutrient cycling modules, e.g., NUTRMV, NUTRSED.  <a href="../../d2/d34/a00156.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dfb/a00172.html">PGCommon</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A basic class for plant growth modules using a simplified version of EPIC model.  <a href="../../d6/dfb/a00172.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d64/a00181.html">RegularMeasurement</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Regular hydroclimate data, e.g., daily data.  <a href="../../d8/d64/a00181.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Predicts daily potential growth of total plant biomass and roots and calculates leaf area index incorporated a simplified version of the EPIC plant growth model as in SWAT rev. 637. </p>
+<p>Include data related classes, e.g. <a class="el" href="../../d6/db3/a00130.html" title="Get HydroClimate measurement data from MongoDB. ">Measurement</a>, HydroClimateData etc. </p>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mon Dec 18 2017 11:41:13 for SEIMS by
+    <li class="footer">Generated on Tue Jan 2 2018 00:55:55 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

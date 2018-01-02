@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: upload.VersionControlSystem Class Reference</title>
+<title>SEIMS: utilsString Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -114,74 +114,139 @@ $(document).ready(function(){initNavTree('d1/da8/a00230.html','../../');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="../../d1/d54/a01326.html">List of all members</a>  </div>
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="../../d8/df3/a01216.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">upload.VersionControlSystem Class Reference</div>  </div>
+<div class="title">utilsString Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="dynheader">
-Inheritance diagram for upload.VersionControlSystem:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../d4/d2c/a01327.png" border="0" usemap="#upload_8_version_control_system_inherit__map" alt="Inheritance graph"/></div>
-<map name="upload_8_version_control_system_inherit__map" id="upload_8_version_control_system_inherit__map">
-<area shape="rect" id="node2" href="../../df/d13/a00085.html" title="{upload.GitVCS\n|+ base_hashes\l|+ __init__()\l+ GenerateDiff()\l+ GetUnknownFiles()\l+ GetBaseFile()\l+ __init__()\l+ GenerateDiff()\l+ GetUnknownFiles()\l+ GetBaseFile()\l}" alt="" coords="5,425,179,631"/><area shape="rect" id="node3" href="../../d9/d47/a00129.html" title="{upload.MercurialVCS\n|+ repo_dir\l+ subdir\l+ base_rev\l|+ __init__()\l+ GenerateDiff()\l+ GetUnknownFiles()\l+ GetBaseFile()\l+ __init__()\l+ GenerateDiff()\l+ GetUnknownFiles()\l+ GetBaseFile()\l&#45; _GetRelPath()\l&#45; _GetRelPath()\l}" alt="" coords="203,390,377,666"/><area shape="rect" id="node4" href="../../da/de7/a00210.html" title="{upload.SubversionVCS\n|+ rev_start\l+ rev_end\l+ svnls_cache\l+ svn_base\l|+ __init__()\l+ GuessBase()\l+ GenerateDiff()\l+ GetUnknownFiles()\l+ ReadFile()\l+ GetStatus()\l+ GetBaseFile()\l+ __init__()\l+ GuessBase()\l+ GenerateDiff()\l+ GetUnknownFiles()\l+ ReadFile()\l+ GetStatus()\l+ GetBaseFile()\l&#45; _GuessBase()\l&#45; _CollapseKeywords()\l&#45; _GuessBase()\l&#45; _CollapseKeywords()\l}" alt="" coords="402,312,592,744"/></map>
-</div>
+
+<p>String related functions.  
+ <a href="../../d1/da8/a00230.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d9/d87/a00551_source.html">utils.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a30bbede8d03e41a50708a006a5638b2e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/da8/a00230.html#a30bbede8d03e41a50708a006a5638b2e">__init__</a></td></tr>
-<tr class="separator:a30bbede8d03e41a50708a006a5638b2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12ac47b38e3d139d18794564cebe1bce"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/da8/a00230.html#a12ac47b38e3d139d18794564cebe1bce">GenerateDiff</a></td></tr>
-<tr class="separator:a12ac47b38e3d139d18794564cebe1bce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b607766189a90f8e919d84ea3b68ecf"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/da8/a00230.html#a8b607766189a90f8e919d84ea3b68ecf">GetUnknownFiles</a></td></tr>
-<tr class="separator:a8b607766189a90f8e919d84ea3b68ecf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac82bef48c32d710dcaf9f2dfcc41dc57"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/da8/a00230.html#ac82bef48c32d710dcaf9f2dfcc41dc57">CheckForUnknownFiles</a></td></tr>
-<tr class="separator:ac82bef48c32d710dcaf9f2dfcc41dc57"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb681bf8200b1f8e6547f1224bd6e798"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/da8/a00230.html#afb681bf8200b1f8e6547f1224bd6e798">GetBaseFile</a></td></tr>
-<tr class="separator:afb681bf8200b1f8e6547f1224bd6e798"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6319565fee2579a82afc869a88e33aee"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/da8/a00230.html#a6319565fee2579a82afc869a88e33aee">GetBaseFiles</a></td></tr>
-<tr class="separator:a6319565fee2579a82afc869a88e33aee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf66efd1e926e7a9c9275d03063606d0"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/da8/a00230.html#adf66efd1e926e7a9c9275d03063606d0">UploadBaseFiles</a></td></tr>
-<tr class="separator:adf66efd1e926e7a9c9275d03063606d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a333c9ae640318c3a4d27eb1b914c0f"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/da8/a00230.html#a2a333c9ae640318c3a4d27eb1b914c0f">IsImage</a></td></tr>
-<tr class="separator:a2a333c9ae640318c3a4d27eb1b914c0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30bbede8d03e41a50708a006a5638b2e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/da8/a00230.html#a30bbede8d03e41a50708a006a5638b2e">__init__</a></td></tr>
-<tr class="separator:a30bbede8d03e41a50708a006a5638b2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12ac47b38e3d139d18794564cebe1bce"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/da8/a00230.html#a12ac47b38e3d139d18794564cebe1bce">GenerateDiff</a></td></tr>
-<tr class="separator:a12ac47b38e3d139d18794564cebe1bce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b607766189a90f8e919d84ea3b68ecf"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/da8/a00230.html#a8b607766189a90f8e919d84ea3b68ecf">GetUnknownFiles</a></td></tr>
-<tr class="separator:a8b607766189a90f8e919d84ea3b68ecf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac82bef48c32d710dcaf9f2dfcc41dc57"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/da8/a00230.html#ac82bef48c32d710dcaf9f2dfcc41dc57">CheckForUnknownFiles</a></td></tr>
-<tr class="separator:ac82bef48c32d710dcaf9f2dfcc41dc57"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb681bf8200b1f8e6547f1224bd6e798"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/da8/a00230.html#afb681bf8200b1f8e6547f1224bd6e798">GetBaseFile</a></td></tr>
-<tr class="separator:afb681bf8200b1f8e6547f1224bd6e798"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6319565fee2579a82afc869a88e33aee"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/da8/a00230.html#a6319565fee2579a82afc869a88e33aee">GetBaseFiles</a></td></tr>
-<tr class="separator:a6319565fee2579a82afc869a88e33aee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf66efd1e926e7a9c9275d03063606d0"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/da8/a00230.html#adf66efd1e926e7a9c9275d03063606d0">UploadBaseFiles</a></td></tr>
-<tr class="separator:adf66efd1e926e7a9c9275d03063606d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a333c9ae640318c3a4d27eb1b914c0f"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/da8/a00230.html#a2a333c9ae640318c3a4d27eb1b914c0f">IsImage</a></td></tr>
-<tr class="separator:a2a333c9ae640318c3a4d27eb1b914c0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:aec32bdcc7d22409dc198541633f6897f"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/da8/a00230.html#aec32bdcc7d22409dc198541633f6897f">GetUpper</a> (const string &amp;s)</td></tr>
+<tr class="memdesc:aec32bdcc7d22409dc198541633f6897f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get Uppercase of given string.  <a href="#aec32bdcc7d22409dc198541633f6897f">More...</a><br/></td></tr>
+<tr class="separator:aec32bdcc7d22409dc198541633f6897f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae06d2920296a29303fb9797c599c9a6f"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/da8/a00230.html#ae06d2920296a29303fb9797c599c9a6f">StringMatch</a> (const char *a, const char *b)</td></tr>
+<tr class="memdesc:ae06d2920296a29303fb9797c599c9a6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Match <em>char</em> ignore cases.  <a href="#ae06d2920296a29303fb9797c599c9a6f">More...</a><br/></td></tr>
+<tr class="separator:ae06d2920296a29303fb9797c599c9a6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05803774f6a072125e55af144935c07f"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/da8/a00230.html#a05803774f6a072125e55af144935c07f">StringMatch</a> (const string &amp;text1, const string &amp;text2)</td></tr>
+<tr class="memdesc:a05803774f6a072125e55af144935c07f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Match Strings in UPPERCASE manner.  <a href="#a05803774f6a072125e55af144935c07f">More...</a><br/></td></tr>
+<tr class="separator:a05803774f6a072125e55af144935c07f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92cdaffedac67e87d27ce9f61ba5f74d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/da8/a00230.html#a92cdaffedac67e87d27ce9f61ba5f74d">TrimSpaces</a> (string &amp;str)</td></tr>
+<tr class="memdesc:a92cdaffedac67e87d27ce9f61ba5f74d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trim Both leading and trailing spaces.  <a href="#a92cdaffedac67e87d27ce9f61ba5f74d">More...</a><br/></td></tr>
+<tr class="separator:a92cdaffedac67e87d27ce9f61ba5f74d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41b3085ee9d2b67824196f0d1a6b22b0"><td class="memItemLeft" align="right" valign="top">static string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/da8/a00230.html#a41b3085ee9d2b67824196f0d1a6b22b0">trim</a> (string &amp;s)</td></tr>
+<tr class="memdesc:a41b3085ee9d2b67824196f0d1a6b22b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trim given string's heading and tailing by "&lt;space&gt;,\n,\t,\r".  <a href="#a41b3085ee9d2b67824196f0d1a6b22b0">More...</a><br/></td></tr>
+<tr class="separator:a41b3085ee9d2b67824196f0d1a6b22b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29fc5b049e9afc2916c30f7e2c75ef74"><td class="memItemLeft" align="right" valign="top">static vector&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/da8/a00230.html#a29fc5b049e9afc2916c30f7e2c75ef74">SplitString</a> (const string &amp;item)</td></tr>
+<tr class="memdesc:a29fc5b049e9afc2916c30f7e2c75ef74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits the given string by spaces.  <a href="#a29fc5b049e9afc2916c30f7e2c75ef74">More...</a><br/></td></tr>
+<tr class="separator:a29fc5b049e9afc2916c30f7e2c75ef74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f6242073d147ed69f56ebf7035be7a0"><td class="memItemLeft" align="right" valign="top">static vector&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/da8/a00230.html#a2f6242073d147ed69f56ebf7035be7a0">SplitString</a> (const string &amp;item, char delimiter)</td></tr>
+<tr class="memdesc:a2f6242073d147ed69f56ebf7035be7a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits the given string based on the given delimiter.  <a href="#a2f6242073d147ed69f56ebf7035be7a0">More...</a><br/></td></tr>
+<tr class="separator:a2f6242073d147ed69f56ebf7035be7a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a554d837a91e37db89c6716fb701a897e"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a554d837a91e37db89c6716fb701a897e"><td class="memTemplItemLeft" align="right" valign="top">static string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/da8/a00230.html#a554d837a91e37db89c6716fb701a897e">ValueToString</a> (const T &amp;val)</td></tr>
+<tr class="memdesc:a554d837a91e37db89c6716fb701a897e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert value to string.  <a href="#a554d837a91e37db89c6716fb701a897e">More...</a><br/></td></tr>
+<tr class="separator:a554d837a91e37db89c6716fb701a897e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><pre class="fragment">Abstract base class providing an interface to the VCS.</pre> 
-<p>Definition at line <a class="el" href="../../d2/d0a/a00333_source.html#l00588">588</a> of file <a class="el" href="../../d2/d0a/a00333_source.html">upload.py</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a30bbede8d03e41a50708a006a5638b2e"></a>
+<div class="textblock"><p>String related functions. </p>
+
+<p>Definition at line <a class="el" href="../../d9/d87/a00551_source.html#l00259">259</a> of file <a class="el" href="../../d9/d87/a00551_source.html">utils.h</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="aec32bdcc7d22409dc198541633f6897f"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">def upload.VersionControlSystem.__init__ </td>
+          <td class="memname">string utilsString::GetUpper </td>
           <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get Uppercase of given string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">string</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Uppercase string </dd></dl>
+
+<p>Definition at line <a class="el" href="../../de/de7/a00550_source.html#l00201">201</a> of file <a class="el" href="../../de/de7/a00550_source.html">utils.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a29fc5b049e9afc2916c30f7e2c75ef74"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; string &gt; utilsString::SplitString </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>item</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Splits the given string by spaces. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">item</td><td><em>string</em> information </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The split strings vector </dd></dl>
+
+<p>Definition at line <a class="el" href="../../de/de7/a00550_source.html#l00253">253</a> of file <a class="el" href="../../de/de7/a00550_source.html">utils.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2f6242073d147ed69f56ebf7035be7a0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; string &gt; utilsString::SplitString </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>item</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>options</em>&#160;</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>delimiter</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -189,31 +254,45 @@ Public Member Functions</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-<pre class="fragment">Constructor.
 
-Args:
-  options: Command line options.
-</pre> 
-<p>Definition at line <a class="el" href="../../d2/d0a/a00333_source.html#l00591">591</a> of file <a class="el" href="../../d2/d0a/a00333_source.html">upload.py</a>.</p>
+<p>Splits the given string based on the given delimiter. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">item</td><td><em>string</em> information </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">delimiter</td><td><em>char</em> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The split strings vector </dd></dl>
+
+<p>Definition at line <a class="el" href="../../de/de7/a00550_source.html#l00220">220</a> of file <a class="el" href="../../de/de7/a00550_source.html">utils.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a30bbede8d03e41a50708a006a5638b2e"></a>
+<a class="anchor" id="ae06d2920296a29303fb9797c599c9a6f"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">def upload.VersionControlSystem.__init__ </td>
+          <td class="memname">bool utilsString::StringMatch </td>
           <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>options</em>&#160;</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -221,560 +300,200 @@ Args:
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-<pre class="fragment">Constructor.
 
-Args:
-  options: Command line options.
-</pre> 
-<p>Definition at line <a class="el" href="../../da/d75/a00334_source.html#l00591">591</a> of file <a class="el" href="../../da/d75/a00334_source.html">upload.py</a>.</p>
+<p>Match <em>char</em> ignore cases. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">a,b</td><td><em>char*</em> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true or false </dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../d1/da8/a00230.html#ae06d2920296a29303fb9797c599c9a6f" title="Match char ignore cases. ">StringMatch()</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="../../de/de7/a00550_source.html#l00268">268</a> of file <a class="el" href="../../de/de7/a00550_source.html">utils.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a05803774f6a072125e55af144935c07f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool utilsString::StringMatch </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>text1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>text2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Match Strings in UPPERCASE manner. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">text1,text2</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true or false </dd></dl>
+
+<p>Definition at line <a class="el" href="../../de/de7/a00550_source.html#l00272">272</a> of file <a class="el" href="../../de/de7/a00550_source.html">utils.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d1/da8/a00230_a30bbede8d03e41a50708a006a5638b2e_cgraph.png" border="0" usemap="#d1/da8/a00230_a30bbede8d03e41a50708a006a5638b2e_cgraph" alt=""/></div>
-<map name="d1/da8/a00230_a30bbede8d03e41a50708a006a5638b2e_cgraph" id="d1/da8/a00230_a30bbede8d03e41a50708a006a5638b2e_cgraph">
-</map>
+<div class="center"><img src="../../d1/da8/a00230_a05803774f6a072125e55af144935c07f_cgraph.png" border="0" usemap="#d1/da8/a00230_a05803774f6a072125e55af144935c07f_cgraph" alt=""/></div>
+<map name="d1/da8/a00230_a05803774f6a072125e55af144935c07f_cgraph" id="d1/da8/a00230_a05803774f6a072125e55af144935c07f_cgraph">
+<area shape="rect" id="node2" href="../../d1/da8/a00230.html#aec32bdcc7d22409dc198541633f6897f" title="Get Uppercase of given string. " alt="" coords="240,4,411,33"/></map>
 </div>
 </p>
 
 </div>
 </div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="ac82bef48c32d710dcaf9f2dfcc41dc57"></a>
+<a class="anchor" id="a41b3085ee9d2b67824196f0d1a6b22b0"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">def upload.VersionControlSystem.CheckForUnknownFiles </td>
+          <td class="memname">string &amp; utilsString::trim </td>
           <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
+          <td class="paramtype">string &amp;&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-<pre class="fragment">Show an "are you sure?" prompt if there are unknown files.</pre> 
-<p>Definition at line <a class="el" href="../../d2/d0a/a00333_source.html#l00613">613</a> of file <a class="el" href="../../d2/d0a/a00333_source.html">upload.py</a>.</p>
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../d1/da8/a00230_ac82bef48c32d710dcaf9f2dfcc41dc57_cgraph.png" border="0" usemap="#d1/da8/a00230_ac82bef48c32d710dcaf9f2dfcc41dc57_cgraph" alt=""/></div>
-<map name="d1/da8/a00230_ac82bef48c32d710dcaf9f2dfcc41dc57_cgraph" id="d1/da8/a00230_ac82bef48c32d710dcaf9f2dfcc41dc57_cgraph">
-<area shape="rect" id="node2" href="../../d1/da8/a00230.html#a8b607766189a90f8e919d84ea3b68ecf" title="upload.VersionControlSystem.\lGetUnknownFiles" alt="" coords="294,29,533,75"/></map>
-</div>
-</p>
+<p>Trim given string's heading and tailing by "&lt;space&gt;,\n,\t,\r". </p>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../d1/da8/a00230.html#a92cdaffedac67e87d27ce9f61ba5f74d" title="Trim Both leading and trailing spaces. ">TrimSpaces</a> </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">s</td><td><em>string</em> information </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Trimmed string </dd></dl>
+
+<p>Definition at line <a class="el" href="../../de/de7/a00550_source.html#l00279">279</a> of file <a class="el" href="../../de/de7/a00550_source.html">utils.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ac82bef48c32d710dcaf9f2dfcc41dc57"></a>
+<a class="anchor" id="a92cdaffedac67e87d27ce9f61ba5f74d"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">def upload.VersionControlSystem.CheckForUnknownFiles </td>
+          <td class="memname">void utilsString::TrimSpaces </td>
           <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
+          <td class="paramtype">string &amp;&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-<pre class="fragment">Show an "are you sure?" prompt if there are unknown files.</pre> 
-<p>Definition at line <a class="el" href="../../da/d75/a00334_source.html#l00613">613</a> of file <a class="el" href="../../da/d75/a00334_source.html">upload.py</a>.</p>
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../d1/da8/a00230_ac82bef48c32d710dcaf9f2dfcc41dc57_cgraph.png" border="0" usemap="#d1/da8/a00230_ac82bef48c32d710dcaf9f2dfcc41dc57_cgraph" alt=""/></div>
-<map name="d1/da8/a00230_ac82bef48c32d710dcaf9f2dfcc41dc57_cgraph" id="d1/da8/a00230_ac82bef48c32d710dcaf9f2dfcc41dc57_cgraph">
-<area shape="rect" id="node2" href="../../d1/da8/a00230.html#a8b607766189a90f8e919d84ea3b68ecf" title="upload.VersionControlSystem.\lGetUnknownFiles" alt="" coords="294,29,533,75"/></map>
-</div>
-</p>
+<p>Trim Both leading and trailing spaces. </p>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../d1/da8/a00230.html#a41b3085ee9d2b67824196f0d1a6b22b0" title="Trim given string&#39;s heading and tailing by &quot;&lt;space&gt;,\n,\t,\r&quot;. ">trim</a> </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td><em>string</em> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="../../de/de7/a00550_source.html#l00207">207</a> of file <a class="el" href="../../de/de7/a00550_source.html">utils.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a12ac47b38e3d139d18794564cebe1bce"></a>
+<a class="anchor" id="a554d837a91e37db89c6716fb701a897e"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">def upload.VersionControlSystem.GenerateDiff </td>
+          <td class="memname">string utilsString::ValueToString </td>
           <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>args</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<pre class="fragment">Return the current diff as a string.
-
-Args:
-  args: Extra arguments to pass to the diff command.
-</pre> 
-<p>Definition at line <a class="el" href="../../da/d75/a00334_source.html#l00599">599</a> of file <a class="el" href="../../da/d75/a00334_source.html">upload.py</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../d1/da8/a00230_a12ac47b38e3d139d18794564cebe1bce_cgraph.png" border="0" usemap="#d1/da8/a00230_a12ac47b38e3d139d18794564cebe1bce_cgraph" alt=""/></div>
-<map name="d1/da8/a00230_a12ac47b38e3d139d18794564cebe1bce_cgraph" id="d1/da8/a00230_a12ac47b38e3d139d18794564cebe1bce_cgraph">
-</map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="a12ac47b38e3d139d18794564cebe1bce"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">def upload.VersionControlSystem.GenerateDiff </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>args</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<pre class="fragment">Return the current diff as a string.
-
-Args:
-  args: Extra arguments to pass to the diff command.
-</pre> 
-<p>Definition at line <a class="el" href="../../d2/d0a/a00333_source.html#l00599">599</a> of file <a class="el" href="../../d2/d0a/a00333_source.html">upload.py</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="afb681bf8200b1f8e6547f1224bd6e798"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">def upload.VersionControlSystem.GetBaseFile </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>filename</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<pre class="fragment">Get the content of the upstream version of a file.
-
-Returns:
-  A tuple (base_content, new_content, is_binary, status)
-base_content: The contents of the base file.
-new_content: For text files, this is empty.  For binary files, this is
-  the contents of the new file, since the diff output won't contain
-  information to reconstruct the current file.
-is_binary: True iff the file is binary.
-status: The status of the file.
-</pre> 
-<p>Definition at line <a class="el" href="../../d2/d0a/a00333_source.html#l00625">625</a> of file <a class="el" href="../../d2/d0a/a00333_source.html">upload.py</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="afb681bf8200b1f8e6547f1224bd6e798"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">def upload.VersionControlSystem.GetBaseFile </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>filename</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<pre class="fragment">Get the content of the upstream version of a file.
-
-Returns:
-  A tuple (base_content, new_content, is_binary, status)
-base_content: The contents of the base file.
-new_content: For text files, this is empty.  For binary files, this is
-  the contents of the new file, since the diff output won't contain
-  information to reconstruct the current file.
-is_binary: True iff the file is binary.
-status: The status of the file.
-</pre> 
-<p>Definition at line <a class="el" href="../../da/d75/a00334_source.html#l00625">625</a> of file <a class="el" href="../../da/d75/a00334_source.html">upload.py</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../d1/da8/a00230_afb681bf8200b1f8e6547f1224bd6e798_cgraph.png" border="0" usemap="#d1/da8/a00230_afb681bf8200b1f8e6547f1224bd6e798_cgraph" alt=""/></div>
-<map name="d1/da8/a00230_afb681bf8200b1f8e6547f1224bd6e798_cgraph" id="d1/da8/a00230_afb681bf8200b1f8e6547f1224bd6e798_cgraph">
-</map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="a6319565fee2579a82afc869a88e33aee"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">def upload.VersionControlSystem.GetBaseFiles </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>diff</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<pre class="fragment">Helper that calls GetBase file for each file in the patch.
-
-Returns:
-  A dictionary that maps from filename to GetBaseFile's tuple.  Filenames
-  are retrieved based on lines that start with "Index:" or
-  "Property changes on:".
-</pre> 
-<p>Definition at line <a class="el" href="../../d2/d0a/a00333_source.html#l00642">642</a> of file <a class="el" href="../../d2/d0a/a00333_source.html">upload.py</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../d1/da8/a00230_a6319565fee2579a82afc869a88e33aee_cgraph.png" border="0" usemap="#d1/da8/a00230_a6319565fee2579a82afc869a88e33aee_cgraph" alt=""/></div>
-<map name="d1/da8/a00230_a6319565fee2579a82afc869a88e33aee_cgraph" id="d1/da8/a00230_a6319565fee2579a82afc869a88e33aee_cgraph">
-<area shape="rect" id="node2" href="../../d1/da8/a00230.html#afb681bf8200b1f8e6547f1224bd6e798" title="upload.VersionControlSystem.\lGetBaseFile" alt="" coords="294,5,533,51"/><area shape="rect" id="node3" href="../../d1/da8/a00230.html#adf66efd1e926e7a9c9275d03063606d0" title="upload.VersionControlSystem.\lUploadBaseFiles" alt="" coords="294,75,533,122"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="a6319565fee2579a82afc869a88e33aee"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">def upload.VersionControlSystem.GetBaseFiles </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>diff</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<pre class="fragment">Helper that calls GetBase file for each file in the patch.
-
-Returns:
-  A dictionary that maps from filename to GetBaseFile's tuple.  Filenames
-  are retrieved based on lines that start with "Index:" or
-  "Property changes on:".
-</pre> 
-<p>Definition at line <a class="el" href="../../da/d75/a00334_source.html#l00642">642</a> of file <a class="el" href="../../da/d75/a00334_source.html">upload.py</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../d1/da8/a00230_a6319565fee2579a82afc869a88e33aee_cgraph.png" border="0" usemap="#d1/da8/a00230_a6319565fee2579a82afc869a88e33aee_cgraph" alt=""/></div>
-<map name="d1/da8/a00230_a6319565fee2579a82afc869a88e33aee_cgraph" id="d1/da8/a00230_a6319565fee2579a82afc869a88e33aee_cgraph">
-<area shape="rect" id="node2" href="../../d1/da8/a00230.html#afb681bf8200b1f8e6547f1224bd6e798" title="upload.VersionControlSystem.\lGetBaseFile" alt="" coords="294,5,533,51"/><area shape="rect" id="node3" href="../../d1/da8/a00230.html#adf66efd1e926e7a9c9275d03063606d0" title="upload.VersionControlSystem.\lUploadBaseFiles" alt="" coords="294,75,533,122"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="a8b607766189a90f8e919d84ea3b68ecf"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">def upload.VersionControlSystem.GetUnknownFiles </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-<pre class="fragment">Return a list of files unknown to the VCS.</pre> 
-<p>Definition at line <a class="el" href="../../da/d75/a00334_source.html#l00608">608</a> of file <a class="el" href="../../da/d75/a00334_source.html">upload.py</a>.</p>
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../d1/da8/a00230_a8b607766189a90f8e919d84ea3b68ecf_cgraph.png" border="0" usemap="#d1/da8/a00230_a8b607766189a90f8e919d84ea3b68ecf_cgraph" alt=""/></div>
-<map name="d1/da8/a00230_a8b607766189a90f8e919d84ea3b68ecf_cgraph" id="d1/da8/a00230_a8b607766189a90f8e919d84ea3b68ecf_cgraph">
-</map>
-</div>
-</p>
+<p>Convert value to string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">val</td><td>value, e.g., a int, or float </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>converted string </dd></dl>
 
-</div>
-</div>
-<a class="anchor" id="a8b607766189a90f8e919d84ea3b68ecf"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">def upload.VersionControlSystem.GetUnknownFiles </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<pre class="fragment">Return a list of files unknown to the VCS.</pre> 
-<p>Definition at line <a class="el" href="../../d2/d0a/a00333_source.html#l00608">608</a> of file <a class="el" href="../../d2/d0a/a00333_source.html">upload.py</a>.</p>
+<p>Definition at line <a class="el" href="../../d9/d87/a00551_source.html#l00779">779</a> of file <a class="el" href="../../d9/d87/a00551_source.html">utils.h</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a2a333c9ae640318c3a4d27eb1b914c0f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">def upload.VersionControlSystem.IsImage </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>filename</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<pre class="fragment">Returns true if the filename has an image extension.</pre> 
-<p>Definition at line <a class="el" href="../../da/d75/a00334_source.html#l00713">713</a> of file <a class="el" href="../../da/d75/a00334_source.html">upload.py</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../d1/da8/a00230_a2a333c9ae640318c3a4d27eb1b914c0f_cgraph.png" border="0" usemap="#d1/da8/a00230_a2a333c9ae640318c3a4d27eb1b914c0f_cgraph" alt=""/></div>
-<map name="d1/da8/a00230_a2a333c9ae640318c3a4d27eb1b914c0f_cgraph" id="d1/da8/a00230_a2a333c9ae640318c3a4d27eb1b914c0f_cgraph">
-<area shape="rect" id="node2" href="../../d1/da8/a00230.html#a30bbede8d03e41a50708a006a5638b2e" title="upload.VersionControlSystem.\l__init__" alt="" coords="294,5,533,51"/><area shape="rect" id="node3" href="../../da/de7/a00210.html#ad90a3eed8b4d6a49fa1f66821c65861f" title="upload.SubversionVCS.\l_GuessBase" alt="" coords="316,75,511,122"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="a2a333c9ae640318c3a4d27eb1b914c0f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">def upload.VersionControlSystem.IsImage </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>filename</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<pre class="fragment">Returns true if the filename has an image extension.</pre> 
-<p>Definition at line <a class="el" href="../../d2/d0a/a00333_source.html#l00713">713</a> of file <a class="el" href="../../d2/d0a/a00333_source.html">upload.py</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="adf66efd1e926e7a9c9275d03063606d0"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">def upload.VersionControlSystem.UploadBaseFiles </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>issue</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>rpc_server</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>patch_list</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>patchset</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>options</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>files</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<pre class="fragment">Uploads the base files (and if necessary, the current ones as well).</pre> 
-<p>Definition at line <a class="el" href="../../da/d75/a00334_source.html#l00662">662</a> of file <a class="el" href="../../da/d75/a00334_source.html">upload.py</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="adf66efd1e926e7a9c9275d03063606d0"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">def upload.VersionControlSystem.UploadBaseFiles </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>issue</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>rpc_server</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>patch_list</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>patchset</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>options</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>files</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<pre class="fragment">Uploads the base files (and if necessary, the current ones as well).</pre> 
-<p>Definition at line <a class="el" href="../../d2/d0a/a00333_source.html#l00662">662</a> of file <a class="el" href="../../d2/d0a/a00333_source.html">upload.py</a>.</p>
-
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>buildRel/googletest-src/googlemock/scripts/<a class="el" href="../../d2/d0a/a00333_source.html">upload.py</a></li>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>seims/src/commonlibs/UtilsClass/<a class="el" href="../../d9/d87/a00551_source.html">utils.h</a></li>
+<li>seims/src/commonlibs/UtilsClass/<a class="el" href="../../de/de7/a00550_source.html">utils.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>upload</b></li><li class="navelem"><a class="el" href="../../d1/da8/a00230.html">VersionControlSystem</a></li>
-    <li class="footer">Generated on Mon Dec 18 2017 11:41:15 for SEIMS by
+    <li class="navelem"><a class="el" href="../../d1/da8/a00230.html">utilsString</a></li>
+    <li class="footer">Generated on Tue Jan 2 2018 00:55:56 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

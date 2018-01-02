@@ -1,7 +1,10 @@
 var a00089 =
 [
-    [ "TestHelpFlag", "db/dab/a00089.html#a913bc1e0c66584e436623688ba4d6b50", null ],
-    [ "TestNonHelpFlag", "db/dab/a00089.html#a0eb2fe97ba1d7e143d96c53f291b1483", null ],
-    [ "testRunsTestsWithGtestInternalFlag", "db/dab/a00089.html#aabce3d2be94ad4e413b9452e3dc8c3a8", null ],
-    [ "testRunsTestsWithoutHelpFlag", "db/dab/a00089.html#a5a5285dac93bcc5933da13ed5209fbda", null ]
+    [ "RunAndVerify", "db/dab/a00089.html#a755640c8f1304e7c59c367b019900b56", null ],
+    [ "testBreakOnFailureOverridesThrowOnFailure", "db/dab/a00089.html#a172b21a0764125d322b52fa210ec4a8c", null ],
+    [ "testCatchExceptionsDoesNotInterfere", "db/dab/a00089.html#a3ab04c033dca973ed2c35255a730aa65", null ],
+    [ "testDefaultBehavior", "db/dab/a00089.html#a75a3a3a048d333d71c6fbc61bea5dc6d", null ],
+    [ "testEnvVar", "db/dab/a00089.html#ad941026c6cc28c4adf89f9daeeec9787", null ],
+    [ "testFlag", "db/dab/a00089.html#a7f7cedd991c6efe50678d5afe46271d7", null ],
+    [ "testFlagOverridesEnvVar", "db/dab/a00089.html#a6fa7456806eae78661a3ae8279418884", null ]
 ];

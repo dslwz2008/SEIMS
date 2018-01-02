@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: utilsTime Class Reference</title>
+<title>SEIMS: utilsArray Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -115,153 +115,100 @@ $(document).ready(function(){initNavTree('d9/d01/a00227.html','../../');});
 <div class="header">
   <div class="summary">
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="../../d4/d10/a01197.html">List of all members</a>  </div>
+<a href="../../d5/d54/a01213.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">utilsTime Class Reference</div>  </div>
+<div class="title">utilsArray Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Time related functions.  
+<p>Array related functions include vector and pointer array.  
  <a href="../../d9/d01/a00227.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="../../dd/d5a/a00538_source.html">utils.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="../../d9/d87/a00551_source.html">utils.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a393f9b428264eb66502844fefca35779"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a393f9b428264eb66502844fefca35779"></a>
-static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d01/a00227.html#a393f9b428264eb66502844fefca35779">isLeapYear</a> (int yr)</td></tr>
-<tr class="memdesc:a393f9b428264eb66502844fefca35779"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check the given year is a leap year or not. <br/></td></tr>
-<tr class="separator:a393f9b428264eb66502844fefca35779"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5de4192268b95a4ac2ec0fc14e6c4d7"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d01/a00227.html#ab5de4192268b95a4ac2ec0fc14e6c4d7">ConvertToString</a> (const time_t *date)</td></tr>
-<tr class="memdesc:ab5de4192268b95a4ac2ec0fc14e6c4d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert date time to string as the format of "YYYY-MM-DD".  <a href="#ab5de4192268b95a4ac2ec0fc14e6c4d7">More...</a><br/></td></tr>
-<tr class="separator:ab5de4192268b95a4ac2ec0fc14e6c4d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac10b55fd69ba0a3cf1cba7044e784165"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d01/a00227.html#ac10b55fd69ba0a3cf1cba7044e784165">ConvertToString2</a> (const time_t *date)</td></tr>
-<tr class="memdesc:ac10b55fd69ba0a3cf1cba7044e784165"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert date time to string as the format of "YYYY-MM-DD HH".  <a href="#ac10b55fd69ba0a3cf1cba7044e784165">More...</a><br/></td></tr>
-<tr class="separator:ac10b55fd69ba0a3cf1cba7044e784165"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a4380178c5ef35a9897aea908fbc79c"><td class="memItemLeft" align="right" valign="top">static time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d01/a00227.html#a3a4380178c5ef35a9897aea908fbc79c">ConvertToTime</a> (const string &amp;strDate, string const &amp;format, bool includeHour)</td></tr>
-<tr class="memdesc:a3a4380178c5ef35a9897aea908fbc79c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert string to date time, string format could be %4d%2d%2d or d-d-d.  <a href="#a3a4380178c5ef35a9897aea908fbc79c">More...</a><br/></td></tr>
-<tr class="separator:a3a4380178c5ef35a9897aea908fbc79c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ee53ecff982ee224f56113ba10b5913"><td class="memItemLeft" align="right" valign="top">static time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d01/a00227.html#a0ee53ecff982ee224f56113ba10b5913">ConvertToTime2</a> (string const &amp;strDate, const char *format, bool includeHour)</td></tr>
-<tr class="memdesc:a0ee53ecff982ee224f56113ba10b5913"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert string to date time, string format could be "%4d-%2d-%2d %2d:%2d:%2d".  <a href="#a0ee53ecff982ee224f56113ba10b5913">More...</a><br/></td></tr>
-<tr class="separator:a0ee53ecff982ee224f56113ba10b5913"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d4ac72e88fe8ff9b4ca1b750046f2d9"><td class="memItemLeft" align="right" valign="top">static time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d01/a00227.html#a2d4ac72e88fe8ff9b4ca1b750046f2d9">ConvertYMDToTime</a> (int &amp;year, int &amp;month, int &amp;day)</td></tr>
-<tr class="memdesc:a2d4ac72e88fe8ff9b4ca1b750046f2d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert integer year, month, and day to date time.  <a href="#a2d4ac72e88fe8ff9b4ca1b750046f2d9">More...</a><br/></td></tr>
-<tr class="separator:a2d4ac72e88fe8ff9b4ca1b750046f2d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc9215d2f26eba2204cd5e11ed7792e1"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d01/a00227.html#adc9215d2f26eba2204cd5e11ed7792e1">GetDateInfoFromTimet</a> (time_t *t, int *year, int *month, int *day)</td></tr>
-<tr class="memdesc:adc9215d2f26eba2204cd5e11ed7792e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get date information from <em>time_t</em> variable.  <a href="#adc9215d2f26eba2204cd5e11ed7792e1">More...</a><br/></td></tr>
-<tr class="separator:adc9215d2f26eba2204cd5e11ed7792e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a011a2c66991ecad5ee24f20b5817a114"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d01/a00227.html#a011a2c66991ecad5ee24f20b5817a114">LocalTime</a> (time_t tValue, struct tm *tmStruct)</td></tr>
-<tr class="memdesc:a011a2c66991ecad5ee24f20b5817a114"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get local time.  <a href="#a011a2c66991ecad5ee24f20b5817a114">More...</a><br/></td></tr>
-<tr class="separator:a011a2c66991ecad5ee24f20b5817a114"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2344c7b487e833f0d920c569b2eed01"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:aa2344c7b487e833f0d920c569b2eed01"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d9/d01/a00227.html#aa2344c7b487e833f0d920c569b2eed01">Initialize1DArray</a> (int row, T *&amp;data, T initialValue)</td></tr>
+<tr class="memdesc:aa2344c7b487e833f0d920c569b2eed01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize DT_Array1D data.  <a href="#aa2344c7b487e833f0d920c569b2eed01">More...</a><br/></td></tr>
+<tr class="separator:aa2344c7b487e833f0d920c569b2eed01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae748c98aa126fba47cb70d4abb336763"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ae748c98aa126fba47cb70d4abb336763"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d9/d01/a00227.html#ae748c98aa126fba47cb70d4abb336763">Initialize1DArray</a> (int row, T *&amp;data, const T *iniData)</td></tr>
+<tr class="memdesc:ae748c98aa126fba47cb70d4abb336763"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize DT_Array1D data based on an existed array.  <a href="#ae748c98aa126fba47cb70d4abb336763">More...</a><br/></td></tr>
+<tr class="separator:ae748c98aa126fba47cb70d4abb336763"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af44c5bb79ba65876370343685c66b281"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:af44c5bb79ba65876370343685c66b281"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d9/d01/a00227.html#af44c5bb79ba65876370343685c66b281">Initialize2DArray</a> (int row, int col, T **&amp;data, T initialValue)</td></tr>
+<tr class="memdesc:af44c5bb79ba65876370343685c66b281"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize DT_Array2D data.  <a href="#af44c5bb79ba65876370343685c66b281">More...</a><br/></td></tr>
+<tr class="separator:af44c5bb79ba65876370343685c66b281"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56c8c537ce3d9851efca7a2138726515"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a56c8c537ce3d9851efca7a2138726515"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d9/d01/a00227.html#a56c8c537ce3d9851efca7a2138726515">Initialize2DArray</a> (int row, int col, T **&amp;data, const T *const *iniData)</td></tr>
+<tr class="memdesc:a56c8c537ce3d9851efca7a2138726515"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize DT_Array2D data based on an existed array The usage of <code>const T * const *</code> is refers to <a href="http://blog.csdn.net/pmt123456/article/details/50813564">http://blog.csdn.net/pmt123456/article/details/50813564</a>.  <a href="#a56c8c537ce3d9851efca7a2138726515">More...</a><br/></td></tr>
+<tr class="separator:a56c8c537ce3d9851efca7a2138726515"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac23f13fe8fae04715d9726a5ce20f3e5"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ac23f13fe8fae04715d9726a5ce20f3e5"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d9/d01/a00227.html#ac23f13fe8fae04715d9726a5ce20f3e5">Release1DArray</a> (T *&amp;data)</td></tr>
+<tr class="memdesc:ac23f13fe8fae04715d9726a5ce20f3e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Release DT_Array1D data.  <a href="#ac23f13fe8fae04715d9726a5ce20f3e5">More...</a><br/></td></tr>
+<tr class="separator:ac23f13fe8fae04715d9726a5ce20f3e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5eb5f72a7108e6a480ae8a5e541a7fa8"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a5eb5f72a7108e6a480ae8a5e541a7fa8"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d9/d01/a00227.html#a5eb5f72a7108e6a480ae8a5e541a7fa8">Release2DArray</a> (int row, T **&amp;data)</td></tr>
+<tr class="memdesc:a5eb5f72a7108e6a480ae8a5e541a7fa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Release DT_Array2D data.  <a href="#a5eb5f72a7108e6a480ae8a5e541a7fa8">More...</a><br/></td></tr>
+<tr class="separator:a5eb5f72a7108e6a480ae8a5e541a7fa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f43bd0f74f9438b7ba248cec18facbb"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a3f43bd0f74f9438b7ba248cec18facbb"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d9/d01/a00227.html#a3f43bd0f74f9438b7ba248cec18facbb">BatchRelease1DArray</a> (T *&amp;data,...)</td></tr>
+<tr class="memdesc:a3f43bd0f74f9438b7ba248cec18facbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Batch release of 1D array Variable arguments with the end of nullptr.  <a href="#a3f43bd0f74f9438b7ba248cec18facbb">More...</a><br/></td></tr>
+<tr class="separator:a3f43bd0f74f9438b7ba248cec18facbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad75f624591d4a610ab29e5eebd8afbe4"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ad75f624591d4a610ab29e5eebd8afbe4"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d9/d01/a00227.html#ad75f624591d4a610ab29e5eebd8afbe4">BatchRelease2DArray</a> (int nrows, T **&amp;data,...)</td></tr>
+<tr class="memdesc:ad75f624591d4a610ab29e5eebd8afbe4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Batch release of 2D array,.  <a href="#ad75f624591d4a610ab29e5eebd8afbe4">More...</a><br/></td></tr>
+<tr class="separator:ad75f624591d4a610ab29e5eebd8afbe4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c02265ed4c516acbd40943b387582b1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d01/a00227.html#a6c02265ed4c516acbd40943b387582b1">Output1DArrayToTxtFile</a> (int n, CFLOATPTR data, const char *filename)</td></tr>
+<tr class="memdesc:a6c02265ed4c516acbd40943b387582b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write 1D array to a file.  <a href="#a6c02265ed4c516acbd40943b387582b1">More...</a><br/></td></tr>
+<tr class="separator:a6c02265ed4c516acbd40943b387582b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6327c6b9019fdaae1db19e1743011a82"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d01/a00227.html#a6327c6b9019fdaae1db19e1743011a82">Output2DArrayToTxtFile</a> (int nRows, int nCols, const CFLOATPTR *data, const char *filename)</td></tr>
+<tr class="memdesc:a6327c6b9019fdaae1db19e1743011a82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write 2D array to a file.  <a href="#a6327c6b9019fdaae1db19e1743011a82">More...</a><br/></td></tr>
+<tr class="separator:a6327c6b9019fdaae1db19e1743011a82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad453e63206c50d6129029ccc280e14bd"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d01/a00227.html#ad453e63206c50d6129029ccc280e14bd">Read1DArrayFromTxtFile</a> (const char *filename, int &amp;nRows, float *&amp;data)</td></tr>
+<tr class="memdesc:ad453e63206c50d6129029ccc280e14bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read 1D array from file.  <a href="#ad453e63206c50d6129029ccc280e14bd">More...</a><br/></td></tr>
+<tr class="separator:ad453e63206c50d6129029ccc280e14bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91f95c2e64cbd5e036ba313cce413742"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d01/a00227.html#a91f95c2e64cbd5e036ba313cce413742">Read2DArrayFromTxtFile</a> (const char *filename, int &amp;nRows, float **&amp;data)</td></tr>
+<tr class="memdesc:a91f95c2e64cbd5e036ba313cce413742"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read 2D array from file.  <a href="#a91f95c2e64cbd5e036ba313cce413742">More...</a><br/></td></tr>
+<tr class="separator:a91f95c2e64cbd5e036ba313cce413742"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21b9e7f1111fc504ce624c43bf477051"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d01/a00227.html#a21b9e7f1111fc504ce624c43bf477051">Read2DArrayFromString</a> (const char *s, int &amp;nRows, float **&amp;data)</td></tr>
+<tr class="memdesc:a21b9e7f1111fc504ce624c43bf477051"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read 2D array from string.  <a href="#a21b9e7f1111fc504ce624c43bf477051">More...</a><br/></td></tr>
+<tr class="separator:a21b9e7f1111fc504ce624c43bf477051"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb2e0c11cdc5caffb48cb0b886c08ccf"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:aeb2e0c11cdc5caffb48cb0b886c08ccf"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d9/d01/a00227.html#aeb2e0c11cdc5caffb48cb0b886c08ccf">ValueInVector</a> (const T &amp;val, const vector&lt; T &gt; &amp;vec)</td></tr>
+<tr class="memdesc:aeb2e0c11cdc5caffb48cb0b886c08ccf"><td class="mdescLeft">&#160;</td><td class="mdescRight">If value in vector container.  <a href="#aeb2e0c11cdc5caffb48cb0b886c08ccf">More...</a><br/></td></tr>
+<tr class="separator:aeb2e0c11cdc5caffb48cb0b886c08ccf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f23a263b37f93ecf67e02264e27f3e1"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a2f23a263b37f93ecf67e02264e27f3e1"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d9/d01/a00227.html#a2f23a263b37f93ecf67e02264e27f3e1">RemoveValueInVector</a> (T &amp;val, vector&lt; T &gt; &amp;vec)</td></tr>
+<tr class="memdesc:a2f23a263b37f93ecf67e02264e27f3e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove value in vector container.  <a href="#a2f23a263b37f93ecf67e02264e27f3e1">More...</a><br/></td></tr>
+<tr class="separator:a2f23a263b37f93ecf67e02264e27f3e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Time related functions. </p>
+<div class="textblock"><p>Array related functions include vector and pointer array. </p>
 
-<p>Definition at line <a class="el" href="../../dd/d5a/a00538_source.html#l00169">169</a> of file <a class="el" href="../../dd/d5a/a00538_source.html">utils.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d9/d87/a00551_source.html#l00347">347</a> of file <a class="el" href="../../d9/d87/a00551_source.html">utils.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="ab5de4192268b95a4ac2ec0fc14e6c4d7"></a>
+<a class="anchor" id="a3f43bd0f74f9438b7ba248cec18facbb"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">string utilsTime::ConvertToString </td>
+          <td class="memname">void utilsArray::BatchRelease1DArray </td>
           <td>(</td>
-          <td class="paramtype">const time_t *&#160;</td>
-          <td class="paramname"><em>date</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Convert date time to string as the format of "YYYY-MM-DD". </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">date</td><td><em>time_t</em> data type </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Date time <em>string</em> </dd></dl>
-
-<p>Definition at line <a class="el" href="../../d8/d6e/a00537_source.html#l00025">25</a> of file <a class="el" href="../../d8/d6e/a00537_source.html">utils.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ac10b55fd69ba0a3cf1cba7044e784165"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">string utilsTime::ConvertToString2 </td>
-          <td>(</td>
-          <td class="paramtype">const time_t *&#160;</td>
-          <td class="paramname"><em>date</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Convert date time to string as the format of "YYYY-MM-DD HH". </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">date</td><td><em>time_t</em> data type </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Date time <em>string</em> </dd></dl>
-
-<p>Definition at line <a class="el" href="../../d8/d6e/a00537_source.html#l00042">42</a> of file <a class="el" href="../../d8/d6e/a00537_source.html">utils.cpp</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../d9/d01/a00227_ac10b55fd69ba0a3cf1cba7044e784165_cgraph.png" border="0" usemap="#d9/d01/a00227_ac10b55fd69ba0a3cf1cba7044e784165_cgraph" alt=""/></div>
-<map name="d9/d01/a00227_ac10b55fd69ba0a3cf1cba7044e784165_cgraph" id="d9/d01/a00227_ac10b55fd69ba0a3cf1cba7044e784165_cgraph">
-<area shape="rect" id="node2" href="../../d9/d01/a00227.html#a393f9b428264eb66502844fefca35779" title="Check the given year is a leap year or not. " alt="" coords="275,4,453,33"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="a3a4380178c5ef35a9897aea908fbc79c"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">time_t utilsTime::ConvertToTime </td>
-          <td>(</td>
-          <td class="paramtype">const string &amp;&#160;</td>
-          <td class="paramname"><em>strDate</em>, </td>
+          <td class="paramtype">T *&amp;&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">string const &amp;&#160;</td>
-          <td class="paramname"><em>format</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>includeHour</em>&#160;</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -276,32 +223,343 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Convert string to date time, string format could be %4d%2d%2d or d-d-d. </p>
-<p>e.g.: strDate =&gt; 20000323, format=&gt; %4d%2d%2d strDate =&gt; 2000-03-23, format =&gt; d-d-d</p>
+<p>Batch release of 1D array Variable arguments with the end of nullptr. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">strDate</td><td><em>string</em> date </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">format</td><td><em>string</em> format </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">includeHour</td><td><em>bool</em> Include Hour? </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data,data2,...,dataN,nullptr</td><td>BatchRelease1DArray(array1, array2, array3, nullptr);  After batch release, the variable will not be set to nullptr. So, do not use these variables any more. BTW, this function will not cause memory leak. USE WITH ALL CAUTIONS CLEARLY AWARED. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Date time <em>time_t</em> </dd></dl>
 
-<p>Definition at line <a class="el" href="../../d8/d6e/a00537_source.html#l00080">80</a> of file <a class="el" href="../../d8/d6e/a00537_source.html">utils.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d9/d87/a00551_source.html#l01049">1049</a> of file <a class="el" href="../../d9/d87/a00551_source.html">utils.h</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d9/d01/a00227_a3a4380178c5ef35a9897aea908fbc79c_cgraph.png" border="0" usemap="#d9/d01/a00227_a3a4380178c5ef35a9897aea908fbc79c_cgraph" alt=""/></div>
-<map name="d9/d01/a00227_a3a4380178c5ef35a9897aea908fbc79c_cgraph" id="d9/d01/a00227_a3a4380178c5ef35a9897aea908fbc79c_cgraph">
-<area shape="rect" id="node2" href="../../dc/d55/a00226.html#ae06d2920296a29303fb9797c599c9a6f" title="Match char ignore cases. " alt="" coords="261,4,448,33"/></map>
+<div class="center"><img src="../../d9/d01/a00227_a3f43bd0f74f9438b7ba248cec18facbb_cgraph.png" border="0" usemap="#d9/d01/a00227_a3f43bd0f74f9438b7ba248cec18facbb_cgraph" alt=""/></div>
+<map name="d9/d01/a00227_a3f43bd0f74f9438b7ba248cec18facbb_cgraph" id="d9/d01/a00227_a3f43bd0f74f9438b7ba248cec18facbb_cgraph">
+<area shape="rect" id="node2" href="../../d9/d01/a00227.html#ac23f13fe8fae04715d9726a5ce20f3e5" title="Release DT_Array1D data. " alt="" coords="261,13,477,43"/></map>
 </div>
 </p>
 
 </div>
 </div>
-<a class="anchor" id="a0ee53ecff982ee224f56113ba10b5913"></a>
+<a class="anchor" id="ad75f624591d4a610ab29e5eebd8afbe4"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void utilsArray::BatchRelease2DArray </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nrows</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T **&amp;&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Batch release of 2D array,. </p>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../d9/d01/a00227.html#a3f43bd0f74f9438b7ba248cec18facbb" title="Batch release of 1D array Variable arguments with the end of nullptr. ">BatchRelease1DArray</a> Variable arguments with the end of nullptr. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">nrows</td><td>Rows </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data,data2,...,dataN,nullptr</td><td>BatchRelease2DArray(rows, array1, array2, array3, nullptr);  USE WITH ALL CAUTIONS CLEARLY AWARED. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="../../d9/d87/a00551_source.html#l01062">1062</a> of file <a class="el" href="../../d9/d87/a00551_source.html">utils.h</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/d01/a00227_ad75f624591d4a610ab29e5eebd8afbe4_cgraph.png" border="0" usemap="#d9/d01/a00227_ad75f624591d4a610ab29e5eebd8afbe4_cgraph" alt=""/></div>
+<map name="d9/d01/a00227_ad75f624591d4a610ab29e5eebd8afbe4_cgraph" id="d9/d01/a00227_ad75f624591d4a610ab29e5eebd8afbe4_cgraph">
+<area shape="rect" id="node2" href="../../d9/d01/a00227.html#a5eb5f72a7108e6a480ae8a5e541a7fa8" title="Release DT_Array2D data. " alt="" coords="261,13,477,43"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aa2344c7b487e833f0d920c569b2eed01"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool utilsArray::Initialize1DArray </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T *&amp;&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>initialValue</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialize DT_Array1D data. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">row</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">initialValue</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if succeed, else false and the error message will print as well. </dd></dl>
+
+<p>Definition at line <a class="el" href="../../d9/d87/a00551_source.html#l00915">915</a> of file <a class="el" href="../../d9/d87/a00551_source.html">utils.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae748c98aa126fba47cb70d4abb336763"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool utilsArray::Initialize1DArray </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T *&amp;&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T *&#160;</td>
+          <td class="paramname"><em>iniData</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialize DT_Array1D data based on an existed array. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">row</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">iniData</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if succeed, else false and the error message will print as well. </dd></dl>
+
+<p>Definition at line <a class="el" href="../../d9/d87/a00551_source.html#l00933">933</a> of file <a class="el" href="../../d9/d87/a00551_source.html">utils.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af44c5bb79ba65876370343685c66b281"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool utilsArray::Initialize2DArray </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>col</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T **&amp;&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>initialValue</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialize DT_Array2D data. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">row</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">col</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">initialValue</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if succeed, else false and the error message will print as well. </dd></dl>
+
+<p>Definition at line <a class="el" href="../../d9/d87/a00551_source.html#l00955">955</a> of file <a class="el" href="../../d9/d87/a00551_source.html">utils.h</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/d01/a00227_af44c5bb79ba65876370343685c66b281_cgraph.png" border="0" usemap="#d9/d01/a00227_af44c5bb79ba65876370343685c66b281_cgraph" alt=""/></div>
+<map name="d9/d01/a00227_af44c5bb79ba65876370343685c66b281_cgraph" id="d9/d01/a00227_af44c5bb79ba65876370343685c66b281_cgraph">
+<area shape="rect" id="node2" href="../../d9/d01/a00227.html#a5eb5f72a7108e6a480ae8a5e541a7fa8" title="Release DT_Array2D data. " alt="" coords="269,4,485,33"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a56c8c537ce3d9851efca7a2138726515"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool utilsArray::Initialize2DArray </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>col</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T **&amp;&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T *const *&#160;</td>
+          <td class="paramname"><em>iniData</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialize DT_Array2D data based on an existed array The usage of <code>const T * const *</code> is refers to <a href="http://blog.csdn.net/pmt123456/article/details/50813564">http://blog.csdn.net/pmt123456/article/details/50813564</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">row</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">col</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">iniData,the</td><td>dimension MUST BE (row, col) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if succeed, else false and the error message will print as well. </dd></dl>
+
+<p>Definition at line <a class="el" href="../../d9/d87/a00551_source.html#l00985">985</a> of file <a class="el" href="../../d9/d87/a00551_source.html">utils.h</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/d01/a00227_a56c8c537ce3d9851efca7a2138726515_cgraph.png" border="0" usemap="#d9/d01/a00227_a56c8c537ce3d9851efca7a2138726515_cgraph" alt=""/></div>
+<map name="d9/d01/a00227_a56c8c537ce3d9851efca7a2138726515_cgraph" id="d9/d01/a00227_a56c8c537ce3d9851efca7a2138726515_cgraph">
+<area shape="rect" id="node2" href="../../d9/d01/a00227.html#a5eb5f72a7108e6a480ae8a5e541a7fa8" title="Release DT_Array2D data. " alt="" coords="269,4,485,33"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a6c02265ed4c516acbd40943b387582b1"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -309,22 +567,22 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">time_t utilsTime::ConvertToTime2 </td>
+          <td class="memname">void utilsArray::Output1DArrayToTxtFile </td>
           <td>(</td>
-          <td class="paramtype">string const &amp;&#160;</td>
-          <td class="paramname"><em>strDate</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CFLOATPTR&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>format</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>includeHour</em>&#160;</td>
+          <td class="paramname"><em>filename</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -339,32 +597,20 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Convert string to date time, string format could be "%4d-%2d-%2d %2d:%2d:%2d". </p>
-<p>e.g.: strDate =&gt; 2000-03-23 10:30:00, format=&gt; %4d-%2d-%2d %2d:%2d:%2d</p>
+<p>Write 1D array to a file. </p>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../d9/d01/a00227.html#ad453e63206c50d6129029ccc280e14bd" title="Read 1D array from file. ">Read1DArrayFromTxtFile()</a>, <a class="el" href="../../d9/d01/a00227.html#a91f95c2e64cbd5e036ba313cce413742" title="Read 2D array from file. ">Read2DArrayFromTxtFile()</a>, <a class="el" href="../../d9/d01/a00227.html#a6327c6b9019fdaae1db19e1743011a82" title="Write 2D array to a file. ">Output2DArrayToTxtFile()</a></dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">strDate</td><td><em>string</em> date </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">format</td><td><em>string</em> format </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">includeHour</td><td><em>bool</em> Include Hour? </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">n,data,filename</td><td></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Date time <em>time_t</em> </dd></dl>
 
-<p>Definition at line <a class="el" href="../../d8/d6e/a00537_source.html#l00118">118</a> of file <a class="el" href="../../d8/d6e/a00537_source.html">utils.cpp</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../d9/d01/a00227_a0ee53ecff982ee224f56113ba10b5913_cgraph.png" border="0" usemap="#d9/d01/a00227_a0ee53ecff982ee224f56113ba10b5913_cgraph" alt=""/></div>
-<map name="d9/d01/a00227_a0ee53ecff982ee224f56113ba10b5913_cgraph" id="d9/d01/a00227_a0ee53ecff982ee224f56113ba10b5913_cgraph">
-<area shape="rect" id="node2" href="../../dc/d55/a00226.html#ae06d2920296a29303fb9797c599c9a6f" title="Match char ignore cases. " alt="" coords="269,4,456,33"/></map>
-</div>
-</p>
+<p>Definition at line <a class="el" href="../../de/de7/a00550_source.html#l00288">288</a> of file <a class="el" href="../../de/de7/a00550_source.html">utils.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a2d4ac72e88fe8ff9b4ca1b750046f2d9"></a>
+<a class="anchor" id="a6327c6b9019fdaae1db19e1743011a82"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -372,22 +618,28 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">time_t utilsTime::ConvertYMDToTime </td>
+          <td class="memname">void utilsArray::Output2DArrayToTxtFile </td>
           <td>(</td>
-          <td class="paramtype">int &amp;&#160;</td>
-          <td class="paramname"><em>year</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nRows</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int &amp;&#160;</td>
-          <td class="paramname"><em>month</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nCols</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int &amp;&#160;</td>
-          <td class="paramname"><em>day</em>&#160;</td>
+          <td class="paramtype">const CFLOATPTR *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>filename</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -402,22 +654,20 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Convert integer year, month, and day to date time. </p>
+<p>Write 2D array to a file. </p>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../d9/d01/a00227.html#ad453e63206c50d6129029ccc280e14bd" title="Read 1D array from file. ">Read1DArrayFromTxtFile()</a>, <a class="el" href="../../d9/d01/a00227.html#a91f95c2e64cbd5e036ba313cce413742" title="Read 2D array from file. ">Read2DArrayFromTxtFile()</a>, <a class="el" href="../../d9/d01/a00227.html#a6c02265ed4c516acbd40943b387582b1" title="Write 1D array to a file. ">Output1DArrayToTxtFile()</a></dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">strDate</td><td><em>string</em> date </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">format</td><td><em>string</em> format </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">includeHour</td><td><em>bool</em> Include Hour? </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nRows,nCols,data,filename</td><td></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Date time <em>time_t</em> </dd></dl>
 
-<p>Definition at line <a class="el" href="../../d8/d6e/a00537_source.html#l00156">156</a> of file <a class="el" href="../../d8/d6e/a00537_source.html">utils.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../de/de7/a00550_source.html#l00296">296</a> of file <a class="el" href="../../de/de7/a00550_source.html">utils.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="adc9215d2f26eba2204cd5e11ed7792e1"></a>
+<a class="anchor" id="ad453e63206c50d6129029ccc280e14bd"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -425,28 +675,22 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int utilsTime::GetDateInfoFromTimet </td>
+          <td class="memname">void utilsArray::Read1DArrayFromTxtFile </td>
           <td>(</td>
-          <td class="paramtype">time_t *&#160;</td>
-          <td class="paramname"><em>t</em>, </td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>filename</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>year</em>, </td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>nRows</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>month</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>day</em>&#160;</td>
+          <td class="paramtype">float *&amp;&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -461,20 +705,22 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Get date information from <em>time_t</em> variable. </p>
+<p>Read 1D array from file. </p>
+<p>The input file should follow the format: a 1D array sized nRows * 1 The size of data is nRows </p>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../d9/d01/a00227.html#a91f95c2e64cbd5e036ba313cce413742" title="Read 2D array from file. ">Read2DArrayFromTxtFile()</a>, <a class="el" href="../../d9/d01/a00227.html#a6c02265ed4c516acbd40943b387582b1" title="Write 1D array to a file. ">Output1DArrayToTxtFile()</a>, <a class="el" href="../../d9/d01/a00227.html#a6327c6b9019fdaae1db19e1743011a82" title="Write 2D array to a file. ">Output2DArrayToTxtFile()</a> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">t</td><td><em>time_t</em> date </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">year,month,day</td><td><em>int</em> value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">filename,nRows</td><td></td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">data</td><td></td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="../../d8/d6e/a00537_source.html#l00174">174</a> of file <a class="el" href="../../d8/d6e/a00537_source.html">utils.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../de/de7/a00550_source.html#l00307">307</a> of file <a class="el" href="../../de/de7/a00550_source.html">utils.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a011a2c66991ecad5ee24f20b5817a114"></a>
+<a class="anchor" id="a21b9e7f1111fc504ce624c43bf477051"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -482,16 +728,22 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void utilsTime::LocalTime </td>
+          <td class="memname">void utilsArray::Read2DArrayFromString </td>
           <td>(</td>
-          <td class="paramtype">time_t&#160;</td>
-          <td class="paramname"><em>tValue</em>, </td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">struct tm *&#160;</td>
-          <td class="paramname"><em>tmStruct</em>&#160;</td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>nRows</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float **&amp;&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -506,30 +758,263 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Get local time. </p>
+<p>Read 2D array from string. </p>
+<p>The input string should follow the format: float value, total number is nRows * nRows The size of data is nRows * (nRows + 1), the first element of each row is the nRows.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">tValue</td><td><em>time_t</em> date </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">tmStruct</td><td><em>tm</em> struct date </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">s,nRows</td><td></td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">data</td><td></td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="../../d8/d6e/a00537_source.html#l00192">192</a> of file <a class="el" href="../../d8/d6e/a00537_source.html">utils.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../de/de7/a00550_source.html#l00335">335</a> of file <a class="el" href="../../de/de7/a00550_source.html">utils.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a91f95c2e64cbd5e036ba313cce413742"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void utilsArray::Read2DArrayFromTxtFile </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>filename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>nRows</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float **&amp;&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Read 2D array from file. </p>
+<p>The input file should follow the format: a 2D array sized nRows * nRows The size of data is nRows * (nRows + 1), the first element of each row is the nRows </p>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../d9/d01/a00227.html#ad453e63206c50d6129029ccc280e14bd" title="Read 1D array from file. ">Read1DArrayFromTxtFile()</a>, <a class="el" href="../../d9/d01/a00227.html#a6c02265ed4c516acbd40943b387582b1" title="Write 1D array to a file. ">Output1DArrayToTxtFile()</a>, <a class="el" href="../../d9/d01/a00227.html#a6327c6b9019fdaae1db19e1743011a82" title="Write 2D array to a file. ">Output2DArrayToTxtFile()</a> </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">filename,nRows</td><td></td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">data</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="../../de/de7/a00550_source.html#l00318">318</a> of file <a class="el" href="../../de/de7/a00550_source.html">utils.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac23f13fe8fae04715d9726a5ce20f3e5"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void utilsArray::Release1DArray </td>
+          <td>(</td>
+          <td class="paramtype">T *&amp;&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Release DT_Array1D data. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="../../d9/d87/a00551_source.html#l01025">1025</a> of file <a class="el" href="../../d9/d87/a00551_source.html">utils.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5eb5f72a7108e6a480ae8a5e541a7fa8"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void utilsArray::Release2DArray </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T **&amp;&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Release DT_Array2D data. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">row</td><td>Row </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">col</td><td>Column </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="../../d9/d87/a00551_source.html#l01033">1033</a> of file <a class="el" href="../../d9/d87/a00551_source.html">utils.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2f23a263b37f93ecf67e02264e27f3e1"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void utilsArray::RemoveValueInVector </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;&#160;</td>
+          <td class="paramname"><em>val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">vector&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>vec</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Remove value in vector container. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">val</td><td>Value to be removed, e.g., a int, or float </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">vec</td><td>Vector container, data type is consistent with val </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="../../d9/d87/a00551_source.html#l01087">1087</a> of file <a class="el" href="../../d9/d87/a00551_source.html">utils.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aeb2e0c11cdc5caffb48cb0b886c08ccf"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool utilsArray::ValueInVector </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const vector&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>vec</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>If value in vector container. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">val</td><td>Value, e.g., a int, or float </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">vec</td><td>Vector container, data type is consistent with val </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if val is in vec, otherwise False </dd></dl>
+
+<p>Definition at line <a class="el" href="../../d9/d87/a00551_source.html#l01075">1075</a> of file <a class="el" href="../../d9/d87/a00551_source.html">utils.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>seims/src/commonlibs/UtilsClass/<a class="el" href="../../dd/d5a/a00538_source.html">utils.h</a></li>
-<li>seims/src/commonlibs/UtilsClass/<a class="el" href="../../d8/d6e/a00537_source.html">utils.cpp</a></li>
+<li>seims/src/commonlibs/UtilsClass/<a class="el" href="../../d9/d87/a00551_source.html">utils.h</a></li>
+<li>seims/src/commonlibs/UtilsClass/<a class="el" href="../../de/de7/a00550_source.html">utils.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../d9/d01/a00227.html">utilsTime</a></li>
-    <li class="footer">Generated on Mon Dec 18 2017 11:41:14 for SEIMS by
+    <li class="navelem"><a class="el" href="../../d9/d01/a00227.html">utilsArray</a></li>
+    <li class="footer">Generated on Tue Jan 2 2018 00:55:56 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

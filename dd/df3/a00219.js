@@ -1,4 +1,5 @@
 var a00219 =
 [
-    [ "Clone", "dd/df3/a00219.html#ab7e33f3365a848e7a68bbf75a78ca45b", null ]
+    [ "assertEqualIgnoreLeadingWhitespace", "dd/df3/a00219.html#a94ac224dc4a15a6370bf72229618a08f", null ],
+    [ "StripLeadingWhitespace", "dd/df3/a00219.html#a2fec06a896aad2393ee44a4e9cc1534a", null ]
 ];

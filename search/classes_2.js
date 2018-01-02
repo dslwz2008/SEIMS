@@ -8,6 +8,7 @@ var searchData=
   ['clspi_5fsvsc',['clsPI_SVSC',['../d4/de8/a00061.html',1,'']]],
   ['clsrasterdata',['clsRasterData',['../df/d03/a00062.html',1,'']]],
   ['clsrasterdata_3c_20float_20_3e',['clsRasterData&lt; float &gt;',['../df/d03/a00062.html',1,'']]],
+  ['clsrasterdata_3c_20int_20_3e',['clsRasterData&lt; int &gt;',['../df/d03/a00062.html',1,'']]],
   ['clsreach',['clsReach',['../d1/d6f/a00063.html',1,'']]],
   ['clsreaches',['clsReaches',['../df/d5f/a00064.html',1,'']]],
   ['clssimpletxtdata',['clsSimpleTxtData',['../de/de1/a00065.html',1,'']]],

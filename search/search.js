@@ -12,7 +12,7 @@ var indexSectionsWithContent =
   2: "ms",
   3: "dims",
   4: "_abcdefghiklmnopqrstuvw~",
-  5: "abcdefghilmnoprstuvw",
+  5: "abcdefhimnopstuvw",
   6: "admr",
   7: "m",
   8: "abcdeghikmnpstu",
