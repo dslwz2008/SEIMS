@@ -219,7 +219,7 @@ $(document).ready(function(){initNavTree('d6/d9c/a00352_source.html','../../');}
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment">//   On POSIX-compliant systems (*nix), we use the &lt;regex.h&gt; library,</span></div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">//   which uses the POSIX extended regex syntax.</span></div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment">//   On other platforms (e.g. Windows), we only support a simple regex</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment">//   On other platforms (e.g. Windows or Mac), we only support a simple regex</span></div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment">//   syntax implemented as part of Google Test.  This limited</span></div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">//   implementation should be enough most of the time when writing</span></div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment">//   death tests; though it lacks many features you can find in PCRE</span></div>
@@ -389,33 +389,81 @@ $(document).ready(function(){initNavTree('d6/d9c/a00352_source.html','../../');}
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;<span class="preprocessor"># endif  // NDEBUG for EXPECT_DEBUG_DEATH</span></div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif  // GTEST_HAS_DEATH_TEST</span></div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;<span class="comment">// EXPECT_DEATH_IF_SUPPORTED(statement, regex) and</span></div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;<span class="comment">// ASSERT_DEATH_IF_SUPPORTED(statement, regex) expand to real death tests if</span></div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;<span class="comment">// death tests are supported; otherwise they just issue a warning.  This is</span></div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;<span class="comment">// useful when you are combining death test assertions with normal test</span></div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;<span class="comment">// assertions in one test.</span></div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;<span class="preprocessor">#if GTEST_HAS_DEATH_TEST</span></div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;<span class="preprocessor"></span><span class="preprocessor"># define EXPECT_DEATH_IF_SUPPORTED(statement, regex) \</span></div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;<span class="preprocessor">    EXPECT_DEATH(statement, regex)</span></div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;<span class="preprocessor"></span><span class="preprocessor"># define ASSERT_DEATH_IF_SUPPORTED(statement, regex) \</span></div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;<span class="preprocessor">    ASSERT_DEATH(statement, regex)</span></div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;<span class="preprocessor"></span><span class="preprocessor"># define EXPECT_DEATH_IF_SUPPORTED(statement, regex) \</span></div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;<span class="preprocessor">    GTEST_UNSUPPORTED_DEATH_TEST_(statement, regex, )</span></div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;<span class="preprocessor"></span><span class="preprocessor"># define ASSERT_DEATH_IF_SUPPORTED(statement, regex) \</span></div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;<span class="preprocessor">    GTEST_UNSUPPORTED_DEATH_TEST_(statement, regex, return)</span></div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;}  <span class="comment">// namespace testing</span></div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;<span class="preprocessor">#endif  // GTEST_INCLUDE_GTEST_GTEST_DEATH_TEST_H_</span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;<span class="comment">// This macro is used for implementing macros such as</span></div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;<span class="comment">// EXPECT_DEATH_IF_SUPPORTED and ASSERT_DEATH_IF_SUPPORTED on systems where</span></div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;<span class="comment">// death tests are not supported. Those macros must compile on such systems</span></div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;<span class="comment">// iff EXPECT_DEATH and ASSERT_DEATH compile with the same parameters on</span></div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;<span class="comment">// systems that support death tests. This allows one to write such a macro</span></div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;<span class="comment">// on a system that does not support death tests and be sure that it will</span></div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;<span class="comment">// compile on a death-test supporting system. It is exposed publicly so that</span></div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;<span class="comment">// systems that have death-tests with stricter requirements than</span></div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;<span class="comment">// GTEST_HAS_DEATH_TEST can write their own equivalent of</span></div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;<span class="comment">// EXPECT_DEATH_IF_SUPPORTED and ASSERT_DEATH_IF_SUPPORTED.</span></div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;<span class="comment">// Parameters:</span></div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;<span class="comment">//   statement -  A statement that a macro such as EXPECT_DEATH would test</span></div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;<span class="comment">//                for program termination. This macro has to make sure this</span></div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;<span class="comment">//                statement is compiled but not executed, to ensure that</span></div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;<span class="comment">//                EXPECT_DEATH_IF_SUPPORTED compiles with a certain</span></div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;<span class="comment">//                parameter iff EXPECT_DEATH compiles with it.</span></div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;<span class="comment">//   regex     -  A regex that a macro such as EXPECT_DEATH would use to test</span></div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;<span class="comment">//                the output of statement.  This parameter has to be</span></div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;<span class="comment">//                compiled but not evaluated by this macro, to ensure that</span></div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;<span class="comment">//                this macro only accepts expressions that a macro such as</span></div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;<span class="comment">//                EXPECT_DEATH would accept.</span></div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;<span class="comment">//   terminator - Must be an empty statement for EXPECT_DEATH_IF_SUPPORTED</span></div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;<span class="comment">//                and a return statement for ASSERT_DEATH_IF_SUPPORTED.</span></div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;<span class="comment">//                This ensures that ASSERT_DEATH_IF_SUPPORTED will not</span></div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;<span class="comment">//                compile inside functions where ASSERT_DEATH doesn&#39;t</span></div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;<span class="comment">//                compile.</span></div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;<span class="comment">//  The branch that has an always false condition is used to ensure that</span></div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;<span class="comment">//  statement and regex are compiled (and thus syntactically correct) but</span></div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;<span class="comment">//  never executed. The unreachable code macro protects the terminator</span></div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;<span class="comment">//  statement from generating an &#39;unreachable code&#39; warning in case</span></div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="comment">//  statement unconditionally returns or throws. The Message constructor at</span></div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span class="comment">//  the end allows the syntax of streaming additional messages into the</span></div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;<span class="comment">//  macro, for compilational compatibility with EXPECT_DEATH/ASSERT_DEATH.</span></div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;<span class="preprocessor"># define GTEST_UNSUPPORTED_DEATH_TEST(statement, regex, terminator) \</span></div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;<span class="preprocessor">    GTEST_AMBIGUOUS_ELSE_BLOCKER_ \</span></div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;<span class="preprocessor">    if (::testing::internal::AlwaysTrue()) { \</span></div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;<span class="preprocessor">      GTEST_LOG_(WARNING) \</span></div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;<span class="preprocessor">          &lt;&lt; &quot;Death tests are not supported on this platform.\n&quot; \</span></div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;<span class="preprocessor">          &lt;&lt; &quot;Statement &#39;&quot; #statement &quot;&#39; cannot be verified.&quot;; \</span></div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;<span class="preprocessor">    } else if (::testing::internal::AlwaysFalse()) { \</span></div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;<span class="preprocessor">      ::testing::internal::RE::PartialMatch(&quot;.*&quot;, (regex)); \</span></div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;<span class="preprocessor">      GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement); \</span></div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;<span class="preprocessor">      terminator; \</span></div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;<span class="preprocessor">    } else \</span></div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;<span class="preprocessor">      ::testing::Message()</span></div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;<span class="comment">// EXPECT_DEATH_IF_SUPPORTED(statement, regex) and</span></div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;<span class="comment">// ASSERT_DEATH_IF_SUPPORTED(statement, regex) expand to real death tests if</span></div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;<span class="comment">// death tests are supported; otherwise they just issue a warning.  This is</span></div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;<span class="comment">// useful when you are combining death test assertions with normal test</span></div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;<span class="comment">// assertions in one test.</span></div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;<span class="preprocessor">#if GTEST_HAS_DEATH_TEST</span></div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;<span class="preprocessor"></span><span class="preprocessor"># define EXPECT_DEATH_IF_SUPPORTED(statement, regex) \</span></div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;<span class="preprocessor">    EXPECT_DEATH(statement, regex)</span></div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;<span class="preprocessor"></span><span class="preprocessor"># define ASSERT_DEATH_IF_SUPPORTED(statement, regex) \</span></div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;<span class="preprocessor">    ASSERT_DEATH(statement, regex)</span></div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;<span class="preprocessor"></span><span class="preprocessor"># define EXPECT_DEATH_IF_SUPPORTED(statement, regex) \</span></div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;<span class="preprocessor">    GTEST_UNSUPPORTED_DEATH_TEST(statement, regex, )</span></div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;<span class="preprocessor"></span><span class="preprocessor"># define ASSERT_DEATH_IF_SUPPORTED(statement, regex) \</span></div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;<span class="preprocessor">    GTEST_UNSUPPORTED_DEATH_TEST(statement, regex, return)</span></div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;}  <span class="comment">// namespace testing</span></div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;<span class="preprocessor">#endif  // GTEST_INCLUDE_GTEST_GTEST_DEATH_TEST_H_</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_483bc1739a16b87563cca23e7a392c1e.html">seims_linux_gcc48</a></li><li class="navelem"><a class="el" href="../../dir_8ad0a590518a67e536e9c3c335cb041a.html">bin</a></li><li class="navelem"><a class="el" href="../../dir_8ffa800c5c7a6e5ae34d4a9d68bf7466.html">include</a></li><li class="navelem"><a class="el" href="../../dir_bf0d26f02b34944dfd26c839ed3f5e97.html">gtest</a></li><li class="navelem"><b>gtest-death-test.h</b></li>
-    <li class="footer">Generated on Tue Jan 2 2018 00:55:48 for SEIMS by
+    <li class="footer">Generated on Fri Jan 19 2018 06:47:02 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

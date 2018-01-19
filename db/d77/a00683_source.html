@@ -154,24 +154,25 @@ $(document).ready(function(){initNavTree('db/d77/a00683_source.html','../../');}
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    mdi.AddParameter(VAR_INTERC_MIN, UNIT_DEPTH_MM, DESC_INTERC_MIN, Source_ParameterDB, DT_Raster1D);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    mdi.AddParameter(VAR_PI_B, UNIT_NON_DIM, DESC_PI_B, Source_ParameterDB, DT_Single);</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    mdi.AddParameter(VAR_INIT_IS, UNIT_NON_DIM, DESC_INIT_IS, Source_ParameterDB, DT_Single);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">// set the output variables</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    mdi.AddOutput(VAR_INLO, UNIT_DEPTH_MM, DESC_INLO, DT_Raster1D);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#ifndef STORM_MODE</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor"></span>    mdi.AddOutput(VAR_INET, UNIT_DEPTH_MM, DESC_INET, DT_Raster1D);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor"></span>    mdi.AddOutput(VAR_CANSTOR, UNIT_DEPTH_MM, DESC_CANSTOR, DT_Raster1D);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    mdi.AddOutput(VAR_NEPR, UNIT_DEPTH_MM, DESC_NEPR, DT_Raster1D);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">// set the dependencies</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    mdi.AddDependency(MCLS_CLIMATE, MCLSDESC_CLIMATE);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">string</span> res = mdi.GetXMLDocument();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">char</span> *tmp = <span class="keyword">new</span> <span class="keywordtype">char</span>[res.size() + 1];</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    strprintf(tmp, res.size() + 1, <span class="stringliteral">&quot;%s&quot;</span>, res.c_str());</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">return</span> tmp;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    mdi.AddParameter(VAR_LANDUSE, UNIT_NON_DIM, DESC_LANDUSE, Source_ParameterDB, DT_Raster1D);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">// set the output variables</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    mdi.AddOutput(VAR_INLO, UNIT_DEPTH_MM, DESC_INLO, DT_Raster1D);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#ifndef STORM_MODE</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor"></span>    mdi.AddOutput(VAR_INET, UNIT_DEPTH_MM, DESC_INET, DT_Raster1D);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor"></span>    mdi.AddOutput(VAR_CANSTOR, UNIT_DEPTH_MM, DESC_CANSTOR, DT_Raster1D);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    mdi.AddOutput(VAR_NEPR, UNIT_DEPTH_MM, DESC_NEPR, DT_Raster1D);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">// set the dependencies</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    mdi.AddDependency(MCLS_CLIMATE, MCLSDESC_CLIMATE);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">string</span> res = mdi.GetXMLDocument();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">char</span> *tmp = <span class="keyword">new</span> <span class="keywordtype">char</span>[res.size() + 1];</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    strprintf(tmp, res.size() + 1, <span class="stringliteral">&quot;%s&quot;</span>, res.c_str());</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">return</span> tmp;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
 <div class="ttc" id="a00133_html"><div class="ttname"><a href="../../d0/de8/a00133.html">MetadataInfo</a></div><div class="ttdoc">Metadata information of module. </div><div class="ttdef"><b>Definition:</b> <a href="../../d6/dcf/a00645_source.html#l00103">MetadataInfo.h:103</a></div></div>
 <div class="ttc" id="a00060_html"><div class="ttname"><a href="../../d9/d73/a00060.html">clsPI_MCS</a></div><div class="ttdoc">Class for Precipitation Interception module based on Maximum Canopy Storage. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d2c/a00764_source.html#l00024">Interception_MCS.h:24</a></div></div>
 <div class="ttc" id="a00194_html"><div class="ttname"><a href="../../dc/d57/a00194.html">SimulationModule</a></div><div class="ttdoc">Base module for all simulation modules in SEIMS. </div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d6b/a00649_source.html#l00047">SimulationModule.h:47</a></div></div>
@@ -182,7 +183,7 @@ $(document).ready(function(){initNavTree('db/d77/a00683_source.html','../../');}
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_b89a50a3d6b2f98326f9f3f569cfd788.html">modules</a></li><li class="navelem"><a class="el" href="../../dir_e30ec826fc85f262bf1bcce3dde65013.html">hydrology</a></li><li class="navelem"><a class="el" href="../../dir_e905f0c466b49d6d5d4ae5fd6da744f5.html">PI_MCS</a></li><li class="navelem"><b>api.cpp</b></li>
-    <li class="footer">Generated on Tue Jan 2 2018 00:55:53 for SEIMS by
+    <li class="footer">Generated on Fri Jan 19 2018 06:47:07 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

@@ -313,65 +313,64 @@ $(document).ready(function(){initNavTree('db/ddc/a00353_source.html','../../');}
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;  std::string GetString() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="preprocessor">#if GTEST_OS_SYMBIAN</span></div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="preprocessor"></span>  <span class="comment">// These are needed as the Nokia Symbian Compiler cannot decide between</span></div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;  <span class="comment">// const T&amp; and const T* in a function template. The Nokia compiler _can_</span></div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;  <span class="comment">// decide between class template specializations for T and T*, so a</span></div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;  <span class="comment">// tr1::type_traits-like is_pointer works, and we can overload on that.</span></div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span> StreamHelper(internal::true_type <span class="comment">/*is_pointer*/</span>, T* pointer) {</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keywordflow">if</span> (pointer == NULL) {</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;      *ss_ &lt;&lt; <span class="stringliteral">&quot;(null)&quot;</span>;</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;      *ss_ &lt;&lt; pointer;</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    }</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;  }</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span> StreamHelper(internal::false_type <span class="comment">/*is_pointer*/</span>,</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                           <span class="keyword">const</span> T&amp; value) {</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="comment">// See the comments in Message&amp; operator &lt;&lt;(const T&amp;) above for why</span></div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="comment">// we need this using statement.</span></div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    using ::operator &lt;&lt;;</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    *ss_ &lt;&lt; value;</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;  }</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="preprocessor">#endif  // GTEST_OS_SYMBIAN</span></div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;  <span class="comment">// We&#39;ll hold the text streamed to this object here.</span></div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;  <span class="keyword">const</span> internal::scoped_ptr&lt; ::std::stringstream&gt; ss_;</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;  <span class="comment">// We declare (but don&#39;t implement) this to prevent the compiler</span></div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;  <span class="comment">// from implementing the assignment operator.</span></div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;  <span class="keywordtype">void</span> operator=(<span class="keyword">const</span> Message&amp;);</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;};</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="comment">// Streams a Message to an ostream.</span></div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="keyword">inline</span> std::ostream&amp; operator &lt;&lt;(std::ostream&amp; os, <span class="keyword">const</span> Message&amp; sb) {</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;  <span class="keywordflow">return</span> os &lt;&lt; sb.GetString();</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;}</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;<span class="keyword">namespace </span>internal {</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="comment">// Converts a streamable value to an std::string.  A NULL pointer is</span></div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="comment">// converted to &quot;(null)&quot;.  When the input value is a ::string,</span></div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="comment">// ::std::string, ::wstring, or ::std::wstring object, each NUL</span></div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="comment">// character in it is replaced with &quot;\\0&quot;.</span></div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;std::string StreamableToString(<span class="keyword">const</span> T&amp; streamable) {</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;  <span class="keywordflow">return</span> (Message() &lt;&lt; streamable).GetString();</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;}</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;}  <span class="comment">// namespace internal</span></div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;}  <span class="comment">// namespace testing</span></div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;<span class="preprocessor">#endif  // GTEST_INCLUDE_GTEST_GTEST_MESSAGE_H_</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="preprocessor">#if GTEST_OS_SYMBIAN</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="preprocessor"></span>  <span class="comment">// These are needed as the Nokia Symbian Compiler cannot decide between</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;  <span class="comment">// const T&amp; and const T* in a function template. The Nokia compiler _can_</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;  <span class="comment">// decide between class template specializations for T and T*, so a</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;  <span class="comment">// tr1::type_traits-like is_pointer works, and we can overload on that.</span></div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span> StreamHelper(internal::true_type <span class="comment">/*is_pointer*/</span>, T* pointer) {</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="keywordflow">if</span> (pointer == NULL) {</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;      *ss_ &lt;&lt; <span class="stringliteral">&quot;(null)&quot;</span>;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;      *ss_ &lt;&lt; pointer;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    }</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;  }</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span> StreamHelper(internal::false_type <span class="comment">/*is_pointer*/</span>,</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                           <span class="keyword">const</span> T&amp; value) {</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="comment">// See the comments in Message&amp; operator &lt;&lt;(const T&amp;) above for why</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="comment">// we need this using statement.</span></div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    using ::operator &lt;&lt;;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    *ss_ &lt;&lt; value;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;  }</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="preprocessor">#endif  // GTEST_OS_SYMBIAN</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;  <span class="comment">// We&#39;ll hold the text streamed to this object here.</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;  <span class="keyword">const</span> internal::scoped_ptr&lt; ::std::stringstream&gt; ss_;</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;  <span class="comment">// We declare (but don&#39;t implement) this to prevent the compiler</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;  <span class="comment">// from implementing the assignment operator.</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;  <span class="keywordtype">void</span> operator=(<span class="keyword">const</span> Message&amp;);</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;};</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="comment">// Streams a Message to an ostream.</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="keyword">inline</span> std::ostream&amp; operator &lt;&lt;(std::ostream&amp; os, <span class="keyword">const</span> Message&amp; sb) {</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;  <span class="keywordflow">return</span> os &lt;&lt; sb.GetString();</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;}</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="keyword">namespace </span>internal {</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;<span class="comment">// Converts a streamable value to an std::string.  A NULL pointer is</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="comment">// converted to &quot;(null)&quot;.  When the input value is a ::string,</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="comment">// ::std::string, ::wstring, or ::std::wstring object, each NUL</span></div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="comment">// character in it is replaced with &quot;\\0&quot;.</span></div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;std::string StreamableToString(<span class="keyword">const</span> T&amp; streamable) {</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;  <span class="keywordflow">return</span> (Message() &lt;&lt; streamable).GetString();</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;}</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;}  <span class="comment">// namespace internal</span></div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;}  <span class="comment">// namespace testing</span></div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;<span class="preprocessor">#endif  // GTEST_INCLUDE_GTEST_GTEST_MESSAGE_H_</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_cd802f715eac8b5afa0214b2422ad557.html">buildRel</a></li><li class="navelem"><a class="el" href="../../dir_a4883baec63d05837a3a0400dc0258de.html">googletest-src</a></li><li class="navelem"><a class="el" href="../../dir_df554225d4ecad8376ecb24f94d95425.html">googletest</a></li><li class="navelem"><a class="el" href="../../dir_51572e58cfbc9f7aa926ef9c72a0ea12.html">include</a></li><li class="navelem"><a class="el" href="../../dir_1451cf2c3496ec9769038d5f0cdb8f67.html">gtest</a></li><li class="navelem"><b>gtest-message.h</b></li>
-    <li class="footer">Generated on Tue Jan 2 2018 00:55:48 for SEIMS by
+    <li class="footer">Generated on Fri Jan 19 2018 06:47:02 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

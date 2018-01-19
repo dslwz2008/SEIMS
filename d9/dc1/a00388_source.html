@@ -3320,7 +3320,7 @@ $(document).ready(function(){initNavTree('d9/dc1/a00388_source.html','../../');}
 <div class="line"><a name="l03203"></a><span class="lineno"> 3203</span>&#160;    <span class="keyword">virtual</span> ParamIteratorInterface&lt;ParamType&gt;* Clone()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l03204"></a><span class="lineno"> 3204</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">new</span> Iterator(*<span class="keyword">this</span>);</div>
 <div class="line"><a name="l03205"></a><span class="lineno"> 3205</span>&#160;    }</div>
-<div class="line"><a name="l03206"></a><span class="lineno"> 3206</span>&#160;    <span class="keyword">virtual</span> <span class="keyword">const</span> ParamType* Current()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> &amp;current_value_; }</div>
+<div class="line"><a name="l03206"></a><span class="lineno"> 3206</span>&#160;    <span class="keyword">virtual</span> <span class="keyword">const</span> ParamType* Current()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> current_value_.get(); }</div>
 <div class="line"><a name="l03207"></a><span class="lineno"> 3207</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> Equals(<span class="keyword">const</span> ParamIteratorInterface&lt;ParamType&gt;&amp; other)<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l03208"></a><span class="lineno"> 3208</span>&#160;      <span class="comment">// Having the same base generator guarantees that the other</span></div>
 <div class="line"><a name="l03209"></a><span class="lineno"> 3209</span>&#160;      <span class="comment">// iterator is of the same type and we can downcast.</span></div>
@@ -3352,7 +3352,7 @@ $(document).ready(function(){initNavTree('d9/dc1/a00388_source.html','../../');}
 <div class="line"><a name="l03235"></a><span class="lineno"> 3235</span>&#160;</div>
 <div class="line"><a name="l03236"></a><span class="lineno"> 3236</span>&#160;    <span class="keywordtype">void</span> ComputeCurrentValue() {</div>
 <div class="line"><a name="l03237"></a><span class="lineno"> 3237</span>&#160;      <span class="keywordflow">if</span> (!AtEnd())</div>
-<div class="line"><a name="l03238"></a><span class="lineno"> 3238</span>&#160;        current_value_ = ParamType(*current1_, *current2_);</div>
+<div class="line"><a name="l03238"></a><span class="lineno"> 3238</span>&#160;        current_value_.reset(<span class="keyword">new</span> ParamType(*current1_, *current2_));</div>
 <div class="line"><a name="l03239"></a><span class="lineno"> 3239</span>&#160;    }</div>
 <div class="line"><a name="l03240"></a><span class="lineno"> 3240</span>&#160;    <span class="keywordtype">bool</span> AtEnd()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l03241"></a><span class="lineno"> 3241</span>&#160;      <span class="comment">// We must report iterator past the end of the range when either of the</span></div>
@@ -3374,7 +3374,7 @@ $(document).ready(function(){initNavTree('d9/dc1/a00388_source.html','../../');}
 <div class="line"><a name="l03257"></a><span class="lineno"> 3257</span>&#160;    <span class="keyword">const</span> <span class="keyword">typename</span> ParamGenerator&lt;T2&gt;::iterator begin2_;</div>
 <div class="line"><a name="l03258"></a><span class="lineno"> 3258</span>&#160;    <span class="keyword">const</span> <span class="keyword">typename</span> ParamGenerator&lt;T2&gt;::iterator end2_;</div>
 <div class="line"><a name="l03259"></a><span class="lineno"> 3259</span>&#160;    <span class="keyword">typename</span> ParamGenerator&lt;T2&gt;::iterator current2_;</div>
-<div class="line"><a name="l03260"></a><span class="lineno"> 3260</span>&#160;    ParamType current_value_;</div>
+<div class="line"><a name="l03260"></a><span class="lineno"> 3260</span>&#160;    linked_ptr&lt;ParamType&gt; current_value_;</div>
 <div class="line"><a name="l03261"></a><span class="lineno"> 3261</span>&#160;  };  <span class="comment">// class CartesianProductGenerator2::Iterator</span></div>
 <div class="line"><a name="l03262"></a><span class="lineno"> 3262</span>&#160;</div>
 <div class="line"><a name="l03263"></a><span class="lineno"> 3263</span>&#160;  <span class="comment">// No implementation - assignment is unsupported.</span></div>
@@ -3443,7 +3443,7 @@ $(document).ready(function(){initNavTree('d9/dc1/a00388_source.html','../../');}
 <div class="line"><a name="l03326"></a><span class="lineno"> 3326</span>&#160;    <span class="keyword">virtual</span> ParamIteratorInterface&lt;ParamType&gt;* Clone()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l03327"></a><span class="lineno"> 3327</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">new</span> Iterator(*<span class="keyword">this</span>);</div>
 <div class="line"><a name="l03328"></a><span class="lineno"> 3328</span>&#160;    }</div>
-<div class="line"><a name="l03329"></a><span class="lineno"> 3329</span>&#160;    <span class="keyword">virtual</span> <span class="keyword">const</span> ParamType* Current()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> &amp;current_value_; }</div>
+<div class="line"><a name="l03329"></a><span class="lineno"> 3329</span>&#160;    <span class="keyword">virtual</span> <span class="keyword">const</span> ParamType* Current()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> current_value_.get(); }</div>
 <div class="line"><a name="l03330"></a><span class="lineno"> 3330</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> Equals(<span class="keyword">const</span> ParamIteratorInterface&lt;ParamType&gt;&amp; other)<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l03331"></a><span class="lineno"> 3331</span>&#160;      <span class="comment">// Having the same base generator guarantees that the other</span></div>
 <div class="line"><a name="l03332"></a><span class="lineno"> 3332</span>&#160;      <span class="comment">// iterator is of the same type and we can downcast.</span></div>
@@ -3479,7 +3479,7 @@ $(document).ready(function(){initNavTree('d9/dc1/a00388_source.html','../../');}
 <div class="line"><a name="l03362"></a><span class="lineno"> 3362</span>&#160;</div>
 <div class="line"><a name="l03363"></a><span class="lineno"> 3363</span>&#160;    <span class="keywordtype">void</span> ComputeCurrentValue() {</div>
 <div class="line"><a name="l03364"></a><span class="lineno"> 3364</span>&#160;      <span class="keywordflow">if</span> (!AtEnd())</div>
-<div class="line"><a name="l03365"></a><span class="lineno"> 3365</span>&#160;        current_value_ = ParamType(*current1_, *current2_, *current3_);</div>
+<div class="line"><a name="l03365"></a><span class="lineno"> 3365</span>&#160;        current_value_.reset(<span class="keyword">new</span> ParamType(*current1_, *current2_, *current3_));</div>
 <div class="line"><a name="l03366"></a><span class="lineno"> 3366</span>&#160;    }</div>
 <div class="line"><a name="l03367"></a><span class="lineno"> 3367</span>&#160;    <span class="keywordtype">bool</span> AtEnd()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l03368"></a><span class="lineno"> 3368</span>&#160;      <span class="comment">// We must report iterator past the end of the range when either of the</span></div>
@@ -3505,7 +3505,7 @@ $(document).ready(function(){initNavTree('d9/dc1/a00388_source.html','../../');}
 <div class="line"><a name="l03388"></a><span class="lineno"> 3388</span>&#160;    <span class="keyword">const</span> <span class="keyword">typename</span> ParamGenerator&lt;T3&gt;::iterator begin3_;</div>
 <div class="line"><a name="l03389"></a><span class="lineno"> 3389</span>&#160;    <span class="keyword">const</span> <span class="keyword">typename</span> ParamGenerator&lt;T3&gt;::iterator end3_;</div>
 <div class="line"><a name="l03390"></a><span class="lineno"> 3390</span>&#160;    <span class="keyword">typename</span> ParamGenerator&lt;T3&gt;::iterator current3_;</div>
-<div class="line"><a name="l03391"></a><span class="lineno"> 3391</span>&#160;    ParamType current_value_;</div>
+<div class="line"><a name="l03391"></a><span class="lineno"> 3391</span>&#160;    linked_ptr&lt;ParamType&gt; current_value_;</div>
 <div class="line"><a name="l03392"></a><span class="lineno"> 3392</span>&#160;  };  <span class="comment">// class CartesianProductGenerator3::Iterator</span></div>
 <div class="line"><a name="l03393"></a><span class="lineno"> 3393</span>&#160;</div>
 <div class="line"><a name="l03394"></a><span class="lineno"> 3394</span>&#160;  <span class="comment">// No implementation - assignment is unsupported.</span></div>
@@ -3584,7 +3584,7 @@ $(document).ready(function(){initNavTree('d9/dc1/a00388_source.html','../../');}
 <div class="line"><a name="l03467"></a><span class="lineno"> 3467</span>&#160;    <span class="keyword">virtual</span> ParamIteratorInterface&lt;ParamType&gt;* Clone()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l03468"></a><span class="lineno"> 3468</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">new</span> Iterator(*<span class="keyword">this</span>);</div>
 <div class="line"><a name="l03469"></a><span class="lineno"> 3469</span>&#160;    }</div>
-<div class="line"><a name="l03470"></a><span class="lineno"> 3470</span>&#160;    <span class="keyword">virtual</span> <span class="keyword">const</span> ParamType* Current()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> &amp;current_value_; }</div>
+<div class="line"><a name="l03470"></a><span class="lineno"> 3470</span>&#160;    <span class="keyword">virtual</span> <span class="keyword">const</span> ParamType* Current()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> current_value_.get(); }</div>
 <div class="line"><a name="l03471"></a><span class="lineno"> 3471</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> Equals(<span class="keyword">const</span> ParamIteratorInterface&lt;ParamType&gt;&amp; other)<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l03472"></a><span class="lineno"> 3472</span>&#160;      <span class="comment">// Having the same base generator guarantees that the other</span></div>
 <div class="line"><a name="l03473"></a><span class="lineno"> 3473</span>&#160;      <span class="comment">// iterator is of the same type and we can downcast.</span></div>
@@ -3624,8 +3624,8 @@ $(document).ready(function(){initNavTree('d9/dc1/a00388_source.html','../../');}
 <div class="line"><a name="l03507"></a><span class="lineno"> 3507</span>&#160;</div>
 <div class="line"><a name="l03508"></a><span class="lineno"> 3508</span>&#160;    <span class="keywordtype">void</span> ComputeCurrentValue() {</div>
 <div class="line"><a name="l03509"></a><span class="lineno"> 3509</span>&#160;      <span class="keywordflow">if</span> (!AtEnd())</div>
-<div class="line"><a name="l03510"></a><span class="lineno"> 3510</span>&#160;        current_value_ = ParamType(*current1_, *current2_, *current3_,</div>
-<div class="line"><a name="l03511"></a><span class="lineno"> 3511</span>&#160;            *current4_);</div>
+<div class="line"><a name="l03510"></a><span class="lineno"> 3510</span>&#160;        current_value_.reset(<span class="keyword">new</span> ParamType(*current1_, *current2_, *current3_,</div>
+<div class="line"><a name="l03511"></a><span class="lineno"> 3511</span>&#160;            *current4_));</div>
 <div class="line"><a name="l03512"></a><span class="lineno"> 3512</span>&#160;    }</div>
 <div class="line"><a name="l03513"></a><span class="lineno"> 3513</span>&#160;    <span class="keywordtype">bool</span> AtEnd()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l03514"></a><span class="lineno"> 3514</span>&#160;      <span class="comment">// We must report iterator past the end of the range when either of the</span></div>
@@ -3655,7 +3655,7 @@ $(document).ready(function(){initNavTree('d9/dc1/a00388_source.html','../../');}
 <div class="line"><a name="l03538"></a><span class="lineno"> 3538</span>&#160;    <span class="keyword">const</span> <span class="keyword">typename</span> ParamGenerator&lt;T4&gt;::iterator begin4_;</div>
 <div class="line"><a name="l03539"></a><span class="lineno"> 3539</span>&#160;    <span class="keyword">const</span> <span class="keyword">typename</span> ParamGenerator&lt;T4&gt;::iterator end4_;</div>
 <div class="line"><a name="l03540"></a><span class="lineno"> 3540</span>&#160;    <span class="keyword">typename</span> ParamGenerator&lt;T4&gt;::iterator current4_;</div>
-<div class="line"><a name="l03541"></a><span class="lineno"> 3541</span>&#160;    ParamType current_value_;</div>
+<div class="line"><a name="l03541"></a><span class="lineno"> 3541</span>&#160;    linked_ptr&lt;ParamType&gt; current_value_;</div>
 <div class="line"><a name="l03542"></a><span class="lineno"> 3542</span>&#160;  };  <span class="comment">// class CartesianProductGenerator4::Iterator</span></div>
 <div class="line"><a name="l03543"></a><span class="lineno"> 3543</span>&#160;</div>
 <div class="line"><a name="l03544"></a><span class="lineno"> 3544</span>&#160;  <span class="comment">// No implementation - assignment is unsupported.</span></div>
@@ -3742,7 +3742,7 @@ $(document).ready(function(){initNavTree('d9/dc1/a00388_source.html','../../');}
 <div class="line"><a name="l03625"></a><span class="lineno"> 3625</span>&#160;    <span class="keyword">virtual</span> ParamIteratorInterface&lt;ParamType&gt;* Clone()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l03626"></a><span class="lineno"> 3626</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">new</span> Iterator(*<span class="keyword">this</span>);</div>
 <div class="line"><a name="l03627"></a><span class="lineno"> 3627</span>&#160;    }</div>
-<div class="line"><a name="l03628"></a><span class="lineno"> 3628</span>&#160;    <span class="keyword">virtual</span> <span class="keyword">const</span> ParamType* Current()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> &amp;current_value_; }</div>
+<div class="line"><a name="l03628"></a><span class="lineno"> 3628</span>&#160;    <span class="keyword">virtual</span> <span class="keyword">const</span> ParamType* Current()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> current_value_.get(); }</div>
 <div class="line"><a name="l03629"></a><span class="lineno"> 3629</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> Equals(<span class="keyword">const</span> ParamIteratorInterface&lt;ParamType&gt;&amp; other)<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l03630"></a><span class="lineno"> 3630</span>&#160;      <span class="comment">// Having the same base generator guarantees that the other</span></div>
 <div class="line"><a name="l03631"></a><span class="lineno"> 3631</span>&#160;      <span class="comment">// iterator is of the same type and we can downcast.</span></div>
@@ -3786,8 +3786,8 @@ $(document).ready(function(){initNavTree('d9/dc1/a00388_source.html','../../');}
 <div class="line"><a name="l03669"></a><span class="lineno"> 3669</span>&#160;</div>
 <div class="line"><a name="l03670"></a><span class="lineno"> 3670</span>&#160;    <span class="keywordtype">void</span> ComputeCurrentValue() {</div>
 <div class="line"><a name="l03671"></a><span class="lineno"> 3671</span>&#160;      <span class="keywordflow">if</span> (!AtEnd())</div>
-<div class="line"><a name="l03672"></a><span class="lineno"> 3672</span>&#160;        current_value_ = ParamType(*current1_, *current2_, *current3_,</div>
-<div class="line"><a name="l03673"></a><span class="lineno"> 3673</span>&#160;            *current4_, *current5_);</div>
+<div class="line"><a name="l03672"></a><span class="lineno"> 3672</span>&#160;        current_value_.reset(<span class="keyword">new</span> ParamType(*current1_, *current2_, *current3_,</div>
+<div class="line"><a name="l03673"></a><span class="lineno"> 3673</span>&#160;            *current4_, *current5_));</div>
 <div class="line"><a name="l03674"></a><span class="lineno"> 3674</span>&#160;    }</div>
 <div class="line"><a name="l03675"></a><span class="lineno"> 3675</span>&#160;    <span class="keywordtype">bool</span> AtEnd()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l03676"></a><span class="lineno"> 3676</span>&#160;      <span class="comment">// We must report iterator past the end of the range when either of the</span></div>
@@ -3821,7 +3821,7 @@ $(document).ready(function(){initNavTree('d9/dc1/a00388_source.html','../../');}
 <div class="line"><a name="l03704"></a><span class="lineno"> 3704</span>&#160;    <span class="keyword">const</span> <span class="keyword">typename</span> ParamGenerator&lt;T5&gt;::iterator begin5_;</div>
 <div class="line"><a name="l03705"></a><span class="lineno"> 3705</span>&#160;    <span class="keyword">const</span> <span class="keyword">typename</span> ParamGenerator&lt;T5&gt;::iterator end5_;</div>
 <div class="line"><a name="l03706"></a><span class="lineno"> 3706</span>&#160;    <span class="keyword">typename</span> ParamGenerator&lt;T5&gt;::iterator current5_;</div>
-<div class="line"><a name="l03707"></a><span class="lineno"> 3707</span>&#160;    ParamType current_value_;</div>
+<div class="line"><a name="l03707"></a><span class="lineno"> 3707</span>&#160;    linked_ptr&lt;ParamType&gt; current_value_;</div>
 <div class="line"><a name="l03708"></a><span class="lineno"> 3708</span>&#160;  };  <span class="comment">// class CartesianProductGenerator5::Iterator</span></div>
 <div class="line"><a name="l03709"></a><span class="lineno"> 3709</span>&#160;</div>
 <div class="line"><a name="l03710"></a><span class="lineno"> 3710</span>&#160;  <span class="comment">// No implementation - assignment is unsupported.</span></div>
@@ -3919,7 +3919,7 @@ $(document).ready(function(){initNavTree('d9/dc1/a00388_source.html','../../');}
 <div class="line"><a name="l03802"></a><span class="lineno"> 3802</span>&#160;    <span class="keyword">virtual</span> ParamIteratorInterface&lt;ParamType&gt;* Clone()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l03803"></a><span class="lineno"> 3803</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">new</span> Iterator(*<span class="keyword">this</span>);</div>
 <div class="line"><a name="l03804"></a><span class="lineno"> 3804</span>&#160;    }</div>
-<div class="line"><a name="l03805"></a><span class="lineno"> 3805</span>&#160;    <span class="keyword">virtual</span> <span class="keyword">const</span> ParamType* Current()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> &amp;current_value_; }</div>
+<div class="line"><a name="l03805"></a><span class="lineno"> 3805</span>&#160;    <span class="keyword">virtual</span> <span class="keyword">const</span> ParamType* Current()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> current_value_.get(); }</div>
 <div class="line"><a name="l03806"></a><span class="lineno"> 3806</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> Equals(<span class="keyword">const</span> ParamIteratorInterface&lt;ParamType&gt;&amp; other)<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l03807"></a><span class="lineno"> 3807</span>&#160;      <span class="comment">// Having the same base generator guarantees that the other</span></div>
 <div class="line"><a name="l03808"></a><span class="lineno"> 3808</span>&#160;      <span class="comment">// iterator is of the same type and we can downcast.</span></div>
@@ -3967,8 +3967,8 @@ $(document).ready(function(){initNavTree('d9/dc1/a00388_source.html','../../');}
 <div class="line"><a name="l03850"></a><span class="lineno"> 3850</span>&#160;</div>
 <div class="line"><a name="l03851"></a><span class="lineno"> 3851</span>&#160;    <span class="keywordtype">void</span> ComputeCurrentValue() {</div>
 <div class="line"><a name="l03852"></a><span class="lineno"> 3852</span>&#160;      <span class="keywordflow">if</span> (!AtEnd())</div>
-<div class="line"><a name="l03853"></a><span class="lineno"> 3853</span>&#160;        current_value_ = ParamType(*current1_, *current2_, *current3_,</div>
-<div class="line"><a name="l03854"></a><span class="lineno"> 3854</span>&#160;            *current4_, *current5_, *current6_);</div>
+<div class="line"><a name="l03853"></a><span class="lineno"> 3853</span>&#160;        current_value_.reset(<span class="keyword">new</span> ParamType(*current1_, *current2_, *current3_,</div>
+<div class="line"><a name="l03854"></a><span class="lineno"> 3854</span>&#160;            *current4_, *current5_, *current6_));</div>
 <div class="line"><a name="l03855"></a><span class="lineno"> 3855</span>&#160;    }</div>
 <div class="line"><a name="l03856"></a><span class="lineno"> 3856</span>&#160;    <span class="keywordtype">bool</span> AtEnd()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l03857"></a><span class="lineno"> 3857</span>&#160;      <span class="comment">// We must report iterator past the end of the range when either of the</span></div>
@@ -4006,7 +4006,7 @@ $(document).ready(function(){initNavTree('d9/dc1/a00388_source.html','../../');}
 <div class="line"><a name="l03889"></a><span class="lineno"> 3889</span>&#160;    <span class="keyword">const</span> <span class="keyword">typename</span> ParamGenerator&lt;T6&gt;::iterator begin6_;</div>
 <div class="line"><a name="l03890"></a><span class="lineno"> 3890</span>&#160;    <span class="keyword">const</span> <span class="keyword">typename</span> ParamGenerator&lt;T6&gt;::iterator end6_;</div>
 <div class="line"><a name="l03891"></a><span class="lineno"> 3891</span>&#160;    <span class="keyword">typename</span> ParamGenerator&lt;T6&gt;::iterator current6_;</div>
-<div class="line"><a name="l03892"></a><span class="lineno"> 3892</span>&#160;    ParamType current_value_;</div>
+<div class="line"><a name="l03892"></a><span class="lineno"> 3892</span>&#160;    linked_ptr&lt;ParamType&gt; current_value_;</div>
 <div class="line"><a name="l03893"></a><span class="lineno"> 3893</span>&#160;  };  <span class="comment">// class CartesianProductGenerator6::Iterator</span></div>
 <div class="line"><a name="l03894"></a><span class="lineno"> 3894</span>&#160;</div>
 <div class="line"><a name="l03895"></a><span class="lineno"> 3895</span>&#160;  <span class="comment">// No implementation - assignment is unsupported.</span></div>
@@ -4113,7 +4113,7 @@ $(document).ready(function(){initNavTree('d9/dc1/a00388_source.html','../../');}
 <div class="line"><a name="l03996"></a><span class="lineno"> 3996</span>&#160;    <span class="keyword">virtual</span> ParamIteratorInterface&lt;ParamType&gt;* Clone()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l03997"></a><span class="lineno"> 3997</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">new</span> Iterator(*<span class="keyword">this</span>);</div>
 <div class="line"><a name="l03998"></a><span class="lineno"> 3998</span>&#160;    }</div>
-<div class="line"><a name="l03999"></a><span class="lineno"> 3999</span>&#160;    <span class="keyword">virtual</span> <span class="keyword">const</span> ParamType* Current()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> &amp;current_value_; }</div>
+<div class="line"><a name="l03999"></a><span class="lineno"> 3999</span>&#160;    <span class="keyword">virtual</span> <span class="keyword">const</span> ParamType* Current()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> current_value_.get(); }</div>
 <div class="line"><a name="l04000"></a><span class="lineno"> 4000</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> Equals(<span class="keyword">const</span> ParamIteratorInterface&lt;ParamType&gt;&amp; other)<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l04001"></a><span class="lineno"> 4001</span>&#160;      <span class="comment">// Having the same base generator guarantees that the other</span></div>
 <div class="line"><a name="l04002"></a><span class="lineno"> 4002</span>&#160;      <span class="comment">// iterator is of the same type and we can downcast.</span></div>
@@ -4165,8 +4165,8 @@ $(document).ready(function(){initNavTree('d9/dc1/a00388_source.html','../../');}
 <div class="line"><a name="l04048"></a><span class="lineno"> 4048</span>&#160;</div>
 <div class="line"><a name="l04049"></a><span class="lineno"> 4049</span>&#160;    <span class="keywordtype">void</span> ComputeCurrentValue() {</div>
 <div class="line"><a name="l04050"></a><span class="lineno"> 4050</span>&#160;      <span class="keywordflow">if</span> (!AtEnd())</div>
-<div class="line"><a name="l04051"></a><span class="lineno"> 4051</span>&#160;        current_value_ = ParamType(*current1_, *current2_, *current3_,</div>
-<div class="line"><a name="l04052"></a><span class="lineno"> 4052</span>&#160;            *current4_, *current5_, *current6_, *current7_);</div>
+<div class="line"><a name="l04051"></a><span class="lineno"> 4051</span>&#160;        current_value_.reset(<span class="keyword">new</span> ParamType(*current1_, *current2_, *current3_,</div>
+<div class="line"><a name="l04052"></a><span class="lineno"> 4052</span>&#160;            *current4_, *current5_, *current6_, *current7_));</div>
 <div class="line"><a name="l04053"></a><span class="lineno"> 4053</span>&#160;    }</div>
 <div class="line"><a name="l04054"></a><span class="lineno"> 4054</span>&#160;    <span class="keywordtype">bool</span> AtEnd()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l04055"></a><span class="lineno"> 4055</span>&#160;      <span class="comment">// We must report iterator past the end of the range when either of the</span></div>
@@ -4208,7 +4208,7 @@ $(document).ready(function(){initNavTree('d9/dc1/a00388_source.html','../../');}
 <div class="line"><a name="l04091"></a><span class="lineno"> 4091</span>&#160;    <span class="keyword">const</span> <span class="keyword">typename</span> ParamGenerator&lt;T7&gt;::iterator begin7_;</div>
 <div class="line"><a name="l04092"></a><span class="lineno"> 4092</span>&#160;    <span class="keyword">const</span> <span class="keyword">typename</span> ParamGenerator&lt;T7&gt;::iterator end7_;</div>
 <div class="line"><a name="l04093"></a><span class="lineno"> 4093</span>&#160;    <span class="keyword">typename</span> ParamGenerator&lt;T7&gt;::iterator current7_;</div>
-<div class="line"><a name="l04094"></a><span class="lineno"> 4094</span>&#160;    ParamType current_value_;</div>
+<div class="line"><a name="l04094"></a><span class="lineno"> 4094</span>&#160;    linked_ptr&lt;ParamType&gt; current_value_;</div>
 <div class="line"><a name="l04095"></a><span class="lineno"> 4095</span>&#160;  };  <span class="comment">// class CartesianProductGenerator7::Iterator</span></div>
 <div class="line"><a name="l04096"></a><span class="lineno"> 4096</span>&#160;</div>
 <div class="line"><a name="l04097"></a><span class="lineno"> 4097</span>&#160;  <span class="comment">// No implementation - assignment is unsupported.</span></div>
@@ -4326,7 +4326,7 @@ $(document).ready(function(){initNavTree('d9/dc1/a00388_source.html','../../');}
 <div class="line"><a name="l04209"></a><span class="lineno"> 4209</span>&#160;    <span class="keyword">virtual</span> ParamIteratorInterface&lt;ParamType&gt;* Clone()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l04210"></a><span class="lineno"> 4210</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">new</span> Iterator(*<span class="keyword">this</span>);</div>
 <div class="line"><a name="l04211"></a><span class="lineno"> 4211</span>&#160;    }</div>
-<div class="line"><a name="l04212"></a><span class="lineno"> 4212</span>&#160;    <span class="keyword">virtual</span> <span class="keyword">const</span> ParamType* Current()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> &amp;current_value_; }</div>
+<div class="line"><a name="l04212"></a><span class="lineno"> 4212</span>&#160;    <span class="keyword">virtual</span> <span class="keyword">const</span> ParamType* Current()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> current_value_.get(); }</div>
 <div class="line"><a name="l04213"></a><span class="lineno"> 4213</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> Equals(<span class="keyword">const</span> ParamIteratorInterface&lt;ParamType&gt;&amp; other)<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l04214"></a><span class="lineno"> 4214</span>&#160;      <span class="comment">// Having the same base generator guarantees that the other</span></div>
 <div class="line"><a name="l04215"></a><span class="lineno"> 4215</span>&#160;      <span class="comment">// iterator is of the same type and we can downcast.</span></div>
@@ -4382,8 +4382,8 @@ $(document).ready(function(){initNavTree('d9/dc1/a00388_source.html','../../');}
 <div class="line"><a name="l04265"></a><span class="lineno"> 4265</span>&#160;</div>
 <div class="line"><a name="l04266"></a><span class="lineno"> 4266</span>&#160;    <span class="keywordtype">void</span> ComputeCurrentValue() {</div>
 <div class="line"><a name="l04267"></a><span class="lineno"> 4267</span>&#160;      <span class="keywordflow">if</span> (!AtEnd())</div>
-<div class="line"><a name="l04268"></a><span class="lineno"> 4268</span>&#160;        current_value_ = ParamType(*current1_, *current2_, *current3_,</div>
-<div class="line"><a name="l04269"></a><span class="lineno"> 4269</span>&#160;            *current4_, *current5_, *current6_, *current7_, *current8_);</div>
+<div class="line"><a name="l04268"></a><span class="lineno"> 4268</span>&#160;        current_value_.reset(<span class="keyword">new</span> ParamType(*current1_, *current2_, *current3_,</div>
+<div class="line"><a name="l04269"></a><span class="lineno"> 4269</span>&#160;            *current4_, *current5_, *current6_, *current7_, *current8_));</div>
 <div class="line"><a name="l04270"></a><span class="lineno"> 4270</span>&#160;    }</div>
 <div class="line"><a name="l04271"></a><span class="lineno"> 4271</span>&#160;    <span class="keywordtype">bool</span> AtEnd()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l04272"></a><span class="lineno"> 4272</span>&#160;      <span class="comment">// We must report iterator past the end of the range when either of the</span></div>
@@ -4429,7 +4429,7 @@ $(document).ready(function(){initNavTree('d9/dc1/a00388_source.html','../../');}
 <div class="line"><a name="l04312"></a><span class="lineno"> 4312</span>&#160;    <span class="keyword">const</span> <span class="keyword">typename</span> ParamGenerator&lt;T8&gt;::iterator begin8_;</div>
 <div class="line"><a name="l04313"></a><span class="lineno"> 4313</span>&#160;    <span class="keyword">const</span> <span class="keyword">typename</span> ParamGenerator&lt;T8&gt;::iterator end8_;</div>
 <div class="line"><a name="l04314"></a><span class="lineno"> 4314</span>&#160;    <span class="keyword">typename</span> ParamGenerator&lt;T8&gt;::iterator current8_;</div>
-<div class="line"><a name="l04315"></a><span class="lineno"> 4315</span>&#160;    ParamType current_value_;</div>
+<div class="line"><a name="l04315"></a><span class="lineno"> 4315</span>&#160;    linked_ptr&lt;ParamType&gt; current_value_;</div>
 <div class="line"><a name="l04316"></a><span class="lineno"> 4316</span>&#160;  };  <span class="comment">// class CartesianProductGenerator8::Iterator</span></div>
 <div class="line"><a name="l04317"></a><span class="lineno"> 4317</span>&#160;</div>
 <div class="line"><a name="l04318"></a><span class="lineno"> 4318</span>&#160;  <span class="comment">// No implementation - assignment is unsupported.</span></div>
@@ -4555,7 +4555,7 @@ $(document).ready(function(){initNavTree('d9/dc1/a00388_source.html','../../');}
 <div class="line"><a name="l04438"></a><span class="lineno"> 4438</span>&#160;    <span class="keyword">virtual</span> ParamIteratorInterface&lt;ParamType&gt;* Clone()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l04439"></a><span class="lineno"> 4439</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">new</span> Iterator(*<span class="keyword">this</span>);</div>
 <div class="line"><a name="l04440"></a><span class="lineno"> 4440</span>&#160;    }</div>
-<div class="line"><a name="l04441"></a><span class="lineno"> 4441</span>&#160;    <span class="keyword">virtual</span> <span class="keyword">const</span> ParamType* Current()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> &amp;current_value_; }</div>
+<div class="line"><a name="l04441"></a><span class="lineno"> 4441</span>&#160;    <span class="keyword">virtual</span> <span class="keyword">const</span> ParamType* Current()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> current_value_.get(); }</div>
 <div class="line"><a name="l04442"></a><span class="lineno"> 4442</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> Equals(<span class="keyword">const</span> ParamIteratorInterface&lt;ParamType&gt;&amp; other)<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l04443"></a><span class="lineno"> 4443</span>&#160;      <span class="comment">// Having the same base generator guarantees that the other</span></div>
 <div class="line"><a name="l04444"></a><span class="lineno"> 4444</span>&#160;      <span class="comment">// iterator is of the same type and we can downcast.</span></div>
@@ -4615,9 +4615,9 @@ $(document).ready(function(){initNavTree('d9/dc1/a00388_source.html','../../');}
 <div class="line"><a name="l04498"></a><span class="lineno"> 4498</span>&#160;</div>
 <div class="line"><a name="l04499"></a><span class="lineno"> 4499</span>&#160;    <span class="keywordtype">void</span> ComputeCurrentValue() {</div>
 <div class="line"><a name="l04500"></a><span class="lineno"> 4500</span>&#160;      <span class="keywordflow">if</span> (!AtEnd())</div>
-<div class="line"><a name="l04501"></a><span class="lineno"> 4501</span>&#160;        current_value_ = ParamType(*current1_, *current2_, *current3_,</div>
+<div class="line"><a name="l04501"></a><span class="lineno"> 4501</span>&#160;        current_value_.reset(<span class="keyword">new</span> ParamType(*current1_, *current2_, *current3_,</div>
 <div class="line"><a name="l04502"></a><span class="lineno"> 4502</span>&#160;            *current4_, *current5_, *current6_, *current7_, *current8_,</div>
-<div class="line"><a name="l04503"></a><span class="lineno"> 4503</span>&#160;            *current9_);</div>
+<div class="line"><a name="l04503"></a><span class="lineno"> 4503</span>&#160;            *current9_));</div>
 <div class="line"><a name="l04504"></a><span class="lineno"> 4504</span>&#160;    }</div>
 <div class="line"><a name="l04505"></a><span class="lineno"> 4505</span>&#160;    <span class="keywordtype">bool</span> AtEnd()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l04506"></a><span class="lineno"> 4506</span>&#160;      <span class="comment">// We must report iterator past the end of the range when either of the</span></div>
@@ -4667,7 +4667,7 @@ $(document).ready(function(){initNavTree('d9/dc1/a00388_source.html','../../');}
 <div class="line"><a name="l04550"></a><span class="lineno"> 4550</span>&#160;    <span class="keyword">const</span> <span class="keyword">typename</span> ParamGenerator&lt;T9&gt;::iterator begin9_;</div>
 <div class="line"><a name="l04551"></a><span class="lineno"> 4551</span>&#160;    <span class="keyword">const</span> <span class="keyword">typename</span> ParamGenerator&lt;T9&gt;::iterator end9_;</div>
 <div class="line"><a name="l04552"></a><span class="lineno"> 4552</span>&#160;    <span class="keyword">typename</span> ParamGenerator&lt;T9&gt;::iterator current9_;</div>
-<div class="line"><a name="l04553"></a><span class="lineno"> 4553</span>&#160;    ParamType current_value_;</div>
+<div class="line"><a name="l04553"></a><span class="lineno"> 4553</span>&#160;    linked_ptr&lt;ParamType&gt; current_value_;</div>
 <div class="line"><a name="l04554"></a><span class="lineno"> 4554</span>&#160;  };  <span class="comment">// class CartesianProductGenerator9::Iterator</span></div>
 <div class="line"><a name="l04555"></a><span class="lineno"> 4555</span>&#160;</div>
 <div class="line"><a name="l04556"></a><span class="lineno"> 4556</span>&#160;  <span class="comment">// No implementation - assignment is unsupported.</span></div>
@@ -4802,7 +4802,7 @@ $(document).ready(function(){initNavTree('d9/dc1/a00388_source.html','../../');}
 <div class="line"><a name="l04685"></a><span class="lineno"> 4685</span>&#160;    <span class="keyword">virtual</span> ParamIteratorInterface&lt;ParamType&gt;* Clone()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l04686"></a><span class="lineno"> 4686</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">new</span> Iterator(*<span class="keyword">this</span>);</div>
 <div class="line"><a name="l04687"></a><span class="lineno"> 4687</span>&#160;    }</div>
-<div class="line"><a name="l04688"></a><span class="lineno"> 4688</span>&#160;    <span class="keyword">virtual</span> <span class="keyword">const</span> ParamType* Current()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> &amp;current_value_; }</div>
+<div class="line"><a name="l04688"></a><span class="lineno"> 4688</span>&#160;    <span class="keyword">virtual</span> <span class="keyword">const</span> ParamType* Current()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> current_value_.get(); }</div>
 <div class="line"><a name="l04689"></a><span class="lineno"> 4689</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> Equals(<span class="keyword">const</span> ParamIteratorInterface&lt;ParamType&gt;&amp; other)<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l04690"></a><span class="lineno"> 4690</span>&#160;      <span class="comment">// Having the same base generator guarantees that the other</span></div>
 <div class="line"><a name="l04691"></a><span class="lineno"> 4691</span>&#160;      <span class="comment">// iterator is of the same type and we can downcast.</span></div>
@@ -4866,9 +4866,9 @@ $(document).ready(function(){initNavTree('d9/dc1/a00388_source.html','../../');}
 <div class="line"><a name="l04749"></a><span class="lineno"> 4749</span>&#160;</div>
 <div class="line"><a name="l04750"></a><span class="lineno"> 4750</span>&#160;    <span class="keywordtype">void</span> ComputeCurrentValue() {</div>
 <div class="line"><a name="l04751"></a><span class="lineno"> 4751</span>&#160;      <span class="keywordflow">if</span> (!AtEnd())</div>
-<div class="line"><a name="l04752"></a><span class="lineno"> 4752</span>&#160;        current_value_ = ParamType(*current1_, *current2_, *current3_,</div>
+<div class="line"><a name="l04752"></a><span class="lineno"> 4752</span>&#160;        current_value_.reset(<span class="keyword">new</span> ParamType(*current1_, *current2_, *current3_,</div>
 <div class="line"><a name="l04753"></a><span class="lineno"> 4753</span>&#160;            *current4_, *current5_, *current6_, *current7_, *current8_,</div>
-<div class="line"><a name="l04754"></a><span class="lineno"> 4754</span>&#160;            *current9_, *current10_);</div>
+<div class="line"><a name="l04754"></a><span class="lineno"> 4754</span>&#160;            *current9_, *current10_));</div>
 <div class="line"><a name="l04755"></a><span class="lineno"> 4755</span>&#160;    }</div>
 <div class="line"><a name="l04756"></a><span class="lineno"> 4756</span>&#160;    <span class="keywordtype">bool</span> AtEnd()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l04757"></a><span class="lineno"> 4757</span>&#160;      <span class="comment">// We must report iterator past the end of the range when either of the</span></div>
@@ -4922,7 +4922,7 @@ $(document).ready(function(){initNavTree('d9/dc1/a00388_source.html','../../');}
 <div class="line"><a name="l04805"></a><span class="lineno"> 4805</span>&#160;    <span class="keyword">const</span> <span class="keyword">typename</span> ParamGenerator&lt;T10&gt;::iterator begin10_;</div>
 <div class="line"><a name="l04806"></a><span class="lineno"> 4806</span>&#160;    <span class="keyword">const</span> <span class="keyword">typename</span> ParamGenerator&lt;T10&gt;::iterator end10_;</div>
 <div class="line"><a name="l04807"></a><span class="lineno"> 4807</span>&#160;    <span class="keyword">typename</span> ParamGenerator&lt;T10&gt;::iterator current10_;</div>
-<div class="line"><a name="l04808"></a><span class="lineno"> 4808</span>&#160;    ParamType current_value_;</div>
+<div class="line"><a name="l04808"></a><span class="lineno"> 4808</span>&#160;    linked_ptr&lt;ParamType&gt; current_value_;</div>
 <div class="line"><a name="l04809"></a><span class="lineno"> 4809</span>&#160;  };  <span class="comment">// class CartesianProductGenerator10::Iterator</span></div>
 <div class="line"><a name="l04810"></a><span class="lineno"> 4810</span>&#160;</div>
 <div class="line"><a name="l04811"></a><span class="lineno"> 4811</span>&#160;  <span class="comment">// No implementation - assignment is unsupported.</span></div>
@@ -5260,7 +5260,7 @@ $(document).ready(function(){initNavTree('d9/dc1/a00388_source.html','../../');}
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_483bc1739a16b87563cca23e7a392c1e.html">seims_linux_gcc48</a></li><li class="navelem"><a class="el" href="../../dir_8ad0a590518a67e536e9c3c335cb041a.html">bin</a></li><li class="navelem"><a class="el" href="../../dir_8ffa800c5c7a6e5ae34d4a9d68bf7466.html">include</a></li><li class="navelem"><a class="el" href="../../dir_bf0d26f02b34944dfd26c839ed3f5e97.html">gtest</a></li><li class="navelem"><a class="el" href="../../dir_280bc9fe8def28fa2557cfc26a6c1e3d.html">internal</a></li><li class="navelem"><b>gtest-param-util-generated.h</b></li>
-    <li class="footer">Generated on Tue Jan 2 2018 00:55:51 for SEIMS by
+    <li class="footer">Generated on Fri Jan 19 2018 06:47:05 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

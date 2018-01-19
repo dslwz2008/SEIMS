@@ -944,7 +944,7 @@ $(document).ready(function(){initNavTree('d6/db8/a00376_source.html','../../');}
 <div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;<span class="comment">// Determines whether to support Combine().</span></div>
 <div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;<span class="comment">// The implementation doesn&#39;t work on Sun Studio since it doesn&#39;t</span></div>
 <div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;<span class="comment">// understand templated conversion operators.</span></div>
-<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;<span class="preprocessor">#if GTEST_HAS_TR1_TUPLE &amp;&amp; !defined(__SUNPRO_CC)</span></div>
+<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;<span class="preprocessor">#if (GTEST_HAS_TR1_TUPLE || GTEST_HAS_STD_TUPLE_) &amp;&amp; !defined(__SUNPRO_CC)</span></div>
 <div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;<span class="preprocessor"></span><span class="preprocessor"># define GTEST_HAS_COMBINE 1</span></div>
 <div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;<span class="preprocessor"></span></div>
@@ -996,7 +996,7 @@ $(document).ready(function(){initNavTree('d6/db8/a00376_source.html','../../');}
 <div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;<span class="comment">// Use this annotation before a function that takes a printf format string.</span></div>
-<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;<span class="preprocessor">#if defined(__GNUC__) &amp;&amp; !defined(COMPILER_ICC)</span></div>
+<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;<span class="preprocessor">#if (defined(__GNUC__) || defined(__clang__)) &amp;&amp; !defined(COMPILER_ICC)</span></div>
 <div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160;<span class="preprocessor"></span><span class="preprocessor"># if defined(__MINGW_PRINTF_FORMAT)</span></div>
 <div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;<span class="preprocessor"></span><span class="comment">// MinGW has two different printf implementations. Ensure the format macro</span></div>
 <div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;<span class="comment">// matches the selected implementation. See</span></div>
@@ -2718,7 +2718,7 @@ $(document).ready(function(){initNavTree('d6/db8/a00376_source.html','../../');}
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_cd802f715eac8b5afa0214b2422ad557.html">buildRel</a></li><li class="navelem"><a class="el" href="../../dir_a4883baec63d05837a3a0400dc0258de.html">googletest-src</a></li><li class="navelem"><a class="el" href="../../dir_df554225d4ecad8376ecb24f94d95425.html">googletest</a></li><li class="navelem"><a class="el" href="../../dir_51572e58cfbc9f7aa926ef9c72a0ea12.html">include</a></li><li class="navelem"><a class="el" href="../../dir_1451cf2c3496ec9769038d5f0cdb8f67.html">gtest</a></li><li class="navelem"><a class="el" href="../../dir_3883ee6e9ec1c8dfa28570f03007d92c.html">internal</a></li><li class="navelem"><b>gtest-port.h</b></li>
-    <li class="footer">Generated on Tue Jan 2 2018 00:55:48 for SEIMS by
+    <li class="footer">Generated on Fri Jan 19 2018 06:47:02 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

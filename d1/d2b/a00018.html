@@ -464,9 +464,9 @@ b and c (4 and 10) are not mutually prime, as they have a common divisor 2.<br/>
 <p>Despite the improved thread safety afforded by the "threadsafe" style of death test, thread problems such as deadlock are still possible in the presence of handlers registered with <code>pthread_atfork(3)</code>.</p>
 <h1>Using Assertions in Sub-routines</h1>
 <h2>Adding Traces to Assertions</h2>
-<p>If a test sub-routine is called from several places, when an assertion inside it fails, it can be hard to tell which invocation of the sub-routine the failure is from. You can alleviate this problem using extra logging or custom failure messages, but that usually clutters up your tests. A better solution is to use the <code>SCOPED_TRACE</code> macro:</p>
-<p>| <code>SCOPED_TRACE(</code>_message_<code>);</code> | |:--------------------------&mdash;|</p>
-<p>where <em>message</em> can be anything streamable to <code>std::ostream</code>. This macro will cause the current file name, line number, and the given message to be added in every failure message. The effect will be undone when the control leaves the current lexical scope.</p>
+<p>If a test sub-routine is called from several places, when an assertion inside it fails, it can be hard to tell which invocation of the sub-routine the failure is from. You can alleviate this problem using extra logging or custom failure messages, but that usually clutters up your tests. A better solution is to use the <code>SCOPED_TRACE</code> macro or the <code>ScopedTrace</code> utility:</p>
+<p>| <code>SCOPED_TRACE(</code>_message_<code>);</code> | <code>::testing::ScopedTrace trace(</code>_"file\_path"_<code>,</code>_line_number_<code>,</code>_message_<code>);</code> | |:--------------------------&mdash;|:------------------------------------------------------------------------------&mdash;|</p>
+<p>where <code>message</code> can be anything streamable to <code>std::ostream</code>. <code>SCOPED_TRACE</code> macro will cause the current file name, line number, and the given message to be added in every failure message. <code>ScopedTrace</code> accepts explicit file name and line number in arguments, which is useful for writing test helpers. The effect will be undone when the control leaves the current lexical scope.</p>
 <p>For example,</p>
 <p>``` 10: void Sub1(int n) { 11: EXPECT_EQ(1, Bar(n)); 12: EXPECT_EQ(2, Bar(n + 1)); 13: } 14: 15: TEST(FooTest, Bar) { 16: { 17: SCOPED_TRACE("A"); // This trace point will be included in 18: // every failure in this scope. 19: Sub1(1); 20: } 21: // Now it won't. 22: Sub1(9); 23: } ```</p>
 <p>could result in messages like these:</p>
@@ -915,7 +915,7 @@ b and c (4 and 10) are not mutually prime, as they have a common divisor 2.<br/>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Jan 2 2018 00:55:54 for SEIMS by
+    <li class="footer">Generated on Fri Jan 19 2018 06:47:08 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
