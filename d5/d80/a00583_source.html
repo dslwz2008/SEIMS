@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims/src/iuh/RiverIUHCalculator.h Source File</title>
+<title>SEIMS: seims/src/commonlibs/UtilsClass/test/Test_ModelException.cpp Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -112,48 +112,29 @@ $(document).ready(function(){initNavTree('d5/d80/a00583_source.html','../../');}
 
 <div class="header">
   <div class="headertitle">
-<div class="title">RiverIUHCalculator.h</div>  </div>
+<div class="title">Test_ModelException.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;iuhcalculator.h&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">class </span>RiverIUHCalculator :</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="keyword">public</span> <a class="code" href="../../de/d36/a00123.html">IUHCalculator</a> {</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    RiverIUHCalculator(<span class="keywordtype">string</span> inputfile, <span class="keywordtype">string</span> watershedfile,</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;                       <span class="keywordtype">string</span> stream_networkfile, <span class="keywordtype">string</span> t0file, <span class="keywordtype">string</span> deltafile,</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;                       <span class="keywordtype">string</span> uhfile);</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    ~RiverIUHCalculator(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="../../de/d36/a00123.html#aa9e7c19106d792aa23d1e7de7f4efafc">calIUH</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">int</span> get_New_T0andDelta(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../de/d36/a00123.html#ada0a43ef89e61b07de87d672e5240b5e">readData</a>();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">string</span> uhFile;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    vector&lt;int&gt; linkCellNum;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    vector &lt;vector&lt;double&gt;&gt; uhCell, uhRiver, uhSub;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    vector &lt;vector&lt;double&gt;&gt; t0_new, t0_h_network, temp_t0;          <span class="comment">//new flow time =t0_reach_cell - t0_reach_outlet</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    vector &lt;vector&lt;double&gt;&gt; delta_new, delta_h_network,</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        temp_d;       <span class="comment">//new standard deviation of flow time = delta_reach_cell - delta_reach_outlet</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;};</div>
-<div class="ttc" id="a00123_html"><div class="ttname"><a href="../../de/d36/a00123.html">IUHCalculator</a></div><div class="ttdoc">This class is the base class of IUH calculation. </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dc8/a00581_source.html#l00024">IUHCalculator.h:24</a></div></div>
-<div class="ttc" id="a00123_html_ada0a43ef89e61b07de87d672e5240b5e"><div class="ttname"><a href="../../de/d36/a00123.html#ada0a43ef89e61b07de87d672e5240b5e">IUHCalculator::readData</a></div><div class="ttdeci">virtual void readData()</div><div class="ttdoc">Read data. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/de2/a00580_source.html#l00014">IUHCalculator.cpp:14</a></div></div>
-<div class="ttc" id="a00123_html_aa9e7c19106d792aa23d1e7de7f4efafc"><div class="ttname"><a href="../../de/d36/a00123.html#aa9e7c19106d792aa23d1e7de7f4efafc">IUHCalculator::calIUH</a></div><div class="ttdeci">virtual int calIUH(void)=0</div><div class="ttdoc">Calculate IUH. </div></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;ModelException.h&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;gtest/gtest.h&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;TEST(TestModelException, throwException) {</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    EXPECT_THROW(<span class="keywordflow">throw</span> <a class="code" href="../../d9/db6/a00146.html">ModelException</a>(<span class="stringliteral">&quot;ModuleName&quot;</span>, <span class="stringliteral">&quot;FunctionName&quot;</span>, <span class="stringliteral">&quot;ExceptionDescription&quot;</span>),</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;                 <a class="code" href="../../d9/db6/a00146.html">ModelException</a>);</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keywordtype">string</span> modelname = <span class="stringliteral">&quot;ModuleName&quot;</span>;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keywordtype">string</span> funcname = <span class="stringliteral">&quot;FunctionName&quot;</span>;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keywordtype">string</span> spec = <span class="stringliteral">&quot;Specific information&quot;</span>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordtype">string</span> desc = <span class="stringliteral">&quot;Error: &quot;</span> + spec;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    EXPECT_THROW(<span class="keywordflow">throw</span> <a class="code" href="../../d9/db6/a00146.html">ModelException</a>(modelname, funcname, desc), <a class="code" href="../../d9/db6/a00146.html">ModelException</a>);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
+<div class="ttc" id="a00146_html"><div class="ttname"><a href="../../d9/db6/a00146.html">ModelException</a></div><div class="ttdoc">Print the exception message. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d2f/a00582_source.html#l00054">ModelException.h:54</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_2b61984990e472053a6caf1b984c1e37.html">iuh</a></li><li class="navelem"><b>RiverIUHCalculator.h</b></li>
-    <li class="footer">Generated on Fri Jan 19 2018 06:56:12 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_56b1596c4d72ede71823cdba70d715a1.html">commonlibs</a></li><li class="navelem"><a class="el" href="../../dir_aac0e29c14a456ffe7dc6a7d8b055d76.html">UtilsClass</a></li><li class="navelem"><a class="el" href="../../dir_b53762c4a70b6d17e678b0f7e6889535.html">test</a></li><li class="navelem"><b>Test_ModelException.cpp</b></li>
+    <li class="footer">Generated on Tue Mar 27 2018 10:10:59 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

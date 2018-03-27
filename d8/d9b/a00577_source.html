@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims/src/grid_layering/GridLayeringDinf.h Source File</title>
+<title>SEIMS: seims/src/commonlibs/RasterClass/test/Test_incst-mask-nopos.cpp Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -112,53 +112,114 @@ $(document).ready(function(){initNavTree('d8/d9b/a00577_source.html','../../');}
 
 <div class="header">
   <div class="headertitle">
-<div class="title">GridLayeringDinf.h</div>  </div>
+<div class="title">Test_incst-mask-nopos.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef GRID_LAYERING_DINF_H</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define GRID_LAYERING_DINF_H</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;GridLayering.h&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="../../db/ddf/a00088.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../db/ddf/a00088.html">GridLayeringDinf</a> : <span class="keyword">public</span> GridLayering {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="../../db/ddf/a00088.html">GridLayeringDinf</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, <a class="code" href="../../d9/db6/a00146.html">MongoGridFS</a> *gfs, <span class="keyword">const</span> <span class="keywordtype">char</span> *out_dir);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="../../db/ddf/a00088.html">GridLayeringDinf</a>();</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> LoadData();</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> OutputFlowIn();</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> OutputFlowOut();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">float</span> <a class="code" href="../../db/ddf/a00088.html#ac0f926952893b430ba994197624d947f">GetPercentage</a>(<span class="keywordtype">float</span> angle, <span class="keywordtype">int</span> di, <span class="keywordtype">int</span> dj);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../db/ddf/a00088.html#ad91df0e4eb6535da3969feabd8024f58">_build_multi_flow_out_angle_array</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> *compressedDir,</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                                           <span class="keyword">const</span> <span class="keywordtype">int</span> *connectCount, <span class="keywordtype">float</span> *&amp;pOutput);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="../../db/ddf/a00088.html#a8d38e9174692b5e9ce03bdaf086be32f">   36</a></span>&#160;    <a class="code" href="../../df/d03/a00062.html">clsRasterData&lt;float&gt;</a> *<a class="code" href="../../db/ddf/a00088.html#a8d38e9174692b5e9ce03bdaf086be32f">m_flowangle</a>;  </div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="../../db/ddf/a00088.html#aa94e5b81428e89db87b77ae730acfb28">   37</a></span>&#160;    <span class="keywordtype">float</span> *<a class="code" href="../../db/ddf/a00088.html#aa94e5b81428e89db87b77ae730acfb28">m_angle</a>;  </div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="../../db/ddf/a00088.html#ae697678b40884a114ab4910247ce7b5e">   38</a></span>&#160;    <span class="keywordtype">float</span> *<a class="code" href="../../db/ddf/a00088.html#ae697678b40884a114ab4910247ce7b5e">m_flowInAngle</a>;  </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="../../db/ddf/a00088.html#afc58e48db65114e820974bceb7f6a4ab">   40</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="../../db/ddf/a00088.html#afc58e48db65114e820974bceb7f6a4ab">m_flowangle_name</a>;  </div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="../../db/ddf/a00088.html#a9c78190bd6a9cb5e775b29f45778d2a8">   41</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="../../db/ddf/a00088.html#a9c78190bd6a9cb5e775b29f45778d2a8">m_flowin_angle_name</a>;  </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;};</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* GRID_LAYERING_DINF_H */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="a00088_html_a9c78190bd6a9cb5e775b29f45778d2a8"><div class="ttname"><a href="../../db/ddf/a00088.html#a9c78190bd6a9cb5e775b29f45778d2a8">GridLayeringDinf::m_flowin_angle_name</a></div><div class="ttdeci">string m_flowin_angle_name</div><div class="ttdoc">Output of flow in partition. </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d9b/a00577_source.html#l00041">GridLayeringDinf.h:41</a></div></div>
-<div class="ttc" id="a00088_html"><div class="ttname"><a href="../../db/ddf/a00088.html">GridLayeringDinf</a></div><div class="ttdoc">Grid layering based on Dinf model. </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d9b/a00577_source.html#l00013">GridLayeringDinf.h:13</a></div></div>
-<div class="ttc" id="a00062_html"><div class="ttname"><a href="../../df/d03/a00062.html">clsRasterData&lt; float &gt;</a></div></div>
-<div class="ttc" id="a00088_html_a8d38e9174692b5e9ce03bdaf086be32f"><div class="ttname"><a href="../../db/ddf/a00088.html#a8d38e9174692b5e9ce03bdaf086be32f">GridLayeringDinf::m_flowangle</a></div><div class="ttdeci">clsRasterData&lt; float &gt; * m_flowangle</div><div class="ttdoc">Flow direction in radiation. </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d9b/a00577_source.html#l00036">GridLayeringDinf.h:36</a></div></div>
-<div class="ttc" id="a00146_html"><div class="ttname"><a href="../../d9/db6/a00146.html">MongoGridFS</a></div><div class="ttdoc">Create a MongoDB GridFS instance. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d40/a00516_source.html#l00179">MongoUtil.h:179</a></div></div>
-<div class="ttc" id="a00088_html_ad91df0e4eb6535da3969feabd8024f58"><div class="ttname"><a href="../../db/ddf/a00088.html#ad91df0e4eb6535da3969feabd8024f58">GridLayeringDinf::_build_multi_flow_out_angle_array</a></div><div class="ttdeci">void _build_multi_flow_out_angle_array(const int *compressedDir, const int *connectCount, float *&amp;pOutput)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d7c/a00576_source.html#l00038">GridLayeringDinf.cpp:38</a></div></div>
-<div class="ttc" id="a00088_html_aa94e5b81428e89db87b77ae730acfb28"><div class="ttname"><a href="../../db/ddf/a00088.html#aa94e5b81428e89db87b77ae730acfb28">GridLayeringDinf::m_angle</a></div><div class="ttdeci">float * m_angle</div><div class="ttdoc">Flow angle array. </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d9b/a00577_source.html#l00037">GridLayeringDinf.h:37</a></div></div>
-<div class="ttc" id="a00088_html_ae697678b40884a114ab4910247ce7b5e"><div class="ttname"><a href="../../db/ddf/a00088.html#ae697678b40884a114ab4910247ce7b5e">GridLayeringDinf::m_flowInAngle</a></div><div class="ttdeci">float * m_flowInAngle</div><div class="ttdoc">Flow in partition,. </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d9b/a00577_source.html#l00038">GridLayeringDinf.h:38</a></div></div>
-<div class="ttc" id="a00088_html_afc58e48db65114e820974bceb7f6a4ab"><div class="ttname"><a href="../../db/ddf/a00088.html#afc58e48db65114e820974bceb7f6a4ab">GridLayeringDinf::m_flowangle_name</a></div><div class="ttdeci">string m_flowangle_name</div><div class="ttdoc">Dinf flow direction name. </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d9b/a00577_source.html#l00040">GridLayeringDinf.h:40</a></div></div>
-<div class="ttc" id="a00088_html_ac0f926952893b430ba994197624d947f"><div class="ttname"><a href="../../db/ddf/a00088.html#ac0f926952893b430ba994197624d947f">GridLayeringDinf::GetPercentage</a></div><div class="ttdeci">float GetPercentage(float angle, int di, int dj)</div><div class="ttdoc">Get flow partition of Dinf model in delta row (i) and delta col (j) </div><div class="ttdef"><b>Definition:</b> <a href="../../de/d7c/a00576_source.html#l00120">GridLayeringDinf.cpp:120</a></div></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;gtest/gtest.h&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;utilities.h&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;clsRasterData.h&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">namespace </span>{</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#if GTEST_HAS_PARAM_TEST</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;using ::testing::TestWithParam;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;using ::testing::Values;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">string</span> apppath = GetAppPath();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keywordtype">string</span> maskcorename = <span class="stringliteral">&quot;mask1&quot;</span>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keywordtype">string</span> asc_file = apppath + <span class="stringliteral">&quot;../data/&quot;</span> + maskcorename + <span class="stringliteral">&quot;.asc&quot;</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keywordtype">string</span> tif_file = apppath + <span class="stringliteral">&quot;../data/&quot;</span> + maskcorename + <span class="stringliteral">&quot;.tif&quot;</span>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span> *asc_file_chars = asc_file.c_str();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span> *tif_file_chars = tif_file.c_str();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">//Inside the test body, fixture constructor, SetUp(), and TearDown() you</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">//can refer to the test parameter by GetParam().  In this case, the test</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">//parameter is a factory function which we call in fixture&#39;s SetUp() to</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">//create and store an instance of clsRasterData&lt;float&gt;.</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">class </span>clsRasterDataTestIncstMaskNoPos : <span class="keyword">public</span> TestWithParam&lt;const char *&gt; {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    clsRasterDataTestIncstMaskNoPos() : maskrs(nullptr) {}</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">virtual</span> ~clsRasterDataTestIncstMaskNoPos() { <span class="keyword">delete</span> maskrs; }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> SetUp() {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        maskrs = <a class="code" href="../../de/de1/a00065.html#a10c6e8da422d236c805762b223db1084">clsRasterData&lt;int&gt;::Init</a>(GetParam(), <span class="keyword">false</span>);  <span class="comment">// recommended way</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="comment">//maskrs = new clsRasterData&lt;float&gt;(GetParam(), false);  // unsafe way</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        ASSERT_NE(<span class="keyword">nullptr</span>, maskrs);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> TearDown() {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keyword">delete</span> maskrs;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        maskrs = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="../../de/de1/a00065.html">clsRasterData&lt;int&gt;</a> *maskrs;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;};</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">// Since each TEST_P will invoke SetUp() and TearDown()</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">// once, we put all tests in once test case. by lj.</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;TEST_P(clsRasterDataTestIncstMaskNoPos, RasterIO) {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    EXPECT_EQ(90, maskrs-&gt;getDataLength());  <span class="comment">// m_nCells</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    EXPECT_EQ(90, maskrs-&gt;getCellNumber());  <span class="comment">// m_nCells</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    EXPECT_EQ(-9999, maskrs-&gt;getNoDataValue());  <span class="comment">// m_noDataValue</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    EXPECT_EQ(-9999, maskrs-&gt;getDefaultValue());  <span class="comment">// m_defaultValue</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="comment">// m_filePathName depends on the path of build, so no need to test.</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    EXPECT_EQ(maskcorename, maskrs-&gt;getCoreName());  <span class="comment">// m_coreFileName</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    EXPECT_TRUE(maskrs-&gt;Initialized());  <span class="comment">// m_initialized</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    EXPECT_FALSE(maskrs-&gt;is2DRaster());  <span class="comment">// m_is2DRaster</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    EXPECT_FALSE(maskrs-&gt;PositionsCalculated());  <span class="comment">// m_calcPositions</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    EXPECT_FALSE(maskrs-&gt;PositionsAllocated());  <span class="comment">// m_storePositions</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    EXPECT_FALSE(maskrs-&gt;MaskExtented());  <span class="comment">// m_useMaskExtent</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    EXPECT_FALSE(maskrs-&gt;StatisticsCalculated());  <span class="comment">// m_statisticsCalculated</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    ASSERT_TRUE(maskrs-&gt;validate_raster_data());</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    EXPECT_NE(<span class="keyword">nullptr</span>, maskrs-&gt;getRasterDataPointer());  <span class="comment">// m_rasterData</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    EXPECT_EQ(<span class="keyword">nullptr</span>, maskrs-&gt;get2DRasterDataPointer());  <span class="comment">// m_raster2DData</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    EXPECT_EQ(<span class="keyword">nullptr</span>, maskrs-&gt;getRasterPositionDataPointer());  <span class="comment">// m_rasterPositionData</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    map&lt;string, double&gt; header_info = maskrs-&gt;getRasterHeader();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    EXPECT_FLOAT_EQ(header_info.at(<span class="stringliteral">&quot;LAYERS&quot;</span>), maskrs-&gt;getLayers());</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    EXPECT_FLOAT_EQ(header_info.at(<span class="stringliteral">&quot;CELLSNUM&quot;</span>), maskrs-&gt;getCellNumber());</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    EXPECT_EQ(9, maskrs-&gt;getRows());</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    EXPECT_EQ(10, maskrs-&gt;getCols());</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    EXPECT_FLOAT_EQ(19.f, maskrs-&gt;getXllCenter());</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    EXPECT_FLOAT_EQ(25.f, maskrs-&gt;getYllCenter());</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    EXPECT_FLOAT_EQ(2.f, maskrs-&gt;getCellWidth());</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    EXPECT_EQ(1, maskrs-&gt;getLayers());</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    EXPECT_STREQ(<span class="stringliteral">&quot;&quot;</span>, maskrs-&gt;getSRS());</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    EXPECT_EQ(<span class="stringliteral">&quot;&quot;</span>, maskrs-&gt;getSRSString());</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    EXPECT_EQ(73, maskrs-&gt;getValidNumber());</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    EXPECT_FLOAT_EQ(1.f, maskrs-&gt;getMinimum());</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    EXPECT_FLOAT_EQ(1.f, maskrs-&gt;getMaximum());</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    EXPECT_FLOAT_EQ(1.f, maskrs-&gt;getAverage());</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    EXPECT_FLOAT_EQ(0.f, maskrs-&gt;getSTD());</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    EXPECT_FLOAT_EQ(0.f, maskrs-&gt;getRange());</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    EXPECT_TRUE(maskrs-&gt;StatisticsCalculated());</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;INSTANTIATE_TEST_CASE_P(MaskLayer, clsRasterDataTestIncstMaskNoPos,</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                        Values(asc_file_chars,</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                               tif_file_chars));</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor"></span>TEST(DummyTest, ValueParameterizedTestsAreNotSupportedOnThisPlatform) {}</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* GTEST_HAS_PARAM_TEST */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor"></span>} <span class="comment">/* namespace */</span></div>
+<div class="ttc" id="a00065_html"><div class="ttname"><a href="../../de/de1/a00065.html">clsRasterData&lt; int &gt;</a></div></div>
+<div class="ttc" id="a00065_html_a10c6e8da422d236c805762b223db1084"><div class="ttname"><a href="../../de/de1/a00065.html#a10c6e8da422d236c805762b223db1084">clsRasterData::Init</a></div><div class="ttdeci">static clsRasterData&lt; T, MaskT &gt; * Init(const string &amp;filename, bool calcPositions=true, clsRasterData&lt; MaskT &gt; *mask=nullptr, bool useMaskExtent=true, T defalutValue=(T) NODATA_VALUE)</div><div class="ttdoc">Validation check before the constructor of clsRasterData, i.e., the raster file is existed and suppor...</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d50/a00559_source.html#l00967">clsRasterData.h:967</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_e18f81762effd1d09ce50d10289caf24.html">grid_layering</a></li><li class="navelem"><b>GridLayeringDinf.h</b></li>
-    <li class="footer">Generated on Fri Jan 19 2018 06:56:12 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_56b1596c4d72ede71823cdba70d715a1.html">commonlibs</a></li><li class="navelem"><a class="el" href="../../dir_a738b5009a9ca0544eb950f14bd370fe.html">RasterClass</a></li><li class="navelem"><a class="el" href="../../dir_fa2ccf777db2a6858eea5f1fdca7bf97.html">test</a></li><li class="navelem"><b>Test_incst-mask-nopos.cpp</b></li>
+    <li class="footer">Generated on Tue Mar 27 2018 10:10:59 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

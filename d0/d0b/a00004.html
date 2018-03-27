@@ -191,10 +191,9 @@ $(document).ready(function(){initNavTree('d0/d0b/a00004.html','../../');});
 <tr>
 <td align="left"><code>NotNull()</code> </td><td align="left"><code>argument</code> is a non-null pointer (raw or smart). </td></tr>
 <tr>
-<td align="left"><code>Ref(variable)</code> </td><td align="left"><code>argument</code> is a reference to <code>variable</code>. </td></tr>
-<tr>
-<td align="left"><code>TypedEq&lt;type&gt;(value)</code></td><td align="left"><code>argument</code> has type <code>type</code> and is equal to <code>value</code>. You may need to use this instead of <code>Eq(value)</code> when the mock function is overloaded. </td></tr>
+<td align="left"><code>VariantWith&lt;T&gt;(m)</code> </td><td align="left"><code>argument</code> is <code>variant&lt;&gt;</code> that holds the alternative of </td></tr>
 </table>
+<p>type T with a value matching <code>m</code>.| |<code>Ref(variable)</code> |<code>argument</code> is a reference to <code>variable</code>.| |<code>TypedEq&lt;type&gt;(value)</code>|<code>argument</code> has type <code>type</code> and is equal to <code>value</code>. You may need to use this instead of <code>Eq(value)</code> when the mock function is overloaded.|</p>
 <p>Except <code>Ref()</code>, these matchers make a <em>copy</em> of <code>value</code> in case it's modified or destructed later. If the compiler complains that <code>value</code> doesn't have a public copy constructor, try wrap it in <code>ByRef()</code>, e.g. <code>Eq(ByRef(non_copyable_value))</code>. If you do that, make sure <code>non_copyable_value</code> is not changed afterwards, or the meaning of your matcher will be changed.</p>
 <h2>Floating-Point Matchers</h2>
 <table class="doxtable">
@@ -509,7 +508,7 @@ $(document).ready(function(){initNavTree('d0/d0b/a00004.html','../../');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Jan 19 2018 06:56:14 for SEIMS by
+    <li class="footer">Generated on Tue Mar 27 2018 10:11:01 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

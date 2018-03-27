@@ -1,13 +1,10 @@
 var a00066 =
 [
-    [ "clsSubbasins", "d9/db3/a00066.html#a8dbb004e6bfbb531ced3bf17c970e840", null ],
-    [ "~clsSubbasins", "d9/db3/a00066.html#a378f882b9978ba19c7dde525e02153d3", null ],
-    [ "GetSubbasinByID", "d9/db3/a00066.html#ae4a9acac6b6d861646cb52133296a360", null ],
-    [ "GetSubbasinIDs", "d9/db3/a00066.html#a3fec7496f3a78dfcaceb4a51027434f0", null ],
-    [ "GetSubbasinNumber", "d9/db3/a00066.html#aa1e198132dbc9e19708f49e07fadfe1b", null ],
-    [ "SetSlopeCoefficient", "d9/db3/a00066.html#a3b840b37873d57ba36f1df239948664f", null ],
-    [ "subbasin2basin", "d9/db3/a00066.html#a5f439161764101aa8ec964925b7fabcf", null ],
-    [ "m_nSubbasins", "d9/db3/a00066.html#ad83ea72f3d4a694022257b4ddd66962e", null ],
-    [ "m_subbasinIDs", "d9/db3/a00066.html#a1d2d45546d33b1de7e7b71c3b55eec03", null ],
-    [ "m_subbasinsInfo", "d9/db3/a00066.html#a1d817c960bd11d762e01f07306378280", null ]
+    [ "clsReach", "d9/db3/a00066.html#a51b05587f1c516f95467c888e38b3553", null ],
+    [ "Get", "d9/db3/a00066.html#aad31cf639ea376c52371f6953ed80d79", null ],
+    [ "GetGroupIndex", "d9/db3/a00066.html#a56f1475a829b221295d87fd5b4cf5559", null ],
+    [ "Set", "d9/db3/a00066.html#aeda42e4295698c4572b7b951700b28e3", null ],
+    [ "m_groupIndex", "d9/db3/a00066.html#aeed9cc1b35c5551bd0cf7f4ed1fb0f13", null ],
+    [ "m_groupNumber", "d9/db3/a00066.html#ae73d7d7f3d3418b38ca653d65514251b", null ],
+    [ "m_paramMap", "d9/db3/a00066.html#a4a5a4db4e4be836a3759cd2cfca1aa6d", null ]
 ];

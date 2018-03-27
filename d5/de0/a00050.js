@@ -1,14 +1,19 @@
 var a00050 =
 [
-    [ "BMPArealStruct", "d5/de0/a00050.html#a9851daf547a5d5fc6f707d2df92ede9a", null ],
-    [ "~BMPArealStruct", "d5/de0/a00050.html#aea12564bacedb270cf0a7cc57a131f28", null ],
-    [ "getBMPName", "d5/de0/a00050.html#a93144af11d04481e10d8d77c3017c54b", null ],
-    [ "getParameters", "d5/de0/a00050.html#ae56f17d2ba09a8e10f8f50ccbbd9a395", null ],
-    [ "getSuitableLanduse", "d5/de0/a00050.html#a6c434072a4cd914365c8d68ec8017897", null ],
-    [ "m_desc", "d5/de0/a00050.html#a77c10df51a08e37ef4a343bd3fe013e2", null ],
-    [ "m_id", "d5/de0/a00050.html#a2bed795366f246b9e2d4ef6712ef7044", null ],
-    [ "m_landuse", "d5/de0/a00050.html#ad6e956125dfeae807bf655a9a9477409", null ],
-    [ "m_name", "d5/de0/a00050.html#ada12ae7a403d9ed0139bce3c434cbeb6", null ],
-    [ "m_parameters", "d5/de0/a00050.html#a896474a403fa33492c0d58fc19539bcf", null ],
-    [ "m_refer", "d5/de0/a00050.html#ae50cba9f5825b248f9d78c4a46cf7c39", null ]
+    [ "BMPArealSrcFactory", "d5/de0/a00050.html#a8296f5d6106f28e0e99a6f7e9c5f5c2e", null ],
+    [ "~BMPArealSrcFactory", "d5/de0/a00050.html#a2c982edbcbaa00c22e3e8658f3053dd6", null ],
+    [ "Dump", "d5/de0/a00050.html#a384bee10a8954c7b1c38c75e17b81f98", null ],
+    [ "getRasterData", "d5/de0/a00050.html#a87a029e942d87ae116893991a779e8d0", null ],
+    [ "loadBMP", "d5/de0/a00050.html#a17d2be95cb5ea6637c4e7a34173ba083", null ],
+    [ "ReadArealSourceLocations", "d5/de0/a00050.html#a53c6c04385700fa7c56598fd491821bc", null ],
+    [ "ReadArealSourceManagements", "d5/de0/a00050.html#a60d6b5aa4af5a05c38d92fe55430330e", null ],
+    [ "setRasterData", "d5/de0/a00050.html#af95c36449f6dd71e0ef41e7f53463e82", null ],
+    [ "m_arealSrc", "d5/de0/a00050.html#ae451b497f2b1fda3fb3306a6b35e84f5", null ],
+    [ "m_arealSrcDistName", "d5/de0/a00050.html#a083480be0d29bd7506911524a8342223", null ],
+    [ "m_arealSrcDistTab", "d5/de0/a00050.html#a8ab953ff525f4e877487e2945afd9d44", null ],
+    [ "m_arealSrcIDs", "d5/de0/a00050.html#a3457d4f2867b5997bc15fe230ae09492", null ],
+    [ "m_arealSrcMgtSeqs", "d5/de0/a00050.html#acdfb2c27962c2dc8b6a587c650ba538a", null ],
+    [ "m_arealSrcMgtTab", "d5/de0/a00050.html#aa8645a97140549027b3407a717efcec0", null ],
+    [ "m_loadedMgtFieldIDs", "d5/de0/a00050.html#a5ba3449df87c0b05613728d110e96895", null ],
+    [ "m_mgtFieldsRs", "d5/de0/a00050.html#a458058520b26b3c9ca956ad8a3666af6", null ]
 ];

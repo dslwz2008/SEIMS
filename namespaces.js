@@ -1,7 +1,10 @@
 var namespaces =
 [
-    [ "MainBMP", "da/d5b/a00905.html", "da/d5b/a00905" ],
+    [ "MainBMP", "d0/df0/a00934.html", "d0/df0/a00934" ],
     [ "seims", null, [
-      [ "pyseims_check", "dc/da0/a00951.html", null ]
+      [ "calibration", null, [
+        [ "sample_lhs", "d8/d18/a00948.html", null ]
+      ] ],
+      [ "pyseims_check", "d4/d21/a00987.html", null ]
     ] ]
 ];

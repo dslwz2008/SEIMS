@@ -1,5 +1,13 @@
 var a00069 =
 [
-    [ "ContinuousFertilizerOperation", "d4/d31/a00069.html#a5cc0b8ef9374afae17ebf74a12e0a10e", null ],
-    [ "dump", "d4/d31/a00069.html#a4496ac7183dad26e1961c652f282674a", null ]
+    [ "clsSubbasins", "d4/d31/a00069.html#acefdf1ee250a86a8aab73716377ac167", null ],
+    [ "~clsSubbasins", "d4/d31/a00069.html#a378f882b9978ba19c7dde525e02153d3", null ],
+    [ "GetSubbasinByID", "d4/d31/a00069.html#ae4a9acac6b6d861646cb52133296a360", null ],
+    [ "GetSubbasinIDs", "d4/d31/a00069.html#a3fec7496f3a78dfcaceb4a51027434f0", null ],
+    [ "GetSubbasinNumber", "d4/d31/a00069.html#aa1e198132dbc9e19708f49e07fadfe1b", null ],
+    [ "SetSlopeCoefficient", "d4/d31/a00069.html#a3b840b37873d57ba36f1df239948664f", null ],
+    [ "subbasin2basin", "d4/d31/a00069.html#a5f439161764101aa8ec964925b7fabcf", null ],
+    [ "m_nSubbasins", "d4/d31/a00069.html#ad83ea72f3d4a694022257b4ddd66962e", null ],
+    [ "m_subbasinIDs", "d4/d31/a00069.html#a1d2d45546d33b1de7e7b71c3b55eec03", null ],
+    [ "m_subbasinsInfo", "d4/d31/a00069.html#a1d817c960bd11d762e01f07306378280", null ]
 ];

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: clsSubbasins Class Reference</title>
+<title>SEIMS: clsReach Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -115,165 +115,75 @@ $(document).ready(function(){initNavTree('d9/db3/a00066.html','../../');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
-<a href="../../dd/dee/a01081.html">List of all members</a>  </div>
+<a href="../../d0/d02/a01119.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">clsSubbasins Class Reference</div>  </div>
+<div class="title">clsReach Class Reference<div class="ingroups"><a class="el" href="../../d6/dcd/a01023.html">Data</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Manager all <a class="el" href="../../dd/dc1/a00212.html" title="Subbasin related parameters and methods. ">Subbasin</a> related parameters and methods.  
+<p>Class to store reach related parameters from REACHES table.  
  <a href="../../d9/db3/a00066.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="../../d7/d80/a00614_source.html">clsSubbasin.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="../../d1/daa/a00638_source.html">clsReach.h</a>&gt;</code></p>
+
+<p>Inherits DefaultConstructor.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8dbb004e6bfbb531ced3bf17c970e840"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db3/a00066.html#a8dbb004e6bfbb531ced3bf17c970e840">clsSubbasins</a> (<a class="el" href="../../d9/db6/a00146.html">MongoGridFS</a> *spatialData, map&lt; string, <a class="el" href="../../df/d03/a00062.html">clsRasterData</a>&lt; float &gt; * &gt; &amp;rsMap, int prefixID)</td></tr>
-<tr class="memdesc:a8dbb004e6bfbb531ced3bf17c970e840"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a8dbb004e6bfbb531ced3bf17c970e840">More...</a><br/></td></tr>
-<tr class="separator:a8dbb004e6bfbb531ced3bf17c970e840"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a378f882b9978ba19c7dde525e02153d3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a378f882b9978ba19c7dde525e02153d3"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db3/a00066.html#a378f882b9978ba19c7dde525e02153d3">~clsSubbasins</a> ()</td></tr>
-<tr class="memdesc:a378f882b9978ba19c7dde525e02153d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br/></td></tr>
-<tr class="separator:a378f882b9978ba19c7dde525e02153d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4a9acac6b6d861646cb52133296a360"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae4a9acac6b6d861646cb52133296a360"></a>
-<a class="el" href="../../dd/dc1/a00212.html">Subbasin</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db3/a00066.html#ae4a9acac6b6d861646cb52133296a360">GetSubbasinByID</a> (int id)</td></tr>
-<tr class="memdesc:ae4a9acac6b6d861646cb52133296a360"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get single reach information by subbasin ID. <br/></td></tr>
-<tr class="separator:ae4a9acac6b6d861646cb52133296a360"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1e198132dbc9e19708f49e07fadfe1b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa1e198132dbc9e19708f49e07fadfe1b"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db3/a00066.html#aa1e198132dbc9e19708f49e07fadfe1b">GetSubbasinNumber</a> ()</td></tr>
-<tr class="memdesc:aa1e198132dbc9e19708f49e07fadfe1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get subbasin number. <br/></td></tr>
-<tr class="separator:aa1e198132dbc9e19708f49e07fadfe1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3fec7496f3a78dfcaceb4a51027434f0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3fec7496f3a78dfcaceb4a51027434f0"></a>
-vector&lt; int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db3/a00066.html#a3fec7496f3a78dfcaceb4a51027434f0">GetSubbasinIDs</a> ()</td></tr>
-<tr class="memdesc:a3fec7496f3a78dfcaceb4a51027434f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get subbasin IDs. <br/></td></tr>
-<tr class="separator:a3fec7496f3a78dfcaceb4a51027434f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b840b37873d57ba36f1df239948664f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3b840b37873d57ba36f1df239948664f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db3/a00066.html#a3b840b37873d57ba36f1df239948664f">SetSlopeCoefficient</a> ()</td></tr>
-<tr class="memdesc:a3b840b37873d57ba36f1df239948664f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set slope coefficient of each subbasin. <br/></td></tr>
-<tr class="separator:a3b840b37873d57ba36f1df239948664f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f439161764101aa8ec964925b7fabcf"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db3/a00066.html#a5f439161764101aa8ec964925b7fabcf">subbasin2basin</a> (string key)</td></tr>
-<tr class="memdesc:a5f439161764101aa8ec964925b7fabcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get basin (watershed) scale variable (key) value.  <a href="#a5f439161764101aa8ec964925b7fabcf">More...</a><br/></td></tr>
-<tr class="separator:a5f439161764101aa8ec964925b7fabcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a760f2d21b402992b3ae31ee29763461c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a760f2d21b402992b3ae31ee29763461c"></a>
-static <a class="el" href="../../d9/db3/a00066.html">clsSubbasins</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db3/a00066.html#a760f2d21b402992b3ae31ee29763461c">Init</a> (<a class="el" href="../../d9/db6/a00146.html">MongoGridFS</a> *spatialData, map&lt; string, <a class="el" href="../../df/d03/a00062.html">clsRasterData</a>&lt; float &gt; * &gt; &amp;rsMap, int prefixID)</td></tr>
-<tr class="memdesc:a760f2d21b402992b3ae31ee29763461c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check input parameters to ensure the successful constructor. <br/></td></tr>
-<tr class="separator:a760f2d21b402992b3ae31ee29763461c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51b05587f1c516f95467c888e38b3553"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a51b05587f1c516f95467c888e38b3553"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db3/a00066.html#a51b05587f1c516f95467c888e38b3553">clsReach</a> (const bson_t *&amp;bsonTab)</td></tr>
+<tr class="memdesc:a51b05587f1c516f95467c888e38b3553"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. <br/></td></tr>
+<tr class="separator:a51b05587f1c516f95467c888e38b3553"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad31cf639ea376c52371f6953ed80d79"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db3/a00066.html#aad31cf639ea376c52371f6953ed80d79">Get</a> (const string &amp;key)</td></tr>
+<tr class="memdesc:aad31cf639ea376c52371f6953ed80d79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="#aad31cf639ea376c52371f6953ed80d79">More...</a><br/></td></tr>
+<tr class="separator:aad31cf639ea376c52371f6953ed80d79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56f1475a829b221295d87fd5b4cf5559"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a56f1475a829b221295d87fd5b4cf5559"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db3/a00066.html#a56f1475a829b221295d87fd5b4cf5559">GetGroupIndex</a> (const string &amp;method, int size)</td></tr>
+<tr class="memdesc:a56f1475a829b221295d87fd5b4cf5559"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get group index. <br/></td></tr>
+<tr class="separator:a56f1475a829b221295d87fd5b4cf5559"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeda42e4295698c4572b7b951700b28e3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeda42e4295698c4572b7b951700b28e3"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db3/a00066.html#aeda42e4295698c4572b7b951700b28e3">Set</a> (const string &amp;key, float value)</td></tr>
+<tr class="memdesc:aeda42e4295698c4572b7b951700b28e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set parameters by name. <br/></td></tr>
+<tr class="separator:aeda42e4295698c4572b7b951700b28e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:ad83ea72f3d4a694022257b4ddd66962e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad83ea72f3d4a694022257b4ddd66962e"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db3/a00066.html#ad83ea72f3d4a694022257b4ddd66962e">m_nSubbasins</a></td></tr>
-<tr class="memdesc:ad83ea72f3d4a694022257b4ddd66962e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subbasins number. <br/></td></tr>
-<tr class="separator:ad83ea72f3d4a694022257b4ddd66962e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d2d45546d33b1de7e7b71c3b55eec03"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1d2d45546d33b1de7e7b71c3b55eec03"></a>
-vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db3/a00066.html#a1d2d45546d33b1de7e7b71c3b55eec03">m_subbasinIDs</a></td></tr>
-<tr class="memdesc:a1d2d45546d33b1de7e7b71c3b55eec03"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../dd/dc1/a00212.html" title="Subbasin related parameters and methods. ">Subbasin</a> IDs. <br/></td></tr>
-<tr class="separator:a1d2d45546d33b1de7e7b71c3b55eec03"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d817c960bd11d762e01f07306378280"><td class="memItemLeft" align="right" valign="top">map&lt; int, <a class="el" href="../../dd/dc1/a00212.html">Subbasin</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db3/a00066.html#a1d817c960bd11d762e01f07306378280">m_subbasinsInfo</a></td></tr>
-<tr class="separator:a1d817c960bd11d762e01f07306378280"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a5a4db4e4be836a3759cd2cfca1aa6d"><td class="memItemLeft" align="right" valign="top">map&lt; string, float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db3/a00066.html#a4a5a4db4e4be836a3759cd2cfca1aa6d">m_paramMap</a></td></tr>
+<tr class="separator:a4a5a4db4e4be836a3759cd2cfca1aa6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae73d7d7f3d3418b38ca653d65514251b"><td class="memItemLeft" align="right" valign="top">vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db3/a00066.html#ae73d7d7f3d3418b38ca653d65514251b">m_groupNumber</a></td></tr>
+<tr class="separator:ae73d7d7f3d3418b38ca653d65514251b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeed9cc1b35c5551bd0cf7f4ed1fb0f13"><td class="memItemLeft" align="right" valign="top">map&lt; string, map&lt; int, int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db3/a00066.html#aeed9cc1b35c5551bd0cf7f4ed1fb0f13">m_groupIndex</a></td></tr>
+<tr class="separator:aeed9cc1b35c5551bd0cf7f4ed1fb0f13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Manager all <a class="el" href="../../dd/dc1/a00212.html" title="Subbasin related parameters and methods. ">Subbasin</a> related parameters and methods. </p>
+<div class="textblock"><p>Class to store reach related parameters from REACHES table. </p>
 
-<p>Definition at line <a class="el" href="../../d7/d80/a00614_source.html#l00236">236</a> of file <a class="el" href="../../d7/d80/a00614_source.html">clsSubbasin.h</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a8dbb004e6bfbb531ced3bf17c970e840"></a>
+<p>Definition at line <a class="el" href="../../d1/daa/a00638_source.html#l00024">24</a> of file <a class="el" href="../../d1/daa/a00638_source.html">clsReach.h</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="aad31cf639ea376c52371f6953ed80d79"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">clsSubbasins::clsSubbasins </td>
+          <td class="memname">float clsReach::Get </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d9/db6/a00146.html">MongoGridFS</a> *&#160;</td>
-          <td class="paramname"><em>spatialData</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">map&lt; string, <a class="el" href="../../df/d03/a00062.html">clsRasterData</a>&lt; float &gt; * &gt; &amp;&#160;</td>
-          <td class="paramname"><em>rsMap</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>prefixID</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Constructor. </p>
-<p>Query and constructor basic subbasin's information from MongoDB</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">spatialData</td><td>Spatial data database </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">rsMap</td><td>Map of rasters that have been loaded </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">prefixID</td><td>subbasin ID as prefix in MongoDB </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Definition at line <a class="el" href="../../d1/d6e/a00613_source.html#l00060">60</a> of file <a class="el" href="../../d1/d6e/a00613_source.html">clsSubbasin.cpp</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../d9/db3/a00066_a8dbb004e6bfbb531ced3bf17c970e840_cgraph.png" border="0" usemap="#d9/db3/a00066_a8dbb004e6bfbb531ced3bf17c970e840_cgraph" alt=""/></div>
-<map name="d9/db3/a00066_a8dbb004e6bfbb531ced3bf17c970e840_cgraph" id="d9/db3/a00066_a8dbb004e6bfbb531ced3bf17c970e840_cgraph">
-<area shape="rect" id="node2" href="../../dd/dc1/a00212.html#a72ac184b6f261a0acd2dd0d220fa4aac" title="Set cell index list, as well as subbasin area. " alt="" coords="277,5,451,35"/><area shape="rect" id="node4" href="../../dd/dc1/a00212.html#a37726c4feeb6054c5e125cdf1c080582" title="area of subbasin " alt="" coords="287,59,441,88"/><area shape="rect" id="node3" href="../../dd/dc1/a00212.html#ae5fe3e959c31442126e2f01372461e33" title="Check input size. " alt="" coords="499,5,709,35"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a5f439161764101aa8ec964925b7fabcf"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float clsSubbasins::subbasin2basin </td>
-          <td>(</td>
-          <td class="paramtype">string&#160;</td>
+          <td class="paramtype">const string &amp;&#160;</td>
           <td class="paramname"><em>key</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get basin (watershed) scale variable (key) value. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>Variable name which is defined in <a class="el" href="../../da/d36/a00650_source.html">text.h</a> </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Destructor. </p>
+<p>Get parameters by name </p>
 
-<p>Definition at line <a class="el" href="../../d1/d6e/a00613_source.html#l00164">164</a> of file <a class="el" href="../../d1/d6e/a00613_source.html">clsSubbasin.cpp</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../d9/db3/a00066_a5f439161764101aa8ec964925b7fabcf_cgraph.png" border="0" usemap="#d9/db3/a00066_a5f439161764101aa8ec964925b7fabcf_cgraph" alt=""/></div>
-<map name="d9/db3/a00066_a5f439161764101aa8ec964925b7fabcf_cgraph" id="d9/db3/a00066_a5f439161764101aa8ec964925b7fabcf_cgraph">
-<area shape="rect" id="node2" href="../../dd/dc1/a00212.html#ad3905127f834727ced0f309d4c246f2e" title="Get valid cells number. " alt="" coords="293,5,485,35"/><area shape="rect" id="node3" href="../../dd/dc1/a00212.html#a052fa098f2055a70301f59be7552f115" title="Get average slope (%) " alt="" coords="308,59,471,88"/><area shape="rect" id="node4" href="../../dd/dc1/a00212.html#ac656e099de112a7ef5e3844fac706d62" title="Get average PET. " alt="" coords="313,112,465,141"/><area shape="rect" id="node5" href="../../dd/dc1/a00212.html#a3c3b3426143b8a9c997db4ae4ecce9f3" title="Get average percolation (mm) " alt="" coords="308,165,471,195"/><area shape="rect" id="node6" href="../../dd/dc1/a00212.html#a30d9b28efa8edffa6d2a032140920ed5" title="groundwater revaporization " alt="" coords="318,219,461,248"/><area shape="rect" id="node7" href="../../dd/dc1/a00212.html#a4543363e1e4fe6f9c412300b7a601e18" title="Get average deep percolation (mm) " alt="" coords="308,272,471,301"/><area shape="rect" id="node8" href="../../dd/dc1/a00212.html#a4b8c1d3f5caedfd00c5121c32895a431" title="Get groundwater runoff. " alt="" coords="317,325,461,355"/><area shape="rect" id="node9" href="../../dd/dc1/a00212.html#af80b2bcba610979d5ed229c5ec3e4002" title="Get groundwater discharge. " alt="" coords="317,379,461,408"/><area shape="rect" id="node10" href="../../dd/dc1/a00212.html#adabc0556096b4ad8f761ce309a11e6aa" title="Get groundwater storage. " alt="" coords="316,432,463,461"/></map>
-</div>
-</p>
+<p>Definition at line <a class="el" href="../../de/dbb/a00637_source.html#l00054">54</a> of file <a class="el" href="../../de/dbb/a00637_source.html">clsReach.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a1d817c960bd11d762e01f07306378280"></a>
+<a class="anchor" id="aeed9cc1b35c5551bd0cf7f4ed1fb0f13"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -281,7 +191,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">map&lt;int, <a class="el" href="../../dd/dc1/a00212.html">Subbasin</a> *&gt; clsSubbasins::m_subbasinsInfo</td>
+          <td class="memname">map&lt;string, map&lt;int, int&gt; &gt; clsReach::m_groupIndex</td>
         </tr>
       </table>
   </td>
@@ -290,23 +200,69 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Map container to store all Subbasins information key: <a class="el" href="../../dd/dc1/a00212.html" title="Subbasin related parameters and methods. ">Subbasin</a> ID value: <a class="el" href="../../dd/dc1/a00212.html" title="Subbasin related parameters and methods. ">Subbasin</a> instance (pointer) </p>
+<p>Group index if each group number and group method, e.g., {'KMETIS': {1: 0, 2: 1, 3: 1, 8: 2, 16: 15}, 'PMETIS': {...}} </p>
 
-<p>Definition at line <a class="el" href="../../d7/d80/a00614_source.html#l00284">284</a> of file <a class="el" href="../../d7/d80/a00614_source.html">clsSubbasin.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d1/daa/a00638_source.html#l00056">56</a> of file <a class="el" href="../../d1/daa/a00638_source.html">clsReach.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae73d7d7f3d3418b38ca653d65514251b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt;int&gt; clsReach::m_groupNumber</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Group numbers, e.g., [1, 2, 3, 8, 16] </p>
+
+<p>Definition at line <a class="el" href="../../d1/daa/a00638_source.html#l00051">51</a> of file <a class="el" href="../../d1/daa/a00638_source.html">clsReach.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4a5a4db4e4be836a3759cd2cfca1aa6d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">map&lt;string, float&gt; clsReach::m_paramMap</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Map container to store parameters key: parameter name value: parameter value </p>
+
+<p>Definition at line <a class="el" href="../../d1/daa/a00638_source.html#l00047">47</a> of file <a class="el" href="../../d1/daa/a00638_source.html">clsReach.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>seims/src/seims_main/base/data/<a class="el" href="../../d7/d80/a00614_source.html">clsSubbasin.h</a></li>
-<li>seims/src/seims_main/base/data/<a class="el" href="../../d1/d6e/a00613_source.html">clsSubbasin.cpp</a></li>
+<li>seims/src/seims_main/base/data/<a class="el" href="../../d1/daa/a00638_source.html">clsReach.h</a></li>
+<li>seims/src/seims_main/base/data/<a class="el" href="../../de/dbb/a00637_source.html">clsReach.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../d9/db3/a00066.html">clsSubbasins</a></li>
-    <li class="footer">Generated on Fri Jan 19 2018 06:56:15 for SEIMS by
+    <li class="navelem"><a class="el" href="../../d9/db3/a00066.html">clsReach</a></li>
+    <li class="footer">Generated on Tue Mar 27 2018 10:11:02 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

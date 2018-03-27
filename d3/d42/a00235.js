@@ -1,5 +1,7 @@
 var a00235 =
 [
-    [ "BranchFiles", "d3/d42/a00235.html#ade7758492a8ff054359c9dac675a307b", null ],
-    [ "GetFilesToBranch", "d3/d42/a00235.html#a5c95919f835f56325d0f56aa7880c0b3", null ]
+    [ "__init__", "d3/d42/a00235.html#ae0fc6603ac9799d85a7fe8b4c5a03bed", null ],
+    [ "__init__", "d3/d42/a00235.html#ae0fc6603ac9799d85a7fe8b4c5a03bed", null ],
+    [ "generate_plots", "d3/d42/a00235.html#aa72452361708e68658799d0ee86d8e7e", null ],
+    [ "generate_plots", "d3/d42/a00235.html#aa72452361708e68658799d0ee86d8e7e", null ]
 ];

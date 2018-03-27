@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims/src/seims_main/base/data/PlantGrowthCommon.cpp Source File</title>
+<title>SEIMS: seims/src/seims_main/base/bmps/BMPPlantMgtFactory.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -112,85 +112,83 @@ $(document).ready(function(){initNavTree('d2/d34/a00625_source.html','../../');}
 
 <div class="header">
   <div class="headertitle">
-<div class="title">PlantGrowthCommon.cpp</div>  </div>
+<div class="title">BMPPlantMgtFactory.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;PlantGrowthCommon.h&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keywordtype">void</span> PGCommon::getNPShapeParameter(<span class="keywordtype">float</span> fr1, <span class="keywordtype">float</span> fr2, <span class="keywordtype">float</span> fr3, <span class="keywordtype">float</span> *shape1, <span class="keywordtype">float</span> *shape2) {</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;    <span class="keywordflow">if</span> (fr1 - fr2 &lt; 0.0001f) fr2 = fr1 - 0.0001f;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    <span class="keywordflow">if</span> (fr2 - fr3 &lt; 0.0001f) fr3 *= 0.75f;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keywordtype">float</span> t = fr1 - fr3;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keywordtype">float</span> xMid = 1.0f - (fr2 - fr3) / t;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keywordtype">float</span> xEnd = 1.0f - 0.00001f / t;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    getScurveShapeParameter(xMid, xEnd, 0.5f, 1.0f, shape1, shape2);</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keywordtype">void</span> PGCommon::getScurveShapeParameter(<span class="keywordtype">float</span> xMid, <span class="keywordtype">float</span> xEnd, <span class="keywordtype">float</span> yMid, <span class="keywordtype">float</span> yEnd, <span class="keywordtype">float</span> *shape1, <span class="keywordtype">float</span> *shape2) {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">float</span> xx = log(yMid / xMid - yMid);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    *shape2 = (xx - log(yEnd / xEnd - yEnd)) / (yEnd - yMid);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    *shape1 = xx + (yMid * (*shape2));</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keywordtype">float</span> PGCommon::getNPFraction(<span class="keywordtype">float</span> fr1, <span class="keywordtype">float</span> fr3, <span class="keywordtype">float</span> shape1, <span class="keywordtype">float</span> shape2, <span class="keywordtype">float</span> frPHU) {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">return</span> (fr1 - fr3) * (1.0f - frPHU / (frPHU + exp(shape1 - shape2 * frPHU))) + fr3;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keywordtype">float</span> PGCommon::RadiationUseEfficiencyAdjustByVPD(<span class="keywordtype">float</span> vpd, <span class="keywordtype">float</span> radiationUseEfficiencyDeclineRateWithVPD)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">float</span> thresholdVPD = 1.0f;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">if</span> (vpd &lt;= thresholdVPD) <span class="keywordflow">return</span> 0.0f;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">return</span> radiationUseEfficiencyDeclineRateWithVPD * (vpd - thresholdVPD);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keywordtype">float</span> PGCommon::getNormalization(<span class="keywordtype">float</span> distribution) {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">return</span> 1.f - exp(-distribution);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keywordtype">float</span> PGCommon::doHeatUnitAccumulation(<span class="keywordtype">float</span> potentialHeatUnit, <span class="keywordtype">float</span> tMin, <span class="keywordtype">float</span> tMax, <span class="keywordtype">float</span> tBase) {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">if</span> (potentialHeatUnit &lt;= 0.1) {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">return</span> 0.f;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">float</span> frAccumulatedHeatUnit = 0.f;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">float</span> tMean = (tMin + tMax) / 2.f;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">//tbase = m_param-&gt;MinTemperature();</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">if</span> (tMean &lt;= tBase) {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">return</span> 0.f;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    frAccumulatedHeatUnit += (tMean - tBase) / potentialHeatUnit;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">return</span> frAccumulatedHeatUnit;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keywordtype">float</span> PGCommon::NPBiomassFraction(<span class="keywordtype">float</span> x1, <span class="keywordtype">float</span> x2, <span class="keywordtype">float</span> x3, <span class="keywordtype">float</span> frPHU) {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">float</span> ShapeCoefficient1 = 0.f;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">float</span> ShapeCoefficient2 = 0.f;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    getNPShapeParameter(x1, x2, x3, &amp;(ShapeCoefficient1), &amp;(ShapeCoefficient2));</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">return</span> getNPFraction(x1, x3, ShapeCoefficient1, ShapeCoefficient2, frPHU);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="../../d6/dfb/a00172.html#a7e75f09a7df9bba3726b4635fec20e51">   55</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d6/dfb/a00172.html#a7e75f09a7df9bba3726b4635fec20e51">PGCommon::calPlantStressByLimitedNP</a>(<span class="keywordtype">float</span> u1, <span class="keywordtype">float</span> u2, <span class="keywordtype">float</span> *uu) {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">float</span> strsf = 200.f * (u1 / (u2 + 0.0001f) - 0.5f);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">if</span> (strsf &lt;= 0.f) {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        strsf = 0.f;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">if</span> (strsf &lt; 99.f) {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            strsf = strsf / (strsf + exp(3.535f - 0.02597f * strsf));</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            strsf = 1.f;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        }</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">if</span> (u2 &lt; UTIL_ZERO) strsf = 1.f;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    *uu = strsf;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
-<div class="ttc" id="a00172_html_a7e75f09a7df9bba3726b4635fec20e51"><div class="ttname"><a href="../../d6/dfb/a00172.html#a7e75f09a7df9bba3726b4635fec20e51">PGCommon::calPlantStressByLimitedNP</a></div><div class="ttdeci">static void calPlantStressByLimitedNP(float u1, float u2, float *uu)</div><div class="ttdoc">added by Liang-Jun Zhu, 2016-6-8 </div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d34/a00625_source.html#l00055">PlantGrowthCommon.cpp:55</a></div></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef SEIMS_BMP_PLANTMGT_H</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SEIMS_BMP_PLANTMGT_H</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;BMPFactory.h&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;PlantManagementOperation.h&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;utilities.h&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">using namespace </span>MainBMP;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">using namespace </span>PlantManagement;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace </span>MainBMP {</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="../../d1/dea/a00054.html">   25</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d1/dea/a00054.html">BMPPlantMgtFactory</a> : <span class="keyword">public</span> <a class="code" href="../../dc/dee/a00053.html">BMPFactory</a> {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="../../d1/dea/a00054.html">BMPPlantMgtFactory</a>(<span class="keywordtype">int</span> scenarioId, <span class="keywordtype">int</span> bmpId, <span class="keywordtype">int</span> subScenario,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                       <span class="keywordtype">int</span> bmpType, <span class="keywordtype">int</span> bmpPriority, vector&lt;string&gt; &amp;distribution,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                       <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;collection, <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;location);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="../../d1/dea/a00054.html">BMPPlantMgtFactory</a>();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> loadBMP(MongoClient *conn, <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;bmpDBName);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> Dump(ostream *fs);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> setRasterData(map&lt;string, FloatRaster *&gt; &amp;sceneRsMap);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="../../d1/dea/a00054.html#aecda8583dab745397cba85f8ca672bc5">   45</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">float</span> *<a class="code" href="../../d1/dea/a00054.html#aecda8583dab745397cba85f8ca672bc5">getRasterData</a>() { <span class="keywordflow">return</span> m_mgtFieldsRs; };</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="../../d1/dea/a00054.html#a668499f66cd57d56186f40217b501d32">   48</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../d1/dea/a00054.html#a668499f66cd57d56186f40217b501d32">GetLUCCID</a>() { <span class="keywordflow">return</span> m_luccID; }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="../../d1/dea/a00054.html#ae69a2fc0f8ba43e1a79241b023c9c805">   51</a></span>&#160;    <span class="keyword">const</span> vector&lt;int&gt; &amp;<a class="code" href="../../d1/dea/a00054.html#ae69a2fc0f8ba43e1a79241b023c9c805">GetLocations</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_location; }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="../../d1/dea/a00054.html#a34a3af331a61e7cc8df761718c3cc2e9">   54</a></span>&#160;    <span class="keyword">const</span> vector&lt;int&gt; &amp;<a class="code" href="../../d1/dea/a00054.html#a34a3af331a61e7cc8df761718c3cc2e9">GetOperationSequence</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_bmpSequence; }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="../../d1/dea/a00054.html#ac160c2501a19d72f7775a8a8d10cbf2a">   57</a></span>&#160;    <span class="keyword">const</span> map&lt;int, PlantManagementOperation *&gt; &amp;<a class="code" href="../../d1/dea/a00054.html#ac160c2501a19d72f7775a8a8d10cbf2a">GetOperations</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_bmpPlantOps; }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="../../d1/dea/a00054.html#a3e7e83111acf1fa32cf8f65941feabdd">   60</a></span>&#160;    <a class="code" href="../../d2/d94/a00184.html">PlantManagementOperation</a> *<a class="code" href="../../d1/dea/a00054.html#a3e7e83111acf1fa32cf8f65941feabdd">GetOperation</a>(<span class="keywordtype">int</span> ID) { <span class="keywordflow">return</span> m_bmpPlantOps.at(ID); }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="../../d1/dea/a00054.html#a9b36d475cdb1b002f4933c3168f4c1ef">   64</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="../../d1/dea/a00054.html#a9b36d475cdb1b002f4933c3168f4c1ef">m_name</a>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="../../d1/dea/a00054.html#abb8b0a2a0b11cd4876e5938e0dc49703">   66</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="../../d1/dea/a00054.html#abb8b0a2a0b11cd4876e5938e0dc49703">m_mgtFieldsName</a>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="../../d1/dea/a00054.html#ac5b29647f12a938fbab26438efc5280e">   68</a></span>&#160;    <span class="keywordtype">float</span> *<a class="code" href="../../d1/dea/a00054.html#ac5b29647f12a938fbab26438efc5280e">m_mgtFieldsRs</a>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="../../d1/dea/a00054.html#a0c9286037905fd4d3623261bf8e7d84e">   70</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../d1/dea/a00054.html#a0c9286037905fd4d3623261bf8e7d84e">m_luccID</a>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="../../d1/dea/a00054.html#a1073943191193c6eb899ee9a3a9ec90a">   72</a></span>&#160;    <span class="keywordtype">float</span> *<a class="code" href="../../d1/dea/a00054.html#a1073943191193c6eb899ee9a3a9ec90a">m_parameters</a>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="../../d1/dea/a00054.html#a514c51623eeb813de414b0dbcac9e8e5">   74</a></span>&#160;    vector&lt;int&gt; <a class="code" href="../../d1/dea/a00054.html#a514c51623eeb813de414b0dbcac9e8e5">m_location</a>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="../../d1/dea/a00054.html#a6ced6c110b41852c3931a3a9ed503b28">   80</a></span>&#160;    vector&lt;int&gt; <a class="code" href="../../d1/dea/a00054.html#a6ced6c110b41852c3931a3a9ed503b28">m_bmpSequence</a>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="../../d1/dea/a00054.html#a85082e4d199b12b63d83b24934322312">   85</a></span>&#160;    map&lt;int, PlantManagementOperation *&gt; <a class="code" href="../../d1/dea/a00054.html#a85082e4d199b12b63d83b24934322312">m_bmpPlantOps</a>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;};</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SEIMS_BMP_PLANTMGT_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="a00054_html_aecda8583dab745397cba85f8ca672bc5"><div class="ttname"><a href="../../d1/dea/a00054.html#aecda8583dab745397cba85f8ca672bc5">MainBMP::BMPPlantMgtFactory::getRasterData</a></div><div class="ttdeci">virtual float * getRasterData()</div><div class="ttdoc">Get management fields data. </div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d34/a00625_source.html#l00045">BMPPlantMgtFactory.h:45</a></div></div>
+<div class="ttc" id="a00054_html_a1073943191193c6eb899ee9a3a9ec90a"><div class="ttname"><a href="../../d1/dea/a00054.html#a1073943191193c6eb899ee9a3a9ec90a">MainBMP::BMPPlantMgtFactory::m_parameters</a></div><div class="ttdeci">float * m_parameters</div><div class="ttdoc">parameters </div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d34/a00625_source.html#l00072">BMPPlantMgtFactory.h:72</a></div></div>
+<div class="ttc" id="a00054_html_a9b36d475cdb1b002f4933c3168f4c1ef"><div class="ttname"><a href="../../d1/dea/a00054.html#a9b36d475cdb1b002f4933c3168f4c1ef">MainBMP::BMPPlantMgtFactory::m_name</a></div><div class="ttdeci">string m_name</div><div class="ttdoc">subSecenario name </div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d34/a00625_source.html#l00064">BMPPlantMgtFactory.h:64</a></div></div>
+<div class="ttc" id="a00054_html_a0c9286037905fd4d3623261bf8e7d84e"><div class="ttname"><a href="../../d1/dea/a00054.html#a0c9286037905fd4d3623261bf8e7d84e">MainBMP::BMPPlantMgtFactory::m_luccID</a></div><div class="ttdeci">int m_luccID</div><div class="ttdoc">landuse / landcover </div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d34/a00625_source.html#l00070">BMPPlantMgtFactory.h:70</a></div></div>
+<div class="ttc" id="a00054_html_a514c51623eeb813de414b0dbcac9e8e5"><div class="ttname"><a href="../../d1/dea/a00054.html#a514c51623eeb813de414b0dbcac9e8e5">MainBMP::BMPPlantMgtFactory::m_location</a></div><div class="ttdeci">vector&lt; int &gt; m_location</div><div class="ttdoc">field index for where to apply the subScenario </div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d34/a00625_source.html#l00074">BMPPlantMgtFactory.h:74</a></div></div>
+<div class="ttc" id="a00054_html_a85082e4d199b12b63d83b24934322312"><div class="ttname"><a href="../../d1/dea/a00054.html#a85082e4d199b12b63d83b24934322312">MainBMP::BMPPlantMgtFactory::m_bmpPlantOps</a></div><div class="ttdeci">map&lt; int, PlantManagementOperation * &gt; m_bmpPlantOps</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d34/a00625_source.html#l00085">BMPPlantMgtFactory.h:85</a></div></div>
+<div class="ttc" id="a00184_html"><div class="ttname"><a href="../../d2/d94/a00184.html">MainBMP::PlantManagement::PlantManagementOperation</a></div><div class="ttdoc">Base class of plant management operation. </div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d66/a00630_source.html#l00025">PlantManagementOperation.h:25</a></div></div>
+<div class="ttc" id="a00054_html_a6ced6c110b41852c3931a3a9ed503b28"><div class="ttname"><a href="../../d1/dea/a00054.html#a6ced6c110b41852c3931a3a9ed503b28">MainBMP::BMPPlantMgtFactory::m_bmpSequence</a></div><div class="ttdeci">vector&lt; int &gt; m_bmpSequence</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d34/a00625_source.html#l00080">BMPPlantMgtFactory.h:80</a></div></div>
+<div class="ttc" id="a00054_html_ac5b29647f12a938fbab26438efc5280e"><div class="ttname"><a href="../../d1/dea/a00054.html#ac5b29647f12a938fbab26438efc5280e">MainBMP::BMPPlantMgtFactory::m_mgtFieldsRs</a></div><div class="ttdeci">float * m_mgtFieldsRs</div><div class="ttdoc">management fields data (1D array raster) </div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d34/a00625_source.html#l00068">BMPPlantMgtFactory.h:68</a></div></div>
+<div class="ttc" id="a00054_html_ac160c2501a19d72f7775a8a8d10cbf2a"><div class="ttname"><a href="../../d1/dea/a00054.html#ac160c2501a19d72f7775a8a8d10cbf2a">MainBMP::BMPPlantMgtFactory::GetOperations</a></div><div class="ttdeci">const map&lt; int, PlantManagementOperation * &gt; &amp; GetOperations() const </div><div class="ttdoc">Get operations. </div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d34/a00625_source.html#l00057">BMPPlantMgtFactory.h:57</a></div></div>
+<div class="ttc" id="a00054_html_a668499f66cd57d56186f40217b501d32"><div class="ttname"><a href="../../d1/dea/a00054.html#a668499f66cd57d56186f40217b501d32">MainBMP::BMPPlantMgtFactory::GetLUCCID</a></div><div class="ttdeci">int GetLUCCID()</div><div class="ttdoc">Get landuse / landcover ID. </div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d34/a00625_source.html#l00048">BMPPlantMgtFactory.h:48</a></div></div>
+<div class="ttc" id="a00054_html"><div class="ttname"><a href="../../d1/dea/a00054.html">MainBMP::BMPPlantMgtFactory</a></div><div class="ttdoc">Initiate a plant management BMP Actually, it contains a series BMPs, such as plant, fertilize, harvest, etc. </div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d34/a00625_source.html#l00025">BMPPlantMgtFactory.h:25</a></div></div>
+<div class="ttc" id="a00054_html_ae69a2fc0f8ba43e1a79241b023c9c805"><div class="ttname"><a href="../../d1/dea/a00054.html#ae69a2fc0f8ba43e1a79241b023c9c805">MainBMP::BMPPlantMgtFactory::GetLocations</a></div><div class="ttdeci">const vector&lt; int &gt; &amp; GetLocations() const </div><div class="ttdoc">Get locations. </div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d34/a00625_source.html#l00051">BMPPlantMgtFactory.h:51</a></div></div>
+<div class="ttc" id="a00054_html_a34a3af331a61e7cc8df761718c3cc2e9"><div class="ttname"><a href="../../d1/dea/a00054.html#a34a3af331a61e7cc8df761718c3cc2e9">MainBMP::BMPPlantMgtFactory::GetOperationSequence</a></div><div class="ttdeci">const vector&lt; int &gt; &amp; GetOperationSequence() const </div><div class="ttdoc">Get operation sequence. </div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d34/a00625_source.html#l00054">BMPPlantMgtFactory.h:54</a></div></div>
+<div class="ttc" id="a00054_html_a3e7e83111acf1fa32cf8f65941feabdd"><div class="ttname"><a href="../../d1/dea/a00054.html#a3e7e83111acf1fa32cf8f65941feabdd">MainBMP::BMPPlantMgtFactory::GetOperation</a></div><div class="ttdeci">PlantManagementOperation * GetOperation(int ID)</div><div class="ttdoc">Get operation by ID. </div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d34/a00625_source.html#l00060">BMPPlantMgtFactory.h:60</a></div></div>
+<div class="ttc" id="a00053_html"><div class="ttname"><a href="../../dc/dee/a00053.html">MainBMP::BMPFactory</a></div><div class="ttdoc">Base class to initiate a BMP data. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/d6f/a00623_source.html#l00028">BMPFactory.h:28</a></div></div>
+<div class="ttc" id="a00054_html_abb8b0a2a0b11cd4876e5938e0dc49703"><div class="ttname"><a href="../../d1/dea/a00054.html#abb8b0a2a0b11cd4876e5938e0dc49703">MainBMP::BMPPlantMgtFactory::m_mgtFieldsName</a></div><div class="ttdeci">string m_mgtFieldsName</div><div class="ttdoc">management fields name, defined in &#39;distribution&#39; </div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d34/a00625_source.html#l00066">BMPPlantMgtFactory.h:66</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_d9d8c03d94c229237348b60b53b769ac.html">base</a></li><li class="navelem"><a class="el" href="../../dir_24d0af58b2644ad205aa9a0d9adbb65a.html">data</a></li><li class="navelem"><b>PlantGrowthCommon.cpp</b></li>
-    <li class="footer">Generated on Fri Jan 19 2018 06:56:12 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_d9d8c03d94c229237348b60b53b769ac.html">base</a></li><li class="navelem"><a class="el" href="../../dir_c4eaa6a6e6c4ee7b087e3de60cab1bbc.html">bmps</a></li><li class="navelem"><b>BMPPlantMgtFactory.h</b></li>
+    <li class="footer">Generated on Tue Mar 27 2018 10:11:00 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

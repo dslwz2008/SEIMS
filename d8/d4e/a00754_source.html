@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims/src/seims_main/modules/hydrology/HS_WB/HS_WB.h Source File</title>
+<title>SEIMS: seims/src/seims_main/modules/ecology/AET_PTH/AET_PriestleyTaylorHargreaves.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -112,95 +112,92 @@ $(document).ready(function(){initNavTree('d8/d4e/a00754_source.html','../../');}
 
 <div class="header">
   <div class="headertitle">
-<div class="title">HS_WB.h</div>  </div>
+<div class="title">AET_PriestleyTaylorHargreaves.h</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;SimulationModule.h&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">class </span>HS_WB : <span class="keyword">public</span> <a class="code" href="../../dc/d57/a00194.html">SimulationModule</a> {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">int</span> m_nCells;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    time_t m_date;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">float</span> m_dtHs;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">float</span> m_dtCh;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">float</span> *m_streamLink;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">float</span> *m_qs;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">float</span> *m_qi;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">int</span> m_nReaches;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">float</span> *m_qsInput;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">float</span> *m_qiInput;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">float</span> *m_qsTemp;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">float</span> *m_qiTemp;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">float</span> *m_subbasin;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">float</span> *m_pNet;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">float</span> *m_rootdepth;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">float</span> *m_infil;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">float</span> *m_es;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">float</span> *m_ri;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">float</span> *m_percolation;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">float</span> *m_revap;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">float</span> *m_porosity;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">float</span> *m_fieldCapacity;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">//result</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">float</span> *m_soilMoisture;            <span class="comment">//distribution of soil moisture</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">float</span> **m_soilWaterBalance;    <span class="comment">//time series result</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">//variables used to output</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">//float* m_precipitation;</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">//float* m_interception;</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">//float* m_depression;</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">//float* m_ei;</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">//float* m_ed;</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="comment">//float* m_se;</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">//float* m_tMax;</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">//float* m_tMin;</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">//float* m_soilT;</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    HS_WB(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    ~HS_WB(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> SetValue(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">float</span> data);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> Set1DData(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">int</span> nRows, <span class="keywordtype">float</span> *data);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">//virtual void Set2DData(const char *key, int nrows, int ncols, float **data);</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> Get1DData(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">int</span> *nRows, <span class="keywordtype">float</span> **data);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> Get2DData(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">int</span> *nRows, <span class="keywordtype">int</span> *nCols, <span class="keywordtype">float</span> ***data);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> SetReaches(<a class="code" href="../../df/d5f/a00064.html">clsReaches</a> *reaches);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> Execute(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordtype">void</span> initialOutputs(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">bool</span> CheckInputData(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordtype">bool</span> CheckInputSize(<span class="keyword">const</span> <span class="keywordtype">char</span> *, <span class="keywordtype">int</span>);</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;};</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
-<div class="ttc" id="a00064_html"><div class="ttname"><a href="../../df/d5f/a00064.html">clsReaches</a></div><div class="ttdoc">Read and store all reaches information as input parameters. </div><div class="ttdef"><b>Definition:</b> <a href="../../da/d6e/a00610_source.html#l00054">clsReach.h:54</a></div></div>
-<div class="ttc" id="a00194_html"><div class="ttname"><a href="../../dc/d57/a00194.html">SimulationModule</a></div><div class="ttdoc">Base module for all simulation modules in SEIMS. </div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d6b/a00649_source.html#l00047">SimulationModule.h:47</a></div></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#ifndef SEIMS_MODULE_AET_PTH_H</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SEIMS_MODULE_AET_PTH_H</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;SimulationModule.h&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="../../d5/df9/a00044.html">   31</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d5/df9/a00044.html">AET_PT_H</a> : <span class="keyword">public</span> <a class="code" href="../../d5/df1/a00206.html">SimulationModule</a> {<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="../../d5/df9/a00044.html">AET_PT_H</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    ~<a class="code" href="../../d5/df9/a00044.html">AET_PT_H</a>();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> Execute();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> Set1DData(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">int</span> n, <span class="keywordtype">float</span> *data);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> Get1DData(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">int</span> *n, <span class="keywordtype">float</span> **data);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> Set2DData(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">int</span> n, <span class="keywordtype">int</span> col, <span class="keywordtype">float</span> **data);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> GetValue(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">float</span> *value);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">bool</span> CheckInputData();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">bool</span> CheckInputSize(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">int</span> n);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">void</span> initialOutputs();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="../../d5/df9/a00044.html#aa388d2570f839774b48d8f43eb38cde0">   65</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../d5/df9/a00044.html#aa388d2570f839774b48d8f43eb38cde0">m_nCells</a>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="../../d5/df9/a00044.html#aeffe11c043a95d86ee0b9a1331da3bf2">   67</a></span>&#160;    <span class="keywordtype">float</span> *<a class="code" href="../../d5/df9/a00044.html#aeffe11c043a95d86ee0b9a1331da3bf2">m_lai</a>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="../../d5/df9/a00044.html#ad489b1f23e15fe0e7697e3c427a3e662">   69</a></span>&#160;    <span class="keywordtype">float</span> *<a class="code" href="../../d5/df9/a00044.html#ad489b1f23e15fe0e7697e3c427a3e662">m_pet</a>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="../../d5/df9/a00044.html#a36f74dcd5182b28a0beaedbff6278345">   71</a></span>&#160;    <span class="keywordtype">float</span> *<a class="code" href="../../d5/df9/a00044.html#a36f74dcd5182b28a0beaedbff6278345">m_canEvp</a>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="../../d5/df9/a00044.html#a1c6a70c7e69226d9c579ceb76026ec54">   73</a></span>&#160;    <span class="keywordtype">float</span> *<a class="code" href="../../d5/df9/a00044.html#a1c6a70c7e69226d9c579ceb76026ec54">m_depSt</a>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="../../d5/df9/a00044.html#a5413541551035362becbaccdb1f8751a">   76</a></span>&#160;    <span class="keywordtype">float</span> *<a class="code" href="../../d5/df9/a00044.html#a5413541551035362becbaccdb1f8751a">m_esco</a>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="../../d5/df9/a00044.html#a74ec5fedd450d6c3963f329930d52f1a">   78</a></span>&#160;    <span class="keywordtype">float</span> *<a class="code" href="../../d5/df9/a00044.html#a74ec5fedd450d6c3963f329930d52f1a">m_nSoilLayers</a>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="../../d5/df9/a00044.html#a013a137e5b91cd91c47bda0d0bde08d5">   80</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../d5/df9/a00044.html#a013a137e5b91cd91c47bda0d0bde08d5">m_nMaxSoilLayer</a>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="../../d5/df9/a00044.html#a512d170e3cdd4382139dd272dbcacacb">   82</a></span>&#160;    <span class="keywordtype">float</span> **<a class="code" href="../../d5/df9/a00044.html#a512d170e3cdd4382139dd272dbcacacb">m_soilDepth</a>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="../../d5/df9/a00044.html#a836c3e0391a5a30bc2d4dc228f27e0db">   84</a></span>&#160;    <span class="keywordtype">float</span> **<a class="code" href="../../d5/df9/a00044.html#a836c3e0391a5a30bc2d4dc228f27e0db">m_soilThick</a>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="../../d5/df9/a00044.html#aef1c7c2fdd42bafa62ba957503671267">   86</a></span>&#160;    <span class="keywordtype">float</span> **<a class="code" href="../../d5/df9/a00044.html#aef1c7c2fdd42bafa62ba957503671267">m_solFC</a>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="../../d5/df9/a00044.html#a47a30dbc16c6ede5a4bff6018688b7c1">   88</a></span>&#160;    <span class="keywordtype">float</span> *<a class="code" href="../../d5/df9/a00044.html#a47a30dbc16c6ede5a4bff6018688b7c1">m_solCov</a>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="../../d5/df9/a00044.html#a6bdd6d7b29223e59d5ba2cbf58b1da0d">   90</a></span>&#160;    <span class="keywordtype">float</span> **<a class="code" href="../../d5/df9/a00044.html#a6bdd6d7b29223e59d5ba2cbf58b1da0d">m_solNo3</a>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="../../d5/df9/a00044.html#a55aa7b356844d91e15568887cbc56c95">   92</a></span>&#160;    <span class="keywordtype">float</span> *<a class="code" href="../../d5/df9/a00044.html#a55aa7b356844d91e15568887cbc56c95">m_tMean</a>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="../../d5/df9/a00044.html#aecd8419803de34249737719f3f88d39f">   94</a></span>&#160;    <span class="keywordtype">float</span> *<a class="code" href="../../d5/df9/a00044.html#aecd8419803de34249737719f3f88d39f">m_snowAcc</a>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="../../d5/df9/a00044.html#a5bc39e5b3723a8eb68ba42355e80f454">   96</a></span>&#160;    <span class="keywordtype">float</span> *<a class="code" href="../../d5/df9/a00044.html#a5bc39e5b3723a8eb68ba42355e80f454">m_snowSB</a>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="../../d5/df9/a00044.html#a1e6fa9a402c1eda8c4d927ef9b54dbc0">   98</a></span>&#160;    <span class="keywordtype">float</span> **<a class="code" href="../../d5/df9/a00044.html#a1e6fa9a402c1eda8c4d927ef9b54dbc0">m_soilStorage</a>;</div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="../../d5/df9/a00044.html#a67eaaa844fdb546fd096667d55672a5c">  100</a></span>&#160;    <span class="keywordtype">float</span> *<a class="code" href="../../d5/df9/a00044.html#a67eaaa844fdb546fd096667d55672a5c">m_soilStorageProfile</a>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="../../d5/df9/a00044.html#a3615cef1497479ec683ed96aa387416d">  104</a></span>&#160;    <span class="keywordtype">float</span> *<a class="code" href="../../d5/df9/a00044.html#a3615cef1497479ec683ed96aa387416d">m_ppt</a>;</div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="../../d5/df9/a00044.html#aa0e02ebe8a67514819e9e69cf2c4ba20">  106</a></span>&#160;    <span class="keywordtype">float</span> *<a class="code" href="../../d5/df9/a00044.html#aa0e02ebe8a67514819e9e69cf2c4ba20">m_soilESDay</a>;</div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="../../d5/df9/a00044.html#a50468ed15ec0afbee14dd0f356f62140">  108</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="../../d5/df9/a00044.html#a50468ed15ec0afbee14dd0f356f62140">m_no3Up</a>;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;};</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SEIMS_MODULE_AET_PTH_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="a00044_html_a36f74dcd5182b28a0beaedbff6278345"><div class="ttname"><a href="../../d5/df9/a00044.html#a36f74dcd5182b28a0beaedbff6278345">AET_PT_H::m_canEvp</a></div><div class="ttdeci">float * m_canEvp</div><div class="ttdoc">Evaporation loss from canopy storage. </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d4e/a00754_source.html#l00071">AET_PriestleyTaylorHargreaves.h:71</a></div></div>
+<div class="ttc" id="a00044_html_a6bdd6d7b29223e59d5ba2cbf58b1da0d"><div class="ttname"><a href="../../d5/df9/a00044.html#a6bdd6d7b29223e59d5ba2cbf58b1da0d">AET_PT_H::m_solNo3</a></div><div class="ttdeci">float ** m_solNo3</div><div class="ttdoc">amount of nitrogen stored in the nitrate pool </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d4e/a00754_source.html#l00090">AET_PriestleyTaylorHargreaves.h:90</a></div></div>
+<div class="ttc" id="a00044_html_a50468ed15ec0afbee14dd0f356f62140"><div class="ttname"><a href="../../d5/df9/a00044.html#a50468ed15ec0afbee14dd0f356f62140">AET_PT_H::m_no3Up</a></div><div class="ttdeci">float m_no3Up</div><div class="ttdoc">amount of nitrate moving upward in the soil profile in watershed </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d4e/a00754_source.html#l00108">AET_PriestleyTaylorHargreaves.h:108</a></div></div>
+<div class="ttc" id="a00044_html"><div class="ttname"><a href="../../d5/df9/a00044.html">AET_PT_H</a></div><div class="ttdoc">Potential plant transpiration for Priestley-Taylor and Hargreaves ET methods Actual soil evaporation ...</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d4e/a00754_source.html#l00031">AET_PriestleyTaylorHargreaves.h:31</a></div></div>
+<div class="ttc" id="a00044_html_aef1c7c2fdd42bafa62ba957503671267"><div class="ttname"><a href="../../d5/df9/a00044.html#aef1c7c2fdd42bafa62ba957503671267">AET_PT_H::m_solFC</a></div><div class="ttdeci">float ** m_solFC</div><div class="ttdoc">amount of water available to plants in soil layer at field capacity (FC-WP) </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d4e/a00754_source.html#l00086">AET_PriestleyTaylorHargreaves.h:86</a></div></div>
+<div class="ttc" id="a00044_html_ad489b1f23e15fe0e7697e3c427a3e662"><div class="ttname"><a href="../../d5/df9/a00044.html#ad489b1f23e15fe0e7697e3c427a3e662">AET_PT_H::m_pet</a></div><div class="ttdeci">float * m_pet</div><div class="ttdoc">potential evapotranspiration on current day </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d4e/a00754_source.html#l00069">AET_PriestleyTaylorHargreaves.h:69</a></div></div>
+<div class="ttc" id="a00044_html_a5bc39e5b3723a8eb68ba42355e80f454"><div class="ttname"><a href="../../d5/df9/a00044.html#a5bc39e5b3723a8eb68ba42355e80f454">AET_PT_H::m_snowSB</a></div><div class="ttdeci">float * m_snowSB</div><div class="ttdoc">snow sublimation on current day </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d4e/a00754_source.html#l00096">AET_PriestleyTaylorHargreaves.h:96</a></div></div>
+<div class="ttc" id="a00044_html_a013a137e5b91cd91c47bda0d0bde08d5"><div class="ttname"><a href="../../d5/df9/a00044.html#a013a137e5b91cd91c47bda0d0bde08d5">AET_PT_H::m_nMaxSoilLayer</a></div><div class="ttdeci">int m_nMaxSoilLayer</div><div class="ttdoc">maximum soil layers, mlyr in SWAT </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d4e/a00754_source.html#l00080">AET_PriestleyTaylorHargreaves.h:80</a></div></div>
+<div class="ttc" id="a00044_html_a1c6a70c7e69226d9c579ceb76026ec54"><div class="ttname"><a href="../../d5/df9/a00044.html#a1c6a70c7e69226d9c579ceb76026ec54">AET_PT_H::m_depSt</a></div><div class="ttdeci">float * m_depSt</div><div class="ttdoc">depression storage capacity </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d4e/a00754_source.html#l00073">AET_PriestleyTaylorHargreaves.h:73</a></div></div>
+<div class="ttc" id="a00206_html"><div class="ttname"><a href="../../d5/df1/a00206.html">SimulationModule</a></div><div class="ttdoc">Base module for all simulation modules in SEIMS. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d9b/a00680_source.html#l00047">SimulationModule.h:47</a></div></div>
+<div class="ttc" id="a00044_html_aecd8419803de34249737719f3f88d39f"><div class="ttname"><a href="../../d5/df9/a00044.html#aecd8419803de34249737719f3f88d39f">AET_PT_H::m_snowAcc</a></div><div class="ttdeci">float * m_snowAcc</div><div class="ttdoc">amount of water in snow on current day </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d4e/a00754_source.html#l00094">AET_PriestleyTaylorHargreaves.h:94</a></div></div>
+<div class="ttc" id="a00044_html_a836c3e0391a5a30bc2d4dc228f27e0db"><div class="ttname"><a href="../../d5/df9/a00044.html#a836c3e0391a5a30bc2d4dc228f27e0db">AET_PT_H::m_soilThick</a></div><div class="ttdeci">float ** m_soilThick</div><div class="ttdoc">soil thickness </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d4e/a00754_source.html#l00084">AET_PriestleyTaylorHargreaves.h:84</a></div></div>
+<div class="ttc" id="a00044_html_a3615cef1497479ec683ed96aa387416d"><div class="ttname"><a href="../../d5/df9/a00044.html#a3615cef1497479ec683ed96aa387416d">AET_PT_H::m_ppt</a></div><div class="ttdeci">float * m_ppt</div><div class="ttdoc">add output variables </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d4e/a00754_source.html#l00104">AET_PriestleyTaylorHargreaves.h:104</a></div></div>
+<div class="ttc" id="a00044_html_aeffe11c043a95d86ee0b9a1331da3bf2"><div class="ttname"><a href="../../d5/df9/a00044.html#aeffe11c043a95d86ee0b9a1331da3bf2">AET_PT_H::m_lai</a></div><div class="ttdeci">float * m_lai</div><div class="ttdoc">leaf area index(m^2/m^2) </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d4e/a00754_source.html#l00067">AET_PriestleyTaylorHargreaves.h:67</a></div></div>
+<div class="ttc" id="a00044_html_aa388d2570f839774b48d8f43eb38cde0"><div class="ttname"><a href="../../d5/df9/a00044.html#aa388d2570f839774b48d8f43eb38cde0">AET_PT_H::m_nCells</a></div><div class="ttdeci">int m_nCells</div><div class="ttdoc">valid cells number </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d4e/a00754_source.html#l00065">AET_PriestleyTaylorHargreaves.h:65</a></div></div>
+<div class="ttc" id="a00044_html_aa0e02ebe8a67514819e9e69cf2c4ba20"><div class="ttname"><a href="../../d5/df9/a00044.html#aa0e02ebe8a67514819e9e69cf2c4ba20">AET_PT_H::m_soilESDay</a></div><div class="ttdeci">float * m_soilESDay</div><div class="ttdoc">actual amount of evaporation (soil et) that occurs on day, es_day in SWAT </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d4e/a00754_source.html#l00106">AET_PriestleyTaylorHargreaves.h:106</a></div></div>
+<div class="ttc" id="a00044_html_a74ec5fedd450d6c3963f329930d52f1a"><div class="ttname"><a href="../../d5/df9/a00044.html#a74ec5fedd450d6c3963f329930d52f1a">AET_PT_H::m_nSoilLayers</a></div><div class="ttdeci">float * m_nSoilLayers</div><div class="ttdoc">soil layers </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d4e/a00754_source.html#l00078">AET_PriestleyTaylorHargreaves.h:78</a></div></div>
+<div class="ttc" id="a00044_html_a67eaaa844fdb546fd096667d55672a5c"><div class="ttname"><a href="../../d5/df9/a00044.html#a67eaaa844fdb546fd096667d55672a5c">AET_PT_H::m_soilStorageProfile</a></div><div class="ttdeci">float * m_soilStorageProfile</div><div class="ttdoc">soil water storage in soil profile (mm) </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d4e/a00754_source.html#l00100">AET_PriestleyTaylorHargreaves.h:100</a></div></div>
+<div class="ttc" id="a00044_html_a512d170e3cdd4382139dd272dbcacacb"><div class="ttname"><a href="../../d5/df9/a00044.html#a512d170e3cdd4382139dd272dbcacacb">AET_PT_H::m_soilDepth</a></div><div class="ttdeci">float ** m_soilDepth</div><div class="ttdoc">soil depth </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d4e/a00754_source.html#l00082">AET_PriestleyTaylorHargreaves.h:82</a></div></div>
+<div class="ttc" id="a00044_html_a47a30dbc16c6ede5a4bff6018688b7c1"><div class="ttname"><a href="../../d5/df9/a00044.html#a47a30dbc16c6ede5a4bff6018688b7c1">AET_PT_H::m_solCov</a></div><div class="ttdeci">float * m_solCov</div><div class="ttdoc">amount of residue on soil surface (kg/ha) </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d4e/a00754_source.html#l00088">AET_PriestleyTaylorHargreaves.h:88</a></div></div>
+<div class="ttc" id="a00044_html_a1e6fa9a402c1eda8c4d927ef9b54dbc0"><div class="ttname"><a href="../../d5/df9/a00044.html#a1e6fa9a402c1eda8c4d927ef9b54dbc0">AET_PT_H::m_soilStorage</a></div><div class="ttdeci">float ** m_soilStorage</div><div class="ttdoc">soil storage of each soil layer, mm H2O </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d4e/a00754_source.html#l00098">AET_PriestleyTaylorHargreaves.h:98</a></div></div>
+<div class="ttc" id="a00044_html_a5413541551035362becbaccdb1f8751a"><div class="ttname"><a href="../../d5/df9/a00044.html#a5413541551035362becbaccdb1f8751a">AET_PT_H::m_esco</a></div><div class="ttdeci">float * m_esco</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d4e/a00754_source.html#l00076">AET_PriestleyTaylorHargreaves.h:76</a></div></div>
+<div class="ttc" id="a00044_html_a55aa7b356844d91e15568887cbc56c95"><div class="ttname"><a href="../../d5/df9/a00044.html#a55aa7b356844d91e15568887cbc56c95">AET_PT_H::m_tMean</a></div><div class="ttdeci">float * m_tMean</div><div class="ttdoc">mean air temperature (deg C) </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d4e/a00754_source.html#l00092">AET_PriestleyTaylorHargreaves.h:92</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_b89a50a3d6b2f98326f9f3f569cfd788.html">modules</a></li><li class="navelem"><a class="el" href="../../dir_e30ec826fc85f262bf1bcce3dde65013.html">hydrology</a></li><li class="navelem"><a class="el" href="../../dir_c9edb4490799c8df88b13ff538dfd80d.html">HS_WB</a></li><li class="navelem"><b>HS_WB.h</b></li>
-    <li class="footer">Generated on Fri Jan 19 2018 06:56:13 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_b89a50a3d6b2f98326f9f3f569cfd788.html">modules</a></li><li class="navelem"><a class="el" href="../../dir_d92e79a397b9b4190fe70a27a4aa6166.html">ecology</a></li><li class="navelem"><a class="el" href="../../dir_9fc1f8e221bf92e351a99ea6e2bdf065.html">AET_PTH</a></li><li class="navelem"><b>AET_PriestleyTaylorHargreaves.h</b></li>
+    <li class="footer">Generated on Tue Mar 27 2018 10:11:00 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

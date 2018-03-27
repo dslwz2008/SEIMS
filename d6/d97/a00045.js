@@ -1,7 +1,6 @@
 var a00045 =
 [
     [ "ArealSourceLocations", "d6/d97/a00045.html#a16bc19582ad47e4ca5591f7661baac79", null ],
-    [ "~ArealSourceLocations", "d6/d97/a00045.html#a7469830879f0db97486002ada6aa562a", null ],
     [ "Dump", "d6/d97/a00045.html#a0299c66b40ee7914b9f0a4b49867189b", null ],
     [ "GetArealSourceID", "d6/d97/a00045.html#aa4f1d91e4729ace2fc08a4acab968821", null ],
     [ "GetArealSourceName", "d6/d97/a00045.html#ac416bb4ef75f15be081a20eb06cefad5", null ],

@@ -1,24 +1,11 @@
 var a00097 =
 [
-    [ "GWaterReservoir", "d1/d84/a00097.html#a6e436b7df240ca9b2f2335624e37cfc0", null ],
-    [ "~GWaterReservoir", "d1/d84/a00097.html#a0d4c540561dc29309b3d17e53d359df2", null ],
-    [ "CheckInputData", "d1/d84/a00097.html#aa03bbd6498ce5964b4b191dd862a3c91", null ],
-    [ "CheckInputSize", "d1/d84/a00097.html#a71690671c028ced9d6ada7c9af63125f", null ],
-    [ "Execute", "d1/d84/a00097.html#a2f906ddc60092e8bbdef3f88ebcfa013", null ],
-    [ "Get1DData", "d1/d84/a00097.html#a16ceb0e1fed6530de13381fef445bb63", null ],
-    [ "Set1DData", "d1/d84/a00097.html#a5faf0daee5a7ae4cf81ca4fe6509581c", null ],
-    [ "SetReaches", "d1/d84/a00097.html#af97470d80aee1fc2757bf9b0fbb3c4d3", null ],
-    [ "SetValue", "d1/d84/a00097.html#aacaa93c862dc05e27333814e76924753", null ],
-    [ "m_CellWidth", "d1/d84/a00097.html#aad28ec2ebf3265e6e51d9e2ba1c4301d", null ],
-    [ "m_deepCoefficient", "d1/d84/a00097.html#aff24179ab16dd64e9919b804f9241b20", null ],
-    [ "m_dt", "d1/d84/a00097.html#a9c3534db78ddf66602b5a00f2ffc5ea6", null ],
-    [ "m_nCells", "d1/d84/a00097.html#a8f8449bd153c68f56178eeacdf0c6a83", null ],
-    [ "m_nReaches", "d1/d84/a00097.html#a8d28dee63d9f131a49b94beb1cd558ca", null ],
-    [ "m_percSubbasin", "d1/d84/a00097.html#a83040cc852b4d0f38c448d5a4d3223d2", null ],
-    [ "m_qOutlet", "d1/d84/a00097.html#a3b0c70fd939185042d48a6989ada9261", null ],
-    [ "m_recessionCoefficient", "d1/d84/a00097.html#a20c9627e09bb6c208fec4e97544039c2", null ],
-    [ "m_recessionExponent", "d1/d84/a00097.html#a913510dc008500a17e416eeb41d49fd2", null ],
-    [ "m_recharge", "d1/d84/a00097.html#aa8a01b4cc45a6fefe0364f6d664e27bf", null ],
-    [ "m_storage", "d1/d84/a00097.html#ae20eb0f3426407ce266afd32e51115b4", null ],
-    [ "m_storageMax", "d1/d84/a00097.html#af588128fbcdca589809328bd837592a1", null ]
+    [ "_GetJsonOutput", "d1/d84/a00097.html#ae31670d61b1013a6c2b874ebfa5bfa61", null ],
+    [ "_TestJsonOutput", "d1/d84/a00097.html#a238091f78a5f2a97695ba0345dd94a26", null ],
+    [ "testDefaultOutputFile", "d1/d84/a00097.html#ab3dc6afd94bce5c10d115f67014752a6", null ],
+    [ "testEmptyJsonOutput", "d1/d84/a00097.html#af11e81290b4bc270b023ce4cae7ad42b", null ],
+    [ "testFilteredTestJsonOutput", "d1/d84/a00097.html#aaff173a6fed9350c7ad5cd27f32c3fd3", null ],
+    [ "testNonEmptyJsonOutput", "d1/d84/a00097.html#a8d4194ccc1cc50a46ddf8950a34caed0", null ],
+    [ "testSuppressedJsonOutput", "d1/d84/a00097.html#a3d6d8606b472e34cfadeaa089fe5d0a6", null ],
+    [ "testTimestampValue", "d1/d84/a00097.html#ad9e3028b2e5529aad764ebc65aadedcc", null ]
 ];

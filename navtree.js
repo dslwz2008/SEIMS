@@ -24,7 +24,11 @@ var NAVTREE =
     [ "Brief introduction to NSGA-II algorithm", "d5/db6/a00042.html", null ],
     [ "Modules", "modules.html", "modules" ],
     [ "Packages", null, [
-      [ "Packages", "namespaces.html", "namespaces" ]
+      [ "Packages", "namespaces.html", "namespaces" ],
+      [ "Package Functions", "namespacemembers.html", [
+        [ "All", "namespacemembers.html", null ],
+        [ "Functions", "namespacemembers_func.html", null ]
+      ] ]
     ] ],
     [ "Classes", null, [
       [ "Class List", "annotated.html", "annotated" ],
@@ -50,21 +54,22 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 ".html",
-"d1/d51/a00079.html#a41812fdacbd055bb3d0c007c2fadbaa5",
-"d2/d79/a00051.html",
-"d3/df8/a00155.html#a307a3a1ad340ce20e4558dde83a22326",
-"d4/dca/a00048.html#a68e0b9c764289a4e2db4fe6d2ebbb83a",
-"d5/de0/a00050.html#aea12564bacedb270cf0a7cc57a131f28",
-"d6/db8/a00158.html#a0901dc447bd6226baf685d6e5d2bd30d",
-"d8/d17/a00114.html#a1b8fa5ae955f80cbd549cd3186788d3f",
-"d9/d7d/a00150.html#a870e4df9618c1878f5ad0d35913f3e94",
-"da/d17/a01046.html",
-"db/ddf/a00164.html#a3c615ed4e44899b451debfc09a332d48",
-"dd/d07/a00433_source.html",
-"dd/df4/a00193.html#ad7101c381420f6ab59862b085647f21b",
-"de/d76/a00134.html#a9fda221d0f02ddcb7fbab9fcc0edc197",
-"df/d03/a00062.html#a544b560386fd6dc6b163308bae0029b2",
-"df/dc8/a00122.html#ab977e15442d371e5866dc4169e2bd03e"
+"d0/de8/a00133.html#ad329ac39f3ddb216d23271d2aede6b9b",
+"d1/dd6/a00108.html#affbe349099e2209cf627265a7a1d96e1",
+"d2/d82/a00142.html#a52c0e4bc5baa56a26152f1056e79985a",
+"d2/dee/a00049.html#af95e2d56f37056b847280b9ad566c010",
+"d4/d45/a00791_source.html",
+"d5/dcb/a00170.html#a464d64f77d22aba457a42ea1f8d72140",
+"d6/d42/a00043.html#aa8f9b739789afa3c476084bbc796ea25",
+"d7/da0/a00198.html#a5a93ddab408340e5fcbe5f92a4b83039",
+"d9/d38/a00166.html#a230aa859ca0f21570081532c54242537",
+"d9/dcc/a00102.html#a9daed073a0d6d82c5f7b58b10683db28",
+"dc/d0c/a00783_source.html",
+"dd/d2d/a00229.html#aa2c99045e05e607f02e8b2659287f0b1",
+"dd/ded/a00211.html#ae99983c22de777796eff611ab8390a5e",
+"de/db9/a00159.html#a6c7759f1ec197818f766f22b28d88b6b",
+"df/d18/a01071.html",
+"functions_func_v.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

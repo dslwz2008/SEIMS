@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims/src/commonlibs/UtilsClass/utils.h Source File</title>
+<title>SEIMS: seims/src/seims_main/main/main_mpi/main.cpp Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -112,695 +112,124 @@ $(document).ready(function(){initNavTree('d9/d87/a00551_source.html','../../');}
 
 <div class="header">
   <div class="headertitle">
-<div class="title">utils.h</div>  </div>
+<div class="title">main.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#ifndef CLS_UTILS</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CLS_UTILS</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#ifdef SUPPORT_OMP</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &lt;omp.h&gt;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SUPPORT_OMP */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &lt;cmath&gt;</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;cfloat&gt;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;array&gt;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;algorithm&gt;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;iterator&gt;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;ctime&gt;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;cstring&gt;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;cstdlib&gt;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;cstdio&gt;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;sstream&gt;</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#ifdef windows</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &lt;io.h&gt;</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">//#define _WINSOCKAPI_    // stops windows.h including winsock.h // _WINSOCKAPI_ is defined by &lt;winsock2.h&gt;</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &lt;winsock2.h&gt;</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &lt;windows.h&gt;</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &lt;direct.h&gt;</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &lt;sys/types.h&gt;</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &lt;sys/stat.h&gt;</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &lt;dirent.h&gt;</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#include &lt;unistd.h&gt;</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#include &lt;dlfcn.h&gt;</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#include &lt;sys/types.h&gt;</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#include &lt;sys/stat.h&gt;</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#include &lt;sys/time.h&gt;</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#include &lt;fcntl.h&gt;</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#include &lt;errno.h&gt;</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* windows */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#if (defined macos) || (defined macosold)</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &lt;libproc.h&gt;</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* macos */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &lt;cassert&gt;</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#include &lt;cstdarg&gt;</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#ifndef NODATA_VALUE</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define NODATA_VALUE    (-9999.0f)</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif </span><span class="comment">/* NODATA_VALUE */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor"></span><span class="keyword">const</span> <span class="keywordtype">float</span> MISSINGFLOAT = -1 * FLT_MAX;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keyword">const</span> <span class="keywordtype">float</span> MAXIMUMFLOAT = FLT_MAX;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#ifndef PATH_MAX</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define PATH_MAX 1024</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif </span><span class="comment">/* PATH_MAX */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#ifndef UTIL_ZERO</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define UTIL_ZERO        1.0e-6f</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif </span><span class="comment">/* UTIL_ZERO */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">#ifndef PI</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define PI                3.14159265358979323846f</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif </span><span class="comment">/* PI */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">#ifndef MINI_SLOPE</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define MINI_SLOPE        0.0001f</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif </span><span class="comment">/* MINI_SLOPE */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="preprocessor">#ifdef windows</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define Tag_ModuleDirectoryName &quot;\\&quot;</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SEP &quot;\\&quot;</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#ifndef MSVC</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define Tag_So &quot;lib&quot;</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define Tag_DyLib &quot;.dll&quot;</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define Tag_ModuleDirectoryName &quot;/&quot;</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SEP &quot;/&quot;</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define Tag_So &quot;lib&quot;</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif </span><span class="comment">/* windows */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#ifdef linux</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define Tag_DyLib &quot;.so&quot;</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#elif (defined macos) || (defined macosold)</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define Tag_DyLib &quot;.dylib&quot;</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif </span><span class="comment">/* linux */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="comment">// define some macro for string related built-in functions</span></div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="preprocessor">#ifdef MSVC</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define stringcat strcat_s</span></div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define stringcpy strcpy_s</span></div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define strprintf sprintf_s</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define strtok strtok_s</span></div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define stringscanf sscanf_s</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define stringcat strcat</span></div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define stringcpy strcpy</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define strprintf snprintf</span></div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define strtok strtok_r</span></div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define stringscanf sscanf</span></div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif </span><span class="comment">/* MSVC */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="preprocessor">#if defined(__MINGW32_VERSION) || defined(_MSC_VER)</span></div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define strcasecmp _stricmp</span></div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif </span><span class="comment">/* defined(__MINGW32_VERSION) || defined(_MSC_VER) */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="comment"> * Avoid the compile error on MSVC like this:</span></div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="comment"> *   warning C4251: &#39;CLASS_TEST::m_structs&#39;:</span></div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="comment"> *           class &#39;std::vector&lt;_Ty&gt;&#39; needs to have dll-interface to be used by clients of class</span></div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="comment"> * refers to http://www.cnblogs.com/duboway/p/3332057.html</span></div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="preprocessor">#ifdef MSVC</span></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define DLL_STL_LIST(STL_API, STL_TYPE) \</span></div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="preprocessor">    template class STL_API std::allocator&lt; STL_TYPE &gt;; \</span></div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="preprocessor">    template class STL_API std::vector&lt;STL_TYPE, std::allocator&lt; STL_TYPE &gt; &gt;;</span></div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif </span><span class="comment">/* MSVC */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> daysOfMonth[13] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="comment"> * Constant value type pointer</span></div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="keyword">typedef</span> <span class="keyword">const</span> <span class="keywordtype">int</span> *CINTPTR;</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="keyword">typedef</span> <span class="keyword">const</span> <span class="keywordtype">float</span> *CFLOATPTR;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="keyword">typedef</span> <span class="keyword">const</span> <span class="keywordtype">double</span> *CDOUBLEPTR;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div>
-<div class="line"><a name="l00169"></a><span class="lineno"><a class="line" href="../../df/d17/a00231.html">  169</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../df/d17/a00231.html">utilsTime</a> {</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <a class="code" href="../../df/d17/a00231.html">utilsTime</a>() = <span class="keywordflow">default</span>;   <span class="comment">//&lt; void constructor</span></div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    ~<a class="code" href="../../df/d17/a00231.html">utilsTime</a>() = <span class="keywordflow">default</span>;  <span class="comment">//&lt; void destructor</span></div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="comment">     *\brief Precisely and cross-platform time counting function.</span></div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">double</span> TimeCounting();</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;</div>
-<div class="line"><a name="l00181"></a><span class="lineno"><a class="line" href="../../df/d17/a00231.html#a393f9b428264eb66502844fefca35779">  181</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="../../df/d17/a00231.html#a393f9b428264eb66502844fefca35779">isLeapYear</a>(<span class="keywordtype">int</span> yr) { <span class="keywordflow">return</span> ((yr % 4) == 0 &amp;&amp; ((yr % 100) != 0 || (yr % 400) == 0)); }</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">string</span> ConvertToString(<span class="keyword">const</span> time_t *date);</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">string</span> ConvertToString2(<span class="keyword">const</span> time_t *date);</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keyword">static</span> time_t ConvertToTime(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;strDate, <span class="keywordtype">string</span> <span class="keyword">const</span> &amp;format, <span class="keywordtype">bool</span> includeHour);</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <span class="keyword">static</span> time_t ConvertToTime2(<span class="keywordtype">string</span> <span class="keyword">const</span> &amp;strDate, <span class="keyword">const</span> <span class="keywordtype">char</span> *format, <span class="keywordtype">bool</span> includeHour);</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <span class="keyword">static</span> time_t ConvertYMDToTime(<span class="keywordtype">int</span> &amp;year, <span class="keywordtype">int</span> &amp;month, <span class="keywordtype">int</span> &amp;day);</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> GetDateInfoFromTimet(time_t *t, <span class="keywordtype">int</span> *year, <span class="keywordtype">int</span> *month, <span class="keywordtype">int</span> *day);</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> LocalTime(time_t tValue, <span class="keyword">struct</span> tm *tmStruct);</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;};</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;</div>
-<div class="line"><a name="l00259"></a><span class="lineno"><a class="line" href="../../d1/da8/a00230.html">  259</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d1/da8/a00230.html">utilsString</a> {</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <a class="code" href="../../d1/da8/a00230.html">utilsString</a>() = <span class="keywordflow">default</span>;   <span class="comment">//&lt; void constructor</span></div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    ~<a class="code" href="../../d1/da8/a00230.html">utilsString</a>() = <span class="keywordflow">default</span>;  <span class="comment">//&lt; void destructor</span></div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="comment"></span>    <span class="keyword">static</span> <span class="keywordtype">string</span> GetUpper(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;s);</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> StringMatch(<span class="keyword">const</span> <span class="keywordtype">char</span> *a, <span class="keyword">const</span> <span class="keywordtype">char</span> *b);</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> StringMatch(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;text1, <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;text2);</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> TrimSpaces(<span class="keywordtype">string</span> &amp;str);</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">string</span> &amp;trim(<span class="keywordtype">string</span> &amp;s);</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    <span class="keyword">static</span> vector&lt;string&gt; SplitString(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;item);</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    <span class="keyword">static</span> vector&lt;string&gt; SplitString(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;item, <span class="keywordtype">char</span> delimiter);</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;<span class="comment">     * \brief Get numeric values by splitting the given string based on the given delimiter</span></div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    vector&lt;T&gt; SplitStringForValues(<span class="keywordtype">string</span> <span class="keyword">const</span> &amp;item, <span class="keywordtype">char</span> delimiter);</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;<span class="comment">     * \brief Get int values by splitting the given string based on the given delimiter</span></div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    <span class="keyword">static</span> vector&lt;int&gt; SplitStringForInt(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;item, <span class="keywordtype">char</span> delimiter);</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;<span class="comment">     * \brief Get float values by splitting the given string based on the given delimiter</span></div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    <span class="keyword">static</span> vector&lt;float&gt; SplitStringForFloat(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;item, <span class="keywordtype">char</span> delimiter);</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">string</span> ValueToString(<span class="keyword">const</span> T &amp;val);</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;};</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;</div>
-<div class="line"><a name="l00347"></a><span class="lineno"><a class="line" href="../../d9/d01/a00227.html">  347</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d9/d01/a00227.html">utilsArray</a> {</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    <a class="code" href="../../d9/d01/a00227.html">utilsArray</a>() = <span class="keywordflow">default</span>;   <span class="comment">//&lt; void constructor</span></div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    ~<a class="code" href="../../d9/d01/a00227.html">utilsArray</a>() = <span class="keywordflow">default</span>;  <span class="comment">//&lt; void destructor</span></div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;<span class="comment"></span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> Initialize1DArray(<span class="keywordtype">int</span> row, T *&amp;data, T initialValue);</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> Initialize1DArray(<span class="keywordtype">int</span> row, T *&amp;data, <span class="keyword">const</span> T *iniData);</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> Initialize2DArray(<span class="keywordtype">int</span> row, <span class="keywordtype">int</span> col, T **&amp;data, T initialValue);</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> Initialize2DArray(<span class="keywordtype">int</span> row, <span class="keywordtype">int</span> col, T **&amp;data, <span class="keyword">const</span> T *<span class="keyword">const</span> *iniData);</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> Release1DArray(T *&amp;data);</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;</div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> Release2DArray(<span class="keywordtype">int</span> row, T **&amp;data);</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> BatchRelease1DArray(T *&amp;data, ...);</div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> BatchRelease2DArray(<span class="keywordtype">int</span> nrows, T **&amp;data, ...);</div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> Output1DArrayToTxtFile(<span class="keywordtype">int</span> n, CFLOATPTR data, <span class="keyword">const</span> <span class="keywordtype">char</span> *filename);</div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;</div>
-<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> Output2DArrayToTxtFile(<span class="keywordtype">int</span> nRows, <span class="keywordtype">int</span> nCols, <span class="keyword">const</span> CFLOATPTR *data, <span class="keyword">const</span> <span class="keywordtype">char</span> *filename);</div>
-<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;</div>
-<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> Read1DArrayFromTxtFile(<span class="keyword">const</span> <span class="keywordtype">char</span> *filename, <span class="keywordtype">int</span> &amp;nRows, <span class="keywordtype">float</span> *&amp;data);</div>
-<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;</div>
-<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> Read2DArrayFromTxtFile(<span class="keyword">const</span> <span class="keywordtype">char</span> *filename, <span class="keywordtype">int</span> &amp;nRows, <span class="keywordtype">float</span> **&amp;data);</div>
-<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;</div>
-<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> Read2DArrayFromString(<span class="keyword">const</span> <span class="keywordtype">char</span> *s, <span class="keywordtype">int</span> &amp;nRows, <span class="keywordtype">float</span> **&amp;data);</div>
-<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;</div>
-<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> ValueInVector(<span class="keyword">const</span> T &amp;val, <span class="keyword">const</span> vector&lt;T&gt; &amp;vec);</div>
-<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;</div>
-<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> RemoveValueInVector(T &amp;val, vector&lt;T&gt; &amp;vec);</div>
-<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;};</div>
-<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;</div>
-<div class="line"><a name="l00513"></a><span class="lineno"><a class="line" href="../../dd/d2d/a00229.html">  513</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../dd/d2d/a00229.html">utilsMath</a> {</div>
-<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;    <a class="code" href="../../dd/d2d/a00229.html">utilsMath</a>() = <span class="keywordflow">default</span>;   <span class="comment">//&lt; void constructor</span></div>
-<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;    ~<a class="code" href="../../dd/d2d/a00229.html">utilsMath</a>() = <span class="keywordflow">default</span>;  <span class="comment">//&lt; void destructor</span></div>
-<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;<span class="comment"></span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> FloatEqual(T v1, T v2);</div>
-<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;</div>
-<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">float</span> Expo(<span class="keywordtype">float</span> xx, <span class="keywordtype">float</span> upper = 20.f, <span class="keywordtype">float</span> lower = -20.f);</div>
-<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;</div>
-<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">float</span> Power(<span class="keywordtype">float</span> a, <span class="keywordtype">float</span> n);</div>
-<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;</div>
-<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;    <span class="keyword">static</span> T Max(<span class="keyword">const</span> T *a, <span class="keywordtype">int</span> n);</div>
-<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;</div>
-<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;    <span class="keyword">static</span> T Sum(<span class="keywordtype">int</span> row, <span class="keyword">const</span> T *data);</div>
-<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;</div>
-<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;    <span class="keyword">static</span> T Sum(<span class="keywordtype">int</span> row, <span class="keywordtype">int</span> *&amp;idx, <span class="keyword">const</span> T *data);</div>
-<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;</div>
-<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> basicStatistics(<span class="keyword">const</span> T *values, <span class="keywordtype">int</span> num, <span class="keywordtype">double</span> **derivedvalues, T exclude = (T) NODATA_VALUE);</div>
-<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;</div>
-<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> basicStatistics(<span class="keyword">const</span> T *<span class="keyword">const</span> *values,</div>
-<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;                                <span class="keywordtype">int</span> num,</div>
-<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;                                <span class="keywordtype">int</span> lyrs,</div>
-<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;                                <span class="keywordtype">double</span> ***derivedvalues,</div>
-<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;                                T exclude = (T) NODATA_VALUE);</div>
-<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;};</div>
-<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;</div>
-<div class="line"><a name="l00597"></a><span class="lineno"><a class="line" href="../../de/dc2/a00228.html">  597</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../de/dc2/a00228.html">utilsFileIO</a> {</div>
-<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;    <a class="code" href="../../de/dc2/a00228.html">utilsFileIO</a>() = <span class="keywordflow">default</span>;   <span class="comment">//&lt; void constructor</span></div>
-<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;    ~<a class="code" href="../../de/dc2/a00228.html">utilsFileIO</a>() = <span class="keywordflow">default</span>;  <span class="comment">//&lt; void destructor</span></div>
-<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;<span class="preprocessor">#ifndef windows</span></div>
-<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> copyfile_unix(<span class="keyword">const</span> <span class="keywordtype">char</span> *srcfile, <span class="keyword">const</span> <span class="keywordtype">char</span> *dstfile);</div>
-<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;</div>
-<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* windows */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> DirectoryExists(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;dirpath);</div>
-<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;</div>
-<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> CleanDirectory(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;dirpath);</div>
-<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;</div>
-<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> DeleteDirectory(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;dirpath, <span class="keywordtype">bool</span> delSubdirs = <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">string</span> GetAppPath();</div>
-<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;</div>
-<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">string</span> GetAbsolutePath(<span class="keywordtype">string</span> <span class="keyword">const</span> &amp;fullFileName);</div>
-<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;</div>
-<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">string</span> GetCoreFileName(<span class="keywordtype">string</span> <span class="keyword">const</span> &amp;fullFileName);</div>
-<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;</div>
-<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">string</span> GetSuffix(<span class="keywordtype">string</span> <span class="keyword">const</span> &amp;fullFileName);</div>
-<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;</div>
-<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">string</span> ReplaceSuffix(<span class="keywordtype">string</span> <span class="keyword">const</span> &amp;fullFileName, <span class="keywordtype">string</span> <span class="keyword">const</span> &amp;newSuffix);</div>
-<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;</div>
-<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">string</span> GetPathFromFullName(<span class="keywordtype">string</span> <span class="keyword">const</span> &amp;fullFileName);</div>
-<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;</div>
-<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> FileExists(<span class="keywordtype">string</span> <span class="keyword">const</span> &amp;FileName);</div>
-<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;</div>
-<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> PathExists(<span class="keywordtype">string</span> <span class="keyword">const</span> &amp;path);</div>
-<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;</div>
-<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> DeleteExistedFile(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;filepath);</div>
-<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;</div>
-<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> FindFiles(<span class="keyword">const</span> <span class="keywordtype">char</span> *lpPath, <span class="keyword">const</span> <span class="keywordtype">char</span> *expression, vector&lt;string&gt; &amp;vecFiles);</div>
-<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> LoadPlainTextFile(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;filepath, vector&lt;string&gt; &amp;contentStrs);</div>
-<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;};</div>
-<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;</div>
-<div class="line"><a name="l00722"></a><span class="lineno"><a class="line" href="../../dc/d55/a00226.html">  722</a></span>&#160;<span class="keyword">class </span>utils {</div>
-<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;    utils() = <span class="keywordflow">default</span>;   <span class="comment">//&lt; void constructor</span></div>
-<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;    ~utils() = <span class="keywordflow">default</span>;  <span class="comment">//&lt; void destructor</span></div>
-<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;<span class="comment"></span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> isIPAddress(<span class="keyword">const</span> <span class="keywordtype">char</span> *ip);</div>
-<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;</div>
-<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> Log(<span class="keywordtype">string</span> msg, <span class="keywordtype">string</span> logpath = <span class="stringliteral">&quot;debugInfo.log&quot;</span>);</div>
-<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;</div>
-<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> GetAvailableThreadNum();</div>
-<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;</div>
-<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> SetDefaultOpenMPThread();</div>
-<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;</div>
-<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> SetOpenMPThread(<span class="keywordtype">int</span> n);</div>
-<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;</div>
-<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> StatusMessage(<span class="keyword">const</span> <span class="keywordtype">char</span> *msg);</div>
-<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;};</div>
-<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;</div>
-<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;</div>
-<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;<span class="comment">/***************** Implementation of template functions ***********************/</span></div>
-<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;</div>
-<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;<span class="comment">/************ template functions of utilsString ****************/</span></div>
-<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;vector&lt;T&gt; utilsString::SplitStringForValues(<span class="keywordtype">string</span> <span class="keyword">const</span> &amp;item, <span class="keywordtype">char</span> delimiter) {</div>
-<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;    vector&lt;string&gt; valueStrs = <a class="code" href="../../d1/da8/a00230.html#a29fc5b049e9afc2916c30f7e2c75ef74">utilsString::SplitString</a>(item, delimiter);</div>
-<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;    vector&lt;T&gt; values;</div>
-<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;    <span class="keywordflow">for</span> (vector&lt;string&gt;::iterator it = valueStrs.begin(); it != valueStrs.end(); it++) {</div>
-<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;        values.push_back((T) atof((*it).c_str()));</div>
-<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;    }</div>
-<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;    vector&lt;T&gt;(values).swap(values);</div>
-<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;    <span class="keywordflow">return</span> values;</div>
-<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;}</div>
-<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;</div>
-<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00779"></a><span class="lineno"><a class="line" href="../../d1/da8/a00230.html#a554d837a91e37db89c6716fb701a897e">  779</a></span>&#160;<span class="keywordtype">string</span> <a class="code" href="../../d1/da8/a00230.html#a554d837a91e37db89c6716fb701a897e">utilsString::ValueToString</a>(<span class="keyword">const</span> T &amp;val) {</div>
-<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;    ostringstream oss;</div>
-<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;    oss &lt;&lt; val;</div>
-<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;    <span class="keywordflow">return</span> oss.str();</div>
-<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;}</div>
-<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;</div>
-<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;<span class="comment">/************ template functions of utilsArray *****************/</span></div>
-<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;</div>
-<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;<span class="comment">/************ template functions of utilsMath ******************/</span></div>
-<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00789"></a><span class="lineno"><a class="line" href="../../dd/d2d/a00229.html#a3d4536643fd23311231f3eae949c7d39">  789</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../dd/d2d/a00229.html#a3d4536643fd23311231f3eae949c7d39">utilsMath::FloatEqual</a>(T v1, T v2) {</div>
-<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;    <span class="keywordflow">if</span> (abs(v1 - v2) &lt; UTIL_ZERO) {</div>
-<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;    }</div>
-<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;}</div>
-<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;</div>
-<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00798"></a><span class="lineno"><a class="line" href="../../dd/d2d/a00229.html#ae51dcbf223c8dfb83b2264c248e0eb28">  798</a></span>&#160;T <a class="code" href="../../dd/d2d/a00229.html#ae51dcbf223c8dfb83b2264c248e0eb28">utilsMath::Max</a>(<span class="keyword">const</span> T *a, <span class="keywordtype">int</span> n) {</div>
-<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;    T m = a[0];</div>
-<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; n; i++) {</div>
-<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;        <span class="keywordflow">if</span> (a[i] &gt; m) {</div>
-<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;            m = a[i];</div>
-<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;        }</div>
-<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;    }</div>
-<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;    <span class="keywordflow">return</span> m;</div>
-<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;}</div>
-<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;</div>
-<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00809"></a><span class="lineno"><a class="line" href="../../dd/d2d/a00229.html#a38f01ff9ea69e591f02fd0351accbb3a">  809</a></span>&#160;T <a class="code" href="../../dd/d2d/a00229.html#a38f01ff9ea69e591f02fd0351accbb3a">utilsMath::Sum</a>(<span class="keywordtype">int</span> row, <span class="keyword">const</span> T *data) {</div>
-<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;    T tmp = 0;</div>
-<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;<span class="preprocessor">#pragma omp parallel for reduction(+:tmp)</span></div>
-<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; row; i++) {</div>
-<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;        tmp += data[i];</div>
-<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;    }</div>
-<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;    <span class="keywordflow">return</span> tmp;</div>
-<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;}</div>
-<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;</div>
-<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00819"></a><span class="lineno"><a class="line" href="../../dd/d2d/a00229.html#ad5afba8df755e8d2f8d2ebb1a11fb5d3">  819</a></span>&#160;T <a class="code" href="../../dd/d2d/a00229.html#a38f01ff9ea69e591f02fd0351accbb3a">utilsMath::Sum</a>(<span class="keywordtype">int</span> row, <span class="keywordtype">int</span> *&amp;idx, <span class="keyword">const</span> T *data) {</div>
-<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;    T tmp = 0;</div>
-<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;<span class="preprocessor">#pragma omp parallel for reduction(+:tmp)</span></div>
-<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; row; i++) {</div>
-<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;        <span class="keywordtype">int</span> j = idx[i];</div>
-<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;        tmp += data[j];</div>
-<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;    }</div>
-<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;    <span class="keywordflow">return</span> tmp;</div>
-<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;}</div>
-<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;</div>
-<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00830"></a><span class="lineno"><a class="line" href="../../dd/d2d/a00229.html#a1adfb040fbad85453cdf37d5b470def8">  830</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dd/d2d/a00229.html#a1adfb040fbad85453cdf37d5b470def8">utilsMath::basicStatistics</a>(<span class="keyword">const</span> T *values, <span class="keywordtype">int</span> num, <span class="keywordtype">double</span> **derivedvalues, T exclude <span class="comment">/* = (T) NODATA_VALUE */</span>) {</div>
-<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;    <span class="keywordtype">double</span> *tmpstats = <span class="keyword">new</span> <span class="keywordtype">double</span>[6];</div>
-<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;    <span class="keywordtype">double</span> maxv = MISSINGFLOAT;</div>
-<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;    <span class="keywordtype">double</span> minv = MAXIMUMFLOAT;</div>
-<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;    <span class="keywordtype">int</span> validnum = 0;</div>
-<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;    <span class="keywordtype">double</span> sumv = 0.;</div>
-<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;    <span class="keywordtype">double</span> std = 0.;</div>
-<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num; i++) {</div>
-<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../dd/d2d/a00229.html#a3d4536643fd23311231f3eae949c7d39">utilsMath::FloatEqual</a>(values[i], exclude)) <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160;        <span class="keywordflow">if</span> (maxv &lt; values[i]) maxv = values[i];</div>
-<div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;        <span class="keywordflow">if</span> (minv &gt; values[i]) minv = values[i];</div>
-<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;        validnum += 1;</div>
-<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;        sumv += values[i];</div>
-<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;    }</div>
-<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;    <span class="keywordtype">double</span> mean = sumv / (double) validnum;</div>
-<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;<span class="preprocessor">#pragma omp parallel for reduction(+:std)</span></div>
-<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num; i++) {</div>
-<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="../../dd/d2d/a00229.html#a3d4536643fd23311231f3eae949c7d39">utilsMath::FloatEqual</a>(values[i], exclude)) {</div>
-<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;            std += (values[i] - mean) * (values[i] - mean);</div>
-<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;        }</div>
-<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;    }</div>
-<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;    std = sqrt(std / (<span class="keywordtype">double</span>) validnum);</div>
-<div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;    tmpstats[0] = (double) validnum;</div>
-<div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;    tmpstats[1] = mean;</div>
-<div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;    tmpstats[2] = maxv;</div>
-<div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;    tmpstats[3] = minv;</div>
-<div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;    tmpstats[4] = std;</div>
-<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;    tmpstats[5] = maxv - minv;</div>
-<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;    *derivedvalues = tmpstats;</div>
-<div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;}</div>
-<div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;</div>
-<div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00863"></a><span class="lineno"><a class="line" href="../../dd/d2d/a00229.html#af4da89b09885e8eef01fb10d64345aa5">  863</a></span>&#160;<a class="code" href="../../dd/d2d/a00229.html#a1adfb040fbad85453cdf37d5b470def8">utilsMath::basicStatistics</a>(<span class="keyword">const</span> T *<span class="keyword">const</span> *values,</div>
-<div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;                           <span class="keywordtype">int</span> num,</div>
-<div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;                           <span class="keywordtype">int</span> lyrs,</div>
-<div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;                           <span class="keywordtype">double</span> ***derivedvalues,</div>
-<div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;                           T exclude <span class="comment">/* = (T) NODATA_VALUE */</span>) {</div>
-<div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;    <span class="keywordtype">double</span> **tmpstats = <span class="keyword">new</span> <span class="keywordtype">double</span> *[6];</div>
-<div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 6; i++) {</div>
-<div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;        tmpstats[i] = <span class="keyword">new</span> <span class="keywordtype">double</span>[lyrs];</div>
-<div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;    }</div>
-<div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; lyrs; j++) {</div>
-<div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;        tmpstats[0][j] = 0.;                   </div>
-<div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;        tmpstats[1][j] = 0.;                   </div>
-<div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;        tmpstats[2][j] = (double) MISSINGFLOAT; </div>
-<div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;        tmpstats[3][j] = (double) MAXIMUMFLOAT; </div>
-<div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;        tmpstats[4][j] = 0.;                   </div>
-<div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;        tmpstats[5][j] = 0.;                   </div>
-<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;    }</div>
-<div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;    <span class="keywordtype">double</span> *sumv = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;    <a class="code" href="../../d9/d01/a00227.html#aa2344c7b487e833f0d920c569b2eed01">utilsArray::Initialize1DArray</a>(lyrs, sumv, 0.);</div>
-<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num; i++) {</div>
-<div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; lyrs; j++) {</div>
-<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="../../dd/d2d/a00229.html#a3d4536643fd23311231f3eae949c7d39">utilsMath::FloatEqual</a>(values[i][j], exclude)) <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;            <span class="keywordflow">if</span> (tmpstats[2][j] &lt; values[i][j]) tmpstats[2][j] = values[i][j];</div>
-<div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;            <span class="keywordflow">if</span> (tmpstats[3][j] &gt; values[i][j]) tmpstats[3][j] = values[i][j];</div>
-<div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160;            tmpstats[0][j] += 1;</div>
-<div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;            sumv[j] += values[i][j];</div>
-<div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160;        }</div>
-<div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;    }</div>
-<div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160;</div>
-<div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; lyrs; j++) {</div>
-<div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160;        tmpstats[5][j] = tmpstats[2][j] - tmpstats[3][j];</div>
-<div class="line"><a name="l00894"></a><span class="lineno">  894</span>&#160;        tmpstats[1][j] = sumv[j] / tmpstats[0][j];</div>
-<div class="line"><a name="l00895"></a><span class="lineno">  895</span>&#160;    }</div>
-<div class="line"><a name="l00896"></a><span class="lineno">  896</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; lyrs; j++) {</div>
-<div class="line"><a name="l00897"></a><span class="lineno">  897</span>&#160;        <span class="keywordtype">double</span> tmpstd = 0;</div>
-<div class="line"><a name="l00898"></a><span class="lineno">  898</span>&#160;<span class="preprocessor">#pragma omp parallel for reduction(+:tmpstd)</span></div>
-<div class="line"><a name="l00899"></a><span class="lineno">  899</span>&#160;<span class="preprocessor"></span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num; i++) {</div>
-<div class="line"><a name="l00900"></a><span class="lineno">  900</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="../../dd/d2d/a00229.html#a3d4536643fd23311231f3eae949c7d39">utilsMath::FloatEqual</a>(values[i][j], exclude)) {</div>
-<div class="line"><a name="l00901"></a><span class="lineno">  901</span>&#160;                tmpstd += (values[i][j] - tmpstats[1][j]) * (values[i][j] - tmpstats[1][j]);</div>
-<div class="line"><a name="l00902"></a><span class="lineno">  902</span>&#160;            }</div>
-<div class="line"><a name="l00903"></a><span class="lineno">  903</span>&#160;        }</div>
-<div class="line"><a name="l00904"></a><span class="lineno">  904</span>&#160;        tmpstats[4][j] = tmpstd;</div>
-<div class="line"><a name="l00905"></a><span class="lineno">  905</span>&#160;    }</div>
-<div class="line"><a name="l00906"></a><span class="lineno">  906</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; lyrs; j++) {</div>
-<div class="line"><a name="l00907"></a><span class="lineno">  907</span>&#160;        tmpstats[4][j] = sqrt(tmpstats[4][j] / tmpstats[0][j]);</div>
-<div class="line"><a name="l00908"></a><span class="lineno">  908</span>&#160;    }</div>
-<div class="line"><a name="l00909"></a><span class="lineno">  909</span>&#160;    <a class="code" href="../../d9/d01/a00227.html#ac23f13fe8fae04715d9726a5ce20f3e5">utilsArray::Release1DArray</a>(sumv);</div>
-<div class="line"><a name="l00910"></a><span class="lineno">  910</span>&#160;    *derivedvalues = tmpstats;</div>
-<div class="line"><a name="l00911"></a><span class="lineno">  911</span>&#160;}</div>
-<div class="line"><a name="l00912"></a><span class="lineno">  912</span>&#160;</div>
-<div class="line"><a name="l00913"></a><span class="lineno">  913</span>&#160;<span class="comment">/************ template functions of utilsTime ******************/</span></div>
-<div class="line"><a name="l00914"></a><span class="lineno">  914</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00915"></a><span class="lineno"><a class="line" href="../../d9/d01/a00227.html#aa2344c7b487e833f0d920c569b2eed01">  915</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../d9/d01/a00227.html#aa2344c7b487e833f0d920c569b2eed01">utilsArray::Initialize1DArray</a>(<span class="keywordtype">int</span> row, T *&amp;data, T initialValue) {</div>
-<div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> != data) {</div>
-<div class="line"><a name="l00917"></a><span class="lineno">  917</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;The input 1D array pointer is not nullptr, without initialized!&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160;    }</div>
-<div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160;    data = <span class="keyword">new</span>(nothrow)T[row];</div>
-<div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == data) {</div>
-<div class="line"><a name="l00922"></a><span class="lineno">  922</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;Bad memory allocated during 1D array initialization!&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00923"></a><span class="lineno">  923</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00924"></a><span class="lineno">  924</span>&#160;    }</div>
-<div class="line"><a name="l00925"></a><span class="lineno">  925</span>&#160;<span class="preprocessor">#pragma omp parallel for</span></div>
-<div class="line"><a name="l00926"></a><span class="lineno">  926</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; row; i++) {</div>
-<div class="line"><a name="l00927"></a><span class="lineno">  927</span>&#160;        data[i] = initialValue;</div>
-<div class="line"><a name="l00928"></a><span class="lineno">  928</span>&#160;    }</div>
-<div class="line"><a name="l00929"></a><span class="lineno">  929</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160;}</div>
-<div class="line"><a name="l00931"></a><span class="lineno">  931</span>&#160;</div>
-<div class="line"><a name="l00932"></a><span class="lineno">  932</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00933"></a><span class="lineno"><a class="line" href="../../d9/d01/a00227.html#ae748c98aa126fba47cb70d4abb336763">  933</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../d9/d01/a00227.html#aa2344c7b487e833f0d920c569b2eed01">utilsArray::Initialize1DArray</a>(<span class="keywordtype">int</span> row, T *&amp;data, <span class="keyword">const</span> T *iniData) {</div>
-<div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> != data) {</div>
-<div class="line"><a name="l00935"></a><span class="lineno">  935</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;The input 1D array pointer is not nullptr, without initialized!&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160;    }</div>
-<div class="line"><a name="l00938"></a><span class="lineno">  938</span>&#160;    data = <span class="keyword">new</span>(nothrow) T[row];</div>
-<div class="line"><a name="l00939"></a><span class="lineno">  939</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == data) {</div>
-<div class="line"><a name="l00940"></a><span class="lineno">  940</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;Bad memory allocated during 1D array initialization!&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00941"></a><span class="lineno">  941</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00942"></a><span class="lineno">  942</span>&#160;    }</div>
-<div class="line"><a name="l00943"></a><span class="lineno">  943</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == iniData) {</div>
-<div class="line"><a name="l00944"></a><span class="lineno">  944</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;The input parameter iniData MUST NOT be nullptr!&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00945"></a><span class="lineno">  945</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00946"></a><span class="lineno">  946</span>&#160;    }</div>
-<div class="line"><a name="l00947"></a><span class="lineno">  947</span>&#160;<span class="preprocessor">#pragma omp parallel for</span></div>
-<div class="line"><a name="l00948"></a><span class="lineno">  948</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; row; i++) {</div>
-<div class="line"><a name="l00949"></a><span class="lineno">  949</span>&#160;        data[i] = iniData[i];</div>
-<div class="line"><a name="l00950"></a><span class="lineno">  950</span>&#160;    }</div>
-<div class="line"><a name="l00951"></a><span class="lineno">  951</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00952"></a><span class="lineno">  952</span>&#160;}</div>
-<div class="line"><a name="l00953"></a><span class="lineno">  953</span>&#160;</div>
-<div class="line"><a name="l00954"></a><span class="lineno">  954</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00955"></a><span class="lineno"><a class="line" href="../../d9/d01/a00227.html#af44c5bb79ba65876370343685c66b281">  955</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../d9/d01/a00227.html#af44c5bb79ba65876370343685c66b281">utilsArray::Initialize2DArray</a>(<span class="keywordtype">int</span> row, <span class="keywordtype">int</span> col, T **&amp;data, T initialValue) {</div>
-<div class="line"><a name="l00956"></a><span class="lineno">  956</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> != data) {</div>
-<div class="line"><a name="l00957"></a><span class="lineno">  957</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;The input 2D array pointer is not nullptr, without initialized!&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00958"></a><span class="lineno">  958</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00959"></a><span class="lineno">  959</span>&#160;    }</div>
-<div class="line"><a name="l00960"></a><span class="lineno">  960</span>&#160;    data = <span class="keyword">new</span>(nothrow) T *[row];</div>
-<div class="line"><a name="l00961"></a><span class="lineno">  961</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == data) {</div>
-<div class="line"><a name="l00962"></a><span class="lineno">  962</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;Bad memory allocated during 2D array initialization!&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00963"></a><span class="lineno">  963</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00964"></a><span class="lineno">  964</span>&#160;    }</div>
-<div class="line"><a name="l00965"></a><span class="lineno">  965</span>&#160;    <span class="keywordtype">int</span> badAlloc = 0;</div>
-<div class="line"><a name="l00966"></a><span class="lineno">  966</span>&#160;<span class="preprocessor">#pragma omp parallel for reduction(+:badAlloc)</span></div>
-<div class="line"><a name="l00967"></a><span class="lineno">  967</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; row; i++) {</div>
-<div class="line"><a name="l00968"></a><span class="lineno">  968</span>&#160;        data[i] = <span class="keyword">new</span>(nothrow) T[col];</div>
-<div class="line"><a name="l00969"></a><span class="lineno">  969</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == data[i]) {</div>
-<div class="line"><a name="l00970"></a><span class="lineno">  970</span>&#160;            badAlloc++;</div>
-<div class="line"><a name="l00971"></a><span class="lineno">  971</span>&#160;        }</div>
-<div class="line"><a name="l00972"></a><span class="lineno">  972</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; col; j++) {</div>
-<div class="line"><a name="l00973"></a><span class="lineno">  973</span>&#160;            data[i][j] = initialValue;</div>
-<div class="line"><a name="l00974"></a><span class="lineno">  974</span>&#160;        }</div>
-<div class="line"><a name="l00975"></a><span class="lineno">  975</span>&#160;    }</div>
-<div class="line"><a name="l00976"></a><span class="lineno">  976</span>&#160;    <span class="keywordflow">if</span> (badAlloc &gt; 0) {</div>
-<div class="line"><a name="l00977"></a><span class="lineno">  977</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;Bad memory allocated during 2D array initialization!&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00978"></a><span class="lineno">  978</span>&#160;        <a class="code" href="../../d9/d01/a00227.html#a5eb5f72a7108e6a480ae8a5e541a7fa8">utilsArray::Release2DArray</a>(row, data);</div>
-<div class="line"><a name="l00979"></a><span class="lineno">  979</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00980"></a><span class="lineno">  980</span>&#160;    }</div>
-<div class="line"><a name="l00981"></a><span class="lineno">  981</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00982"></a><span class="lineno">  982</span>&#160;}</div>
-<div class="line"><a name="l00983"></a><span class="lineno">  983</span>&#160;</div>
-<div class="line"><a name="l00984"></a><span class="lineno">  984</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00985"></a><span class="lineno"><a class="line" href="../../d9/d01/a00227.html#a56c8c537ce3d9851efca7a2138726515">  985</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../d9/d01/a00227.html#af44c5bb79ba65876370343685c66b281">utilsArray::Initialize2DArray</a>(<span class="keywordtype">int</span> row, <span class="keywordtype">int</span> col, T **&amp;data, <span class="keyword">const</span> T *<span class="keyword">const</span> *iniData) {</div>
-<div class="line"><a name="l00986"></a><span class="lineno">  986</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> != data) {</div>
-<div class="line"><a name="l00987"></a><span class="lineno">  987</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;The input 2D array pointer is not nullptr, without initialized!&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00988"></a><span class="lineno">  988</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00989"></a><span class="lineno">  989</span>&#160;    }</div>
-<div class="line"><a name="l00990"></a><span class="lineno">  990</span>&#160;    data = <span class="keyword">new</span>(nothrow)T *[row];</div>
-<div class="line"><a name="l00991"></a><span class="lineno">  991</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == data) {</div>
-<div class="line"><a name="l00992"></a><span class="lineno">  992</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;Bad memory allocated during 2D array initialization!&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00993"></a><span class="lineno">  993</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00994"></a><span class="lineno">  994</span>&#160;    }</div>
-<div class="line"><a name="l00995"></a><span class="lineno">  995</span>&#160;    <span class="keywordtype">int</span> badAlloc = 0;</div>
-<div class="line"><a name="l00996"></a><span class="lineno">  996</span>&#160;    <span class="keywordtype">int</span> errorAccess = 0;</div>
-<div class="line"><a name="l00997"></a><span class="lineno">  997</span>&#160;<span class="preprocessor">#pragma omp parallel for reduction(+:badAlloc, errorAccess)</span></div>
-<div class="line"><a name="l00998"></a><span class="lineno">  998</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; row; i++) {</div>
-<div class="line"><a name="l00999"></a><span class="lineno">  999</span>&#160;        data[i] = <span class="keyword">new</span>(nothrow)T[col];</div>
-<div class="line"><a name="l01000"></a><span class="lineno"> 1000</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == data[i]) {</div>
-<div class="line"><a name="l01001"></a><span class="lineno"> 1001</span>&#160;            badAlloc++;</div>
-<div class="line"><a name="l01002"></a><span class="lineno"> 1002</span>&#160;        }</div>
-<div class="line"><a name="l01003"></a><span class="lineno"> 1003</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == iniData[i]) {</div>
-<div class="line"><a name="l01004"></a><span class="lineno"> 1004</span>&#160;            errorAccess++;</div>
-<div class="line"><a name="l01005"></a><span class="lineno"> 1005</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01006"></a><span class="lineno"> 1006</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; col; j++) {</div>
-<div class="line"><a name="l01007"></a><span class="lineno"> 1007</span>&#160;                data[i][j] = iniData[i][j];</div>
-<div class="line"><a name="l01008"></a><span class="lineno"> 1008</span>&#160;            }</div>
-<div class="line"><a name="l01009"></a><span class="lineno"> 1009</span>&#160;        }</div>
-<div class="line"><a name="l01010"></a><span class="lineno"> 1010</span>&#160;    }</div>
-<div class="line"><a name="l01011"></a><span class="lineno"> 1011</span>&#160;    <span class="keywordflow">if</span> (badAlloc &gt; 0) {</div>
-<div class="line"><a name="l01012"></a><span class="lineno"> 1012</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;Bad memory allocated during 2D array initialization!&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l01013"></a><span class="lineno"> 1013</span>&#160;        <a class="code" href="../../d9/d01/a00227.html#a5eb5f72a7108e6a480ae8a5e541a7fa8">utilsArray::Release2DArray</a>(row, data);</div>
-<div class="line"><a name="l01014"></a><span class="lineno"> 1014</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l01015"></a><span class="lineno"> 1015</span>&#160;    }</div>
-<div class="line"><a name="l01016"></a><span class="lineno"> 1016</span>&#160;    <span class="keywordflow">if</span> (errorAccess &gt; 0) {</div>
-<div class="line"><a name="l01017"></a><span class="lineno"> 1017</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;nullptr pointer existed in iniData during 2D array initialization!&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l01018"></a><span class="lineno"> 1018</span>&#160;        <a class="code" href="../../d9/d01/a00227.html#a5eb5f72a7108e6a480ae8a5e541a7fa8">utilsArray::Release2DArray</a>(row, data);</div>
-<div class="line"><a name="l01019"></a><span class="lineno"> 1019</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l01020"></a><span class="lineno"> 1020</span>&#160;    }</div>
-<div class="line"><a name="l01021"></a><span class="lineno"> 1021</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l01022"></a><span class="lineno"> 1022</span>&#160;}</div>
-<div class="line"><a name="l01023"></a><span class="lineno"> 1023</span>&#160;</div>
-<div class="line"><a name="l01024"></a><span class="lineno"> 1024</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l01025"></a><span class="lineno"><a class="line" href="../../d9/d01/a00227.html#ac23f13fe8fae04715d9726a5ce20f3e5"> 1025</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d9/d01/a00227.html#ac23f13fe8fae04715d9726a5ce20f3e5">utilsArray::Release1DArray</a>(T *&amp;data) {</div>
-<div class="line"><a name="l01026"></a><span class="lineno"> 1026</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> != data) {</div>
-<div class="line"><a name="l01027"></a><span class="lineno"> 1027</span>&#160;        <span class="keyword">delete</span>[] data;</div>
-<div class="line"><a name="l01028"></a><span class="lineno"> 1028</span>&#160;        data = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l01029"></a><span class="lineno"> 1029</span>&#160;    }</div>
-<div class="line"><a name="l01030"></a><span class="lineno"> 1030</span>&#160;}</div>
-<div class="line"><a name="l01031"></a><span class="lineno"> 1031</span>&#160;</div>
-<div class="line"><a name="l01032"></a><span class="lineno"> 1032</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l01033"></a><span class="lineno"><a class="line" href="../../d9/d01/a00227.html#a5eb5f72a7108e6a480ae8a5e541a7fa8"> 1033</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d9/d01/a00227.html#a5eb5f72a7108e6a480ae8a5e541a7fa8">utilsArray::Release2DArray</a>(<span class="keywordtype">int</span> row, T **&amp;data) {</div>
-<div class="line"><a name="l01034"></a><span class="lineno"> 1034</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == data) {</div>
-<div class="line"><a name="l01035"></a><span class="lineno"> 1035</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l01036"></a><span class="lineno"> 1036</span>&#160;    }</div>
-<div class="line"><a name="l01037"></a><span class="lineno"> 1037</span>&#160;<span class="preprocessor">#pragma omp parallel for</span></div>
-<div class="line"><a name="l01038"></a><span class="lineno"> 1038</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; row; i++) {</div>
-<div class="line"><a name="l01039"></a><span class="lineno"> 1039</span>&#160;        <span class="keywordflow">if</span> (data[i] != <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a name="l01040"></a><span class="lineno"> 1040</span>&#160;            <span class="keyword">delete</span>[] data[i];</div>
-<div class="line"><a name="l01041"></a><span class="lineno"> 1041</span>&#160;            data[i] = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l01042"></a><span class="lineno"> 1042</span>&#160;        }</div>
-<div class="line"><a name="l01043"></a><span class="lineno"> 1043</span>&#160;    }</div>
-<div class="line"><a name="l01044"></a><span class="lineno"> 1044</span>&#160;    <span class="keyword">delete</span>[] data;</div>
-<div class="line"><a name="l01045"></a><span class="lineno"> 1045</span>&#160;    data = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l01046"></a><span class="lineno"> 1046</span>&#160;}</div>
-<div class="line"><a name="l01047"></a><span class="lineno"> 1047</span>&#160;</div>
-<div class="line"><a name="l01048"></a><span class="lineno"> 1048</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l01049"></a><span class="lineno"><a class="line" href="../../d9/d01/a00227.html#a3f43bd0f74f9438b7ba248cec18facbb"> 1049</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d9/d01/a00227.html#a3f43bd0f74f9438b7ba248cec18facbb">utilsArray::BatchRelease1DArray</a>(T *&amp;data, ...) {</div>
-<div class="line"><a name="l01050"></a><span class="lineno"> 1050</span>&#160;    va_list arg_ptr;</div>
-<div class="line"><a name="l01051"></a><span class="lineno"> 1051</span>&#160;    va_start(arg_ptr, data);</div>
-<div class="line"><a name="l01052"></a><span class="lineno"> 1052</span>&#160;    <a class="code" href="../../d9/d01/a00227.html#ac23f13fe8fae04715d9726a5ce20f3e5">utilsArray::Release1DArray</a>(data);</div>
-<div class="line"><a name="l01053"></a><span class="lineno"> 1053</span>&#160;    T *argValue = va_arg(arg_ptr, T*);</div>
-<div class="line"><a name="l01054"></a><span class="lineno"> 1054</span>&#160;    <span class="keywordflow">while</span> (<span class="keyword">nullptr</span> != argValue) {</div>
-<div class="line"><a name="l01055"></a><span class="lineno"> 1055</span>&#160;        <a class="code" href="../../d9/d01/a00227.html#ac23f13fe8fae04715d9726a5ce20f3e5">utilsArray::Release1DArray</a>(argValue);</div>
-<div class="line"><a name="l01056"></a><span class="lineno"> 1056</span>&#160;        argValue = va_arg(arg_ptr, T*);</div>
-<div class="line"><a name="l01057"></a><span class="lineno"> 1057</span>&#160;    }</div>
-<div class="line"><a name="l01058"></a><span class="lineno"> 1058</span>&#160;    va_end(arg_ptr);</div>
-<div class="line"><a name="l01059"></a><span class="lineno"> 1059</span>&#160;}</div>
-<div class="line"><a name="l01060"></a><span class="lineno"> 1060</span>&#160;</div>
-<div class="line"><a name="l01061"></a><span class="lineno"> 1061</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l01062"></a><span class="lineno"><a class="line" href="../../d9/d01/a00227.html#ad75f624591d4a610ab29e5eebd8afbe4"> 1062</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d9/d01/a00227.html#ad75f624591d4a610ab29e5eebd8afbe4">utilsArray::BatchRelease2DArray</a>(<span class="keywordtype">int</span> nrows, T **&amp;data, ...) {</div>
-<div class="line"><a name="l01063"></a><span class="lineno"> 1063</span>&#160;    va_list arg_ptr;</div>
-<div class="line"><a name="l01064"></a><span class="lineno"> 1064</span>&#160;    va_start(arg_ptr, data);</div>
-<div class="line"><a name="l01065"></a><span class="lineno"> 1065</span>&#160;    <a class="code" href="../../d9/d01/a00227.html#a5eb5f72a7108e6a480ae8a5e541a7fa8">utilsArray::Release2DArray</a>(nrows, data);</div>
-<div class="line"><a name="l01066"></a><span class="lineno"> 1066</span>&#160;    T **argValue = va_arg(arg_ptr, T**);</div>
-<div class="line"><a name="l01067"></a><span class="lineno"> 1067</span>&#160;    <span class="keywordflow">while</span> (<span class="keyword">nullptr</span> != argValue) {</div>
-<div class="line"><a name="l01068"></a><span class="lineno"> 1068</span>&#160;        <a class="code" href="../../d9/d01/a00227.html#a5eb5f72a7108e6a480ae8a5e541a7fa8">utilsArray::Release2DArray</a>(nrows, argValue);</div>
-<div class="line"><a name="l01069"></a><span class="lineno"> 1069</span>&#160;        argValue = va_arg(arg_ptr, T**);</div>
-<div class="line"><a name="l01070"></a><span class="lineno"> 1070</span>&#160;    }</div>
-<div class="line"><a name="l01071"></a><span class="lineno"> 1071</span>&#160;    va_end(arg_ptr);</div>
-<div class="line"><a name="l01072"></a><span class="lineno"> 1072</span>&#160;}</div>
-<div class="line"><a name="l01073"></a><span class="lineno"> 1073</span>&#160;</div>
-<div class="line"><a name="l01074"></a><span class="lineno"> 1074</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l01075"></a><span class="lineno"><a class="line" href="../../d9/d01/a00227.html#aeb2e0c11cdc5caffb48cb0b886c08ccf"> 1075</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../d9/d01/a00227.html#aeb2e0c11cdc5caffb48cb0b886c08ccf">utilsArray::ValueInVector</a>(<span class="keyword">const</span> T &amp;val, <span class="keyword">const</span> vector&lt;T&gt; &amp;vec) {</div>
-<div class="line"><a name="l01076"></a><span class="lineno"> 1076</span>&#160;    <span class="keywordflow">if</span> (vec.empty()) {</div>
-<div class="line"><a name="l01077"></a><span class="lineno"> 1077</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l01078"></a><span class="lineno"> 1078</span>&#160;    }</div>
-<div class="line"><a name="l01079"></a><span class="lineno"> 1079</span>&#160;    <span class="keywordflow">if</span> (find(vec.begin(), vec.end(), val) == vec.end()) {</div>
-<div class="line"><a name="l01080"></a><span class="lineno"> 1080</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l01081"></a><span class="lineno"> 1081</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01082"></a><span class="lineno"> 1082</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l01083"></a><span class="lineno"> 1083</span>&#160;    }</div>
-<div class="line"><a name="l01084"></a><span class="lineno"> 1084</span>&#160;}</div>
-<div class="line"><a name="l01085"></a><span class="lineno"> 1085</span>&#160;</div>
-<div class="line"><a name="l01086"></a><span class="lineno"> 1086</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l01087"></a><span class="lineno"><a class="line" href="../../d9/d01/a00227.html#a2f23a263b37f93ecf67e02264e27f3e1"> 1087</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d9/d01/a00227.html#a2f23a263b37f93ecf67e02264e27f3e1">utilsArray::RemoveValueInVector</a>(T &amp;val, vector&lt;T&gt; &amp;vec) {</div>
-<div class="line"><a name="l01088"></a><span class="lineno"> 1088</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> Iter = vec.begin(); Iter != vec.end(); Iter++) {</div>
-<div class="line"><a name="l01089"></a><span class="lineno"> 1089</span>&#160;        <span class="keywordflow">if</span> (*Iter == val) {</div>
-<div class="line"><a name="l01090"></a><span class="lineno"> 1090</span>&#160;            Iter = vec.erase(Iter);</div>
-<div class="line"><a name="l01091"></a><span class="lineno"> 1091</span>&#160;        }</div>
-<div class="line"><a name="l01092"></a><span class="lineno"> 1092</span>&#160;        <span class="keywordflow">if</span> (Iter == vec.end()) {</div>
-<div class="line"><a name="l01093"></a><span class="lineno"> 1093</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l01094"></a><span class="lineno"> 1094</span>&#160;        }</div>
-<div class="line"><a name="l01095"></a><span class="lineno"> 1095</span>&#160;    }</div>
-<div class="line"><a name="l01096"></a><span class="lineno"> 1096</span>&#160;}</div>
-<div class="line"><a name="l01097"></a><span class="lineno"> 1097</span>&#160;</div>
-<div class="line"><a name="l01098"></a><span class="lineno"> 1098</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* CLS_UTILS */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="a00227_html"><div class="ttname"><a href="../../d9/d01/a00227.html">utilsArray</a></div><div class="ttdoc">Array related functions include vector and pointer array. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d87/a00551_source.html#l00347">utils.h:347</a></div></div>
-<div class="ttc" id="a00227_html_a5eb5f72a7108e6a480ae8a5e541a7fa8"><div class="ttname"><a href="../../d9/d01/a00227.html#a5eb5f72a7108e6a480ae8a5e541a7fa8">utilsArray::Release2DArray</a></div><div class="ttdeci">static void Release2DArray(int row, T **&amp;data)</div><div class="ttdoc">Release DT_Array2D data. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d87/a00551_source.html#l01033">utils.h:1033</a></div></div>
-<div class="ttc" id="a00230_html"><div class="ttname"><a href="../../d1/da8/a00230.html">utilsString</a></div><div class="ttdoc">String related functions. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d87/a00551_source.html#l00259">utils.h:259</a></div></div>
-<div class="ttc" id="a00227_html_ac23f13fe8fae04715d9726a5ce20f3e5"><div class="ttname"><a href="../../d9/d01/a00227.html#ac23f13fe8fae04715d9726a5ce20f3e5">utilsArray::Release1DArray</a></div><div class="ttdeci">static void Release1DArray(T *&amp;data)</div><div class="ttdoc">Release DT_Array1D data. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d87/a00551_source.html#l01025">utils.h:1025</a></div></div>
-<div class="ttc" id="a00227_html_af44c5bb79ba65876370343685c66b281"><div class="ttname"><a href="../../d9/d01/a00227.html#af44c5bb79ba65876370343685c66b281">utilsArray::Initialize2DArray</a></div><div class="ttdeci">static bool Initialize2DArray(int row, int col, T **&amp;data, T initialValue)</div><div class="ttdoc">Initialize DT_Array2D data. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d87/a00551_source.html#l00955">utils.h:955</a></div></div>
-<div class="ttc" id="a00229_html_ae51dcbf223c8dfb83b2264c248e0eb28"><div class="ttname"><a href="../../dd/d2d/a00229.html#ae51dcbf223c8dfb83b2264c248e0eb28">utilsMath::Max</a></div><div class="ttdeci">static T Max(const T *a, int n)</div><div class="ttdoc">Max value of a numeric array Get maximum value in a numeric array with size n. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d87/a00551_source.html#l00798">utils.h:798</a></div></div>
-<div class="ttc" id="a00229_html_a1adfb040fbad85453cdf37d5b470def8"><div class="ttname"><a href="../../dd/d2d/a00229.html#a1adfb040fbad85453cdf37d5b470def8">utilsMath::basicStatistics</a></div><div class="ttdeci">static void basicStatistics(const T *values, int num, double **derivedvalues, T exclude=(T) NODATA_VALUE)</div><div class="ttdoc">calculate basic statistics at one time </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d87/a00551_source.html#l00830">utils.h:830</a></div></div>
-<div class="ttc" id="a00227_html_a2f23a263b37f93ecf67e02264e27f3e1"><div class="ttname"><a href="../../d9/d01/a00227.html#a2f23a263b37f93ecf67e02264e27f3e1">utilsArray::RemoveValueInVector</a></div><div class="ttdeci">static void RemoveValueInVector(T &amp;val, vector&lt; T &gt; &amp;vec)</div><div class="ttdoc">Remove value in vector container. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d87/a00551_source.html#l01087">utils.h:1087</a></div></div>
-<div class="ttc" id="a00229_html_a38f01ff9ea69e591f02fd0351accbb3a"><div class="ttname"><a href="../../dd/d2d/a00229.html#a38f01ff9ea69e591f02fd0351accbb3a">utilsMath::Sum</a></div><div class="ttdeci">static T Sum(int row, const T *data)</div><div class="ttdoc">Sum of a numeric array. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d87/a00551_source.html#l00809">utils.h:809</a></div></div>
-<div class="ttc" id="a00231_html_a393f9b428264eb66502844fefca35779"><div class="ttname"><a href="../../df/d17/a00231.html#a393f9b428264eb66502844fefca35779">utilsTime::isLeapYear</a></div><div class="ttdeci">static bool isLeapYear(int yr)</div><div class="ttdoc">Check the given year is a leap year or not. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d87/a00551_source.html#l00181">utils.h:181</a></div></div>
-<div class="ttc" id="a00227_html_ad75f624591d4a610ab29e5eebd8afbe4"><div class="ttname"><a href="../../d9/d01/a00227.html#ad75f624591d4a610ab29e5eebd8afbe4">utilsArray::BatchRelease2DArray</a></div><div class="ttdeci">static void BatchRelease2DArray(int nrows, T **&amp;data,...)</div><div class="ttdoc">Batch release of 2D array,. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d87/a00551_source.html#l01062">utils.h:1062</a></div></div>
-<div class="ttc" id="a00227_html_aa2344c7b487e833f0d920c569b2eed01"><div class="ttname"><a href="../../d9/d01/a00227.html#aa2344c7b487e833f0d920c569b2eed01">utilsArray::Initialize1DArray</a></div><div class="ttdeci">static bool Initialize1DArray(int row, T *&amp;data, T initialValue)</div><div class="ttdoc">Initialize DT_Array1D data. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d87/a00551_source.html#l00915">utils.h:915</a></div></div>
-<div class="ttc" id="a00229_html"><div class="ttname"><a href="../../dd/d2d/a00229.html">utilsMath</a></div><div class="ttdoc">Basic mathematics related functions. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d87/a00551_source.html#l00513">utils.h:513</a></div></div>
-<div class="ttc" id="a00227_html_aeb2e0c11cdc5caffb48cb0b886c08ccf"><div class="ttname"><a href="../../d9/d01/a00227.html#aeb2e0c11cdc5caffb48cb0b886c08ccf">utilsArray::ValueInVector</a></div><div class="ttdeci">static bool ValueInVector(const T &amp;val, const vector&lt; T &gt; &amp;vec)</div><div class="ttdoc">If value in vector container. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d87/a00551_source.html#l01075">utils.h:1075</a></div></div>
-<div class="ttc" id="a00230_html_a554d837a91e37db89c6716fb701a897e"><div class="ttname"><a href="../../d1/da8/a00230.html#a554d837a91e37db89c6716fb701a897e">utilsString::ValueToString</a></div><div class="ttdeci">static string ValueToString(const T &amp;val)</div><div class="ttdoc">Convert value to string. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d87/a00551_source.html#l00779">utils.h:779</a></div></div>
-<div class="ttc" id="a00231_html"><div class="ttname"><a href="../../df/d17/a00231.html">utilsTime</a></div><div class="ttdoc">Time related functions. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d87/a00551_source.html#l00169">utils.h:169</a></div></div>
-<div class="ttc" id="a00228_html"><div class="ttname"><a href="../../de/dc2/a00228.html">utilsFileIO</a></div><div class="ttdoc">File Input and output related functions. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d87/a00551_source.html#l00597">utils.h:597</a></div></div>
-<div class="ttc" id="a00230_html_a29fc5b049e9afc2916c30f7e2c75ef74"><div class="ttname"><a href="../../d1/da8/a00230.html#a29fc5b049e9afc2916c30f7e2c75ef74">utilsString::SplitString</a></div><div class="ttdeci">static vector&lt; string &gt; SplitString(const string &amp;item)</div><div class="ttdoc">Splits the given string by spaces. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/de7/a00550_source.html#l00253">utils.cpp:253</a></div></div>
-<div class="ttc" id="a00227_html_a3f43bd0f74f9438b7ba248cec18facbb"><div class="ttname"><a href="../../d9/d01/a00227.html#a3f43bd0f74f9438b7ba248cec18facbb">utilsArray::BatchRelease1DArray</a></div><div class="ttdeci">static void BatchRelease1DArray(T *&amp;data,...)</div><div class="ttdoc">Batch release of 1D array Variable arguments with the end of nullptr. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d87/a00551_source.html#l01049">utils.h:1049</a></div></div>
-<div class="ttc" id="a00229_html_a3d4536643fd23311231f3eae949c7d39"><div class="ttname"><a href="../../dd/d2d/a00229.html#a3d4536643fd23311231f3eae949c7d39">utilsMath::FloatEqual</a></div><div class="ttdeci">static bool FloatEqual(T v1, T v2)</div><div class="ttdoc">Whether v1 is equal to v2. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d87/a00551_source.html#l00789">utils.h:789</a></div></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#if (defined _DEBUG) &amp;&amp; (defined _MSC_VER) &amp;&amp; (defined VLD)</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;vld.h&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* Run Visual Leak Detector during Debug */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef USE_MONGODB</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define USE_MONGODB</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif </span><span class="comment">/* USE_MONGODB */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;parallel.h&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keyword">const</span> <span class="keywordtype">char</span> **argv) {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="../../df/dc8/a00122.html">InputArgs</a> *input_args = <a class="code" href="../../df/dc8/a00122.html#aea43417dd8b7fcf7db22292cbcb7663c">InputArgs::Init</a>(argc, argv);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == input_args) { exit(EXIT_FAILURE); }</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    GDALAllRegister();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">int</span> numprocs;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">int</span> world_rank;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">int</span> nameLen;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">char</span> processor_name[MPI_MAX_PROCESSOR_NAME];</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    MPI_Init(NULL, NULL);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        MPI_Comm_size(MCW, &amp;numprocs);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        MPI_Comm_rank(MCW, &amp;world_rank);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        MPI_Get_processor_name(processor_name, &amp;nameLen);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        MPI_Group MPI_GROUP_WORLD, slaveGroup;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        MPI_Comm slaveComm;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        MPI_Comm_group(MCW, &amp;MPI_GROUP_WORLD);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="comment">// create the master, transfer and calculation groups</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">int</span> notSlaveRanks[] = {MASTER_RANK};</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="comment">// create slaveGroup which exclude the master rank (i.e., notSlaveRanks)</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        MPI_Group_excl(MPI_GROUP_WORLD, 1, notSlaveRanks, &amp;slaveGroup);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        MPI_Comm_create(MCW, slaveGroup, &amp;slaveComm);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">if</span> (numprocs &lt; 2) {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            cout &lt;&lt; <span class="stringliteral">&quot;The number of processors must be greater than 1!&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            MPI_Abort(MCW, 1);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordtype">int</span> nSlaves = numprocs - 1;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordflow">if</span> (world_rank == MASTER_RANK) {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                MongoClient *mclient = <a class="code" href="../../d7/d9a/a00152.html#aeced16f71369981407785747585d7fac">MongoClient::Init</a>(input_args-&gt;<a class="code" href="../../df/dc8/a00122.html#a432fb4d61a7e7c69e227ae430af570e3">m_host_ip</a>, input_args-&gt;<a class="code" href="../../df/dc8/a00122.html#a64316ca830b31d21fd24b4347c2804f8">m_port</a>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == mclient) {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                    cout &lt;&lt; <span class="stringliteral">&quot;Connect to MongoDB (&quot;</span> &lt;&lt; input_args-&gt;<a class="code" href="../../df/dc8/a00122.html#a432fb4d61a7e7c69e227ae430af570e3">m_host_ip</a></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                         &lt;&lt; <span class="stringliteral">&quot;:&quot;</span> &lt;&lt; input_args-&gt;<a class="code" href="../../df/dc8/a00122.html#a64316ca830b31d21fd24b4347c2804f8">m_port</a> &lt;&lt; <span class="stringliteral">&quot;) failed!&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                    MPI_Abort(MCW, 2);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                <span class="comment">// read river topology data</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                map&lt;int, SubbasinStruct *&gt; subbasinMap;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                set&lt;int&gt; groupSet;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="keywordtype">string</span> group_method = REACH_KMETIS; <span class="comment">// by default</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <span class="keywordflow">if</span> (CreateReachTopology(mclient, input_args-&gt;<a class="code" href="../../df/dc8/a00122.html#ae90f9ba208aed1c124da1bbbafd9b6a1">m_model_name</a>, group_method,</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                                        nSlaves, subbasinMap, groupSet) != 0) {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                    cout &lt;&lt; <span class="stringliteral">&quot;Read and create reaches topology information failed.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                    MPI_Abort(MCW, 1);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <span class="keyword">delete</span> mclient;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <span class="keywordflow">if</span> ((<span class="keywordtype">size_t</span>) nSlaves != groupSet.size()) {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                    groupSet.clear();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                    cout &lt;&lt; <span class="stringliteral">&quot;The number of slave processes (&quot;</span> &lt;&lt; nSlaves &lt;&lt; <span class="stringliteral">&quot;) is not consist with the group number(&quot;</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                         &lt;&lt; groupSet.size() &lt;&lt; <span class="stringliteral">&quot;).&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                    MPI_Abort(MCW, 1);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <span class="comment">// Run management process on master rank</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                MasterProcess(subbasinMap, groupSet);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                <span class="comment">// Release memory</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = subbasinMap.begin(); it != subbasinMap.end();) {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                    <span class="keyword">delete</span> it-&gt;second;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                    subbasinMap.erase(it++);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            } <span class="keywordflow">else</span> { <span class="comment">// Run computing process on slave ranks</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                CalculateProcess(world_rank, numprocs, nSlaves, slaveComm, input_args);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            MPI_Barrier(MCW);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <span class="comment">// free MPI sources</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            MPI_Group_free(&amp;MPI_GROUP_WORLD);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            MPI_Group_free(&amp;slaveGroup);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="comment">// VS2013: Fatal error in MPI_Comm_free: Invalid communicator, error stack.</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="comment">// I still think the communicator should be released. by lj.</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="comment">// MPI_Comm_free(&amp;slaveComm);</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">catch</span> (<a class="code" href="../../d9/db6/a00146.html">ModelException</a> &amp;e) {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            cout &lt;&lt; e.<a class="code" href="../../d9/db6/a00146.html#a4085be4d0255a283a45d9d4fed4d7a23">what</a>() &lt;&lt; endl;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            MPI_Abort(MCW, 3);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">catch</span> (exception &amp;e) {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            cout &lt;&lt; e.what() &lt;&lt; endl;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            MPI_Abort(MCW, 4);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">catch</span> (...) {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            cout &lt;&lt; <span class="stringliteral">&quot;Unknown exception occurred!&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            MPI_Abort(MCW, 5);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keyword">delete</span> input_args;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    MPI_Finalize();</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;}</div>
+<div class="ttc" id="a00122_html"><div class="ttname"><a href="../../df/dc8/a00122.html">InputArgs</a></div><div class="ttdoc">Parse the input arguments of SEIMS. </div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d50/a00661_source.html#l00016">invoke.h:16</a></div></div>
+<div class="ttc" id="a00152_html_aeced16f71369981407785747585d7fac"><div class="ttname"><a href="../../d7/d9a/a00152.html#aeced16f71369981407785747585d7fac">MongoClient::Init</a></div><div class="ttdeci">static MongoClient * Init(const char *host, uint16_t port)</div><div class="ttdoc">Validation check before the constructor of MongoClient. </div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d95/a00556_source.html#l00018">MongoUtil.cpp:18</a></div></div>
+<div class="ttc" id="a00122_html_a432fb4d61a7e7c69e227ae430af570e3"><div class="ttname"><a href="../../df/dc8/a00122.html#a432fb4d61a7e7c69e227ae430af570e3">InputArgs::m_host_ip</a></div><div class="ttdeci">char m_host_ip[16]</div><div class="ttdoc">Host IP address of MongoDB database. </div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d50/a00661_source.html#l00029">invoke.h:29</a></div></div>
+<div class="ttc" id="a00146_html_a4085be4d0255a283a45d9d4fed4d7a23"><div class="ttname"><a href="../../d9/db6/a00146.html#a4085be4d0255a283a45d9d4fed4d7a23">ModelException::what</a></div><div class="ttdeci">const char * what() NOEXCEPT</div><div class="ttdoc">Overload function to construct error information. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d2f/a00582_source.html#l00074">ModelException.h:74</a></div></div>
+<div class="ttc" id="a00146_html"><div class="ttname"><a href="../../d9/db6/a00146.html">ModelException</a></div><div class="ttdoc">Print the exception message. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d2f/a00582_source.html#l00054">ModelException.h:54</a></div></div>
+<div class="ttc" id="a00122_html_aea43417dd8b7fcf7db22292cbcb7663c"><div class="ttname"><a href="../../df/dc8/a00122.html#aea43417dd8b7fcf7db22292cbcb7663c">InputArgs::Init</a></div><div class="ttdeci">static InputArgs * Init(int argc, const char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d4e/a00660_source.html#l00003">invoke.cpp:3</a></div></div>
+<div class="ttc" id="a00122_html_a64316ca830b31d21fd24b4347c2804f8"><div class="ttname"><a href="../../df/dc8/a00122.html#a64316ca830b31d21fd24b4347c2804f8">InputArgs::m_port</a></div><div class="ttdeci">uint16_t m_port</div><div class="ttdoc">port of MongoDB, 27017 is default </div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d50/a00661_source.html#l00030">invoke.h:30</a></div></div>
+<div class="ttc" id="a00122_html_ae90f9ba208aed1c124da1bbbafd9b6a1"><div class="ttname"><a href="../../df/dc8/a00122.html#ae90f9ba208aed1c124da1bbbafd9b6a1">InputArgs::m_model_name</a></div><div class="ttdeci">string m_model_name</div><div class="ttdoc">model_name </div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d50/a00661_source.html#l00028">invoke.h:28</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_56b1596c4d72ede71823cdba70d715a1.html">commonlibs</a></li><li class="navelem"><a class="el" href="../../dir_aac0e29c14a456ffe7dc6a7d8b055d76.html">UtilsClass</a></li><li class="navelem"><b>utils.h</b></li>
-    <li class="footer">Generated on Fri Jan 19 2018 06:56:12 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_c151e3c36c54954dcb4737f82d8a1963.html">main</a></li><li class="navelem"><a class="el" href="../../dir_c959c6c529103227cdb83d2a16e8fd6e.html">main_mpi</a></li><li class="navelem"><b>main.cpp</b></li>
+    <li class="footer">Generated on Tue Mar 27 2018 10:10:59 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

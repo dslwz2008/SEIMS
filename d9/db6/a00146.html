@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: MongoGridFS Class Reference</title>
+<title>SEIMS: ModelException Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -115,67 +115,129 @@ $(document).ready(function(){initNavTree('d9/db6/a00146.html','../../');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="../../dd/de2/a01134.html">List of all members</a>  </div>
+<a href="../../d3/d32/a01176.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">MongoGridFS Class Reference</div>  </div>
+<div class="title">ModelException Class Reference<div class="ingroups"><a class="el" href="../../d4/dc5/a01024.html">Util</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Create a MongoDB GridFS instance.  
+<p>Print the exception message.  
  <a href="../../d9/db6/a00146.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="../../d4/d40/a00516_source.html">MongoUtil.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="../../d4/d2f/a00582_source.html">ModelException.h</a>&gt;</code></p>
+
+<p>Inherits exception.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae46c12793f6a70a2d7982c28d124a582"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae46c12793f6a70a2d7982c28d124a582"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db6/a00146.html#ae46c12793f6a70a2d7982c28d124a582">MongoGridFS</a> (mongoc_gridfs_t *gfs=NULL)</td></tr>
-<tr class="memdesc:ae46c12793f6a70a2d7982c28d124a582"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor, initialized by a mongoc_gridfs_t* pointer or NULL. <br/></td></tr>
-<tr class="separator:ae46c12793f6a70a2d7982c28d124a582"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d80dceafd7219c858e7442f53a51c16"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8d80dceafd7219c858e7442f53a51c16"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db6/a00146.html#a8d80dceafd7219c858e7442f53a51c16">~MongoGridFS</a> ()</td></tr>
-<tr class="memdesc:a8d80dceafd7219c858e7442f53a51c16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor by Destroy function. <br/></td></tr>
-<tr class="separator:a8d80dceafd7219c858e7442f53a51c16"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e67d5be92f06a303fe07a75761038aa"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6e67d5be92f06a303fe07a75761038aa"></a>
-mongoc_gridfs_file_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db6/a00146.html#a6e67d5be92f06a303fe07a75761038aa">getFile</a> (string const &amp;gfilename, mongoc_gridfs_t *gfs=NULL)</td></tr>
-<tr class="memdesc:a6e67d5be92f06a303fe07a75761038aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get GridFS file by name. <br/></td></tr>
-<tr class="separator:a6e67d5be92f06a303fe07a75761038aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8a82047ec815f9e83c3d06177c3f7e3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa8a82047ec815f9e83c3d06177c3f7e3"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db6/a00146.html#aa8a82047ec815f9e83c3d06177c3f7e3">removeFile</a> (string const &amp;gfilename, mongoc_gridfs_t *gfs=NULL)</td></tr>
-<tr class="memdesc:aa8a82047ec815f9e83c3d06177c3f7e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove GridFS file by name. <br/></td></tr>
-<tr class="separator:aa8a82047ec815f9e83c3d06177c3f7e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1e8ad99d6bdb84805c4adb2fe4ca63a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af1e8ad99d6bdb84805c4adb2fe4ca63a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db6/a00146.html#af1e8ad99d6bdb84805c4adb2fe4ca63a">getFileNames</a> (vector&lt; string &gt; &amp;fileExisted, mongoc_gridfs_t *gfs=NULL)</td></tr>
-<tr class="memdesc:af1e8ad99d6bdb84805c4adb2fe4ca63a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get GridFS file names. <br/></td></tr>
-<tr class="separator:af1e8ad99d6bdb84805c4adb2fe4ca63a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9e826d6e16e45c388fa23c327cdfca1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad9e826d6e16e45c388fa23c327cdfca1"></a>
-bson_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db6/a00146.html#ad9e826d6e16e45c388fa23c327cdfca1">getFileMetadata</a> (string const &amp;gfilename, mongoc_gridfs_t *gfs=NULL)</td></tr>
-<tr class="memdesc:ad9e826d6e16e45c388fa23c327cdfca1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get metadata of a given GridFS file name. <br/></td></tr>
-<tr class="separator:ad9e826d6e16e45c388fa23c327cdfca1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a59803caa23585bfff0b5e039da5a9512"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a59803caa23585bfff0b5e039da5a9512"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db6/a00146.html#a59803caa23585bfff0b5e039da5a9512">getStreamData</a> (string const &amp;gfilename, char *&amp;databuf, size_t &amp;datalength, mongoc_gridfs_t *gfs=NULL)</td></tr>
-<tr class="memdesc:a59803caa23585bfff0b5e039da5a9512"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get stream data of a given GridFS file name. <br/></td></tr>
-<tr class="separator:a59803caa23585bfff0b5e039da5a9512"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af69c8de18c04e4b3f41ffe3dd99d957b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af69c8de18c04e4b3f41ffe3dd99d957b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db6/a00146.html#af69c8de18c04e4b3f41ffe3dd99d957b">writeStreamData</a> (string const &amp;gfilename, char *&amp;buf, size_t &amp;length, const bson_t *p, mongoc_gridfs_t *gfs=NULL)</td></tr>
-<tr class="memdesc:af69c8de18c04e4b3f41ffe3dd99d957b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write stream data to a GridFS file. <br/></td></tr>
-<tr class="separator:af69c8de18c04e4b3f41ffe3dd99d957b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60fa24a31edef1abcda4930a18717057"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db6/a00146.html#a60fa24a31edef1abcda4930a18717057">ModelException</a> (string className, string functionName, string msg)</td></tr>
+<tr class="memdesc:a60fa24a31edef1abcda4930a18717057"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a60fa24a31edef1abcda4930a18717057">More...</a><br/></td></tr>
+<tr class="separator:a60fa24a31edef1abcda4930a18717057"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee5445c8d05c17a796a7bd40654d62fd"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db6/a00146.html#aee5445c8d05c17a796a7bd40654d62fd">toString</a> ()</td></tr>
+<tr class="memdesc:aee5445c8d05c17a796a7bd40654d62fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct error information (string version)  <a href="#aee5445c8d05c17a796a7bd40654d62fd">More...</a><br/></td></tr>
+<tr class="separator:aee5445c8d05c17a796a7bd40654d62fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4085be4d0255a283a45d9d4fed4d7a23"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db6/a00146.html#a4085be4d0255a283a45d9d4fed4d7a23">what</a> () NOEXCEPT</td></tr>
+<tr class="memdesc:a4085be4d0255a283a45d9d4fed4d7a23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload function to construct error information.  <a href="#a4085be4d0255a283a45d9d4fed4d7a23">More...</a><br/></td></tr>
+<tr class="separator:a4085be4d0255a283a45d9d4fed4d7a23"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Create a MongoDB GridFS instance. </p>
+<div class="textblock"><p>Print the exception message. </p>
 
-<p>Definition at line <a class="el" href="../../d4/d40/a00516_source.html#l00179">179</a> of file <a class="el" href="../../d4/d40/a00516_source.html">MongoUtil.h</a>.</p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
-<li>seims/src/commonlibs/MongoUtilClass/<a class="el" href="../../d4/d40/a00516_source.html">MongoUtil.h</a></li>
-<li>seims/src/commonlibs/MongoUtilClass/<a class="el" href="../../dc/d19/a00515_source.html">MongoUtil.cpp</a></li>
+<p>Definition at line <a class="el" href="../../d4/d2f/a00582_source.html#l00054">54</a> of file <a class="el" href="../../d4/d2f/a00582_source.html">ModelException.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a60fa24a31edef1abcda4930a18717057"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ModelException::ModelException </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>className</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>functionName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>msg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">className,functionName,msg</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="../../d4/d2f/a00582_source.html#l00060">60</a> of file <a class="el" href="../../d4/d2f/a00582_source.html">ModelException.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="aee5445c8d05c17a796a7bd40654d62fd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string ModelException::toString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct error information (string version) </p>
+<dl class="section return"><dt>Returns</dt><dd>error information </dd></dl>
+
+<p>Definition at line <a class="el" href="../../d4/d2f/a00582_source.html#l00068">68</a> of file <a class="el" href="../../d4/d2f/a00582_source.html">ModelException.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4085be4d0255a283a45d9d4fed4d7a23"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* ModelException::what </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Overload function to construct error information. </p>
+<dl class="section return"><dt>Returns</dt><dd><em>char*</em> error information </dd></dl>
+
+<p>Definition at line <a class="el" href="../../d4/d2f/a00582_source.html#l00074">74</a> of file <a class="el" href="../../d4/d2f/a00582_source.html">ModelException.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>seims/src/commonlibs/UtilsClass/<a class="el" href="../../d4/d2f/a00582_source.html">ModelException.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../d9/db6/a00146.html">MongoGridFS</a></li>
-    <li class="footer">Generated on Fri Jan 19 2018 06:56:16 for SEIMS by
+    <li class="navelem"><a class="el" href="../../d9/db6/a00146.html">ModelException</a></li>
+    <li class="footer">Generated on Tue Mar 27 2018 10:11:03 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

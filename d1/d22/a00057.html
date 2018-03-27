@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: gtest_catch_exceptions_test.CatchSehExceptionsTest Class Reference</title>
+<title>SEIMS: seims.calibration.calibrate.Calibration Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -114,26 +114,342 @@ $(document).ready(function(){initNavTree('d1/d22/a00057.html','../../');});
 
 <div class="header">
   <div class="summary">
-<a href="../../db/d1c/a01229.html">List of all members</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="../../d4/deb/a01345.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">gtest_catch_exceptions_test.CatchSehExceptionsTest Class Reference</div>  </div>
+<div class="title">seims.calibration.calibrate.Calibration Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Inherits TestCase.</p>
+<p>Inherits object, and object.</p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a3e5d52bf956fde9c593f5ef77bb237ba"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d22/a00057.html#a3e5d52bf956fde9c593f5ef77bb237ba">__init__</a></td></tr>
+<tr class="separator:a3e5d52bf956fde9c593f5ef77bb237ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d0457898f46e6bff024d71111f0ca90"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d22/a00057.html#a5d0457898f46e6bff024d71111f0ca90">ParamDefs</a></td></tr>
+<tr class="separator:a5d0457898f46e6bff024d71111f0ca90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb7ce2268e17e1e63a121490569f8f9e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d22/a00057.html#aeb7ce2268e17e1e63a121490569f8f9e">reset_simulation_timerange</a></td></tr>
+<tr class="separator:aeb7ce2268e17e1e63a121490569f8f9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade123b372c02876f2516859948ba8a38"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d22/a00057.html#ade123b372c02876f2516859948ba8a38">initialize</a></td></tr>
+<tr class="separator:ade123b372c02876f2516859948ba8a38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e5d52bf956fde9c593f5ef77bb237ba"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d22/a00057.html#a3e5d52bf956fde9c593f5ef77bb237ba">__init__</a></td></tr>
+<tr class="separator:a3e5d52bf956fde9c593f5ef77bb237ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d0457898f46e6bff024d71111f0ca90"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d22/a00057.html#a5d0457898f46e6bff024d71111f0ca90">ParamDefs</a></td></tr>
+<tr class="separator:a5d0457898f46e6bff024d71111f0ca90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb7ce2268e17e1e63a121490569f8f9e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d22/a00057.html#aeb7ce2268e17e1e63a121490569f8f9e">reset_simulation_timerange</a></td></tr>
+<tr class="separator:aeb7ce2268e17e1e63a121490569f8f9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade123b372c02876f2516859948ba8a38"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d22/a00057.html#ade123b372c02876f2516859948ba8a38">initialize</a></td></tr>
+<tr class="separator:ade123b372c02876f2516859948ba8a38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><pre class="fragment">Tests exception-catching behavior.</pre> 
-<p>Definition at line <a class="el" href="../../d4/dbc/a00414_source.html#l00085">85</a> of file <a class="el" href="../../d4/dbc/a00414_source.html">gtest_catch_exceptions_test.py</a>.</p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
-<li>buildRel/googletest-src/googletest/test/<a class="el" href="../../d4/dbc/a00414_source.html">gtest_catch_exceptions_test.py</a></li>
+<div class="textblock"><pre class="fragment">Base class of automatic calibration.
+
+Attributes:
+    ID(integer): Calibration ID in current generation, range from 0 to N-1(individuals).
+    modelrun(boolean): Has SEIMS model run successfully?
+</pre> 
+<p>Definition at line <a class="el" href="../../de/d84/a00447_source.html#l00080">80</a> of file <a class="el" href="../../de/d84/a00447_source.html">calibrate.py</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a3e5d52bf956fde9c593f5ef77bb237ba"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.calibration.calibrate.Calibration.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>cali_cfg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>id</em> = <code>-1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Initialize.</pre> 
+<p>Definition at line <a class="el" href="../../de/d84/a00447_source.html#l00088">88</a> of file <a class="el" href="../../de/d84/a00447_source.html">calibrate.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/d22/a00057_a3e5d52bf956fde9c593f5ef77bb237ba_cgraph.png" border="0" usemap="#d1/d22/a00057_a3e5d52bf956fde9c593f5ef77bb237ba_cgraph" alt=""/></div>
+<map name="d1/d22/a00057_a3e5d52bf956fde9c593f5ef77bb237ba_cgraph" id="d1/d22/a00057_a3e5d52bf956fde9c593f5ef77bb237ba_cgraph">
+<area shape="rect" id="node2" href="../../d1/d22/a00057.html#aeb7ce2268e17e1e63a121490569f8f9e" title="seims.calibration.calibrate.\lCalibration.reset_simulation\l_timerange" alt="" coords="264,20,485,84"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a3e5d52bf956fde9c593f5ef77bb237ba"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.calibration.calibrate.Calibration.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>cali_cfg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>id</em> = <code>-1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Initialize.</pre> 
+<p>Definition at line <a class="el" href="../../de/dfe/a00448_source.html#l00088">88</a> of file <a class="el" href="../../de/dfe/a00448_source.html">calibrate.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/d22/a00057_a3e5d52bf956fde9c593f5ef77bb237ba_cgraph.png" border="0" usemap="#d1/d22/a00057_a3e5d52bf956fde9c593f5ef77bb237ba_cgraph" alt=""/></div>
+<map name="d1/d22/a00057_a3e5d52bf956fde9c593f5ef77bb237ba_cgraph" id="d1/d22/a00057_a3e5d52bf956fde9c593f5ef77bb237ba_cgraph">
+<area shape="rect" id="node2" href="../../d1/d22/a00057.html#aeb7ce2268e17e1e63a121490569f8f9e" title="seims.calibration.calibrate.\lCalibration.reset_simulation\l_timerange" alt="" coords="264,20,485,84"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ade123b372c02876f2516859948ba8a38"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.calibration.calibrate.Calibration.initialize </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>n</em> = <code>1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Initialize parameters samples by Latin-Hypercube sampling method.
+
+Returns:
+    A list contains parameter value at each gene location.
+</pre> 
+<p>Definition at line <a class="el" href="../../de/d84/a00447_source.html#l00158">158</a> of file <a class="el" href="../../de/d84/a00447_source.html">calibrate.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/d22/a00057_ade123b372c02876f2516859948ba8a38_cgraph.png" border="0" usemap="#d1/d22/a00057_ade123b372c02876f2516859948ba8a38_cgraph" alt=""/></div>
+<map name="d1/d22/a00057_ade123b372c02876f2516859948ba8a38_cgraph" id="d1/d22/a00057_ade123b372c02876f2516859948ba8a38_cgraph">
+<area shape="rect" id="node2" href="../../d1/d22/a00057.html#a5d0457898f46e6bff024d71111f0ca90" title="seims.calibration.calibrate.\lCalibration.ParamDefs" alt="" coords="264,29,475,75"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ade123b372c02876f2516859948ba8a38"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.calibration.calibrate.Calibration.initialize </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>n</em> = <code>1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Initialize parameters samples by Latin-Hypercube sampling method.
+
+Returns:
+    A list contains parameter value at each gene location.
+</pre> 
+<p>Definition at line <a class="el" href="../../de/dfe/a00448_source.html#l00158">158</a> of file <a class="el" href="../../de/dfe/a00448_source.html">calibrate.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/d22/a00057_ade123b372c02876f2516859948ba8a38_cgraph.png" border="0" usemap="#d1/d22/a00057_ade123b372c02876f2516859948ba8a38_cgraph" alt=""/></div>
+<map name="d1/d22/a00057_ade123b372c02876f2516859948ba8a38_cgraph" id="d1/d22/a00057_ade123b372c02876f2516859948ba8a38_cgraph">
+<area shape="rect" id="node2" href="../../d1/d22/a00057.html#a5d0457898f46e6bff024d71111f0ca90" title="seims.calibration.calibrate.\lCalibration.ParamDefs" alt="" coords="264,29,475,75"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a5d0457898f46e6bff024d71111f0ca90"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.calibration.calibrate.Calibration.ParamDefs </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Read cali_param_rng.def file
+
+   name,lower_bound,upper_bound
+
+    e.g.,
+     Param1,0,1
+     Param2,0.5,1.2
+     Param3,-1.0,1.0
+
+Returns:
+    a dictionary containing:
+    - names - the names of the parameters
+    - bounds - a list of lists of lower and upper bounds
+    - num_vars - a scalar indicating the number of variables
+         (the length of names)
+</pre> 
+<p>Definition at line <a class="el" href="../../de/dfe/a00448_source.html#l00098">98</a> of file <a class="el" href="../../de/dfe/a00448_source.html">calibrate.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/d22/a00057_a5d0457898f46e6bff024d71111f0ca90_cgraph.png" border="0" usemap="#d1/d22/a00057_a5d0457898f46e6bff024d71111f0ca90_cgraph" alt=""/></div>
+<map name="d1/d22/a00057_a5d0457898f46e6bff024d71111f0ca90_cgraph" id="d1/d22/a00057_a5d0457898f46e6bff024d71111f0ca90_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a5d0457898f46e6bff024d71111f0ca90"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.calibration.calibrate.Calibration.ParamDefs </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Read cali_param_rng.def file
+
+   name,lower_bound,upper_bound
+
+    e.g.,
+     Param1,0,1
+     Param2,0.5,1.2
+     Param3,-1.0,1.0
+
+Returns:
+    a dictionary containing:
+    - names - the names of the parameters
+    - bounds - a list of lists of lower and upper bounds
+    - num_vars - a scalar indicating the number of variables
+         (the length of names)
+</pre> 
+<p>Definition at line <a class="el" href="../../de/d84/a00447_source.html#l00098">98</a> of file <a class="el" href="../../de/d84/a00447_source.html">calibrate.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aeb7ce2268e17e1e63a121490569f8f9e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.calibration.calibrate.Calibration.reset_simulation_timerange </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Update simulation time range in MongoDB [FILE_IN].</pre> 
+<p>Definition at line <a class="el" href="../../de/d84/a00447_source.html#l00145">145</a> of file <a class="el" href="../../de/d84/a00447_source.html">calibrate.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aeb7ce2268e17e1e63a121490569f8f9e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.calibration.calibrate.Calibration.reset_simulation_timerange </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Update simulation time range in MongoDB [FILE_IN].</pre> 
+<p>Definition at line <a class="el" href="../../de/dfe/a00448_source.html#l00145">145</a> of file <a class="el" href="../../de/dfe/a00448_source.html">calibrate.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/d22/a00057_aeb7ce2268e17e1e63a121490569f8f9e_cgraph.png" border="0" usemap="#d1/d22/a00057_aeb7ce2268e17e1e63a121490569f8f9e_cgraph" alt=""/></div>
+<map name="d1/d22/a00057_aeb7ce2268e17e1e63a121490569f8f9e_cgraph" id="d1/d22/a00057_aeb7ce2268e17e1e63a121490569f8f9e_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>seims/calibration/<a class="el" href="../../de/d84/a00447_source.html">calibrate.py</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>gtest_catch_exceptions_test</b></li><li class="navelem"><a class="el" href="../../d1/d22/a00057.html">CatchSehExceptionsTest</a></li>
-    <li class="footer">Generated on Fri Jan 19 2018 06:56:16 for SEIMS by
+    <li class="navelem"><b>seims</b></li><li class="navelem"><b>calibration</b></li><li class="navelem"><b>calibrate</b></li><li class="navelem"><a class="el" href="../../d1/d22/a00057.html">Calibration</a></li>
+    <li class="footer">Generated on Tue Mar 27 2018 10:11:04 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

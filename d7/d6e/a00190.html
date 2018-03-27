@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims.parameters_sensitivity.sensitivity.Sensitivity Class Reference</title>
+<title>SEIMS: seims.parameters_sensitivity.config.PSAConfig Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -115,9 +115,9 @@ $(document).ready(function(){initNavTree('d7/d6e/a00190.html','../../');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="../../dc/dd5/a01293.html">List of all members</a>  </div>
+<a href="../../d1/dcd/a01351.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">seims.parameters_sensitivity.sensitivity.Sensitivity Class Reference</div>  </div>
+<div class="title">seims.parameters_sensitivity.config.PSAConfig Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -125,27 +125,19 @@ $(document).ready(function(){initNavTree('d7/d6e/a00190.html','../../');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae74bd6daef5f21ea997378e26bc23740"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d6e/a00190.html#ae74bd6daef5f21ea997378e26bc23740">__init__</a></td></tr>
-<tr class="separator:ae74bd6daef5f21ea997378e26bc23740"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92f81d8431fb5c0f4a4b8460c1e19a8a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d6e/a00190.html#a92f81d8431fb5c0f4a4b8460c1e19a8a">read_param_ranges</a></td></tr>
-<tr class="separator:a92f81d8431fb5c0f4a4b8460c1e19a8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adfc9061ce931f00f26c4bf37f412d1a7"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d6e/a00190.html#adfc9061ce931f00f26c4bf37f412d1a7">generate_samples</a></td></tr>
-<tr class="separator:adfc9061ce931f00f26c4bf37f412d1a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97fb109e0fecff6fdd72c13c4417660a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d6e/a00190.html#a97fb109e0fecff6fdd72c13c4417660a">evaluate</a></td></tr>
-<tr class="separator:a97fb109e0fecff6fdd72c13c4417660a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83851d4315bb3b16feebc5c2f35b22cc"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d6e/a00190.html#a83851d4315bb3b16feebc5c2f35b22cc">calc_elementary_effects</a></td></tr>
-<tr class="separator:a83851d4315bb3b16feebc5c2f35b22cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a564574ec069405cfca99ce64817ca966"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d6e/a00190.html#a564574ec069405cfca99ce64817ca966">__init__</a></td></tr>
+<tr class="separator:a564574ec069405cfca99ce64817ca966"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><pre class="fragment">Base class of Sensitivity Analysis.</pre> 
-<p>Definition at line <a class="el" href="../../de/dfe/a00448_source.html#l00031">31</a> of file <a class="el" href="../../de/dfe/a00448_source.html">sensitivity.py</a>.</p>
+<div class="textblock"><pre class="fragment">Parse parameters sensitivity analysis configuration of SEIMS project.</pre> 
+<p>Definition at line <a class="el" href="../../de/df4/a00450_source.html#l00120">120</a> of file <a class="el" href="../../de/df4/a00450_source.html">config.py</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ae74bd6daef5f21ea997378e26bc23740"></a>
+<a class="anchor" id="a564574ec069405cfca99ce64817ca966"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">def seims.parameters_sensitivity.sensitivity.Sensitivity.__init__ </td>
+          <td class="memname">def seims.parameters_sensitivity.config.PSAConfig.__init__ </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>self</em>, </td>
@@ -154,7 +146,13 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>psa_cfg</em>&#160;</td>
+          <td class="paramname"><em>cf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>method</em> = <code>'morris'</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -163,120 +161,21 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">Initialization.
-Args:
-    psa_cfg: PSAConfig object.
-</pre> 
-<p>Definition at line <a class="el" href="../../de/dfe/a00448_source.html#l00034">34</a> of file <a class="el" href="../../de/dfe/a00448_source.html">sensitivity.py</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a83851d4315bb3b16feebc5c2f35b22cc"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">def seims.parameters_sensitivity.sensitivity.Sensitivity.calc_elementary_effects </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<pre class="fragment">Calculate Morris elementary effects.
-   It is worth to be noticed that evaluate() allows to return several output variables,
-   hence we should calculate each of them separately.
-</pre> 
-<p>Definition at line <a class="el" href="../../de/dfe/a00448_source.html#l00172">172</a> of file <a class="el" href="../../de/dfe/a00448_source.html">sensitivity.py</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a97fb109e0fecff6fdd72c13c4417660a"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">def seims.parameters_sensitivity.sensitivity.Sensitivity.evaluate </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<pre class="fragment">Run SEIMS for objective output variables, and write out.
-</pre> 
-<p>Definition at line <a class="el" href="../../de/dfe/a00448_source.html#l00148">148</a> of file <a class="el" href="../../de/dfe/a00448_source.html">sensitivity.py</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="adfc9061ce931f00f26c4bf37f412d1a7"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">def seims.parameters_sensitivity.sensitivity.Sensitivity.generate_samples </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<pre class="fragment">Sampling and write to a single file and MongoDB 'PARAMETERS' collection</pre> 
-<p>Definition at line <a class="el" href="../../de/dfe/a00448_source.html#l00118">118</a> of file <a class="el" href="../../de/dfe/a00448_source.html">sensitivity.py</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a92f81d8431fb5c0f4a4b8460c1e19a8a"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">def seims.parameters_sensitivity.sensitivity.Sensitivity.read_param_ranges </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<pre class="fragment">Read param_rng.def file
-
-   name,lower_bound,upper_bound,group,dist
-   (group and dist are optional)
-
-    e.g.,
-     Param1,0,1[,Group1][,dist1]
-     Param2,0,1[,Group2][,dist2]
-     Param3,0,1[,Group3][,dist3]
-
-Returns:
-    a dictionary containing:
-    - names - the names of the parameters
-    - bounds - a list of lists of lower and upper bounds
-    - num_vars - a scalar indicating the number of variables
-         (the length of names)
-    - groups - a list of group names (strings) for each variable
-    - dists - a list of distributions for the problem,
-        None if not specified or all uniform
-</pre> 
-<p>Definition at line <a class="el" href="../../de/dfe/a00448_source.html#l00048">48</a> of file <a class="el" href="../../de/dfe/a00448_source.html">sensitivity.py</a>.</p>
+<pre class="fragment">Initialization.</pre> 
+<p>Definition at line <a class="el" href="../../de/df4/a00450_source.html#l00123">123</a> of file <a class="el" href="../../de/df4/a00450_source.html">config.py</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>seims/parameters_sensitivity/<a class="el" href="../../de/dfe/a00448_source.html">sensitivity.py</a></li>
+<li>seims/parameters_sensitivity/<a class="el" href="../../de/df4/a00450_source.html">config.py</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>seims</b></li><li class="navelem"><b>parameters_sensitivity</b></li><li class="navelem"><b>sensitivity</b></li><li class="navelem"><a class="el" href="../../d7/d6e/a00190.html">Sensitivity</a></li>
-    <li class="footer">Generated on Fri Jan 19 2018 06:56:16 for SEIMS by
+    <li class="navelem"><b>seims</b></li><li class="navelem"><b>parameters_sensitivity</b></li><li class="navelem"><b>config</b></li><li class="navelem"><a class="el" href="../../d7/d6e/a00190.html">PSAConfig</a></li>
+    <li class="footer">Generated on Tue Mar 27 2018 10:11:04 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: OrgOutItem Struct Reference</title>
+<title>SEIMS: cpp.ast.Node Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -114,33 +114,133 @@ $(document).ready(function(){initNavTree('d6/d7d/a00161.html','../../');});
 
 <div class="header">
   <div class="summary">
-<a href="../../d9/d42/a01156.html">List of all members</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="../../d6/d16/a01269.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">OrgOutItem Struct Reference<div class="ingroups"><a class="el" href="../../d3/d7b/a00986.html">Module_setting</a></div></div>  </div>
+<div class="title">cpp.ast.Node Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Setting Outputs for SEIMS.  
- <a href="../../d6/d7d/a00161.html#details">More...</a></p>
+<p>Inherits object.</p>
 
-<p><code>#include &lt;<a class="el" href="../../de/d19/a00643_source.html">SettingsOutput.h</a>&gt;</code></p>
+<p>Inherited by cpp.ast._GenericDeclaration, cpp.ast.Define, cpp.ast.Expr, cpp.ast.Goto, cpp.ast.Include, cpp.ast.Parameter, and cpp.ast.Using.</p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a63666daffe37fba3bdf0732725278844"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d7d/a00161.html#a63666daffe37fba3bdf0732725278844">IsDeclaration</a></td></tr>
+<tr class="separator:a63666daffe37fba3bdf0732725278844"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ad6097a96713cf457ccf34e5ce1eb0d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d7d/a00161.html#a0ad6097a96713cf457ccf34e5ce1eb0d">IsDefinition</a></td></tr>
+<tr class="separator:a0ad6097a96713cf457ccf34e5ce1eb0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9f9ef398f8bce0a6fb57dc90a5ae4e3"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d7d/a00161.html#af9f9ef398f8bce0a6fb57dc90a5ae4e3">IsExportable</a></td></tr>
+<tr class="separator:af9f9ef398f8bce0a6fb57dc90a5ae4e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bc6fbf9cce3d7244ce7ce3d591a2760"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d7d/a00161.html#a6bc6fbf9cce3d7244ce7ce3d591a2760">Requires</a></td></tr>
+<tr class="separator:a6bc6fbf9cce3d7244ce7ce3d591a2760"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Setting Outputs for SEIMS. </p>
-<dl class="section author"><dt>Author</dt><dd>Junzhi Liu, LiangJun Zhu </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>2.0 </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>May 2017  LJ - Refactor, decoupling with database IO </dd></dl>
+<div class="textblock"><pre class="fragment">Base AST node.</pre> 
+<p>Definition at line <a class="el" href="../../d2/d45/a00342_source.html#l00109">109</a> of file <a class="el" href="../../d2/d45/a00342_source.html">ast.py</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a63666daffe37fba3bdf0732725278844"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def cpp.ast.Node.IsDeclaration </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Returns bool if this node is a declaration.</pre> 
+<p>Definition at line <a class="el" href="../../d2/d45/a00342_source.html#l00116">116</a> of file <a class="el" href="../../d2/d45/a00342_source.html">ast.py</a>.</p>
 
-<p>Definition at line <a class="el" href="../../de/d19/a00643_source.html#l00022">22</a> of file <a class="el" href="../../de/d19/a00643_source.html">SettingsOutput.h</a>.</p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
-<li>seims/src/seims_main/base/module_setting/<a class="el" href="../../de/d19/a00643_source.html">SettingsOutput.h</a></li>
+</div>
+</div>
+<a class="anchor" id="a0ad6097a96713cf457ccf34e5ce1eb0d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def cpp.ast.Node.IsDefinition </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Returns bool if this node is a definition.</pre> 
+<p>Definition at line <a class="el" href="../../d2/d45/a00342_source.html#l00120">120</a> of file <a class="el" href="../../d2/d45/a00342_source.html">ast.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af9f9ef398f8bce0a6fb57dc90a5ae4e3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def cpp.ast.Node.IsExportable </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Returns bool if this node exportable from a header file.</pre> 
+<p>Definition at line <a class="el" href="../../d2/d45/a00342_source.html#l00124">124</a> of file <a class="el" href="../../d2/d45/a00342_source.html">ast.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6bc6fbf9cce3d7244ce7ce3d591a2760"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def cpp.ast.Node.Requires </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>node</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Does this AST node require the definition of the node passed in?</pre> 
+<p>Definition at line <a class="el" href="../../d2/d45/a00342_source.html#l00128">128</a> of file <a class="el" href="../../d2/d45/a00342_source.html">ast.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d6/d7d/a00161_a6bc6fbf9cce3d7244ce7ce3d591a2760_cgraph.png" border="0" usemap="#d6/d7d/a00161_a6bc6fbf9cce3d7244ce7ce3d591a2760_cgraph" alt=""/></div>
+<map name="d6/d7d/a00161_a6bc6fbf9cce3d7244ce7ce3d591a2760_cgraph" id="d6/d7d/a00161_a6bc6fbf9cce3d7244ce7ce3d591a2760_cgraph">
+<area shape="rect" id="node2" href="../../d6/d7d/a00161.html#ab5a5f70578070a9f2bb6bb70ef27ab01" title="cpp.ast.Node._StringHelper" alt="" coords="240,5,459,35"/><area shape="rect" id="node3" href="../../da/d00/a01270.html#ab3d24cad310f0cde29a80b9a83949ff5" title="testing::TestInfo::name" alt="" coords="258,59,441,88"/><area shape="rect" id="node4" href="../../dd/d39/a01271.html#af4dfd4ece8e66520a30e6a9fbd9d43aa" title="testing::TestCase::name" alt="" coords="252,112,447,141"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>buildRel/googletest-src/googlemock/scripts/generator/cpp/<a class="el" href="../../d2/d45/a00342_source.html">ast.py</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../d6/d7d/a00161.html">OrgOutItem</a></li>
-    <li class="footer">Generated on Fri Jan 19 2018 06:56:16 for SEIMS by
+    <li class="navelem"><b>cpp</b></li><li class="navelem"><b>ast</b></li><li class="navelem"><a class="el" href="../../d6/d7d/a00161.html">Node</a></li>
+    <li class="footer">Generated on Tue Mar 27 2018 10:11:04 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

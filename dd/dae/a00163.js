@@ -1,8 +1,8 @@
 var a00163 =
 [
-    [ "Description", "dd/dae/a00163.html#a128967267b3d97fff9752c02ff2b4df5", null ],
-    [ "Dimension", "dd/dae/a00163.html#a42518156e29a2aaca7ef8af465672387", null ],
-    [ "Name", "dd/dae/a00163.html#af1600c2482a158d22b69f57b0a0e68d6", null ],
-    [ "Source", "dd/dae/a00163.html#a96b1cb9b1ecc5c1fea4bf390554748ea", null ],
-    [ "Units", "dd/dae/a00163.html#a609b143e4269a08f8c38cf03466e96c1", null ]
+    [ "NotRegularMeasurement", "dd/dae/a00163.html#a654b7ddded4a7c67da14732e761e6b18", null ],
+    [ "GetSiteDataByTime", "dd/dae/a00163.html#af77a1b276a9f174603a977b2a6e4c5cc", null ],
+    [ "m_curIndexList", "dd/dae/a00163.html#abb545ecf27b9011ea628ad92bc0ac697", null ],
+    [ "m_timeList", "dd/dae/a00163.html#a0bddb0412550642b2236f4cd9d9fd457", null ],
+    [ "m_valueList", "dd/dae/a00163.html#a89f4a689586991fb7e05c5d6f6ce6805", null ]
 ];

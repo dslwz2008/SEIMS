@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims.preprocess.text.DataValueFields Class Reference</title>
+<title>SEIMS: DataCenter Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -114,26 +114,1026 @@ $(document).ready(function(){initNavTree('d9/da5/a00075.html','../../');});
 
 <div class="header">
   <div class="summary">
-<a href="../../dc/dd9/a01328.html">List of all members</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="../../d6/dc4/a01125.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">seims.preprocess.text.DataValueFields Class Reference</div>  </div>
+<div class="title">DataCenter Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span><div class="ingroups"><a class="el" href="../../d6/dcd/a01023.html">Data</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Inherits object, and object.</p>
+<p>Base class of Data center for SEIMS.  
+ <a href="../../d9/da5/a00075.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d9/d0f/a00644_source.html">DataCenter.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for DataCenter:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../db/d1e/a01126.png" border="0" usemap="#_data_center_inherit__map" alt="Inheritance graph"/></div>
+<map name="_data_center_inherit__map" id="_data_center_inherit__map">
+<area shape="rect" id="node3" href="../../db/df8/a00076.html" title="Class of Data center inherited from. " alt="" coords="5,653,283,1016"/><area shape="rect" id="node2" href="../../db/d44/a00162.html" title="Base class for classes that cannot be copied. By inheriting this class you can disable copying of you..." alt="" coords="75,5,213,125"/></map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a19d53e22c7f405aa02ee2cf2314cd8b9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#a19d53e22c7f405aa02ee2cf2314cd8b9">DataCenter</a> (<a class="el" href="../../df/dc8/a00122.html">InputArgs</a> *input_args, ModuleFactory *factory, int subBasinID=0)</td></tr>
+<tr class="memdesc:a19d53e22c7f405aa02ee2cf2314cd8b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a19d53e22c7f405aa02ee2cf2314cd8b9">More...</a><br/></td></tr>
+<tr class="separator:a19d53e22c7f405aa02ee2cf2314cd8b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a503f202114427561e5e080f0d23f9e19"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a503f202114427561e5e080f0d23f9e19"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#a503f202114427561e5e080f0d23f9e19">~DataCenter</a> ()</td></tr>
+<tr class="memdesc:a503f202114427561e5e080f0d23f9e19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br/></td></tr>
+<tr class="separator:a503f202114427561e5e080f0d23f9e19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dcf60688892ad0c80106f4ccee059eb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0dcf60688892ad0c80106f4ccee059eb"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#a0dcf60688892ad0c80106f4ccee059eb">checkModelPreparedData</a> ()=0</td></tr>
+<tr class="memdesc:a0dcf60688892ad0c80106f4ccee059eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make sure all the required data are presented. <br/></td></tr>
+<tr class="separator:a0dcf60688892ad0c80106f4ccee059eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fab69ac5ba1a5d1a9d6ae2fef3cd33c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5fab69ac5ba1a5d1a9d6ae2fef3cd33c"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#a5fab69ac5ba1a5d1a9d6ae2fef3cd33c">readClimateSiteList</a> ()=0</td></tr>
+<tr class="memdesc:a5fab69ac5ba1a5d1a9d6ae2fef3cd33c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read climate site data. <br/></td></tr>
+<tr class="separator:a5fab69ac5ba1a5d1a9d6ae2fef3cd33c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba57200eb087f42f38ddcec7868ea382"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aba57200eb087f42f38ddcec7868ea382"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#aba57200eb087f42f38ddcec7868ea382">readParametersInDB</a> ()=0</td></tr>
+<tr class="memdesc:aba57200eb087f42f38ddcec7868ea382"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read initial and calibrated parameters. <br/></td></tr>
+<tr class="separator:aba57200eb087f42f38ddcec7868ea382"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef512c510e7bad28dd36136a7dc6acff"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aef512c510e7bad28dd36136a7dc6acff"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#aef512c510e7bad28dd36136a7dc6acff">dumpCaliParametersInDB</a> ()</td></tr>
+<tr class="memdesc:aef512c510e7bad28dd36136a7dc6acff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output calibrated parameters to txt file. <br/></td></tr>
+<tr class="separator:aef512c510e7bad28dd36136a7dc6acff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadd7c30401128363b1b8d057ee41abbe"><td class="memItemLeft" align="right" valign="top">virtual FloatRaster *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#aadd7c30401128363b1b8d057ee41abbe">readRasterData</a> (const string &amp;remoteFilename)=0</td></tr>
+<tr class="memdesc:aadd7c30401128363b1b8d057ee41abbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read raster data, both 1D and 2D, and insert to m_rsMap.  <a href="#aadd7c30401128363b1b8d057ee41abbe">More...</a><br/></td></tr>
+<tr class="separator:aadd7c30401128363b1b8d057ee41abbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45464301b1ecaeb0037dceaf1afb8b87"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#a45464301b1ecaeb0037dceaf1afb8b87">readItpWeightData</a> (string &amp;remoteFilename, int &amp;num, float *&amp;data)=0</td></tr>
+<tr class="memdesc:a45464301b1ecaeb0037dceaf1afb8b87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read interpolated weight data and insert to m_weightDataMap.  <a href="#a45464301b1ecaeb0037dceaf1afb8b87">More...</a><br/></td></tr>
+<tr class="separator:a45464301b1ecaeb0037dceaf1afb8b87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a610a8636ef71d722b6548cc019e09952"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#a610a8636ef71d722b6548cc019e09952">read1DArrayData</a> (string &amp;paramName, string &amp;remoteFilename, int &amp;num, float *&amp;data)=0</td></tr>
+<tr class="memdesc:a610a8636ef71d722b6548cc019e09952"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read 1D array data.  <a href="#a610a8636ef71d722b6548cc019e09952">More...</a><br/></td></tr>
+<tr class="separator:a610a8636ef71d722b6548cc019e09952"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae53606425c3995ed7fec1df5d96bb2a4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#ae53606425c3995ed7fec1df5d96bb2a4">read2DArrayData</a> (string &amp;remoteFilename, int &amp;rows, int &amp;cols, float **&amp;data)=0</td></tr>
+<tr class="memdesc:ae53606425c3995ed7fec1df5d96bb2a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read 2D array data and insert to m_2DArrayMap The matrix format is as follows: 5 (Row number) RowIdx 0 1 2 3 4 0 1 9. 1 2 8. 1. 2 2 5. 2. 3 1 2. 4 4 2. 5. 1. 8. i.e., the first element in each row is the valid number of the current row.  <a href="#ae53606425c3995ed7fec1df5d96bb2a4">More...</a><br/></td></tr>
+<tr class="separator:ae53606425c3995ed7fec1df5d96bb2a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3ef937e97afc62f793f9a16360fed59"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#ad3ef937e97afc62f793f9a16360fed59">readIUHData</a> (string &amp;remoteFilename, int &amp;n, float **&amp;data)=0</td></tr>
+<tr class="memdesc:ad3ef937e97afc62f793f9a16360fed59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read IUH data and insert to m_2DArrayMap.  <a href="#ad3ef937e97afc62f793f9a16360fed59">More...</a><br/></td></tr>
+<tr class="separator:ad3ef937e97afc62f793f9a16360fed59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5a8dd9b1e631402155577af02389858"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#af5a8dd9b1e631402155577af02389858">setLapseData</a> (string &amp;remoteFilename, int &amp;rows, int &amp;cols, float **&amp;data)</td></tr>
+<tr class="memdesc:af5a8dd9b1e631402155577af02389858"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make lapse 2D array data and insert to m_2DArrayMap.  <a href="#af5a8dd9b1e631402155577af02389858">More...</a><br/></td></tr>
+<tr class="separator:af5a8dd9b1e631402155577af02389858"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abde14034e68984ceab307fcc719aceca"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#abde14034e68984ceab307fcc719aceca">setRasterForScenario</a> ()=0</td></tr>
+<tr class="memdesc:abde14034e68984ceab307fcc719aceca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set Raster data for Scenario data.  <a href="#abde14034e68984ceab307fcc719aceca">More...</a><br/></td></tr>
+<tr class="separator:abde14034e68984ceab307fcc719aceca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5d81ad0d9e8eb0f6c2c4d52a5bc67b8"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#af5d81ad0d9e8eb0f6c2c4d52a5bc67b8">LoadDataForModules</a> (vector&lt; <a class="el" href="../../d5/df1/a00206.html">SimulationModule</a> * &gt; &amp;modules)</td></tr>
+<tr class="memdesc:af5d81ad0d9e8eb0f6c2c4d52a5bc67b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load data for each module, return time span.  <a href="#af5d81ad0d9e8eb0f6c2c4d52a5bc67b8">More...</a><br/></td></tr>
+<tr class="separator:af5d81ad0d9e8eb0f6c2c4d52a5bc67b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afea2caf61e435eff04da697d62ee9ec7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afea2caf61e435eff04da697d62ee9ec7"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#afea2caf61e435eff04da697d62ee9ec7">SetData</a> (SEIMSModuleSetting *setting, <a class="el" href="../../de/d45/a00175.html">ParamInfo</a> *param, <a class="el" href="../../d5/df1/a00206.html">SimulationModule</a> *pModule, bool vertitalItp)</td></tr>
+<tr class="memdesc:afea2caf61e435eff04da697d62ee9ec7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set data for modules, include all datatype. <br/></td></tr>
+<tr class="separator:afea2caf61e435eff04da697d62ee9ec7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebc6c3e4d02223d056b99341e352cef7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aebc6c3e4d02223d056b99341e352cef7"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#aebc6c3e4d02223d056b99341e352cef7">SetValue</a> (<a class="el" href="../../de/d45/a00175.html">ParamInfo</a> *param, <a class="el" href="../../d5/df1/a00206.html">SimulationModule</a> *pModule)</td></tr>
+<tr class="memdesc:aebc6c3e4d02223d056b99341e352cef7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set single Value. <br/></td></tr>
+<tr class="separator:aebc6c3e4d02223d056b99341e352cef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5cec46e37a0e021331f9dcd3745952b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#ad5cec46e37a0e021331f9dcd3745952b">Set1DData</a> (string &amp;paraName, string &amp;remoteFileName, <a class="el" href="../../d5/df1/a00206.html">SimulationModule</a> *pModule, bool vertitalItp)</td></tr>
+<tr class="memdesc:ad5cec46e37a0e021331f9dcd3745952b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set 1D Data.  <a href="#ad5cec46e37a0e021331f9dcd3745952b">More...</a><br/></td></tr>
+<tr class="separator:ad5cec46e37a0e021331f9dcd3745952b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5aff45cc867b8858ddf9a63ab287cd3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#a5aff45cc867b8858ddf9a63ab287cd3c">Set2DData</a> (string &amp;paraName, string &amp;remoteFileName, <a class="el" href="../../d5/df1/a00206.html">SimulationModule</a> *pModule)</td></tr>
+<tr class="memdesc:a5aff45cc867b8858ddf9a63ab287cd3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set 2D Data.  <a href="#a5aff45cc867b8858ddf9a63ab287cd3c">More...</a><br/></td></tr>
+<tr class="separator:a5aff45cc867b8858ddf9a63ab287cd3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c84ff7d1c18add0a4a023ed6634a653"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#a0c84ff7d1c18add0a4a023ed6634a653">SetRaster</a> (string &amp;paraName, string &amp;remoteFileName, <a class="el" href="../../d5/df1/a00206.html">SimulationModule</a> *pModule)</td></tr>
+<tr class="memdesc:a0c84ff7d1c18add0a4a023ed6634a653"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set raster data.  <a href="#a0c84ff7d1c18add0a4a023ed6634a653">More...</a><br/></td></tr>
+<tr class="separator:a0c84ff7d1c18add0a4a023ed6634a653"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afecd8bb8410e1ae941355b8d0affe960"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#afecd8bb8410e1ae941355b8d0affe960">SetScenario</a> (<a class="el" href="../../d5/df1/a00206.html">SimulationModule</a> *pModule)</td></tr>
+<tr class="memdesc:afecd8bb8410e1ae941355b8d0affe960"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set BMPs Scenario data.  <a href="#afecd8bb8410e1ae941355b8d0affe960">More...</a><br/></td></tr>
+<tr class="separator:afecd8bb8410e1ae941355b8d0affe960"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a8758b5d10e200b18798cd40a54efda"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#a1a8758b5d10e200b18798cd40a54efda">SetReaches</a> (<a class="el" href="../../d5/df1/a00206.html">SimulationModule</a> *pModule)</td></tr>
+<tr class="memdesc:a1a8758b5d10e200b18798cd40a54efda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set Reaches information.  <a href="#a1a8758b5d10e200b18798cd40a54efda">More...</a><br/></td></tr>
+<tr class="separator:a1a8758b5d10e200b18798cd40a54efda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3df7491ad229856b30b9bca90e5ec0ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#a3df7491ad229856b30b9bca90e5ec0ca">SetSubbasins</a> (<a class="el" href="../../d5/df1/a00206.html">SimulationModule</a> *pModule)</td></tr>
+<tr class="memdesc:a3df7491ad229856b30b9bca90e5ec0ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set Subbasins information.  <a href="#a3df7491ad229856b30b9bca90e5ec0ca">More...</a><br/></td></tr>
+<tr class="separator:a3df7491ad229856b30b9bca90e5ec0ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa611544ddb717d2d664e8aec368639c1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa611544ddb717d2d664e8aec368639c1"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#aa611544ddb717d2d664e8aec368639c1">UpdateInput</a> (vector&lt; <a class="el" href="../../d5/df1/a00206.html">SimulationModule</a> * &gt; &amp;modules, time_t t)</td></tr>
+<tr class="memdesc:aa611544ddb717d2d664e8aec368639c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update inputs, such climate data. <br/></td></tr>
+<tr class="separator:aa611544ddb717d2d664e8aec368639c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4b318804648108eb2af0b6af4a5b5fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#af4b318804648108eb2af0b6af4a5b5fa">updateParametersByScenario</a> (int subbsnID)</td></tr>
+<tr class="memdesc:af4b318804648108eb2af0b6af4a5b5fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update model parameters (value, 1D raster, and 2D raster, etc.) by Scenario, e.g., areal BMPs.  <a href="#af4b318804648108eb2af0b6af4a5b5fa">More...</a><br/></td></tr>
+<tr class="separator:af4b318804648108eb2af0b6af4a5b5fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac391ef2163100b6d59cd09ac6964f48c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac391ef2163100b6d59cd09ac6964f48c"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#ac391ef2163100b6d59cd09ac6964f48c">getFileInStringVector</a> ()</td></tr>
+<tr class="memdesc:ac391ef2163100b6d59cd09ac6964f48c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get file.in configuration. <br/></td></tr>
+<tr class="separator:ac391ef2163100b6d59cd09ac6964f48c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed36a73f8d078e0111bae498d01848e2"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#aed36a73f8d078e0111bae498d01848e2">getFileOutVector</a> ()=0</td></tr>
+<tr class="memdesc:aed36a73f8d078e0111bae498d01848e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get file.out configuration.  <a href="#aed36a73f8d078e0111bae498d01848e2">More...</a><br/></td></tr>
+<tr class="separator:aed36a73f8d078e0111bae498d01848e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a387258a43fbf2e40acfb5f3c7e604bb8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a387258a43fbf2e40acfb5f3c7e604bb8"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#a387258a43fbf2e40acfb5f3c7e604bb8">getSubbasinNumberAndOutletID</a> ()=0</td></tr>
+<tr class="memdesc:a387258a43fbf2e40acfb5f3c7e604bb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get subbasin number and outlet ID. <br/></td></tr>
+<tr class="separator:a387258a43fbf2e40acfb5f3c7e604bb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a2c89b93a0f83d2f2fb0ae9ee812d8e2f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2c89b93a0f83d2f2fb0ae9ee812d8e2f"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#a2c89b93a0f83d2f2fb0ae9ee812d8e2f">m_modelName</a></td></tr>
+<tr class="memdesc:a2c89b93a0f83d2f2fb0ae9ee812d8e2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Model name, e.g., model_dianbu30m_longterm. <br/></td></tr>
+<tr class="separator:a2c89b93a0f83d2f2fb0ae9ee812d8e2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88c0d6e496faedfdf98f800e0a5f0474"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a88c0d6e496faedfdf98f800e0a5f0474"></a>
+const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#a88c0d6e496faedfdf98f800e0a5f0474">m_modelPath</a></td></tr>
+<tr class="memdesc:a88c0d6e496faedfdf98f800e0a5f0474"><td class="mdescLeft">&#160;</td><td class="mdescRight">Model path. <br/></td></tr>
+<tr class="separator:a88c0d6e496faedfdf98f800e0a5f0474"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14b1a6304b7da77d46d4b74e470d7730"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a14b1a6304b7da77d46d4b74e470d7730"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#a14b1a6304b7da77d46d4b74e470d7730">m_fileInFile</a></td></tr>
+<tr class="memdesc:a14b1a6304b7da77d46d4b74e470d7730"><td class="mdescLeft">&#160;</td><td class="mdescRight">file.in full path <br/></td></tr>
+<tr class="separator:a14b1a6304b7da77d46d4b74e470d7730"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad5233c3f59be9eafa2bf7588cf99280"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aad5233c3f59be9eafa2bf7588cf99280"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#aad5233c3f59be9eafa2bf7588cf99280">m_fileOutFile</a></td></tr>
+<tr class="memdesc:aad5233c3f59be9eafa2bf7588cf99280"><td class="mdescLeft">&#160;</td><td class="mdescRight">file.out full path <br/></td></tr>
+<tr class="separator:aad5233c3f59be9eafa2bf7588cf99280"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad750c654a9fbefd520195cc87c00c7c4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad750c654a9fbefd520195cc87c00c7c4"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#ad750c654a9fbefd520195cc87c00c7c4">m_fileCfgFile</a></td></tr>
+<tr class="memdesc:ad750c654a9fbefd520195cc87c00c7c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">config.fig full path <br/></td></tr>
+<tr class="separator:ad750c654a9fbefd520195cc87c00c7c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a672f58451d255b15a32bdb3dd79b9c18"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a672f58451d255b15a32bdb3dd79b9c18"></a>
+const LayeringMethod&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#a672f58451d255b15a32bdb3dd79b9c18">m_lyrMethod</a></td></tr>
+<tr class="memdesc:a672f58451d255b15a32bdb3dd79b9c18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Layering method. <br/></td></tr>
+<tr class="separator:a672f58451d255b15a32bdb3dd79b9c18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a944213fa17aa829d3a6962ab2c76c3bf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a944213fa17aa829d3a6962ab2c76c3bf"></a>
+const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#a944213fa17aa829d3a6962ab2c76c3bf">m_subbasinID</a></td></tr>
+<tr class="memdesc:a944213fa17aa829d3a6962ab2c76c3bf"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d5/ddf/a00224.html" title="Subbasin related parameters and methods. ">Subbasin</a> ID. <br/></td></tr>
+<tr class="separator:a944213fa17aa829d3a6962ab2c76c3bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3c76b26f884a64f12116b122218e741"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab3c76b26f884a64f12116b122218e741"></a>
+const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#ab3c76b26f884a64f12116b122218e741">m_scenarioID</a></td></tr>
+<tr class="memdesc:ab3c76b26f884a64f12116b122218e741"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scenario ID. <br/></td></tr>
+<tr class="separator:ab3c76b26f884a64f12116b122218e741"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af83b67ceaf202a7f5655b7d78fe925ca"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af83b67ceaf202a7f5655b7d78fe925ca"></a>
+const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#af83b67ceaf202a7f5655b7d78fe925ca">m_calibrationID</a></td></tr>
+<tr class="memdesc:af83b67ceaf202a7f5655b7d78fe925ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calibration ID. <br/></td></tr>
+<tr class="separator:af83b67ceaf202a7f5655b7d78fe925ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40715e601f5b42001f79145c022e19a0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a40715e601f5b42001f79145c022e19a0"></a>
+const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#a40715e601f5b42001f79145c022e19a0">m_threadNum</a></td></tr>
+<tr class="memdesc:a40715e601f5b42001f79145c022e19a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thread number for OpenMP. <br/></td></tr>
+<tr class="separator:a40715e601f5b42001f79145c022e19a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8210e63523601a50adba1122fb7772f9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8210e63523601a50adba1122fb7772f9"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#a8210e63523601a50adba1122fb7772f9">m_useScenario</a></td></tr>
+<tr class="memdesc:a8210e63523601a50adba1122fb7772f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Model Scenario. <br/></td></tr>
+<tr class="separator:a8210e63523601a50adba1122fb7772f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fc98a074746376549b577ac2429ad2e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9fc98a074746376549b577ac2429ad2e"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#a9fc98a074746376549b577ac2429ad2e">m_outputScene</a></td></tr>
+<tr class="memdesc:a9fc98a074746376549b577ac2429ad2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output scenario identifier, e.g. output1 means scenario 1. <br/></td></tr>
+<tr class="separator:a9fc98a074746376549b577ac2429ad2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ea3471fdab30b2dd6200a9d86e3596d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7ea3471fdab30b2dd6200a9d86e3596d"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#a7ea3471fdab30b2dd6200a9d86e3596d">m_outputPath</a></td></tr>
+<tr class="memdesc:a7ea3471fdab30b2dd6200a9d86e3596d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output path (with / in the end) according to m_outputScene. <br/></td></tr>
+<tr class="separator:a7ea3471fdab30b2dd6200a9d86e3596d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e0cc15b9afa8f7e965b8e2a60de3b89"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7e0cc15b9afa8f7e965b8e2a60de3b89"></a>
+vector&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#a7e0cc15b9afa8f7e965b8e2a60de3b89">m_fileIn1DStrs</a></td></tr>
+<tr class="memdesc:a7e0cc15b9afa8f7e965b8e2a60de3b89"><td class="mdescLeft">&#160;</td><td class="mdescRight">file.in configuration <br/></td></tr>
+<tr class="separator:a7e0cc15b9afa8f7e965b8e2a60de3b89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a184c2f6951ed593501f60ee0a25dc776"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a184c2f6951ed593501f60ee0a25dc776"></a>
+vector&lt; <a class="el" href="../../d6/dfb/a00172.html">OrgOutItem</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#a184c2f6951ed593501f60ee0a25dc776">m_OriginOutItems</a></td></tr>
+<tr class="memdesc:a184c2f6951ed593501f60ee0a25dc776"><td class="mdescLeft">&#160;</td><td class="mdescRight">file.out configuration <br/></td></tr>
+<tr class="separator:a184c2f6951ed593501f60ee0a25dc776"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd3f82affca85a4454419361b4a881a7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abd3f82affca85a4454419361b4a881a7"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#abd3f82affca85a4454419361b4a881a7">m_modelMode</a></td></tr>
+<tr class="memdesc:abd3f82affca85a4454419361b4a881a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Storm or Longterm model. <br/></td></tr>
+<tr class="separator:abd3f82affca85a4454419361b4a881a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01305d821a92d69287ef839923e14115"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a01305d821a92d69287ef839923e14115"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#a01305d821a92d69287ef839923e14115">m_nSubbasins</a></td></tr>
+<tr class="memdesc:a01305d821a92d69287ef839923e14115"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of subbasins. <br/></td></tr>
+<tr class="separator:a01305d821a92d69287ef839923e14115"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f8a36ba50200f2614a11fd0af88ff8d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1f8a36ba50200f2614a11fd0af88ff8d"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#a1f8a36ba50200f2614a11fd0af88ff8d">m_outletID</a></td></tr>
+<tr class="memdesc:a1f8a36ba50200f2614a11fd0af88ff8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Outlet subbasin ID. <br/></td></tr>
+<tr class="separator:a1f8a36ba50200f2614a11fd0af88ff8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa857ec971d46967b0946deb81cf15793"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa857ec971d46967b0946deb81cf15793"></a>
+ModuleFactory *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#aa857ec971d46967b0946deb81cf15793">m_factory</a></td></tr>
+<tr class="memdesc:aa857ec971d46967b0946deb81cf15793"><td class="mdescLeft">&#160;</td><td class="mdescRight">Module factory. <br/></td></tr>
+<tr class="separator:aa857ec971d46967b0946deb81cf15793"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ec47e2ebff8d95d41d177e31e53a3f8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5ec47e2ebff8d95d41d177e31e53a3f8"></a>
+<a class="el" href="../../d5/d13/a00205.html">SettingsInput</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#a5ec47e2ebff8d95d41d177e31e53a3f8">m_input</a></td></tr>
+<tr class="memdesc:a5ec47e2ebff8d95d41d177e31e53a3f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The basic input settings. <br/></td></tr>
+<tr class="separator:a5ec47e2ebff8d95d41d177e31e53a3f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc1805fde94d0559617328a8c320bcd8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adc1805fde94d0559617328a8c320bcd8"></a>
+SettingsOutput *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#adc1805fde94d0559617328a8c320bcd8">m_output</a></td></tr>
+<tr class="memdesc:adc1805fde94d0559617328a8c320bcd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The user-defined outputs, Q, SED, etc. <br/></td></tr>
+<tr class="separator:adc1805fde94d0559617328a8c320bcd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e4a2631abcd8b3a48fb2d2a6bb4ff0c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0e4a2631abcd8b3a48fb2d2a6bb4ff0c"></a>
+<a class="el" href="../../de/d36/a00123.html">InputStation</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#a0e4a2631abcd8b3a48fb2d2a6bb4ff0c">m_climStation</a></td></tr>
+<tr class="memdesc:a0e4a2631abcd8b3a48fb2d2a6bb4ff0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">data of input HydroClimate stations <br/></td></tr>
+<tr class="separator:a0e4a2631abcd8b3a48fb2d2a6bb4ff0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa0f8d7f93fade4c6992587cf48fd2e0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afa0f8d7f93fade4c6992587cf48fd2e0"></a>
+<a class="el" href="../../d8/d72/a00199.html">Scenario</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#afa0f8d7f93fade4c6992587cf48fd2e0">m_scenario</a></td></tr>
+<tr class="memdesc:afa0f8d7f93fade4c6992587cf48fd2e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">BMPs Scenario data. <br/></td></tr>
+<tr class="separator:afa0f8d7f93fade4c6992587cf48fd2e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f2c51f0275890f0d3ece76c47618fee"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3f2c51f0275890f0d3ece76c47618fee"></a>
+<a class="el" href="../../dc/ddf/a00067.html">clsReaches</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#a3f2c51f0275890f0d3ece76c47618fee">m_reaches</a></td></tr>
+<tr class="memdesc:a3f2c51f0275890f0d3ece76c47618fee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reaches information. <br/></td></tr>
+<tr class="separator:a3f2c51f0275890f0d3ece76c47618fee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2296efd0695ed93f6511ff67269b05b8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2296efd0695ed93f6511ff67269b05b8"></a>
+<a class="el" href="../../d4/d31/a00069.html">clsSubbasins</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#a2296efd0695ed93f6511ff67269b05b8">m_subbasins</a></td></tr>
+<tr class="memdesc:a2296efd0695ed93f6511ff67269b05b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subbasins information. <br/></td></tr>
+<tr class="separator:a2296efd0695ed93f6511ff67269b05b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b23466d03d604cbc19485b34981ce14"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5b23466d03d604cbc19485b34981ce14"></a>
+FloatRaster *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#a5b23466d03d604cbc19485b34981ce14">m_maskRaster</a></td></tr>
+<tr class="memdesc:a5b23466d03d604cbc19485b34981ce14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mask data. <br/></td></tr>
+<tr class="separator:a5b23466d03d604cbc19485b34981ce14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a4ff8e53e0c574b54d9ee8160fad041"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1a4ff8e53e0c574b54d9ee8160fad041"></a>
+map&lt; string, FloatRaster * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#a1a4ff8e53e0c574b54d9ee8160fad041">m_rsMap</a></td></tr>
+<tr class="memdesc:a1a4ff8e53e0c574b54d9ee8160fad041"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map of spatial data, both 1D and 2D. <br/></td></tr>
+<tr class="separator:a1a4ff8e53e0c574b54d9ee8160fad041"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac033d719485662f058baede432664de1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac033d719485662f058baede432664de1"></a>
+map&lt; string, <a class="el" href="../../de/d45/a00175.html">ParamInfo</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#ac033d719485662f058baede432664de1">m_initParameters</a></td></tr>
+<tr class="memdesc:ac033d719485662f058baede432664de1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Store parameters from Database (PARAMETERS collection) <br/></td></tr>
+<tr class="separator:ac033d719485662f058baede432664de1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6462064d67052286eade3b4efeea3c7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab6462064d67052286eade3b4efeea3c7"></a>
+map&lt; string, float * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#ab6462064d67052286eade3b4efeea3c7">m_1DArrayMap</a></td></tr>
+<tr class="memdesc:ab6462064d67052286eade3b4efeea3c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">1D array data map, e.g. FLOWOUT_INDEX_D8 <br/></td></tr>
+<tr class="separator:ab6462064d67052286eade3b4efeea3c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66d8ecdb084e13dff533350685090eab"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a66d8ecdb084e13dff533350685090eab"></a>
+map&lt; string, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#a66d8ecdb084e13dff533350685090eab">m_1DLenMap</a></td></tr>
+<tr class="memdesc:a66d8ecdb084e13dff533350685090eab"><td class="mdescLeft">&#160;</td><td class="mdescRight">1D array data length map <br/></td></tr>
+<tr class="separator:a66d8ecdb084e13dff533350685090eab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08cc2f051f081af44574b7f5f83f3367"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a08cc2f051f081af44574b7f5f83f3367"></a>
+map&lt; string, float ** &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#a08cc2f051f081af44574b7f5f83f3367">m_2DArrayMap</a></td></tr>
+<tr class="memdesc:a08cc2f051f081af44574b7f5f83f3367"><td class="mdescLeft">&#160;</td><td class="mdescRight">2D array data map, e.g. ROUTING_LAYERS <br/></td></tr>
+<tr class="separator:a08cc2f051f081af44574b7f5f83f3367"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a497aa61bce56aeac9dc534ec358701dc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a497aa61bce56aeac9dc534ec358701dc"></a>
+map&lt; string, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#a497aa61bce56aeac9dc534ec358701dc">m_2DRowsLenMap</a></td></tr>
+<tr class="memdesc:a497aa61bce56aeac9dc534ec358701dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Row number of 2D array data map. <br/></td></tr>
+<tr class="separator:a497aa61bce56aeac9dc534ec358701dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2628e96c04439cf5fbe9ef5767e47e3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae2628e96c04439cf5fbe9ef5767e47e3"></a>
+map&lt; string, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#ae2628e96c04439cf5fbe9ef5767e47e3">m_2DColsLenMap</a></td></tr>
+<tr class="memdesc:ae2628e96c04439cf5fbe9ef5767e47e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Col number of 2D array data map, CAUTION that nCols may not same for all rows. <br/></td></tr>
+<tr class="separator:ae2628e96c04439cf5fbe9ef5767e47e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd4e38d3b0d364270b3d7d3c36c64c4f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abd4e38d3b0d364270b3d7d3c36c64c4f"></a>
+map&lt; string, clsITPWeightData * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#abd4e38d3b0d364270b3d7d3c36c64c4f">m_weightDataMap</a></td></tr>
+<tr class="memdesc:abd4e38d3b0d364270b3d7d3c36c64c4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interpolation weight data map. <br/></td></tr>
+<tr class="separator:abd4e38d3b0d364270b3d7d3c36c64c4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><pre class="fragment">DATA_VALUES collection</pre> 
-<p>Definition at line <a class="el" href="../../d9/da5/a00493_source.html#l00193">193</a> of file <a class="el" href="../../d9/da5/a00493_source.html">text.py</a>.</p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
-<li>seims/preprocess/<a class="el" href="../../d9/da5/a00493_source.html">text.py</a></li>
+<div class="textblock"><p>Base class of Data center for SEIMS. </p>
+<dl class="section version"><dt>Version</dt><dd>1.0-beta </dd></dl>
+
+<p>Definition at line <a class="el" href="../../d9/d0f/a00644_source.html#l00032">32</a> of file <a class="el" href="../../d9/d0f/a00644_source.html">DataCenter.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a19d53e22c7f405aa02ee2cf2314cd8b9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DataCenter::DataCenter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/dc8/a00122.html">InputArgs</a> *&#160;</td>
+          <td class="paramname"><em>input_args</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ModuleFactory *&#160;</td>
+          <td class="paramname"><em>factory</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>subBasinID</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">input_args</td><td>Input arguments of SEIMS, </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../df/dc8/a00122.html" title="Parse the input arguments of SEIMS. ">InputArgs</a> </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">factory</td><td>SEIMS modules factory, </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See Also</dt><dd>ModuleFactory </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">subBasinID</td><td><a class="el" href="../../d5/ddf/a00224.html" title="Subbasin related parameters and methods. ">Subbasin</a> ID, 0 is the default for entire watershed </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Clean output folder</p>
+<p>Be aware, m_useScenario will be updated in <a class="el" href="../../d9/da5/a00075.html#a0dcf60688892ad0c80106f4ccee059eb" title="Make sure all the required data are presented. ">checkModelPreparedData()</a>. </p>
+
+<p>Definition at line <a class="el" href="../../de/d19/a00643_source.html#l00003">3</a> of file <a class="el" href="../../de/d19/a00643_source.html">DataCenter.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="aed36a73f8d078e0111bae498d01848e2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool DataCenter::getFileOutVector </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get file.out configuration. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">originOutputs</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See Also</dt><dd>OriginalOutputItem </dd></dl>
+
+<p>Implemented in <a class="el" href="../../db/df8/a00076.html#abdb885f1681502ce0ae696d0f7bab3b4">DataCenterMongoDB</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af5d81ad0d9e8eb0f6c2c4d52a5bc67b8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float DataCenter::LoadDataForModules </td>
+          <td>(</td>
+          <td class="paramtype">vector&lt; <a class="el" href="../../d5/df1/a00206.html">SimulationModule</a> * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>modules</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Load data for each module, return time span. </p>
+<p>Special operation for ITP module </p>
+
+<p>Definition at line <a class="el" href="../../de/d19/a00643_source.html#l00161">161</a> of file <a class="el" href="../../de/d19/a00643_source.html">DataCenter.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/da5/a00075_af5d81ad0d9e8eb0f6c2c4d52a5bc67b8_cgraph.png" border="0" usemap="#d9/da5/a00075_af5d81ad0d9e8eb0f6c2c4d52a5bc67b8_cgraph" alt=""/></div>
+<map name="d9/da5/a00075_af5d81ad0d9e8eb0f6c2c4d52a5bc67b8_cgraph" id="d9/da5/a00075_af5d81ad0d9e8eb0f6c2c4d52a5bc67b8_cgraph">
+<area shape="rect" id="node2" href="../../d9/da5/a00075.html#afea2caf61e435eff04da697d62ee9ec7" title="Set data for modules, include all datatype. " alt="" coords="320,672,491,701"/><area shape="rect" id="node3" href="../../d9/da5/a00075.html#aebc6c3e4d02223d056b99341e352cef7" title="Set single Value. " alt="" coords="556,112,735,141"/><area shape="rect" id="node8" href="../../d9/da5/a00075.html#ad5cec46e37a0e021331f9dcd3745952b" title="Set 1D Data. " alt="" coords="550,379,741,408"/><area shape="rect" id="node15" href="../../d9/da5/a00075.html#a5aff45cc867b8858ddf9a63ab287cd3c" title="Set 2D Data. " alt="" coords="550,672,741,701"/><area shape="rect" id="node20" href="../../d9/da5/a00075.html#a0c84ff7d1c18add0a4a023ed6634a653" title="Set raster data. " alt="" coords="554,565,737,595"/><area shape="rect" id="node22" href="../../d9/da5/a00075.html#afecd8bb8410e1ae941355b8d0affe960" title="Set BMPs Scenario data. " alt="" coords="545,732,745,761"/><area shape="rect" id="node24" href="../../d9/da5/a00075.html#a1a8758b5d10e200b18798cd40a54efda" title="Set Reaches information. " alt="" coords="545,799,745,828"/><area shape="rect" id="node26" href="../../d9/da5/a00075.html#a3df7491ad229856b30b9bca90e5ec0ca" title="Set Subbasins information. " alt="" coords="539,879,751,908"/><area shape="rect" id="node4" href="../../d5/d13/a00205.html#a69c16babc6f91db1fb907c7045ae3e09" title="Get daily time interval of simulation in sec. " alt="" coords="830,5,1029,35"/><area shape="rect" id="node5" href="../../d5/d13/a00205.html#a17ed459d318f4ec26f9b3a66cfdbe3a4" title="Get time interval for hillslope scale processes. " alt="" coords="817,59,1041,88"/><area shape="rect" id="node6" href="../../d5/d13/a00205.html#ad7101c381420f6ab59862b085647f21b" title="Get time interval for channel scale processes. " alt="" coords="818,112,1041,141"/><area shape="rect" id="node7" href="../../d5/df1/a00206.html#afcfef6ce1ce8761a961f694e3a7969bb" title="Set data, DT_Single. " alt="" coords="817,165,1042,195"/><area shape="rect" id="node9" href="../../d5/df1/a00206.html#aba2d6fc2b0e4f8ccf202e0752c45d55c" title="Set 1D data, by default, DT_Raster1D. " alt="" coords="810,485,1049,515"/><area shape="rect" id="node10" href="../../d9/da5/a00075.html#a610a8636ef71d722b6548cc019e09952" title="Read 1D array data. " alt="" coords="811,219,1048,248"/><area shape="rect" id="node11" href="../../d9/da5/a00075.html#a45464301b1ecaeb0037dceaf1afb8b87" title="Read interpolated weight data and insert to m_weightDataMap. " alt="" coords="807,272,1052,301"/><area shape="rect" id="node12" href="../../de/d36/a00123.html#a536b4b46be1b7b05f2a5371d7b9b41a3" title="Get site number of given site type. " alt="" coords="817,325,1041,355"/><area shape="rect" id="node13" href="../../de/d36/a00123.html#a7ae9d237348c296459316a84a0372989" title="Get elevations of given site type. " alt="" coords="826,379,1033,408"/><area shape="rect" id="node14" href="../../de/d36/a00123.html#a18de5cb1a83d3446a2fda16a3550241b" title="Get latitudes of given site type. " alt="" coords="831,432,1028,461"/><area shape="rect" id="node16" href="../../d5/df1/a00206.html#a497fa950bc9c4d85cfb1ae13d83f06c9" title="Set 2D data, by default, DT_Raster2D. " alt="" coords="810,592,1049,621"/><area shape="rect" id="node17" href="../../d9/da5/a00075.html#ae53606425c3995ed7fec1df5d96bb2a4" title="Read 2D array data and insert to m_2DArrayMap The matrix format is as follows: 5 (Row number) RowIdx ..." alt="" coords="811,645,1048,675"/><area shape="rect" id="node18" href="../../d9/da5/a00075.html#ad3ef937e97afc62f793f9a16360fed59" title="Read IUH data and insert to m_2DArrayMap. " alt="" coords="826,699,1033,728"/><area shape="rect" id="node19" href="../../d9/da5/a00075.html#af5a8dd9b1e631402155577af02389858" title="Make lapse 2D array data and insert to m_2DArrayMap. " alt="" coords="824,752,1035,781"/><area shape="rect" id="node21" href="../../d9/da5/a00075.html#aadd7c30401128363b1b8d057ee41abbe" title="Read raster data, both 1D and 2D, and insert to m_rsMap. " alt="" coords="817,539,1042,568"/><area shape="rect" id="node23" href="../../d5/df1/a00206.html#ae6dfd515de376498a12a22724e57650a" title="Set pointer of Scenario class which contains all BMP information. Added by LJ, 2016&#45;6&#45;14. " alt="" coords="806,805,1053,835"/><area shape="rect" id="node25" href="../../d5/df1/a00206.html#aa4115c5f61d71efde62d3b62c70b51ec" title="Set pointer of clsReaches class which contains all reaches information. Added by LJ, 2016&#45;7&#45;2. " alt="" coords="806,859,1053,888"/><area shape="rect" id="node27" href="../../d5/df1/a00206.html#a97da293bca13cf5934d9ef6da34d9290" title="Set pointer of clsSubbasins class which contains all subbasins information. Added by LJ..." alt="" coords="800,912,1059,941"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a610a8636ef71d722b6548cc019e09952"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void DataCenter::read1DArrayData </td>
+          <td>(</td>
+          <td class="paramtype">string &amp;&#160;</td>
+          <td class="paramname"><em>paramName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string &amp;&#160;</td>
+          <td class="paramname"><em>remoteFilename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>num</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&amp;&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Read 1D array data. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">paramName</td><td>parameter name </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">remoteFilename</td><td>data file name </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">num</td><td>&amp;, data length </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">data</td><td>*&amp;, returned data </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="../../db/df8/a00076.html#aa29cd08aef4d7eb1652dbc6dbb8b47ef">DataCenterMongoDB</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae53606425c3995ed7fec1df5d96bb2a4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void DataCenter::read2DArrayData </td>
+          <td>(</td>
+          <td class="paramtype">string &amp;&#160;</td>
+          <td class="paramname"><em>remoteFilename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>rows</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>cols</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float **&amp;&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Read 2D array data and insert to m_2DArrayMap The matrix format is as follows: 5 (Row number) RowIdx 0 1 2 3 4 0 1 9. 1 2 8. 1. 2 2 5. 2. 3 1 2. 4 4 2. 5. 1. 8. i.e., the first element in each row is the valid number of the current row. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">remoteFilename</td><td>data file name </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">rows</td><td>&amp;, first dimension of the 2D Array, i.e., Rows </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">cols</td><td>&amp;, second dimension of the 2D Array, i.e., Cols. If each col are different, set cols to 1. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">data</td><td>**&amp;, returned data </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="../../db/df8/a00076.html#a70199254559a30571cb9c20f53f03c57">DataCenterMongoDB</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a45464301b1ecaeb0037dceaf1afb8b87"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void DataCenter::readItpWeightData </td>
+          <td>(</td>
+          <td class="paramtype">string &amp;&#160;</td>
+          <td class="paramname"><em>remoteFilename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>num</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&amp;&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Read interpolated weight data and insert to m_weightDataMap. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">remoteFilename</td><td>data file name </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">num</td><td>&amp;, data length </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">data</td><td>*&amp;, returned data </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="../../db/df8/a00076.html#ac4857fe635bb6c5c5f37305d84151f5d">DataCenterMongoDB</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad3ef937e97afc62f793f9a16360fed59"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void DataCenter::readIUHData </td>
+          <td>(</td>
+          <td class="paramtype">string &amp;&#160;</td>
+          <td class="paramname"><em>remoteFilename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float **&amp;&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Read IUH data and insert to m_2DArrayMap. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">remoteFilename</td><td>data file name </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">n</td><td>&amp;, valid cell number </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">data</td><td>*&amp;, returned data </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="../../db/df8/a00076.html#acdb21753a3a473761717eaa90f15285b">DataCenterMongoDB</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aadd7c30401128363b1b8d057ee41abbe"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual FloatRaster* DataCenter::readRasterData </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>remoteFilename</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Read raster data, both 1D and 2D, and insert to m_rsMap. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">remoteFilename</td><td>Raster file name. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="../../db/df8/a00076.html#a499703458a97f436053747664f22978d">DataCenterMongoDB</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad5cec46e37a0e021331f9dcd3745952b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DataCenter::Set1DData </td>
+          <td>(</td>
+          <td class="paramtype">string &amp;&#160;</td>
+          <td class="paramname"><em>paraName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string &amp;&#160;</td>
+          <td class="paramname"><em>remoteFileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d5/df1/a00206.html">SimulationModule</a> *&#160;</td>
+          <td class="paramname"><em>pModule</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>vertitalItp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set 1D Data. </p>
+<p>the data has been read before, which stored in m_1DArrayMap</p>
+<p>the data has not been read yet.</p>
+<ol type="1">
+<li>IF FLOWOUT_INDEX_D8</li>
+<li>IF Weight data</li>
+<li>IF Meteorology sites data</li>
+<li>IF Precipitation sites data</li>
+<li>IF Latitude of sites</li>
+<li>IF any other 1D arrays, such as Heat units of all simulation years (HUTOT) </li>
+</ol>
+
+<p>Definition at line <a class="el" href="../../de/d19/a00643_source.html#l00292">292</a> of file <a class="el" href="../../de/d19/a00643_source.html">DataCenter.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/da5/a00075_ad5cec46e37a0e021331f9dcd3745952b_cgraph.png" border="0" usemap="#d9/da5/a00075_ad5cec46e37a0e021331f9dcd3745952b_cgraph" alt=""/></div>
+<map name="d9/da5/a00075_ad5cec46e37a0e021331f9dcd3745952b_cgraph" id="d9/da5/a00075_ad5cec46e37a0e021331f9dcd3745952b_cgraph">
+<area shape="rect" id="node2" href="../../d5/df1/a00206.html#aba2d6fc2b0e4f8ccf202e0752c45d55c" title="Set 1D data, by default, DT_Raster1D. " alt="" coords="249,5,487,35"/><area shape="rect" id="node3" href="../../d9/da5/a00075.html#a610a8636ef71d722b6548cc019e09952" title="Read 1D array data. " alt="" coords="249,59,487,88"/><area shape="rect" id="node4" href="../../d9/da5/a00075.html#a45464301b1ecaeb0037dceaf1afb8b87" title="Read interpolated weight data and insert to m_weightDataMap. " alt="" coords="245,112,491,141"/><area shape="rect" id="node5" href="../../de/d36/a00123.html#a536b4b46be1b7b05f2a5371d7b9b41a3" title="Get site number of given site type. " alt="" coords="256,165,480,195"/><area shape="rect" id="node6" href="../../de/d36/a00123.html#a7ae9d237348c296459316a84a0372989" title="Get elevations of given site type. " alt="" coords="265,219,471,248"/><area shape="rect" id="node7" href="../../de/d36/a00123.html#a18de5cb1a83d3446a2fda16a3550241b" title="Get latitudes of given site type. " alt="" coords="269,272,467,301"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a5aff45cc867b8858ddf9a63ab287cd3c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DataCenter::Set2DData </td>
+          <td>(</td>
+          <td class="paramtype">string &amp;&#160;</td>
+          <td class="paramname"><em>paraName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string &amp;&#160;</td>
+          <td class="paramname"><em>remoteFileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d5/df1/a00206.html">SimulationModule</a> *&#160;</td>
+          <td class="paramname"><em>pModule</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set 2D Data. </p>
+<p>Get ROUTING_LAYERS real file name</p>
+<p>Check if the data is already loaded</p>
+<p>Load data from <a class="el" href="../../d9/da5/a00075.html" title="Base class of Data center for SEIMS. ">DataCenter</a></p>
+<p>Match to the format of DT_Array2D, By LJ. </p>
+
+<p>Definition at line <a class="el" href="../../de/d19/a00643_source.html#l00362">362</a> of file <a class="el" href="../../de/d19/a00643_source.html">DataCenter.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/da5/a00075_a5aff45cc867b8858ddf9a63ab287cd3c_cgraph.png" border="0" usemap="#d9/da5/a00075_a5aff45cc867b8858ddf9a63ab287cd3c_cgraph" alt=""/></div>
+<map name="d9/da5/a00075_a5aff45cc867b8858ddf9a63ab287cd3c_cgraph" id="d9/da5/a00075_a5aff45cc867b8858ddf9a63ab287cd3c_cgraph">
+<area shape="rect" id="node2" href="../../d5/df1/a00206.html#a497fa950bc9c4d85cfb1ae13d83f06c9" title="Set 2D data, by default, DT_Raster2D. " alt="" coords="246,5,485,35"/><area shape="rect" id="node3" href="../../d9/da5/a00075.html#ae53606425c3995ed7fec1df5d96bb2a4" title="Read 2D array data and insert to m_2DArrayMap The matrix format is as follows: 5 (Row number) RowIdx ..." alt="" coords="247,59,484,88"/><area shape="rect" id="node4" href="../../d9/da5/a00075.html#ad3ef937e97afc62f793f9a16360fed59" title="Read IUH data and insert to m_2DArrayMap. " alt="" coords="262,112,469,141"/><area shape="rect" id="node5" href="../../d9/da5/a00075.html#af5a8dd9b1e631402155577af02389858" title="Make lapse 2D array data and insert to m_2DArrayMap. " alt="" coords="260,165,471,195"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="af5a8dd9b1e631402155577af02389858"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DataCenter::setLapseData </td>
+          <td>(</td>
+          <td class="paramtype">string &amp;&#160;</td>
+          <td class="paramname"><em>remoteFilename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>rows</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>cols</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float **&amp;&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Make lapse 2D array data and insert to m_2DArrayMap. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">remoteFilename</td><td>data file name </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">rows</td><td>&amp;, first dimension of the 2D Array, i.e., Rows </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">cols</td><td>&amp;, second dimension of the 2D Array, i.e., Cols </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">data</td><td>**&amp;, returned data </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>element number</p>
+<p>insert to corresponding maps </p>
+
+<p>Definition at line <a class="el" href="../../de/d19/a00643_source.html#l00117">117</a> of file <a class="el" href="../../de/d19/a00643_source.html">DataCenter.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0c84ff7d1c18add0a4a023ed6634a653"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DataCenter::SetRaster </td>
+          <td>(</td>
+          <td class="paramtype">string &amp;&#160;</td>
+          <td class="paramname"><em>paraName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string &amp;&#160;</td>
+          <td class="paramname"><em>remoteFileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d5/df1/a00206.html">SimulationModule</a> *&#160;</td>
+          <td class="paramname"><em>pModule</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set raster data. </p>
+<p>1D or 2D raster data </p>
+
+<p>Definition at line <a class="el" href="../../de/d19/a00643_source.html#l00411">411</a> of file <a class="el" href="../../de/d19/a00643_source.html">DataCenter.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/da5/a00075_a0c84ff7d1c18add0a4a023ed6634a653_cgraph.png" border="0" usemap="#d9/da5/a00075_a0c84ff7d1c18add0a4a023ed6634a653_cgraph" alt=""/></div>
+<map name="d9/da5/a00075_a0c84ff7d1c18add0a4a023ed6634a653_cgraph" id="d9/da5/a00075_a0c84ff7d1c18add0a4a023ed6634a653_cgraph">
+<area shape="rect" id="node2" href="../../d9/da5/a00075.html#aadd7c30401128363b1b8d057ee41abbe" title="Read raster data, both 1D and 2D, and insert to m_rsMap. " alt="" coords="245,5,470,35"/><area shape="rect" id="node3" href="../../d5/df1/a00206.html#a497fa950bc9c4d85cfb1ae13d83f06c9" title="Set 2D data, by default, DT_Raster2D. " alt="" coords="238,59,477,88"/><area shape="rect" id="node4" href="../../d5/df1/a00206.html#aba2d6fc2b0e4f8ccf202e0752c45d55c" title="Set 1D data, by default, DT_Raster1D. " alt="" coords="238,112,477,141"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="abde14034e68984ceab307fcc719aceca"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool DataCenter::setRasterForScenario </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set Raster data for Scenario data. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if set successfully, otherwise false. </dd></dl>
+
+<p>Implemented in <a class="el" href="../../db/df8/a00076.html#a333b1f2a86fa04d01efc3ae9f0ee4b51">DataCenterMongoDB</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1a8758b5d10e200b18798cd40a54efda"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DataCenter::SetReaches </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d5/df1/a00206.html">SimulationModule</a> *&#160;</td>
+          <td class="paramname"><em>pModule</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set Reaches information. </p>
+<p>Added by Liang-Jun Zhu, 2016-7-2. </p>
+
+<p>Definition at line <a class="el" href="../../de/d19/a00643_source.html#l00482">482</a> of file <a class="el" href="../../de/d19/a00643_source.html">DataCenter.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/da5/a00075_a1a8758b5d10e200b18798cd40a54efda_cgraph.png" border="0" usemap="#d9/da5/a00075_a1a8758b5d10e200b18798cd40a54efda_cgraph" alt=""/></div>
+<map name="d9/da5/a00075_a1a8758b5d10e200b18798cd40a54efda_cgraph" id="d9/da5/a00075_a1a8758b5d10e200b18798cd40a54efda_cgraph">
+<area shape="rect" id="node2" href="../../d5/df1/a00206.html#aa4115c5f61d71efde62d3b62c70b51ec" title="Set pointer of clsReaches class which contains all reaches information. Added by LJ, 2016&#45;7&#45;2. " alt="" coords="254,4,501,33"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="afecd8bb8410e1ae941355b8d0affe960"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DataCenter::SetScenario </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d5/df1/a00206.html">SimulationModule</a> *&#160;</td>
+          <td class="paramname"><em>pModule</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set BMPs Scenario data. </p>
+<p>Added by Liang-Jun Zhu, 2016-6-22. </p>
+
+<p>Definition at line <a class="el" href="../../de/d19/a00643_source.html#l00472">472</a> of file <a class="el" href="../../de/d19/a00643_source.html">DataCenter.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/da5/a00075_afecd8bb8410e1ae941355b8d0affe960_cgraph.png" border="0" usemap="#d9/da5/a00075_afecd8bb8410e1ae941355b8d0affe960_cgraph" alt=""/></div>
+<map name="d9/da5/a00075_afecd8bb8410e1ae941355b8d0affe960_cgraph" id="d9/da5/a00075_afecd8bb8410e1ae941355b8d0affe960_cgraph">
+<area shape="rect" id="node2" href="../../d5/df1/a00206.html#ae6dfd515de376498a12a22724e57650a" title="Set pointer of Scenario class which contains all BMP information. Added by LJ, 2016&#45;6&#45;14. " alt="" coords="254,4,501,33"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a3df7491ad229856b30b9bca90e5ec0ca"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DataCenter::SetSubbasins </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d5/df1/a00206.html">SimulationModule</a> *&#160;</td>
+          <td class="paramname"><em>pModule</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set Subbasins information. </p>
+<p>Added by Liang-Jun Zhu, 2016-7-28. </p>
+
+<p>Definition at line <a class="el" href="../../de/d19/a00643_source.html#l00490">490</a> of file <a class="el" href="../../de/d19/a00643_source.html">DataCenter.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/da5/a00075_a3df7491ad229856b30b9bca90e5ec0ca_cgraph.png" border="0" usemap="#d9/da5/a00075_a3df7491ad229856b30b9bca90e5ec0ca_cgraph" alt=""/></div>
+<map name="d9/da5/a00075_a3df7491ad229856b30b9bca90e5ec0ca_cgraph" id="d9/da5/a00075_a3df7491ad229856b30b9bca90e5ec0ca_cgraph">
+<area shape="rect" id="node2" href="../../d5/df1/a00206.html#a97da293bca13cf5934d9ef6da34d9290" title="Set pointer of clsSubbasins class which contains all subbasins information. Added by LJ..." alt="" coords="267,4,525,33"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="af4b318804648108eb2af0b6af4a5b5fa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DataCenter::updateParametersByScenario </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>subbsnID</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Update model parameters (value, 1D raster, and 2D raster, etc.) by Scenario, e.g., areal BMPs. </p>
+<dl class="section see"><dt>See Also</dt><dd>BMPArealStructFactory, and </dd>
+<dd>
+BMPArealStruct</dd></dl>
+<p>added by Huiran GAO, Feb. 2017 redesigned by Liangjun Zhu, 08/16/17 </p>
+<p>Key is uniqueBMPID, which is calculated by BMP_ID * 100000 + subScenario;</p>
+<p>Get landuse data of current subbasin ("0_" for the whole basin)</p>
+<p>Check whether the parameter is existed in m_parametersInDB. If existed, update the missing values, otherwise, print warning message and continue. </p>
+
+<p>Definition at line <a class="el" href="../../de/d19/a00643_source.html#l00536">536</a> of file <a class="el" href="../../de/d19/a00643_source.html">DataCenter.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/da5/a00075_af4b318804648108eb2af0b6af4a5b5fa_cgraph.png" border="0" usemap="#d9/da5/a00075_af4b318804648108eb2af0b6af4a5b5fa_cgraph" alt=""/></div>
+<map name="d9/da5/a00075_af4b318804648108eb2af0b6af4a5b5fa_cgraph" id="d9/da5/a00075_af4b318804648108eb2af0b6af4a5b5fa_cgraph">
+<area shape="rect" id="node2" href="../../d8/d72/a00199.html#a1b14bf5fbfeb12ec4c1395abfe9cd7fb" title="Get BMPs Factories. " alt="" coords="297,5,469,51"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>seims/src/seims_main/base/data/<a class="el" href="../../d9/d0f/a00644_source.html">DataCenter.h</a></li>
+<li>seims/src/seims_main/base/data/<a class="el" href="../../de/d19/a00643_source.html">DataCenter.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>seims</b></li><li class="navelem"><b>preprocess</b></li><li class="navelem"><b>text</b></li><li class="navelem"><a class="el" href="../../d9/da5/a00075.html">DataValueFields</a></li>
-    <li class="footer">Generated on Fri Jan 19 2018 06:56:17 for SEIMS by
+    <li class="navelem"><a class="el" href="../../d9/da5/a00075.html">DataCenter</a></li>
+    <li class="footer">Generated on Tue Mar 27 2018 10:11:03 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

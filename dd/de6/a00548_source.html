@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims/src/commonlibs/UtilsClass/test/Test_utilsTime.cpp Source File</title>
+<title>SEIMS: seims/src/grid_layering/main.cpp Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -112,25 +112,81 @@ $(document).ready(function(){initNavTree('dd/de6/a00548_source.html','../../');}
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Test_utilsTime.cpp</div>  </div>
+<div class="title">main.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;utils.h&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;gtest/gtest.h&quot;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;TEST(TestutilsTime, isLeapYear) {</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    EXPECT_TRUE(<a class="code" href="../../df/d17/a00231.html#a393f9b428264eb66502844fefca35779">utilsTime::isLeapYear</a>(2000));</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    EXPECT_FALSE(<a class="code" href="../../df/d17/a00231.html#a393f9b428264eb66502844fefca35779">utilsTime::isLeapYear</a>(1800));</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    EXPECT_TRUE(<a class="code" href="../../df/d17/a00231.html#a393f9b428264eb66502844fefca35779">utilsTime::isLeapYear</a>(2004));</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;}</div>
-<div class="ttc" id="a00231_html_a393f9b428264eb66502844fefca35779"><div class="ttname"><a href="../../df/d17/a00231.html#a393f9b428264eb66502844fefca35779">utilsTime::isLeapYear</a></div><div class="ttdeci">static bool isLeapYear(int yr)</div><div class="ttdoc">Check the given year is a leap year or not. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d87/a00551_source.html#l00181">utils.h:181</a></div></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*----------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">*   Purpose:  Grid layering functions</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">*</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">*   Created:    Junzhi Liu</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">*   Date:       28-March-2013</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">*   Revision:   Liangjun Zhu</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">*   Date:       21-July-2016</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">*               9-February-2017</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">*               4-July-2017  Check if success after import layering to MongoDB</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">*               29-Dec-2018  Refactor to make code more clearly</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">*---------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#if (defined _DEBUG) &amp;&amp; (defined _MSC_VER) &amp;&amp; (defined VLD)</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;vld.h&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* Run Visual Leak Detector during Debug */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;GridLayeringD8.h&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;GridLayeringDinf.h&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv) {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">if</span> (argc &lt; 6) {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;usage: grid_layering &lt;hostIP&gt; &lt;port&gt; &lt;output_dir&gt; &lt;modelName&gt; &lt;gridFSName&gt; &lt;nsubbasin&gt;\n&quot;</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        exit(-1);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    SetDefaultOpenMPThread();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    GDALAllRegister();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *hostName = argv[1];</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">int</span> port = atoi(argv[2]);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *outputDir = argv[3];</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *modelName = argv[4];</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *gridFSName = argv[5];</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">int</span> nSubbasins = atoi(argv[6]);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    MongoClient *client = <a class="code" href="../../d7/d9a/a00152.html#aeced16f71369981407785747585d7fac">MongoClient::Init</a>(hostName, port);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == client) exit(-1);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="../../d3/d65/a00154.html">MongoGridFS</a> *gfs = client-&gt;GridFS(modelName, gridFSName);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">double</span> t1 = TimeCounting();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">int</span> subbasinStartID = 1;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">if</span> (nSubbasins == 0) { subbasinStartID = 0; }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = subbasinStartID; i &lt;= nSubbasins; i++) {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="../../da/d82/a00091.html">GridLayeringD8</a> *gridLyrD8 = <span class="keyword">new</span> <a class="code" href="../../da/d82/a00091.html">GridLayeringD8</a>(i, gfs, outputDir);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        gridLyrD8-&gt;Execute();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keyword">delete</span> gridLyrD8;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="../../d1/dc1/a00092.html">GridLayeringDinf</a> *gridLyrDinf = <span class="keyword">new</span> <a class="code" href="../../d1/dc1/a00092.html">GridLayeringDinf</a>(i, gfs, outputDir);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        gridLyrDinf-&gt;Execute();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keyword">delete</span> gridLyrDinf;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">delete</span> gfs;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">delete</span> client;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;time-consuming: &quot;</span> &lt;&lt; TimeCounting() - t1 &lt;&lt; <span class="stringliteral">&quot; seconds.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
+<div class="ttc" id="a00091_html"><div class="ttname"><a href="../../da/d82/a00091.html">GridLayeringD8</a></div><div class="ttdoc">Grid layering based on D8 model. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/d94/a00603_source.html#l00012">GridLayeringD8.h:12</a></div></div>
+<div class="ttc" id="a00152_html_aeced16f71369981407785747585d7fac"><div class="ttname"><a href="../../d7/d9a/a00152.html#aeced16f71369981407785747585d7fac">MongoClient::Init</a></div><div class="ttdeci">static MongoClient * Init(const char *host, uint16_t port)</div><div class="ttdoc">Validation check before the constructor of MongoClient. </div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d95/a00556_source.html#l00018">MongoUtil.cpp:18</a></div></div>
+<div class="ttc" id="a00154_html"><div class="ttname"><a href="../../d3/d65/a00154.html">MongoGridFS</a></div><div class="ttdoc">Create a MongoDB GridFS instance. </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/df0/a00557_source.html#l00179">MongoUtil.h:179</a></div></div>
+<div class="ttc" id="a00092_html"><div class="ttname"><a href="../../d1/dc1/a00092.html">GridLayeringDinf</a></div><div class="ttdoc">Grid layering based on Dinf model. </div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d1c/a00605_source.html#l00013">GridLayeringDinf.h:13</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_56b1596c4d72ede71823cdba70d715a1.html">commonlibs</a></li><li class="navelem"><a class="el" href="../../dir_aac0e29c14a456ffe7dc6a7d8b055d76.html">UtilsClass</a></li><li class="navelem"><a class="el" href="../../dir_b53762c4a70b6d17e678b0f7e6889535.html">test</a></li><li class="navelem"><b>Test_utilsTime.cpp</b></li>
-    <li class="footer">Generated on Fri Jan 19 2018 06:56:12 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_e18f81762effd1d09ce50d10289caf24.html">grid_layering</a></li><li class="navelem"><b>main.cpp</b></li>
+    <li class="footer">Generated on Tue Mar 27 2018 10:10:59 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

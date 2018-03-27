@@ -1,5 +1,7 @@
 var a00070 =
 [
-    [ "ContinuousPesticideOperation", "d2/db1/a00070.html#a23740d9cde1300e8de5f6e94ed42768a", null ],
-    [ "dump", "d2/db1/a00070.html#a852edd79d89876db8a5192a21013cc60", null ]
+    [ "Get1DData", "d2/db1/a00070.html#a1b2832f37325e31503995626135bdb67", null ],
+    [ "Set1DData", "d2/db1/a00070.html#a06bb50257ea4080511c1d6448684f9f3", null ],
+    [ "m_Data", "d2/db1/a00070.html#ab896e92ea639d8981eb1a16d89264f16", null ],
+    [ "m_Rows", "d2/db1/a00070.html#ac5ce2b186049bee1f70280c20a8fee6f", null ]
 ];

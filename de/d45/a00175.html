@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: MainBMP::PointSourceLocations Class Reference</title>
+<title>SEIMS: ParamInfo Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -115,127 +115,156 @@ $(document).ready(function(){initNavTree('de/d45/a00175.html','../../');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
-<a href="../../d0/d33/a01252.html">List of all members</a>  </div>
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="../../de/d04/a01209.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">MainBMP::PointSourceLocations Class Reference</div>  </div>
+<div class="title">ParamInfo Class Reference<div class="ingroups"><a class="el" href="../../db/d23/a01025.html">Module_setting</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Base class of point BMP, mainly store location related parameters.  
+<p>Class to store and manage parameter information from the parameter database.  
  <a href="../../de/d45/a00175.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="../../d5/d8a/a00599_source.html">BMPPointSourceFactory.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="../../da/d46/a00665_source.html">ParamInfo.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac7c4ddcb549b73ef5b2aa57dac28ac1f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#ac7c4ddcb549b73ef5b2aa57dac28ac1f">PointSourceLocations</a> (const bson_t *&amp;bsonTab, bson_iter_t &amp;iter)</td></tr>
-<tr class="memdesc:ac7c4ddcb549b73ef5b2aa57dac28ac1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor, parse point BMP location related parameters from bson object.  <a href="#ac7c4ddcb549b73ef5b2aa57dac28ac1f">More...</a><br/></td></tr>
-<tr class="separator:ac7c4ddcb549b73ef5b2aa57dac28ac1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af130455bf13a676733e40941573edc57"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af130455bf13a676733e40941573edc57"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#af130455bf13a676733e40941573edc57">~PointSourceLocations</a> ()=default</td></tr>
-<tr class="memdesc:af130455bf13a676733e40941573edc57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br/></td></tr>
-<tr class="separator:af130455bf13a676733e40941573edc57"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a631c212084d2846b8b6a9d0b7f698dfe"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a631c212084d2846b8b6a9d0b7f698dfe"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#a631c212084d2846b8b6a9d0b7f698dfe">Dump</a> (ostream *fs)</td></tr>
-<tr class="memdesc:a631c212084d2846b8b6a9d0b7f698dfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output. <br/></td></tr>
-<tr class="separator:a631c212084d2846b8b6a9d0b7f698dfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58e56a886a24dc4f56d59c445db3f197"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a58e56a886a24dc4f56d59c445db3f197"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#a58e56a886a24dc4f56d59c445db3f197">GetPointSourceID</a> ()</td></tr>
-<tr class="memdesc:a58e56a886a24dc4f56d59c445db3f197"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get point source ID. <br/></td></tr>
-<tr class="separator:a58e56a886a24dc4f56d59c445db3f197"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a372a7570e9ea0047fb471e148bc25f5c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a372a7570e9ea0047fb471e148bc25f5c"></a>
-string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#a372a7570e9ea0047fb471e148bc25f5c">GetPointSourceName</a> ()</td></tr>
-<tr class="memdesc:a372a7570e9ea0047fb471e148bc25f5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">name <br/></td></tr>
-<tr class="separator:a372a7570e9ea0047fb471e148bc25f5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a722d54b8e1388b68d467fadaaa85767d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a722d54b8e1388b68d467fadaaa85767d"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#a722d54b8e1388b68d467fadaaa85767d">GetLat</a> ()</td></tr>
-<tr class="memdesc:a722d54b8e1388b68d467fadaaa85767d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lat. <br/></td></tr>
-<tr class="separator:a722d54b8e1388b68d467fadaaa85767d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ca6f0edc273d7169f4d5786651338d7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6ca6f0edc273d7169f4d5786651338d7"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#a6ca6f0edc273d7169f4d5786651338d7">GetLon</a> ()</td></tr>
-<tr class="memdesc:a6ca6f0edc273d7169f4d5786651338d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lon. <br/></td></tr>
-<tr class="separator:a6ca6f0edc273d7169f4d5786651338d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:accc6d6dda654c038d4a1aae744b466f5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="accc6d6dda654c038d4a1aae744b466f5"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#accc6d6dda654c038d4a1aae744b466f5">GetLocalX</a> ()</td></tr>
-<tr class="memdesc:accc6d6dda654c038d4a1aae744b466f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">localX <br/></td></tr>
-<tr class="separator:accc6d6dda654c038d4a1aae744b466f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aadce7ed69bd2821c0e801c51a85285d7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aadce7ed69bd2821c0e801c51a85285d7"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#aadce7ed69bd2821c0e801c51a85285d7">GetLocalY</a> ()</td></tr>
-<tr class="memdesc:aadce7ed69bd2821c0e801c51a85285d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">localY <br/></td></tr>
-<tr class="separator:aadce7ed69bd2821c0e801c51a85285d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af4ec764d8d308557356475b3df5dadf4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af4ec764d8d308557356475b3df5dadf4"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#af4ec764d8d308557356475b3df5dadf4">GetSubbasinID</a> ()</td></tr>
-<tr class="memdesc:af4ec764d8d308557356475b3df5dadf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Located subbasin ID. <br/></td></tr>
-<tr class="separator:af4ec764d8d308557356475b3df5dadf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b36c483b34c0dbfd97bd8f7fa6304ca"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9b36c483b34c0dbfd97bd8f7fa6304ca"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#a9b36c483b34c0dbfd97bd8f7fa6304ca">GetSize</a> ()</td></tr>
-<tr class="memdesc:a9b36c483b34c0dbfd97bd8f7fa6304ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">size <br/></td></tr>
-<tr class="separator:a9b36c483b34c0dbfd97bd8f7fa6304ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0673dfd85e27b70c78c5a79e0020deb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af0673dfd85e27b70c78c5a79e0020deb"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#af0673dfd85e27b70c78c5a79e0020deb">GetDistanceDown</a> ()</td></tr>
-<tr class="memdesc:af0673dfd85e27b70c78c5a79e0020deb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Distance to the downstream reach. <br/></td></tr>
-<tr class="separator:af0673dfd85e27b70c78c5a79e0020deb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90e95e39beb27cac26b7fedea5129c1f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a90e95e39beb27cac26b7fedea5129c1f"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#a90e95e39beb27cac26b7fedea5129c1f">ParamInfo</a> ()</td></tr>
+<tr class="memdesc:a90e95e39beb27cac26b7fedea5129c1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an empty instance. <br/></td></tr>
+<tr class="separator:a90e95e39beb27cac26b7fedea5129c1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af02e871349e1ba0c5fd68af77edd03d8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af02e871349e1ba0c5fd68af77edd03d8"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#af02e871349e1ba0c5fd68af77edd03d8">ParamInfo</a> (const <a class="el" href="../../de/d45/a00175.html">ParamInfo</a> &amp;another)</td></tr>
+<tr class="memdesc:af02e871349e1ba0c5fd68af77edd03d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor. <br/></td></tr>
+<tr class="separator:af02e871349e1ba0c5fd68af77edd03d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af41b8b9dafc83a14b312a279466f2db6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af41b8b9dafc83a14b312a279466f2db6"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#af41b8b9dafc83a14b312a279466f2db6">~ParamInfo</a> ()</td></tr>
+<tr class="memdesc:af41b8b9dafc83a14b312a279466f2db6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br/></td></tr>
+<tr class="separator:af41b8b9dafc83a14b312a279466f2db6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a66a29538097694a8427613b19a942a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#a6a66a29538097694a8427613b19a942a">GetAdjustedValue</a> (float pre_value=NODATA_VALUE)</td></tr>
+<tr class="memdesc:a6a66a29538097694a8427613b19a942a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the adjusted value for this parameter.  <a href="#a6a66a29538097694a8427613b19a942a">More...</a><br/></td></tr>
+<tr class="separator:a6a66a29538097694a8427613b19a942a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaee91ca6510c999cd689171a704575e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#aaee91ca6510c999cd689171a704575e8">Adjust1DArray</a> (int n, float *data)</td></tr>
+<tr class="memdesc:aaee91ca6510c999cd689171a704575e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adjust 1D array.  <a href="#aaee91ca6510c999cd689171a704575e8">More...</a><br/></td></tr>
+<tr class="separator:aaee91ca6510c999cd689171a704575e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80511ea5a368997e89066aee66788e2e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#a80511ea5a368997e89066aee66788e2e">Adjust1DRaster</a> (int n, float *data)</td></tr>
+<tr class="memdesc:a80511ea5a368997e89066aee66788e2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adjust 1D Raster,.  <a href="#a80511ea5a368997e89066aee66788e2e">More...</a><br/></td></tr>
+<tr class="separator:a80511ea5a368997e89066aee66788e2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0c5269a7cd932990f454313e089ffac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#af0c5269a7cd932990f454313e089ffac">Adjust1DRaster</a> (int n, float *data, const float *units, vector&lt; int &gt; selunits, const float *lu, vector&lt; int &gt; sellu)</td></tr>
+<tr class="memdesc:af0c5269a7cd932990f454313e089ffac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adjust 1D Raster on selected area.  <a href="#af0c5269a7cd932990f454313e089ffac">More...</a><br/></td></tr>
+<tr class="separator:af0c5269a7cd932990f454313e089ffac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25d08aee0e83774468aaebfeb7f6e3e5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a25d08aee0e83774468aaebfeb7f6e3e5"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#a25d08aee0e83774468aaebfeb7f6e3e5">Adjust2DArray</a> (int n, float **data)</td></tr>
+<tr class="memdesc:a25d08aee0e83774468aaebfeb7f6e3e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adjust 2D array. <br/></td></tr>
+<tr class="separator:a25d08aee0e83774468aaebfeb7f6e3e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32f9eead1547f38be571ae13d164d627"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a32f9eead1547f38be571ae13d164d627"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#a32f9eead1547f38be571ae13d164d627">Adjust2DRaster</a> (int n, int lyr, float **data)</td></tr>
+<tr class="memdesc:a32f9eead1547f38be571ae13d164d627"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adjust 2D Raster. <br/></td></tr>
+<tr class="separator:a32f9eead1547f38be571ae13d164d627"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ffa4ad20d7b05b1dbf4a932807046e8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1ffa4ad20d7b05b1dbf4a932807046e8"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#a1ffa4ad20d7b05b1dbf4a932807046e8">Adjust2DRaster</a> (int n, int lyr, float **data, float *units, vector&lt; int &gt; selunits, float *lu, vector&lt; int &gt; sellu)</td></tr>
+<tr class="memdesc:a1ffa4ad20d7b05b1dbf4a932807046e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adjust 1D Raster on selected area. <br/></td></tr>
+<tr class="separator:a1ffa4ad20d7b05b1dbf4a932807046e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:a773d92d892ba6b9fb7ecc535bf1619c7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a773d92d892ba6b9fb7ecc535bf1619c7"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#a773d92d892ba6b9fb7ecc535bf1619c7">m_pointSrcID</a></td></tr>
-<tr class="memdesc:a773d92d892ba6b9fb7ecc535bf1619c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">ID of point source. <br/></td></tr>
-<tr class="separator:a773d92d892ba6b9fb7ecc535bf1619c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12f57925e06bf6b3e5427f863597576b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a12f57925e06bf6b3e5427f863597576b"></a>
-string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#a12f57925e06bf6b3e5427f863597576b">m_name</a></td></tr>
-<tr class="memdesc:a12f57925e06bf6b3e5427f863597576b"><td class="mdescLeft">&#160;</td><td class="mdescRight">name <br/></td></tr>
-<tr class="separator:a12f57925e06bf6b3e5427f863597576b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a8cc2274f07cdf946e318bcb428cbf3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5a8cc2274f07cdf946e318bcb428cbf3"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#a5a8cc2274f07cdf946e318bcb428cbf3">m_lat</a></td></tr>
-<tr class="memdesc:a5a8cc2274f07cdf946e318bcb428cbf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lat. <br/></td></tr>
-<tr class="separator:a5a8cc2274f07cdf946e318bcb428cbf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab88ae3c49603d1fe03d3934cc3376a1b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab88ae3c49603d1fe03d3934cc3376a1b"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#ab88ae3c49603d1fe03d3934cc3376a1b">m_lon</a></td></tr>
-<tr class="memdesc:ab88ae3c49603d1fe03d3934cc3376a1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lon. <br/></td></tr>
-<tr class="separator:ab88ae3c49603d1fe03d3934cc3376a1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad29d621ef37524a341e2fc5d9ef8979d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad29d621ef37524a341e2fc5d9ef8979d"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#ad29d621ef37524a341e2fc5d9ef8979d">m_localX</a></td></tr>
-<tr class="memdesc:ad29d621ef37524a341e2fc5d9ef8979d"><td class="mdescLeft">&#160;</td><td class="mdescRight">localX <br/></td></tr>
-<tr class="separator:ad29d621ef37524a341e2fc5d9ef8979d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f4e29e3d8e7d1307f03e5e3bcf6ba66"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1f4e29e3d8e7d1307f03e5e3bcf6ba66"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#a1f4e29e3d8e7d1307f03e5e3bcf6ba66">m_localY</a></td></tr>
-<tr class="memdesc:a1f4e29e3d8e7d1307f03e5e3bcf6ba66"><td class="mdescLeft">&#160;</td><td class="mdescRight">localY <br/></td></tr>
-<tr class="separator:a1f4e29e3d8e7d1307f03e5e3bcf6ba66"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97417d14d0cbb873812fe797bdd0a7cb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a97417d14d0cbb873812fe797bdd0a7cb"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#a97417d14d0cbb873812fe797bdd0a7cb">m_subbasinID</a></td></tr>
-<tr class="memdesc:a97417d14d0cbb873812fe797bdd0a7cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Located subbasin ID. <br/></td></tr>
-<tr class="separator:a97417d14d0cbb873812fe797bdd0a7cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3d9f751da1d7885820aeba731b92843"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af3d9f751da1d7885820aeba731b92843"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#af3d9f751da1d7885820aeba731b92843">m_size</a></td></tr>
-<tr class="memdesc:af3d9f751da1d7885820aeba731b92843"><td class="mdescLeft">&#160;</td><td class="mdescRight">size <br/></td></tr>
-<tr class="separator:af3d9f751da1d7885820aeba731b92843"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab94a8e71b28412d01a5e0698d55d4d23"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab94a8e71b28412d01a5e0698d55d4d23"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#ab94a8e71b28412d01a5e0698d55d4d23">m_distDown</a></td></tr>
-<tr class="memdesc:ab94a8e71b28412d01a5e0698d55d4d23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Distance to the downstream reach. <br/></td></tr>
-<tr class="separator:ab94a8e71b28412d01a5e0698d55d4d23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a4aa99ac42f641ff345421f4a09c43d96"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4aa99ac42f641ff345421f4a09c43d96"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#a4aa99ac42f641ff345421f4a09c43d96">Name</a></td></tr>
+<tr class="memdesc:a4aa99ac42f641ff345421f4a09c43d96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name. <br/></td></tr>
+<tr class="separator:a4aa99ac42f641ff345421f4a09c43d96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad24cdb755575319abde9c186a34920de"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad24cdb755575319abde9c186a34920de"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#ad24cdb755575319abde9c186a34920de">Units</a></td></tr>
+<tr class="memdesc:ad24cdb755575319abde9c186a34920de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Units. <br/></td></tr>
+<tr class="separator:ad24cdb755575319abde9c186a34920de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3a3033becc4c70b37e273e76c37bcee"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac3a3033becc4c70b37e273e76c37bcee"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#ac3a3033becc4c70b37e273e76c37bcee">Description</a></td></tr>
+<tr class="memdesc:ac3a3033becc4c70b37e273e76c37bcee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Description. <br/></td></tr>
+<tr class="separator:ac3a3033becc4c70b37e273e76c37bcee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fff4547600ebc1df4054a5337aaeab3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7fff4547600ebc1df4054a5337aaeab3"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#a7fff4547600ebc1df4054a5337aaeab3">ModuleID</a></td></tr>
+<tr class="memdesc:a7fff4547600ebc1df4054a5337aaeab3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used by Module Ids. <br/></td></tr>
+<tr class="separator:a7fff4547600ebc1df4054a5337aaeab3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae67c0395380ce7ec6424c8ac379560c4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae67c0395380ce7ec6424c8ac379560c4"></a>
+<a class="el" href="../../d4/dc5/a01024.html#gac6cf78ef837450cfb19495fe34976b8c">dimensionTypes</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#ae67c0395380ce7ec6424c8ac379560c4">Dimension</a></td></tr>
+<tr class="memdesc:ae67c0395380ce7ec6424c8ac379560c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data dimension type. <br/></td></tr>
+<tr class="separator:ae67c0395380ce7ec6424c8ac379560c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50d1d69eca0398a211bc13ba473ef9c1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a50d1d69eca0398a211bc13ba473ef9c1"></a>
+<a class="el" href="../../d4/dc5/a01024.html#ga44c7aa1266bcfcaebbafc0ffc48fc952">transferTypes</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#a50d1d69eca0398a211bc13ba473ef9c1">Transfer</a></td></tr>
+<tr class="memdesc:a50d1d69eca0398a211bc13ba473ef9c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data transfer type. <br/></td></tr>
+<tr class="separator:a50d1d69eca0398a211bc13ba473ef9c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75b10030638c69b20262b5a1a39ec67e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a75b10030638c69b20262b5a1a39ec67e"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#a75b10030638c69b20262b5a1a39ec67e">Source</a></td></tr>
+<tr class="memdesc:a75b10030638c69b20262b5a1a39ec67e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Source, to identify which the parameters can be derived. <br/></td></tr>
+<tr class="separator:a75b10030638c69b20262b5a1a39ec67e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a698d9a7a6b8fad7c2aabdc7c64428f26"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a698d9a7a6b8fad7c2aabdc7c64428f26"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#a698d9a7a6b8fad7c2aabdc7c64428f26">Value</a></td></tr>
+<tr class="memdesc:a698d9a7a6b8fad7c2aabdc7c64428f26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Value. <br/></td></tr>
+<tr class="separator:a698d9a7a6b8fad7c2aabdc7c64428f26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a425eb6b82f198365698c84f5f830b73b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a425eb6b82f198365698c84f5f830b73b"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#a425eb6b82f198365698c84f5f830b73b">Impact</a></td></tr>
+<tr class="memdesc:a425eb6b82f198365698c84f5f830b73b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Impact value. <br/></td></tr>
+<tr class="separator:a425eb6b82f198365698c84f5f830b73b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aade23df743899af61f36a76dd257b0df"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aade23df743899af61f36a76dd257b0df"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#aade23df743899af61f36a76dd257b0df">Change</a></td></tr>
+<tr class="memdesc:aade23df743899af61f36a76dd257b0df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change type. <br/></td></tr>
+<tr class="separator:aade23df743899af61f36a76dd257b0df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a752f09515c81e1159c225fbc14668a58"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a752f09515c81e1159c225fbc14668a58"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#a752f09515c81e1159c225fbc14668a58">Maximum</a></td></tr>
+<tr class="memdesc:a752f09515c81e1159c225fbc14668a58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Absolute maximum value. <br/></td></tr>
+<tr class="separator:a752f09515c81e1159c225fbc14668a58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b79895b2e6a6a4853f1786fdd3b369f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3b79895b2e6a6a4853f1786fdd3b369f"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#a3b79895b2e6a6a4853f1786fdd3b369f">Minimun</a></td></tr>
+<tr class="memdesc:a3b79895b2e6a6a4853f1786fdd3b369f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Absolute minimum value. <br/></td></tr>
+<tr class="separator:a3b79895b2e6a6a4853f1786fdd3b369f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae356227ba8d20639ed0ca4171bd8641a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae356227ba8d20639ed0ca4171bd8641a"></a>
+<a class="el" href="../../de/d45/a00175.html">ParamInfo</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#ae356227ba8d20639ed0ca4171bd8641a">DependPara</a></td></tr>
+<tr class="memdesc:ae356227ba8d20639ed0ca4171bd8641a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dependence parameters. <br/></td></tr>
+<tr class="separator:ae356227ba8d20639ed0ca4171bd8641a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c615ed4e44899b451debfc09a332d48"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3c615ed4e44899b451debfc09a332d48"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#a3c615ed4e44899b451debfc09a332d48">ClimateType</a></td></tr>
+<tr class="memdesc:a3c615ed4e44899b451debfc09a332d48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Climate type. <br/></td></tr>
+<tr class="separator:a3c615ed4e44899b451debfc09a332d48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7bced3619362c2e409dedec1e92e190"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae7bced3619362c2e409dedec1e92e190"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#ae7bced3619362c2e409dedec1e92e190">IsConstant</a></td></tr>
+<tr class="memdesc:ae7bced3619362c2e409dedec1e92e190"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is constant or not. <br/></td></tr>
+<tr class="separator:ae7bced3619362c2e409dedec1e92e190"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42595f7deafb51cf7d6853afb23d46f7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a42595f7deafb51cf7d6853afb23d46f7"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#a42595f7deafb51cf7d6853afb23d46f7">IsOutput</a></td></tr>
+<tr class="memdesc:a42595f7deafb51cf7d6853afb23d46f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is output or not. <br/></td></tr>
+<tr class="separator:a42595f7deafb51cf7d6853afb23d46f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ddbf5d8c944f7753d085f9608074bb0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5ddbf5d8c944f7753d085f9608074bb0"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#a5ddbf5d8c944f7753d085f9608074bb0">OutputToOthers</a></td></tr>
+<tr class="memdesc:a5ddbf5d8c944f7753d085f9608074bb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is output to other modules or not. <br/></td></tr>
+<tr class="separator:a5ddbf5d8c944f7753d085f9608074bb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d2574f1f2a900afdb13187151711459"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5d2574f1f2a900afdb13187151711459"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#a5d2574f1f2a900afdb13187151711459">BasicName</a></td></tr>
+<tr class="memdesc:a5d2574f1f2a900afdb13187151711459"><td class="mdescLeft">&#160;</td><td class="mdescRight">Basic name. <br/></td></tr>
+<tr class="separator:a5d2574f1f2a900afdb13187151711459"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70a61323cb067362136148b1ca21d353"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a70a61323cb067362136148b1ca21d353"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d45/a00175.html#a70a61323cb067362136148b1ca21d353">initialized</a></td></tr>
+<tr class="memdesc:a70a61323cb067362136148b1ca21d353"><td class="mdescLeft">&#160;</td><td class="mdescRight">whether is initialized <br/></td></tr>
+<tr class="separator:a70a61323cb067362136148b1ca21d353"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Base class of point BMP, mainly store location related parameters. </p>
+<div class="textblock"><p>Class to store and manage parameter information from the parameter database. </p>
 
-<p>Definition at line <a class="el" href="../../d5/d8a/a00599_source.html#l00023">23</a> of file <a class="el" href="../../d5/d8a/a00599_source.html">BMPPointSourceFactory.h</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ac7c4ddcb549b73ef5b2aa57dac28ac1f"></a>
+<p>Definition at line <a class="el" href="../../da/d46/a00665_source.html#l00027">27</a> of file <a class="el" href="../../da/d46/a00665_source.html">ParamInfo.h</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="aaee91ca6510c999cd689171a704575e8"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">PointSourceLocations::PointSourceLocations </td>
+          <td class="memname">void ParamInfo::Adjust1DArray </td>
           <td>(</td>
-          <td class="paramtype">const bson_t *&amp;&#160;</td>
-          <td class="paramname"><em>bsonTab</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bson_iter_t &amp;&#160;</td>
-          <td class="paramname"><em>iter</em>&#160;</td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -245,30 +274,165 @@ float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../
       </table>
 </div><div class="memdoc">
 
-<p>Constructor, parse point BMP location related parameters from bson object. </p>
+<p>Adjust 1D array. </p>
+<p>Do not change NoData value </p>
+
+<p>Definition at line <a class="el" href="../../df/d46/a00664_source.html#l00064">64</a> of file <a class="el" href="../../df/d46/a00664_source.html">ParamInfo.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/d45/a00175_aaee91ca6510c999cd689171a704575e8_cgraph.png" border="0" usemap="#de/d45/a00175_aaee91ca6510c999cd689171a704575e8_cgraph" alt=""/></div>
+<map name="de/d45/a00175_aaee91ca6510c999cd689171a704575e8_cgraph" id="de/d45/a00175_aaee91ca6510c999cd689171a704575e8_cgraph">
+<area shape="rect" id="node2" href="../../de/d45/a00175.html#a6a66a29538097694a8427613b19a942a" title="Return the adjusted value for this parameter. " alt="" coords="262,4,495,33"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a80511ea5a368997e89066aee66788e2e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ParamInfo::Adjust1DRaster </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adjust 1D Raster,. </p>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../de/d45/a00175.html#aaee91ca6510c999cd689171a704575e8" title="Adjust 1D array. ">Adjust1DArray()</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="../../df/d46/a00664_source.html#l00073">73</a> of file <a class="el" href="../../df/d46/a00664_source.html">ParamInfo.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/d45/a00175_a80511ea5a368997e89066aee66788e2e_cgraph.png" border="0" usemap="#de/d45/a00175_a80511ea5a368997e89066aee66788e2e_cgraph" alt=""/></div>
+<map name="de/d45/a00175_a80511ea5a368997e89066aee66788e2e_cgraph" id="de/d45/a00175_a80511ea5a368997e89066aee66788e2e_cgraph">
+<area shape="rect" id="node2" href="../../de/d45/a00175.html#aaee91ca6510c999cd689171a704575e8" title="Adjust 1D array. " alt="" coords="270,4,477,33"/><area shape="rect" id="node3" href="../../de/d45/a00175.html#a6a66a29538097694a8427613b19a942a" title="Return the adjusted value for this parameter. " alt="" coords="526,4,759,33"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="af0c5269a7cd932990f454313e089ffac"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ParamInfo::Adjust1DRaster </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float *&#160;</td>
+          <td class="paramname"><em>units</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">vector&lt; int &gt;&#160;</td>
+          <td class="paramname"><em>selunits</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float *&#160;</td>
+          <td class="paramname"><em>lu</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">vector&lt; int &gt;&#160;</td>
+          <td class="paramname"><em>sellu</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adjust 1D Raster on selected area. </p>
+<p>Do not change NoData value </p>
+
+<p>Definition at line <a class="el" href="../../df/d46/a00664_source.html#l00077">77</a> of file <a class="el" href="../../df/d46/a00664_source.html">ParamInfo.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/d45/a00175_af0c5269a7cd932990f454313e089ffac_cgraph.png" border="0" usemap="#de/d45/a00175_af0c5269a7cd932990f454313e089ffac_cgraph" alt=""/></div>
+<map name="de/d45/a00175_af0c5269a7cd932990f454313e089ffac_cgraph" id="de/d45/a00175_af0c5269a7cd932990f454313e089ffac_cgraph">
+<area shape="rect" id="node2" href="../../de/d45/a00175.html#a6a66a29538097694a8427613b19a942a" title="Return the adjusted value for this parameter. " alt="" coords="270,4,503,33"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a6a66a29538097694a8427613b19a942a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float ParamInfo::GetAdjustedValue </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>pre_value</em> = <code>NODATA_VALUE</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the adjusted value for this parameter. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">bsonTab</td><td>Query result from MongoDB </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">iter</td><td>Iterator of bsonTab </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pre_value</td><td>Default is NODATA_VALUE which will be treated as <a class="el" href="../../de/d45/a00175.html#a698d9a7a6b8fad7c2aabdc7c64428f26" title="Value. ">ParamInfo.Value</a>, otherwise adjust the given value. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>adjusted float value </dd></dl>
+<p>Do not change NoData value </p>
 
-<p>Definition at line <a class="el" href="../../d7/dd2/a00598_source.html#l00220">220</a> of file <a class="el" href="../../d7/dd2/a00598_source.html">BMPPointSourceFactory.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../df/d46/a00664_source.html#l00040">40</a> of file <a class="el" href="../../df/d46/a00664_source.html">ParamInfo.cpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>seims/src/seims_main/base/bmps/<a class="el" href="../../d5/d8a/a00599_source.html">BMPPointSourceFactory.h</a></li>
-<li>seims/src/seims_main/base/bmps/<a class="el" href="../../d7/dd2/a00598_source.html">BMPPointSourceFactory.cpp</a></li>
+<li>seims/src/seims_main/base/module_setting/<a class="el" href="../../da/d46/a00665_source.html">ParamInfo.h</a></li>
+<li>seims/src/seims_main/base/module_setting/<a class="el" href="../../df/d46/a00664_source.html">ParamInfo.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../da/d5b/a00905.html">MainBMP</a></li><li class="navelem"><a class="el" href="../../de/d45/a00175.html">PointSourceLocations</a></li>
-    <li class="footer">Generated on Fri Jan 19 2018 06:56:16 for SEIMS by
+    <li class="navelem"><a class="el" href="../../de/d45/a00175.html">ParamInfo</a></li>
+    <li class="footer">Generated on Tue Mar 27 2018 10:11:03 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
