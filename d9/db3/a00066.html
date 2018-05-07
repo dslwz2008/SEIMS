@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: clsReach Class Reference</title>
+<title>SEIMS: seims.preprocess.db_import_stream_parameters.ImportReaches2Mongo Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -103,7 +103,7 @@ $(document).ready(function(){initNavTree('d9/db3/a00066.html','../../');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -114,76 +114,185 @@ $(document).ready(function(){initNavTree('d9/db3/a00066.html','../../');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
-<a href="../../d0/d02/a01119.html">List of all members</a>  </div>
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="../../d6/d0d/a01091.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">clsReach Class Reference<div class="ingroups"><a class="el" href="../../d6/dcd/a01023.html">Data</a></div></div>  </div>
+<div class="title">seims.preprocess.db_import_stream_parameters.ImportReaches2Mongo Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Class to store reach related parameters from REACHES table.  
- <a href="../../d9/db3/a00066.html#details">More...</a></p>
-
-<p><code>#include &lt;<a class="el" href="../../d1/daa/a00638_source.html">clsReach.h</a>&gt;</code></p>
-
-<p>Inherits DefaultConstructor.</p>
+<p>Inherits object, and object.</p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a51b05587f1c516f95467c888e38b3553"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a51b05587f1c516f95467c888e38b3553"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db3/a00066.html#a51b05587f1c516f95467c888e38b3553">clsReach</a> (const bson_t *&amp;bsonTab)</td></tr>
-<tr class="memdesc:a51b05587f1c516f95467c888e38b3553"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. <br/></td></tr>
-<tr class="separator:a51b05587f1c516f95467c888e38b3553"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad31cf639ea376c52371f6953ed80d79"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db3/a00066.html#aad31cf639ea376c52371f6953ed80d79">Get</a> (const string &amp;key)</td></tr>
-<tr class="memdesc:aad31cf639ea376c52371f6953ed80d79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="#aad31cf639ea376c52371f6953ed80d79">More...</a><br/></td></tr>
-<tr class="separator:aad31cf639ea376c52371f6953ed80d79"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56f1475a829b221295d87fd5b4cf5559"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a56f1475a829b221295d87fd5b4cf5559"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db3/a00066.html#a56f1475a829b221295d87fd5b4cf5559">GetGroupIndex</a> (const string &amp;method, int size)</td></tr>
-<tr class="memdesc:a56f1475a829b221295d87fd5b4cf5559"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get group index. <br/></td></tr>
-<tr class="separator:a56f1475a829b221295d87fd5b4cf5559"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeda42e4295698c4572b7b951700b28e3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeda42e4295698c4572b7b951700b28e3"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db3/a00066.html#aeda42e4295698c4572b7b951700b28e3">Set</a> (const string &amp;key, float value)</td></tr>
-<tr class="memdesc:aeda42e4295698c4572b7b951700b28e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set parameters by name. <br/></td></tr>
-<tr class="separator:aeda42e4295698c4572b7b951700b28e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:a4a5a4db4e4be836a3759cd2cfca1aa6d"><td class="memItemLeft" align="right" valign="top">map&lt; string, float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db3/a00066.html#a4a5a4db4e4be836a3759cd2cfca1aa6d">m_paramMap</a></td></tr>
-<tr class="separator:a4a5a4db4e4be836a3759cd2cfca1aa6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae73d7d7f3d3418b38ca653d65514251b"><td class="memItemLeft" align="right" valign="top">vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db3/a00066.html#ae73d7d7f3d3418b38ca653d65514251b">m_groupNumber</a></td></tr>
-<tr class="separator:ae73d7d7f3d3418b38ca653d65514251b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeed9cc1b35c5551bd0cf7f4ed1fb0f13"><td class="memItemLeft" align="right" valign="top">map&lt; string, map&lt; int, int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db3/a00066.html#aeed9cc1b35c5551bd0cf7f4ed1fb0f13">m_groupIndex</a></td></tr>
-<tr class="separator:aeed9cc1b35c5551bd0cf7f4ed1fb0f13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:ab06262b15d7522aad9fe685b238d43f4"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db3/a00066.html#ab06262b15d7522aad9fe685b238d43f4">get_subbasin_cell_count</a></td></tr>
+<tr class="separator:ab06262b15d7522aad9fe685b238d43f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae80cc47205593f7d181f0cd22809155a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db3/a00066.html#ae80cc47205593f7d181f0cd22809155a">metis_partition</a></td></tr>
+<tr class="separator:ae80cc47205593f7d181f0cd22809155a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f20f3b4bd339484a5df0a804bc85944"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db3/a00066.html#a0f20f3b4bd339484a5df0a804bc85944">read_reach_downstream_info</a></td></tr>
+<tr class="separator:a0f20f3b4bd339484a5df0a804bc85944"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8aaf70d2faa8f9778355638a37a8e997"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db3/a00066.html#a8aaf70d2faa8f9778355638a37a8e997">construct_downup_order</a></td></tr>
+<tr class="separator:a8aaf70d2faa8f9778355638a37a8e997"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23dd4674047f45484bbc859295bd4d78"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db3/a00066.html#a23dd4674047f45484bbc859295bd4d78">add_group_field</a></td></tr>
+<tr class="separator:a23dd4674047f45484bbc859295bd4d78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f03a76c9b339cf18e65e908d1fefc9f"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db3/a00066.html#a8f03a76c9b339cf18e65e908d1fefc9f">generate_reach_table</a></td></tr>
+<tr class="separator:a8f03a76c9b339cf18e65e908d1fefc9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c2d0b848b24d6d4e60216baa50ef95f"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db3/a00066.html#a7c2d0b848b24d6d4e60216baa50ef95f">import_reach_info</a></td></tr>
+<tr class="separator:a7c2d0b848b24d6d4e60216baa50ef95f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab06262b15d7522aad9fe685b238d43f4"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db3/a00066.html#ab06262b15d7522aad9fe685b238d43f4">get_subbasin_cell_count</a></td></tr>
+<tr class="separator:ab06262b15d7522aad9fe685b238d43f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae80cc47205593f7d181f0cd22809155a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db3/a00066.html#ae80cc47205593f7d181f0cd22809155a">metis_partition</a></td></tr>
+<tr class="separator:ae80cc47205593f7d181f0cd22809155a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f20f3b4bd339484a5df0a804bc85944"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db3/a00066.html#a0f20f3b4bd339484a5df0a804bc85944">read_reach_downstream_info</a></td></tr>
+<tr class="separator:a0f20f3b4bd339484a5df0a804bc85944"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8aaf70d2faa8f9778355638a37a8e997"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db3/a00066.html#a8aaf70d2faa8f9778355638a37a8e997">construct_downup_order</a></td></tr>
+<tr class="separator:a8aaf70d2faa8f9778355638a37a8e997"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23dd4674047f45484bbc859295bd4d78"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db3/a00066.html#a23dd4674047f45484bbc859295bd4d78">add_group_field</a></td></tr>
+<tr class="separator:a23dd4674047f45484bbc859295bd4d78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f03a76c9b339cf18e65e908d1fefc9f"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db3/a00066.html#a8f03a76c9b339cf18e65e908d1fefc9f">generate_reach_table</a></td></tr>
+<tr class="separator:a8f03a76c9b339cf18e65e908d1fefc9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c2d0b848b24d6d4e60216baa50ef95f"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db3/a00066.html#a7c2d0b848b24d6d4e60216baa50ef95f">import_reach_info</a></td></tr>
+<tr class="separator:a7c2d0b848b24d6d4e60216baa50ef95f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Class to store reach related parameters from REACHES table. </p>
-
-<p>Definition at line <a class="el" href="../../d1/daa/a00638_source.html#l00024">24</a> of file <a class="el" href="../../d1/daa/a00638_source.html">clsReach.h</a>.</p>
+<div class="textblock"><pre class="fragment">Import reaches related parameters to MongoDB.</pre> 
+<p>Definition at line <a class="el" href="../../d6/d7f/a00287_source.html#l00030">30</a> of file <a class="el" href="../../d6/d7f/a00287_source.html">db_import_stream_parameters.py</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="aad31cf639ea376c52371f6953ed80d79"></a>
+<a class="anchor" id="a23dd4674047f45484bbc859295bd4d78"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">float clsReach::Get </td>
+          <td class="memname">def seims.preprocess.db_import_stream_parameters.ImportReaches2Mongo.add_group_field </td>
           <td>(</td>
-          <td class="paramtype">const string &amp;&#160;</td>
-          <td class="paramname"><em>key</em></td><td>)</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>shp_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>subbasin_field_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>group_metis_dict</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">add group information to subbasin ESRI shapefile
+
+Args:
+    shp_file: Subbasin Shapefile
+    subbasin_field_name: field name of subbasin
+    group_metis_dict: returned by func`metis_partition`
+</pre> 
+<p>Definition at line <a class="el" href="../../d6/d7f/a00287_source.html#l00306">306</a> of file <a class="el" href="../../d6/d7f/a00287_source.html">db_import_stream_parameters.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a23dd4674047f45484bbc859295bd4d78"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.db_import_stream_parameters.ImportReaches2Mongo.add_group_field </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>shp_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>subbasin_field_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>group_metis_dict</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">add group information to subbasin ESRI shapefile
+
+Args:
+    shp_file: Subbasin Shapefile
+    subbasin_field_name: field name of subbasin
+    group_metis_dict: returned by func`metis_partition`
+</pre> 
+<p>Definition at line <a class="el" href="../../da/ddc/a00288_source.html#l00306">306</a> of file <a class="el" href="../../da/ddc/a00288_source.html">db_import_stream_parameters.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/db3/a00066_a23dd4674047f45484bbc859295bd4d78_cgraph.png" border="0" usemap="#d9/db3/a00066_a23dd4674047f45484bbc859295bd4d78_cgraph" alt=""/></div>
+<map name="d9/db3/a00066_a23dd4674047f45484bbc859295bd4d78_cgraph" id="d9/db3/a00066_a23dd4674047f45484bbc859295bd4d78_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a8aaf70d2faa8f9778355638a37a8e997"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.db_import_stream_parameters.ImportReaches2Mongo.construct_downup_order </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>g</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-
-<p>Destructor. </p>
-<p>Get parameters by name </p>
-
-<p>Definition at line <a class="el" href="../../de/dbb/a00637_source.html#l00054">54</a> of file <a class="el" href="../../de/dbb/a00637_source.html">clsReach.cpp</a>.</p>
+<pre class="fragment">Returns:
+    downstream_up_order_dic: from outlet up stream dict
+    upstream_down_order_dic: from source down stream dict
+</pre> 
+<p>Definition at line <a class="el" href="../../d6/d7f/a00287_source.html#l00250">250</a> of file <a class="el" href="../../d6/d7f/a00287_source.html">db_import_stream_parameters.py</a>.</p>
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="aeed9cc1b35c5551bd0cf7f4ed1fb0f13"></a>
+<a class="anchor" id="a8aaf70d2faa8f9778355638a37a8e997"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -191,22 +300,37 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">map&lt;string, map&lt;int, int&gt; &gt; clsReach::m_groupIndex</td>
+          <td class="memname">def seims.preprocess.db_import_stream_parameters.ImportReaches2Mongo.construct_downup_order </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>g</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Group index if each group number and group method, e.g., {'KMETIS': {1: 0, 2: 1, 3: 1, 8: 2, 16: 15}, 'PMETIS': {...}} </p>
+<pre class="fragment">Returns:
+    downstream_up_order_dic: from outlet up stream dict
+    upstream_down_order_dic: from source down stream dict
+</pre> 
+<p>Definition at line <a class="el" href="../../da/ddc/a00288_source.html#l00250">250</a> of file <a class="el" href="../../da/ddc/a00288_source.html">db_import_stream_parameters.py</a>.</p>
 
-<p>Definition at line <a class="el" href="../../d1/daa/a00638_source.html#l00056">56</a> of file <a class="el" href="../../d1/daa/a00638_source.html">clsReach.h</a>.</p>
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/db3/a00066_a8aaf70d2faa8f9778355638a37a8e997_cgraph.png" border="0" usemap="#d9/db3/a00066_a8aaf70d2faa8f9778355638a37a8e997_cgraph" alt=""/></div>
+<map name="d9/db3/a00066_a8aaf70d2faa8f9778355638a37a8e997_cgraph" id="d9/db3/a00066_a8aaf70d2faa8f9778355638a37a8e997_cgraph">
+</map>
+</div>
+</p>
 
 </div>
 </div>
-<a class="anchor" id="ae73d7d7f3d3418b38ca653d65514251b"></a>
+<a class="anchor" id="a8f03a76c9b339cf18e65e908d1fefc9f"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -214,22 +338,40 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt;int&gt; clsReach::m_groupNumber</td>
+          <td class="memname">def seims.preprocess.db_import_stream_parameters.ImportReaches2Mongo.generate_reach_table </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>cfg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>maindb</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Group numbers, e.g., [1, 2, 3, 8, 16] </p>
+<pre class="fragment">Generate reaches table and import to MongoDB
 
-<p>Definition at line <a class="el" href="../../d1/daa/a00638_source.html#l00051">51</a> of file <a class="el" href="../../d1/daa/a00638_source.html">clsReach.h</a>.</p>
+Args:
+    cfg: configuration object
+    maindb: database object of MongoDB
+</pre> 
+<p>Definition at line <a class="el" href="../../d6/d7f/a00287_source.html#l00359">359</a> of file <a class="el" href="../../d6/d7f/a00287_source.html">db_import_stream_parameters.py</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a4a5a4db4e4be836a3759cd2cfca1aa6d"></a>
+<a class="anchor" id="a8f03a76c9b339cf18e65e908d1fefc9f"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -237,32 +379,504 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">map&lt;string, float&gt; clsReach::m_paramMap</td>
+          <td class="memname">def seims.preprocess.db_import_stream_parameters.ImportReaches2Mongo.generate_reach_table </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>cfg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>maindb</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Map container to store parameters key: parameter name value: parameter value </p>
+<pre class="fragment">Generate reaches table and import to MongoDB
 
-<p>Definition at line <a class="el" href="../../d1/daa/a00638_source.html#l00047">47</a> of file <a class="el" href="../../d1/daa/a00638_source.html">clsReach.h</a>.</p>
+Args:
+    cfg: configuration object
+    maindb: database object of MongoDB
+</pre> 
+<p>Definition at line <a class="el" href="../../da/ddc/a00288_source.html#l00359">359</a> of file <a class="el" href="../../da/ddc/a00288_source.html">db_import_stream_parameters.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/db3/a00066_a8f03a76c9b339cf18e65e908d1fefc9f_cgraph.png" border="0" usemap="#d9/db3/a00066_a8f03a76c9b339cf18e65e908d1fefc9f_cgraph" alt=""/></div>
+<map name="d9/db3/a00066_a8f03a76c9b339cf18e65e908d1fefc9f_cgraph" id="d9/db3/a00066_a8f03a76c9b339cf18e65e908d1fefc9f_cgraph">
+</map>
+</div>
+</p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
-<li>seims/src/seims_main/base/data/<a class="el" href="../../d1/daa/a00638_source.html">clsReach.h</a></li>
-<li>seims/src/seims_main/base/data/<a class="el" href="../../de/dbb/a00637_source.html">clsReach.cpp</a></li>
+<a class="anchor" id="ab06262b15d7522aad9fe685b238d43f4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.db_import_stream_parameters.ImportReaches2Mongo.get_subbasin_cell_count </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>subbsn_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>subdict</em> = <code>None</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Get cell number of each subbasin.
+Args:
+    subbsn_file: subbasin raster file.
+    subdict: default is None
+
+Returns:
+    subbasin cell count dict and cell width
+</pre> 
+<p>Definition at line <a class="el" href="../../d6/d7f/a00287_source.html#l00085">85</a> of file <a class="el" href="../../d6/d7f/a00287_source.html">db_import_stream_parameters.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab06262b15d7522aad9fe685b238d43f4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.db_import_stream_parameters.ImportReaches2Mongo.get_subbasin_cell_count </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>subbsn_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>subdict</em> = <code>None</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Get cell number of each subbasin.
+Args:
+    subbsn_file: subbasin raster file.
+    subdict: default is None
+
+Returns:
+    subbasin cell count dict and cell width
+</pre> 
+<p>Definition at line <a class="el" href="../../da/ddc/a00288_source.html#l00085">85</a> of file <a class="el" href="../../da/ddc/a00288_source.html">db_import_stream_parameters.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/db3/a00066_ab06262b15d7522aad9fe685b238d43f4_cgraph.png" border="0" usemap="#d9/db3/a00066_ab06262b15d7522aad9fe685b238d43f4_cgraph" alt=""/></div>
+<map name="d9/db3/a00066_ab06262b15d7522aad9fe685b238d43f4_cgraph" id="d9/db3/a00066_ab06262b15d7522aad9fe685b238d43f4_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a7c2d0b848b24d6d4e60216baa50ef95f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.db_import_stream_parameters.ImportReaches2Mongo.import_reach_info </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>maindb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>rch</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>updown</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>downup</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>metis</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">import reach info</pre> 
+<p>Definition at line <a class="el" href="../../da/ddc/a00288_source.html#l00397">397</a> of file <a class="el" href="../../da/ddc/a00288_source.html">db_import_stream_parameters.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/db3/a00066_a7c2d0b848b24d6d4e60216baa50ef95f_cgraph.png" border="0" usemap="#d9/db3/a00066_a7c2d0b848b24d6d4e60216baa50ef95f_cgraph" alt=""/></div>
+<map name="d9/db3/a00066_a7c2d0b848b24d6d4e60216baa50ef95f_cgraph" id="d9/db3/a00066_a7c2d0b848b24d6d4e60216baa50ef95f_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a7c2d0b848b24d6d4e60216baa50ef95f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.db_import_stream_parameters.ImportReaches2Mongo.import_reach_info </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>maindb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>rch</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>updown</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>downup</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>metis</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">import reach info</pre> 
+<p>Definition at line <a class="el" href="../../d6/d7f/a00287_source.html#l00397">397</a> of file <a class="el" href="../../d6/d7f/a00287_source.html">db_import_stream_parameters.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae80cc47205593f7d181f0cd22809155a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.db_import_stream_parameters.ImportReaches2Mongo.metis_partition </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>weight</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>wp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>bin_dir</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Partition subbasins into multiple groups by METIS
+
+Args:
+    g: `NetworkX.DiGraph` object
+    weight: weight of each node, e.g., area of subbasin, {subbasinID: weight}
+    wp: output directory
+    bin_dir: directory of METIS package
+Returns:
+    group_dict: {subbasinID: {'group': group_number_list,
+                      'kmetis': group_ids_list_by_kmetis,
+                      'pmetis': group_ids_list_by_pmetis}
+        }
+</pre> 
+<p>Definition at line <a class="el" href="../../d6/d7f/a00287_source.html#l00136">136</a> of file <a class="el" href="../../d6/d7f/a00287_source.html">db_import_stream_parameters.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae80cc47205593f7d181f0cd22809155a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.db_import_stream_parameters.ImportReaches2Mongo.metis_partition </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>weight</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>wp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>bin_dir</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Partition subbasins into multiple groups by METIS
+
+Args:
+    g: `NetworkX.DiGraph` object
+    weight: weight of each node, e.g., area of subbasin, {subbasinID: weight}
+    wp: output directory
+    bin_dir: directory of METIS package
+Returns:
+    group_dict: {subbasinID: {'group': group_number_list,
+                      'kmetis': group_ids_list_by_kmetis,
+                      'pmetis': group_ids_list_by_pmetis}
+        }
+</pre> 
+<p>Definition at line <a class="el" href="../../da/ddc/a00288_source.html#l00136">136</a> of file <a class="el" href="../../da/ddc/a00288_source.html">db_import_stream_parameters.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/db3/a00066_ae80cc47205593f7d181f0cd22809155a_cgraph.png" border="0" usemap="#d9/db3/a00066_ae80cc47205593f7d181f0cd22809155a_cgraph" alt=""/></div>
+<map name="d9/db3/a00066_ae80cc47205593f7d181f0cd22809155a_cgraph" id="d9/db3/a00066_ae80cc47205593f7d181f0cd22809155a_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a0f20f3b4bd339484a5df0a804bc85944"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.db_import_stream_parameters.ImportReaches2Mongo.read_reach_downstream_info </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>reach_shp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>is_taudem</em> = <code>True</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Read informations of subbasin.
+Args:
+    reach_shp: reach ESRI shapefile.
+    is_taudem: is TauDEM or not, true is default.
+
+Returns:
+    rch_dict: {stream ID: {'downstream': downstreamID,
+                   'depth': depth value,
+                   'slope': slope value,
+                   'width': width value,
+                   'length': length value}
+                  }
+</pre> 
+<p>Definition at line <a class="el" href="../../d6/d7f/a00287_source.html#l00204">204</a> of file <a class="el" href="../../d6/d7f/a00287_source.html">db_import_stream_parameters.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0f20f3b4bd339484a5df0a804bc85944"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.preprocess.db_import_stream_parameters.ImportReaches2Mongo.read_reach_downstream_info </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>reach_shp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>is_taudem</em> = <code>True</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Read informations of subbasin.
+Args:
+    reach_shp: reach ESRI shapefile.
+    is_taudem: is TauDEM or not, true is default.
+
+Returns:
+    rch_dict: {stream ID: {'downstream': downstreamID,
+                   'depth': depth value,
+                   'slope': slope value,
+                   'width': width value,
+                   'length': length value}
+                  }
+</pre> 
+<p>Definition at line <a class="el" href="../../da/ddc/a00288_source.html#l00204">204</a> of file <a class="el" href="../../da/ddc/a00288_source.html">db_import_stream_parameters.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/db3/a00066_a0f20f3b4bd339484a5df0a804bc85944_cgraph.png" border="0" usemap="#d9/db3/a00066_a0f20f3b4bd339484a5df0a804bc85944_cgraph" alt=""/></div>
+<map name="d9/db3/a00066_a0f20f3b4bd339484a5df0a804bc85944_cgraph" id="d9/db3/a00066_a0f20f3b4bd339484a5df0a804bc85944_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>seims/preprocess/<a class="el" href="../../d6/d7f/a00287_source.html">db_import_stream_parameters.py</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../d9/db3/a00066.html">clsReach</a></li>
-    <li class="footer">Generated on Tue Mar 27 2018 10:11:02 for SEIMS by
+    <li class="navelem"><b>seims</b></li><li class="navelem"><b>preprocess</b></li><li class="navelem"><b>db_import_stream_parameters</b></li><li class="navelem"><a class="el" href="../../d9/db3/a00066.html">ImportReaches2Mongo</a></li>
+    <li class="footer">Generated on Mon May 7 2018 13:47:07 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

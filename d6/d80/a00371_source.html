@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: buildRel/googletest-src/googletest/include/gtest/internal/custom/gtest-printers.h Source File</title>
+<title>SEIMS: seims/src/combine_raster/main.cpp Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -101,7 +101,7 @@ $(document).ready(function(){initNavTree('d6/d80/a00371_source.html','../../');}
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -112,58 +112,117 @@ $(document).ready(function(){initNavTree('d6/d80/a00371_source.html','../../');}
 
 <div class="header">
   <div class="headertitle">
-<div class="title">gtest-printers.h</div>  </div>
+<div class="title">main.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// Copyright 2015, Google Inc.</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// All rights reserved.</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// Redistribution and use in source and binary forms, with or without</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// modification, are permitted provided that the following conditions are</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// met:</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">//     * Redistributions of source code must retain the above copyright</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">// notice, this list of conditions and the following disclaimer.</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">//     * Redistributions in binary form must reproduce the above</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// copyright notice, this list of conditions and the following disclaimer</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// in the documentation and/or other materials provided with the</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// distribution.</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">//     * Neither the name of Google Inc. nor the names of its</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// contributors may be used to endorse or promote products derived from</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// this software without specific prior written permission.</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">// &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">// LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">// This file provides an injection point for custom printers in a local</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// installation of gTest.</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">// It will be included from gtest-printers.h and the overrides in this file</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">// will be visible to everyone.</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">// See documentation at gtest/gtest-printers.h for details on how to define a</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// custom printer.</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">// ** Custom implementation starts here **</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#ifndef GTEST_INCLUDE_GTEST_INTERNAL_CUSTOM_GTEST_PRINTERS_H_</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define GTEST_INCLUDE_GTEST_INTERNAL_CUSTOM_GTEST_PRINTERS_H_</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#endif  // GTEST_INCLUDE_GTEST_INTERNAL_CUSTOM_GTEST_PRINTERS_H_</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#if (defined _DEBUG) &amp;&amp; (defined _MSC_VER) &amp;&amp; (defined VLD)</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;vld.h&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* Run Visual Leak Detector during Debug */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;CombineRaster.h&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keywordtype">void</span> Usage(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; error_msg = <span class="stringliteral">&quot;&quot;</span>) {</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot; Usage: combine_raster -var &lt;variable name&gt; -n &lt;subbasin count&gt; &quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;            <span class="stringliteral">&quot;[-file &lt;dirpath&gt; &lt;suffix&gt;] &quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;            <span class="stringliteral">&quot;[-mongo &lt;ip&gt; &lt;port&gt; &lt;database name&gt; &lt;gridfs name&gt; [dirpath]]&quot;</span> &lt;&lt; endl &lt;&lt; endl;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;Example.1. combine_raster -var lai -n 5 -file d:/test/split_rasters tif&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;Example.2. combine_raster -var lai -n 5 -mongo 127.0.0.1 27017 &quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            <span class="stringliteral">&quot;model_dianbu2_30m_demo OUTPUT d:/test/combined_raster&quot;</span> &lt;&lt; endl &lt;&lt; endl;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordflow">if</span> (!error_msg.empty()) {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;FAILURE: &quot;</span> &lt;&lt; error_msg &lt;&lt; endl;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    }</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    exit(1);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv) {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#ifdef USE_GDAL</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor"></span>    GDALAllRegister();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor"></span>    <span class="keywordtype">int</span> n_subbasins = -1;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">string</span> s_var;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">bool</span> from_file = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">string</span> folder;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">string</span> suffix;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">bool</span> from_mongo = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">string</span> mongodb_ip;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">int</span> port = -1;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">string</span> db_name;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">string</span> gridfs_name;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">if</span> (argc &lt; 7) {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        Usage(<span class="stringliteral">&quot;Too few arguments to run this program.&quot;</span>);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">int</span> i = 1;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">char</span>* end = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    errno = 0;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">while</span> (argc &gt; i) {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">if</span> (StringMatch(argv[i], <span class="stringliteral">&quot;-var&quot;</span>)) {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            i++;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keywordflow">if</span> (argc &gt; i) {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                s_var = argv[i];</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                i++;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            } <span class="keywordflow">else</span> { Usage(<span class="stringliteral">&quot;No argument followed &#39;-var&#39;!&quot;</span>); }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (StringMatch(argv[i], <span class="stringliteral">&quot;-n&quot;</span>)) {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            i++;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keywordflow">if</span> (argc &gt; i) {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                n_subbasins = strtol(argv[i], &amp;end, 10);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                i++;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            } <span class="keywordflow">else</span> { Usage(<span class="stringliteral">&quot;No argument followed &#39;-n&#39;!&quot;</span>); }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (StringMatch(argv[i], <span class="stringliteral">&quot;-file&quot;</span>)) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">if</span> (argc &lt; i + 2) {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                Usage(<span class="stringliteral">&quot;Two arguments are required followed &#39;-file&#39;!&quot;</span>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            from_file = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            folder = argv[i + 1];</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            suffix = argv[i + 2];</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            i += 3;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (StringMatch(argv[i], <span class="stringliteral">&quot;-mongo&quot;</span>)) {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keywordflow">if</span> (argc &lt; i + 4) {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <span class="comment">// at least 4 arguments</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                Usage(<span class="stringliteral">&quot;Two arguments are required followed &#39;-mongo&#39;!&quot;</span>);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            from_mongo = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            mongodb_ip = argv[i + 1];</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="../../d0/df1/a00685.html#aab46be883ceebb9111d1994c54136fc8">IsIpAddress</a>(mongodb_ip.c_str())) {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                Usage(<span class="stringliteral">&quot;The input MongoDB Host is not a valid IP address!&quot;</span>);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            port = strtol(argv[i + 2], &amp;end, 10);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            db_name = argv[i + 3];</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            gridfs_name = argv[i + 4];</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            i += 5;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="keywordflow">if</span> (argc &gt;= i &amp;&amp; argv[i][0] != <span class="charliteral">&#39;-&#39;</span>) {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <span class="comment">// folder is specified</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                folder = argv[i];</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                i++;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">if</span> (n_subbasins &lt; 0) {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        Usage(<span class="stringliteral">&quot;Subbasin count must be greater than 0!&quot;</span>);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">if</span> (from_file) {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        CombineRasterResults(folder, s_var, suffix, n_subbasins);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">if</span> (from_mongo) {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        MongoClient* client = MongoClient::Init(mongodb_ip.c_str(), port);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == client) {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            Usage(<span class="stringliteral">&quot;Unable to connect to MongoDB!&quot;</span>);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        MongoGridFs* gfs = <span class="keyword">new</span> MongoGridFs(client-&gt;GetGridFs(db_name, gridfs_name));</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        CombineRasterResultsMongo(gfs, s_var, n_subbasins, folder);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="comment">// clean up</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keyword">delete</span> gfs;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keyword">delete</span> client;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
+<div class="ttc" id="a00685_html_aab46be883ceebb9111d1994c54136fc8"><div class="ttname"><a href="../../d0/df1/a00685.html#aab46be883ceebb9111d1994c54136fc8">ccgl::IsIpAddress</a></div><div class="ttdeci">bool IsIpAddress(const char *ip)</div><div class="ttdoc">Check if the IP address is valid. </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d23/a00326_source.html#l00046">basic.cpp:46</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_cd802f715eac8b5afa0214b2422ad557.html">buildRel</a></li><li class="navelem"><a class="el" href="../../dir_a4883baec63d05837a3a0400dc0258de.html">googletest-src</a></li><li class="navelem"><a class="el" href="../../dir_df554225d4ecad8376ecb24f94d95425.html">googletest</a></li><li class="navelem"><a class="el" href="../../dir_51572e58cfbc9f7aa926ef9c72a0ea12.html">include</a></li><li class="navelem"><a class="el" href="../../dir_1451cf2c3496ec9769038d5f0cdb8f67.html">gtest</a></li><li class="navelem"><a class="el" href="../../dir_3883ee6e9ec1c8dfa28570f03007d92c.html">internal</a></li><li class="navelem"><a class="el" href="../../dir_3ae8652e792e1a73c9eca0d2a33ebcbb.html">custom</a></li><li class="navelem"><b>gtest-printers.h</b></li>
-    <li class="footer">Generated on Tue Mar 27 2018 10:10:55 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_4879c05926c8624a2b296461fbfee665.html">combine_raster</a></li><li class="navelem"><b>main.cpp</b></li>
+    <li class="footer">Generated on Mon May 7 2018 13:47:04 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

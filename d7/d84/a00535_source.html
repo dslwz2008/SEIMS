@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims_linux_gcc48/seims/run_seims.py Source File</title>
+<title>SEIMS: seims/src/seims_main/modules/climate/ITP/Interpolate.cpp Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -101,7 +101,7 @@ $(document).ready(function(){initNavTree('d7/d84/a00535_source.html','../../');}
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -112,143 +112,200 @@ $(document).ready(function(){initNavTree('d7/d84/a00535_source.html','../../');}
 
 <div class="header">
   <div class="headertitle">
-<div class="title">run_seims.py</div>  </div>
+<div class="title">Interpolate.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">#! /usr/bin/env python</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"># -*- coding: utf-8 -*-</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="stringliteral">&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="stringliteral">  Run SEIMS model.</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="stringliteral">  Author: Liangjun Zhu</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="stringliteral">  Date: 2017-12-7</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="stringliteral">&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">import</span> os</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">from</span> subprocess <span class="keyword">import</span> CalledProcessError</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">from</span> <a class="code" href="../../d7/db6/a00940.html">pygeoc.utils</a> <span class="keyword">import</span> UtilClass</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">from</span> postprocess.load_mongodb <span class="keyword">import</span> ReadModelData</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">class </span>MainSEIMS(object):</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="stringliteral">    Main entrance to SEIMS model.</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="stringliteral">    &quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">def </span>__init__(self, bin_dir, model_dir, nthread=4, lyrmtd=0,</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                 ip=<span class="stringliteral">&#39;127.0.0.1&#39;</span>, port=27017, sceid=-1, caliid=-1,</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                 ver=<span class="stringliteral">&#39;OMP&#39;</span>):</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordflow">if</span> ver == <span class="stringliteral">&#39;MPI&#39;</span>:  <span class="comment"># TODO, MPI version is currently unusable.</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            self.seims_exec = bin_dir + os.sep + <span class="stringliteral">&#39;seims_mpi&#39;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">else</span>:</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            self.seims_exec = bin_dir + os.sep + <span class="stringliteral">&#39;seims_omp&#39;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        self.model_dir = os.path.abspath(model_dir)</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        self.nthread = nthread</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        self.lyrmtd = lyrmtd</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        self.host = ip</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        self.port = port</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        self.scenario_id = sceid</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        self.calibration_id = caliid</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        self.version = ver</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        self.run_success = <span class="keyword">False</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        self.cmd = self.Command</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        self.output_dir = self.OutputDirectory</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="comment"># read model data from MongoDB</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        self.spatialdb_name = self.model_dir.split(os.sep)[-1]</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        self.outlet_id = self.OutletID</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        self.start_time, self.end_time = self.SimulatedPeriod</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    @property</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">def </span>OutputDirectory(self):</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        self.output_dir = self.model_dir + os.sep + <span class="stringliteral">&#39;OUTPUT&#39;</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">if</span> self.scenario_id &gt;= 0:</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            self.output_dir += str(self.scenario_id)</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">if</span> self.calibration_id &gt;= 0:</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            self.output_dir += <span class="stringliteral">&#39;-%d&#39;</span> % self.calibration_id</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">return</span> self.output_dir</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    @property</div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="../../d2/df5/a00137.html#a99fb2121e3b6b6d9e9fdd6969a04029f">   54</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d2/df5/a00137.html#a99fb2121e3b6b6d9e9fdd6969a04029f">Command</a>(self):</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Concatenate command to run SEIMS.&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        self.<a class="code" href="../../d2/df5/a00137.html#a996581f5888d8fd245819f3b13c84bf5">cmd</a> = [self.<a class="code" href="../../d2/df5/a00137.html#adbb55d98990c7b0ae76a817d8257845f">seims_exec</a>,</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                    <span class="stringliteral">&#39;-wp&#39;</span>, self.<a class="code" href="../../d2/df5/a00137.html#ad36c0cd84d27f8e014220001bf49ef62">model_dir</a>, <span class="stringliteral">&#39;-thread&#39;</span>, str(self.<a class="code" href="../../d2/df5/a00137.html#a863bec43c74fd5a5caa87e1ec99ef8f9">nthread</a>),</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                    <span class="stringliteral">&#39;-lyr&#39;</span>, str(self.<a class="code" href="../../d2/df5/a00137.html#a2bf0bd9c9b448f8cc2f0578335feb320">lyrmtd</a>), <span class="stringliteral">&#39;-host&#39;</span>, self.<a class="code" href="../../d2/df5/a00137.html#af9848b5f1c5fe6568d59a59f8025651d">host</a>, <span class="stringliteral">&#39;-port&#39;</span>, self.<a class="code" href="../../d2/df5/a00137.html#aac46a4ce834fb795a9057ab77f4681cf">port</a>]</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">if</span> self.<a class="code" href="../../d2/df5/a00137.html#a981a2d53766b9c8eadbd3b8548b70ec2">scenario_id</a> &gt;= 0:</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            self.cmd.append(<span class="stringliteral">&#39;-sce&#39;</span>)</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            self.cmd.append(str(self.<a class="code" href="../../d2/df5/a00137.html#a981a2d53766b9c8eadbd3b8548b70ec2">scenario_id</a>))</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">if</span> self.<a class="code" href="../../d2/df5/a00137.html#a68e9b0ddd24e28959d76a3284d9abb25">calibration_id</a> &gt;= 0:</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            self.cmd.append(<span class="stringliteral">&#39;-cali&#39;</span>)</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            self.cmd.append(str(self.<a class="code" href="../../d2/df5/a00137.html#a68e9b0ddd24e28959d76a3284d9abb25">calibration_id</a>))</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">return</span> self.<a class="code" href="../../d2/df5/a00137.html#a996581f5888d8fd245819f3b13c84bf5">cmd</a></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;Interpolate.h&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;utils_time.h&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;text.h&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;Interpolate::Interpolate() : m_dataType(0), m_nStatioins(-1),</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;                             m_stationData(nullptr), m_nCells(-1), m_itpWeights(nullptr), m_itpVertical(false),</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;                             m_hStations(nullptr), m_dem(nullptr), m_lapseRate(nullptr), m_month(-1),</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;                             m_itpOutput(nullptr) {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;}</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="../../db/df8/a00076.html#ad4616b28bb97d3b2bfcabc6b7db2dac0">   12</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../db/df8/a00076.html#ad4616b28bb97d3b2bfcabc6b7db2dac0">Interpolate::SetClimateDataType</a>(<span class="keyword">const</span> <span class="keywordtype">float</span> value) {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordflow">if</span> (FloatEqual(value, 1.0f)) {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        m_dataType = 0; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (FloatEqual(value, 2.0f) || FloatEqual(value, 3.0f) || FloatEqual(value, 4.0f)) {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        m_dataType = 1; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (FloatEqual(value, 5.0f)) {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        m_dataType = 2; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (FloatEqual(value, 6.0f) || FloatEqual(value, 7.0f) || FloatEqual(value, 8.0f)) {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        m_dataType = 3; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    }</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;Interpolate::~Interpolate() {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../db/df8/a00076.html#a6caf8deb1253dbf739138450e94e3900">m_itpOutput</a> != <span class="keyword">nullptr</span>) Release1DArray(<a class="code" href="../../db/df8/a00076.html#a6caf8deb1253dbf739138450e94e3900">m_itpOutput</a>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="../../db/df8/a00076.html#a8ff396355a4c1c4f2210db85d80a836e">   28</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../db/df8/a00076.html#a8ff396355a4c1c4f2210db85d80a836e">Interpolate::Execute</a>() {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    CheckInputData();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == <a class="code" href="../../db/df8/a00076.html#a6caf8deb1253dbf739138450e94e3900">m_itpOutput</a>) { Initialize1DArray(<a class="code" href="../../db/df8/a00076.html#a73e2591ebe860b5e8139d956a2cddaea">m_nCells</a>, <a class="code" href="../../db/df8/a00076.html#a6caf8deb1253dbf739138450e94e3900">m_itpOutput</a>, 0.f); }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">size_t</span> err_count = 0;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#pragma omp parallel for reduction(+: err_count)</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="../../db/df8/a00076.html#a73e2591ebe860b5e8139d956a2cddaea">m_nCells</a>; i++) {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordtype">int</span> index = 0;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordtype">float</span> value = 0.f;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code" href="../../db/df8/a00076.html#a86a18ea4a9b0d20cb4b23572819808c6">m_nStatioins</a>; j++) {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            index = i * m_nStatioins + j;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            value += <a class="code" href="../../db/df8/a00076.html#a5a50ad06a18a93cf96b8e2aacafaf88c">m_stationData</a>[j] * <a class="code" href="../../db/df8/a00076.html#a7dfdeba23a894c51115daa51f661ef4e">m_itpWeights</a>[index];</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordflow">if</span> (value != value) {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                err_count++;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                cout &lt;&lt; <span class="stringliteral">&quot;CELL:&quot;</span> &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot;, Site: &quot;</span> &lt;&lt; j &lt;&lt; <span class="stringliteral">&quot;, Weight: &quot;</span> &lt;&lt; m_itpWeights[index] &lt;&lt;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                        <span class="stringliteral">&quot;, siteData: &quot;</span> &lt;&lt; <a class="code" href="../../db/df8/a00076.html#a5a50ad06a18a93cf96b8e2aacafaf88c">m_stationData</a>[j] &lt;&lt; <span class="stringliteral">&quot;, Value:&quot;</span> &lt;&lt; value &lt;&lt; <span class="stringliteral">&quot;;&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="../../db/df8/a00076.html#aec4bc53389011e95ff504901e96c8b28">m_itpVertical</a>) {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                <span class="keywordtype">float</span> delta = <a class="code" href="../../db/df8/a00076.html#aeae240b941897dd8230f07f3269a4880">m_dem</a>[i] - <a class="code" href="../../db/df8/a00076.html#ab489ea7ca16ae03ef50699b0781a6e82">m_hStations</a>[j];</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <span class="keywordtype">float</span> factor = <a class="code" href="../../db/df8/a00076.html#a4f74c95ec7c646b6d8ddbf96b059e8ac">m_lapseRate</a>[<a class="code" href="../../db/df8/a00076.html#a2b7f5531268aacb4251d2842f6b0863d">m_month</a>][m_dataType];</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <span class="keywordtype">float</span> adjust = m_itpWeights[index] * delta * factor * 0.01f;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                value += adjust;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="../../db/df8/a00076.html#a6caf8deb1253dbf739138450e94e3900">m_itpOutput</a>[i] = value;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">if</span> (err_count &gt; 0) {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../d9/df8/a00096.html">ModelException</a>(MID_ITP, <span class="stringliteral">&quot;Execute&quot;</span>, <span class="stringliteral">&quot;Error occurred in weight data!&quot;</span>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="../../db/df8/a00076.html#ae0a9e6cab5cb6a921658b71a32232b82">   59</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../db/df8/a00076.html#ae0a9e6cab5cb6a921658b71a32232b82">Interpolate::SetDate</a>(<span class="keyword">const</span> time_t date, <span class="keyword">const</span> <span class="keywordtype">int</span> year_idx) {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="../../dd/db2/a00151.html#aabd631c05d3e74aa9970f7415f2f5de7">m_date</a> = date;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="../../dd/db2/a00151.html#addfe4dd5800efd0bb827338daf65d64c">m_yearIdx</a> = year_idx;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">struct </span>tm t;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    utils_time::LocalTime(date, &amp;t);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="../../db/df8/a00076.html#a2b7f5531268aacb4251d2842f6b0863d">m_month</a> = t.tm_mon;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    @property</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">def </span>OutletID(self):</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        read_model = ReadModelData(self.<a class="code" href="../../d2/df5/a00137.html#af9848b5f1c5fe6568d59a59f8025651d">host</a>, self.<a class="code" href="../../d2/df5/a00137.html#aac46a4ce834fb795a9057ab77f4681cf">port</a>, self.<a class="code" href="../../d2/df5/a00137.html#ad9e5b4fe7d6683c8d8a47c33f651284c">spatialdb_name</a>)</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">return</span> read_model.OutletID</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    @property</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keyword">def </span>SimulatedPeriod(self):</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        read_model = ReadModelData(self.<a class="code" href="../../d2/df5/a00137.html#af9848b5f1c5fe6568d59a59f8025651d">host</a>, self.<a class="code" href="../../d2/df5/a00137.html#aac46a4ce834fb795a9057ab77f4681cf">port</a>, self.<a class="code" href="../../d2/df5/a00137.html#ad9e5b4fe7d6683c8d8a47c33f651284c">spatialdb_name</a>)</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">return</span> read_model.SimulationPeriod</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">def </span>ReadOutletObservations(self, vars_list):</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        read_model = ReadModelData(self.<a class="code" href="../../d2/df5/a00137.html#af9848b5f1c5fe6568d59a59f8025651d">host</a>, self.<a class="code" href="../../d2/df5/a00137.html#aac46a4ce834fb795a9057ab77f4681cf">port</a>, self.<a class="code" href="../../d2/df5/a00137.html#ad9e5b4fe7d6683c8d8a47c33f651284c">spatialdb_name</a>)</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">return</span> read_model.Observation(self.<a class="code" href="../../d2/df5/a00137.html#aefdabe5deb91e91432e9d89c01f46a66">outlet_id</a>, vars_list,</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                      self.start_time, self.<a class="code" href="../../d2/df5/a00137.html#a2d0cef56963328f98f0f4e8f2fcef8ce">end_time</a>)</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="../../d2/df5/a00137.html#ada4a0d1f8808bf376d2d8f2450376357">   82</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d2/df5/a00137.html#ada4a0d1f8808bf376d2d8f2450376357">run</a>(self):</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Run SEIMS model&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        UtilClass.rmmkdir(self.<a class="code" href="../../d2/df5/a00137.html#a0f78fbbe8da47e4ac56795c2dbb3b9f2">OutputDirectory</a>)</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">try</span>:</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            UtilClass.run_command(self.<a class="code" href="../../d2/df5/a00137.html#a99fb2121e3b6b6d9e9fdd6969a04029f">Command</a>)</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            self.<a class="code" href="../../d2/df5/a00137.html#a4bfa231cfde15ebf9bad13eebfbc5981">run_success</a> = <span class="keyword">True</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">except</span> CalledProcessError <span class="keywordflow">or</span> Exception:</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            print(<span class="stringliteral">&#39;Run SEIMS model failed!&#39;</span>)</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            self.<a class="code" href="../../d2/df5/a00137.html#a4bfa231cfde15ebf9bad13eebfbc5981">run_success</a> = <span class="keyword">False</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">return</span> self.<a class="code" href="../../d2/df5/a00137.html#a4bfa231cfde15ebf9bad13eebfbc5981">run_success</a></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keywordflow">if</span> __name__ == <span class="stringliteral">&#39;__main__&#39;</span>:</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="comment"># test the picklable of MainSEIMS class.</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keyword">import</span> pickle</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    bindir = <span class="stringliteral">r&#39;D:\compile\bin\seims&#39;</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    modeldir = <span class="stringliteral">r&#39;C:\z_data\ChangTing\seims_models_phd\youwuzhen10m_longterm_model&#39;</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    seimsobj = <a class="code" href="../../d2/df5/a00137.html">MainSEIMS</a>(bindir, modeldir,</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                         nthread=2, lyrmtd=1,</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                         ip=<span class="stringliteral">&#39;127.0.0.1&#39;</span>, port=27017,</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                         sceid=0, caliid=-1)</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    s = pickle.dumps(seimsobj)</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="comment"># print(s)</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    new_s = pickle.loads(s)</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    print(new_s.output_dir)</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    print(new_s.OutletID)</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    print(str(new_s.start_time), str(new_s.end_time))</div>
-<div class="ttc" id="a00137_html_a68e9b0ddd24e28959d76a3284d9abb25"><div class="ttname"><a href="../../d2/df5/a00137.html#a68e9b0ddd24e28959d76a3284d9abb25">seims.run_seims.MainSEIMS.calibration_id</a></div><div class="ttdeci">calibration_id</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d20/a00534_source.html#l00034">run_seims.py:34</a></div></div>
-<div class="ttc" id="a00137_html_a996581f5888d8fd245819f3b13c84bf5"><div class="ttname"><a href="../../d2/df5/a00137.html#a996581f5888d8fd245819f3b13c84bf5">seims.run_seims.MainSEIMS.cmd</a></div><div class="ttdeci">cmd</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d20/a00534_source.html#l00037">run_seims.py:37</a></div></div>
-<div class="ttc" id="a00137_html_af9848b5f1c5fe6568d59a59f8025651d"><div class="ttname"><a href="../../d2/df5/a00137.html#af9848b5f1c5fe6568d59a59f8025651d">seims.run_seims.MainSEIMS.host</a></div><div class="ttdeci">host</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d20/a00534_source.html#l00031">run_seims.py:31</a></div></div>
-<div class="ttc" id="a00137_html_ad36c0cd84d27f8e014220001bf49ef62"><div class="ttname"><a href="../../d2/df5/a00137.html#ad36c0cd84d27f8e014220001bf49ef62">seims.run_seims.MainSEIMS.model_dir</a></div><div class="ttdeci">model_dir</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d20/a00534_source.html#l00028">run_seims.py:28</a></div></div>
-<div class="ttc" id="a00137_html_ada4a0d1f8808bf376d2d8f2450376357"><div class="ttname"><a href="../../d2/df5/a00137.html#ada4a0d1f8808bf376d2d8f2450376357">seims.run_seims.MainSEIMS.run</a></div><div class="ttdeci">def run</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d20/a00534_source.html#l00082">run_seims.py:82</a></div></div>
-<div class="ttc" id="a00137_html_aefdabe5deb91e91432e9d89c01f46a66"><div class="ttname"><a href="../../d2/df5/a00137.html#aefdabe5deb91e91432e9d89c01f46a66">seims.run_seims.MainSEIMS.outlet_id</a></div><div class="ttdeci">outlet_id</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d20/a00534_source.html#l00041">run_seims.py:41</a></div></div>
-<div class="ttc" id="a00137_html_a2d0cef56963328f98f0f4e8f2fcef8ce"><div class="ttname"><a href="../../d2/df5/a00137.html#a2d0cef56963328f98f0f4e8f2fcef8ce">seims.run_seims.MainSEIMS.end_time</a></div><div class="ttdeci">end_time</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d20/a00534_source.html#l00042">run_seims.py:42</a></div></div>
-<div class="ttc" id="a00137_html_ad9e5b4fe7d6683c8d8a47c33f651284c"><div class="ttname"><a href="../../d2/df5/a00137.html#ad9e5b4fe7d6683c8d8a47c33f651284c">seims.run_seims.MainSEIMS.spatialdb_name</a></div><div class="ttdeci">spatialdb_name</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d20/a00534_source.html#l00040">run_seims.py:40</a></div></div>
-<div class="ttc" id="a00137_html_a2bf0bd9c9b448f8cc2f0578335feb320"><div class="ttname"><a href="../../d2/df5/a00137.html#a2bf0bd9c9b448f8cc2f0578335feb320">seims.run_seims.MainSEIMS.lyrmtd</a></div><div class="ttdeci">lyrmtd</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d20/a00534_source.html#l00030">run_seims.py:30</a></div></div>
-<div class="ttc" id="a00137_html_a99fb2121e3b6b6d9e9fdd6969a04029f"><div class="ttname"><a href="../../d2/df5/a00137.html#a99fb2121e3b6b6d9e9fdd6969a04029f">seims.run_seims.MainSEIMS.Command</a></div><div class="ttdeci">def Command</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d20/a00534_source.html#l00054">run_seims.py:54</a></div></div>
-<div class="ttc" id="a00137_html_a0f78fbbe8da47e4ac56795c2dbb3b9f2"><div class="ttname"><a href="../../d2/df5/a00137.html#a0f78fbbe8da47e4ac56795c2dbb3b9f2">seims.run_seims.MainSEIMS.OutputDirectory</a></div><div class="ttdeci">def OutputDirectory</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d20/a00534_source.html#l00045">run_seims.py:45</a></div></div>
-<div class="ttc" id="a00137_html"><div class="ttname"><a href="../../d2/df5/a00137.html">seims.run_seims.MainSEIMS</a></div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d20/a00534_source.html#l00016">run_seims.py:16</a></div></div>
-<div class="ttc" id="a00137_html_adbb55d98990c7b0ae76a817d8257845f"><div class="ttname"><a href="../../d2/df5/a00137.html#adbb55d98990c7b0ae76a817d8257845f">seims.run_seims.MainSEIMS.seims_exec</a></div><div class="ttdeci">seims_exec</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d20/a00534_source.html#l00025">run_seims.py:25</a></div></div>
-<div class="ttc" id="a00940_html"><div class="ttname"><a href="../../d7/db6/a00940.html">utils</a></div></div>
-<div class="ttc" id="a00137_html_aac46a4ce834fb795a9057ab77f4681cf"><div class="ttname"><a href="../../d2/df5/a00137.html#aac46a4ce834fb795a9057ab77f4681cf">seims.run_seims.MainSEIMS.port</a></div><div class="ttdeci">port</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d20/a00534_source.html#l00032">run_seims.py:32</a></div></div>
-<div class="ttc" id="a00137_html_a863bec43c74fd5a5caa87e1ec99ef8f9"><div class="ttname"><a href="../../d2/df5/a00137.html#a863bec43c74fd5a5caa87e1ec99ef8f9">seims.run_seims.MainSEIMS.nthread</a></div><div class="ttdeci">nthread</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d20/a00534_source.html#l00029">run_seims.py:29</a></div></div>
-<div class="ttc" id="a00137_html_a981a2d53766b9c8eadbd3b8548b70ec2"><div class="ttname"><a href="../../d2/df5/a00137.html#a981a2d53766b9c8eadbd3b8548b70ec2">seims.run_seims.MainSEIMS.scenario_id</a></div><div class="ttdeci">scenario_id</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d20/a00534_source.html#l00033">run_seims.py:33</a></div></div>
-<div class="ttc" id="a00137_html_a4bfa231cfde15ebf9bad13eebfbc5981"><div class="ttname"><a href="../../d2/df5/a00137.html#a4bfa231cfde15ebf9bad13eebfbc5981">seims.run_seims.MainSEIMS.run_success</a></div><div class="ttdeci">run_success</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d20/a00534_source.html#l00036">run_seims.py:36</a></div></div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="../../db/df8/a00076.html#a71def51b5b384d1a9f30b26aa78b8371">   67</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../db/df8/a00076.html#a71def51b5b384d1a9f30b26aa78b8371">Interpolate::SetValue</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* key, <span class="keyword">const</span> <span class="keywordtype">float</span> value) {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">string</span> sk(key);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">if</span> (StringMatch(sk, VAR_TSD_DT)) {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <a class="code" href="../../db/df8/a00076.html#ad4616b28bb97d3b2bfcabc6b7db2dac0">SetClimateDataType</a>(value);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (StringMatch(sk, Tag_VerticalInterpolation)) {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <a class="code" href="../../db/df8/a00076.html#aec4bc53389011e95ff504901e96c8b28">m_itpVertical</a> = value &gt; 0;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../d9/df8/a00096.html">ModelException</a>(MID_ITP, <span class="stringliteral">&quot;SetValue&quot;</span>, <span class="stringliteral">&quot;Parameter &quot;</span> + sk + <span class="stringliteral">&quot; does not exist.&quot;</span>);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="../../db/df8/a00076.html#a46a2770a3ed83fe58317553ca4be2637">   78</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../db/df8/a00076.html#a46a2770a3ed83fe58317553ca4be2637">Interpolate::Set2DData</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* key, <span class="keyword">const</span> <span class="keywordtype">int</span> n_rows, <span class="keyword">const</span> <span class="keywordtype">int</span> n_cols, <span class="keywordtype">float</span>** data) {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">string</span> sk(key);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">if</span> (StringMatch(sk, Tag_LapseRate)) {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../db/df8/a00076.html#aec4bc53389011e95ff504901e96c8b28">m_itpVertical</a>) {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="keywordtype">int</span> n_month = 12;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <a class="code" href="../../db/df8/a00076.html#a9396b4712f5a9c45fb6f990bdc688bcc">CheckInputSize</a>(sk, n_rows, n_month);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <a class="code" href="../../db/df8/a00076.html#a4f74c95ec7c646b6d8ddbf96b059e8ac">m_lapseRate</a> = data;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../d9/df8/a00096.html">ModelException</a>(MID_ITP, <span class="stringliteral">&quot;Set2DData&quot;</span>, <span class="stringliteral">&quot;Parameter &quot;</span> + sk + <span class="stringliteral">&quot; does not exist.&quot;</span>);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="../../db/df8/a00076.html#a1fbcb5fc65e6526b3e7cca3faece5475">   91</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../db/df8/a00076.html#a1fbcb5fc65e6526b3e7cca3faece5475">Interpolate::Set1DData</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* key, <span class="keyword">const</span> <span class="keywordtype">int</span> n, <span class="keywordtype">float</span>* data) {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">string</span> sk(key);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">if</span> (StringMatch(sk, Tag_DEM)) {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../db/df8/a00076.html#aec4bc53389011e95ff504901e96c8b28">m_itpVertical</a>) {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <a class="code" href="../../db/df8/a00076.html#a9396b4712f5a9c45fb6f990bdc688bcc">CheckInputSize</a>(sk, n, <a class="code" href="../../db/df8/a00076.html#a73e2591ebe860b5e8139d956a2cddaea">m_nCells</a>);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <a class="code" href="../../db/df8/a00076.html#aeae240b941897dd8230f07f3269a4880">m_dem</a> = data;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (StringMatch(sk, Tag_Weight)) {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <a class="code" href="../../db/df8/a00076.html#a9396b4712f5a9c45fb6f990bdc688bcc">CheckInputSize</a>(sk, n, <a class="code" href="../../db/df8/a00076.html#a73e2591ebe860b5e8139d956a2cddaea">m_nCells</a>);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <a class="code" href="../../db/df8/a00076.html#a7dfdeba23a894c51115daa51f661ef4e">m_itpWeights</a> = data;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (StringMatch(sk, Tag_Elevation_Precipitation) || StringMatch(sk, Tag_Elevation_Meteorology)</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        || StringMatch(sk, Tag_Elevation_Temperature) || StringMatch(sk, Tag_Elevation_PET)) {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../db/df8/a00076.html#aec4bc53389011e95ff504901e96c8b28">m_itpVertical</a>) {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <a class="code" href="../../db/df8/a00076.html#a9396b4712f5a9c45fb6f990bdc688bcc">CheckInputSize</a>(sk, n, <a class="code" href="../../db/df8/a00076.html#a86a18ea4a9b0d20cb4b23572819808c6">m_nStatioins</a>);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <a class="code" href="../../db/df8/a00076.html#ab489ea7ca16ae03ef50699b0781a6e82">m_hStations</a> = data;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        }</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordtype">string</span> prefix = sk.substr(0, 1);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordflow">if</span> (StringMatch(prefix, DataType_Prefix_TS)) {</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            <a class="code" href="../../db/df8/a00076.html#a9396b4712f5a9c45fb6f990bdc688bcc">CheckInputSize</a>(sk, n, <a class="code" href="../../db/df8/a00076.html#a86a18ea4a9b0d20cb4b23572819808c6">m_nStatioins</a>);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <a class="code" href="../../db/df8/a00076.html#a5a50ad06a18a93cf96b8e2aacafaf88c">m_stationData</a> = data;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="../../d9/df8/a00096.html">ModelException</a>(MID_ITP, <span class="stringliteral">&quot;Set1DData&quot;</span>, <span class="stringliteral">&quot;Parameter &quot;</span> + sk + <span class="stringliteral">&quot; does not exist.&quot;</span>);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    }</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="../../db/df8/a00076.html#a9396b4712f5a9c45fb6f990bdc688bcc">  118</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../db/df8/a00076.html#a9396b4712f5a9c45fb6f990bdc688bcc">Interpolate::CheckInputSize</a>(<span class="keywordtype">string</span>&amp; key, <span class="keywordtype">int</span> n, <span class="keywordtype">int</span>&amp; m_n) {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">if</span> (n &lt;= 0) {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../d9/df8/a00096.html">ModelException</a>(MID_ITP, <span class="stringliteral">&quot;CheckInputSize&quot;</span>, <span class="stringliteral">&quot;Input data for &quot;</span> + key</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                             + <span class="stringliteral">&quot; is invalid. The size could not be less than zero.&quot;</span>);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    }</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">if</span> (n != m_n) {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keywordflow">if</span> (m_n &lt;= 0) {</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            m_n = n;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="../../d9/df8/a00096.html">ModelException</a>(MID_ITP, <span class="stringliteral">&quot;CheckInputSize&quot;</span>,</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                                 <span class="stringliteral">&quot;Input data for &quot;</span> + key + <span class="stringliteral">&quot; is invalid.&quot;</span> + <span class="stringliteral">&quot; The size of input data is &quot;</span> +</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                                 ValueToString(n) +</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                                 <span class="stringliteral">&quot;. The number of columns in weight file and the number of stations should be same.&quot;</span>);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        }</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    }</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;}</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="keywordtype">void</span> Interpolate::CheckInputData() {</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    CHECK_NONNEGATIVE(MID_ITP, m_dataType);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    CHECK_NONNEGATIVE(MID_ITP, <a class="code" href="../../db/df8/a00076.html#a2b7f5531268aacb4251d2842f6b0863d">m_month</a>);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    CHECK_POINTER(MID_ITP, <a class="code" href="../../db/df8/a00076.html#a7dfdeba23a894c51115daa51f661ef4e">m_itpWeights</a>);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../db/df8/a00076.html#aec4bc53389011e95ff504901e96c8b28">m_itpVertical</a>) {</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        CHECK_POINTER(MID_ITP, <a class="code" href="../../db/df8/a00076.html#a4f74c95ec7c646b6d8ddbf96b059e8ac">m_lapseRate</a>);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        CHECK_POINTER(MID_ITP, <a class="code" href="../../db/df8/a00076.html#aeae240b941897dd8230f07f3269a4880">m_dem</a>);</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        CHECK_POINTER(MID_ITP, <a class="code" href="../../db/df8/a00076.html#ab489ea7ca16ae03ef50699b0781a6e82">m_hStations</a>);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    }</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    CHECK_POINTER(MID_ITP, <a class="code" href="../../db/df8/a00076.html#a5a50ad06a18a93cf96b8e2aacafaf88c">m_stationData</a>);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;}</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;</div>
+<div class="line"><a name="l00148"></a><span class="lineno"><a class="line" href="../../db/df8/a00076.html#a72f63b31e6189eceb31def8be5dfebab">  148</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../db/df8/a00076.html#a72f63b31e6189eceb31def8be5dfebab">Interpolate::Get1DData</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* key, <span class="keywordtype">int</span>* n, <span class="keywordtype">float</span>** data) {</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordtype">string</span> sk(key);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordflow">if</span> (StringMatch(sk, Tag_DEM)) {</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        *n = <a class="code" href="../../db/df8/a00076.html#a73e2591ebe860b5e8139d956a2cddaea">m_nCells</a>;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        *data = <a class="code" href="../../db/df8/a00076.html#aeae240b941897dd8230f07f3269a4880">m_dem</a>;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (StringMatch(sk, Tag_StationElevation)) {</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        *n = <a class="code" href="../../db/df8/a00076.html#a86a18ea4a9b0d20cb4b23572819808c6">m_nStatioins</a>;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        *data = <a class="code" href="../../db/df8/a00076.html#ab489ea7ca16ae03ef50699b0781a6e82">m_hStations</a>;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (StringMatch(sk, DataType_Prefix_TS)) {</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        *n = <a class="code" href="../../db/df8/a00076.html#a86a18ea4a9b0d20cb4b23572819808c6">m_nStatioins</a>;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        *data = <a class="code" href="../../db/df8/a00076.html#a5a50ad06a18a93cf96b8e2aacafaf88c">m_stationData</a>;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        *n = <a class="code" href="../../db/df8/a00076.html#a73e2591ebe860b5e8139d956a2cddaea">m_nCells</a>;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        *data = <a class="code" href="../../db/df8/a00076.html#a6caf8deb1253dbf739138450e94e3900">m_itpOutput</a>;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    }</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;}</div>
+<div class="ttc" id="a00076_html_ab489ea7ca16ae03ef50699b0781a6e82"><div class="ttname"><a href="../../db/df8/a00076.html#ab489ea7ca16ae03ef50699b0781a6e82">Interpolate::m_hStations</a></div><div class="ttdeci">float * m_hStations</div><div class="ttdoc">elevation of stations </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d33/a00536_source.html#l00071">Interpolate.h:71</a></div></div>
+<div class="ttc" id="a00076_html_ad4616b28bb97d3b2bfcabc6b7db2dac0"><div class="ttname"><a href="../../db/df8/a00076.html#ad4616b28bb97d3b2bfcabc6b7db2dac0">Interpolate::SetClimateDataType</a></div><div class="ttdeci">void SetClimateDataType(float value) OVERRIDE</div><div class="ttdoc">Set climate data type, P, M, PET etc. </div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d84/a00535_source.html#l00012">Interpolate.cpp:12</a></div></div>
+<div class="ttc" id="a00151_html_aabd631c05d3e74aa9970f7415f2f5de7"><div class="ttname"><a href="../../dd/db2/a00151.html#aabd631c05d3e74aa9970f7415f2f5de7">SimulationModule::m_date</a></div><div class="ttdeci">time_t m_date</div><div class="ttdoc">date time </div><div class="ttdef"><b>Definition:</b> <a href="../../db/de0/a00465_source.html#l00170">SimulationModule.h:170</a></div></div>
+<div class="ttc" id="a00096_html"><div class="ttname"><a href="../../d9/df8/a00096.html">ccgl::ModelException</a></div><div class="ttdoc">Print the exception message. </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dfc/a00327_source.html#l00303">basic.h:303</a></div></div>
+<div class="ttc" id="a00076_html_a9396b4712f5a9c45fb6f990bdc688bcc"><div class="ttname"><a href="../../db/df8/a00076.html#a9396b4712f5a9c45fb6f990bdc688bcc">Interpolate::CheckInputSize</a></div><div class="ttdeci">static bool CheckInputSize(string &amp;key, int n, int &amp;m_n)</div><div class="ttdoc">Check length of the input variable. </div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d84/a00535_source.html#l00118">Interpolate.cpp:118</a></div></div>
+<div class="ttc" id="a00076_html_aeae240b941897dd8230f07f3269a4880"><div class="ttname"><a href="../../db/df8/a00076.html#aeae240b941897dd8230f07f3269a4880">Interpolate::m_dem</a></div><div class="ttdeci">float * m_dem</div><div class="ttdoc">elevation of cells </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d33/a00536_source.html#l00073">Interpolate.h:73</a></div></div>
+<div class="ttc" id="a00076_html_a8ff396355a4c1c4f2210db85d80a836e"><div class="ttname"><a href="../../db/df8/a00076.html#a8ff396355a4c1c4f2210db85d80a836e">Interpolate::Execute</a></div><div class="ttdeci">int Execute() OVERRIDE</div><div class="ttdoc">Destructor. </div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d84/a00535_source.html#l00028">Interpolate.cpp:28</a></div></div>
+<div class="ttc" id="a00076_html_a72f63b31e6189eceb31def8be5dfebab"><div class="ttname"><a href="../../db/df8/a00076.html#a72f63b31e6189eceb31def8be5dfebab">Interpolate::Get1DData</a></div><div class="ttdeci">void Get1DData(const char *key, int *n, float **data) OVERRIDE</div><div class="ttdoc">Get 1D data, by default, DT_Raster1D. </div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d84/a00535_source.html#l00148">Interpolate.cpp:148</a></div></div>
+<div class="ttc" id="a00151_html_addfe4dd5800efd0bb827338daf65d64c"><div class="ttname"><a href="../../dd/db2/a00151.html#addfe4dd5800efd0bb827338daf65d64c">SimulationModule::m_yearIdx</a></div><div class="ttdeci">int m_yearIdx</div><div class="ttdoc">index of current year of simulation, e.g., the simulation period from 2010 to 2015, m_yearIdx is 2 when simulate 2012. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/de0/a00465_source.html#l00172">SimulationModule.h:172</a></div></div>
+<div class="ttc" id="a00076_html_a7dfdeba23a894c51115daa51f661ef4e"><div class="ttname"><a href="../../db/df8/a00076.html#a7dfdeba23a894c51115daa51f661ef4e">Interpolate::m_itpWeights</a></div><div class="ttdeci">float * m_itpWeights</div><div class="ttdoc">weights of each sites of all valid cells </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d33/a00536_source.html#l00066">Interpolate.h:66</a></div></div>
+<div class="ttc" id="a00076_html_a4f74c95ec7c646b6d8ddbf96b059e8ac"><div class="ttname"><a href="../../db/df8/a00076.html#a4f74c95ec7c646b6d8ddbf96b059e8ac">Interpolate::m_lapseRate</a></div><div class="ttdeci">float ** m_lapseRate</div><div class="ttdoc">Lapse Rate, a 2D array. The first level is by month, and the second level is by data type in order of...</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d33/a00536_source.html#l00075">Interpolate.h:75</a></div></div>
+<div class="ttc" id="a00076_html_a71def51b5b384d1a9f30b26aa78b8371"><div class="ttname"><a href="../../db/df8/a00076.html#a71def51b5b384d1a9f30b26aa78b8371">Interpolate::SetValue</a></div><div class="ttdeci">void SetValue(const char *key, float value) OVERRIDE</div><div class="ttdoc">Set data, DT_Single. </div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d84/a00535_source.html#l00067">Interpolate.cpp:67</a></div></div>
+<div class="ttc" id="a00076_html_a5a50ad06a18a93cf96b8e2aacafaf88c"><div class="ttname"><a href="../../db/df8/a00076.html#a5a50ad06a18a93cf96b8e2aacafaf88c">Interpolate::m_stationData</a></div><div class="ttdeci">float * m_stationData</div><div class="ttdoc">data of stations </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d33/a00536_source.html#l00062">Interpolate.h:62</a></div></div>
+<div class="ttc" id="a00076_html_a73e2591ebe860b5e8139d956a2cddaea"><div class="ttname"><a href="../../db/df8/a00076.html#a73e2591ebe860b5e8139d956a2cddaea">Interpolate::m_nCells</a></div><div class="ttdeci">int m_nCells</div><div class="ttdoc">count of valid cells </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d33/a00536_source.html#l00064">Interpolate.h:64</a></div></div>
+<div class="ttc" id="a00076_html_a2b7f5531268aacb4251d2842f6b0863d"><div class="ttname"><a href="../../db/df8/a00076.html#a2b7f5531268aacb4251d2842f6b0863d">Interpolate::m_month</a></div><div class="ttdeci">int m_month</div><div class="ttdoc">months since January - [0,11] </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d33/a00536_source.html#l00077">Interpolate.h:77</a></div></div>
+<div class="ttc" id="a00076_html_aec4bc53389011e95ff504901e96c8b28"><div class="ttname"><a href="../../db/df8/a00076.html#aec4bc53389011e95ff504901e96c8b28">Interpolate::m_itpVertical</a></div><div class="ttdeci">bool m_itpVertical</div><div class="ttdoc">whether using vertical interpolation </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d33/a00536_source.html#l00069">Interpolate.h:69</a></div></div>
+<div class="ttc" id="a00076_html_ae0a9e6cab5cb6a921658b71a32232b82"><div class="ttname"><a href="../../db/df8/a00076.html#ae0a9e6cab5cb6a921658b71a32232b82">Interpolate::SetDate</a></div><div class="ttdeci">void SetDate(time_t date, int year_idx) OVERRIDE</div><div class="ttdoc">Set date time, as well as the sequence number of the entire simulation. Added by LJ for statistics co...</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d84/a00535_source.html#l00059">Interpolate.cpp:59</a></div></div>
+<div class="ttc" id="a00076_html_a46a2770a3ed83fe58317553ca4be2637"><div class="ttname"><a href="../../db/df8/a00076.html#a46a2770a3ed83fe58317553ca4be2637">Interpolate::Set2DData</a></div><div class="ttdeci">void Set2DData(const char *key, int n_rows, int n_cols, float **data) OVERRIDE</div><div class="ttdoc">Set 2D data, by default, DT_Raster2D. </div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d84/a00535_source.html#l00078">Interpolate.cpp:78</a></div></div>
+<div class="ttc" id="a00076_html_a6caf8deb1253dbf739138450e94e3900"><div class="ttname"><a href="../../db/df8/a00076.html#a6caf8deb1253dbf739138450e94e3900">Interpolate::m_itpOutput</a></div><div class="ttdeci">float * m_itpOutput</div><div class="ttdoc">interpolation result </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d33/a00536_source.html#l00079">Interpolate.h:79</a></div></div>
+<div class="ttc" id="a00076_html_a86a18ea4a9b0d20cb4b23572819808c6"><div class="ttname"><a href="../../db/df8/a00076.html#a86a18ea4a9b0d20cb4b23572819808c6">Interpolate::m_nStatioins</a></div><div class="ttdeci">int m_nStatioins</div><div class="ttdoc">count of stations </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d33/a00536_source.html#l00060">Interpolate.h:60</a></div></div>
+<div class="ttc" id="a00076_html_a1fbcb5fc65e6526b3e7cca3faece5475"><div class="ttname"><a href="../../db/df8/a00076.html#a1fbcb5fc65e6526b3e7cca3faece5475">Interpolate::Set1DData</a></div><div class="ttdeci">void Set1DData(const char *key, int n, float *data) OVERRIDE</div><div class="ttdoc">Set 1D data, by default, DT_Raster1D. </div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d84/a00535_source.html#l00091">Interpolate.cpp:91</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_483bc1739a16b87563cca23e7a392c1e.html">seims_linux_gcc48</a></li><li class="navelem"><a class="el" href="../../dir_a45053e29f104e67e5be28f13679e3c2.html">seims</a></li><li class="navelem"><b>run_seims.py</b></li>
-    <li class="footer">Generated on Tue Mar 27 2018 10:10:59 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_b89a50a3d6b2f98326f9f3f569cfd788.html">modules</a></li><li class="navelem"><a class="el" href="../../dir_1f6eda6caf98ea53d8153999464f137e.html">climate</a></li><li class="navelem"><a class="el" href="../../dir_7e3c93f7c69dc293be79fa7c18e401d1.html">ITP</a></li><li class="navelem"><b>Interpolate.cpp</b></li>
+    <li class="footer">Generated on Mon May 7 2018 13:47:05 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

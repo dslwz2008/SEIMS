@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims_linux_gcc48/seims/preprocess/db_mongodb.py Source File</title>
+<title>SEIMS: seims/src/seims_main/modules/hydrology_longterm/PET_PM/api.cpp Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -101,7 +101,7 @@ $(document).ready(function(){initNavTree('df/db6/a00509_source.html','../../');}
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -112,87 +112,83 @@ $(document).ready(function(){initNavTree('df/db6/a00509_source.html','../../');}
 
 <div class="header">
   <div class="headertitle">
-<div class="title">db_mongodb.py</div>  </div>
+<div class="title">api.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">#! /usr/bin/env python</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"># -*- coding: utf-8 -*-</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="stringliteral">&quot;&quot;&quot;MongoDB utility</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="stringliteral">    @author   : Liangjun Zhu</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="stringliteral">    @changelog: 16-12-07  lj - rewrite for version 2.0</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="stringliteral">                17-06-27  lj - reorganize as basic class other than Global variables</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="stringliteral">                18-02-08  lj - compatible with Python3.\n</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="stringliteral">&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">from</span> __future__ <span class="keyword">import</span> absolute_import</div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;api.h&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;PETPenmanMonteith.h&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;text.h&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;MetadataInfo.h&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> SEIMS_MODULE_API <a class="code" href="../../dd/db2/a00151.html">SimulationModule</a> *GetInstance() {</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="../../df/dcd/a00127.html">PETPenmanMonteith</a>();</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;}</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">import</span> sys</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">from</span> pymongo <span class="keyword">import</span> MongoClient</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">from</span> pymongo.errors <span class="keyword">import</span> ConnectionFailure, InvalidOperation</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">from</span> preprocess.text <span class="keyword">import</span> DBTableNames, ModelParamFields</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">class </span>ConnectMongoDB(object):</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;Connect to MongoDB, and close when finished.&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="../../d0/d89/a00071.html#aeb589833b276ea3670b5e01e752d2f3b">   22</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d0/d89/a00071.html#aeb589833b276ea3670b5e01e752d2f3b">__init__</a>(self, ip, port, maxPoolSize=None):</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;initial mongodb client by IP address and port.&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordflow">try</span>:</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            self.<a class="code" href="../../d0/d89/a00071.html#aee1e4d52ca8bc52c0cf3dd9749633281">conn</a> = MongoClient(ip, port, maxPoolSize=maxPoolSize)</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">except</span> ConnectionFailure:</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            sys.stderr.write(<span class="stringliteral">&#39;Could not connect to MongoDB: %s&#39;</span> % ConnectionFailure.message)</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            sys.exit(1)</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> SEIMS_MODULE_API <span class="keyword">const</span> <span class="keywordtype">char</span> *MetadataInformation() {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="../../da/d82/a00091.html">MetadataInfo</a> mdi;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="comment">// set the information properties</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    mdi.SetAuthor(<span class="stringliteral">&quot;Junzhi Liu, Liangjun Zhu&quot;</span>);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    mdi.SetClass(MCLS_PET, MCLSDESC_PET);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    mdi.SetDescription(MDESC_PET_PM);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    mdi.SetEmail(SEIMS_EMAIL);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    mdi.SetID(MID_PET_PM);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    mdi.SetName(MID_PET_PM);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    mdi.SetVersion(<span class="stringliteral">&quot;1.0&quot;</span>);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    mdi.SetWebsite(SEIMS_SITE);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    mdi.SetHelpfile(<span class="stringliteral">&quot;PET_PM.html&quot;</span>);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">// set the parameters</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    mdi.AddParameter(VAR_CO2, UNIT_GAS_PPMV, DESC_CO2, Source_ParameterDB, DT_Single);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    mdi.AddParameter(VAR_T_SNOW, UNIT_DEPTH_MM, DESC_T_SNOW, Source_ParameterDB, DT_Single);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    mdi.AddParameter(VAR_K_PET, UNIT_NON_DIM, DESC_PET_K, Source_ParameterDB, DT_Single);</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="../../d0/d89/a00071.html#a236384426c1f9e1d8f14948acee3cd8c">   30</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d0/d89/a00071.html#a236384426c1f9e1d8f14948acee3cd8c">get_conn</a>(self):</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;get MongoDB connection.&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">return</span> self.<a class="code" href="../../d0/d89/a00071.html#aee1e4d52ca8bc52c0cf3dd9749633281">conn</a></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="../../d0/d89/a00071.html#a31056a344b03832cac4725c5403816ec">   34</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d0/d89/a00071.html#a31056a344b03832cac4725c5403816ec">close</a>(self):</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Close collection.&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        self.conn.close()</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">class </span><a class="code" href="../../d3/df8/a00155.html">MongoQuery</a>(object):</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="stringliteral">    Query data from MongoDB</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="stringliteral">    &quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    @staticmethod</div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="../../d3/df8/a00155.html#acd94eeb24f9384c2c2e7403b26250dfb">   45</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d3/df8/a00155.html#acd94eeb24f9384c2c2e7403b26250dfb">get_init_parameter_value</a>(db_model, param_name, field=ModelParamFields.value):</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Query initial parameter value, raise exception if error occurs.&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        coll_param = db_model[DBTableNames.main_parameter]</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        param_dict = coll_param.find_one({ModelParamFields.name: param_name})</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">if</span> param_dict <span class="keywordflow">is</span> <span class="keywordtype">None</span> <span class="keywordflow">or</span> param_dict.get(field) <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keywordflow">raise</span> RuntimeError(<span class="stringliteral">&#39;%s item is not existed in MongoDB!&#39;</span> % param_name)</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">return</span> param_dict.get(field)</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    mdi.AddParameter(VAR_DEM, UNIT_LEN_M, CONS_IN_ELEV, Source_ParameterDB, DT_Raster1D);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    mdi.AddParameter(VAR_CELL_LAT, UNIT_LONLAT_DEG, DESC_CELL_LAT, Source_ParameterDB, DT_Raster1D);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    mdi.AddParameter(VAR_GSI, UNIT_SPEED_MS, DESC_GSI, Source_ParameterDB, DT_Raster1D);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    mdi.AddParameter(VAR_VPDFR, UNIT_PRESSURE, DESC_VPDFR, Source_ParameterDB, DT_Raster1D);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    mdi.AddParameter(VAR_FRGMAX, UNIT_NON_DIM, DESC_FRGMAX, Source_ParameterDB, DT_Raster1D);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    mdi.AddParameter(VAR_PHUTOT, UNIT_HOUR, DESC_PHUTOT, Source_ParameterDB, DT_Raster1D);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">//Now, grow code is prepared as an input parameters, together with LAI_INTI, BIO_INIT, CURYR_INIT, etc.</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    mdi.AddParameter(VAR_IGRO, UNIT_NON_DIM, DESC_IGRO, Source_ParameterDB, DT_Raster1D);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">// set the input from other modules</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    mdi.AddInput(DataType_MeanTemperature, UNIT_TEMP_DEG, DESC_MAXTEMP, Source_Module, DT_Raster1D);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    mdi.AddInput(DataType_MinimumTemperature, UNIT_TEMP_DEG, DESC_MINTEMP, Source_Module, DT_Raster1D);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    mdi.AddInput(DataType_MaximumTemperature, UNIT_TEMP_DEG, DESC_MAXTEMP, Source_Module, DT_Raster1D);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    mdi.AddInput(DataType_RelativeAirMoisture, UNIT_PERCENT, DESC_RM, Source_Module, DT_Raster1D);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    mdi.AddInput(DataType_SolarRadiation, UNIT_SR, DESC_SR, Source_Module, DT_Raster1D);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    mdi.AddInput(DataType_WindSpeed, UNIT_SPEED_MS, DESC_WS, Source_Module, DT_Raster1D);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    mdi.AddParameter(VAR_CHT, UNIT_LEN_M, DESC_CHT, Source_ParameterDB, DT_Raster1D);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">//mdi.AddInput(VAR_CHT, UNIT_LEN_M, DESC_CHT, Source_Module, DT_Raster1D);</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    mdi.AddInput(VAR_LAIDAY, UNIT_AREA_RATIO, DESC_LAIDAY, Source_Module, DT_Raster1D);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    mdi.AddInput(VAR_ALBDAY, UNIT_NON_DIM, DESC_ALBDAY, Source_Module, DT_Raster1D);</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">class </span><a class="code" href="../../d2/d34/a00156.html">MongoUtil</a>(object):</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;Some utility functions.&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    @staticmethod</div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="../../d2/d34/a00156.html#a89085d501f1b08989c284d60d22684a9">   58</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d2/d34/a00156.html#a89085d501f1b08989c284d60d22684a9">run_bulk</a>(bulk, errmsg=&#39;&#39;):</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Execute bulk operations, do not raise exception.&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">try</span>:</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            bulk.execute()</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">except</span> InvalidOperation:</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            print(<span class="stringliteral">&#39;WARNING: %s&#39;</span> % errmsg)</div>
-<div class="ttc" id="a00156_html"><div class="ttname"><a href="../../d2/d34/a00156.html">seims.preprocess.db_mongodb.MongoUtil</a></div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d30/a00508_source.html#l00054">db_mongodb.py:54</a></div></div>
-<div class="ttc" id="a00071_html_aee1e4d52ca8bc52c0cf3dd9749633281"><div class="ttname"><a href="../../d0/d89/a00071.html#aee1e4d52ca8bc52c0cf3dd9749633281">seims.preprocess.db_mongodb.ConnectMongoDB.conn</a></div><div class="ttdeci">conn</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d30/a00508_source.html#l00025">db_mongodb.py:25</a></div></div>
-<div class="ttc" id="a00155_html"><div class="ttname"><a href="../../d3/df8/a00155.html">seims.preprocess.db_mongodb.MongoQuery</a></div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d30/a00508_source.html#l00039">db_mongodb.py:39</a></div></div>
-<div class="ttc" id="a00156_html_a89085d501f1b08989c284d60d22684a9"><div class="ttname"><a href="../../d2/d34/a00156.html#a89085d501f1b08989c284d60d22684a9">seims.preprocess.db_mongodb.MongoUtil.run_bulk</a></div><div class="ttdeci">def run_bulk</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d30/a00508_source.html#l00058">db_mongodb.py:58</a></div></div>
-<div class="ttc" id="a00155_html_acd94eeb24f9384c2c2e7403b26250dfb"><div class="ttname"><a href="../../d3/df8/a00155.html#acd94eeb24f9384c2c2e7403b26250dfb">seims.preprocess.db_mongodb.MongoQuery.get_init_parameter_value</a></div><div class="ttdeci">def get_init_parameter_value</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d30/a00508_source.html#l00045">db_mongodb.py:45</a></div></div>
-<div class="ttc" id="a00071_html_aeb589833b276ea3670b5e01e752d2f3b"><div class="ttname"><a href="../../d0/d89/a00071.html#aeb589833b276ea3670b5e01e752d2f3b">seims.preprocess.db_mongodb.ConnectMongoDB.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d30/a00508_source.html#l00022">db_mongodb.py:22</a></div></div>
-<div class="ttc" id="a00071_html_a236384426c1f9e1d8f14948acee3cd8c"><div class="ttname"><a href="../../d0/d89/a00071.html#a236384426c1f9e1d8f14948acee3cd8c">seims.preprocess.db_mongodb.ConnectMongoDB.get_conn</a></div><div class="ttdeci">def get_conn</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d30/a00508_source.html#l00030">db_mongodb.py:30</a></div></div>
-<div class="ttc" id="a00071_html_a31056a344b03832cac4725c5403816ec"><div class="ttname"><a href="../../d0/d89/a00071.html#a31056a344b03832cac4725c5403816ec">seims.preprocess.db_mongodb.ConnectMongoDB.close</a></div><div class="ttdeci">def close</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d30/a00508_source.html#l00034">db_mongodb.py:34</a></div></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">// set the output variables</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    mdi.AddOutput(VAR_DAYLEN, UNIT_HOUR, DESC_DAYLEN, DT_Raster1D);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    mdi.AddOutput(VAR_PHUBASE, UNIT_NON_DIM, DESC_PHUBASE, DT_Raster1D);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    mdi.AddOutput(VAR_VPD, UNIT_PRESSURE, DESC_VPD, DT_Raster1D);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    mdi.AddOutput(VAR_PET, UNIT_WTRDLT_MMD, DESC_PET, DT_Raster1D);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    mdi.AddOutput(VAR_PPT, UNIT_WTRDLT_MMD, DESC_PPT, DT_Raster1D);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">string</span> res = mdi.GetXMLDocument();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">char</span> *tmp = <span class="keyword">new</span> <span class="keywordtype">char</span>[res.size() + 1];</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    strprintf(tmp, res.size() + 1, <span class="stringliteral">&quot;%s&quot;</span>, res.c_str());</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">return</span> tmp;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
+<div class="ttc" id="a00091_html"><div class="ttname"><a href="../../da/d82/a00091.html">MetadataInfo</a></div><div class="ttdoc">Metadata information of module. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/d87/a00456_source.html#l00122">MetadataInfo.h:122</a></div></div>
+<div class="ttc" id="a00127_html"><div class="ttname"><a href="../../df/dcd/a00127.html">PETPenmanMonteith</a></div><div class="ttdoc">Penman Monteith Method to Compute PET. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d07/a00607_source.html#l00034">PETPenmanMonteith.h:34</a></div></div>
+<div class="ttc" id="a00151_html"><div class="ttname"><a href="../../dd/db2/a00151.html">SimulationModule</a></div><div class="ttdoc">Base module for all simulation modules in SEIMS. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/de0/a00465_source.html#l00040">SimulationModule.h:40</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_483bc1739a16b87563cca23e7a392c1e.html">seims_linux_gcc48</a></li><li class="navelem"><a class="el" href="../../dir_a45053e29f104e67e5be28f13679e3c2.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_88ee9ccb3eda13ad093e0105c15391c0.html">preprocess</a></li><li class="navelem"><b>db_mongodb.py</b></li>
-    <li class="footer">Generated on Tue Mar 27 2018 10:10:59 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_b89a50a3d6b2f98326f9f3f569cfd788.html">modules</a></li><li class="navelem"><a class="el" href="../../dir_5bf5a4201e7cd7ac6c5f03aeeeae8b2c.html">hydrology_longterm</a></li><li class="navelem"><a class="el" href="../../dir_5f534fa73cb82c5479268def1ab8b327.html">PET_PM</a></li><li class="navelem"><b>api.cpp</b></li>
+    <li class="footer">Generated on Mon May 7 2018 13:47:05 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

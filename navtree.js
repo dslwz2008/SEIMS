@@ -1,33 +1,16 @@
 var NAVTREE =
 [
   [ "SEIMS", "index.html", [
-    [ "How to become a contributor and submit your own code", "d7/d46/a00002.html", null ],
-    [ "Defining a Mock Class", "d0/d0b/a00004.html", null ],
-    [ "CookBook", "de/d21/a00006.html", null ],
-    [ "DesignDoc", "d4/dee/a00008.html", null ],
-    [ "Documentation", "d7/dec/a00010.html", null ],
-    [ "ForDummies", "df/d86/a00012.html", null ],
-    [ "FrequentlyAskedQuestions", "d2/de7/a00014.html", null ],
-    [ "KnownIssues", "d7/d7a/a00016.html", null ],
-    [ "AdvancedGuide", "d1/d2b/a00018.html", null ],
-    [ "Documentation", "db/db2/a00020.html", null ],
-    [ "FAQ", "d7/de0/a00022.html", null ],
-    [ "Using GoogleTest from various build systems", "dc/de2/a00024.html", null ],
-    [ "Introduction: Why Google C++ Testing Framework?", "d6/d5b/a00026.html", null ],
-    [ "PumpManual", "dc/d3c/a00028.html", null ],
-    [ "Samples", "d5/d79/a00030.html", null ],
-    [ "XcodeGuide", "dc/d87/a00032.html", null ],
-    [ "Brief introduction to NSGA-II algorithm", "db/df3/a00034.html", null ],
-    [ "readme", "de/d8c/a00036.html", null ],
-    [ "# Index", "d8/d41/a00038.html", null ],
-    [ "# Soil hydraulic characteristics", "db/d3a/a00040.html", null ],
-    [ "Brief introduction to NSGA-II algorithm", "d5/db6/a00042.html", null ],
+    [ "Brief introduction to NSGA-II algorithm", "d7/d46/a00002.html", null ],
+    [ "readme", "d0/d0b/a00004.html", null ],
+    [ "Brief introduction to NSGA-II algorithm", "de/d21/a00006.html", null ],
     [ "Modules", "modules.html", "modules" ],
     [ "Packages", null, [
       [ "Packages", "namespaces.html", "namespaces" ],
       [ "Package Functions", "namespacemembers.html", [
         [ "All", "namespacemembers.html", null ],
-        [ "Functions", "namespacemembers_func.html", null ]
+        [ "Functions", "namespacemembers_func.html", null ],
+        [ "Typedefs", "namespacemembers_type.html", null ]
       ] ]
     ] ],
     [ "Classes", null, [
@@ -54,22 +37,21 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 ".html",
-"d0/de8/a00133.html#ad329ac39f3ddb216d23271d2aede6b9b",
-"d1/dd6/a00108.html#affbe349099e2209cf627265a7a1d96e1",
-"d2/d82/a00142.html#a52c0e4bc5baa56a26152f1056e79985a",
-"d2/dee/a00049.html#af95e2d56f37056b847280b9ad566c010",
-"d4/d45/a00791_source.html",
-"d5/dcb/a00170.html#a464d64f77d22aba457a42ea1f8d72140",
-"d6/d42/a00043.html#aa8f9b739789afa3c476084bbc796ea25",
-"d7/da0/a00198.html#a5a93ddab408340e5fcbe5f92a4b83039",
-"d9/d38/a00166.html#a230aa859ca0f21570081532c54242537",
-"d9/dcc/a00102.html#a9daed073a0d6d82c5f7b58b10683db28",
-"dc/d0c/a00783_source.html",
-"dd/d2d/a00229.html#aa2c99045e05e607f02e8b2659287f0b1",
-"dd/ded/a00211.html#ae99983c22de777796eff611ab8390a5e",
-"de/db9/a00159.html#a6c7759f1ec197818f766f22b28d88b6b",
-"df/d18/a01071.html",
-"functions_func_v.html"
+"d1/d2b/a00018.html#a0f08312c62e179380dc7a0120a78c322",
+"d1/dc1/a00092.html#aad5afd8c67087acf1638a452ba21af5a",
+"d3/d00/a00113.html#a835d64a0897b4c84b14fb8121f89e716",
+"d4/d08/a00237_source.html",
+"d5/d79/a00030.html#a3b840b37873d57ba36f1df239948664f",
+"d6/d5b/a00026.html#a2b3620c2403f845f1026edfa7d16ad66",
+"d7/d12/a00126.html#afaf194cefac4110a11600c8e6504c655",
+"d7/dd4/a00013.html#a4af28cc9b0d0916c1ebdf3ec13c02562",
+"d8/df1/a00174.html#a9b0c4cfa18855be1c7837ae6ac4e04b0",
+"da/d53/a00265_source.html",
+"db/d57/a00112.html#a9b4daf798fb60e142b8215aa5dc9b5ad",
+"dd/d32/a00041.html#a45f46a8f39c5a96518c35b82127f2691",
+"de/d53/a00169.html#a29196da83b7034f188f1943e16febd01",
+"df/d5d/a00084.html#a63ac7811ccafdcf82bae2feecf215d0e",
+"dir_ce650b3ee6c8ee1902ad5d9b217fa743.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

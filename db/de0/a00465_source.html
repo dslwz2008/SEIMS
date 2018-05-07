@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims_linux_gcc48/seims/calibration/main.py Source File</title>
+<title>SEIMS: seims/src/seims_main/base/module_setting/SimulationModule.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -101,7 +101,7 @@ $(document).ready(function(){initNavTree('db/de0/a00465_source.html','../../');}
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -112,290 +112,195 @@ $(document).ready(function(){initNavTree('db/de0/a00465_source.html','../../');}
 
 <div class="header">
   <div class="headertitle">
-<div class="title">main.py</div>  </div>
+<div class="title">SimulationModule.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">#! /usr/bin/env python</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"># -*- coding: utf-8 -*-</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="stringliteral">&quot;&quot;&quot;Calibration by NSGA-II algorithm.</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="stringliteral">    @author   : Liangjun Zhu</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="stringliteral">    @changelog: 18-1-22  lj - initial implementation.\n</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="stringliteral">                18-02-09  lj - compatible with Python3.\n</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="stringliteral">&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">from</span> __future__ <span class="keyword">import</span> absolute_import, division</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">import</span> array</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">import</span> os</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">import</span> random</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">import</span> time</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">import</span> sys</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keywordflow">if</span> os.path.abspath(os.path.join(sys.path[0], <span class="stringliteral">&#39;..&#39;</span>)) <span class="keywordflow">not</span> <span class="keywordflow">in</span> sys.path:</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    sys.path.insert(0, os.path.abspath(os.path.join(sys.path[0], <span class="stringliteral">&#39;..&#39;</span>)))</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">import</span> numpy</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">from</span> deap <span class="keyword">import</span> base</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">from</span> deap <span class="keyword">import</span> creator</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">from</span> deap <span class="keyword">import</span> tools</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">from</span> deap.benchmarks.tools <span class="keyword">import</span> hypervolume</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">from</span> <a class="code" href="../../d7/db6/a00940.html">pygeoc.utils</a> <span class="keyword">import</span> UtilClass</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">from</span> scenario_analysis.utility <span class="keyword">import</span> print_message</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">from</span> scenario_analysis.userdef <span class="keyword">import</span> initIterateWithCfg, initRepeatWithCfg</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">from</span> calibration.config <span class="keyword">import</span> CaliConfig, get_cali_config</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">from</span> run_seims <span class="keyword">import</span> MainSEIMS</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">from</span> calibration.calibrate <span class="keyword">import</span> Calibration, initialize_calibrations, calibration_objectives</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">from</span> calibration.calibrate <span class="keyword">import</span> observationData, simulationData</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">from</span> calibration.userdef <span class="keyword">import</span> write_param_values_to_mongodb, output_population_details</div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#ifndef SIMULATION_MOUDULE_BASE</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SIMULATION_MOUDULE_BASE</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;basic.h&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;Scenario.h&quot;</span>  </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;clsReach.h&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;clsSubbasin.h&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;ostream&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;ctime&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">using namespace </span>ccgl;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">using namespace </span>bmps;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">enum</span> TimeStepType {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    TIMESTEP_HILLSLOPE, </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    TIMESTEP_CHANNEL,   </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    TIMESTEP_ECOLOGY,   </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    TIMESTEP_SIMULATION </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;};</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"># Definitions, assignments, operations, etc. that will be executed by each worker</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">#    when paralleled by SCOOP.</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"># Thus, DEAP related operations (initialize, register, etc.) are better defined here.</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;object_vars = [<span class="stringliteral">&#39;Q&#39;</span>, <span class="stringliteral">&#39;SED&#39;</span>]</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;step = object_vars[1]</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;filter_NSE = <span class="keyword">True</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"># Multiobjects definition:</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keywordflow">if</span> step == <span class="stringliteral">&#39;Q&#39;</span>:</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment"># Step 1: Calibrate discharge, max. Nash-Sutcliffe, min. RSR, min. |PBIAS|, and max. R2</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    multi_weight = (2., -1., -1., 1.)  <span class="comment"># NSE taken bigger weight (actually used)</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    worse_objects = [0.0001, 3., 3., 0.0001]</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keywordflow">elif</span> step == <span class="stringliteral">&#39;SED&#39;</span>:</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment"># Step 2: Calibration sediment, max. NSE-SED, min. RSR-SED, min. |PBIAS|-SED, and max. R2-SED,</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">#                               max. NSE-Q</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    multi_weight = (3., -2., -2., 2., 1.)  <span class="comment"># NSE of sediment taken a bigger weight</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    worse_objects = [0.0001, 3., 3., 0.0001, 0.0001]</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keywordflow">else</span>:</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    print(<span class="stringliteral">&#39;The step of calibration should be one of [Q, SED]!&#39;</span>)</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    exit(0)</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;creator.create(<span class="stringliteral">&#39;FitnessMulti&#39;</span>, base.Fitness, weights=multi_weight)</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment"># The FitnessMulti class equals to (as an example):</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment"># class FitnessMulti(base.Fitness):</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">#     weights = (2., -1., -1., 1.)</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;creator.create(<span class="stringliteral">&#39;Individual&#39;</span>, array.array, typecode=<span class="stringliteral">&#39;d&#39;</span>, fitness=creator.FitnessMulti,</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;               gen=-1, id=-1,</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;               obs=observationData, cali=simulationData, vali=simulationData)</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment"># The Individual class equals to:</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment"># class Individual(array.array):</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">#     gen = -1  # Generation No.</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">#     id = -1   # Calibration index of current generation</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">#     def __init__(self):</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">#         self.fitness = FitnessMulti()</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment"># Register NSGA-II related operations</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;toolbox = base.Toolbox()</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;toolbox.register(<span class="stringliteral">&#39;gene_values&#39;</span>, initialize_calibrations)</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;toolbox.register(<span class="stringliteral">&#39;individual&#39;</span>, initIterateWithCfg, creator.Individual, toolbox.gene_values)</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;toolbox.register(<span class="stringliteral">&#39;population&#39;</span>, initRepeatWithCfg, list, toolbox.individual)</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;toolbox.register(<span class="stringliteral">&#39;evaluate&#39;</span>, calibration_objectives)</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment"># mate and mutate</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;toolbox.register(<span class="stringliteral">&#39;mate&#39;</span>, tools.cxSimulatedBinaryBounded)</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;toolbox.register(<span class="stringliteral">&#39;mutate&#39;</span>, tools.mutPolynomialBounded)</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;toolbox.register(<span class="stringliteral">&#39;select&#39;</span>, tools.selNSGA2)</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keyword">def </span>main(cfg):</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;Main workflow of NSGA-II based Scenario analysis.&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    random.seed()</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    print_message(<span class="stringliteral">&#39;Population: %d, Generation: %d&#39;</span> % (cfg.opt.npop, cfg.opt.ngens))</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="comment"># create reference point for hypervolume</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    ref_pt = numpy.array(worse_objects) * multi_weight * -1</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="../../dd/db2/a00151.html">   40</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../dd/db2/a00151.html">SimulationModule</a>: <a class="code" href="../../db/db6/a00074.html">Interface</a> {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="../../dd/db2/a00151.html#af6d0b8a412ab55dcebe689dd07846465">   43</a></span>&#160;    <a class="code" href="../../dd/db2/a00151.html#af6d0b8a412ab55dcebe689dd07846465">SimulationModule</a>(): m_date(-1), m_yearIdx(-1), m_tsCounter(1), m_inputsSetDone(false) {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">//virtual ~SimulationModule() = default;</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="../../dd/db2/a00151.html#a686c39c1c4894cc144699ba0681d509d">   50</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="../../dd/db2/a00151.html#a686c39c1c4894cc144699ba0681d509d">Execute</a>() { <span class="keywordflow">return</span> -1; }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="../../dd/db2/a00151.html#a8526abbeed3f49071f39e0c17559e522">   53</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../dd/db2/a00151.html#a8526abbeed3f49071f39e0c17559e522">SetDate</a>(time_t t, <span class="keywordtype">int</span> yearIdx) {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        m_date = t;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        m_yearIdx = yearIdx;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="../../dd/db2/a00151.html#a46191d743a839a5290fd42d318b500d0">   59</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../dd/db2/a00151.html#a46191d743a839a5290fd42d318b500d0">SetTheadNumber</a>(<span class="keywordtype">int</span> threadNum) {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <a class="code" href="../../d0/df1/a00685.html#ae3d5ae8abc83b26a8eb3680c6fd51ddf">SetOpenMPThread</a>(threadNum);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="../../dd/db2/a00151.html#af7b9caed16e56bf880b171040981403e">   64</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../dd/db2/a00151.html#af7b9caed16e56bf880b171040981403e">SetClimateDataType</a>(<span class="keywordtype">float</span> value) {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="../../dd/db2/a00151.html#afcfef6ce1ce8761a961f694e3a7969bb">   68</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../dd/db2/a00151.html#afcfef6ce1ce8761a961f694e3a7969bb">SetValue</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* key, <span class="keywordtype">float</span> data) {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../d9/df8/a00096.html">ModelException</a>(<span class="stringliteral">&quot;SimulationModule&quot;</span>, <span class="stringliteral">&quot;SetValue&quot;</span>,</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                             <span class="stringliteral">&quot;Set function of parameter &quot;</span> + <span class="keywordtype">string</span>(key) + <span class="stringliteral">&quot; is not implemented.&quot;</span>);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="../../dd/db2/a00151.html#adbc76071424a60cb92e2d4c3373e1ff4">   74</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../dd/db2/a00151.html#adbc76071424a60cb92e2d4c3373e1ff4">SetValueByIndex</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* key, <span class="keywordtype">int</span> index, <span class="keywordtype">float</span> data) {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../d9/df8/a00096.html">ModelException</a>(<span class="stringliteral">&quot;SimulationModule&quot;</span>, <span class="stringliteral">&quot;SetValueByIndex&quot;</span>,</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                             <span class="stringliteral">&quot;Set function of parameter &quot;</span> + <span class="keywordtype">string</span>(key) + <span class="stringliteral">&quot; is not implemented.&quot;</span>);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="../../dd/db2/a00151.html#aba2d6fc2b0e4f8ccf202e0752c45d55c">   80</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../dd/db2/a00151.html#aba2d6fc2b0e4f8ccf202e0752c45d55c">Set1DData</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* key, <span class="keywordtype">int</span> n, <span class="keywordtype">float</span>* data) {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../d9/df8/a00096.html">ModelException</a>(<span class="stringliteral">&quot;SimulationModule&quot;</span>, <span class="stringliteral">&quot;Set1DData&quot;</span>,</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                             <span class="stringliteral">&quot;Set function of parameter &quot;</span> + <span class="keywordtype">string</span>(key) + <span class="stringliteral">&quot; is not implemented.&quot;</span>);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="../../dd/db2/a00151.html#a497fa950bc9c4d85cfb1ae13d83f06c9">   86</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../dd/db2/a00151.html#a497fa950bc9c4d85cfb1ae13d83f06c9">Set2DData</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* key, <span class="keywordtype">int</span> nRows, <span class="keywordtype">int</span> nCols, <span class="keywordtype">float</span>** data) {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../d9/df8/a00096.html">ModelException</a>(<span class="stringliteral">&quot;SimulationModule&quot;</span>, <span class="stringliteral">&quot;Set2DData&quot;</span>,</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                             <span class="stringliteral">&quot;Set function of parameter &quot;</span> + <span class="keywordtype">string</span>(key) + <span class="stringliteral">&quot; is not implemented.&quot;</span>);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    stats = tools.Statistics(<span class="keyword">lambda</span> sind: sind.fitness.values)</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    stats.register(<span class="stringliteral">&#39;min&#39;</span>, numpy.min, axis=0)</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    stats.register(<span class="stringliteral">&#39;max&#39;</span>, numpy.max, axis=0)</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    stats.register(<span class="stringliteral">&#39;avg&#39;</span>, numpy.mean, axis=0)</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    stats.register(<span class="stringliteral">&#39;std&#39;</span>, numpy.std, axis=0)</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    logbook = tools.Logbook()</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    logbook.header = <span class="stringliteral">&#39;gen&#39;</span>, <span class="stringliteral">&#39;evals&#39;</span>, <span class="stringliteral">&#39;min&#39;</span>, <span class="stringliteral">&#39;max&#39;</span>, <span class="stringliteral">&#39;avg&#39;</span>, <span class="stringliteral">&#39;std&#39;</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="comment"># read observation data from MongoDB</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    cali_obj = Calibration(cfg)</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    model_obj = MainSEIMS(cali_obj.cfg.bin_dir, cali_obj.cfg.model_dir,</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                          nthread=cali_obj.cfg.nthread, lyrmtd=cali_obj.cfg.lyrmethod,</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                          ip=cali_obj.cfg.hostname, port=cali_obj.cfg.port,</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                          sceid=cali_obj.cfg.sceid)</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    obs_vars, obs_data_dict = model_obj.ReadOutletObservations(object_vars)</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="comment"># Initialize population</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="comment"># pop = toolbox.population(cfg, n=cfg.opt.npop) # Deprecated method because of redundancy!</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    param_values = cali_obj.initialize(cfg.opt.npop)</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    pop = list()</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(cfg.opt.npop):</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        ind = creator.Individual(param_values[i])</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        ind.gen = 0</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        ind.id = i</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        ind.obs.vars = obs_vars[:]</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        ind.obs.data = obs_data_dict</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        pop.append(ind)</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    param_values = numpy.array(param_values)</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    write_param_values_to_mongodb(cfg.hostname, cfg.port, cfg.spatial_db,</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                                  cali_obj.ParamDefs, param_values)</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="comment"># get the low and up bound of calibrated parameters</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    bounds = numpy.array(cali_obj.ParamDefs[<span class="stringliteral">&#39;bounds&#39;</span>])</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    low = bounds[:, 0]</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    up = bounds[:, 1]</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    low = low.tolist()</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    up = up.tolist()</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    pop_select_num = int(cfg.opt.npop * cfg.opt.rsel)</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keyword">def </span>evaluate_parallel(invalid_pops):</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Evaluate model by SCOOP or map, and set fitness of individuals</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="stringliteral">         according to calibration step.&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        popnum = len(invalid_pops)</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keywordflow">try</span>:  <span class="comment"># parallel on multi-processors or clusters using SCOOP</span></div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            <span class="keyword">from</span> scoop <span class="keyword">import</span> futures</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            invalid_pops = list(futures.map(toolbox.evaluate, [cali_obj] * popnum, invalid_pops))</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="keywordflow">except</span> ImportError <span class="keywordflow">or</span> ImportWarning:  <span class="comment"># Python build-in map (serial)</span></div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            invalid_pops = list(toolbox.map(toolbox.evaluate, [cali_obj] * popnum, invalid_pops))</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="keywordflow">for</span> tmpind <span class="keywordflow">in</span> invalid_pops:</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            <span class="keywordflow">if</span> step == <span class="stringliteral">&#39;Q&#39;</span>:  <span class="comment"># Step 1 Calibrating discharge</span></div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                tmpind.fitness.values = tmpind.cali.efficiency_values(<span class="stringliteral">&#39;Q&#39;</span>)</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;            <span class="keywordflow">elif</span> step == <span class="stringliteral">&#39;SED&#39;</span>:  <span class="comment"># Step 2 Calibrating sediment</span></div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                tmpind.fitness.values = tmpind.cali.efficiency_values(<span class="stringliteral">&#39;SED&#39;</span>) + \</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                                        [tmpind.cali.efficiency_values(<span class="stringliteral">&#39;Q&#39;</span>)[0]]  <span class="comment"># NSE-Q</span></div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <span class="comment"># NSE &gt; 0 is the preliminary condition to be a valid solution!</span></div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="keywordflow">if</span> filter_NSE:</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            invalid_pops = [tmpind <span class="keywordflow">for</span> tmpind <span class="keywordflow">in</span> invalid_pops <span class="keywordflow">if</span> tmpind.fitness.values[0] &gt; 0]</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            <span class="keywordflow">if</span> len(invalid_pops) &lt; 2:</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                print(<span class="stringliteral">&#39;The initial population shoule be greater or equal than 2. &#39;</span></div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                      <span class="stringliteral">&#39;Please check the parameters ranges or change the sampling strategy!&#39;</span>)</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                exit(0)</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <span class="keywordflow">return</span> invalid_pops  <span class="comment"># Currently, `invalid_pops` contains evaluated individuals</span></div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    pop = evaluate_parallel(pop)</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    pop = toolbox.select(pop, pop_select_num)  <span class="comment"># currently, len(pop) may less than pop_select_num</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="comment"># Output simulated data to json or pickle files for future use.</span></div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    output_population_details(pop, cfg.opt.simdata_dir, 0)</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    record = stats.compile(pop)</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    logbook.record(gen=0, evals=len(pop), **record)</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    print_message(logbook.stream)</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="../../dd/db2/a00151.html#ac3c60349cd6720bb66e58fa4cd31a999">   92</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../dd/db2/a00151.html#ac3c60349cd6720bb66e58fa4cd31a999">Set1DArrayData</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* key, <span class="keywordtype">int</span> n, <span class="keywordtype">float</span>* data) {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../d9/df8/a00096.html">ModelException</a>(<span class="stringliteral">&quot;SimulationModule&quot;</span>, <span class="stringliteral">&quot;Set1DArrayData&quot;</span>,</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                             <span class="stringliteral">&quot;Set function of parameter &quot;</span> + <span class="keywordtype">string</span>(key) + <span class="stringliteral">&quot; is not implemented.&quot;</span>);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="../../dd/db2/a00151.html#a1f7470f5f4f831b9053e3ff2d92c1813">   98</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../dd/db2/a00151.html#a1f7470f5f4f831b9053e3ff2d92c1813">Set2DArrayData</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* key, <span class="keywordtype">int</span> nRows, <span class="keywordtype">int</span> nCols, <span class="keywordtype">float</span>** data) {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../d9/df8/a00096.html">ModelException</a>(<span class="stringliteral">&quot;SimulationModule&quot;</span>, <span class="stringliteral">&quot;Set2DArrayData&quot;</span>,</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                             <span class="stringliteral">&quot;Set function of parameter &quot;</span> + <span class="keywordtype">string</span>(key) + <span class="stringliteral">&quot; is not implemented.&quot;</span>);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="../../dd/db2/a00151.html#aafd60bc9d4176a0cf64af01aed881980">  104</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../dd/db2/a00151.html#aafd60bc9d4176a0cf64af01aed881980">GetValue</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* key, <span class="keywordtype">float</span>* value) {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../d9/df8/a00096.html">ModelException</a>(<span class="stringliteral">&quot;SimulationModule&quot;</span>, <span class="stringliteral">&quot;GetValue&quot;</span>,</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                             <span class="stringliteral">&quot;Get function of parameter &quot;</span> + <span class="keywordtype">string</span>(key) + <span class="stringliteral">&quot; is not implemented.&quot;</span>);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="../../dd/db2/a00151.html#ad834fe6ed6d11b333fd34e1ff605ebb7">  110</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../dd/db2/a00151.html#ad834fe6ed6d11b333fd34e1ff605ebb7">Get1DData</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* key, <span class="keywordtype">int</span>* n, <span class="keywordtype">float</span>** data) {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../d9/df8/a00096.html">ModelException</a>(<span class="stringliteral">&quot;SimulationModule&quot;</span>, <span class="stringliteral">&quot;Get1DData&quot;</span>,</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                             <span class="stringliteral">&quot;Get function of parameter &quot;</span> + <span class="keywordtype">string</span>(key) + <span class="stringliteral">&quot; is not implemented.&quot;</span>);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    }</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="../../dd/db2/a00151.html#ab6dc960ad0a7bd7714e9644b64dc0acb">  116</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../dd/db2/a00151.html#ab6dc960ad0a7bd7714e9644b64dc0acb">Get2DData</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* key, <span class="keywordtype">int</span>* nRows, <span class="keywordtype">int</span>* nCols, <span class="keywordtype">float</span>*** data) {</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../d9/df8/a00096.html">ModelException</a>(<span class="stringliteral">&quot;SimulationModule&quot;</span>, <span class="stringliteral">&quot;Get2DData&quot;</span>,</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                             <span class="stringliteral">&quot;Get function of parameter &quot;</span> + <span class="keywordtype">string</span>(key) + <span class="stringliteral">&quot; is not implemented.&quot;</span>);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    }</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
+<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="../../dd/db2/a00151.html#aeb23e43dd78e4fb8ce5d25a9855dd748">  122</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../dd/db2/a00151.html#aeb23e43dd78e4fb8ce5d25a9855dd748">Get1DArrayData</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* key, <span class="keywordtype">int</span>* n, <span class="keywordtype">float</span>** data) {</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../d9/df8/a00096.html">ModelException</a>(<span class="stringliteral">&quot;SimulationModule&quot;</span>, <span class="stringliteral">&quot;Get1DArrayData&quot;</span>,</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                             <span class="stringliteral">&quot;Get function of parameter &quot;</span> + <span class="keywordtype">string</span>(key) + <span class="stringliteral">&quot; is not implemented.&quot;</span>);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    }</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
+<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="../../dd/db2/a00151.html#a3330ba74e63c5e2e6368d5d62d4048ea">  128</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../dd/db2/a00151.html#a3330ba74e63c5e2e6368d5d62d4048ea">Get2DArrayData</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* key, <span class="keywordtype">int</span>* nRows, <span class="keywordtype">int</span>* nCols, <span class="keywordtype">float</span>*** data) {</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../d9/df8/a00096.html">ModelException</a>(<span class="stringliteral">&quot;SimulationModule&quot;</span>, <span class="stringliteral">&quot;Get2DArrayData&quot;</span>,</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                             <span class="stringliteral">&quot;Get function of parameter &quot;</span> + <span class="keywordtype">string</span>(key) + <span class="stringliteral">&quot; is not implemented.&quot;</span>);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    }</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
+<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="../../dd/db2/a00151.html#ae6dfd515de376498a12a22724e57650a">  134</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../dd/db2/a00151.html#ae6dfd515de376498a12a22724e57650a">SetScenario</a>(<a class="code" href="../../d7/dce/a00143.html">Scenario</a>*) {</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../d9/df8/a00096.html">ModelException</a>(<span class="stringliteral">&quot;SimulationModule&quot;</span>, <span class="stringliteral">&quot;SetScenario&quot;</span>, <span class="stringliteral">&quot;Set scenario function is not implemented.&quot;</span>);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    }</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
+<div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="../../dd/db2/a00151.html#aa4115c5f61d71efde62d3b62c70b51ec">  139</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../dd/db2/a00151.html#aa4115c5f61d71efde62d3b62c70b51ec">SetReaches</a>(<a class="code" href="../../dc/d3c/a00028.html">clsReaches</a>*) {</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../d9/df8/a00096.html">ModelException</a>(<span class="stringliteral">&quot;SimulationModule&quot;</span>, <span class="stringliteral">&quot;SetReaches&quot;</span>, <span class="stringliteral">&quot;Set reaches function is not implemented.&quot;</span>);</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    }</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;</div>
+<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="../../dd/db2/a00151.html#a97da293bca13cf5934d9ef6da34d9290">  144</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../dd/db2/a00151.html#a97da293bca13cf5934d9ef6da34d9290">SetSubbasins</a>(<a class="code" href="../../d5/d79/a00030.html">clsSubbasins</a>*) {</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../d9/df8/a00096.html">ModelException</a>(<span class="stringliteral">&quot;SimulationModule&quot;</span>, <span class="stringliteral">&quot;SetSubbasins&quot;</span>, <span class="stringliteral">&quot;Set subbasins function is not implemented.&quot;</span>);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    }</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;</div>
+<div class="line"><a name="l00153"></a><span class="lineno"><a class="line" href="../../dd/db2/a00151.html#a272481bef46db20353da33e95a5f5426">  153</a></span>&#160;    <span class="keyword">virtual</span> TimeStepType <a class="code" href="../../dd/db2/a00151.html#a272481bef46db20353da33e95a5f5426">GetTimeStepType</a>() {</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keywordflow">return</span> TIMESTEP_HILLSLOPE;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    }</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;</div>
+<div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="../../dd/db2/a00151.html#a1a3a7bd2ff8748ec360e9464c358500b">  158</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../dd/db2/a00151.html#a1a3a7bd2ff8748ec360e9464c358500b">ResetSubTimeStep</a>() {</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        m_tsCounter = 1;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    }</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="comment"># Begin the generational process</span></div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    output_str = <span class="stringliteral">&#39;### Generation number: %d, Population size: %d ###\n&#39;</span> % (cfg.opt.ngens,</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                                                                           cfg.opt.npop)</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    print_message(output_str)</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    UtilClass.writelog(cfg.opt.logfile, output_str, mode=<span class="stringliteral">&#39;replace&#39;</span>)</div>
+<div class="line"><a name="l00163"></a><span class="lineno"><a class="line" href="../../dd/db2/a00151.html#a2238382a3e1a264218a37b32d3947bd6">  163</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../dd/db2/a00151.html#a2238382a3e1a264218a37b32d3947bd6">IsInputsSetDone</a>() { <span class="keywordflow">return</span> m_inputsSetDone; }</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div>
+<div class="line"><a name="l00166"></a><span class="lineno"><a class="line" href="../../dd/db2/a00151.html#a94457cc066581e7ecd1d3c88ebdf3163">  166</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dd/db2/a00151.html#a94457cc066581e7ecd1d3c88ebdf3163">SetInputsDone</a>(<span class="keywordtype">bool</span> setDone) { m_inputsSetDone = setDone; }</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keywordflow">for</span> gen <span class="keywordflow">in</span> range(1, cfg.opt.ngens + 1):</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        output_str = <span class="stringliteral">&#39;###### Generation: %d ######\n&#39;</span> % gen</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        print_message(output_str)</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        offspring = [toolbox.clone(ind) <span class="keywordflow">for</span> ind <span class="keywordflow">in</span> pop]</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="comment"># method1: use crowding distance (normalized as 0~1) as eta</span></div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="comment"># tools.emo.assignCrowdingDist(offspring)</span></div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <span class="comment"># method2: use the index of individual at the sorted offspring list as eta</span></div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <span class="keywordflow">if</span> len(offspring) &gt;= 2:  <span class="comment"># when offspring size greater than 2, mate can be done</span></div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            <span class="keywordflow">for</span> i, ind1, ind2 <span class="keywordflow">in</span> zip(range(len(offspring) // 2), offspring[::2], offspring[1::2]):</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                <span class="keywordflow">if</span> random.random() &gt; cfg.opt.rcross:</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                    <span class="keywordflow">continue</span></div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                eta = i</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                toolbox.mate(ind1, ind2, eta, low, up)</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                toolbox.mutate(ind1, eta, low, up, cfg.opt.rmut)</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                toolbox.mutate(ind2, eta, low, up, cfg.opt.rmut)</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                del ind1.fitness.values, ind2.fitness.values</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <span class="keywordflow">else</span>:</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            toolbox.mutate(offspring[0], 1., low, up, cfg.opt.rmut)</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            del offspring[0].fitness.values</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <span class="comment"># Evaluate the individuals with an invalid fitness</span></div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        invalid_ind = [ind <span class="keywordflow">for</span> ind <span class="keywordflow">in</span> offspring <span class="keywordflow">if</span> <span class="keywordflow">not</span> ind.fitness.valid]</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        valid_ind = [ind <span class="keywordflow">for</span> ind <span class="keywordflow">in</span> offspring <span class="keywordflow">if</span> ind.fitness.valid]</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="comment"># Write new calibrated parameters to MongoDB</span></div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        param_values = list()</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <span class="keywordflow">for</span> idx, ind <span class="keywordflow">in</span> enumerate(invalid_ind):</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            ind.gen = gen</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            ind.id = idx</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            param_values.append(ind[:])</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        param_values = numpy.array(param_values)</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        write_param_values_to_mongodb(cfg.hostname, cfg.port, cfg.spatial_db,</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                                      cali_obj.ParamDefs, param_values)</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="comment"># print_message(&#39;Evaluate pop size: %d&#39; % invalid_ind_size)</span></div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        invalid_ind = evaluate_parallel(invalid_ind)</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        <span class="comment"># Select the next generation population</span></div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        tmp_pop = list()</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        gen_idx = list()</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <span class="keywordflow">for</span> ind <span class="keywordflow">in</span> pop + valid_ind + invalid_ind:  <span class="comment"># these individuals are all evaluated!</span></div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            <span class="comment"># remove individuals that has a NSE &lt; 0</span></div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            <span class="keywordflow">if</span> [ind.gen, ind.id] <span class="keywordflow">not</span> <span class="keywordflow">in</span> gen_idx:</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                <span class="keywordflow">if</span> filter_NSE <span class="keywordflow">and</span> ind.fitness.values[0] &lt; 0:</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                    <span class="keywordflow">continue</span></div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                tmp_pop.append(ind)</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                gen_idx.append([ind.gen, ind.id])</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        pop = toolbox.select(tmp_pop, pop_select_num)</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        output_population_details(pop, cfg.opt.simdata_dir, gen)</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        hyper_str = <span class="stringliteral">&#39;Gen: %d, Pop number: %d, hypervolume: %f\n&#39;</span> % (gen, len(pop),</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                                                                    hypervolume(pop, ref_pt))</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        print_message(hyper_str)</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        UtilClass.writelog(cfg.opt.hypervlog, hyper_str, mode=<span class="stringliteral">&#39;append&#39;</span>)</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        record = stats.compile(pop)</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        logbook.record(gen=gen, evals=len(invalid_ind), **record)</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        print_message(logbook.stream)</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        <span class="comment"># Create plot (TODO)</span></div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        <span class="comment"># plot_pareto_front(pop, cfg.opt.out_dir, gen, &#39;Pareto frontier of Calibration&#39;,</span></div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        <span class="comment">#                   &#39;NSE&#39;, &#39;RSR&#39;)  # Step 1: Calibrate discharge</span></div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        <span class="comment"># save in file</span></div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        <span class="keywordflow">if</span> step == <span class="stringliteral">&#39;Q&#39;</span>:  <span class="comment"># Step 1 Calibrate discharge</span></div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;            output_str += <span class="stringliteral">&#39;generation-calibrationID\t%s&#39;</span> % pop[0].cali.output_header(<span class="stringliteral">&#39;Q&#39;</span>)</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;            <span class="keywordflow">if</span> cali_obj.cfg.calc_validation:</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                output_str += pop[0].vali.output_header(<span class="stringliteral">&#39;Q&#39;</span>, <span class="stringliteral">&#39;Vali&#39;</span>)</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        <span class="keywordflow">elif</span> step == <span class="stringliteral">&#39;SED&#39;</span>:  <span class="comment"># Step 2 Calibrate sediment</span></div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;            output_str += <span class="stringliteral">&#39;generation-calibrationID\t%s%s&#39;</span> % (pop[0].cali.output_header(<span class="stringliteral">&#39;SED&#39;</span>),</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                                                              pop[0].cali.output_header(<span class="stringliteral">&#39;Q&#39;</span>))</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            <span class="keywordflow">if</span> cali_obj.cfg.calc_validation:</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                output_str += <span class="stringliteral">&#39;%s%s&#39;</span> % (pop[0].vali.output_header(<span class="stringliteral">&#39;SED&#39;</span>, <span class="stringliteral">&#39;Vali&#39;</span>),</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                                        pop[0].vali.output_header(<span class="stringliteral">&#39;Q&#39;</span>, <span class="stringliteral">&#39;Vali&#39;</span>))</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        output_str += <span class="stringliteral">&#39;gene_values\n&#39;</span></div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        <span class="keywordflow">for</span> ind <span class="keywordflow">in</span> pop:</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;            <span class="keywordflow">if</span> step == <span class="stringliteral">&#39;Q&#39;</span>:  <span class="comment"># Step 1 Calibrate discharge</span></div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                output_str += <span class="stringliteral">&#39;%d-%d\t%s&#39;</span> % (ind.gen, ind.id, ind.cali.output_efficiency(<span class="stringliteral">&#39;Q&#39;</span>))</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                <span class="keywordflow">if</span> cali_obj.cfg.calc_validation:</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                    output_str += ind.vali.output_efficiency(<span class="stringliteral">&#39;Q&#39;</span>)</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;            <span class="keywordflow">elif</span> step == <span class="stringliteral">&#39;SED&#39;</span>:  <span class="comment"># Step 2 Calibrate sediment</span></div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                output_str += <span class="stringliteral">&#39;%d-%d\t%s%s&#39;</span> % (ind.gen, ind.id, ind.cali.output_efficiency(<span class="stringliteral">&#39;SED&#39;</span>),</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                                               ind.cali.output_efficiency(<span class="stringliteral">&#39;Q&#39;</span>))</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                <span class="keywordflow">if</span> cali_obj.cfg.calc_validation:</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                    output_str += <span class="stringliteral">&#39;%s%s&#39;</span> % (ind.vali.output_efficiency(<span class="stringliteral">&#39;SED&#39;</span>),</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                                            ind.vali.output_efficiency(<span class="stringliteral">&#39;Q&#39;</span>))</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;            output_str += str(ind)</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            output_str += <span class="stringliteral">&#39;\n&#39;</span></div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        UtilClass.writelog(cfg.opt.logfile, output_str, mode=<span class="stringliteral">&#39;append&#39;</span>)</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        <span class="comment"># TODO: Figure out if we should terminate the evolution</span></div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="keywordflow">return</span> pop, logbook</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;<span class="keywordflow">if</span> __name__ == <span class="stringliteral">&quot;__main__&quot;</span>:</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    cf, method = get_cali_config()</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    cfg = CaliConfig(cf, method=method)</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="comment"># print(cfg)</span></div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    print_message(<span class="stringliteral">&#39;### START TO CALIBRATION OPTIMIZING ###&#39;</span>)</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    startT = time.time()</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    fpop, fstats = main(cfg)</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    fpop.sort(key=<span class="keyword">lambda</span> x: x.fitness.values)</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    print_message(fstats)</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    with open(cfg.opt.logbookfile, <span class="stringliteral">&#39;w&#39;</span>) <span class="keyword">as</span> f:</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        f.write(fstats.__str__())</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    endT = time.time()</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    print_message(<span class="stringliteral">&#39;Running time: %.2fs&#39;</span> % (endT - startT))</div>
-<div class="ttc" id="a00940_html"><div class="ttname"><a href="../../d7/db6/a00940.html">utils</a></div></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00170"></a><span class="lineno"><a class="line" href="../../dd/db2/a00151.html#aabd631c05d3e74aa9970f7415f2f5de7">  170</a></span>&#160;    time_t <a class="code" href="../../dd/db2/a00151.html#aabd631c05d3e74aa9970f7415f2f5de7">m_date</a>;</div>
+<div class="line"><a name="l00172"></a><span class="lineno"><a class="line" href="../../dd/db2/a00151.html#addfe4dd5800efd0bb827338daf65d64c">  172</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../dd/db2/a00151.html#addfe4dd5800efd0bb827338daf65d64c">m_yearIdx</a>;</div>
+<div class="line"><a name="l00174"></a><span class="lineno"><a class="line" href="../../dd/db2/a00151.html#adee1865c86a9761af76cec98cac30a44">  174</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../dd/db2/a00151.html#adee1865c86a9761af76cec98cac30a44">m_tsCounter</a>;</div>
+<div class="line"><a name="l00176"></a><span class="lineno"><a class="line" href="../../dd/db2/a00151.html#a68422923210ead26b1651bf0e0a339f6">  176</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../dd/db2/a00151.html#a68422923210ead26b1651bf0e0a339f6">m_inputsSetDone</a>;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;};</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="preprocessor">#define CHECK_DATA(moduleID, expression, desc) if ((expression)) \</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="preprocessor">                   throw ModelException(moduleID, &quot;CheckInputData&quot;, string(desc))</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CHECK_POINTER(moduleID, param) if (nullptr == (param)) \</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="preprocessor">                   throw ModelException(moduleID, &quot;CheckInputData&quot;, string(#param) + string(&quot; MUST NOT be NULL!&quot;))</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CHECK_POSITIVE(moduleID, param) if ((param) &lt;= 0) \</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="preprocessor">                   throw ModelException(moduleID, &quot;CheckInputData&quot;, string(#param) + string(&quot; MUST be positive!&quot;))</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CHECK_NONNEGATIVE(moduleID, param) if ((param) &lt; 0) \</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="preprocessor">                   throw ModelException(moduleID, &quot;CheckInputData&quot;, string(#param) + string(&quot; MUST be greater or equal than zero!&quot;))</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CHECK_NEGATIVE(moduleID, param) if ((param) &gt;= 0) \</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="preprocessor">                   throw ModelException(moduleID, &quot;CheckInputData&quot;, string(#param) + string(&quot; MUST be negative!&quot;))</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CHECK_ZERO(moduleID, param) if ((param) == 0 || FloatEqual(float(param), 0.f)) \</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="preprocessor">                   throw ModelException(moduleID, &quot;CheckInputData&quot;, string(#param) + string(&quot; MUST NOT be zero!&quot;))</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CHECK_NODATA(moduleID, param) if ((param) == NODATA_VALUE || FloatEqual(float(param), NODATA_VALUE)) \</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="preprocessor">                     throw ModelException(moduleID, &quot;CheckInputData&quot;, string(#param) + string(&quot; MUST NOT be NODATA_VALUE!&quot;))</span></div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif </span><span class="comment">/* SIMULATION_MOUDULE_BASE */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="a00151_html_a1f7470f5f4f831b9053e3ff2d92c1813"><div class="ttname"><a href="../../dd/db2/a00151.html#a1f7470f5f4f831b9053e3ff2d92c1813">SimulationModule::Set2DArrayData</a></div><div class="ttdeci">virtual void Set2DArrayData(const char *key, int nRows, int nCols, float **data)</div><div class="ttdoc">Set 2D array data, by default, DT_Array2D. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/de0/a00465_source.html#l00098">SimulationModule.h:98</a></div></div>
+<div class="ttc" id="a00030_html"><div class="ttname"><a href="../../d5/d79/a00030.html">clsSubbasins</a></div><div class="ttdoc">Manager all Subbasin related parameters and methods. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dd5/a00432_source.html#l00214">clsSubbasin.h:214</a></div></div>
+<div class="ttc" id="a00151_html_aa4115c5f61d71efde62d3b62c70b51ec"><div class="ttname"><a href="../../dd/db2/a00151.html#aa4115c5f61d71efde62d3b62c70b51ec">SimulationModule::SetReaches</a></div><div class="ttdeci">virtual void SetReaches(clsReaches *)</div><div class="ttdoc">Set pointer of clsReaches class which contains all reaches information. Added by LJ, 2016-7-2. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/de0/a00465_source.html#l00139">SimulationModule.h:139</a></div></div>
+<div class="ttc" id="a00151_html_aabd631c05d3e74aa9970f7415f2f5de7"><div class="ttname"><a href="../../dd/db2/a00151.html#aabd631c05d3e74aa9970f7415f2f5de7">SimulationModule::m_date</a></div><div class="ttdeci">time_t m_date</div><div class="ttdoc">date time </div><div class="ttdef"><b>Definition:</b> <a href="../../db/de0/a00465_source.html#l00170">SimulationModule.h:170</a></div></div>
+<div class="ttc" id="a00151_html_a1a3a7bd2ff8748ec360e9464c358500b"><div class="ttname"><a href="../../dd/db2/a00151.html#a1a3a7bd2ff8748ec360e9464c358500b">SimulationModule::ResetSubTimeStep</a></div><div class="ttdeci">virtual void ResetSubTimeStep()</div><div class="ttdoc">Reset subtime step. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/de0/a00465_source.html#l00158">SimulationModule.h:158</a></div></div>
+<div class="ttc" id="a00096_html"><div class="ttname"><a href="../../d9/df8/a00096.html">ccgl::ModelException</a></div><div class="ttdoc">Print the exception message. </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dfc/a00327_source.html#l00303">basic.h:303</a></div></div>
+<div class="ttc" id="a00151_html_af7b9caed16e56bf880b171040981403e"><div class="ttname"><a href="../../dd/db2/a00151.html#af7b9caed16e56bf880b171040981403e">SimulationModule::SetClimateDataType</a></div><div class="ttdeci">virtual void SetClimateDataType(float value)</div><div class="ttdoc">Set climate data type, P, M, PET etc. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/de0/a00465_source.html#l00064">SimulationModule.h:64</a></div></div>
+<div class="ttc" id="a00143_html"><div class="ttname"><a href="../../d7/dce/a00143.html">bmps::Scenario</a></div><div class="ttdoc">Main class of scenario in BMP database. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/df7/a00418_source.html#l00039">Scenario.h:39</a></div></div>
+<div class="ttc" id="a00151_html_af6d0b8a412ab55dcebe689dd07846465"><div class="ttname"><a href="../../dd/db2/a00151.html#af6d0b8a412ab55dcebe689dd07846465">SimulationModule::SimulationModule</a></div><div class="ttdeci">SimulationModule()</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/de0/a00465_source.html#l00043">SimulationModule.h:43</a></div></div>
+<div class="ttc" id="a00151_html_adbc76071424a60cb92e2d4c3373e1ff4"><div class="ttname"><a href="../../dd/db2/a00151.html#adbc76071424a60cb92e2d4c3373e1ff4">SimulationModule::SetValueByIndex</a></div><div class="ttdeci">virtual void SetValueByIndex(const char *key, int index, float data)</div><div class="ttdoc">Set single value to array1D by index, used in MPI version for passing values of subbasins. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/de0/a00465_source.html#l00074">SimulationModule.h:74</a></div></div>
+<div class="ttc" id="a00151_html_aafd60bc9d4176a0cf64af01aed881980"><div class="ttname"><a href="../../dd/db2/a00151.html#aafd60bc9d4176a0cf64af01aed881980">SimulationModule::GetValue</a></div><div class="ttdeci">virtual void GetValue(const char *key, float *value)</div><div class="ttdoc">Get value, DT_Single. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/de0/a00465_source.html#l00104">SimulationModule.h:104</a></div></div>
+<div class="ttc" id="a00151_html_a8526abbeed3f49071f39e0c17559e522"><div class="ttname"><a href="../../dd/db2/a00151.html#a8526abbeed3f49071f39e0c17559e522">SimulationModule::SetDate</a></div><div class="ttdeci">virtual void SetDate(time_t t, int yearIdx)</div><div class="ttdoc">Set date time, as well as the sequence number of the entire simulation. Added by LJ for statistics co...</div><div class="ttdef"><b>Definition:</b> <a href="../../db/de0/a00465_source.html#l00053">SimulationModule.h:53</a></div></div>
+<div class="ttc" id="a00151_html_a497fa950bc9c4d85cfb1ae13d83f06c9"><div class="ttname"><a href="../../dd/db2/a00151.html#a497fa950bc9c4d85cfb1ae13d83f06c9">SimulationModule::Set2DData</a></div><div class="ttdeci">virtual void Set2DData(const char *key, int nRows, int nCols, float **data)</div><div class="ttdoc">Set 2D data, by default, DT_Raster2D. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/de0/a00465_source.html#l00086">SimulationModule.h:86</a></div></div>
+<div class="ttc" id="a00151_html_addfe4dd5800efd0bb827338daf65d64c"><div class="ttname"><a href="../../dd/db2/a00151.html#addfe4dd5800efd0bb827338daf65d64c">SimulationModule::m_yearIdx</a></div><div class="ttdeci">int m_yearIdx</div><div class="ttdoc">index of current year of simulation, e.g., the simulation period from 2010 to 2015, m_yearIdx is 2 when simulate 2012. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/de0/a00465_source.html#l00172">SimulationModule.h:172</a></div></div>
+<div class="ttc" id="a00151_html_a97da293bca13cf5934d9ef6da34d9290"><div class="ttname"><a href="../../dd/db2/a00151.html#a97da293bca13cf5934d9ef6da34d9290">SimulationModule::SetSubbasins</a></div><div class="ttdeci">virtual void SetSubbasins(clsSubbasins *)</div><div class="ttdoc">Set pointer of clsSubbasins class which contains all subbasins information. Added by LJ...</div><div class="ttdef"><b>Definition:</b> <a href="../../db/de0/a00465_source.html#l00144">SimulationModule.h:144</a></div></div>
+<div class="ttc" id="a00151_html_a46191d743a839a5290fd42d318b500d0"><div class="ttname"><a href="../../dd/db2/a00151.html#a46191d743a839a5290fd42d318b500d0">SimulationModule::SetTheadNumber</a></div><div class="ttdeci">virtual void SetTheadNumber(int threadNum)</div><div class="ttdoc">Set thread number for OpenMP. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/de0/a00465_source.html#l00059">SimulationModule.h:59</a></div></div>
+<div class="ttc" id="a00151_html_ac3c60349cd6720bb66e58fa4cd31a999"><div class="ttname"><a href="../../dd/db2/a00151.html#ac3c60349cd6720bb66e58fa4cd31a999">SimulationModule::Set1DArrayData</a></div><div class="ttdeci">virtual void Set1DArrayData(const char *key, int n, float *data)</div><div class="ttdoc">Set 1D array data, DT_Array1D. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/de0/a00465_source.html#l00092">SimulationModule.h:92</a></div></div>
+<div class="ttc" id="a00151_html_a3330ba74e63c5e2e6368d5d62d4048ea"><div class="ttname"><a href="../../dd/db2/a00151.html#a3330ba74e63c5e2e6368d5d62d4048ea">SimulationModule::Get2DArrayData</a></div><div class="ttdeci">virtual void Get2DArrayData(const char *key, int *nRows, int *nCols, float ***data)</div><div class="ttdoc">Get 2D Array data, by default, DT_Array2D. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/de0/a00465_source.html#l00128">SimulationModule.h:128</a></div></div>
+<div class="ttc" id="a00151_html_a686c39c1c4894cc144699ba0681d509d"><div class="ttname"><a href="../../dd/db2/a00151.html#a686c39c1c4894cc144699ba0681d509d">SimulationModule::Execute</a></div><div class="ttdeci">virtual int Execute()</div><div class="ttdoc">Destructor. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/de0/a00465_source.html#l00050">SimulationModule.h:50</a></div></div>
+<div class="ttc" id="a00074_html"><div class="ttname"><a href="../../db/db6/a00074.html">ccgl::Interface</a></div><div class="ttdoc">Base type of all interfaces. All interface types are encouraged to be virtual inherited. </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dfc/a00327_source.html#l00294">basic.h:294</a></div></div>
+<div class="ttc" id="a00151_html_a94457cc066581e7ecd1d3c88ebdf3163"><div class="ttname"><a href="../../dd/db2/a00151.html#a94457cc066581e7ecd1d3c88ebdf3163">SimulationModule::SetInputsDone</a></div><div class="ttdeci">void SetInputsDone(bool setDone)</div><div class="ttdoc">Change the status of setting inputs parameters. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/de0/a00465_source.html#l00166">SimulationModule.h:166</a></div></div>
+<div class="ttc" id="a00151_html_ae6dfd515de376498a12a22724e57650a"><div class="ttname"><a href="../../dd/db2/a00151.html#ae6dfd515de376498a12a22724e57650a">SimulationModule::SetScenario</a></div><div class="ttdeci">virtual void SetScenario(Scenario *)</div><div class="ttdoc">Set pointer of Scenario class which contains all BMP information. Added by LJ, 2016-6-14. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/de0/a00465_source.html#l00134">SimulationModule.h:134</a></div></div>
+<div class="ttc" id="a00151_html_a68422923210ead26b1651bf0e0a339f6"><div class="ttname"><a href="../../dd/db2/a00151.html#a68422923210ead26b1651bf0e0a339f6">SimulationModule::m_inputsSetDone</a></div><div class="ttdeci">bool m_inputsSetDone</div><div class="ttdoc">Whether the inputs parameters (i.e., parameters derived from other modules) have been set...</div><div class="ttdef"><b>Definition:</b> <a href="../../db/de0/a00465_source.html#l00176">SimulationModule.h:176</a></div></div>
+<div class="ttc" id="a00151_html_a2238382a3e1a264218a37b32d3947bd6"><div class="ttname"><a href="../../dd/db2/a00151.html#a2238382a3e1a264218a37b32d3947bd6">SimulationModule::IsInputsSetDone</a></div><div class="ttdeci">bool IsInputsSetDone()</div><div class="ttdoc">Whether the inputs parameters (i.e., parameters derived from other modules) have been set...</div><div class="ttdef"><b>Definition:</b> <a href="../../db/de0/a00465_source.html#l00163">SimulationModule.h:163</a></div></div>
+<div class="ttc" id="a00151_html_afcfef6ce1ce8761a961f694e3a7969bb"><div class="ttname"><a href="../../dd/db2/a00151.html#afcfef6ce1ce8761a961f694e3a7969bb">SimulationModule::SetValue</a></div><div class="ttdeci">virtual void SetValue(const char *key, float data)</div><div class="ttdoc">Set data, DT_Single. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/de0/a00465_source.html#l00068">SimulationModule.h:68</a></div></div>
+<div class="ttc" id="a00685_html_ae3d5ae8abc83b26a8eb3680c6fd51ddf"><div class="ttname"><a href="../../d0/df1/a00685.html#ae3d5ae8abc83b26a8eb3680c6fd51ddf">ccgl::SetOpenMPThread</a></div><div class="ttdeci">void SetOpenMPThread(int n)</div><div class="ttdoc">Set the omp thread number by given thread number. </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d23/a00326_source.html#l00123">basic.cpp:123</a></div></div>
+<div class="ttc" id="a00151_html_ad834fe6ed6d11b333fd34e1ff605ebb7"><div class="ttname"><a href="../../dd/db2/a00151.html#ad834fe6ed6d11b333fd34e1ff605ebb7">SimulationModule::Get1DData</a></div><div class="ttdeci">virtual void Get1DData(const char *key, int *n, float **data)</div><div class="ttdoc">Get 1D data, by default, DT_Raster1D. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/de0/a00465_source.html#l00110">SimulationModule.h:110</a></div></div>
+<div class="ttc" id="a00151_html_aeb23e43dd78e4fb8ce5d25a9855dd748"><div class="ttname"><a href="../../dd/db2/a00151.html#aeb23e43dd78e4fb8ce5d25a9855dd748">SimulationModule::Get1DArrayData</a></div><div class="ttdeci">virtual void Get1DArrayData(const char *key, int *n, float **data)</div><div class="ttdoc">Get 1D Array data, by default, DT_Array1D. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/de0/a00465_source.html#l00122">SimulationModule.h:122</a></div></div>
+<div class="ttc" id="a00151_html_a272481bef46db20353da33e95a5f5426"><div class="ttname"><a href="../../dd/db2/a00151.html#a272481bef46db20353da33e95a5f5426">SimulationModule::GetTimeStepType</a></div><div class="ttdeci">virtual TimeStepType GetTimeStepType()</div><div class="ttdoc">Get time step type, default is hillslope process. Remember to OVERRIDE this function to return other ...</div><div class="ttdef"><b>Definition:</b> <a href="../../db/de0/a00465_source.html#l00153">SimulationModule.h:153</a></div></div>
+<div class="ttc" id="a00028_html"><div class="ttname"><a href="../../dc/d3c/a00028.html">clsReaches</a></div><div class="ttdoc">Read and store all reaches information as input parameters. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd3/a00428_source.html#l00069">clsReach.h:69</a></div></div>
+<div class="ttc" id="a00151_html_ab6dc960ad0a7bd7714e9644b64dc0acb"><div class="ttname"><a href="../../dd/db2/a00151.html#ab6dc960ad0a7bd7714e9644b64dc0acb">SimulationModule::Get2DData</a></div><div class="ttdeci">virtual void Get2DData(const char *key, int *nRows, int *nCols, float ***data)</div><div class="ttdoc">Get 2D data, by default, DT_Raster2D. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/de0/a00465_source.html#l00116">SimulationModule.h:116</a></div></div>
+<div class="ttc" id="a00151_html_adee1865c86a9761af76cec98cac30a44"><div class="ttname"><a href="../../dd/db2/a00151.html#adee1865c86a9761af76cec98cac30a44">SimulationModule::m_tsCounter</a></div><div class="ttdeci">int m_tsCounter</div><div class="ttdoc">sub-timestep counter </div><div class="ttdef"><b>Definition:</b> <a href="../../db/de0/a00465_source.html#l00174">SimulationModule.h:174</a></div></div>
+<div class="ttc" id="a00151_html"><div class="ttname"><a href="../../dd/db2/a00151.html">SimulationModule</a></div><div class="ttdoc">Base module for all simulation modules in SEIMS. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/de0/a00465_source.html#l00040">SimulationModule.h:40</a></div></div>
+<div class="ttc" id="a00151_html_aba2d6fc2b0e4f8ccf202e0752c45d55c"><div class="ttname"><a href="../../dd/db2/a00151.html#aba2d6fc2b0e4f8ccf202e0752c45d55c">SimulationModule::Set1DData</a></div><div class="ttdeci">virtual void Set1DData(const char *key, int n, float *data)</div><div class="ttdoc">Set 1D data, by default, DT_Raster1D. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/de0/a00465_source.html#l00080">SimulationModule.h:80</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_483bc1739a16b87563cca23e7a392c1e.html">seims_linux_gcc48</a></li><li class="navelem"><a class="el" href="../../dir_a45053e29f104e67e5be28f13679e3c2.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_04d27d20fda3d5ceecb435390ab709bf.html">calibration</a></li><li class="navelem"><b>main.py</b></li>
-    <li class="footer">Generated on Tue Mar 27 2018 10:10:59 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_d9d8c03d94c229237348b60b53b769ac.html">base</a></li><li class="navelem"><a class="el" href="../../dir_cce2c0ac50386f26b5b526fa8626cc77.html">module_setting</a></li><li class="navelem"><b>SimulationModule.h</b></li>
+    <li class="footer">Generated on Mon May 7 2018 13:47:05 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims/src/seims_main/base/bmps/BMPFactory.h Source File</title>
+<title>SEIMS: seims/src/seims_main/modules/hydrology_longterm/SRD_MB/SRD_MB.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -101,7 +101,7 @@ $(document).ready(function(){initNavTree('df/d6f/a00623_source.html','../../');}
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -112,84 +112,91 @@ $(document).ready(function(){initNavTree('df/d6f/a00623_source.html','../../');}
 
 <div class="header">
   <div class="headertitle">
-<div class="title">BMPFactory.h</div>  </div>
+<div class="title">SRD_MB.h</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef SEIMS_BMP_FACTORY_H</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SEIMS_BMP_FACTORY_H</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;seims.h&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;utilities.h&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;BMPText.h&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;SimulationModule.h&quot;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;MongoUtil.h&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;clsRasterData.h&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">namespace </span>MainBMP {</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="../../dc/dee/a00053.html">   28</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../dc/dee/a00053.html">BMPFactory</a> {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="../../dc/dee/a00053.html#a7219ebfd8442ee0e7123d06886e88ffd">BMPFactory</a>(<span class="keywordtype">int</span> scenarioId, <span class="keywordtype">int</span> bmpId, <span class="keywordtype">int</span> subScenario, <span class="keywordtype">int</span> <a class="code" href="../../dc/dee/a00053.html#ab4a0152607557d70ca21d89fafb94822">bmpType</a>,</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;               <span class="keywordtype">int</span> <a class="code" href="../../dc/dee/a00053.html#a59a7384e669a81a974cc0fef48df242c">bmpPriority</a>, vector&lt;string&gt;&amp; distribution, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; collection,</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;               <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; location);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#if defined(_MSC_VER) &amp;&amp; (_MSC_VER &lt;= 1600)</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor"></span>    <span class="keyword">virtual</span> <a class="code" href="../../dc/dee/a00053.html#ae2b6ca163103a4566cbed4417cd5becf">~BMPFactory</a>() {};</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor"></span>    <span class="keyword">virtual</span> <a class="code" href="../../dc/dee/a00053.html#ae2b6ca163103a4566cbed4417cd5becf">~BMPFactory</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* less than VS2010 */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../dc/dee/a00053.html#ad929112a33a93587a1a9eb7ea0b259df">loadBMP</a>(MongoClient *conn, <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;bmpDBName) = 0;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="../../dc/dee/a00053.html#a1fd368560f401941e0c67e15de17fe9a">   49</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../dc/dee/a00053.html#a1fd368560f401941e0c67e15de17fe9a">setRasterData</a>(map&lt;string, FloatRaster *&gt; &amp;sceneRsMap) {};</div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="../../dc/dee/a00053.html#a08ef94b57b12fa06bff11aae736de102">   54</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">float</span> *<a class="code" href="../../dc/dee/a00053.html#a08ef94b57b12fa06bff11aae736de102">getRasterData</a>() { <span class="keywordflow">return</span> <span class="keyword">nullptr</span>; }</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="../../dc/dee/a00053.html#ab4a0152607557d70ca21d89fafb94822">   62</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../dc/dee/a00053.html#ab4a0152607557d70ca21d89fafb94822">bmpType</a>() { <span class="keywordflow">return</span> <a class="code" href="../../dc/dee/a00053.html#a227caa35587f18299d857d9b1a2b4bad">m_bmpType</a>; }</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="../../dc/dee/a00053.html#a59a7384e669a81a974cc0fef48df242c">   65</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../dc/dee/a00053.html#a59a7384e669a81a974cc0fef48df242c">bmpPriority</a>() { <span class="keywordflow">return</span> <a class="code" href="../../dc/dee/a00053.html#acc76edc7053f0e396c9984bf229f5e7b">m_bmpPriority</a>; }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="../../dc/dee/a00053.html#afd05fd06a9ad8d639988194566fd64ae">   68</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../dc/dee/a00053.html#afd05fd06a9ad8d639988194566fd64ae">GetSubScenarioId</a>() { <span class="keywordflow">return</span> <a class="code" href="../../dc/dee/a00053.html#a779426b1e43efb2835af551d0ba98285">m_subScenarioId</a>; }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../dc/dee/a00053.html#a6076fb64d01de5f66056b9dab2b2d8f0">Dump</a>(ostream *fs) = 0;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="../../dc/dee/a00053.html#a29f21807a3a3185e6d94cb0296a09a5c">   74</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="../../dc/dee/a00053.html#a29f21807a3a3185e6d94cb0296a09a5c">m_scenarioId</a>;     </div>
-<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="../../dc/dee/a00053.html#a2847aac6ff859f70fcdb4330e35e6a60">   75</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="../../dc/dee/a00053.html#a2847aac6ff859f70fcdb4330e35e6a60">m_bmpId</a>;          </div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="../../dc/dee/a00053.html#a779426b1e43efb2835af551d0ba98285">   76</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="../../dc/dee/a00053.html#a779426b1e43efb2835af551d0ba98285">m_subScenarioId</a>;  </div>
-<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="../../dc/dee/a00053.html#a227caa35587f18299d857d9b1a2b4bad">   77</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="../../dc/dee/a00053.html#a227caa35587f18299d857d9b1a2b4bad">m_bmpType</a>;        </div>
-<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="../../dc/dee/a00053.html#acc76edc7053f0e396c9984bf229f5e7b">   78</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="../../dc/dee/a00053.html#acc76edc7053f0e396c9984bf229f5e7b">m_bmpPriority</a>;    </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="../../dc/dee/a00053.html#aa349b6776b9754eae4096f7608ae09a0">   82</a></span>&#160;    vector&lt;string&gt; <a class="code" href="../../dc/dee/a00053.html#aa349b6776b9754eae4096f7608ae09a0">m_distribution</a>;</div>
-<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="../../dc/dee/a00053.html#a43cb16434d2caa7245ebca352a950f62">   83</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="../../dc/dee/a00053.html#a43cb16434d2caa7245ebca352a950f62">m_bmpCollection</a>;  </div>
-<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="../../dc/dee/a00053.html#a8f0264c0b8732258fffed5395f10de0e">   84</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="../../dc/dee/a00053.html#a8f0264c0b8732258fffed5395f10de0e">m_location</a>;       </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;};</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SEIMS_BMP_FACTORY_H */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="a00053_html_a779426b1e43efb2835af551d0ba98285"><div class="ttname"><a href="../../dc/dee/a00053.html#a779426b1e43efb2835af551d0ba98285">MainBMP::BMPFactory::m_subScenarioId</a></div><div class="ttdeci">const int m_subScenarioId</div><div class="ttdoc">SubScenario ID within one BMP iD. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/d6f/a00623_source.html#l00076">BMPFactory.h:76</a></div></div>
-<div class="ttc" id="a00053_html_ad929112a33a93587a1a9eb7ea0b259df"><div class="ttname"><a href="../../dc/dee/a00053.html#ad929112a33a93587a1a9eb7ea0b259df">MainBMP::BMPFactory::loadBMP</a></div><div class="ttdeci">virtual void loadBMP(MongoClient *conn, const string &amp;bmpDBName)=0</div><div class="ttdoc">Load BMP parameters from MongoDB. </div></div>
-<div class="ttc" id="a00053_html_afd05fd06a9ad8d639988194566fd64ae"><div class="ttname"><a href="../../dc/dee/a00053.html#afd05fd06a9ad8d639988194566fd64ae">MainBMP::BMPFactory::GetSubScenarioId</a></div><div class="ttdeci">int GetSubScenarioId()</div><div class="ttdoc">Get subScenario ID. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/d6f/a00623_source.html#l00068">BMPFactory.h:68</a></div></div>
-<div class="ttc" id="a00053_html_acc76edc7053f0e396c9984bf229f5e7b"><div class="ttname"><a href="../../dc/dee/a00053.html#acc76edc7053f0e396c9984bf229f5e7b">MainBMP::BMPFactory::m_bmpPriority</a></div><div class="ttdeci">const int m_bmpPriority</div><div class="ttdoc">BMP Priority. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/d6f/a00623_source.html#l00078">BMPFactory.h:78</a></div></div>
-<div class="ttc" id="a00053_html_a08ef94b57b12fa06bff11aae736de102"><div class="ttname"><a href="../../dc/dee/a00053.html#a08ef94b57b12fa06bff11aae736de102">MainBMP::BMPFactory::getRasterData</a></div><div class="ttdeci">virtual float * getRasterData()</div><div class="ttdoc">Get raster data if needed This function is not required for each BMP, so DO NOT define as pure virtua...</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d6f/a00623_source.html#l00054">BMPFactory.h:54</a></div></div>
-<div class="ttc" id="a00053_html_a8f0264c0b8732258fffed5395f10de0e"><div class="ttname"><a href="../../dc/dee/a00053.html#a8f0264c0b8732258fffed5395f10de0e">MainBMP::BMPFactory::m_location</a></div><div class="ttdeci">const string m_location</div><div class="ttdoc">Define where the BMP will be applied. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/d6f/a00623_source.html#l00084">BMPFactory.h:84</a></div></div>
-<div class="ttc" id="a00053_html_a29f21807a3a3185e6d94cb0296a09a5c"><div class="ttname"><a href="../../dc/dee/a00053.html#a29f21807a3a3185e6d94cb0296a09a5c">MainBMP::BMPFactory::m_scenarioId</a></div><div class="ttdeci">const int m_scenarioId</div><div class="ttdoc">Scenario ID. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/d6f/a00623_source.html#l00074">BMPFactory.h:74</a></div></div>
-<div class="ttc" id="a00053_html_a59a7384e669a81a974cc0fef48df242c"><div class="ttname"><a href="../../dc/dee/a00053.html#a59a7384e669a81a974cc0fef48df242c">MainBMP::BMPFactory::bmpPriority</a></div><div class="ttdeci">int bmpPriority()</div><div class="ttdoc">Get BMP priority. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/d6f/a00623_source.html#l00065">BMPFactory.h:65</a></div></div>
-<div class="ttc" id="a00053_html_a227caa35587f18299d857d9b1a2b4bad"><div class="ttname"><a href="../../dc/dee/a00053.html#a227caa35587f18299d857d9b1a2b4bad">MainBMP::BMPFactory::m_bmpType</a></div><div class="ttdeci">const int m_bmpType</div><div class="ttdoc">BMP Type. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/d6f/a00623_source.html#l00077">BMPFactory.h:77</a></div></div>
-<div class="ttc" id="a00053_html_a6076fb64d01de5f66056b9dab2b2d8f0"><div class="ttname"><a href="../../dc/dee/a00053.html#a6076fb64d01de5f66056b9dab2b2d8f0">MainBMP::BMPFactory::Dump</a></div><div class="ttdeci">virtual void Dump(ostream *fs)=0</div><div class="ttdoc">Output. </div></div>
-<div class="ttc" id="a00053_html_a2847aac6ff859f70fcdb4330e35e6a60"><div class="ttname"><a href="../../dc/dee/a00053.html#a2847aac6ff859f70fcdb4330e35e6a60">MainBMP::BMPFactory::m_bmpId</a></div><div class="ttdeci">const int m_bmpId</div><div class="ttdoc">BMP ID. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/d6f/a00623_source.html#l00075">BMPFactory.h:75</a></div></div>
-<div class="ttc" id="a00053_html_a43cb16434d2caa7245ebca352a950f62"><div class="ttname"><a href="../../dc/dee/a00053.html#a43cb16434d2caa7245ebca352a950f62">MainBMP::BMPFactory::m_bmpCollection</a></div><div class="ttdeci">const string m_bmpCollection</div><div class="ttdoc">Collection name. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/d6f/a00623_source.html#l00083">BMPFactory.h:83</a></div></div>
-<div class="ttc" id="a00053_html_aa349b6776b9754eae4096f7608ae09a0"><div class="ttname"><a href="../../dc/dee/a00053.html#aa349b6776b9754eae4096f7608ae09a0">MainBMP::BMPFactory::m_distribution</a></div><div class="ttdeci">vector&lt; string &gt; m_distribution</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d6f/a00623_source.html#l00082">BMPFactory.h:82</a></div></div>
-<div class="ttc" id="a00053_html_a1fd368560f401941e0c67e15de17fe9a"><div class="ttname"><a href="../../dc/dee/a00053.html#a1fd368560f401941e0c67e15de17fe9a">MainBMP::BMPFactory::setRasterData</a></div><div class="ttdeci">virtual void setRasterData(map&lt; string, FloatRaster * &gt; &amp;sceneRsMap)</div><div class="ttdoc">Set raster data if needed This function is not required for each BMP, so DO NOT define as pure virtua...</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d6f/a00623_source.html#l00049">BMPFactory.h:49</a></div></div>
-<div class="ttc" id="a00053_html_ab4a0152607557d70ca21d89fafb94822"><div class="ttname"><a href="../../dc/dee/a00053.html#ab4a0152607557d70ca21d89fafb94822">MainBMP::BMPFactory::bmpType</a></div><div class="ttdeci">int bmpType()</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d6f/a00623_source.html#l00062">BMPFactory.h:62</a></div></div>
-<div class="ttc" id="a00053_html"><div class="ttname"><a href="../../dc/dee/a00053.html">MainBMP::BMPFactory</a></div><div class="ttdoc">Base class to initiate a BMP data. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/d6f/a00623_source.html#l00028">BMPFactory.h:28</a></div></div>
-<div class="ttc" id="a00053_html_ae2b6ca163103a4566cbed4417cd5becf"><div class="ttname"><a href="../../dc/dee/a00053.html#ae2b6ca163103a4566cbed4417cd5becf">MainBMP::BMPFactory::~BMPFactory</a></div><div class="ttdeci">virtual ~BMPFactory()=default</div><div class="ttdoc">virtual Destructor </div></div>
-<div class="ttc" id="a00053_html_a7219ebfd8442ee0e7123d06886e88ffd"><div class="ttname"><a href="../../dc/dee/a00053.html#a7219ebfd8442ee0e7123d06886e88ffd">MainBMP::BMPFactory::BMPFactory</a></div><div class="ttdeci">BMPFactory(int scenarioId, int bmpId, int subScenario, int bmpType, int bmpPriority, vector&lt; string &gt; &amp;distribution, const string &amp;collection, const string &amp;location)</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> <a href="../../d0/db1/a00622_source.html#l00005">BMPFactory.cpp:5</a></div></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="../../d0/d48/a00165.html">   26</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d0/d48/a00165.html">SRD_MB</a> : <span class="keyword">public</span> <a class="code" href="../../dd/db2/a00151.html">SimulationModule</a> {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="../../d0/d48/a00165.html">SRD_MB</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    ~<a class="code" href="../../d0/d48/a00165.html">SRD_MB</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> Execute(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> SetValue(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">float</span> data);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> Set1DData(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">int</span> n, <span class="keywordtype">float</span> *data);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> Get1DData(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">int</span> *n, <span class="keywordtype">float</span> **data);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">bool</span> CheckInputSize(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">int</span> n);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">bool</span> CheckInputData(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    time_t m_Date;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="../../d0/d48/a00165.html#a70ea482503388c2648af82962161b36f">   50</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../d0/d48/a00165.html#a70ea482503388c2648af82962161b36f">m_nCells</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">//single values from parameter database</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">float</span> m_ut0;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">float</span> m_u0;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">float</span> m_t_wind;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">float</span> m_shc_crop;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">float</span> m_k_slope;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">float</span> m_k_curvature;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">float</span> m_swe;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">float</span> m_swe0;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">float</span> m_lastSWE;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">float</span> m_kblow;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">float</span> m_t0;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">float</span> m_tsnow;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">bool</span> m_isInitial;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">//time series from module</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">float</span> *m_ws;    <span class="comment">//wind speed</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">int</span> m_wsSize;    <span class="comment">//number of wind speed sites</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">//grid from parameter database</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">float</span> *m_curva_wind;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">float</span> *m_slope_wind;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">float</span> *m_shc;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">//grid from other modules</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">float</span> *m_tMin;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">float</span> *m_tMax;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">float</span> *m_tMean;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">float</span> *m_SA;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">float</span> *m_Pnet;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">//result</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">float</span> *m_SR;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">//temp array</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">float</span> *m_w;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">float</span> *m_wt;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">void</span> initialOutputs(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;};</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="ttc" id="a00165_html_a70ea482503388c2648af82962161b36f"><div class="ttname"><a href="../../d0/d48/a00165.html#a70ea482503388c2648af82962161b36f">SRD_MB::m_nCells</a></div><div class="ttdeci">int m_nCells</div><div class="ttdoc">valid cells number </div><div class="ttdef"><b>Definition:</b> <a href="../../df/d6f/a00623_source.html#l00050">SRD_MB.h:50</a></div></div>
+<div class="ttc" id="a00165_html"><div class="ttname"><a href="../../d0/d48/a00165.html">SRD_MB</a></div><div class="ttdoc">Soil redistribution calculation. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/d6f/a00623_source.html#l00026">SRD_MB.h:26</a></div></div>
+<div class="ttc" id="a00151_html"><div class="ttname"><a href="../../dd/db2/a00151.html">SimulationModule</a></div><div class="ttdoc">Base module for all simulation modules in SEIMS. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/de0/a00465_source.html#l00040">SimulationModule.h:40</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_d9d8c03d94c229237348b60b53b769ac.html">base</a></li><li class="navelem"><a class="el" href="../../dir_c4eaa6a6e6c4ee7b087e3de60cab1bbc.html">bmps</a></li><li class="navelem"><b>BMPFactory.h</b></li>
-    <li class="footer">Generated on Tue Mar 27 2018 10:11:00 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_b89a50a3d6b2f98326f9f3f569cfd788.html">modules</a></li><li class="navelem"><a class="el" href="../../dir_5bf5a4201e7cd7ac6c5f03aeeeae8b2c.html">hydrology_longterm</a></li><li class="navelem"><a class="el" href="../../dir_59a7091c3b3d70c4a75aad0168678ec6.html">SRD_MB</a></li><li class="navelem"><b>SRD_MB.h</b></li>
+    <li class="footer">Generated on Mon May 7 2018 13:47:05 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

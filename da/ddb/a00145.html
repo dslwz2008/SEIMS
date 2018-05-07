@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: ModelClass Struct Reference</title>
+<title>SEIMS: SEDR_SBAGNOLD Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -103,7 +103,7 @@ $(document).ready(function(){initNavTree('da/ddb/a00145.html','../../');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -114,30 +114,546 @@ $(document).ready(function(){initNavTree('da/ddb/a00145.html','../../');});
 
 <div class="header">
   <div class="summary">
-<a href="../../d6/df2/a01175.html">List of all members</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="../../de/d4e/a00972.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ModelClass Struct Reference<div class="ingroups"><a class="el" href="../../d4/dc5/a01024.html">Util</a></div></div>  </div>
+<div class="title">SEDR_SBAGNOLD Class Reference<div class="ingroups"><a class="el" href="../../d3/daf/a00790.html">SEDR_SBAGNOLD</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Module basic description.  
+<p>Sediment routing using variable channel dimension(VCD) method at daily time scale.  
  <a href="../../da/ddb/a00145.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="../../dc/de4/a00677_source.html">MetadataInfo.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="../../dc/df9/a00554_source.html">SEDR_SBAGNOLD.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for SEDR_SBAGNOLD:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/da5/a00973.png" border="0" usemap="#_s_e_d_r___s_b_a_g_n_o_l_d_inherit__map" alt="Inheritance graph"/></div>
+<map name="_s_e_d_r___s_b_a_g_n_o_l_d_inherit__map" id="_s_e_d_r___s_b_a_g_n_o_l_d_inherit__map">
+<area shape="rect" id="node2" href="../../dd/db2/a00151.html" title="Base module for all simulation modules in SEIMS. " alt="" coords="61,307,256,618"/><area shape="rect" id="node3" href="../../db/db6/a00074.html" title="Base type of all interfaces. All interface types are encouraged to be virtual inherited. " alt="" coords="99,173,219,259"/><area shape="rect" id="node4" href="../../d1/dd6/a00108.html" title="Base class for classes that cannot be copied. By inheriting this class you can disable copying of you..." alt="" coords="82,5,235,125"/></map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a29ec8d5c2b303e8b3b08617573014099"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddb/a00145.html#a29ec8d5c2b303e8b3b08617573014099">~SEDR_SBAGNOLD</a> ()</td></tr>
+<tr class="separator:a29ec8d5c2b303e8b3b08617573014099"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e6173f3a876a1151d5b470567ff060e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddb/a00145.html#a9e6173f3a876a1151d5b470567ff060e">Execute</a> () OVERRIDE</td></tr>
+<tr class="memdesc:a9e6173f3a876a1151d5b470567ff060e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="#a9e6173f3a876a1151d5b470567ff060e">More...</a><br/></td></tr>
+<tr class="separator:a9e6173f3a876a1151d5b470567ff060e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6c58a93a1acd082ba86bdbebd170211"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab6c58a93a1acd082ba86bdbebd170211"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddb/a00145.html#ab6c58a93a1acd082ba86bdbebd170211">SetValue</a> (const char *key, float data) OVERRIDE</td></tr>
+<tr class="memdesc:ab6c58a93a1acd082ba86bdbebd170211"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set data, DT_Single. <br/></td></tr>
+<tr class="separator:ab6c58a93a1acd082ba86bdbebd170211"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05d3b1aff301dea84cbed8af7f0d4e83"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a05d3b1aff301dea84cbed8af7f0d4e83"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddb/a00145.html#a05d3b1aff301dea84cbed8af7f0d4e83">SetValueByIndex</a> (const char *key, int index, float data) OVERRIDE</td></tr>
+<tr class="memdesc:a05d3b1aff301dea84cbed8af7f0d4e83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set single value to array1D by index, used in MPI version for passing values of subbasins. <br/></td></tr>
+<tr class="separator:a05d3b1aff301dea84cbed8af7f0d4e83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1713fdc288c47a61324787ef6aed6be0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1713fdc288c47a61324787ef6aed6be0"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddb/a00145.html#a1713fdc288c47a61324787ef6aed6be0">Set1DData</a> (const char *key, int n, float *data) OVERRIDE</td></tr>
+<tr class="memdesc:a1713fdc288c47a61324787ef6aed6be0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set 1D data, by default, DT_Raster1D. <br/></td></tr>
+<tr class="separator:a1713fdc288c47a61324787ef6aed6be0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0117e3320b8529d8adf1b1da87a1aed3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0117e3320b8529d8adf1b1da87a1aed3"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddb/a00145.html#a0117e3320b8529d8adf1b1da87a1aed3">GetValue</a> (const char *key, float *value) OVERRIDE</td></tr>
+<tr class="memdesc:a0117e3320b8529d8adf1b1da87a1aed3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get value, DT_Single. <br/></td></tr>
+<tr class="separator:a0117e3320b8529d8adf1b1da87a1aed3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c1ed2e08667af239e4ec7bccc028824"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8c1ed2e08667af239e4ec7bccc028824"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddb/a00145.html#a8c1ed2e08667af239e4ec7bccc028824">Get1DData</a> (const char *key, int *n, float **data) OVERRIDE</td></tr>
+<tr class="memdesc:a8c1ed2e08667af239e4ec7bccc028824"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get 1D data, by default, DT_Raster1D. <br/></td></tr>
+<tr class="separator:a8c1ed2e08667af239e4ec7bccc028824"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a968808a51f5b3725f340d0ffba1a3b85"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a968808a51f5b3725f340d0ffba1a3b85"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddb/a00145.html#a968808a51f5b3725f340d0ffba1a3b85">SetReaches</a> (<a class="el" href="../../dc/d3c/a00028.html">clsReaches</a> *reaches) OVERRIDE</td></tr>
+<tr class="memdesc:a968808a51f5b3725f340d0ffba1a3b85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set pointer of <a class="el" href="../../dc/d3c/a00028.html" title="Read and store all reaches information as input parameters. ">clsReaches</a> class which contains all reaches information. Added by LJ, 2016-7-2. <br/></td></tr>
+<tr class="separator:a968808a51f5b3725f340d0ffba1a3b85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb1526b9f01330f58349b54c02966043"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddb/a00145.html#abb1526b9f01330f58349b54c02966043">SetScenario</a> (<a class="el" href="../../d7/dce/a00143.html">Scenario</a> *sce) OVERRIDE</td></tr>
+<tr class="memdesc:abb1526b9f01330f58349b54c02966043"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set pointer of Scenario class which contains all BMP information. Added by LJ, 2016-6-14.  <a href="#abb1526b9f01330f58349b54c02966043">More...</a><br/></td></tr>
+<tr class="separator:abb1526b9f01330f58349b54c02966043"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86c2f6bc612196861cfa35e48b09b9b1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a86c2f6bc612196861cfa35e48b09b9b1"></a>
+TimeStepType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddb/a00145.html#a86c2f6bc612196861cfa35e48b09b9b1">GetTimeStepType</a> () OVERRIDE</td></tr>
+<tr class="memdesc:a86c2f6bc612196861cfa35e48b09b9b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get time step type, default is hillslope process. Remember to OVERRIDE this function to return other time step type for routing modules and others if necessary. <br/></td></tr>
+<tr class="separator:a86c2f6bc612196861cfa35e48b09b9b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_a00151"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a00151')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../dd/db2/a00151.html">SimulationModule</a></td></tr>
+<tr class="memitem:af6d0b8a412ab55dcebe689dd07846465 inherit pub_methods_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af6d0b8a412ab55dcebe689dd07846465"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#af6d0b8a412ab55dcebe689dd07846465">SimulationModule</a> ()</td></tr>
+<tr class="memdesc:af6d0b8a412ab55dcebe689dd07846465 inherit pub_methods_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. <br/></td></tr>
+<tr class="separator:af6d0b8a412ab55dcebe689dd07846465 inherit pub_methods_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8526abbeed3f49071f39e0c17559e522 inherit pub_methods_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8526abbeed3f49071f39e0c17559e522"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#a8526abbeed3f49071f39e0c17559e522">SetDate</a> (time_t t, int yearIdx)</td></tr>
+<tr class="memdesc:a8526abbeed3f49071f39e0c17559e522 inherit pub_methods_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set date time, as well as the sequence number of the entire simulation. Added by LJ for statistics convenient. <br/></td></tr>
+<tr class="separator:a8526abbeed3f49071f39e0c17559e522 inherit pub_methods_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46191d743a839a5290fd42d318b500d0 inherit pub_methods_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a46191d743a839a5290fd42d318b500d0"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#a46191d743a839a5290fd42d318b500d0">SetTheadNumber</a> (int threadNum)</td></tr>
+<tr class="memdesc:a46191d743a839a5290fd42d318b500d0 inherit pub_methods_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set thread number for OpenMP. <br/></td></tr>
+<tr class="separator:a46191d743a839a5290fd42d318b500d0 inherit pub_methods_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7b9caed16e56bf880b171040981403e inherit pub_methods_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af7b9caed16e56bf880b171040981403e"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#af7b9caed16e56bf880b171040981403e">SetClimateDataType</a> (float value)</td></tr>
+<tr class="memdesc:af7b9caed16e56bf880b171040981403e inherit pub_methods_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set climate data type, P, M, PET etc. <br/></td></tr>
+<tr class="separator:af7b9caed16e56bf880b171040981403e inherit pub_methods_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a497fa950bc9c4d85cfb1ae13d83f06c9 inherit pub_methods_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a497fa950bc9c4d85cfb1ae13d83f06c9"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#a497fa950bc9c4d85cfb1ae13d83f06c9">Set2DData</a> (const char *key, int nRows, int nCols, float **data)</td></tr>
+<tr class="memdesc:a497fa950bc9c4d85cfb1ae13d83f06c9 inherit pub_methods_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set 2D data, by default, DT_Raster2D. <br/></td></tr>
+<tr class="separator:a497fa950bc9c4d85cfb1ae13d83f06c9 inherit pub_methods_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3c60349cd6720bb66e58fa4cd31a999 inherit pub_methods_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac3c60349cd6720bb66e58fa4cd31a999"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#ac3c60349cd6720bb66e58fa4cd31a999">Set1DArrayData</a> (const char *key, int n, float *data)</td></tr>
+<tr class="memdesc:ac3c60349cd6720bb66e58fa4cd31a999 inherit pub_methods_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set 1D array data, DT_Array1D. <br/></td></tr>
+<tr class="separator:ac3c60349cd6720bb66e58fa4cd31a999 inherit pub_methods_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f7470f5f4f831b9053e3ff2d92c1813 inherit pub_methods_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1f7470f5f4f831b9053e3ff2d92c1813"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#a1f7470f5f4f831b9053e3ff2d92c1813">Set2DArrayData</a> (const char *key, int nRows, int nCols, float **data)</td></tr>
+<tr class="memdesc:a1f7470f5f4f831b9053e3ff2d92c1813 inherit pub_methods_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set 2D array data, by default, DT_Array2D. <br/></td></tr>
+<tr class="separator:a1f7470f5f4f831b9053e3ff2d92c1813 inherit pub_methods_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6dc960ad0a7bd7714e9644b64dc0acb inherit pub_methods_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab6dc960ad0a7bd7714e9644b64dc0acb"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#ab6dc960ad0a7bd7714e9644b64dc0acb">Get2DData</a> (const char *key, int *nRows, int *nCols, float ***data)</td></tr>
+<tr class="memdesc:ab6dc960ad0a7bd7714e9644b64dc0acb inherit pub_methods_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get 2D data, by default, DT_Raster2D. <br/></td></tr>
+<tr class="separator:ab6dc960ad0a7bd7714e9644b64dc0acb inherit pub_methods_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb23e43dd78e4fb8ce5d25a9855dd748 inherit pub_methods_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeb23e43dd78e4fb8ce5d25a9855dd748"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#aeb23e43dd78e4fb8ce5d25a9855dd748">Get1DArrayData</a> (const char *key, int *n, float **data)</td></tr>
+<tr class="memdesc:aeb23e43dd78e4fb8ce5d25a9855dd748 inherit pub_methods_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get 1D Array data, by default, DT_Array1D. <br/></td></tr>
+<tr class="separator:aeb23e43dd78e4fb8ce5d25a9855dd748 inherit pub_methods_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3330ba74e63c5e2e6368d5d62d4048ea inherit pub_methods_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3330ba74e63c5e2e6368d5d62d4048ea"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#a3330ba74e63c5e2e6368d5d62d4048ea">Get2DArrayData</a> (const char *key, int *nRows, int *nCols, float ***data)</td></tr>
+<tr class="memdesc:a3330ba74e63c5e2e6368d5d62d4048ea inherit pub_methods_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get 2D Array data, by default, DT_Array2D. <br/></td></tr>
+<tr class="separator:a3330ba74e63c5e2e6368d5d62d4048ea inherit pub_methods_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97da293bca13cf5934d9ef6da34d9290 inherit pub_methods_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a97da293bca13cf5934d9ef6da34d9290"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#a97da293bca13cf5934d9ef6da34d9290">SetSubbasins</a> (<a class="el" href="../../d5/d79/a00030.html">clsSubbasins</a> *)</td></tr>
+<tr class="memdesc:a97da293bca13cf5934d9ef6da34d9290 inherit pub_methods_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set pointer of <a class="el" href="../../d5/d79/a00030.html" title="Manager all Subbasin related parameters and methods. ">clsSubbasins</a> class which contains all subbasins information. Added by LJ, 2016-7-28. <br/></td></tr>
+<tr class="separator:a97da293bca13cf5934d9ef6da34d9290 inherit pub_methods_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a3a7bd2ff8748ec360e9464c358500b inherit pub_methods_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1a3a7bd2ff8748ec360e9464c358500b"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#a1a3a7bd2ff8748ec360e9464c358500b">ResetSubTimeStep</a> ()</td></tr>
+<tr class="memdesc:a1a3a7bd2ff8748ec360e9464c358500b inherit pub_methods_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset subtime step. <br/></td></tr>
+<tr class="separator:a1a3a7bd2ff8748ec360e9464c358500b inherit pub_methods_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2238382a3e1a264218a37b32d3947bd6 inherit pub_methods_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2238382a3e1a264218a37b32d3947bd6"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#a2238382a3e1a264218a37b32d3947bd6">IsInputsSetDone</a> ()</td></tr>
+<tr class="memdesc:a2238382a3e1a264218a37b32d3947bd6 inherit pub_methods_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the inputs parameters (i.e., parameters derived from other modules) have been set. <br/></td></tr>
+<tr class="separator:a2238382a3e1a264218a37b32d3947bd6 inherit pub_methods_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94457cc066581e7ecd1d3c88ebdf3163 inherit pub_methods_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a94457cc066581e7ecd1d3c88ebdf3163"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#a94457cc066581e7ecd1d3c88ebdf3163">SetInputsDone</a> (bool setDone)</td></tr>
+<tr class="memdesc:a94457cc066581e7ecd1d3c88ebdf3163 inherit pub_methods_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the status of setting inputs parameters. <br/></td></tr>
+<tr class="separator:a94457cc066581e7ecd1d3c88ebdf3163 inherit pub_methods_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a2c3d162cf611a0b7fdbe0b2f6a758ad9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddb/a00145.html#a2c3d162cf611a0b7fdbe0b2f6a758ad9">InitialOutputs</a> ()</td></tr>
+<tr class="separator:a2c3d162cf611a0b7fdbe0b2f6a758ad9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac343178436e2de15ad1fa59b9c19ed0e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddb/a00145.html#ac343178436e2de15ad1fa59b9c19ed0e">PointSourceLoading</a> ()</td></tr>
+<tr class="separator:ac343178436e2de15ad1fa59b9c19ed0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a169bf30bd897773dd08dac04e6b83320"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddb/a00145.html#a169bf30bd897773dd08dac04e6b83320">SedChannelRouting</a> (int i)</td></tr>
+<tr class="separator:a169bf30bd897773dd08dac04e6b83320"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a206a8cb42998bb2567745d19daae53ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddb/a00145.html#a206a8cb42998bb2567745d19daae53ac">DoChannelDowncuttingAndWidening</a> (int id)</td></tr>
+<tr class="separator:a206a8cb42998bb2567745d19daae53ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a433b9338bff401017b36faa4230106b0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a433b9338bff401017b36faa4230106b0"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddb/a00145.html#a433b9338bff401017b36faa4230106b0">m_dt</a></td></tr>
+<tr class="memdesc:a433b9338bff401017b36faa4230106b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">time step (sec) <br/></td></tr>
+<tr class="separator:a433b9338bff401017b36faa4230106b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4a7627c44c54dcb03434ea188933c2a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae4a7627c44c54dcb03434ea188933c2a"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddb/a00145.html#ae4a7627c44c54dcb03434ea188933c2a">m_nreach</a></td></tr>
+<tr class="memdesc:ae4a7627c44c54dcb03434ea188933c2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">reach number (= subbasin number) <br/></td></tr>
+<tr class="separator:ae4a7627c44c54dcb03434ea188933c2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48c53a5443905cd542a19c986f3f2865"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a48c53a5443905cd542a19c986f3f2865"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddb/a00145.html#a48c53a5443905cd542a19c986f3f2865">m_subbasinID</a></td></tr>
+<tr class="memdesc:a48c53a5443905cd542a19c986f3f2865"><td class="mdescLeft">&#160;</td><td class="mdescRight">current subbasin ID, 0 for the entire watershed <br/></td></tr>
+<tr class="separator:a48c53a5443905cd542a19c986f3f2865"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29bf7e37498ac6deed4a89f7aaf8863d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a29bf7e37498ac6deed4a89f7aaf8863d"></a>
+LayeringMethod&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddb/a00145.html#a29bf7e37498ac6deed4a89f7aaf8863d">m_layeringMethod</a></td></tr>
+<tr class="memdesc:a29bf7e37498ac6deed4a89f7aaf8863d"><td class="mdescLeft">&#160;</td><td class="mdescRight">layering method, 0 means UP_DOWN, 1 means DOWN_UP <br/></td></tr>
+<tr class="separator:a29bf7e37498ac6deed4a89f7aaf8863d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b609327d793eeb54c0dba3ce4db9a03"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2b609327d793eeb54c0dba3ce4db9a03"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddb/a00145.html#a2b609327d793eeb54c0dba3ce4db9a03">m_VCD</a></td></tr>
+<tr class="memdesc:a2b609327d793eeb54c0dba3ce4db9a03"><td class="mdescLeft">&#160;</td><td class="mdescRight">whether change channel dimensions, 0 - do not change (false), 1 - compute channel degredation (true) <br/></td></tr>
+<tr class="separator:a2b609327d793eeb54c0dba3ce4db9a03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f5700f599de10d321820de3326eb108"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2f5700f599de10d321820de3326eb108"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddb/a00145.html#a2f5700f599de10d321820de3326eb108">m_prf</a></td></tr>
+<tr class="memdesc:a2f5700f599de10d321820de3326eb108"><td class="mdescLeft">&#160;</td><td class="mdescRight">the peak rate adjustment factor <br/></td></tr>
+<tr class="separator:a2f5700f599de10d321820de3326eb108"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abeca63c0fb7f4db117eec16b5715a23c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abeca63c0fb7f4db117eec16b5715a23c"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddb/a00145.html#abeca63c0fb7f4db117eec16b5715a23c">m_spcon</a></td></tr>
+<tr class="memdesc:abeca63c0fb7f4db117eec16b5715a23c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Coefficient in sediment transport equation. <br/></td></tr>
+<tr class="separator:abeca63c0fb7f4db117eec16b5715a23c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf4468691dc56f7368f4710fcdf79343"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaf4468691dc56f7368f4710fcdf79343"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddb/a00145.html#aaf4468691dc56f7368f4710fcdf79343">m_spexp</a></td></tr>
+<tr class="memdesc:aaf4468691dc56f7368f4710fcdf79343"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exponent in sediment transport equation. <br/></td></tr>
+<tr class="separator:aaf4468691dc56f7368f4710fcdf79343"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ec3e59f9b0083b6cf8aacdf7b763381"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9ec3e59f9b0083b6cf8aacdf7b763381"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddb/a00145.html#a9ec3e59f9b0083b6cf8aacdf7b763381">m_vcrit</a></td></tr>
+<tr class="memdesc:a9ec3e59f9b0083b6cf8aacdf7b763381"><td class="mdescLeft">&#160;</td><td class="mdescRight">critical velocity for sediment deposition <br/></td></tr>
+<tr class="separator:a9ec3e59f9b0083b6cf8aacdf7b763381"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4b737a9a7b6c7a4f56545aba08b97c6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa4b737a9a7b6c7a4f56545aba08b97c6"></a>
+float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddb/a00145.html#aa4b737a9a7b6c7a4f56545aba08b97c6">m_sedtoCh</a></td></tr>
+<tr class="memdesc:aa4b737a9a7b6c7a4f56545aba08b97c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">sediment from subbasin (hillslope), kg <br/></td></tr>
+<tr class="separator:aa4b737a9a7b6c7a4f56545aba08b97c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58242e00fa52bc8875bc10fa10764bf8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a58242e00fa52bc8875bc10fa10764bf8"></a>
+float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddb/a00145.html#a58242e00fa52bc8875bc10fa10764bf8">m_CrAreaCh</a></td></tr>
+<tr class="memdesc:a58242e00fa52bc8875bc10fa10764bf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">cross-sectional area of flow in the channel (m^2) <br/></td></tr>
+<tr class="separator:a58242e00fa52bc8875bc10fa10764bf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86f5f547a987478999aa5f8e7c964355"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a86f5f547a987478999aa5f8e7c964355"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddb/a00145.html#a86f5f547a987478999aa5f8e7c964355">m_Chs0</a></td></tr>
+<tr class="memdesc:a86f5f547a987478999aa5f8e7c964355"><td class="mdescLeft">&#160;</td><td class="mdescRight">initial channel storage per meter of reach length (m^3/m) <br/></td></tr>
+<tr class="separator:a86f5f547a987478999aa5f8e7c964355"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a375ca652f5e6e595cb2d26e13c7794a3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a375ca652f5e6e595cb2d26e13c7794a3"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddb/a00145.html#a375ca652f5e6e595cb2d26e13c7794a3">m_sedChi0</a></td></tr>
+<tr class="memdesc:a375ca652f5e6e595cb2d26e13c7794a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initial channel sediment concentration, ton/m^3, i.e., kg/L. <br/></td></tr>
+<tr class="separator:a375ca652f5e6e595cb2d26e13c7794a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2dd925620488b33f3cef3e8b6eb952b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa2dd925620488b33f3cef3e8b6eb952b"></a>
+float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddb/a00145.html#aa2dd925620488b33f3cef3e8b6eb952b">m_qchOut</a></td></tr>
+<tr class="memdesc:aa2dd925620488b33f3cef3e8b6eb952b"><td class="mdescLeft">&#160;</td><td class="mdescRight">channel outflow, m^3/s <br/></td></tr>
+<tr class="separator:aa2dd925620488b33f3cef3e8b6eb952b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16b8e637bdba47008e4a87ea0d7debfa"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a16b8e637bdba47008e4a87ea0d7debfa"></a>
+float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddb/a00145.html#a16b8e637bdba47008e4a87ea0d7debfa">m_chCover</a></td></tr>
+<tr class="memdesc:a16b8e637bdba47008e4a87ea0d7debfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">reach cover factor <br/></td></tr>
+<tr class="separator:a16b8e637bdba47008e4a87ea0d7debfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae82cefdedd66e69eedaf59ef1874e54a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae82cefdedd66e69eedaf59ef1874e54a"></a>
+float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddb/a00145.html#ae82cefdedd66e69eedaf59ef1874e54a">m_chErod</a></td></tr>
+<tr class="memdesc:ae82cefdedd66e69eedaf59ef1874e54a"><td class="mdescLeft">&#160;</td><td class="mdescRight">channel erodibility factor (cm/hr/Pa) <br/></td></tr>
+<tr class="separator:ae82cefdedd66e69eedaf59ef1874e54a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0f89160f4e6e3ddff3621568af34313"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa0f89160f4e6e3ddff3621568af34313"></a>
+float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddb/a00145.html#aa0f89160f4e6e3ddff3621568af34313">m_reachDownStream</a></td></tr>
+<tr class="memdesc:aa0f89160f4e6e3ddff3621568af34313"><td class="mdescLeft">&#160;</td><td class="mdescRight">downstream id (The value is 0 if there if no downstream reach) <br/></td></tr>
+<tr class="separator:aa0f89160f4e6e3ddff3621568af34313"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e5db03a4a7233afd95c28ebec7c2fd9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5e5db03a4a7233afd95c28ebec7c2fd9"></a>
+map&lt; int, vector&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddb/a00145.html#a5e5db03a4a7233afd95c28ebec7c2fd9">m_reachLayers</a></td></tr>
+<tr class="memdesc:a5e5db03a4a7233afd95c28ebec7c2fd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reach layers according to <em>LayeringMethod</em>. <br/></td></tr>
+<tr class="separator:a5e5db03a4a7233afd95c28ebec7c2fd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c95f04e14cc6eca19b60d687d5da731"><td class="memItemLeft" align="right" valign="top">vector&lt; vector&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddb/a00145.html#a1c95f04e14cc6eca19b60d687d5da731">m_reachUpStream</a></td></tr>
+<tr class="separator:a1c95f04e14cc6eca19b60d687d5da731"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c7fffc3c9c78cd2e7e73626f3acc41b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6c7fffc3c9c78cd2e7e73626f3acc41b"></a>
+float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddb/a00145.html#a6c7fffc3c9c78cd2e7e73626f3acc41b">m_ptSub</a></td></tr>
+<tr class="memdesc:a6c7fffc3c9c78cd2e7e73626f3acc41b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The point source loading (kg), m_ptSub[id], id is the reach id, load from m_Scenario. <br/></td></tr>
+<tr class="separator:a6c7fffc3c9c78cd2e7e73626f3acc41b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf94a36ac30f33753e9b41b4f5c39e86"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acf94a36ac30f33753e9b41b4f5c39e86"></a>
+float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddb/a00145.html#acf94a36ac30f33753e9b41b4f5c39e86">m_chStorage</a></td></tr>
+<tr class="memdesc:acf94a36ac30f33753e9b41b4f5c39e86"><td class="mdescLeft">&#160;</td><td class="mdescRight">reach storage (m^3) at time t <br/></td></tr>
+<tr class="separator:acf94a36ac30f33753e9b41b4f5c39e86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9daed33f93d9e55719153addbdc72a05"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9daed33f93d9e55719153addbdc72a05"></a>
+float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddb/a00145.html#a9daed33f93d9e55719153addbdc72a05">m_preChStorage</a></td></tr>
+<tr class="memdesc:a9daed33f93d9e55719153addbdc72a05"><td class="mdescLeft">&#160;</td><td class="mdescRight">reach storage of previous timestep, m^3 <br/></td></tr>
+<tr class="separator:a9daed33f93d9e55719153addbdc72a05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad6390933db7af9aeaf4c20444954c18"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aad6390933db7af9aeaf4c20444954c18"></a>
+float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddb/a00145.html#aad6390933db7af9aeaf4c20444954c18">m_chWTdepth</a></td></tr>
+<tr class="memdesc:aad6390933db7af9aeaf4c20444954c18"><td class="mdescLeft">&#160;</td><td class="mdescRight">channel water depth, m <br/></td></tr>
+<tr class="separator:aad6390933db7af9aeaf4c20444954c18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5128ff09741e4595e9f4c5f4448cf505"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5128ff09741e4595e9f4c5f4448cf505"></a>
+float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddb/a00145.html#a5128ff09741e4595e9f4c5f4448cf505">m_preChWTDepth</a></td></tr>
+<tr class="memdesc:a5128ff09741e4595e9f4c5f4448cf505"><td class="mdescLeft">&#160;</td><td class="mdescRight">channel water depth of previous timestep, m <br/></td></tr>
+<tr class="separator:a5128ff09741e4595e9f4c5f4448cf505"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf0256f4461bc388af3c98cb74de69d0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adf0256f4461bc388af3c98cb74de69d0"></a>
+float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddb/a00145.html#adf0256f4461bc388af3c98cb74de69d0">m_chWTWidth</a></td></tr>
+<tr class="memdesc:adf0256f4461bc388af3c98cb74de69d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">channel bankfull width, m <br/></td></tr>
+<tr class="separator:adf0256f4461bc388af3c98cb74de69d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa6785424480fb19cbb96aff3ddcb10b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaa6785424480fb19cbb96aff3ddcb10b"></a>
+float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddb/a00145.html#aaa6785424480fb19cbb96aff3ddcb10b">m_sedOut</a></td></tr>
+<tr class="memdesc:aaa6785424480fb19cbb96aff3ddcb10b"><td class="mdescLeft">&#160;</td><td class="mdescRight">initial reach sediment out (kg) at time t <br/></td></tr>
+<tr class="separator:aaa6785424480fb19cbb96aff3ddcb10b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86aa22d68b5626e0de1153d5c19728e8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a86aa22d68b5626e0de1153d5c19728e8"></a>
+float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddb/a00145.html#a86aa22d68b5626e0de1153d5c19728e8">m_sedStorage</a></td></tr>
+<tr class="memdesc:a86aa22d68b5626e0de1153d5c19728e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">channel sediment storage (kg) <br/></td></tr>
+<tr class="separator:a86aa22d68b5626e0de1153d5c19728e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a848bca8ab56ad56749dce42f038193"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2a848bca8ab56ad56749dce42f038193"></a>
+float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddb/a00145.html#a2a848bca8ab56ad56749dce42f038193">m_sedDep</a></td></tr>
+<tr class="memdesc:a2a848bca8ab56ad56749dce42f038193"><td class="mdescLeft">&#160;</td><td class="mdescRight">sediment of deposition <br/></td></tr>
+<tr class="separator:a2a848bca8ab56ad56749dce42f038193"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade6ca10b97426657eb8e94998167e704"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ade6ca10b97426657eb8e94998167e704"></a>
+float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddb/a00145.html#ade6ca10b97426657eb8e94998167e704">m_sedDeg</a></td></tr>
+<tr class="memdesc:ade6ca10b97426657eb8e94998167e704"><td class="mdescLeft">&#160;</td><td class="mdescRight">sediment of degradation <br/></td></tr>
+<tr class="separator:ade6ca10b97426657eb8e94998167e704"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fd7961357808e0ea05b18398759966c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3fd7961357808e0ea05b18398759966c"></a>
+float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddb/a00145.html#a3fd7961357808e0ea05b18398759966c">m_sedConc</a></td></tr>
+<tr class="memdesc:a3fd7961357808e0ea05b18398759966c"><td class="mdescLeft">&#160;</td><td class="mdescRight">sediment concentration (g/L, i.e., kg/m3) <br/></td></tr>
+<tr class="separator:a3fd7961357808e0ea05b18398759966c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_attribs_a00151"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_a00151')"><img src="../../closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="../../dd/db2/a00151.html">SimulationModule</a></td></tr>
+<tr class="memitem:aabd631c05d3e74aa9970f7415f2f5de7 inherit pro_attribs_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aabd631c05d3e74aa9970f7415f2f5de7"></a>
+time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#aabd631c05d3e74aa9970f7415f2f5de7">m_date</a></td></tr>
+<tr class="memdesc:aabd631c05d3e74aa9970f7415f2f5de7 inherit pro_attribs_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">date time <br/></td></tr>
+<tr class="separator:aabd631c05d3e74aa9970f7415f2f5de7 inherit pro_attribs_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addfe4dd5800efd0bb827338daf65d64c inherit pro_attribs_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="addfe4dd5800efd0bb827338daf65d64c"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#addfe4dd5800efd0bb827338daf65d64c">m_yearIdx</a></td></tr>
+<tr class="memdesc:addfe4dd5800efd0bb827338daf65d64c inherit pro_attribs_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">index of current year of simulation, e.g., the simulation period from 2010 to 2015, m_yearIdx is 2 when simulate 2012. <br/></td></tr>
+<tr class="separator:addfe4dd5800efd0bb827338daf65d64c inherit pro_attribs_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adee1865c86a9761af76cec98cac30a44 inherit pro_attribs_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adee1865c86a9761af76cec98cac30a44"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#adee1865c86a9761af76cec98cac30a44">m_tsCounter</a></td></tr>
+<tr class="memdesc:adee1865c86a9761af76cec98cac30a44 inherit pro_attribs_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">sub-timestep counter <br/></td></tr>
+<tr class="separator:adee1865c86a9761af76cec98cac30a44 inherit pro_attribs_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68422923210ead26b1651bf0e0a339f6 inherit pro_attribs_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a68422923210ead26b1651bf0e0a339f6"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#a68422923210ead26b1651bf0e0a339f6">m_inputsSetDone</a></td></tr>
+<tr class="memdesc:a68422923210ead26b1651bf0e0a339f6 inherit pro_attribs_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the inputs parameters (i.e., parameters derived from other modules) have been set. <br/></td></tr>
+<tr class="separator:a68422923210ead26b1651bf0e0a339f6 inherit pro_attribs_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Module basic description. </p>
+<div class="textblock"><p>Sediment routing using variable channel dimension(VCD) method at daily time scale. </p>
 
-<p>Definition at line <a class="el" href="../../dc/de4/a00677_source.html#l00021">21</a> of file <a class="el" href="../../dc/de4/a00677_source.html">MetadataInfo.h</a>.</p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
-<li>seims/src/seims_main/base/util/<a class="el" href="../../dc/de4/a00677_source.html">MetadataInfo.h</a></li>
+<p>Definition at line <a class="el" href="../../dc/df9/a00554_source.html#l00036">36</a> of file <a class="el" href="../../dc/df9/a00554_source.html">SEDR_SBAGNOLD.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a29ec8d5c2b303e8b3b08617573014099"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SEDR_SBAGNOLD::~SEDR_SBAGNOLD </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>reaches related variables will be released in ~clsReaches(). By lj, 2017-12-26. </p>
+
+<p>Definition at line <a class="el" href="../../d0/d79/a00553_source.html#l00021">21</a> of file <a class="el" href="../../d0/d79/a00553_source.html">SEDR_SBAGNOLD.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a206a8cb42998bb2567745d19daae53ac"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SEDR_SBAGNOLD::DoChannelDowncuttingAndWidening </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>TODO, lj</p>
+<p>downcutting depth, m </p>
+
+<p>Definition at line <a class="el" href="../../d0/d79/a00553_source.html#l00417">417</a> of file <a class="el" href="../../d0/d79/a00553_source.html">SEDR_SBAGNOLD.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9e6173f3a876a1151d5b470567ff060e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SEDR_SBAGNOLD::Execute </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destructor. </p>
+<p>Execute the simulation </p>
+<p>load point source water volume from m_ptSrcFactory </p>
+
+<p>Reimplemented from <a class="el" href="../../dd/db2/a00151.html#a686c39c1c4894cc144699ba0681d509d">SimulationModule</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d0/d79/a00553_source.html#l00121">121</a> of file <a class="el" href="../../d0/d79/a00553_source.html">SEDR_SBAGNOLD.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/ddb/a00145_a9e6173f3a876a1151d5b470567ff060e_cgraph.png" border="0" usemap="#da/ddb/a00145_a9e6173f3a876a1151d5b470567ff060e_cgraph" alt=""/></div>
+<map name="da/ddb/a00145_a9e6173f3a876a1151d5b470567ff060e_cgraph" id="da/ddb/a00145_a9e6173f3a876a1151d5b470567ff060e_cgraph">
+<area shape="rect" id="node2" href="../../da/ddb/a00145.html#a2c3d162cf611a0b7fdbe0b2f6a758ad9" title="SEDR_SBAGNOLD::InitialOutputs" alt="" coords="289,92,557,121"/><area shape="rect" id="node3" href="../../da/ddb/a00145.html#ac343178436e2de15ad1fa59b9c19ed0e" title="SEDR_SBAGNOLD::PointSource\lLoading" alt="" coords="291,146,554,193"/><area shape="rect" id="node9" href="../../da/ddb/a00145.html#a169bf30bd897773dd08dac04e6b83320" title="SEDR_SBAGNOLD::SedChannel\lRouting" alt="" coords="290,217,555,263"/><area shape="rect" id="node10" href="../../da/ddb/a00145.html#a206a8cb42998bb2567745d19daae53ac" title="SEDR_SBAGNOLD::DoChannel\lDowncuttingAndWidening" alt="" coords="294,287,551,334"/><area shape="rect" id="node4" href="../../d5/deb/a00132.html#ab180864d91a4d222bf7255956c417d38" title="Get start date of the current management operation. " alt="" coords="606,5,845,51"/><area shape="rect" id="node5" href="../../d5/deb/a00132.html#aa24d8b7d5fceb52b352bba97cf7cee74" title="Get end date. " alt="" coords="606,75,845,122"/><area shape="rect" id="node6" href="../../d5/deb/a00132.html#a28c3b47e3647c7fb0fd1001f86ff5745" title="Get sediment concentration. " alt="" coords="606,146,845,193"/><area shape="rect" id="node7" href="../../d7/d06/a00131.html#adf67edbfe94ed3622dbd532e436864b3" title="Located subbasin ID. " alt="" coords="612,217,839,263"/><area shape="rect" id="node8" href="../../d7/d06/a00131.html#a92fa08eb80efd62885da3acb40ffd7d7" title="size " alt="" coords="612,287,839,334"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a2c3d162cf611a0b7fdbe0b2f6a758ad9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SEDR_SBAGNOLD::InitialOutputs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>ton/m3 * m3/m * m * 1000 = kg</p>
+<p>initialize point source loadings </p>
+
+<p>Definition at line <a class="el" href="../../d0/d79/a00553_source.html#l00060">60</a> of file <a class="el" href="../../d0/d79/a00553_source.html">SEDR_SBAGNOLD.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac343178436e2de15ad1fa59b9c19ed0e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SEDR_SBAGNOLD::PointSourceLoading </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>load point source water discharge (m3/s) on current day from Scenario</p>
+<p>g/cm3, or Mg/m3</p>
+<p>Mg/m3 ==&gt; kg / timestep </p>
+
+<p>Definition at line <a class="el" href="../../d0/d79/a00553_source.html#l00089">89</a> of file <a class="el" href="../../d0/d79/a00553_source.html">SEDR_SBAGNOLD.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/ddb/a00145_ac343178436e2de15ad1fa59b9c19ed0e_cgraph.png" border="0" usemap="#da/ddb/a00145_ac343178436e2de15ad1fa59b9c19ed0e_cgraph" alt=""/></div>
+<map name="da/ddb/a00145_ac343178436e2de15ad1fa59b9c19ed0e_cgraph" id="da/ddb/a00145_ac343178436e2de15ad1fa59b9c19ed0e_cgraph">
+<area shape="rect" id="node2" href="../../d5/deb/a00132.html#ab180864d91a4d222bf7255956c417d38" title="Get start date of the current management operation. " alt="" coords="318,5,557,51"/><area shape="rect" id="node3" href="../../d5/deb/a00132.html#aa24d8b7d5fceb52b352bba97cf7cee74" title="Get end date. " alt="" coords="318,75,557,122"/><area shape="rect" id="node4" href="../../d5/deb/a00132.html#a28c3b47e3647c7fb0fd1001f86ff5745" title="Get sediment concentration. " alt="" coords="318,146,557,193"/><area shape="rect" id="node5" href="../../d7/d06/a00131.html#adf67edbfe94ed3622dbd532e436864b3" title="Located subbasin ID. " alt="" coords="324,217,551,263"/><area shape="rect" id="node6" href="../../d7/d06/a00131.html#a92fa08eb80efd62885da3acb40ffd7d7" title="size " alt="" coords="324,287,551,334"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a169bf30bd897773dd08dac04e6b83320"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SEDR_SBAGNOLD::SedChannelRouting </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>sediment from upstream reaches</p>
+<p>add point source loadings</p>
+<p>do not perform sediment routing when:</p>
+<ol type="1">
+<li>whether is no water flow out of channel and water depth is nearly zero</li>
+<li>if no water in reach</li>
+</ol>
+<p>calculate tbase |none |flow duration (fraction of 24 hr)</p>
+<p>New improved method for sediment transport</p>
+<p>kg</p>
+<p>calculate sediment concentration</p>
+<p>kg/m3, i.e., g/L</p>
+<p>in this default sediment routing method, sediment is not tracked by particle size </p>
+
+<p>Definition at line <a class="el" href="../../d0/d79/a00553_source.html#l00278">278</a> of file <a class="el" href="../../d0/d79/a00553_source.html">SEDR_SBAGNOLD.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abb1526b9f01330f58349b54c02966043"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SEDR_SBAGNOLD::SetScenario </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d7/dce/a00143.html">Scenario</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set pointer of Scenario class which contains all BMP information. Added by LJ, 2016-6-14. </p>
+<p>Key is uniqueBMPID, which is calculated by BMP_ID * 100000 + subScenario; </p>
+
+<p>Reimplemented from <a class="el" href="../../dd/db2/a00151.html#ae6dfd515de376498a12a22724e57650a">SimulationModule</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d0/d79/a00553_source.html#l00244">244</a> of file <a class="el" href="../../d0/d79/a00553_source.html">SEDR_SBAGNOLD.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/ddb/a00145_abb1526b9f01330f58349b54c02966043_cgraph.png" border="0" usemap="#da/ddb/a00145_abb1526b9f01330f58349b54c02966043_cgraph" alt=""/></div>
+<map name="da/ddb/a00145_abb1526b9f01330f58349b54c02966043_cgraph" id="da/ddb/a00145_abb1526b9f01330f58349b54c02966043_cgraph">
+<area shape="rect" id="node2" href="../../d7/dce/a00143.html#a941d99acdcfe659769d395dc0c29261c" title="Get BMPs Factories. " alt="" coords="317,4,584,33"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a1c95f04e14cc6eca19b60d687d5da731"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt;vector&lt;int&gt; &gt; SEDR_SBAGNOLD::m_reachUpStream</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Index of upstream Ids (The value is -1 if there if no upstream reach) m_reachUpStream.size() = N+1 m_reachUpStream[1] = [2, 3] means Reach 2 and Reach 3 flow into Reach 1. </p>
+
+<p>Definition at line <a class="el" href="../../dc/df9/a00554_source.html#l00124">124</a> of file <a class="el" href="../../dc/df9/a00554_source.html">SEDR_SBAGNOLD.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>seims/src/seims_main/modules/erosion/SEDR_SBAGNOLD/<a class="el" href="../../dc/df9/a00554_source.html">SEDR_SBAGNOLD.h</a></li>
+<li>seims/src/seims_main/modules/erosion/SEDR_SBAGNOLD/<a class="el" href="../../d0/d79/a00553_source.html">SEDR_SBAGNOLD.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../da/ddb/a00145.html">ModelClass</a></li>
-    <li class="footer">Generated on Tue Mar 27 2018 10:11:03 for SEIMS by
+    <li class="navelem"><a class="el" href="../../da/ddb/a00145.html">SEDR_SBAGNOLD</a></li>
+    <li class="footer">Generated on Mon May 7 2018 13:47:07 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

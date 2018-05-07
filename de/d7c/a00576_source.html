@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims/src/commonlibs/RasterClass/test/Test_defaultValue_1D-pos-mask-pos-ext.cpp Source File</title>
+<title>SEIMS: seims/src/seims_main/modules/hydrology/PI_MCS/Interception_MCS.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -101,7 +101,7 @@ $(document).ready(function(){initNavTree('de/d7c/a00576_source.html','../../');}
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -112,124 +112,102 @@ $(document).ready(function(){initNavTree('de/d7c/a00576_source.html','../../');}
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Test_defaultValue_1D-pos-mask-pos-ext.cpp</div>  </div>
+<div class="title">Interception_MCS.h</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;gtest/gtest.h&quot;</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;utilities.h&quot;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;clsRasterData.h&quot;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">namespace </span>{</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#if GTEST_HAS_PARAM_TEST</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;using ::testing::TestWithParam;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;using ::testing::Values;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keywordtype">string</span> apppath = GetAppPath();</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keywordtype">string</span> corename = <span class="stringliteral">&quot;luid&quot;</span>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keywordtype">string</span> maskcorename = <span class="stringliteral">&quot;mask1&quot;</span>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keywordtype">string</span> asc_file = apppath + <span class="stringliteral">&quot;../data/&quot;</span> + corename + <span class="stringliteral">&quot;.asc&quot;</span>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keywordtype">string</span> tif_file = apppath + <span class="stringliteral">&quot;../data/&quot;</span> + corename + <span class="stringliteral">&quot;.tif&quot;</span>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keywordtype">string</span> mask_asc_file = apppath + <span class="stringliteral">&quot;../data/&quot;</span> + maskcorename + <span class="stringliteral">&quot;.asc&quot;</span>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keywordtype">string</span> mask_tif_file = apppath + <span class="stringliteral">&quot;../data/&quot;</span> + maskcorename + <span class="stringliteral">&quot;.tif&quot;</span>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">struct </span>inputRasterFiles {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    inputRasterFiles(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;rsf, <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;maskf) {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        raster_name = rsf.c_str();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        mask_name = maskf.c_str();</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    };</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *raster_name;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *mask_name;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;};</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">//Inside the test body, fixture constructor, SetUp(), and TearDown() you</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">//can refer to the test parameter by GetParam().  In this case, the test</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">//parameter is a factory function which we call in fixture&#39;s SetUp() to</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">//create and store an instance of clsRasterData&lt;float&gt;.</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">class </span>clsRasterDataTestWithDefaultValue : <span class="keyword">public</span> TestWithParam&lt;inputRasterFiles *&gt; {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    clsRasterDataTestWithDefaultValue() : rs(nullptr), maskrs(nullptr) {}</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">virtual</span> ~clsRasterDataTestWithDefaultValue() { <span class="keyword">delete</span> rs; }</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> SetUp() {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="comment">// Read mask data with default parameters, i.e., calculate valid positions.</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        maskrs = <a class="code" href="../../de/de1/a00065.html#a10c6e8da422d236c805762b223db1084">clsRasterData&lt;int&gt;::Init</a>(GetParam()-&gt;mask_name);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        ASSERT_NE(<span class="keyword">nullptr</span>, maskrs);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="comment">// Read raster data with the masked data</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        rs = <a class="code" href="../../de/de1/a00065.html#a10c6e8da422d236c805762b223db1084">clsRasterData&lt;int, int&gt;::Init</a>(GetParam()-&gt;raster_name, <span class="keyword">true</span>, maskrs, <span class="keyword">true</span>, 4);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        ASSERT_NE(<span class="keyword">nullptr</span>, rs);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> TearDown() {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keyword">delete</span> rs;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keyword">delete</span> maskrs;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        rs = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        maskrs = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="../../de/de1/a00065.html">clsRasterData&lt;int, int&gt;</a> *rs;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="../../de/de1/a00065.html">clsRasterData&lt;int&gt;</a> *maskrs;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;};</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">// Since each TEST_P will invoke SetUp() and TearDown()</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">// once, we put all tests in once test case. by lj.</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;TEST_P(clsRasterDataTestWithDefaultValue, RasterIO) {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    EXPECT_EQ(73, rs-&gt;getDataLength());  <span class="comment">// m_nCells, which is the same as the extent of mask data</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    EXPECT_EQ(73, rs-&gt;getCellNumber());  <span class="comment">// m_nCells</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    EXPECT_EQ(-2147483647, rs-&gt;getNoDataValue());  <span class="comment">// m_noDataValue</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    EXPECT_EQ(4, rs-&gt;getDefaultValue());  <span class="comment">// m_defaultValue</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">// m_filePathName depends on the path of build, so no need to test.</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    EXPECT_EQ(corename, rs-&gt;getCoreName());  <span class="comment">// m_coreFileName</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    EXPECT_TRUE(rs-&gt;Initialized());  <span class="comment">// m_initialized</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    EXPECT_FALSE(rs-&gt;is2DRaster());  <span class="comment">// m_is2DRaster</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    EXPECT_TRUE(rs-&gt;PositionsCalculated());  <span class="comment">// m_calcPositions</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    EXPECT_FALSE(rs-&gt;PositionsAllocated());  <span class="comment">// m_storePositions</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    EXPECT_TRUE(rs-&gt;MaskExtented());  <span class="comment">// m_useMaskExtent</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    EXPECT_FALSE(rs-&gt;StatisticsCalculated());  <span class="comment">// m_statisticsCalculated</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    ASSERT_TRUE(rs-&gt;validate_raster_data());</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    EXPECT_NE(<span class="keyword">nullptr</span>, rs-&gt;getRasterDataPointer());  <span class="comment">// m_rasterData</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    EXPECT_EQ(<span class="keyword">nullptr</span>, rs-&gt;get2DRasterDataPointer());  <span class="comment">// m_raster2DData</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    EXPECT_NE(<span class="keyword">nullptr</span>, rs-&gt;getRasterPositionDataPointer());  <span class="comment">// m_rasterPositionData</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="comment">// Set core file name</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">string</span> newcorename = corename + <span class="stringliteral">&quot;_withDftValue-1D-pos_incst-mask-pos-ext&quot;</span>;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    rs-&gt;setCoreName(newcorename);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    EXPECT_EQ(newcorename, rs-&gt;getCoreName());</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">string</span> oldfullname = rs-&gt;getFilePath();</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordtype">string</span> fakefullname = GetPathFromFullName(oldfullname) + <span class="stringliteral">&quot;noExistDir&quot;</span> + SEP + \</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                      <span class="stringliteral">&quot;noOut&quot;</span> + <span class="stringliteral">&quot;.&quot;</span> + GetSuffix(oldfullname);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    EXPECT_FALSE(rs-&gt;outputToFile(fakefullname));</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordtype">string</span> newfullname = GetPathFromFullName(oldfullname) + <span class="stringliteral">&quot;result&quot;</span> + SEP + \</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                     newcorename + <span class="stringliteral">&quot;.&quot;</span> + GetSuffix(oldfullname);</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    EXPECT_TRUE(rs-&gt;outputToFile(newfullname));</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    EXPECT_TRUE(FileExists(newfullname));</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;INSTANTIATE_TEST_CASE_P(DefaultValue, clsRasterDataTestWithDefaultValue,</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                        Values(<span class="keyword">new</span> inputRasterFiles(asc_file, mask_asc_file),</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                               <span class="keyword">new</span> inputRasterFiles(tif_file, mask_tif_file)));</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="preprocessor"></span>TEST(DummyTest, ValueParameterizedTestsAreNotSupportedOnThisPlatform) {}</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* GTEST_HAS_PARAM_TEST */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="preprocessor"></span>} <span class="comment">/* namespace */</span></div>
-<div class="ttc" id="a00065_html"><div class="ttname"><a href="../../de/de1/a00065.html">clsRasterData</a></div><div class="ttdoc">Raster data (1D and 2D) I/O class Support I/O between TIFF, ASCII file or/and MongoBD database...</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d50/a00559_source.html#l00139">clsRasterData.h:139</a></div></div>
-<div class="ttc" id="a00065_html_a10c6e8da422d236c805762b223db1084"><div class="ttname"><a href="../../de/de1/a00065.html#a10c6e8da422d236c805762b223db1084">clsRasterData::Init</a></div><div class="ttdeci">static clsRasterData&lt; T, MaskT &gt; * Init(const string &amp;filename, bool calcPositions=true, clsRasterData&lt; MaskT &gt; *mask=nullptr, bool useMaskExtent=true, T defalutValue=(T) NODATA_VALUE)</div><div class="ttdoc">Validation check before the constructor of clsRasterData, i.e., the raster file is existed and suppor...</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d50/a00559_source.html#l00967">clsRasterData.h:967</a></div></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#ifndef SEIMS_MODULE_PI_MCS_H</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SEIMS_MODULE_PI_MCS_H</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;SimulationModule.h&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="../../dc/de2/a00024.html">   25</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../dc/de2/a00024.html">clsPI_MCS</a> : <span class="keyword">public</span> <a class="code" href="../../dd/db2/a00151.html">SimulationModule</a> {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="../../dc/de2/a00024.html">clsPI_MCS</a>();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    ~<a class="code" href="../../dc/de2/a00024.html">clsPI_MCS</a>();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dc/de2/a00024.html#ad9491145baaf7f56e6e9a465186d3641">Set1DData</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">int</span> nRows, <span class="keywordtype">float</span> *data) OVERRIDE;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dc/de2/a00024.html#a3cd468ead581ec3661efe051bb601ef7">SetValue</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">float</span> data) OVERRIDE;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dc/de2/a00024.html#a531cf3a72ff409b46229d92bc4f990c3">Get1DData</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">int</span> *nRows, <span class="keywordtype">float</span> **data) OVERRIDE;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../dc/de2/a00024.html#a872b43bd459b19ba52e94c616cc963d2">Execute</a>() OVERRIDE;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../dc/de2/a00024.html#ab7bef2043ba56b88f182e007c49fede8">CheckInputData</a>();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../dc/de2/a00024.html#a0d4de4a3d76f7172b82afc6c75a240de">CheckInputSize</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">int</span> n);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dc/de2/a00024.html#a304e994df864e5825d44ad1004b85d2f">InitialOutputs</a>();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">/* Parameters from database */</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// The embankment area ratio of paddy rice HRU</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">float</span> m_embnkfr_pr;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">// The fraction of precipitation fall on the embankment that drain into ditches or canals directly</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">float</span> m_pcp2canfr_pr;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">// landuse</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">float</span> *m_landuse;</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="../../dc/de2/a00024.html#a140575f280d581ee7ef6ab3b54bb429e">   71</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="../../dc/de2/a00024.html#a140575f280d581ee7ef6ab3b54bb429e">m_Pi_b</a>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="../../dc/de2/a00024.html#a18df904ddec4d82396c05f3dd8248a04">   73</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="../../dc/de2/a00024.html#a18df904ddec4d82396c05f3dd8248a04">m_Init_IS</a>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="../../dc/de2/a00024.html#a9a785c4711a881a38c503f421b6d6420">   75</a></span>&#160;    <span class="keywordtype">float</span> *<a class="code" href="../../dc/de2/a00024.html#a9a785c4711a881a38c503f421b6d6420">m_maxSt</a>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="../../dc/de2/a00024.html#ac3fa8d7553aa4e616c66e71289c62758">   77</a></span>&#160;    <span class="keywordtype">float</span> *<a class="code" href="../../dc/de2/a00024.html#ac3fa8d7553aa4e616c66e71289c62758">m_minSt</a>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#ifdef STORM_MODE</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor"></span>    <span class="keywordtype">float</span> m_hilldt;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">float</span> *m_slope;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">/* Input variables from other module&#39;s output */</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="../../dc/de2/a00024.html#a733d1d750ec3bc11cf7cae2c6c1d6431">   91</a></span>&#160;    <span class="keywordtype">float</span> *<a class="code" href="../../dc/de2/a00024.html#a733d1d750ec3bc11cf7cae2c6c1d6431">m_P</a>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#ifndef STORM_MODE</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor"></span>    <span class="keywordtype">float</span> *<a class="code" href="../../dc/de2/a00024.html#a5f1744baec4a2ad84233a7a701baf7ec">m_PET</a>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment">/* Results */</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="../../dc/de2/a00024.html#ab3241b6d3b1bead9d7b60ad9b1a59c2b">  100</a></span>&#160;    <span class="keywordtype">float</span> *<a class="code" href="../../dc/de2/a00024.html#ab3241b6d3b1bead9d7b60ad9b1a59c2b">m_st</a>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="../../dc/de2/a00024.html#af1600d9743b2fb8b877a8631751c7002">  102</a></span>&#160;    <span class="keywordtype">float</span> *<a class="code" href="../../dc/de2/a00024.html#af1600d9743b2fb8b877a8631751c7002">m_interceptionLoss</a>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">#ifndef STORM_MODE</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor"></span>    <span class="keywordtype">float</span> *<a class="code" href="../../dc/de2/a00024.html#aa3fc8956990eda108e5097c4dd813e15">m_evaporationLoss</a>;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="preprocessor"></span>    <span class="keywordtype">float</span> *<a class="code" href="../../dc/de2/a00024.html#a278ad2b6d31b163328706826c39ebddf">m_netPrecipitation</a>;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="comment">/* Others */</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="../../dc/de2/a00024.html#aea8564277bb1b4082b18916145146968">  113</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../dc/de2/a00024.html#aea8564277bb1b4082b18916145146968">m_nCells</a>;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;};</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SEIMS_MODULE_PI_MCS_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="a00024_html"><div class="ttname"><a href="../../dc/de2/a00024.html">clsPI_MCS</a></div><div class="ttdoc">Class for Precipitation Interception module based on Maximum Canopy Storage. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/d7c/a00576_source.html#l00025">Interception_MCS.h:25</a></div></div>
+<div class="ttc" id="a00024_html_a3cd468ead581ec3661efe051bb601ef7"><div class="ttname"><a href="../../dc/de2/a00024.html#a3cd468ead581ec3661efe051bb601ef7">clsPI_MCS::SetValue</a></div><div class="ttdeci">void SetValue(const char *key, float data) OVERRIDE</div><div class="ttdoc">Set data, DT_Single. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d42/a00575_source.html#l00044">Interception_MCS.cpp:44</a></div></div>
+<div class="ttc" id="a00024_html_a18df904ddec4d82396c05f3dd8248a04"><div class="ttname"><a href="../../dc/de2/a00024.html#a18df904ddec4d82396c05f3dd8248a04">clsPI_MCS::m_Init_IS</a></div><div class="ttdeci">float m_Init_IS</div><div class="ttdoc">Calibration parameter, the initial interception storage for all cells, mm. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/d7c/a00576_source.html#l00073">Interception_MCS.h:73</a></div></div>
+<div class="ttc" id="a00024_html_aea8564277bb1b4082b18916145146968"><div class="ttname"><a href="../../dc/de2/a00024.html#aea8564277bb1b4082b18916145146968">clsPI_MCS::m_nCells</a></div><div class="ttdeci">int m_nCells</div><div class="ttdoc">number of valid cells </div><div class="ttdef"><b>Definition:</b> <a href="../../de/d7c/a00576_source.html#l00113">Interception_MCS.h:113</a></div></div>
+<div class="ttc" id="a00024_html_af1600d9743b2fb8b877a8631751c7002"><div class="ttname"><a href="../../dc/de2/a00024.html#af1600d9743b2fb8b877a8631751c7002">clsPI_MCS::m_interceptionLoss</a></div><div class="ttdeci">float * m_interceptionLoss</div><div class="ttdoc">Interception loss, mm. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/d7c/a00576_source.html#l00102">Interception_MCS.h:102</a></div></div>
+<div class="ttc" id="a00024_html_a531cf3a72ff409b46229d92bc4f990c3"><div class="ttname"><a href="../../dc/de2/a00024.html#a531cf3a72ff409b46229d92bc4f990c3">clsPI_MCS::Get1DData</a></div><div class="ttdeci">void Get1DData(const char *key, int *nRows, float **data) OVERRIDE</div><div class="ttdoc">Get 1D data, by default, DT_Raster1D. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d42/a00575_source.html#l00058">Interception_MCS.cpp:58</a></div></div>
+<div class="ttc" id="a00024_html_ab7bef2043ba56b88f182e007c49fede8"><div class="ttname"><a href="../../dc/de2/a00024.html#ab7bef2043ba56b88f182e007c49fede8">clsPI_MCS::CheckInputData</a></div><div class="ttdeci">bool CheckInputData()</div><div class="ttdoc">check the input data. Make sure all the input data is available. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d42/a00575_source.html#l00157">Interception_MCS.cpp:157</a></div></div>
+<div class="ttc" id="a00024_html_ab3241b6d3b1bead9d7b60ad9b1a59c2b"><div class="ttname"><a href="../../dc/de2/a00024.html#ab3241b6d3b1bead9d7b60ad9b1a59c2b">clsPI_MCS::m_st</a></div><div class="ttdeci">float * m_st</div><div class="ttdoc">current interception storage, the initial value equal to 0, mm </div><div class="ttdef"><b>Definition:</b> <a href="../../de/d7c/a00576_source.html#l00100">Interception_MCS.h:100</a></div></div>
+<div class="ttc" id="a00024_html_a872b43bd459b19ba52e94c616cc963d2"><div class="ttname"><a href="../../dc/de2/a00024.html#a872b43bd459b19ba52e94c616cc963d2">clsPI_MCS::Execute</a></div><div class="ttdeci">int Execute() OVERRIDE</div><div class="ttdoc">Destructor. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d42/a00575_source.html#l00094">Interception_MCS.cpp:94</a></div></div>
+<div class="ttc" id="a00024_html_ac3fa8d7553aa4e616c66e71289c62758"><div class="ttname"><a href="../../dc/de2/a00024.html#ac3fa8d7553aa4e616c66e71289c62758">clsPI_MCS::m_minSt</a></div><div class="ttdeci">float * m_minSt</div><div class="ttdoc">Minimum storage capacity, mm. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/d7c/a00576_source.html#l00077">Interception_MCS.h:77</a></div></div>
+<div class="ttc" id="a00024_html_a304e994df864e5825d44ad1004b85d2f"><div class="ttname"><a href="../../dc/de2/a00024.html#a304e994df864e5825d44ad1004b85d2f">clsPI_MCS::InitialOutputs</a></div><div class="ttdeci">void InitialOutputs()</div><div class="ttdoc">Initialize output variables for the first run of the entire simulation. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d42/a00575_source.html#l00077">Interception_MCS.cpp:77</a></div></div>
+<div class="ttc" id="a00024_html_aa3fc8956990eda108e5097c4dd813e15"><div class="ttname"><a href="../../dc/de2/a00024.html#aa3fc8956990eda108e5097c4dd813e15">clsPI_MCS::m_evaporationLoss</a></div><div class="ttdeci">float * m_evaporationLoss</div><div class="ttdoc">Evaporation loss from intercepted rainfall, mm. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/d7c/a00576_source.html#l00105">Interception_MCS.h:105</a></div></div>
+<div class="ttc" id="a00024_html_a733d1d750ec3bc11cf7cae2c6c1d6431"><div class="ttname"><a href="../../dc/de2/a00024.html#a733d1d750ec3bc11cf7cae2c6c1d6431">clsPI_MCS::m_P</a></div><div class="ttdeci">float * m_P</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d7c/a00576_source.html#l00091">Interception_MCS.h:91</a></div></div>
+<div class="ttc" id="a00024_html_a140575f280d581ee7ef6ab3b54bb429e"><div class="ttname"><a href="../../dc/de2/a00024.html#a140575f280d581ee7ef6ab3b54bb429e">clsPI_MCS::m_Pi_b</a></div><div class="ttdeci">float m_Pi_b</div><div class="ttdoc">Calibration parameter, the sine-shaped curve controller exponent b, default is 1.35. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/d7c/a00576_source.html#l00071">Interception_MCS.h:71</a></div></div>
+<div class="ttc" id="a00024_html_a0d4de4a3d76f7172b82afc6c75a240de"><div class="ttname"><a href="../../dc/de2/a00024.html#a0d4de4a3d76f7172b82afc6c75a240de">clsPI_MCS::CheckInputSize</a></div><div class="ttdeci">bool CheckInputSize(const char *key, int n)</div><div class="ttdoc">check the input size. Make sure all the input data have same dimension. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d42/a00575_source.html#l00176">Interception_MCS.cpp:176</a></div></div>
+<div class="ttc" id="a00024_html_a9a785c4711a881a38c503f421b6d6420"><div class="ttname"><a href="../../dc/de2/a00024.html#a9a785c4711a881a38c503f421b6d6420">clsPI_MCS::m_maxSt</a></div><div class="ttdeci">float * m_maxSt</div><div class="ttdoc">Maximum storage capacity, mm. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/d7c/a00576_source.html#l00075">Interception_MCS.h:75</a></div></div>
+<div class="ttc" id="a00024_html_ad9491145baaf7f56e6e9a465186d3641"><div class="ttname"><a href="../../dc/de2/a00024.html#ad9491145baaf7f56e6e9a465186d3641">clsPI_MCS::Set1DData</a></div><div class="ttdeci">void Set1DData(const char *key, int nRows, float *data) OVERRIDE</div><div class="ttdoc">Set 1D data, by default, DT_Raster1D. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d42/a00575_source.html#l00026">Interception_MCS.cpp:26</a></div></div>
+<div class="ttc" id="a00024_html_a5f1744baec4a2ad84233a7a701baf7ec"><div class="ttname"><a href="../../dc/de2/a00024.html#a5f1744baec4a2ad84233a7a701baf7ec">clsPI_MCS::m_PET</a></div><div class="ttdeci">float * m_PET</div><div class="ttdoc">PET, mm. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/d7c/a00576_source.html#l00094">Interception_MCS.h:94</a></div></div>
+<div class="ttc" id="a00151_html"><div class="ttname"><a href="../../dd/db2/a00151.html">SimulationModule</a></div><div class="ttdoc">Base module for all simulation modules in SEIMS. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/de0/a00465_source.html#l00040">SimulationModule.h:40</a></div></div>
+<div class="ttc" id="a00024_html_a278ad2b6d31b163328706826c39ebddf"><div class="ttname"><a href="../../dc/de2/a00024.html#a278ad2b6d31b163328706826c39ebddf">clsPI_MCS::m_netPrecipitation</a></div><div class="ttdeci">float * m_netPrecipitation</div><div class="ttdoc">Net precipitation (after slope correction, of course), mm. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/d7c/a00576_source.html#l00108">Interception_MCS.h:108</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_56b1596c4d72ede71823cdba70d715a1.html">commonlibs</a></li><li class="navelem"><a class="el" href="../../dir_a738b5009a9ca0544eb950f14bd370fe.html">RasterClass</a></li><li class="navelem"><a class="el" href="../../dir_fa2ccf777db2a6858eea5f1fdca7bf97.html">test</a></li><li class="navelem"><b>Test_defaultValue_1D-pos-mask-pos-ext.cpp</b></li>
-    <li class="footer">Generated on Tue Mar 27 2018 10:10:59 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_b89a50a3d6b2f98326f9f3f569cfd788.html">modules</a></li><li class="navelem"><a class="el" href="../../dir_e30ec826fc85f262bf1bcce3dde65013.html">hydrology</a></li><li class="navelem"><a class="el" href="../../dir_e905f0c466b49d6d5d4ae5fd6da744f5.html">PI_MCS</a></li><li class="navelem"><b>Interception_MCS.h</b></li>
+    <li class="footer">Generated on Mon May 7 2018 13:47:05 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

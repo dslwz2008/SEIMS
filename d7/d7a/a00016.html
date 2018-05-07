@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: KnownIssues</title>
+<title>SEIMS: bmps::BMPArealStructFactory Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -52,10 +52,10 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="../../index.html"><span>Main&#160;Page</span></a></li>
-      <li class="current"><a href="../../pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="../../pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="../../modules.html"><span>Modules</span></a></li>
       <li><a href="../../namespaces.html"><span>Packages</span></a></li>
-      <li><a href="../../annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Classes</span></a></li>
       <li><a href="../../files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -73,6 +73,14 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
           </span>
         </div>
       </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../annotated.html"><span>Class&#160;List</span></a></li>
+      <li><a href="../../classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="../../inherits.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -95,7 +103,7 @@ $(document).ready(function(){initNavTree('d7/d7a/a00016.html','../../');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -105,25 +113,208 @@ $(document).ready(function(){initNavTree('d7/d7a/a00016.html','../../');});
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="../../d3/ded/a01017.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">KnownIssues </div>  </div>
+<div class="title">bmps::BMPArealStructFactory Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>As any non-trivial software system, Google Mock has some known limitations and problems. We are working on improving it, and welcome your help! The follow is a list of issues we know about.</p>
-<h2>README contains outdated information on Google Mock's compatibility with other testing frameworks</h2>
-<p>The <code>README</code> file in release 1.1.0 still says that Google Mock only works with Google Test. Actually, you can configure Google Mock to work with any testing framework you choose.</p>
-<h2>Tests failing on machines using Power PC CPUs (e.g. some Macs)</h2>
-<p><code>gmock_output_test</code> and <code>gmock-printers_test</code> are known to fail with Power PC CPUs. This is due to portability issues with these tests, and is not an indication of problems in Google Mock itself. You can safely ignore them.</p>
-<h2>Failed to resolve libgtest.so.0 in tests when built against installed Google Test</h2>
-<p>This only applies if you manually built and installed Google Test, and then built a Google Mock against it (either explicitly, or because gtest-config was in your path post-install). In this situation, Libtool has a known issue with certain systems' ldconfig setup:</p>
-<p><a href="http://article.gmane.org/gmane.comp.sysutils.automake.general/9025">http://article.gmane.org/gmane.comp.sysutils.automake.general/9025</a></p>
-<p>This requires a manual run of "sudo ldconfig" after the "sudo make install" for Google Test before any binaries which link against it can be executed. This isn't a bug in our install, but we should at least have documented it or hacked a work-around into our install. We should have one of these solutions in our next release. </p>
-</div></div><!-- contents -->
+
+<p>Initiate Areal Structural BMPs.  
+ <a href="../../d7/d7a/a00016.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d1/d98/a00407_source.html">BMPArealStructFactory.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for bmps::BMPArealStructFactory:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/d08/a01018.png" border="0" usemap="#bmps_1_1_b_m_p_areal_struct_factory_inherit__map" alt="Inheritance graph"/></div>
+<map name="bmps_1_1_b_m_p_areal_struct_factory_inherit__map" id="bmps_1_1_b_m_p_areal_struct_factory_inherit__map">
+<area shape="rect" id="node2" href="../../d4/d51/a00017.html" title="Base class to initiate a BMP data. " alt="" coords="35,307,211,635"/><area shape="rect" id="node3" href="../../db/db6/a00074.html" title="Base type of all interfaces. All interface types are encouraged to be virtual inherited. " alt="" coords="63,173,183,259"/><area shape="rect" id="node4" href="../../d1/dd6/a00108.html" title="Base class for classes that cannot be copied. By inheriting this class you can disable copying of you..." alt="" coords="46,5,199,125"/></map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a88cd99328ea46a8a136469fd4016770b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a88cd99328ea46a8a136469fd4016770b"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d7a/a00016.html#a88cd99328ea46a8a136469fd4016770b">BMPArealStructFactory</a> (int scenarioId, int bmpId, int subScenario, int <a class="el" href="../../d4/d51/a00017.html#a34f6e2bf0ecb57f11002280a31fb48f8">bmpType</a>, int <a class="el" href="../../d4/d51/a00017.html#ad98e61a7a9ef1c861224dd752ec9f5e3">bmpPriority</a>, vector&lt; string &gt; &amp;distribution, const string &amp;collection, const string &amp;location)</td></tr>
+<tr class="memdesc:a88cd99328ea46a8a136469fd4016770b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. <br/></td></tr>
+<tr class="separator:a88cd99328ea46a8a136469fd4016770b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab29e6551cee804afe012a78ddb889be7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab29e6551cee804afe012a78ddb889be7"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d7a/a00016.html#ab29e6551cee804afe012a78ddb889be7">~BMPArealStructFactory</a> ()</td></tr>
+<tr class="memdesc:ab29e6551cee804afe012a78ddb889be7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br/></td></tr>
+<tr class="separator:ab29e6551cee804afe012a78ddb889be7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8968ee455eb577dab04c412db425e70f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d7a/a00016.html#a8968ee455eb577dab04c412db425e70f">loadBMP</a> (MongoClient *conn, const string &amp;bmpDBName) OVERRIDE</td></tr>
+<tr class="memdesc:a8968ee455eb577dab04c412db425e70f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load BMP parameters from MongoDB.  <a href="#a8968ee455eb577dab04c412db425e70f">More...</a><br/></td></tr>
+<tr class="separator:a8968ee455eb577dab04c412db425e70f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8500477e15ff7b400b0e1d365b19fa6f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8500477e15ff7b400b0e1d365b19fa6f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d7a/a00016.html#a8500477e15ff7b400b0e1d365b19fa6f">setRasterData</a> (map&lt; string, FloatRaster * &gt; &amp;sceneRsMap) OVERRIDE</td></tr>
+<tr class="memdesc:a8500477e15ff7b400b0e1d365b19fa6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set raster data if needed. <br/></td></tr>
+<tr class="separator:a8500477e15ff7b400b0e1d365b19fa6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3fade2c20ebfbdfa1ee0b363a799e0c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa3fade2c20ebfbdfa1ee0b363a799e0c"></a>
+float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d7a/a00016.html#aa3fade2c20ebfbdfa1ee0b363a799e0c">GetRasterData</a> () OVERRIDE</td></tr>
+<tr class="memdesc:aa3fade2c20ebfbdfa1ee0b363a799e0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get management fields data. <br/></td></tr>
+<tr class="separator:aa3fade2c20ebfbdfa1ee0b363a799e0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78af9b8c7869248b96e574406259ad8c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a78af9b8c7869248b96e574406259ad8c"></a>
+const vector&lt; int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d7a/a00016.html#a78af9b8c7869248b96e574406259ad8c">getUnitIDs</a> () const </td></tr>
+<tr class="memdesc:a78af9b8c7869248b96e574406259ad8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get effect unit IDs. <br/></td></tr>
+<tr class="separator:a78af9b8c7869248b96e574406259ad8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10db8064a895a8f2bfd594fc4fab9235"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a10db8064a895a8f2bfd594fc4fab9235"></a>
+const map&lt; int, <a class="el" href="../../dd/d1b/a00015.html">BMPArealStruct</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d7a/a00016.html#a10db8064a895a8f2bfd594fc4fab9235">getBMPsSettings</a> () const </td></tr>
+<tr class="memdesc:a10db8064a895a8f2bfd594fc4fab9235"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get areal BMP parameters. <br/></td></tr>
+<tr class="separator:a10db8064a895a8f2bfd594fc4fab9235"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4122158ca546a177351b8517559f43d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af4122158ca546a177351b8517559f43d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d7a/a00016.html#af4122158ca546a177351b8517559f43d">Dump</a> (std::ostream *fs) OVERRIDE</td></tr>
+<tr class="memdesc:af4122158ca546a177351b8517559f43d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output. <br/></td></tr>
+<tr class="separator:af4122158ca546a177351b8517559f43d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_a00017"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a00017')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d4/d51/a00017.html">bmps::BMPFactory</a></td></tr>
+<tr class="memitem:ac8ddd579b441a978b60532a86bc4ee8e inherit pub_methods_a00017"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d51/a00017.html#ac8ddd579b441a978b60532a86bc4ee8e">BMPFactory</a> (int scenario_id, int bmp_id, int sub_scenario, int bmp_type, int bmp_priority, vector&lt; string &gt; &amp;distribution, const string &amp;collection, const string &amp;location)</td></tr>
+<tr class="memdesc:ac8ddd579b441a978b60532a86bc4ee8e inherit pub_methods_a00017"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#ac8ddd579b441a978b60532a86bc4ee8e">More...</a><br/></td></tr>
+<tr class="separator:ac8ddd579b441a978b60532a86bc4ee8e inherit pub_methods_a00017"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34f6e2bf0ecb57f11002280a31fb48f8 inherit pub_methods_a00017"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d51/a00017.html#a34f6e2bf0ecb57f11002280a31fb48f8">bmpType</a> ()</td></tr>
+<tr class="separator:a34f6e2bf0ecb57f11002280a31fb48f8 inherit pub_methods_a00017"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad98e61a7a9ef1c861224dd752ec9f5e3 inherit pub_methods_a00017"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad98e61a7a9ef1c861224dd752ec9f5e3"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d51/a00017.html#ad98e61a7a9ef1c861224dd752ec9f5e3">bmpPriority</a> ()</td></tr>
+<tr class="memdesc:ad98e61a7a9ef1c861224dd752ec9f5e3 inherit pub_methods_a00017"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get BMP priority. <br/></td></tr>
+<tr class="separator:ad98e61a7a9ef1c861224dd752ec9f5e3 inherit pub_methods_a00017"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f8f9245751501f7602c5affb9c2e623 inherit pub_methods_a00017"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8f8f9245751501f7602c5affb9c2e623"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d51/a00017.html#a8f8f9245751501f7602c5affb9c2e623">GetSubScenarioId</a> ()</td></tr>
+<tr class="memdesc:a8f8f9245751501f7602c5affb9c2e623 inherit pub_methods_a00017"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get subScenario ID. <br/></td></tr>
+<tr class="separator:a8f8f9245751501f7602c5affb9c2e623 inherit pub_methods_a00017"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aa5f30915a6a65d4238321bd4282b7d2b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa5f30915a6a65d4238321bd4282b7d2b"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d7a/a00016.html#aa5f30915a6a65d4238321bd4282b7d2b">m_mgtFieldsName</a></td></tr>
+<tr class="memdesc:aa5f30915a6a65d4238321bd4282b7d2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">management units file name <br/></td></tr>
+<tr class="separator:aa5f30915a6a65d4238321bd4282b7d2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a896729bcf6c10ae0d4e1ba8d47ba35eb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a896729bcf6c10ae0d4e1ba8d47ba35eb"></a>
+float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d7a/a00016.html#a896729bcf6c10ae0d4e1ba8d47ba35eb">m_mgtFieldsRs</a></td></tr>
+<tr class="memdesc:a896729bcf6c10ae0d4e1ba8d47ba35eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">management units raster data <br/></td></tr>
+<tr class="separator:a896729bcf6c10ae0d4e1ba8d47ba35eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3ccca344939503900892bbfa15496bf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af3ccca344939503900892bbfa15496bf"></a>
+vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d7a/a00016.html#af3ccca344939503900892bbfa15496bf">m_unitIDs</a></td></tr>
+<tr class="memdesc:af3ccca344939503900892bbfa15496bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">locations <br/></td></tr>
+<tr class="separator:af3ccca344939503900892bbfa15496bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbdcb27ebcdc9961201def4072347be7"><td class="memItemLeft" align="right" valign="top">map&lt; int, <a class="el" href="../../dd/d1b/a00015.html">BMPArealStruct</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d7a/a00016.html#abbdcb27ebcdc9961201def4072347be7">m_bmpStructMap</a></td></tr>
+<tr class="separator:abbdcb27ebcdc9961201def4072347be7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_attribs_a00017"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_a00017')"><img src="../../closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="../../d4/d51/a00017.html">bmps::BMPFactory</a></td></tr>
+<tr class="memitem:ac72dd7b703de3957dcd01eb2a589da5d inherit pro_attribs_a00017"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac72dd7b703de3957dcd01eb2a589da5d"></a>
+const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d51/a00017.html#ac72dd7b703de3957dcd01eb2a589da5d">m_scenarioId</a></td></tr>
+<tr class="memdesc:ac72dd7b703de3957dcd01eb2a589da5d inherit pro_attribs_a00017"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d7/dce/a00143.html" title="Main class of scenario in BMP database. ">Scenario</a> ID. <br/></td></tr>
+<tr class="separator:ac72dd7b703de3957dcd01eb2a589da5d inherit pro_attribs_a00017"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa210e4bd20b6dc6355be6de4fe4da6ac inherit pro_attribs_a00017"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa210e4bd20b6dc6355be6de4fe4da6ac"></a>
+const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d51/a00017.html#aa210e4bd20b6dc6355be6de4fe4da6ac">m_bmpId</a></td></tr>
+<tr class="memdesc:aa210e4bd20b6dc6355be6de4fe4da6ac inherit pro_attribs_a00017"><td class="mdescLeft">&#160;</td><td class="mdescRight">BMP ID. <br/></td></tr>
+<tr class="separator:aa210e4bd20b6dc6355be6de4fe4da6ac inherit pro_attribs_a00017"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2370c0a4834573a21927c267374dbc68 inherit pro_attribs_a00017"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2370c0a4834573a21927c267374dbc68"></a>
+const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d51/a00017.html#a2370c0a4834573a21927c267374dbc68">m_subScenarioId</a></td></tr>
+<tr class="memdesc:a2370c0a4834573a21927c267374dbc68 inherit pro_attribs_a00017"><td class="mdescLeft">&#160;</td><td class="mdescRight">SubScenario ID within one BMP iD. <br/></td></tr>
+<tr class="separator:a2370c0a4834573a21927c267374dbc68 inherit pro_attribs_a00017"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10432c6e32cfd182351c11a3b42f4c44 inherit pro_attribs_a00017"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a10432c6e32cfd182351c11a3b42f4c44"></a>
+const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d51/a00017.html#a10432c6e32cfd182351c11a3b42f4c44">m_bmpType</a></td></tr>
+<tr class="memdesc:a10432c6e32cfd182351c11a3b42f4c44 inherit pro_attribs_a00017"><td class="mdescLeft">&#160;</td><td class="mdescRight">BMP Type. <br/></td></tr>
+<tr class="separator:a10432c6e32cfd182351c11a3b42f4c44 inherit pro_attribs_a00017"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e69d6f18a2f1cb1efb6d18dccb66ed6 inherit pro_attribs_a00017"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4e69d6f18a2f1cb1efb6d18dccb66ed6"></a>
+const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d51/a00017.html#a4e69d6f18a2f1cb1efb6d18dccb66ed6">m_bmpPriority</a></td></tr>
+<tr class="memdesc:a4e69d6f18a2f1cb1efb6d18dccb66ed6 inherit pro_attribs_a00017"><td class="mdescLeft">&#160;</td><td class="mdescRight">BMP Priority. <br/></td></tr>
+<tr class="separator:a4e69d6f18a2f1cb1efb6d18dccb66ed6 inherit pro_attribs_a00017"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71e60056057dc4c722a78f3f43ac58f5 inherit pro_attribs_a00017"><td class="memItemLeft" align="right" valign="top">vector&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d51/a00017.html#a71e60056057dc4c722a78f3f43ac58f5">m_distribution</a></td></tr>
+<tr class="separator:a71e60056057dc4c722a78f3f43ac58f5 inherit pro_attribs_a00017"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ee08a326bdb69a28658d33cf1f4134b inherit pro_attribs_a00017"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1ee08a326bdb69a28658d33cf1f4134b"></a>
+const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d51/a00017.html#a1ee08a326bdb69a28658d33cf1f4134b">m_bmpCollection</a></td></tr>
+<tr class="memdesc:a1ee08a326bdb69a28658d33cf1f4134b inherit pro_attribs_a00017"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collection name. <br/></td></tr>
+<tr class="separator:a1ee08a326bdb69a28658d33cf1f4134b inherit pro_attribs_a00017"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d696be862035eb056340670ff8838ff inherit pro_attribs_a00017"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3d696be862035eb056340670ff8838ff"></a>
+const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d51/a00017.html#a3d696be862035eb056340670ff8838ff">m_location</a></td></tr>
+<tr class="memdesc:a3d696be862035eb056340670ff8838ff inherit pro_attribs_a00017"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define where the BMP will be applied. <br/></td></tr>
+<tr class="separator:a3d696be862035eb056340670ff8838ff inherit pro_attribs_a00017"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Initiate Areal Structural BMPs. </p>
+
+<p>Definition at line <a class="el" href="../../d1/d98/a00407_source.html#l00061">61</a> of file <a class="el" href="../../d1/d98/a00407_source.html">BMPArealStructFactory.h</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a8968ee455eb577dab04c412db425e70f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BMPArealStructFactory::loadBMP </td>
+          <td>(</td>
+          <td class="paramtype">MongoClient *&#160;</td>
+          <td class="paramname"><em>conn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>bmpDBName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Load BMP parameters from MongoDB. </p>
+<p>Use count to counting sequence number, in case of discontinuous or repeat of SEQUENCE in database. </p>
+
+<p>Implements <a class="el" href="../../d4/d51/a00017.html#af7d59d8b0ebb42a514a5b3e13343a1e0">bmps::BMPFactory</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d1/d8b/a00406_source.html#l00088">88</a> of file <a class="el" href="../../d1/d8b/a00406_source.html">BMPArealStructFactory.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="abbdcb27ebcdc9961201def4072347be7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">map&lt;int, <a class="el" href="../../dd/d1b/a00015.html">BMPArealStruct</a>*&gt; bmps::BMPArealStructFactory::m_bmpStructMap</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The unique areal BMP ID  Instance of </p>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../dd/d1b/a00015.html" title="Manage areal Structural BMP data. ">BMPArealStruct</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="../../d1/d98/a00407_source.html#l00100">100</a> of file <a class="el" href="../../d1/d98/a00407_source.html">BMPArealStructFactory.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>seims/src/seims_main/base/bmps/<a class="el" href="../../d1/d98/a00407_source.html">BMPArealStructFactory.h</a></li>
+<li>seims/src/seims_main/base/bmps/<a class="el" href="../../d1/d8b/a00406_source.html">BMPArealStructFactory.cpp</a></li>
+</ul>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Mar 27 2018 10:11:02 for SEIMS by
+    <li class="navelem"><a class="el" href="../../db/d77/a00683.html">bmps</a></li><li class="navelem"><a class="el" href="../../d7/d7a/a00016.html">BMPArealStructFactory</a></li>
+    <li class="footer">Generated on Mon May 7 2018 13:47:07 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

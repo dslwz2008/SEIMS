@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: buildRel/googletest-src/googletest/samples/prime_tables.h Source File</title>
+<title>SEIMS: seims/src/seims_main/base/bmps/BMPPointSourceFactory.cpp Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -101,7 +101,7 @@ $(document).ready(function(){initNavTree('d9/d72/a00412_source.html','../../');}
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -112,143 +112,334 @@ $(document).ready(function(){initNavTree('d9/d72/a00412_source.html','../../');}
 
 <div class="header">
   <div class="headertitle">
-<div class="title">prime_tables.h</div>  </div>
+<div class="title">BMPPointSourceFactory.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// Copyright 2008 Google Inc.</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// All Rights Reserved.</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// Redistribution and use in source and binary forms, with or without</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// modification, are permitted provided that the following conditions are</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// met:</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">//     * Redistributions of source code must retain the above copyright</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">// notice, this list of conditions and the following disclaimer.</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">//     * Redistributions in binary form must reproduce the above</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// copyright notice, this list of conditions and the following disclaimer</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// in the documentation and/or other materials provided with the</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// distribution.</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">//     * Neither the name of Google Inc. nor the names of its</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// contributors may be used to endorse or promote products derived from</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// this software without specific prior written permission.</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">// &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">// LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">// Author: wan@google.com (Zhanyong Wan)</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// Author: vladl@google.com (Vlad Losev)</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">// This provides interface PrimeTable that determines whether a number is a</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">// prime and determines a next prime number. This interface is used</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// in Google Test samples demonstrating use of parameterized tests.</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#ifndef GTEST_SAMPLES_PRIME_TABLES_H_</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define GTEST_SAMPLES_PRIME_TABLES_H_</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &lt;algorithm&gt;</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">// The prime table interface.</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">class </span>PrimeTable {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keyword">virtual</span> ~PrimeTable() {}</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="comment">// Returns true iff n is a prime number.</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> IsPrime(<span class="keywordtype">int</span> n) <span class="keyword">const</span> = 0;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="comment">// Returns the smallest prime number greater than p; or returns -1</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="comment">// if the next prime is beyond the capacity of the table.</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">int</span> GetNextPrime(<span class="keywordtype">int</span> p) <span class="keyword">const</span> = 0;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;};</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">// Implementation #1 calculates the primes on-the-fly.</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">class </span>OnTheFlyPrimeTable : <span class="keyword">public</span> PrimeTable {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> IsPrime(<span class="keywordtype">int</span> n)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">if</span> (n &lt;= 1) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 2; i*i &lt;= n; i++) {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      <span class="comment">// n is divisible by an integer other than 1 and itself.</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      <span class="keywordflow">if</span> ((n % i) == 0) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  }</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">int</span> GetNextPrime(<span class="keywordtype">int</span> p)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = p + 1; n &gt; 0; n++) {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      <span class="keywordflow">if</span> (IsPrime(n)) <span class="keywordflow">return</span> n;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  }</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;};</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">// Implementation #2 pre-calculates the primes and stores the result</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">// in an array.</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keyword">class </span>PreCalculatedPrimeTable : <span class="keyword">public</span> PrimeTable {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="comment">// &#39;max&#39; specifies the maximum number the prime table holds.</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keyword">explicit</span> PreCalculatedPrimeTable(<span class="keywordtype">int</span> max)</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;      : is_prime_size_(max + 1), is_prime_(new bool[max + 1]) {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    CalculatePrimesUpTo(max);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  }</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keyword">virtual</span> ~PreCalculatedPrimeTable() { <span class="keyword">delete</span>[] is_prime_; }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> IsPrime(<span class="keywordtype">int</span> n)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">return</span> 0 &lt;= n &amp;&amp; n &lt; is_prime_size_ &amp;&amp; is_prime_[n];</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  }</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">int</span> GetNextPrime(<span class="keywordtype">int</span> p)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = p + 1; n &lt; is_prime_size_; n++) {</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      <span class="keywordflow">if</span> (is_prime_[n]) <span class="keywordflow">return</span> n;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  }</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="keywordtype">void</span> CalculatePrimesUpTo(<span class="keywordtype">int</span> max) {</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    ::std::fill(is_prime_, is_prime_ + is_prime_size_, <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    is_prime_[0] = is_prime_[1] = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="comment">// Checks every candidate for prime number (we know that 2 is the only even</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="comment">// prime).</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 2; i*i &lt;= max; i += i%2+1) {</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;      <span class="keywordflow">if</span> (!is_prime_[i]) <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;      <span class="comment">// Marks all multiples of i (except i itself) as non-prime.</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;      <span class="comment">// We are starting here from i-th multiplier, because all smaller</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;      <span class="comment">// complex numbers were already marked.</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = i*i; j &lt;= max; j += i) {</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        is_prime_[j] = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;      }</div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;BMPPointSourceFactory.h&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span> <span class="comment">// unique_ptr</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;utils_string.h&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;utils_time.h&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;BMPText.h&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">using namespace </span>utils_string;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">using namespace </span>utils_time;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">using namespace </span>bmps;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="../../dd/da2/a00019.html#a2075d2309571a318c216ab47f1d5ac85">   13</a></span>&#160;BMPPointSrcFactory::BMPPointSrcFactory(<span class="keywordtype">int</span> scenarioId, <span class="keywordtype">int</span> bmpId, <span class="keywordtype">int</span> subScenario,</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                                       <span class="keywordtype">int</span> bmpType, <span class="keywordtype">int</span> bmpPriority, vector&lt;string&gt;&amp; distribution,</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                                       <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; collection, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; location) :</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="../../d4/d51/a00017.html">BMPFactory</a>(scenarioId, bmpId, subScenario, bmpType, bmpPriority, distribution, collection, location) {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="../../dd/da2/a00019.html#af8eb2553a7c0e1b2557daeabf3918de5">m_pointSrcMgtTab</a> = <a class="code" href="../../d4/d51/a00017.html#a1ee08a326bdb69a28658d33cf1f4134b">m_bmpCollection</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    SplitStringForValues(<a class="code" href="../../d4/d51/a00017.html#a3d696be862035eb056340670ff8838ff">m_location</a>, <span class="charliteral">&#39;-&#39;</span>, <a class="code" href="../../dd/da2/a00019.html#a3a6b5f94bc9bab1dd30858dd7bb3e845">m_pointSrcIDs</a>);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d4/d51/a00017.html#a71e60056057dc4c722a78f3f43ac58f5">m_distribution</a>.size() == 3 &amp;&amp; StringMatch(<a class="code" href="../../d4/d51/a00017.html#a71e60056057dc4c722a78f3f43ac58f5">m_distribution</a>[0], FLD_SCENARIO_DIST_ARRAY)) {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="code" href="../../dd/da2/a00019.html#a27be00635d428e9524034aa1f4c878f6">m_pointSrcDistTab</a> = <a class="code" href="../../d4/d51/a00017.html#a71e60056057dc4c722a78f3f43ac58f5">m_distribution</a>[1];</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordtype">char</span>* end = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        errno = 0;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="../../dd/da2/a00019.html#ad7de0c74c37c52c79139af4fb2ffb696">m_pointSrc</a> = strtol(<a class="code" href="../../d4/d51/a00017.html#a71e60056057dc4c722a78f3f43ac58f5">m_distribution</a>[2].c_str(), &amp;end, 10); <span class="comment">// deprecated atoi</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordflow">if</span> (errno != 0) {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="../../d9/df8/a00096.html">ModelException</a>(<span class="stringliteral">&quot;BMPPointSourceFactory&quot;</span>, <span class="stringliteral">&quot;Initialization&quot;</span>,</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                                 <span class="stringliteral">&quot;PTSRC in the distribution field converted to integer failed!&quot;</span>);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../d9/df8/a00096.html">ModelException</a>(<span class="stringliteral">&quot;BMPPointSourceFactory&quot;</span>, <span class="stringliteral">&quot;Initialization&quot;</span>,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                             <span class="stringliteral">&quot;The distribution field must follow the format: &quot;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                             <span class="stringliteral">&quot;ARRAY|CollectionName|PTSRC.\n&quot;</span>);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="../../dd/da2/a00019.html#a855a9adfcd9e87e5e548b379eee5e9f7">   35</a></span>&#160;<a class="code" href="../../dd/da2/a00019.html#a855a9adfcd9e87e5e548b379eee5e9f7">BMPPointSrcFactory::~BMPPointSrcFactory</a>() {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../dd/da2/a00019.html#af7824cad3804c568ee7d16f503a89f67">m_pointSrcLocsMap</a>.empty()) {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = <a class="code" href="../../dd/da2/a00019.html#af7824cad3804c568ee7d16f503a89f67">m_pointSrcLocsMap</a>.begin();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;             it != <a class="code" href="../../dd/da2/a00019.html#af7824cad3804c568ee7d16f503a89f67">m_pointSrcLocsMap</a>.end();) {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> != it-&gt;second) {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <span class="keyword">delete</span> it-&gt;second;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                it-&gt;second = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <a class="code" href="../../dd/da2/a00019.html#af7824cad3804c568ee7d16f503a89f67">m_pointSrcLocsMap</a>.erase(it++);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <a class="code" href="../../dd/da2/a00019.html#af7824cad3804c568ee7d16f503a89f67">m_pointSrcLocsMap</a>.clear();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../dd/da2/a00019.html#a8d4fe0783a0c3d8353ea75c1ba450128">m_pointSrcMgtMap</a>.empty()) {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = <a class="code" href="../../dd/da2/a00019.html#a8d4fe0783a0c3d8353ea75c1ba450128">m_pointSrcMgtMap</a>.begin();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;             it != <a class="code" href="../../dd/da2/a00019.html#a8d4fe0783a0c3d8353ea75c1ba450128">m_pointSrcMgtMap</a>.end();) {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> != it-&gt;second) {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <span class="keyword">delete</span> it-&gt;second;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                it-&gt;second = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <a class="code" href="../../dd/da2/a00019.html#a8d4fe0783a0c3d8353ea75c1ba450128">m_pointSrcMgtMap</a>.erase(it++);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="../../dd/da2/a00019.html#a8d4fe0783a0c3d8353ea75c1ba450128">m_pointSrcMgtMap</a>.clear();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="../../dd/da2/a00019.html#ad0fc84c5c48bf35c7ed250ac2a7fc15d">   60</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dd/da2/a00019.html#ad0fc84c5c48bf35c7ed250ac2a7fc15d">BMPPointSrcFactory::loadBMP</a>(MongoClient* conn, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; bmpDBName) {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="../../dd/da2/a00019.html#a33cff88a565b727800b9683bb31d23f8">ReadPointSourceManagements</a>(conn, bmpDBName);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="../../dd/da2/a00019.html#a00dd7e00d4e6b52394014bd79afb71b4">ReadPointSourceLocations</a>(conn, bmpDBName);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="../../dd/da2/a00019.html#a33cff88a565b727800b9683bb31d23f8">   65</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dd/da2/a00019.html#a33cff88a565b727800b9683bb31d23f8">BMPPointSrcFactory::ReadPointSourceManagements</a>(MongoClient* conn, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; bmpDBName) {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    bson_t* b = bson_new();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    bson_t *child1 = bson_new(), *child2 = bson_new();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    BSON_APPEND_DOCUMENT_BEGIN(b, <span class="stringliteral">&quot;$query&quot;</span>, child1);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    BSON_APPEND_INT32(child1, BMP_FLD_SUB, <a class="code" href="../../d4/d51/a00017.html#a2370c0a4834573a21927c267374dbc68">m_subScenarioId</a>);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    bson_append_document_end(b, child1);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    BSON_APPEND_DOCUMENT_BEGIN(b, <span class="stringliteral">&quot;$orderby&quot;</span>, child2);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    BSON_APPEND_INT32(child2, BMP_FLD_SEQUENCE, 1);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    bson_append_document_end(b, child2);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    bson_destroy(child1);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    bson_destroy(child2);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    std::unique_ptr&lt;MongoCollection&gt; collection(<span class="keyword">new</span> MongoCollection(conn-&gt;GetCollection(bmpDBName, <a class="code" href="../../dd/da2/a00019.html#af8eb2553a7c0e1b2557daeabf3918de5">m_pointSrcMgtTab</a>)));</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    mongoc_cursor_t* cursor = collection-&gt;ExecuteQuery(b);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    bson_iter_t iter;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keyword">const</span> bson_t* bsonTable;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">int</span> count = 1;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">while</span> (mongoc_cursor_next(cursor, &amp;bsonTable)) {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <a class="code" href="../../dd/da2/a00019.html#aa8ba3496eff702dc47f607a34f5c17a5">m_pointSrcMgtSeqs</a>.push_back(count);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <a class="code" href="../../dd/da2/a00019.html#a8d4fe0783a0c3d8353ea75c1ba450128">m_pointSrcMgtMap</a>[count] = <span class="keyword">new</span> <a class="code" href="../../d5/deb/a00132.html">PointSourceMgtParams</a>(bsonTable, iter);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        count++;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    bson_destroy(b);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    mongoc_cursor_destroy(cursor);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="../../dd/da2/a00019.html#a00dd7e00d4e6b52394014bd79afb71b4">   94</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dd/da2/a00019.html#a00dd7e00d4e6b52394014bd79afb71b4">BMPPointSrcFactory::ReadPointSourceLocations</a>(MongoClient* conn, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; bmpDBName) {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    bson_t* b = bson_new();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    bson_t* child1 = bson_new();</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    BSON_APPEND_DOCUMENT_BEGIN(b, <span class="stringliteral">&quot;$query&quot;</span>, child1);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    BSON_APPEND_INT32(child1, BMP_PTSRC_FLD_CODE, <a class="code" href="../../dd/da2/a00019.html#ad7de0c74c37c52c79139af4fb2ffb696">m_pointSrc</a>);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    bson_append_document_end(b, child1);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    bson_destroy(child1);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    std::unique_ptr&lt;MongoCollection&gt; collection(<span class="keyword">new</span> MongoCollection(conn-&gt;GetCollection(bmpDBName, <a class="code" href="../../dd/da2/a00019.html#a27be00635d428e9524034aa1f4c878f6">m_pointSrcDistTab</a>)));</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    mongoc_cursor_t* cursor = collection-&gt;ExecuteQuery(b);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    bson_iter_t iter;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keyword">const</span> bson_t* bsonTable;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">while</span> (mongoc_cursor_next(cursor, &amp;bsonTable)) {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <a class="code" href="../../d7/d06/a00131.html">PointSourceLocations</a>* curPtSrcLoc = <span class="keyword">new</span> <a class="code" href="../../d7/d06/a00131.html">PointSourceLocations</a>(bsonTable, iter);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keywordtype">int</span> curPtSrcID = curPtSrcLoc-&gt;<a class="code" href="../../d7/d06/a00131.html#ad470eb13ba6e1425664be35f872f3935">GetPointSourceID</a>();</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordflow">if</span> (ValueInVector(curPtSrcID, <a class="code" href="../../dd/da2/a00019.html#a3a6b5f94bc9bab1dd30858dd7bb3e845">m_pointSrcIDs</a>)) {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <a class="code" href="../../dd/da2/a00019.html#af7824cad3804c568ee7d16f503a89f67">m_pointSrcLocsMap</a>[curPtSrcID] = curPtSrcLoc;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            RemoveValueInVector(curPtSrcID, <a class="code" href="../../dd/da2/a00019.html#a3a6b5f94bc9bab1dd30858dd7bb3e845">m_pointSrcIDs</a>);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <span class="keyword">delete</span> curPtSrcLoc;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        }</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    }</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  }</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> is_prime_size_;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <span class="keywordtype">bool</span>* <span class="keyword">const</span> is_prime_;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <span class="comment">// Disables compiler warning &quot;assignment operator could not be generated.&quot;</span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <span class="keywordtype">void</span> operator=(<span class="keyword">const</span> PreCalculatedPrimeTable&amp; rhs);</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;};</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="preprocessor">#endif  // GTEST_SAMPLES_PRIME_TABLES_H_</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    bson_destroy(b);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    mongoc_cursor_destroy(cursor);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;}</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
+<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="../../dd/da2/a00019.html#af5295832e71d3c4fe40f7b1ad96e0160">  122</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dd/da2/a00019.html#af5295832e71d3c4fe40f7b1ad96e0160">BMPPointSrcFactory::Dump</a>(std::ostream* fs) {</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == fs) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    *fs &lt;&lt; <span class="stringliteral">&quot;Point Source Management Factory: &quot;</span> &lt;&lt; endl &lt;&lt;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            <span class="stringliteral">&quot;    SubScenario ID: &quot;</span> &lt;&lt; <a class="code" href="../../d4/d51/a00017.html#a2370c0a4834573a21927c267374dbc68">m_subScenarioId</a> &lt;&lt; <span class="stringliteral">&quot; PTSRC: &quot;</span> &lt;&lt; <a class="code" href="../../dd/da2/a00019.html#ad7de0c74c37c52c79139af4fb2ffb696">m_pointSrc</a> &lt;&lt; endl;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = <a class="code" href="../../dd/da2/a00019.html#aa8ba3496eff702dc47f607a34f5c17a5">m_pointSrcMgtSeqs</a>.begin(); it != <a class="code" href="../../dd/da2/a00019.html#aa8ba3496eff702dc47f607a34f5c17a5">m_pointSrcMgtSeqs</a>.end(); ++it) {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keyword">auto</span> findIdx = <a class="code" href="../../dd/da2/a00019.html#a8d4fe0783a0c3d8353ea75c1ba450128">m_pointSrcMgtMap</a>.find(*it);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keywordflow">if</span> (findIdx != <a class="code" href="../../dd/da2/a00019.html#a8d4fe0783a0c3d8353ea75c1ba450128">m_pointSrcMgtMap</a>.end()) {</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            <a class="code" href="../../dd/da2/a00019.html#a8d4fe0783a0c3d8353ea75c1ba450128">m_pointSrcMgtMap</a>[*it]-&gt;Dump(fs);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        }</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    }</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = <a class="code" href="../../dd/da2/a00019.html#a3a6b5f94bc9bab1dd30858dd7bb3e845">m_pointSrcIDs</a>.begin(); it != <a class="code" href="../../dd/da2/a00019.html#a3a6b5f94bc9bab1dd30858dd7bb3e845">m_pointSrcIDs</a>.end(); ++it) {</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="keyword">auto</span> findIdx = <a class="code" href="../../dd/da2/a00019.html#af7824cad3804c568ee7d16f503a89f67">m_pointSrcLocsMap</a>.find(*it);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="keywordflow">if</span> (findIdx != <a class="code" href="../../dd/da2/a00019.html#af7824cad3804c568ee7d16f503a89f67">m_pointSrcLocsMap</a>.end()) {</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            <a class="code" href="../../dd/da2/a00019.html#af7824cad3804c568ee7d16f503a89f67">m_pointSrcLocsMap</a>[*it]-&gt;Dump(fs);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        }</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    }</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;}</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="comment">/************************************************************************/</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="comment">/*                  PointSourceMgtParams                                */</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="comment">/************************************************************************/</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;</div>
+<div class="line"><a name="l00145"></a><span class="lineno"><a class="line" href="../../d5/deb/a00132.html#a96fb717d1a763ff6323c602155136b4d">  145</a></span>&#160;<a class="code" href="../../d5/deb/a00132.html#a96fb717d1a763ff6323c602155136b4d">PointSourceMgtParams::PointSourceMgtParams</a>(<span class="keyword">const</span> bson_t*&amp; bsonTable, bson_iter_t&amp; iter)</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    : m_name(<span class="stringliteral">&quot;&quot;</span>), m_seqence(-1), m_startDate(0), m_endDate(0), m_waterVolume(0.f), m_sedimentConc(0.f),</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;      m_TNConc(0.f), m_NO3Conc(0.f), m_NH4Conc(0.f), m_OrgNConc(0.f), m_TPConc(0.f), m_SolPConc(0.f),</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;      m_OrgPConc(0.f), m_COD(0.f) {</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordflow">if</span> (bson_iter_init_find(&amp;iter, bsonTable, BMP_FLD_NAME)) {</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <a class="code" href="../../d5/deb/a00132.html#a26653373961c15a5575e949ac961681e">m_name</a> = GetStringFromBsonIterator(&amp;iter);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    }</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordflow">if</span> (bson_iter_init_find(&amp;iter, bsonTable, BMP_FLD_SEQUENCE)) {</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        GetNumericFromBsonIterator(&amp;iter, <a class="code" href="../../d5/deb/a00132.html#a00421a937ced62a5d17018b011f50511">m_seqence</a>);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    }</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordflow">if</span> (bson_iter_init_find(&amp;iter, bsonTable, BMP_PTSRC_FLD_Q)) {</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        GetNumericFromBsonIterator(&amp;iter, <a class="code" href="../../d5/deb/a00132.html#a80d8849a469565a72e58c3b13d4a9cef">m_waterVolume</a>);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    }</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keywordflow">if</span> (bson_iter_init_find(&amp;iter, bsonTable, BMP_PTSRC_FLD_SED)) {</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        GetNumericFromBsonIterator(&amp;iter, <a class="code" href="../../d5/deb/a00132.html#aef8a6e60fd3c72d1cc44111820e9395e">m_sedimentConc</a>);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    }</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordflow">if</span> (bson_iter_init_find(&amp;iter, bsonTable, BMP_PTSRC_FLD_TN)) {</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        GetNumericFromBsonIterator(&amp;iter, <a class="code" href="../../d5/deb/a00132.html#a69d9fb6f38368ec4c3aeb063814280f0">m_TNConc</a>);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    }</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordflow">if</span> (bson_iter_init_find(&amp;iter, bsonTable, BMP_PTSRC_FLD_NO3)) {</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        GetNumericFromBsonIterator(&amp;iter, <a class="code" href="../../d5/deb/a00132.html#affb6ea5cd420c7291554dad8c9946eae">m_NO3Conc</a>);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    }</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordflow">if</span> (bson_iter_init_find(&amp;iter, bsonTable, BMP_PTSRC_FLD_NH4)) {</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        GetNumericFromBsonIterator(&amp;iter, <a class="code" href="../../d5/deb/a00132.html#a0363bef23d21975bca8c163d3a7968ce">m_NH4Conc</a>);</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    }</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordflow">if</span> (bson_iter_init_find(&amp;iter, bsonTable, BMP_PTSRC_FLD_ORGN)) {</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        GetNumericFromBsonIterator(&amp;iter, <a class="code" href="../../d5/deb/a00132.html#a8bd4fe434e9a788a88c65c06035b3aaa">m_OrgNConc</a>);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    }</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="keywordflow">if</span> (bson_iter_init_find(&amp;iter, bsonTable, BMP_PTSRC_FLD_TP)) {</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        GetNumericFromBsonIterator(&amp;iter, <a class="code" href="../../d5/deb/a00132.html#add33fa524323b66d0af1864c6fe3517d">m_TPConc</a>);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    }</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordflow">if</span> (bson_iter_init_find(&amp;iter, bsonTable, BMP_PTSRC_FLD_SOLP)) {</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        GetNumericFromBsonIterator(&amp;iter, <a class="code" href="../../d5/deb/a00132.html#a6e2d85b5de34abf401f2dacc919c85d4">m_SolPConc</a>);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    }</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keywordflow">if</span> (bson_iter_init_find(&amp;iter, bsonTable, BMP_PTSRC_FLD_ORGP)) {</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        GetNumericFromBsonIterator(&amp;iter, <a class="code" href="../../d5/deb/a00132.html#acae134b4821748b0ea9d66164084a6df">m_OrgPConc</a>);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    }</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="keywordflow">if</span> (bson_iter_init_find(&amp;iter, bsonTable, BMP_PTSRC_FLD_COD)) {</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        GetNumericFromBsonIterator(&amp;iter, <a class="code" href="../../d5/deb/a00132.html#a46e872e6dfef3f8f658090c601f5e7ce">m_COD</a>);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    }</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordtype">int</span> sYear = -1, sMonth = -1, sDay = -1, eYear = -1, eMonth = -1, eDay = -1;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keywordflow">if</span> (bson_iter_init_find(&amp;iter, bsonTable, BMP_FLD_SYEAR)) {</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        GetNumericFromBsonIterator(&amp;iter, sYear);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    }</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordflow">if</span> (bson_iter_init_find(&amp;iter, bsonTable, BMP_FLD_SMONTH)) {</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        GetNumericFromBsonIterator(&amp;iter, sMonth);</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    }</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordflow">if</span> (bson_iter_init_find(&amp;iter, bsonTable, BMP_FLD_SDAY)) {</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        GetNumericFromBsonIterator(&amp;iter, sDay);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    }</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keywordflow">if</span> (bson_iter_init_find(&amp;iter, bsonTable, BMP_FLD_EYEAR)) {</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        GetNumericFromBsonIterator(&amp;iter, eYear);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    }</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="keywordflow">if</span> (bson_iter_init_find(&amp;iter, bsonTable, BMP_FLD_EMONTH)) {</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        GetNumericFromBsonIterator(&amp;iter, eMonth);</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    }</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keywordflow">if</span> (bson_iter_init_find(&amp;iter, bsonTable, BMP_FLD_EDAY)) {</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        GetNumericFromBsonIterator(&amp;iter, eDay);</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    }</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="keywordflow">if</span> (sYear &gt; 0 &amp;&amp; sMonth &gt; 0 &amp;&amp; sDay &gt; 0) {</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        <a class="code" href="../../d5/deb/a00132.html#aeadb0e318cb26db27cffc3bfb8baed1b">m_startDate</a> = ConvertYMDToTime(sYear, sMonth, sDay);</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    }</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keywordflow">if</span> (eYear &gt; 0 &amp;&amp; eMonth &gt; 0 &amp;&amp; eDay &gt; 0) {</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <a class="code" href="../../d5/deb/a00132.html#a6312e8708fd478424b9e650447d69390">m_endDate</a> = ConvertYMDToTime(eYear, eMonth, eDay);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    }</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;}</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;</div>
+<div class="line"><a name="l00212"></a><span class="lineno"><a class="line" href="../../d5/deb/a00132.html#a97dc5a70cbea6c9a35ddb1a8d6a5780e">  212</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d5/deb/a00132.html#a97dc5a70cbea6c9a35ddb1a8d6a5780e">PointSourceMgtParams::Dump</a>(std::ostream* fs) {</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == fs) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    *fs &lt;&lt; <span class="stringliteral">&quot;    Point Source Managements: &quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d5/deb/a00132.html#aeadb0e318cb26db27cffc3bfb8baed1b">m_startDate</a> != 0) {</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        *fs &lt;&lt; <span class="stringliteral">&quot;      Start Date: &quot;</span> &lt;&lt; ConvertToString(&amp;<a class="code" href="../../d5/deb/a00132.html#aeadb0e318cb26db27cffc3bfb8baed1b">m_startDate</a>) &lt;&lt; endl;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    }</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d5/deb/a00132.html#a6312e8708fd478424b9e650447d69390">m_endDate</a> != 0) {</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        *fs &lt;&lt; <span class="stringliteral">&quot;      End Date: &quot;</span> &lt;&lt; ConvertToString(&amp;<a class="code" href="../../d5/deb/a00132.html#a6312e8708fd478424b9e650447d69390">m_endDate</a>) &lt;&lt; endl;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    }</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    *fs &lt;&lt; <span class="stringliteral">&quot;      WaterVolume: &quot;</span> &lt;&lt; <a class="code" href="../../d5/deb/a00132.html#a80d8849a469565a72e58c3b13d4a9cef">m_waterVolume</a> &lt;&lt; <span class="stringliteral">&quot;, Sediment: &quot;</span> &lt;&lt; <a class="code" href="../../d5/deb/a00132.html#aef8a6e60fd3c72d1cc44111820e9395e">m_sedimentConc</a> &lt;&lt;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            <span class="stringliteral">&quot;, TN: &quot;</span> &lt;&lt; <a class="code" href="../../d5/deb/a00132.html#a69d9fb6f38368ec4c3aeb063814280f0">m_TNConc</a> &lt;&lt; <span class="stringliteral">&quot;, NO3: &quot;</span> &lt;&lt; <a class="code" href="../../d5/deb/a00132.html#affb6ea5cd420c7291554dad8c9946eae">m_NO3Conc</a> &lt;&lt;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            <span class="stringliteral">&quot;, NH4: &quot;</span> &lt;&lt; <a class="code" href="../../d5/deb/a00132.html#a0363bef23d21975bca8c163d3a7968ce">m_NH4Conc</a> &lt;&lt; <span class="stringliteral">&quot;, OrgN: &quot;</span> &lt;&lt; <a class="code" href="../../d5/deb/a00132.html#a8bd4fe434e9a788a88c65c06035b3aaa">m_OrgNConc</a> &lt;&lt;</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            <span class="stringliteral">&quot;, TP: &quot;</span> &lt;&lt; <a class="code" href="../../d5/deb/a00132.html#add33fa524323b66d0af1864c6fe3517d">m_TPConc</a> &lt;&lt; <span class="stringliteral">&quot;, MinP: &quot;</span> &lt;&lt; <a class="code" href="../../d5/deb/a00132.html#a6e2d85b5de34abf401f2dacc919c85d4">m_SolPConc</a> &lt;&lt;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            <span class="stringliteral">&quot;, OrgP: &quot;</span> &lt;&lt; <a class="code" href="../../d5/deb/a00132.html#acae134b4821748b0ea9d66164084a6df">m_OrgPConc</a> &lt;&lt; endl;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;}</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="comment">/************************************************************************/</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="comment">/*                      PointSourceLocations                            */</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="comment">/************************************************************************/</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;</div>
+<div class="line"><a name="l00233"></a><span class="lineno"><a class="line" href="../../d7/d06/a00131.html#adbd92951c26127468555dd380012d9f0">  233</a></span>&#160;<a class="code" href="../../d7/d06/a00131.html#adbd92951c26127468555dd380012d9f0">PointSourceLocations::PointSourceLocations</a>(<span class="keyword">const</span> bson_t*&amp; bsonTable, bson_iter_t&amp; iter)</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    : m_size(0.f), m_distDown(0.f) {</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="keywordflow">if</span> (bson_iter_init_find(&amp;iter, bsonTable, BMP_FLD_NAME)) {</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        <a class="code" href="../../d7/d06/a00131.html#a246325831e6e9418a63784764696356a">m_name</a> = GetStringFromBsonIterator(&amp;iter);</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    }</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="keywordflow">if</span> (bson_iter_init_find(&amp;iter, bsonTable, BMP_PTSRC_FLD_PTSRCID)) {</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        GetNumericFromBsonIterator(&amp;iter, <a class="code" href="../../d7/d06/a00131.html#ad3f604deaafa4f9229f2f288eaf2022f">m_pointSrcID</a>);</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    }</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <span class="keywordflow">if</span> (bson_iter_init_find(&amp;iter, bsonTable, BMP_PTSRC_FLD_LAT)) {</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        GetNumericFromBsonIterator(&amp;iter, <a class="code" href="../../d7/d06/a00131.html#ab2898c2b118f4a29c3dc3707bf07f1d5">m_lat</a>);</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    }</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <span class="keywordflow">if</span> (bson_iter_init_find(&amp;iter, bsonTable, BMP_PTSRC_FLD_LON)) {</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        GetNumericFromBsonIterator(&amp;iter, <a class="code" href="../../d7/d06/a00131.html#a0250f6fb0396b7ed544483889987f2fa">m_lon</a>);</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    }</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <span class="keywordflow">if</span> (bson_iter_init_find(&amp;iter, bsonTable, BMP_PTSRC_FLD_LOCALX)) {</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        GetNumericFromBsonIterator(&amp;iter, <a class="code" href="../../d7/d06/a00131.html#afd5b78fa4a0a5f307b53f72babdbc6bd">m_localX</a>);</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    }</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="keywordflow">if</span> (bson_iter_init_find(&amp;iter, bsonTable, BMP_PTSRC_FLD_LOCALY)) {</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        GetNumericFromBsonIterator(&amp;iter, <a class="code" href="../../d7/d06/a00131.html#ac1c79c7c9823f2266915230611396d0b">m_localY</a>);</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    }</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="keywordflow">if</span> (bson_iter_init_find(&amp;iter, bsonTable, BMP_PTSRC_FLD_SUBBSN)) {</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        GetNumericFromBsonIterator(&amp;iter, <a class="code" href="../../d7/d06/a00131.html#a5d8b213403602ddd59e045554d9c69a5">m_subbasinID</a>);</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    }</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="keywordflow">if</span> (bson_iter_init_find(&amp;iter, bsonTable, BMP_PTSRC_FLD_SIZE)) {</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        GetNumericFromBsonIterator(&amp;iter, <a class="code" href="../../d7/d06/a00131.html#a5ef22f19136c86154f3a687a8c5a28e6">m_size</a>);</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    }</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="keywordflow">if</span> (bson_iter_init_find(&amp;iter, bsonTable, BMP_PTSRC_FLD_DISTDOWN)) {</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        GetNumericFromBsonIterator(&amp;iter, <a class="code" href="../../d7/d06/a00131.html#a95126cd22c6aaf24d628357cc5848d09">m_distDown</a>);</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    }</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;}</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;</div>
+<div class="line"><a name="l00264"></a><span class="lineno"><a class="line" href="../../d7/d06/a00131.html#a792c5bd83b5e5fd7ecfc0d76626c0b4e">  264</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d7/d06/a00131.html#a792c5bd83b5e5fd7ecfc0d76626c0b4e">PointSourceLocations::Dump</a>(std::ostream* fs) {</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == fs) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    *fs &lt;&lt; <span class="stringliteral">&quot;      Point Source Location: &quot;</span> &lt;&lt; endl &lt;&lt;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;            <span class="stringliteral">&quot;        PTSRCID: &quot;</span> &lt;&lt; <a class="code" href="../../d7/d06/a00131.html#ad3f604deaafa4f9229f2f288eaf2022f">m_pointSrcID</a> &lt;&lt; <span class="stringliteral">&quot;, SubBasinID: &quot;</span> &lt;&lt; <a class="code" href="../../d7/d06/a00131.html#a5d8b213403602ddd59e045554d9c69a5">m_subbasinID</a> &lt;&lt;</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;            <span class="stringliteral">&quot;, Lon: &quot;</span> &lt;&lt; <a class="code" href="../../d7/d06/a00131.html#a0250f6fb0396b7ed544483889987f2fa">m_lon</a> &lt;&lt; <span class="stringliteral">&quot;, Lat: &quot;</span> &lt;&lt; <a class="code" href="../../d7/d06/a00131.html#ab2898c2b118f4a29c3dc3707bf07f1d5">m_lat</a> &lt;&lt;</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;            <span class="stringliteral">&quot;, LocalX: &quot;</span> &lt;&lt; <a class="code" href="../../d7/d06/a00131.html#afd5b78fa4a0a5f307b53f72babdbc6bd">m_localX</a> &lt;&lt; <span class="stringliteral">&quot;, LocalY: &quot;</span> &lt;&lt; <a class="code" href="../../d7/d06/a00131.html#ac1c79c7c9823f2266915230611396d0b">m_localY</a> &lt;&lt;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;            <span class="stringliteral">&quot;, Size: &quot;</span> &lt;&lt; <a class="code" href="../../d7/d06/a00131.html#a5ef22f19136c86154f3a687a8c5a28e6">m_size</a> &lt;&lt; <span class="stringliteral">&quot;, DistanceDown: &quot;</span> &lt;&lt; <a class="code" href="../../d7/d06/a00131.html#a95126cd22c6aaf24d628357cc5848d09">m_distDown</a> &lt;&lt; endl;</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;}</div>
+<div class="ttc" id="a00019_html_a27be00635d428e9524034aa1f4c878f6"><div class="ttname"><a href="../../dd/da2/a00019.html#a27be00635d428e9524034aa1f4c878f6">bmps::BMPPointSrcFactory::m_pointSrcDistTab</a></div><div class="ttdeci">string m_pointSrcDistTab</div><div class="ttdoc">Collection of point source locations. </div><div class="ttdef"><b>Definition:</b> <a href="../../da/d9c/a00413_source.html#l00241">BMPPointSourceFactory.h:241</a></div></div>
+<div class="ttc" id="a00017_html_a3d696be862035eb056340670ff8838ff"><div class="ttname"><a href="../../d4/d51/a00017.html#a3d696be862035eb056340670ff8838ff">bmps::BMPFactory::m_location</a></div><div class="ttdeci">const string m_location</div><div class="ttdoc">Define where the BMP will be applied. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/d3d/a00409_source.html#l00082">BMPFactory.h:82</a></div></div>
+<div class="ttc" id="a00132_html_a97dc5a70cbea6c9a35ddb1a8d6a5780e"><div class="ttname"><a href="../../d5/deb/a00132.html#a97dc5a70cbea6c9a35ddb1a8d6a5780e">bmps::PointSourceMgtParams::Dump</a></div><div class="ttdeci">void Dump(std::ostream *fs)</div><div class="ttdoc">Destructor. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d72/a00412_source.html#l00212">BMPPointSourceFactory.cpp:212</a></div></div>
+<div class="ttc" id="a00132_html_a8bd4fe434e9a788a88c65c06035b3aaa"><div class="ttname"><a href="../../d5/deb/a00132.html#a8bd4fe434e9a788a88c65c06035b3aaa">bmps::PointSourceMgtParams::m_OrgNConc</a></div><div class="ttdeci">float m_OrgNConc</div><div class="ttdoc">ORGN Organic Nitrogen concentration mg/L. </div><div class="ttdef"><b>Definition:</b> <a href="../../da/d9c/a00413_source.html#l00171">BMPPointSourceFactory.h:171</a></div></div>
+<div class="ttc" id="a00019_html_a8d4fe0783a0c3d8353ea75c1ba450128"><div class="ttname"><a href="../../dd/da2/a00019.html#a8d4fe0783a0c3d8353ea75c1ba450128">bmps::BMPPointSrcFactory::m_pointSrcMgtMap</a></div><div class="ttdeci">map&lt; int, PointSourceMgtParams * &gt; m_pointSrcMgtMap</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d9c/a00413_source.html#l00239">BMPPointSourceFactory.h:239</a></div></div>
+<div class="ttc" id="a00019_html_a855a9adfcd9e87e5e548b379eee5e9f7"><div class="ttname"><a href="../../dd/da2/a00019.html#a855a9adfcd9e87e5e548b379eee5e9f7">bmps::BMPPointSrcFactory::~BMPPointSrcFactory</a></div><div class="ttdeci">virtual ~BMPPointSrcFactory()</div><div class="ttdoc">Destructor. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d72/a00412_source.html#l00035">BMPPointSourceFactory.cpp:35</a></div></div>
+<div class="ttc" id="a00131_html_afd5b78fa4a0a5f307b53f72babdbc6bd"><div class="ttname"><a href="../../d7/d06/a00131.html#afd5b78fa4a0a5f307b53f72babdbc6bd">bmps::PointSourceLocations::m_localX</a></div><div class="ttdeci">float m_localX</div><div class="ttdoc">localX </div><div class="ttdef"><b>Definition:</b> <a href="../../da/d9c/a00413_source.html#l00076">BMPPointSourceFactory.h:76</a></div></div>
+<div class="ttc" id="a00132_html_a0363bef23d21975bca8c163d3a7968ce"><div class="ttname"><a href="../../d5/deb/a00132.html#a0363bef23d21975bca8c163d3a7968ce">bmps::PointSourceMgtParams::m_NH4Conc</a></div><div class="ttdeci">float m_NH4Conc</div><div class="ttdoc">NH4 Ammonium Nitrogen concentration mg/L. </div><div class="ttdef"><b>Definition:</b> <a href="../../da/d9c/a00413_source.html#l00169">BMPPointSourceFactory.h:169</a></div></div>
+<div class="ttc" id="a00132_html_a6312e8708fd478424b9e650447d69390"><div class="ttname"><a href="../../d5/deb/a00132.html#a6312e8708fd478424b9e650447d69390">bmps::PointSourceMgtParams::m_endDate</a></div><div class="ttdeci">time_t m_endDate</div><div class="ttdoc">End date. </div><div class="ttdef"><b>Definition:</b> <a href="../../da/d9c/a00413_source.html#l00159">BMPPointSourceFactory.h:159</a></div></div>
+<div class="ttc" id="a00132_html_a6e2d85b5de34abf401f2dacc919c85d4"><div class="ttname"><a href="../../d5/deb/a00132.html#a6e2d85b5de34abf401f2dacc919c85d4">bmps::PointSourceMgtParams::m_SolPConc</a></div><div class="ttdeci">float m_SolPConc</div><div class="ttdoc">SOLP Soluble phosphorus concentration mg/L. </div><div class="ttdef"><b>Definition:</b> <a href="../../da/d9c/a00413_source.html#l00175">BMPPointSourceFactory.h:175</a></div></div>
+<div class="ttc" id="a00132_html_a69d9fb6f38368ec4c3aeb063814280f0"><div class="ttname"><a href="../../d5/deb/a00132.html#a69d9fb6f38368ec4c3aeb063814280f0">bmps::PointSourceMgtParams::m_TNConc</a></div><div class="ttdeci">float m_TNConc</div><div class="ttdoc">TN Total Nitrogen concentration mg/L. </div><div class="ttdef"><b>Definition:</b> <a href="../../da/d9c/a00413_source.html#l00165">BMPPointSourceFactory.h:165</a></div></div>
+<div class="ttc" id="a00096_html"><div class="ttname"><a href="../../d9/df8/a00096.html">ccgl::ModelException</a></div><div class="ttdoc">Print the exception message. </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dfc/a00327_source.html#l00303">basic.h:303</a></div></div>
+<div class="ttc" id="a00019_html_af8eb2553a7c0e1b2557daeabf3918de5"><div class="ttname"><a href="../../dd/da2/a00019.html#af8eb2553a7c0e1b2557daeabf3918de5">bmps::BMPPointSrcFactory::m_pointSrcMgtTab</a></div><div class="ttdeci">string m_pointSrcMgtTab</div><div class="ttdoc">Collection of point source management parameters. </div><div class="ttdef"><b>Definition:</b> <a href="../../da/d9c/a00413_source.html#l00231">BMPPointSourceFactory.h:231</a></div></div>
+<div class="ttc" id="a00131_html_a5ef22f19136c86154f3a687a8c5a28e6"><div class="ttname"><a href="../../d7/d06/a00131.html#a5ef22f19136c86154f3a687a8c5a28e6">bmps::PointSourceLocations::m_size</a></div><div class="ttdeci">float m_size</div><div class="ttdoc">size </div><div class="ttdef"><b>Definition:</b> <a href="../../da/d9c/a00413_source.html#l00082">BMPPointSourceFactory.h:82</a></div></div>
+<div class="ttc" id="a00132_html_a46e872e6dfef3f8f658090c601f5e7ce"><div class="ttname"><a href="../../d5/deb/a00132.html#a46e872e6dfef3f8f658090c601f5e7ce">bmps::PointSourceMgtParams::m_COD</a></div><div class="ttdeci">float m_COD</div><div class="ttdoc">COD mg/L. </div><div class="ttdef"><b>Definition:</b> <a href="../../da/d9c/a00413_source.html#l00179">BMPPointSourceFactory.h:179</a></div></div>
+<div class="ttc" id="a00131_html_ac1c79c7c9823f2266915230611396d0b"><div class="ttname"><a href="../../d7/d06/a00131.html#ac1c79c7c9823f2266915230611396d0b">bmps::PointSourceLocations::m_localY</a></div><div class="ttdeci">float m_localY</div><div class="ttdoc">localY </div><div class="ttdef"><b>Definition:</b> <a href="../../da/d9c/a00413_source.html#l00078">BMPPointSourceFactory.h:78</a></div></div>
+<div class="ttc" id="a00131_html_a792c5bd83b5e5fd7ecfc0d76626c0b4e"><div class="ttname"><a href="../../d7/d06/a00131.html#a792c5bd83b5e5fd7ecfc0d76626c0b4e">bmps::PointSourceLocations::Dump</a></div><div class="ttdeci">void Dump(std::ostream *fs)</div><div class="ttdoc">Destructor. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d72/a00412_source.html#l00264">BMPPointSourceFactory.cpp:264</a></div></div>
+<div class="ttc" id="a00132_html_add33fa524323b66d0af1864c6fe3517d"><div class="ttname"><a href="../../d5/deb/a00132.html#add33fa524323b66d0af1864c6fe3517d">bmps::PointSourceMgtParams::m_TPConc</a></div><div class="ttdeci">float m_TPConc</div><div class="ttdoc">TP Total phosphorus concentration mg/L. </div><div class="ttdef"><b>Definition:</b> <a href="../../da/d9c/a00413_source.html#l00173">BMPPointSourceFactory.h:173</a></div></div>
+<div class="ttc" id="a00019_html_ad0fc84c5c48bf35c7ed250ac2a7fc15d"><div class="ttname"><a href="../../dd/da2/a00019.html#ad0fc84c5c48bf35c7ed250ac2a7fc15d">bmps::BMPPointSrcFactory::loadBMP</a></div><div class="ttdeci">void loadBMP(MongoClient *conn, const string &amp;bmpDBName) OVERRIDE</div><div class="ttdoc">Load BMP parameters from MongoDB. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d72/a00412_source.html#l00060">BMPPointSourceFactory.cpp:60</a></div></div>
+<div class="ttc" id="a00132_html_a26653373961c15a5575e949ac961681e"><div class="ttname"><a href="../../d5/deb/a00132.html#a26653373961c15a5575e949ac961681e">bmps::PointSourceMgtParams::m_name</a></div><div class="ttdeci">string m_name</div><div class="ttdoc">subSecenario name </div><div class="ttdef"><b>Definition:</b> <a href="../../da/d9c/a00413_source.html#l00153">BMPPointSourceFactory.h:153</a></div></div>
+<div class="ttc" id="a00019_html_a33cff88a565b727800b9683bb31d23f8"><div class="ttname"><a href="../../dd/da2/a00019.html#a33cff88a565b727800b9683bb31d23f8">bmps::BMPPointSrcFactory::ReadPointSourceManagements</a></div><div class="ttdeci">void ReadPointSourceManagements(MongoClient *conn, const string &amp;bmpDBName)</div><div class="ttdoc">Load point BMP location related parameters from MongoDB. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d72/a00412_source.html#l00065">BMPPointSourceFactory.cpp:65</a></div></div>
+<div class="ttc" id="a00131_html_a5d8b213403602ddd59e045554d9c69a5"><div class="ttname"><a href="../../d7/d06/a00131.html#a5d8b213403602ddd59e045554d9c69a5">bmps::PointSourceLocations::m_subbasinID</a></div><div class="ttdeci">int m_subbasinID</div><div class="ttdoc">Located subbasin ID. </div><div class="ttdef"><b>Definition:</b> <a href="../../da/d9c/a00413_source.html#l00080">BMPPointSourceFactory.h:80</a></div></div>
+<div class="ttc" id="a00019_html_af5295832e71d3c4fe40f7b1ad96e0160"><div class="ttname"><a href="../../dd/da2/a00019.html#af5295832e71d3c4fe40f7b1ad96e0160">bmps::BMPPointSrcFactory::Dump</a></div><div class="ttdeci">void Dump(std::ostream *fs) OVERRIDE</div><div class="ttdoc">Output. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d72/a00412_source.html#l00122">BMPPointSourceFactory.cpp:122</a></div></div>
+<div class="ttc" id="a00132_html_a96fb717d1a763ff6323c602155136b4d"><div class="ttname"><a href="../../d5/deb/a00132.html#a96fb717d1a763ff6323c602155136b4d">bmps::PointSourceMgtParams::PointSourceMgtParams</a></div><div class="ttdeci">PointSourceMgtParams(const bson_t *&amp;bsonTable, bson_iter_t &amp;iter)</div><div class="ttdoc">Constructor, parse point source management parameters from bson object. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d72/a00412_source.html#l00145">BMPPointSourceFactory.cpp:145</a></div></div>
+<div class="ttc" id="a00132_html_aef8a6e60fd3c72d1cc44111820e9395e"><div class="ttname"><a href="../../d5/deb/a00132.html#aef8a6e60fd3c72d1cc44111820e9395e">bmps::PointSourceMgtParams::m_sedimentConc</a></div><div class="ttdeci">float m_sedimentConc</div><div class="ttdoc">Sed Sediment concentration g/cm3, or Mg/m3. </div><div class="ttdef"><b>Definition:</b> <a href="../../da/d9c/a00413_source.html#l00163">BMPPointSourceFactory.h:163</a></div></div>
+<div class="ttc" id="a00131_html_ad470eb13ba6e1425664be35f872f3935"><div class="ttname"><a href="../../d7/d06/a00131.html#ad470eb13ba6e1425664be35f872f3935">bmps::PointSourceLocations::GetPointSourceID</a></div><div class="ttdeci">int GetPointSourceID()</div><div class="ttdoc">Get point source ID. </div><div class="ttdef"><b>Definition:</b> <a href="../../da/d9c/a00413_source.html#l00040">BMPPointSourceFactory.h:40</a></div></div>
+<div class="ttc" id="a00131_html_a95126cd22c6aaf24d628357cc5848d09"><div class="ttname"><a href="../../d7/d06/a00131.html#a95126cd22c6aaf24d628357cc5848d09">bmps::PointSourceLocations::m_distDown</a></div><div class="ttdeci">float m_distDown</div><div class="ttdoc">Distance to the downstream reach. </div><div class="ttdef"><b>Definition:</b> <a href="../../da/d9c/a00413_source.html#l00084">BMPPointSourceFactory.h:84</a></div></div>
+<div class="ttc" id="a00132_html_a00421a937ced62a5d17018b011f50511"><div class="ttname"><a href="../../d5/deb/a00132.html#a00421a937ced62a5d17018b011f50511">bmps::PointSourceMgtParams::m_seqence</a></div><div class="ttdeci">int m_seqence</div><div class="ttdoc">Sequence number of management. </div><div class="ttdef"><b>Definition:</b> <a href="../../da/d9c/a00413_source.html#l00155">BMPPointSourceFactory.h:155</a></div></div>
+<div class="ttc" id="a00017_html"><div class="ttname"><a href="../../d4/d51/a00017.html">bmps::BMPFactory</a></div><div class="ttdoc">Base class to initiate a BMP data. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/d3d/a00409_source.html#l00031">BMPFactory.h:31</a></div></div>
+<div class="ttc" id="a00131_html_adbd92951c26127468555dd380012d9f0"><div class="ttname"><a href="../../d7/d06/a00131.html#adbd92951c26127468555dd380012d9f0">bmps::PointSourceLocations::PointSourceLocations</a></div><div class="ttdeci">PointSourceLocations(const bson_t *&amp;bsonTable, bson_iter_t &amp;iter)</div><div class="ttdoc">Constructor, parse point BMP location related parameters from bson object. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d72/a00412_source.html#l00233">BMPPointSourceFactory.cpp:233</a></div></div>
+<div class="ttc" id="a00131_html_a0250f6fb0396b7ed544483889987f2fa"><div class="ttname"><a href="../../d7/d06/a00131.html#a0250f6fb0396b7ed544483889987f2fa">bmps::PointSourceLocations::m_lon</a></div><div class="ttdeci">float m_lon</div><div class="ttdoc">Lon. </div><div class="ttdef"><b>Definition:</b> <a href="../../da/d9c/a00413_source.html#l00074">BMPPointSourceFactory.h:74</a></div></div>
+<div class="ttc" id="a00132_html"><div class="ttname"><a href="../../d5/deb/a00132.html">bmps::PointSourceMgtParams</a></div><div class="ttdoc">Point source management parameters. </div><div class="ttdef"><b>Definition:</b> <a href="../../da/d9c/a00413_source.html#l00094">BMPPointSourceFactory.h:94</a></div></div>
+<div class="ttc" id="a00132_html_aeadb0e318cb26db27cffc3bfb8baed1b"><div class="ttname"><a href="../../d5/deb/a00132.html#aeadb0e318cb26db27cffc3bfb8baed1b">bmps::PointSourceMgtParams::m_startDate</a></div><div class="ttdeci">time_t m_startDate</div><div class="ttdoc">Start date. </div><div class="ttdef"><b>Definition:</b> <a href="../../da/d9c/a00413_source.html#l00157">BMPPointSourceFactory.h:157</a></div></div>
+<div class="ttc" id="a00019_html_af7824cad3804c568ee7d16f503a89f67"><div class="ttname"><a href="../../dd/da2/a00019.html#af7824cad3804c568ee7d16f503a89f67">bmps::BMPPointSrcFactory::m_pointSrcLocsMap</a></div><div class="ttdeci">map&lt; int, PointSourceLocations * &gt; m_pointSrcLocsMap</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d9c/a00413_source.html#l00249">BMPPointSourceFactory.h:249</a></div></div>
+<div class="ttc" id="a00019_html_aa8ba3496eff702dc47f607a34f5c17a5"><div class="ttname"><a href="../../dd/da2/a00019.html#aa8ba3496eff702dc47f607a34f5c17a5">bmps::BMPPointSrcFactory::m_pointSrcMgtSeqs</a></div><div class="ttdeci">vector&lt; int &gt; m_pointSrcMgtSeqs</div><div class="ttdoc">Sequences of point source managements. </div><div class="ttdef"><b>Definition:</b> <a href="../../da/d9c/a00413_source.html#l00233">BMPPointSourceFactory.h:233</a></div></div>
+<div class="ttc" id="a00132_html_affb6ea5cd420c7291554dad8c9946eae"><div class="ttname"><a href="../../d5/deb/a00132.html#affb6ea5cd420c7291554dad8c9946eae">bmps::PointSourceMgtParams::m_NO3Conc</a></div><div class="ttdeci">float m_NO3Conc</div><div class="ttdoc">NO3 Nitrate Nitrogen concentration mg/L. </div><div class="ttdef"><b>Definition:</b> <a href="../../da/d9c/a00413_source.html#l00167">BMPPointSourceFactory.h:167</a></div></div>
+<div class="ttc" id="a00019_html_ad7de0c74c37c52c79139af4fb2ffb696"><div class="ttname"><a href="../../dd/da2/a00019.html#ad7de0c74c37c52c79139af4fb2ffb696">bmps::BMPPointSrcFactory::m_pointSrc</a></div><div class="ttdeci">int m_pointSrc</div><div class="ttdoc">Code of point source. </div><div class="ttdef"><b>Definition:</b> <a href="../../da/d9c/a00413_source.html#l00229">BMPPointSourceFactory.h:229</a></div></div>
+<div class="ttc" id="a00017_html_a1ee08a326bdb69a28658d33cf1f4134b"><div class="ttname"><a href="../../d4/d51/a00017.html#a1ee08a326bdb69a28658d33cf1f4134b">bmps::BMPFactory::m_bmpCollection</a></div><div class="ttdeci">const string m_bmpCollection</div><div class="ttdoc">Collection name. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/d3d/a00409_source.html#l00081">BMPFactory.h:81</a></div></div>
+<div class="ttc" id="a00131_html"><div class="ttname"><a href="../../d7/d06/a00131.html">bmps::PointSourceLocations</a></div><div class="ttdoc">Base class of point BMP, mainly store location related parameters. </div><div class="ttdef"><b>Definition:</b> <a href="../../da/d9c/a00413_source.html#l00024">BMPPointSourceFactory.h:24</a></div></div>
+<div class="ttc" id="a00131_html_a246325831e6e9418a63784764696356a"><div class="ttname"><a href="../../d7/d06/a00131.html#a246325831e6e9418a63784764696356a">bmps::PointSourceLocations::m_name</a></div><div class="ttdeci">string m_name</div><div class="ttdoc">name </div><div class="ttdef"><b>Definition:</b> <a href="../../da/d9c/a00413_source.html#l00070">BMPPointSourceFactory.h:70</a></div></div>
+<div class="ttc" id="a00132_html_a80d8849a469565a72e58c3b13d4a9cef"><div class="ttname"><a href="../../d5/deb/a00132.html#a80d8849a469565a72e58c3b13d4a9cef">bmps::PointSourceMgtParams::m_waterVolume</a></div><div class="ttdeci">float m_waterVolume</div><div class="ttdoc">Q Water volume m3/&#39;size&#39;/day (&#39;Size&#39; may be one cattle or one pig, depends on PTSRC code) ...</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d9c/a00413_source.html#l00161">BMPPointSourceFactory.h:161</a></div></div>
+<div class="ttc" id="a00017_html_a71e60056057dc4c722a78f3f43ac58f5"><div class="ttname"><a href="../../d4/d51/a00017.html#a71e60056057dc4c722a78f3f43ac58f5">bmps::BMPFactory::m_distribution</a></div><div class="ttdeci">vector&lt; string &gt; m_distribution</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d3d/a00409_source.html#l00080">BMPFactory.h:80</a></div></div>
+<div class="ttc" id="a00019_html_a00dd7e00d4e6b52394014bd79afb71b4"><div class="ttname"><a href="../../dd/da2/a00019.html#a00dd7e00d4e6b52394014bd79afb71b4">bmps::BMPPointSrcFactory::ReadPointSourceLocations</a></div><div class="ttdeci">void ReadPointSourceLocations(MongoClient *conn, const string &amp;bmpDBName)</div><div class="ttdoc">Load point BMP location related parameters from MongoDB. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d72/a00412_source.html#l00094">BMPPointSourceFactory.cpp:94</a></div></div>
+<div class="ttc" id="a00132_html_acae134b4821748b0ea9d66164084a6df"><div class="ttname"><a href="../../d5/deb/a00132.html#acae134b4821748b0ea9d66164084a6df">bmps::PointSourceMgtParams::m_OrgPConc</a></div><div class="ttdeci">float m_OrgPConc</div><div class="ttdoc">ORGP Organic phosphorus concentration mg/L. </div><div class="ttdef"><b>Definition:</b> <a href="../../da/d9c/a00413_source.html#l00177">BMPPointSourceFactory.h:177</a></div></div>
+<div class="ttc" id="a00131_html_ad3f604deaafa4f9229f2f288eaf2022f"><div class="ttname"><a href="../../d7/d06/a00131.html#ad3f604deaafa4f9229f2f288eaf2022f">bmps::PointSourceLocations::m_pointSrcID</a></div><div class="ttdeci">int m_pointSrcID</div><div class="ttdoc">ID of point source. </div><div class="ttdef"><b>Definition:</b> <a href="../../da/d9c/a00413_source.html#l00068">BMPPointSourceFactory.h:68</a></div></div>
+<div class="ttc" id="a00019_html_a3a6b5f94bc9bab1dd30858dd7bb3e845"><div class="ttname"><a href="../../dd/da2/a00019.html#a3a6b5f94bc9bab1dd30858dd7bb3e845">bmps::BMPPointSrcFactory::m_pointSrcIDs</a></div><div class="ttdeci">vector&lt; int &gt; m_pointSrcIDs</div><div class="ttdoc">IDs of point source of current subScenario. </div><div class="ttdef"><b>Definition:</b> <a href="../../da/d9c/a00413_source.html#l00243">BMPPointSourceFactory.h:243</a></div></div>
+<div class="ttc" id="a00131_html_ab2898c2b118f4a29c3dc3707bf07f1d5"><div class="ttname"><a href="../../d7/d06/a00131.html#ab2898c2b118f4a29c3dc3707bf07f1d5">bmps::PointSourceLocations::m_lat</a></div><div class="ttdeci">float m_lat</div><div class="ttdoc">Lat. </div><div class="ttdef"><b>Definition:</b> <a href="../../da/d9c/a00413_source.html#l00072">BMPPointSourceFactory.h:72</a></div></div>
+<div class="ttc" id="a00017_html_a2370c0a4834573a21927c267374dbc68"><div class="ttname"><a href="../../d4/d51/a00017.html#a2370c0a4834573a21927c267374dbc68">bmps::BMPFactory::m_subScenarioId</a></div><div class="ttdeci">const int m_subScenarioId</div><div class="ttdoc">SubScenario ID within one BMP iD. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/d3d/a00409_source.html#l00074">BMPFactory.h:74</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_cd802f715eac8b5afa0214b2422ad557.html">buildRel</a></li><li class="navelem"><a class="el" href="../../dir_a4883baec63d05837a3a0400dc0258de.html">googletest-src</a></li><li class="navelem"><a class="el" href="../../dir_df554225d4ecad8376ecb24f94d95425.html">googletest</a></li><li class="navelem"><a class="el" href="../../dir_49a22cd9a38d0be82c209e1a4cd53671.html">samples</a></li><li class="navelem"><b>prime_tables.h</b></li>
-    <li class="footer">Generated on Tue Mar 27 2018 10:10:58 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_d9d8c03d94c229237348b60b53b769ac.html">base</a></li><li class="navelem"><a class="el" href="../../dir_c4eaa6a6e6c4ee7b087e3de60cab1bbc.html">bmps</a></li><li class="navelem"><b>BMPPointSourceFactory.cpp</b></li>
+    <li class="footer">Generated on Mon May 7 2018 13:47:04 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
