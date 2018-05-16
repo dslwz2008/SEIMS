@@ -8,17 +8,17 @@ var a00815 =
       [ "Set1DData", "db/d48/a00148.html#a881c8262c72770fddc0278d9fc29fe2c", null ],
       [ "Set2DData", "db/d48/a00148.html#a5413cc354a3141706588d3d11a30f3d2", null ],
       [ "SetValue", "db/d48/a00148.html#ae58dadd893e8840ce7089a3cbdb84574", null ],
-      [ "m_ED", "db/d48/a00148.html#a0300c2392d1f47eba9e1bf0d09b7856e", null ],
-      [ "m_EI", "db/d48/a00148.html#a3c00a915085d1fa74a39c3d6b4c1d6ca", null ],
-      [ "m_fc", "db/d48/a00148.html#aebe9f03e762ea74ff27b58bce022bef7", null ],
-      [ "m_frozenT", "db/d48/a00148.html#ae9199a765b963de21fdb4e86426ec4a6", null ],
-      [ "m_PET", "db/d48/a00148.html#af29a24b30e7d09348519c0b35ab3c918", null ],
-      [ "m_plantET", "db/d48/a00148.html#ae8f74a48e1bf21b6632d33a72847ccab", null ],
-      [ "m_sm", "db/d48/a00148.html#a21a18e0d89565b45b89e51b5cf176afc", null ],
+      [ "m_deprStoET", "db/d48/a00148.html#aa59b3ff45e85441fac160ea7b4b281dd", null ],
+      [ "m_IntcpET", "db/d48/a00148.html#a5fe68fcf177db75021a1367e2550b802", null ],
+      [ "m_maxPltET", "db/d48/a00148.html#a7571156751bee17ced4b3d366adadeae", null ],
+      [ "m_nSoilLyrs", "db/d48/a00148.html#a87f71452dd7007d6ed7580deec8da610", null ],
+      [ "m_pet", "db/d48/a00148.html#af380017958c1af75ae4ce2371d653c33", null ],
       [ "m_soilET", "db/d48/a00148.html#a800bfdf48b412dc5ec7f96f0bf5319a5", null ],
-      [ "m_soilLayers", "db/d48/a00148.html#a6d82c8804dda8fb7ccb2ec9b63982e40", null ],
-      [ "m_soilT", "db/d48/a00148.html#aa1b1f185c9a21bc407ca344b7ebd2c5b", null ],
-      [ "m_soilThick", "db/d48/a00148.html#a0230cece4d77ff16fc18503d1ddfb68f", null ],
-      [ "m_wp", "db/d48/a00148.html#ac4d2d5e9f604e85e0ed8387838c42b5b", null ]
+      [ "m_soilFC", "db/d48/a00148.html#a93f8233eaaa43d7a87a765b0ef7ad4f1", null ],
+      [ "m_soilFrozenTemp", "db/d48/a00148.html#af364b2808ae504f934b2f114b3c3444d", null ],
+      [ "m_soilTemp", "db/d48/a00148.html#a9f4e560ac28443ebc5be420ffbf23db8", null ],
+      [ "m_soilThk", "db/d48/a00148.html#a0b12a1220eb2ce11e41e96951e08d321", null ],
+      [ "m_soilWP", "db/d48/a00148.html#a71cb4c9db7701ca1a8c25bcc9282e619", null ],
+      [ "m_soilWtrSto", "db/d48/a00148.html#aac8b07e741541c6546ce49db99e8a112", null ]
     ] ]
 ];

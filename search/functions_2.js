@@ -10,5 +10,5 @@ var searchData=
   ['bmptype',['bmpType',['../d4/d51/a00017.html#a34f6e2bf0ecb57f11002280a31fb48f8',1,'bmps::BMPFactory']]],
   ['build_5fquery_5fbson',['build_query_bson',['../d6/d2c/a00072.html#aaef33c01b2bb328720173a063312a48c',1,'InputStation']]],
   ['buildmultiflowoutanglearray',['BuildMultiFlowOutAngleArray',['../d2/d79/a00051.html#afee1b80a702aaef166af777cb7ecb03c',1,'GridLayeringDinf']]],
-  ['burningoperation',['BurningOperation',['../db/db2/a00020.html#a0b136adac0fd6139ae639f7f05c6b174',1,'bmps::PlantManagement::BurningOperation']]]
+  ['burnop',['BurnOp',['../db/db2/a00020.html#ad1af9ccc6bbc85f5d40762ce0c3bf669',1,'bmps::plant_management::BurnOp']]]
 ];

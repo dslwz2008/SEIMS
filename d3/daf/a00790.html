@@ -131,28 +131,28 @@ Classes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Sediment routing using simplified version of Bagnold(1997) stream power equation which is also the original SWAT method. This module routes sediment from subbasin to basin outlet deposition is based on fall velocity and degradation on stream reWrite from route.f and rtsed.f of SWAT. </p>
-<dl class="section author"><dt>Author</dt><dd>Hui Wu </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>Jul. 2012  LiangJun Zhu </dd>
-<dd>
-May. 2016 : 1. move m_erodibilityFactor, m_coverFactor, to reach collection of MongoDB as inputs, and is DT_Array1D<ol type="1">
-<li>add point source loadings from Scenario database</li>
-<li>add SEDRECHConc output with the unit g/cm3 (i.e., Mg/m3)  Junzhi Liu </li>
+<dl class="section author"><dt>Author</dt><dd>Hui Wu, Liangjun Zhu, Junzhi Liu  2012-07-31 - wh - Initial implementation.<br/>
+ 2016-05-30 - lj - 1. move m_erodibilityFactor, m_coverFactor, to reach collection of MongoDB as inputs, and is DT_Array1D.<br/>
+<ol type="1">
+<li>add point source loadings from Scenario database.<br/>
+</li>
+<li>add SEDRECHConc output with the unit g/cm3 (i.e., Mg/m3).<br/>
+ 2016-08-31 - jz - Code review.<br/>
+ 2016-09-30 - lj - 1. ReCheck and Update code according to route.f and rtsed.f<br/>
+</li>
 </ol>
-</dd>
-<dd>
-August. 2016  LiangJun Zhu </dd>
-<dd>
-Sep. 2016 : 1. ReCheck and Update code according to route.f and rtsed.f<ol type="1">
-<li>Change the module name from SEDR_VCD to <a class="el" href="../../da/ddb/a00145.html" title="Sediment routing using variable channel dimension(VCD) method at daily time scale. ">SEDR_SBAGNOLD</a></li>
+<ol type="1">
+<li>Change the module name from SEDR_VCD to <a class="el" href="../../da/ddb/a00145.html" title="Sediment routing using variable channel dimension(VCD) method at daily time scale. ">SEDR_SBAGNOLD</a>.<br/>
+ 2018-05-14 - lj - Code review and reformat.<br/>
+ Sediment routing using Simplified version of Bagnold(1997) stream power equation </li>
 </ol>
 </dd></dl>
-<p>Sediment routing using Simplified version of Bagnold(1997) stream power equation </p>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mon May 7 2018 13:47:06 for SEIMS by
+    <li class="footer">Generated on Wed May 16 2018 14:09:48 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

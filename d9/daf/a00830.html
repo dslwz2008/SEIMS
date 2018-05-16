@@ -122,22 +122,22 @@ Collaboration diagram for ATMDEP:</div>
 </div>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Add nitrate from rainfall to the soil profile as in SWAT rev. 637, nrain.f. </p>
-<dl class="section author"><dt>Author</dt><dd>Huiran Gao </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>May 2016</dd></dl>
-<p>Liang-Jun Zhu </p>
-<dl class="section date"><dt>Date</dt><dd>2016-7-24 </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>: 1. Delete m_cellWidth, m_nSoilLayers, m_sol_z, which are useless<ol type="1">
-<li>Change m_wshd_rno3 to store nitrate from rainfall of current day</li>
-<li>Remove output of m_sol_no3, which is redundant and unnecessary</li>
+<dl class="section author"><dt>Author</dt><dd>Huiran Gao, Liangjun Zhu  2016-05-30 - hr - Initial implementation.<br/>
+ 2016-07-24 - lj - 1. Delete m_cellWidth, m_nSoilLayers, m_sol_z, which are useless.<br/>
+<ol type="1">
+<li>Change m_wshd_rno3 to store nitrate from rainfall of current day.<br/>
+</li>
+<li>Remove output of m_sol_no3, which is redundant and unnecessary.<br/>
+ 2018-05-15 - lj - Code review and reformat.<br/>
+ Calculate the atmospheric deposition of nitrogen, include nitrate and ammonia. </li>
 </ol>
 </dd></dl>
-<p>Calculate the atmospheric deposition of nitrogen, include nitrate and ammonia. </p>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mon May 7 2018 13:47:06 for SEIMS by
+    <li class="footer">Generated on Wed May 16 2018 14:09:48 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

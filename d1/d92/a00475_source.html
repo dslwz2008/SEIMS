@@ -149,7 +149,7 @@ $(document).ready(function(){initNavTree('d1/d92/a00475_source.html','../../');}
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    mdi.AddParameter(Tag_StationElevation, UNIT_LEN_M, Tag_StationElevation, Source_HydroClimateDB, DT_Array1D);</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">// Lapse_rate is the combined lapse rate table name in HydroClimate database.</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">// TODO, currently, LapseRate is defined in ModuleFactory.cpp and not imported into MongoDB. By LJ</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    mdi.AddParameter(VAR_LAP_RATE, UNIT_LAP_RATE, DESC_LAP_RATE, Source_HydroClimateDB, DT_Array2D);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">//mdi.AddParameter(Tag_LapseRate, UNIT_LAP_RATE, Tag_LapseRate, Source_HydroClimateDB, DT_Array2D);</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">// This is the climate data of all sites.</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="comment">// T means time series and it is same with first part of output id, e.g T_P. It may be P,PET,TMean, TMin or TMax data.</span></div>
@@ -165,14 +165,14 @@ $(document).ready(function(){initNavTree('d1/d92/a00475_source.html','../../');}
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
 <div class="ttc" id="a00091_html"><div class="ttname"><a href="../../da/d82/a00091.html">MetadataInfo</a></div><div class="ttdoc">Metadata information of module. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/d87/a00456_source.html#l00122">MetadataInfo.h:122</a></div></div>
 <div class="ttc" id="a00076_html"><div class="ttname"><a href="../../db/df8/a00076.html">Interpolate</a></div><div class="ttdoc">Interpolation. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d33/a00536_source.html#l00022">Interpolate.h:22</a></div></div>
-<div class="ttc" id="a00151_html"><div class="ttname"><a href="../../dd/db2/a00151.html">SimulationModule</a></div><div class="ttdoc">Base module for all simulation modules in SEIMS. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/de0/a00465_source.html#l00040">SimulationModule.h:40</a></div></div>
+<div class="ttc" id="a00151_html"><div class="ttname"><a href="../../dd/db2/a00151.html">SimulationModule</a></div><div class="ttdoc">Base module for all simulation modules in SEIMS. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/de0/a00465_source.html#l00042">SimulationModule.h:42</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_b89a50a3d6b2f98326f9f3f569cfd788.html">modules</a></li><li class="navelem"><a class="el" href="../../dir_1f6eda6caf98ea53d8153999464f137e.html">climate</a></li><li class="navelem"><a class="el" href="../../dir_7e3c93f7c69dc293be79fa7c18e401d1.html">ITP</a></li><li class="navelem"><b>api.cpp</b></li>
-    <li class="footer">Generated on Mon May 7 2018 13:47:05 for SEIMS by
+    <li class="footer">Generated on Wed May 16 2018 14:09:47 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

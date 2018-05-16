@@ -10,14 +10,14 @@ var a00081 =
     [ "m_cellFlowCols", "d8/d53/a00081.html#ad85b3bfcc3dc39bada80373d1b74dde6", null ],
     [ "m_cellSed", "d8/d53/a00081.html#aba13e8923effe2998ddf2f8275ecbd70", null ],
     [ "m_CellWidth", "d8/d53/a00081.html#a8e58b4259fd178effde20fae5b4c29ce", null ],
+    [ "m_inputSubbsnID", "d8/d53/a00081.html#a84500d3b8846ff99a39f303fcc4817a9", null ],
     [ "m_iuhCell", "d8/d53/a00081.html#acb0a2268f01e060d7aef13bf9d27d799", null ],
     [ "m_iuhCols", "d8/d53/a00081.html#af24883a72015b1017b48868dfd335052", null ],
     [ "m_nCells", "d8/d53/a00081.html#a22af7db574a746bd721febaa9e193d03", null ],
-    [ "m_nSubbasins", "d8/d53/a00081.html#a8194c9f0a9b9dce163418a42b7723e3e", null ],
-    [ "m_sedOL", "d8/d53/a00081.html#a5931d27be34c15c25d6d0f38e082b6f5", null ],
+    [ "m_nSubbsns", "d8/d53/a00081.html#a893d2ca4d541cb3c843f7c62c4e2be4f", null ],
+    [ "m_olWtrEroSed", "d8/d53/a00081.html#aac24d8b393db276d5c21dc7373a5a3e3", null ],
     [ "m_sedtoCh", "d8/d53/a00081.html#a8de4de6d5923265f1569551f194b2817", null ],
     [ "m_sedYield", "d8/d53/a00081.html#a3c4bcf0e0e5be4be4f3e1ca98f9b6f30", null ],
-    [ "m_subbasin", "d8/d53/a00081.html#ae8cae71d5ac8b9242c09675c4c987ba6", null ],
-    [ "m_subbasinID", "d8/d53/a00081.html#ab162aa87cd441e902210be4ba7151554", null ],
+    [ "m_subbsnID", "d8/d53/a00081.html#a0fc1a35b5d04c376cf73d7f95518e63f", null ],
     [ "m_TimeStep", "d8/d53/a00081.html#a003460d0a8af09766524f71f56462e75", null ]
 ];

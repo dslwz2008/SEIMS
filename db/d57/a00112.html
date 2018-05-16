@@ -132,7 +132,7 @@ Inheritance diagram for NutrCH_QUAL2E:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d7/db6/a00940.png" border="0" usemap="#_nutr_c_h___q_u_a_l2_e_inherit__map" alt="Inheritance graph"/></div>
 <map name="_nutr_c_h___q_u_a_l2_e_inherit__map" id="_nutr_c_h___q_u_a_l2_e_inherit__map">
-<area shape="rect" id="node2" href="../../dd/db2/a00151.html" title="Base module for all simulation modules in SEIMS. " alt="" coords="45,307,240,618"/><area shape="rect" id="node3" href="../../db/db6/a00074.html" title="Base type of all interfaces. All interface types are encouraged to be virtual inherited. " alt="" coords="83,173,203,259"/><area shape="rect" id="node4" href="../../d1/dd6/a00108.html" title="Base class for classes that cannot be copied. By inheriting this class you can disable copying of you..." alt="" coords="66,5,219,125"/></map>
+<area shape="rect" id="node2" href="../../dd/db2/a00151.html" title="Base module for all simulation modules in SEIMS. " alt="" coords="45,307,240,669"/><area shape="rect" id="node3" href="../../db/db6/a00074.html" title="Base type of all interfaces. All interface types are encouraged to be virtual inherited. " alt="" coords="83,173,203,259"/><area shape="rect" id="node4" href="../../d1/dd6/a00108.html" title="Base class for classes that cannot be copied. By inheriting this class you can disable copying of you..." alt="" coords="66,5,219,125"/></map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -156,8 +156,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 <tr class="memitem:a08b939c1c04897ade70947c513a54682"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d57/a00112.html#a08b939c1c04897ade70947c513a54682">SetScenario</a> (<a class="el" href="../../d7/dce/a00143.html">Scenario</a> *sce) OVERRIDE</td></tr>
 <tr class="memdesc:a08b939c1c04897ade70947c513a54682"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set pointer of Scenario class which contains all BMP information. Added by LJ, 2016-6-14.  <a href="#a08b939c1c04897ade70947c513a54682">More...</a><br/></td></tr>
 <tr class="separator:a08b939c1c04897ade70947c513a54682"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f78189211a363fe02e4d29bbedf9fe1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d57/a00112.html#a4f78189211a363fe02e4d29bbedf9fe1">Execute</a> () OVERRIDE</td></tr>
-<tr class="memdesc:a4f78189211a363fe02e4d29bbedf9fe1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="#a4f78189211a363fe02e4d29bbedf9fe1">More...</a><br/></td></tr>
+<tr class="memitem:a4f78189211a363fe02e4d29bbedf9fe1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4f78189211a363fe02e4d29bbedf9fe1"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d57/a00112.html#a4f78189211a363fe02e4d29bbedf9fe1">Execute</a> () OVERRIDE</td></tr>
+<tr class="memdesc:a4f78189211a363fe02e4d29bbedf9fe1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute the simulation. <br/></td></tr>
 <tr class="separator:a4f78189211a363fe02e4d29bbedf9fe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab747ca72b566c1c5293e7d3ff9fe47b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d57/a00112.html#ab747ca72b566c1c5293e7d3ff9fe47b8">GetValue</a> (const char *key, float *value) OVERRIDE</td></tr>
 <tr class="memdesc:ab747ca72b566c1c5293e7d3ff9fe47b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get value, DT_Single.  <a href="#ab747ca72b566c1c5293e7d3ff9fe47b8">More...</a><br/></td></tr>
@@ -174,14 +175,14 @@ TimeStepType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#af6d0b8a412ab55dcebe689dd07846465">SimulationModule</a> ()</td></tr>
 <tr class="memdesc:af6d0b8a412ab55dcebe689dd07846465 inherit pub_methods_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. <br/></td></tr>
 <tr class="separator:af6d0b8a412ab55dcebe689dd07846465 inherit pub_methods_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8526abbeed3f49071f39e0c17559e522 inherit pub_methods_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8526abbeed3f49071f39e0c17559e522"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#a8526abbeed3f49071f39e0c17559e522">SetDate</a> (time_t t, int yearIdx)</td></tr>
-<tr class="memdesc:a8526abbeed3f49071f39e0c17559e522 inherit pub_methods_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set date time, as well as the sequence number of the entire simulation. Added by LJ for statistics convenient. <br/></td></tr>
-<tr class="separator:a8526abbeed3f49071f39e0c17559e522 inherit pub_methods_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46191d743a839a5290fd42d318b500d0 inherit pub_methods_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a46191d743a839a5290fd42d318b500d0"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#a46191d743a839a5290fd42d318b500d0">SetTheadNumber</a> (int threadNum)</td></tr>
-<tr class="memdesc:a46191d743a839a5290fd42d318b500d0 inherit pub_methods_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set thread number for OpenMP. <br/></td></tr>
-<tr class="separator:a46191d743a839a5290fd42d318b500d0 inherit pub_methods_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c993164d7a51ccfbfd33baeda7a44a7 inherit pub_methods_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0c993164d7a51ccfbfd33baeda7a44a7"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#a0c993164d7a51ccfbfd33baeda7a44a7">SetDate</a> (const time_t t, const int year_idx)</td></tr>
+<tr class="memdesc:a0c993164d7a51ccfbfd33baeda7a44a7 inherit pub_methods_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set date time, as well as the sequence number of the entire simulation. Added by LJ for statistics convenient. <br/></td></tr>
+<tr class="separator:a0c993164d7a51ccfbfd33baeda7a44a7 inherit pub_methods_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b4aff5002eaafcc54668227529f57b0 inherit pub_methods_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9b4aff5002eaafcc54668227529f57b0"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#a9b4aff5002eaafcc54668227529f57b0">SetTheadNumber</a> (int thread_num)</td></tr>
+<tr class="memdesc:a9b4aff5002eaafcc54668227529f57b0 inherit pub_methods_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set thread number for OpenMP. <br/></td></tr>
+<tr class="separator:a9b4aff5002eaafcc54668227529f57b0 inherit pub_methods_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7b9caed16e56bf880b171040981403e inherit pub_methods_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af7b9caed16e56bf880b171040981403e"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#af7b9caed16e56bf880b171040981403e">SetClimateDataType</a> (float value)</td></tr>
 <tr class="memdesc:af7b9caed16e56bf880b171040981403e inherit pub_methods_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set climate data type, P, M, PET etc. <br/></td></tr>
@@ -210,10 +211,10 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#a3330ba74e63c5e2e6368d5d62d4048ea">Get2DArrayData</a> (const char *key, int *nRows, int *nCols, float ***data)</td></tr>
 <tr class="memdesc:a3330ba74e63c5e2e6368d5d62d4048ea inherit pub_methods_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get 2D Array data, by default, DT_Array2D. <br/></td></tr>
 <tr class="separator:a3330ba74e63c5e2e6368d5d62d4048ea inherit pub_methods_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97da293bca13cf5934d9ef6da34d9290 inherit pub_methods_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a97da293bca13cf5934d9ef6da34d9290"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#a97da293bca13cf5934d9ef6da34d9290">SetSubbasins</a> (<a class="el" href="../../d5/d79/a00030.html">clsSubbasins</a> *)</td></tr>
-<tr class="memdesc:a97da293bca13cf5934d9ef6da34d9290 inherit pub_methods_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set pointer of <a class="el" href="../../d5/d79/a00030.html" title="Manager all Subbasin related parameters and methods. ">clsSubbasins</a> class which contains all subbasins information. Added by LJ, 2016-7-28. <br/></td></tr>
-<tr class="separator:a97da293bca13cf5934d9ef6da34d9290 inherit pub_methods_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad38e9f3ef28b26f42bfaaf834a9a9f32 inherit pub_methods_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad38e9f3ef28b26f42bfaaf834a9a9f32"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#ad38e9f3ef28b26f42bfaaf834a9a9f32">SetSubbasins</a> (<a class="el" href="../../d5/d79/a00030.html">clsSubbasins</a> *subbsns)</td></tr>
+<tr class="memdesc:ad38e9f3ef28b26f42bfaaf834a9a9f32 inherit pub_methods_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set pointer of <a class="el" href="../../d5/d79/a00030.html" title="Manager all Subbasin related parameters and methods. ">clsSubbasins</a> class which contains all subbasins information. Added by LJ, 2016-7-28. <br/></td></tr>
+<tr class="separator:ad38e9f3ef28b26f42bfaaf834a9a9f32 inherit pub_methods_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a3a7bd2ff8748ec360e9464c358500b inherit pub_methods_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1a3a7bd2ff8748ec360e9464c358500b"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#a1a3a7bd2ff8748ec360e9464c358500b">ResetSubTimeStep</a> ()</td></tr>
 <tr class="memdesc:a1a3a7bd2ff8748ec360e9464c358500b inherit pub_methods_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset subtime step. <br/></td></tr>
@@ -222,10 +223,10 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#a2238382a3e1a264218a37b32d3947bd6">IsInputsSetDone</a> ()</td></tr>
 <tr class="memdesc:a2238382a3e1a264218a37b32d3947bd6 inherit pub_methods_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the inputs parameters (i.e., parameters derived from other modules) have been set. <br/></td></tr>
 <tr class="separator:a2238382a3e1a264218a37b32d3947bd6 inherit pub_methods_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94457cc066581e7ecd1d3c88ebdf3163 inherit pub_methods_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a94457cc066581e7ecd1d3c88ebdf3163"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#a94457cc066581e7ecd1d3c88ebdf3163">SetInputsDone</a> (bool setDone)</td></tr>
-<tr class="memdesc:a94457cc066581e7ecd1d3c88ebdf3163 inherit pub_methods_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the status of setting inputs parameters. <br/></td></tr>
-<tr class="separator:a94457cc066581e7ecd1d3c88ebdf3163 inherit pub_methods_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac3665a426ed6c4933f3d18a58cdd230 inherit pub_methods_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aac3665a426ed6c4933f3d18a58cdd230"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#aac3665a426ed6c4933f3d18a58cdd230">SetInputsDone</a> (const bool set_done)</td></tr>
+<tr class="memdesc:aac3665a426ed6c4933f3d18a58cdd230 inherit pub_methods_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the status of setting inputs parameters. <br/></td></tr>
+<tr class="separator:aac3665a426ed6c4933f3d18a58cdd230 inherit pub_methods_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -253,18 +254,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a19983f6dab8423fc451458cef5141063"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a19983f6dab8423fc451458cef5141063"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d57/a00112.html#a19983f6dab8423fc451458cef5141063">m_subbasinID</a></td></tr>
-<tr class="memdesc:a19983f6dab8423fc451458cef5141063"><td class="mdescLeft">&#160;</td><td class="mdescRight">current subbasin ID, 0 for the entire watershed <br/></td></tr>
-<tr class="separator:a19983f6dab8423fc451458cef5141063"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e418e0d990b05f1a71fe074c76ca446"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6e418e0d990b05f1a71fe074c76ca446"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d57/a00112.html#a6e418e0d990b05f1a71fe074c76ca446">m_inputSubbsnID</a></td></tr>
+<tr class="memdesc:a6e418e0d990b05f1a71fe074c76ca446"><td class="mdescLeft">&#160;</td><td class="mdescRight">current subbasin ID, 0 for the entire watershed <br/></td></tr>
+<tr class="separator:a6e418e0d990b05f1a71fe074c76ca446"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae8f63893771b97e32b6b567fec8aa612"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae8f63893771b97e32b6b567fec8aa612"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d57/a00112.html#ae8f63893771b97e32b6b567fec8aa612">m_dt</a></td></tr>
 <tr class="memdesc:ae8f63893771b97e32b6b567fec8aa612"><td class="mdescLeft">&#160;</td><td class="mdescRight">time step (sec) <br/></td></tr>
 <tr class="separator:ae8f63893771b97e32b6b567fec8aa612"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac93e4ed6ec8d9eda9922159527835a1b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac93e4ed6ec8d9eda9922159527835a1b"></a>
-LayeringMethod&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d57/a00112.html#ac93e4ed6ec8d9eda9922159527835a1b">m_layeringMethod</a></td></tr>
-<tr class="memdesc:ac93e4ed6ec8d9eda9922159527835a1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">layering method, 0 means UP_DOWN, 1 means DOWN_UP <br/></td></tr>
-<tr class="separator:ac93e4ed6ec8d9eda9922159527835a1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaca7bf9a3410717e874e79e63d4ab62c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaca7bf9a3410717e874e79e63d4ab62c"></a>
 float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d57/a00112.html#aaca7bf9a3410717e874e79e63d4ab62c">m_reachDownStream</a></td></tr>
 <tr class="memdesc:aaca7bf9a3410717e874e79e63d4ab62c"><td class="mdescLeft">&#160;</td><td class="mdescRight">downstream id (The value is 0 if there if no downstream reach) <br/></td></tr>
@@ -285,10 +282,10 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../..
 map&lt; int, <a class="el" href="../../dd/da2/a00019.html">BMPPointSrcFactory</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d57/a00112.html#a6d36c05f8509e9262ff968437d67c035">m_ptSrcFactory</a></td></tr>
 <tr class="memdesc:a6d36c05f8509e9262ff968437d67c035"><td class="mdescLeft">&#160;</td><td class="mdescRight">scenario data <br/></td></tr>
 <tr class="separator:a6d36c05f8509e9262ff968437d67c035"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2f2916ecfda2d02a4d754b273f770cf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae2f2916ecfda2d02a4d754b273f770cf"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d57/a00112.html#ae2f2916ecfda2d02a4d754b273f770cf">m_qUpReach</a></td></tr>
-<tr class="memdesc:ae2f2916ecfda2d02a4d754b273f770cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">input data <br/></td></tr>
-<tr class="separator:ae2f2916ecfda2d02a4d754b273f770cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeddb50c1273971acdf8226d6bf76bd4f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeddb50c1273971acdf8226d6bf76bd4f"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d57/a00112.html#aeddb50c1273971acdf8226d6bf76bd4f">m_ai0</a></td></tr>
+<tr class="memdesc:aeddb50c1273971acdf8226d6bf76bd4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">input data <br/></td></tr>
+<tr class="separator:aeddb50c1273971acdf8226d6bf76bd4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c131df77e9a38c8f8895e2468261633"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1c131df77e9a38c8f8895e2468261633"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d57/a00112.html#a1c131df77e9a38c8f8895e2468261633">m_ai1</a></td></tr>
 <tr class="memdesc:a1c131df77e9a38c8f8895e2468261633"><td class="mdescLeft">&#160;</td><td class="mdescRight">ratio of chlorophyll-a to algal biomass (ug chla/mg alg) <br/></td></tr>
@@ -363,26 +360,26 @@ float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../
 float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d57/a00112.html#a3351caa41c6846fa33bbd86a127adfb3">m_cod_k</a></td></tr>
 <tr class="memdesc:a3351caa41c6846fa33bbd86a127adfb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reaction coefficient. <br/></td></tr>
 <tr class="separator:a3351caa41c6846fa33bbd86a127adfb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a031c81db961e871ea3253f14d1d26267"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a031c81db961e871ea3253f14d1d26267"></a>
-float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d57/a00112.html#a031c81db961e871ea3253f14d1d26267">m_streamLink</a></td></tr>
-<tr class="memdesc:a031c81db961e871ea3253f14d1d26267"><td class="mdescLeft">&#160;</td><td class="mdescRight">stream link <br/></td></tr>
-<tr class="separator:a031c81db961e871ea3253f14d1d26267"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf4266991cbbb5bbdd7c9f53e5fbe22f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acf4266991cbbb5bbdd7c9f53e5fbe22f"></a>
+float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d57/a00112.html#acf4266991cbbb5bbdd7c9f53e5fbe22f">m_rchID</a></td></tr>
+<tr class="memdesc:acf4266991cbbb5bbdd7c9f53e5fbe22f"><td class="mdescLeft">&#160;</td><td class="mdescRight">stream link <br/></td></tr>
+<tr class="separator:acf4266991cbbb5bbdd7c9f53e5fbe22f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32217ab58526ab4f196b02b0ed785edc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a32217ab58526ab4f196b02b0ed785edc"></a>
 float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d57/a00112.html#a32217ab58526ab4f196b02b0ed785edc">m_soilTemp</a></td></tr>
 <tr class="memdesc:a32217ab58526ab4f196b02b0ed785edc"><td class="mdescLeft">&#160;</td><td class="mdescRight">soil temperature (deg C) <br/></td></tr>
 <tr class="separator:a32217ab58526ab4f196b02b0ed785edc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab16d4c9917057d0601ffd23527bfc74"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aab16d4c9917057d0601ffd23527bfc74"></a>
-float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d57/a00112.html#aab16d4c9917057d0601ffd23527bfc74">m_daylen</a></td></tr>
-<tr class="memdesc:aab16d4c9917057d0601ffd23527bfc74"><td class="mdescLeft">&#160;</td><td class="mdescRight">day length for current day (h) <br/></td></tr>
-<tr class="separator:aab16d4c9917057d0601ffd23527bfc74"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a108e73fc2eb38830a93fc6c5374bb1ad"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a108e73fc2eb38830a93fc6c5374bb1ad"></a>
-float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d57/a00112.html#a108e73fc2eb38830a93fc6c5374bb1ad">m_sra</a></td></tr>
-<tr class="memdesc:a108e73fc2eb38830a93fc6c5374bb1ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">solar radiation for the day (MJ/m2) <br/></td></tr>
-<tr class="separator:a108e73fc2eb38830a93fc6c5374bb1ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae75b41a00a7535977e50f7d5befe8725"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae75b41a00a7535977e50f7d5befe8725"></a>
-float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d57/a00112.html#ae75b41a00a7535977e50f7d5befe8725">m_qOutCh</a></td></tr>
-<tr class="memdesc:ae75b41a00a7535977e50f7d5befe8725"><td class="mdescLeft">&#160;</td><td class="mdescRight">channel outflow <br/></td></tr>
-<tr class="separator:ae75b41a00a7535977e50f7d5befe8725"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5aff81b37dfc45266b25b419599a465"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af5aff81b37dfc45266b25b419599a465"></a>
+float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d57/a00112.html#af5aff81b37dfc45266b25b419599a465">m_dayLen</a></td></tr>
+<tr class="memdesc:af5aff81b37dfc45266b25b419599a465"><td class="mdescLeft">&#160;</td><td class="mdescRight">day length for current day (h) <br/></td></tr>
+<tr class="separator:af5aff81b37dfc45266b25b419599a465"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addd0b9bc039929b3fb3fa29517207d71"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="addd0b9bc039929b3fb3fa29517207d71"></a>
+float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d57/a00112.html#addd0b9bc039929b3fb3fa29517207d71">m_sr</a></td></tr>
+<tr class="memdesc:addd0b9bc039929b3fb3fa29517207d71"><td class="mdescLeft">&#160;</td><td class="mdescRight">solar radiation for the day (MJ/m2) <br/></td></tr>
+<tr class="separator:addd0b9bc039929b3fb3fa29517207d71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fbae699bbe29f1fc1c7a32977e84049"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7fbae699bbe29f1fc1c7a32977e84049"></a>
+float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d57/a00112.html#a7fbae699bbe29f1fc1c7a32977e84049">m_qRchOut</a></td></tr>
+<tr class="memdesc:a7fbae699bbe29f1fc1c7a32977e84049"><td class="mdescLeft">&#160;</td><td class="mdescRight">channel outflow <br/></td></tr>
+<tr class="separator:a7fbae699bbe29f1fc1c7a32977e84049"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1eb8e0319095a643f13bb277b254f2e5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1eb8e0319095a643f13bb277b254f2e5"></a>
 float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d57/a00112.html#a1eb8e0319095a643f13bb277b254f2e5">m_chStorage</a></td></tr>
 <tr class="memdesc:a1eb8e0319095a643f13bb277b254f2e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">reach storage (m3) at time t <br/></td></tr>
@@ -391,14 +388,14 @@ float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=".
 float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d57/a00112.html#a2cda3ef8e77fb6dbe0724a2ab49b84d9">m_preChStorage</a></td></tr>
 <tr class="memdesc:a2cda3ef8e77fb6dbe0724a2ab49b84d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">reach storage of previous timestep <br/></td></tr>
 <tr class="separator:a2cda3ef8e77fb6dbe0724a2ab49b84d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa7754d0fb8abcce1e4afdec91d8444e9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa7754d0fb8abcce1e4afdec91d8444e9"></a>
-float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d57/a00112.html#aa7754d0fb8abcce1e4afdec91d8444e9">m_chWTdepth</a></td></tr>
-<tr class="memdesc:aa7754d0fb8abcce1e4afdec91d8444e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">channel water depth m <br/></td></tr>
-<tr class="separator:aa7754d0fb8abcce1e4afdec91d8444e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af08da9623cb09aad251daed1df0ab170"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af08da9623cb09aad251daed1df0ab170"></a>
-float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d57/a00112.html#af08da9623cb09aad251daed1df0ab170">m_preChWTDepth</a></td></tr>
-<tr class="memdesc:af08da9623cb09aad251daed1df0ab170"><td class="mdescLeft">&#160;</td><td class="mdescRight">channel water depth of previous timestep, m <br/></td></tr>
-<tr class="separator:af08da9623cb09aad251daed1df0ab170"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75cdb057c9b015f425fdf66547f934b9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a75cdb057c9b015f425fdf66547f934b9"></a>
+float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d57/a00112.html#a75cdb057c9b015f425fdf66547f934b9">m_chWtrDepth</a></td></tr>
+<tr class="memdesc:a75cdb057c9b015f425fdf66547f934b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">channel water depth m <br/></td></tr>
+<tr class="separator:a75cdb057c9b015f425fdf66547f934b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff0efe924609431931424e75e532432e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aff0efe924609431931424e75e532432e"></a>
+float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d57/a00112.html#aff0efe924609431931424e75e532432e">m_preChWtrDepth</a></td></tr>
+<tr class="memdesc:aff0efe924609431931424e75e532432e"><td class="mdescLeft">&#160;</td><td class="mdescRight">channel water depth of previous timestep, m <br/></td></tr>
+<tr class="separator:aff0efe924609431931424e75e532432e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1f35aa0ec5dcb6c3da2c65e59728b89a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1f35aa0ec5dcb6c3da2c65e59728b89a"></a>
 float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d57/a00112.html#a1f35aa0ec5dcb6c3da2c65e59728b89a">m_chTemp</a></td></tr>
 <tr class="memdesc:a1f35aa0ec5dcb6c3da2c65e59728b89a"><td class="mdescLeft">&#160;</td><td class="mdescRight">temperature of water in reach (deg C) <br/></td></tr>
@@ -462,22 +459,22 @@ float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../
 float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d57/a00112.html#aa25612472e05f39de1c844084f6d72d5">m_latNO3ToCh</a></td></tr>
 <tr class="memdesc:aa25612472e05f39de1c844084f6d72d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">amount of nitrate transported with lateral flow <br/></td></tr>
 <tr class="separator:aa25612472e05f39de1c844084f6d72d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e9dbd304d1d13e63d34f114016780ed"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4e9dbd304d1d13e63d34f114016780ed"></a>
-float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d57/a00112.html#a4e9dbd304d1d13e63d34f114016780ed">m_surNO3ToCh</a></td></tr>
-<tr class="memdesc:a4e9dbd304d1d13e63d34f114016780ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">amount of nitrate transported with surface runoff <br/></td></tr>
-<tr class="separator:a4e9dbd304d1d13e63d34f114016780ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf93f8ab700c77407235598a398317a4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adf93f8ab700c77407235598a398317a4"></a>
-float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d57/a00112.html#adf93f8ab700c77407235598a398317a4">m_surNH4ToCh</a></td></tr>
-<tr class="memdesc:adf93f8ab700c77407235598a398317a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">amount of ammonian transported with surface runoff <br/></td></tr>
-<tr class="separator:adf93f8ab700c77407235598a398317a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf8921d88dcc3ed7e4a5e67269733a43"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adf8921d88dcc3ed7e4a5e67269733a43"></a>
-float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d57/a00112.html#adf8921d88dcc3ed7e4a5e67269733a43">m_surSolPToCh</a></td></tr>
-<tr class="memdesc:adf8921d88dcc3ed7e4a5e67269733a43"><td class="mdescLeft">&#160;</td><td class="mdescRight">amount of soluble phosphorus in surface runoff <br/></td></tr>
-<tr class="separator:adf8921d88dcc3ed7e4a5e67269733a43"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33dff7b625a03e7ed177da83c93f22c4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a33dff7b625a03e7ed177da83c93f22c4"></a>
-float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d57/a00112.html#a33dff7b625a03e7ed177da83c93f22c4">m_surCodToCh</a></td></tr>
-<tr class="memdesc:a33dff7b625a03e7ed177da83c93f22c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">cod to reach in surface runoff (kg) <br/></td></tr>
-<tr class="separator:a33dff7b625a03e7ed177da83c93f22c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8c89049f4b2360862c1e2a5d360f767"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab8c89049f4b2360862c1e2a5d360f767"></a>
+float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d57/a00112.html#ab8c89049f4b2360862c1e2a5d360f767">m_surfRfNO3ToCh</a></td></tr>
+<tr class="memdesc:ab8c89049f4b2360862c1e2a5d360f767"><td class="mdescLeft">&#160;</td><td class="mdescRight">amount of nitrate transported with surface runoff <br/></td></tr>
+<tr class="separator:ab8c89049f4b2360862c1e2a5d360f767"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1239d44cf1d032030bb0a0efdd95b0d7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1239d44cf1d032030bb0a0efdd95b0d7"></a>
+float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d57/a00112.html#a1239d44cf1d032030bb0a0efdd95b0d7">m_surfRfNH4ToCh</a></td></tr>
+<tr class="memdesc:a1239d44cf1d032030bb0a0efdd95b0d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">amount of ammonian transported with surface runoff <br/></td></tr>
+<tr class="separator:a1239d44cf1d032030bb0a0efdd95b0d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2cee643c7c8fb82a54ac9c95fcf03f1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af2cee643c7c8fb82a54ac9c95fcf03f1"></a>
+float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d57/a00112.html#af2cee643c7c8fb82a54ac9c95fcf03f1">m_surfRfSolPToCh</a></td></tr>
+<tr class="memdesc:af2cee643c7c8fb82a54ac9c95fcf03f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">amount of soluble phosphorus in surface runoff <br/></td></tr>
+<tr class="separator:af2cee643c7c8fb82a54ac9c95fcf03f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adac7744dc87ee80dc9ad4deb99b64fb4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adac7744dc87ee80dc9ad4deb99b64fb4"></a>
+float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d57/a00112.html#adac7744dc87ee80dc9ad4deb99b64fb4">m_surfRfCodToCh</a></td></tr>
+<tr class="memdesc:adac7744dc87ee80dc9ad4deb99b64fb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">cod to reach in surface runoff (kg) <br/></td></tr>
+<tr class="separator:adac7744dc87ee80dc9ad4deb99b64fb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d604a412b3328067acf27892e3b27ce"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5d604a412b3328067acf27892e3b27ce"></a>
 float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d57/a00112.html#a5d604a412b3328067acf27892e3b27ce">m_gwNO3ToCh</a></td></tr>
 <tr class="memdesc:a5d604a412b3328067acf27892e3b27ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">nitrate loading to reach in groundwater <br/></td></tr>
@@ -519,10 +516,10 @@ float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=".
 float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d57/a00112.html#a7f5dbe5cf6d1422e74cd18691e470678">m_ptCODToCh</a></td></tr>
 <tr class="memdesc:a7f5dbe5cf6d1422e74cd18691e470678"><td class="mdescLeft">&#160;</td><td class="mdescRight">COD. <br/></td></tr>
 <tr class="separator:a7f5dbe5cf6d1422e74cd18691e470678"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a092b9e934a3f9198981d58035807e00e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a092b9e934a3f9198981d58035807e00e"></a>
-float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d57/a00112.html#a092b9e934a3f9198981d58035807e00e">m_chDeg</a></td></tr>
-<tr class="memdesc:a092b9e934a3f9198981d58035807e00e"><td class="mdescLeft">&#160;</td><td class="mdescRight">channel erosion <br/></td></tr>
-<tr class="separator:a092b9e934a3f9198981d58035807e00e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6d364861e9ad28aa7f205ea666b17ae"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac6d364861e9ad28aa7f205ea666b17ae"></a>
+float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d57/a00112.html#ac6d364861e9ad28aa7f205ea666b17ae">m_rchDeg</a></td></tr>
+<tr class="memdesc:ac6d364861e9ad28aa7f205ea666b17ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">channel erosion <br/></td></tr>
+<tr class="separator:ac6d364861e9ad28aa7f205ea666b17ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41192cd5bc005eb2c52b3ace4ae7dc36"><td class="memItemLeft" align="right" valign="top">float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d57/a00112.html#a41192cd5bc005eb2c52b3ace4ae7dc36">m_chAlgae</a></td></tr>
 <tr class="separator:a41192cd5bc005eb2c52b3ace4ae7dc36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2accf964dfb3cc871e2434fd90bfa251"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2accf964dfb3cc871e2434fd90bfa251"></a>
@@ -687,6 +684,18 @@ time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="..
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#addfe4dd5800efd0bb827338daf65d64c">m_yearIdx</a></td></tr>
 <tr class="memdesc:addfe4dd5800efd0bb827338daf65d64c inherit pro_attribs_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">index of current year of simulation, e.g., the simulation period from 2010 to 2015, m_yearIdx is 2 when simulate 2012. <br/></td></tr>
 <tr class="separator:addfe4dd5800efd0bb827338daf65d64c inherit pro_attribs_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac603f0cbbe34ec886e3d1a4d0615a1f9 inherit pro_attribs_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac603f0cbbe34ec886e3d1a4d0615a1f9"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#ac603f0cbbe34ec886e3d1a4d0615a1f9">m_year</a></td></tr>
+<tr class="memdesc:ac603f0cbbe34ec886e3d1a4d0615a1f9 inherit pro_attribs_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">year <br/></td></tr>
+<tr class="separator:ac603f0cbbe34ec886e3d1a4d0615a1f9 inherit pro_attribs_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0efff9f7dbe05079a5ec6c2af220b50e inherit pro_attribs_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0efff9f7dbe05079a5ec6c2af220b50e"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#a0efff9f7dbe05079a5ec6c2af220b50e">m_month</a></td></tr>
+<tr class="memdesc:a0efff9f7dbe05079a5ec6c2af220b50e inherit pro_attribs_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">months since January - [1,12] <br/></td></tr>
+<tr class="separator:a0efff9f7dbe05079a5ec6c2af220b50e inherit pro_attribs_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab47aa8b8dc82167db775d1cf0d675cb8 inherit pro_attribs_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab47aa8b8dc82167db775d1cf0d675cb8"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#ab47aa8b8dc82167db775d1cf0d675cb8">m_day</a></td></tr>
+<tr class="memdesc:ab47aa8b8dc82167db775d1cf0d675cb8 inherit pro_attribs_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">day of the month - [1,31] <br/></td></tr>
+<tr class="separator:ab47aa8b8dc82167db775d1cf0d675cb8 inherit pro_attribs_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adee1865c86a9761af76cec98cac30a44 inherit pro_attribs_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adee1865c86a9761af76cec98cac30a44"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#adee1865c86a9761af76cec98cac30a44">m_tsCounter</a></td></tr>
 <tr class="memdesc:adee1865c86a9761af76cec98cac30a44 inherit pro_attribs_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">sub-timestep counter <br/></td></tr>
@@ -699,7 +708,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Calculates the concentration of nutrient in reach using QUAL2E method. </p>
 
-<p>Definition at line <a class="el" href="../../d3/d8e/a00647_source.html#l00030">30</a> of file <a class="el" href="../../d3/d8e/a00647_source.html">NutrCH_QUAL2E.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d3/d8e/a00647_source.html#l00031">31</a> of file <a class="el" href="../../d3/d8e/a00647_source.html">NutrCH_QUAL2E.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ade970c0624b730b1e629da2e2759313c"></a>
 <div class="memitem">
@@ -718,7 +727,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 <p>amount out of channel</p>
 <p>concentration out of channel </p>
 
-<p>Definition at line <a class="el" href="../../d6/d08/a00646_source.html#l00043">43</a> of file <a class="el" href="../../d6/d08/a00646_source.html">NutrCH_QUAL2E.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d6/d08/a00646_source.html#l00045">45</a> of file <a class="el" href="../../d6/d08/a00646_source.html">NutrCH_QUAL2E.cpp</a>.</p>
 
 </div>
 </div>
@@ -750,7 +759,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 <p>dissolved N, P from overland surface flow routing and groundwater</p>
 <p>add point source loadings to channel </p>
 
-<p>Definition at line <a class="el" href="../../d6/d08/a00646_source.html#l00537">537</a> of file <a class="el" href="../../d6/d08/a00646_source.html">NutrCH_QUAL2E.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d6/d08/a00646_source.html#l00531">531</a> of file <a class="el" href="../../d6/d08/a00646_source.html">NutrCH_QUAL2E.cpp</a>.</p>
 
 </div>
 </div>
@@ -779,7 +788,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 <p>check the input data. Make sure all the input data is available. </p>
 <dl class="section return"><dt>Returns</dt><dd>bool The validity of the input data. </dd></dl>
 
-<p>Definition at line <a class="el" href="../../d6/d08/a00646_source.html#l00161">161</a> of file <a class="el" href="../../d6/d08/a00646_source.html">NutrCH_QUAL2E.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d6/d08/a00646_source.html#l00159">159</a> of file <a class="el" href="../../d6/d08/a00646_source.html">NutrCH_QUAL2E.cpp</a>.</p>
 
 </div>
 </div>
@@ -871,47 +880,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 <p>r20 1/day value of the reaction rate coefficient at the standard temperature (20 degrees C) thk none temperature adjustment factor (empirical constant for each reaction coefficient) tmp deg C temperature on current day</p>
 <dl class="section return"><dt>Returns</dt><dd>float </dd></dl>
 
-<p>Definition at line <a class="el" href="../../d6/d08/a00646_source.html#l01057">1057</a> of file <a class="el" href="../../d6/d08/a00646_source.html">NutrCH_QUAL2E.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a4f78189211a363fe02e4d29bbedf9fe1"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int NutrCH_QUAL2E::Execute </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Destructor. </p>
-<p>Execute the simulation </p>
-
-<p>Reimplemented from <a class="el" href="../../dd/db2/a00151.html#a686c39c1c4894cc144699ba0681d509d">SimulationModule</a>.</p>
-
-<p>Definition at line <a class="el" href="../../d6/d08/a00646_source.html#l00508">508</a> of file <a class="el" href="../../d6/d08/a00646_source.html">NutrCH_QUAL2E.cpp</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../db/d57/a00112_a4f78189211a363fe02e4d29bbedf9fe1_cgraph.png" border="0" usemap="#db/d57/a00112_a4f78189211a363fe02e4d29bbedf9fe1_cgraph" alt=""/></div>
-<map name="db/d57/a00112_a4f78189211a363fe02e4d29bbedf9fe1_cgraph" id="db/d57/a00112_a4f78189211a363fe02e4d29bbedf9fe1_cgraph">
-<area shape="rect" id="node2" href="../../db/d57/a00112.html#a2af6829d98f272046a1da17e883f8c22" title="check the input data. Make sure all the input data is available. " alt="" coords="276,339,548,368"/><area shape="rect" id="node3" href="../../db/d57/a00112.html#a948d76b388d2e1b957f3f34b82d5b5e8" title="NutrCH_QUAL2E::PointSource\lLoading" alt="" coords="289,393,535,439"/><area shape="rect" id="node15" href="../../db/d57/a00112.html#a415c954419e437e207335e23b9884be9" title="Calculate average day length, solar radiation, and temperature for each channel. " alt="" coords="293,463,531,510"/><area shape="rect" id="node16" href="../../db/d57/a00112.html#aeb2d691d539b69e712793144a42d8766" title="NutrCH_QUAL2E::NutrientTransform" alt="" coords="269,535,555,564"/><area shape="rect" id="node18" href="../../db/d57/a00112.html#a51f34b66dbb86a3fb7758a0d7646d221" title="NutrCH_QUAL2E::AddInputNutrient" alt="" coords="273,588,551,617"/><area shape="rect" id="node19" href="../../db/d57/a00112.html#a0289d3045ddf3cb2df2735de94f3201b" title="NutrCH_QUAL2E::RouteOut" alt="" coords="299,641,525,671"/><area shape="rect" id="node4" href="../../d5/deb/a00132.html#ab180864d91a4d222bf7255956c417d38" title="Get start date of the current management operation. " alt="" coords="603,5,842,51"/><area shape="rect" id="node5" href="../../d5/deb/a00132.html#aa24d8b7d5fceb52b352bba97cf7cee74" title="Get end date. " alt="" coords="603,75,842,122"/><area shape="rect" id="node6" href="../../d5/deb/a00132.html#a0ca155bae13eeb30f26922e36fd55ef1" title="Get water volume. " alt="" coords="603,146,842,193"/><area shape="rect" id="node7" href="../../d5/deb/a00132.html#ae6c77dd49e50a39cf320bebd1f37a736" title="Get NO3 concentration. " alt="" coords="603,217,842,263"/><area shape="rect" id="node8" href="../../d5/deb/a00132.html#a2d557d2d333ed9f064baf823706d15e2" title="Get NH4 concentration. " alt="" coords="603,287,842,334"/><area shape="rect" id="node9" href="../../d5/deb/a00132.html#a80405edd741540ae449a2485c32c4cf8" title="Get OrgN concentration. " alt="" coords="603,358,842,405"/><area shape="rect" id="node10" href="../../d5/deb/a00132.html#a2bc65aaaf5de203720e5b70a1bdb02df" title="Get SolP concentration. " alt="" coords="603,429,842,475"/><area shape="rect" id="node11" href="../../d5/deb/a00132.html#a7c998d8504a5bfbd02f096bdf159cf7e" title="Get OrgP concentration. " alt="" coords="603,499,842,546"/><area shape="rect" id="node12" href="../../d5/deb/a00132.html#a45a60b2fe7a3195f2fc372de6fd1c6a0" title="Get COD concentration. " alt="" coords="603,570,842,617"/><area shape="rect" id="node13" href="../../d7/d06/a00131.html#adf67edbfe94ed3622dbd532e436864b3" title="Located subbasin ID. " alt="" coords="609,641,836,687"/><area shape="rect" id="node14" href="../../d7/d06/a00131.html#a92fa08eb80efd62885da3acb40ffd7d7" title="size " alt="" coords="609,711,836,758"/><area shape="rect" id="node17" href="../../db/d57/a00112.html#a4031ce365ac748b20117b72de32db428" title="Corrects rate constants for temperature. " alt="" coords="609,783,837,812"/></map>
-</div>
-</p>
+<p>Definition at line <a class="el" href="../../d6/d08/a00646_source.html#l01039">1039</a> of file <a class="el" href="../../d6/d08/a00646_source.html">NutrCH_QUAL2E.cpp</a>.</p>
 
 </div>
 </div>
@@ -958,7 +927,7 @@ Here is the call graph for this function:</div>
 
 <p>Reimplemented from <a class="el" href="../../dd/db2/a00151.html#ad834fe6ed6d11b333fd34e1ff605ebb7">SimulationModule</a>.</p>
 
-<p>Definition at line <a class="el" href="../../d6/d08/a00646_source.html#l01101">1101</a> of file <a class="el" href="../../d6/d08/a00646_source.html">NutrCH_QUAL2E.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d6/d08/a00646_source.html#l01081">1081</a> of file <a class="el" href="../../d6/d08/a00646_source.html">NutrCH_QUAL2E.cpp</a>.</p>
 
 </div>
 </div>
@@ -1000,7 +969,7 @@ Here is the call graph for this function:</div>
 
 <p>Reimplemented from <a class="el" href="../../dd/db2/a00151.html#aafd60bc9d4176a0cf64af01aed881980">SimulationModule</a>.</p>
 
-<p>Definition at line <a class="el" href="../../d6/d08/a00646_source.html#l01063">1063</a> of file <a class="el" href="../../d6/d08/a00646_source.html">NutrCH_QUAL2E.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d6/d08/a00646_source.html#l01043">1043</a> of file <a class="el" href="../../d6/d08/a00646_source.html">NutrCH_QUAL2E.cpp</a>.</p>
 
 </div>
 </div>
@@ -1044,7 +1013,7 @@ Here is the call graph for this function:</div>
 <p>which means no flow out of current channel || wtrOut &lt;= 0.f</p>
 <p>set algae limit (watqual.f) </p>
 
-<p>Definition at line <a class="el" href="../../d6/d08/a00646_source.html#l00681">681</a> of file <a class="el" href="../../d6/d08/a00646_source.html">NutrCH_QUAL2E.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d6/d08/a00646_source.html#l00665">665</a> of file <a class="el" href="../../d6/d08/a00646_source.html">NutrCH_QUAL2E.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -1082,7 +1051,7 @@ Here is the call graph for this function:</div>
 <p>load point source nutrient (kg) on current day from Scenario</p>
 <p>mg/L ==&gt; kg / timestep </p>
 
-<p>Definition at line <a class="el" href="../../d6/d08/a00646_source.html#l00433">433</a> of file <a class="el" href="../../d6/d08/a00646_source.html">NutrCH_QUAL2E.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d6/d08/a00646_source.html#l00429">429</a> of file <a class="el" href="../../d6/d08/a00646_source.html">NutrCH_QUAL2E.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -1119,7 +1088,7 @@ Here is the call graph for this function:</div>
 <p>total N and total P</p>
 <p>in case of zero </p>
 
-<p>Definition at line <a class="el" href="../../d6/d08/a00646_source.html#l00588">588</a> of file <a class="el" href="../../d6/d08/a00646_source.html">NutrCH_QUAL2E.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d6/d08/a00646_source.html#l00572">572</a> of file <a class="el" href="../../d6/d08/a00646_source.html">NutrCH_QUAL2E.cpp</a>.</p>
 
 </div>
 </div>
@@ -1134,7 +1103,7 @@ Here is the call graph for this function:</div>
           <td class="memname">void NutrCH_QUAL2E::SetReaches </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="../../dc/d3c/a00028.html">clsReaches</a> *&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><em>rches</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1148,9 +1117,9 @@ Here is the call graph for this function:</div>
 <p>Set pointer of <a class="el" href="../../dc/d3c/a00028.html" title="Read and store all reaches information as input parameters. ">clsReaches</a> class which contains all reaches information. Added by LJ, 2016-7-2. </p>
 <p>these parameters' unit is mg/L now, and will be converted to kg in Set1DData. </p>
 
-<p>Reimplemented from <a class="el" href="../../dd/db2/a00151.html#aa4115c5f61d71efde62d3b62c70b51ec">SimulationModule</a>.</p>
+<p>Reimplemented from <a class="el" href="../../dd/db2/a00151.html#aa57cb2bd2e75ba91bba985d2cd1d6221">SimulationModule</a>.</p>
 
-<p>Definition at line <a class="el" href="../../d6/d08/a00646_source.html#l00348">348</a> of file <a class="el" href="../../d6/d08/a00646_source.html">NutrCH_QUAL2E.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d6/d08/a00646_source.html#l00344">344</a> of file <a class="el" href="../../d6/d08/a00646_source.html">NutrCH_QUAL2E.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -1174,7 +1143,7 @@ Here is the call graph for this function:</div>
           <td class="memname">void NutrCH_QUAL2E::SetScenario </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="../../d7/dce/a00143.html">Scenario</a> *&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><em>sce</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1188,16 +1157,16 @@ Here is the call graph for this function:</div>
 <p>Set pointer of Scenario class which contains all BMP information. Added by LJ, 2016-6-14. </p>
 <p>Key is uniqueBMPID, which is calculated by BMP_ID * 100000 + subScenario; </p>
 
-<p>Reimplemented from <a class="el" href="../../dd/db2/a00151.html#ae6dfd515de376498a12a22724e57650a">SimulationModule</a>.</p>
+<p>Reimplemented from <a class="el" href="../../dd/db2/a00151.html#a61a80ae537e24396433c9514c75735db">SimulationModule</a>.</p>
 
-<p>Definition at line <a class="el" href="../../d6/d08/a00646_source.html#l00387">387</a> of file <a class="el" href="../../d6/d08/a00646_source.html">NutrCH_QUAL2E.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d6/d08/a00646_source.html#l00383">383</a> of file <a class="el" href="../../d6/d08/a00646_source.html">NutrCH_QUAL2E.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../db/d57/a00112_a08b939c1c04897ade70947c513a54682_cgraph.png" border="0" usemap="#db/d57/a00112_a08b939c1c04897ade70947c513a54682_cgraph" alt=""/></div>
 <map name="db/d57/a00112_a08b939c1c04897ade70947c513a54682_cgraph" id="db/d57/a00112_a08b939c1c04897ade70947c513a54682_cgraph">
-<area shape="rect" id="node2" href="../../d7/dce/a00143.html#a941d99acdcfe659769d395dc0c29261c" title="Get BMPs Factories. " alt="" coords="299,4,565,33"/></map>
+<area shape="rect" id="node2" href="../../d7/dce/a00143.html#a8f475402e33dff97b8bde0e7a94c9e17" title="Get BMPs Factories. " alt="" coords="299,4,565,33"/></map>
 </div>
 </p>
 
@@ -1226,7 +1195,7 @@ Here is the call graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>data</em>&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1244,9 +1213,9 @@ Here is the call graph for this function:</div>
 <p>Set single value to array1D by index, used in MPI version for passing values of subbasins. </p>
 <p>IN/OUTPUT variables </p>
 
-<p>Reimplemented from <a class="el" href="../../dd/db2/a00151.html#adbc76071424a60cb92e2d4c3373e1ff4">SimulationModule</a>.</p>
+<p>Reimplemented from <a class="el" href="../../dd/db2/a00151.html#a122e815846787e975787021df3708551">SimulationModule</a>.</p>
 
-<p>Definition at line <a class="el" href="../../d6/d08/a00646_source.html#l00245">245</a> of file <a class="el" href="../../d6/d08/a00646_source.html">NutrCH_QUAL2E.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d6/d08/a00646_source.html#l00239">239</a> of file <a class="el" href="../../d6/d08/a00646_source.html">NutrCH_QUAL2E.cpp</a>.</p>
 
 </div>
 </div>
@@ -1270,7 +1239,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>nutrient amount stored in reach algal biomass storage in reach (kg) </p>
 
-<p>Definition at line <a class="el" href="../../d3/d8e/a00647_source.html#l00258">258</a> of file <a class="el" href="../../d3/d8e/a00647_source.html">NutrCH_QUAL2E.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d3/d8e/a00647_source.html#l00256">256</a> of file <a class="el" href="../../d3/d8e/a00647_source.html">NutrCH_QUAL2E.h</a>.</p>
 
 </div>
 </div>
@@ -1295,7 +1264,7 @@ Here is the call graph for this function:</div>
 <p>sediment oxygen demand rate in reach at 20 deg C (mg O2/ ((m**2)*day)) </p>
 <p>Channel organic nitrogen concentration in basin, ppm </p>
 
-<p>Definition at line <a class="el" href="../../d3/d8e/a00647_source.html#l00205">205</a> of file <a class="el" href="../../d3/d8e/a00647_source.html">NutrCH_QUAL2E.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d3/d8e/a00647_source.html#l00203">203</a> of file <a class="el" href="../../d3/d8e/a00647_source.html">NutrCH_QUAL2E.h</a>.</p>
 
 </div>
 </div>
@@ -1318,7 +1287,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Outputs, both amount (kg) and concentration (mg/L) algal biomass amount in reach (kg) </p>
 
-<p>Definition at line <a class="el" href="../../d3/d8e/a00647_source.html#l00286">286</a> of file <a class="el" href="../../d3/d8e/a00647_source.html">NutrCH_QUAL2E.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d3/d8e/a00647_source.html#l00284">284</a> of file <a class="el" href="../../d3/d8e/a00647_source.html">NutrCH_QUAL2E.h</a>.</p>
 
 </div>
 </div>
@@ -1343,7 +1312,7 @@ Here is the call graph for this function:</div>
 <p>half saturation coefficient for light (MJ/(m2*hr)) </p>
 <p>nonlinear algal self-shading coefficient </p>
 
-<p>Definition at line <a class="el" href="../../d3/d8e/a00647_source.html#l00140">140</a> of file <a class="el" href="../../d3/d8e/a00647_source.html">NutrCH_QUAL2E.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d3/d8e/a00647_source.html#l00138">138</a> of file <a class="el" href="../../d3/d8e/a00647_source.html">NutrCH_QUAL2E.h</a>.</p>
 
 </div>
 </div>
@@ -1368,7 +1337,7 @@ Here is the call graph for this function:</div>
 <p>amount of ammonium transported with lateral flow </p>
 <p>amount of nitrite transported with lateral flow </p>
 
-<p>Definition at line <a class="el" href="../../d3/d8e/a00647_source.html#l00233">233</a> of file <a class="el" href="../../d3/d8e/a00647_source.html">NutrCH_QUAL2E.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d3/d8e/a00647_source.html#l00231">231</a> of file <a class="el" href="../../d3/d8e/a00647_source.html">NutrCH_QUAL2E.h</a>.</p>
 
 </div>
 </div>
@@ -1393,7 +1362,7 @@ Here is the call graph for this function:</div>
 <p>algal preference factor for ammonia </p>
 <p>half saturation constant for phosphorus (mg P/L) </p>
 
-<p>Definition at line <a class="el" href="../../d3/d8e/a00647_source.html#l00144">144</a> of file <a class="el" href="../../d3/d8e/a00647_source.html">NutrCH_QUAL2E.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d3/d8e/a00647_source.html#l00142">142</a> of file <a class="el" href="../../d3/d8e/a00647_source.html">NutrCH_QUAL2E.h</a>.</p>
 
 </div>
 </div>
@@ -1416,7 +1385,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>point source loadings (kg) to channel of each timestep nitrate </p>
 
-<p>Definition at line <a class="el" href="../../d3/d8e/a00647_source.html#l00237">237</a> of file <a class="el" href="../../d3/d8e/a00647_source.html">NutrCH_QUAL2E.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d3/d8e/a00647_source.html#l00235">235</a> of file <a class="el" href="../../d3/d8e/a00647_source.html">NutrCH_QUAL2E.h</a>.</p>
 
 </div>
 </div>
@@ -1430,7 +1399,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../db/d57/a00112.html">NutrCH_QUAL2E</a></li>
-    <li class="footer">Generated on Mon May 7 2018 13:47:07 for SEIMS by
+    <li class="footer">Generated on Wed May 16 2018 14:09:49 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

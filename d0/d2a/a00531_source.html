@@ -121,11 +121,11 @@ $(document).ready(function(){initNavTree('d0/d2a/a00531_source.html','../../');}
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;text.h&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;MetadataInfo.h&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> SEIMS_MODULE_API <a class="code" href="../../dd/db2/a00151.html">SimulationModule</a> *GetInstance() {</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> SEIMS_MODULE_API <a class="code" href="../../dd/db2/a00151.html">SimulationModule</a>* GetInstance() {</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="../../d2/da3/a00115.html">NutrientMovementViaWater</a>();</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;}</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> SEIMS_MODULE_API <span class="keyword">const</span> <span class="keywordtype">char</span> *MetadataInformation() {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> SEIMS_MODULE_API <span class="keyword">const</span> <span class="keywordtype">char</span>* MetadataInformation() {</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="../../da/d82/a00091.html">MetadataInfo</a> mdi;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    mdi.SetAuthor(<span class="stringliteral">&quot;Huiran Gao&quot;</span>);</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    mdi.SetClass(MCLS_NutRemv, MCLSDESC_NutRemv);</div>
@@ -208,20 +208,20 @@ $(document).ready(function(){initNavTree('d0/d2a/a00531_source.html','../../');}
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    mdi.AddOutput(VAR_SUR_COD_TOCH, UNIT_KG, DESC_SUR_COD_ToCH, DT_Array1D);</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordtype">string</span> res = mdi.GetXMLDocument();</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">char</span> *tmp = <span class="keyword">new</span> <span class="keywordtype">char</span>[res.size() + 1];</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">char</span>* tmp = <span class="keyword">new</span> <span class="keywordtype">char</span>[res.size() + 1];</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    strprintf(tmp, res.size() + 1, <span class="stringliteral">&quot;%s&quot;</span>, res.c_str());</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">return</span> tmp;</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}</div>
 <div class="ttc" id="a00091_html"><div class="ttname"><a href="../../da/d82/a00091.html">MetadataInfo</a></div><div class="ttdoc">Metadata information of module. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/d87/a00456_source.html#l00122">MetadataInfo.h:122</a></div></div>
-<div class="ttc" id="a00115_html"><div class="ttname"><a href="../../d2/da3/a00115.html">NutrientMovementViaWater</a></div><div class="ttdoc">Nutrient removed and loss in surface runoff, lateral flow, tile flow, and percolation out of the prof...</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d33/a00651_source.html#l00025">NutrientMovementViaWater.h:25</a></div></div>
-<div class="ttc" id="a00151_html"><div class="ttname"><a href="../../dd/db2/a00151.html">SimulationModule</a></div><div class="ttdoc">Base module for all simulation modules in SEIMS. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/de0/a00465_source.html#l00040">SimulationModule.h:40</a></div></div>
+<div class="ttc" id="a00115_html"><div class="ttname"><a href="../../d2/da3/a00115.html">NutrientMovementViaWater</a></div><div class="ttdoc">Nutrient removed and loss in surface runoff, lateral flow, tile flow, and percolation out of the prof...</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d33/a00651_source.html#l00027">NutrientMovementViaWater.h:27</a></div></div>
+<div class="ttc" id="a00151_html"><div class="ttname"><a href="../../dd/db2/a00151.html">SimulationModule</a></div><div class="ttdoc">Base module for all simulation modules in SEIMS. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/de0/a00465_source.html#l00042">SimulationModule.h:42</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_b89a50a3d6b2f98326f9f3f569cfd788.html">modules</a></li><li class="navelem"><a class="el" href="../../dir_3996e886b1e07c3846ebc60dfa15d754.html">nutrient</a></li><li class="navelem"><a class="el" href="../../dir_ac59639c1b1bb0a6c73a5f0ef6eb773d.html">NutrMV</a></li><li class="navelem"><b>api.cpp</b></li>
-    <li class="footer">Generated on Mon May 7 2018 13:47:05 for SEIMS by
+    <li class="footer">Generated on Wed May 16 2018 14:09:47 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

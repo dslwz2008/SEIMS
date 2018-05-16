@@ -7,7 +7,7 @@ var a00173 =
     [ "SetValue", "d7/d3f/a00173.html#a810ff4ec547ae3cc1814d5d1068da36b", null ],
     [ "m_cellSize", "d7/d3f/a00173.html#ac07b51e8689c216f91bb39430ca9ac7a", null ],
     [ "m_clay", "d7/d3f/a00173.html#a84ddb2119797e148a1ac8eece9cf82f9", null ],
-    [ "m_CN2", "d7/d3f/a00173.html#a3e1531eb69f5c4042c998c4098ca3ee2", null ],
+    [ "m_cn2", "d7/d3f/a00173.html#a93dfceb8debd350b46e7b3bafc011eb6", null ],
     [ "m_Conductivity", "d7/d3f/a00173.html#aff484454989ece77ec67b6b967205e4f", null ],
     [ "m_fieldCap", "d7/d3f/a00173.html#a618a2ba45a6f902c8ddbe6b68c72f1f9", null ],
     [ "m_INFIL", "d7/d3f/a00173.html#ae8075ad37bac52e834e3d903612f7cf4", null ],

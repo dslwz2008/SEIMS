@@ -11,7 +11,7 @@ var a00172 =
     [ "Set1DData", "d6/dfb/a00172.html#ae825465e55b50266fb337cf4ed00efeb", null ],
     [ "Set2DData", "d6/dfb/a00172.html#a74c82f5b25b2fb0c20e97022d73de010", null ],
     [ "SetValue", "d6/dfb/a00172.html#ac9094a7d80ebd48ebf48f71ea41f5d55", null ],
-    [ "m_CN2", "d6/dfb/a00172.html#af48f9da90a38b1246e06f0d7eb694bc6", null ],
+    [ "m_cn2", "d6/dfb/a00172.html#a5cbff7f38ff1c01a8042b23b53742f03", null ],
     [ "m_fieldCap", "d6/dfb/a00172.html#ab3ca468b4034bbe5df77dda4dee0f295", null ],
     [ "m_INFIL", "d6/dfb/a00172.html#ae6aa5d56627e6d4cf6cef59a45eae127", null ],
     [ "m_initSoilMoisture", "d6/dfb/a00172.html#a05250aac5eef8c5fd315fcf93af3d6a1", null ],

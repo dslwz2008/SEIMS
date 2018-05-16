@@ -142,62 +142,61 @@ $(document).ready(function(){initNavTree('d7/d37/a00505_source.html','../../');}
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    mdi.AddParameter(Tag_SubbasinId, UNIT_NON_DIM, Tag_SubbasinId, Source_ParameterDB, DT_Single);</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    mdi.AddParameter(Tag_ChannelTimeStep, UNIT_SECOND, DESC_TIMESTEP, File_Input, DT_Single);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    mdi.AddParameter(Tag_LayeringMethod, UNIT_NON_DIM, DESC_LayeringMethod, File_Input, DT_Single);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    mdi.AddParameter(VAR_EP_CH, UNIT_WTRDLT_MMH, DESC_EP_CH, Source_ParameterDB, DT_Single);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    mdi.AddParameter(VAR_BNK0, UNIT_STRG_M3M, DESC_BNK0, Source_ParameterDB, DT_Single);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    mdi.AddParameter(VAR_CHS0_PERC, UNIT_NON_DIM, DESC_CHS0_PERC, Source_ParameterDB, DT_Single);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    mdi.AddParameter(VAR_VSEEP0, UNIT_FLOW_CMS, DESC_VSEEP0, Source_ParameterDB, DT_Single);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    mdi.AddParameter(VAR_A_BNK, UNIT_NON_DIM, DESC_A_BNK, Source_ParameterDB, DT_Single);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    mdi.AddParameter(VAR_B_BNK, UNIT_NON_DIM, DESC_B_BNK, Source_ParameterDB, DT_Single);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    mdi.AddParameter(VAR_MSK_X, UNIT_NON_DIM, DESC_MSK_X, Source_ParameterDB, DT_Single);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    mdi.AddParameter(VAR_MSK_CO1, UNIT_NON_DIM, DESC_MSK_CO1, Source_ParameterDB, DT_Single);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    mdi.AddParameter(VAR_GWRQ, UNIT_FLOW_CMS, DESC_GWRQ, Source_ParameterDB, DT_Single);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    mdi.AddParameter(VAR_SUBBSN, UNIT_NON_DIM, DESC_SUBBSN, Source_ParameterDB, DT_Raster1D);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    mdi.AddParameter(VAR_OUTLETID, UNIT_NON_DIM, DESC_OUTLETID, Source_ParameterDB, DT_Single);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">// add reach information</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    mdi.AddParameter(VAR_REACH_PARAM, UNIT_NON_DIM, DESC_REACH_PARAM, Source_ParameterDB, DT_Reach);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">// add BMPs management operations, such as point source discharge</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    mdi.AddParameter(VAR_SCENARIO, UNIT_NON_DIM, DESC_SCENARIO, Source_ParameterDB, DT_Scenario);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">// Inputs from other modules, use Set1DData() for omp version, and SetValue() for mpi version.</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    mdi.AddInput(VAR_SBOF, UNIT_FLOW_CMS, DESC_SBOF, Source_Module, DT_Array1D, TF_SingleValue);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    mdi.AddInput(VAR_SBIF, UNIT_FLOW_CMS, DESC_SBIF, Source_Module, DT_Array1D, TF_SingleValue);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    mdi.AddInput(VAR_SBQG, UNIT_FLOW_CMS, DESC_SBQG, Source_Module, DT_Array1D, TF_SingleValue);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    mdi.AddInput(VAR_SBPET, UNIT_DEPTH_MM, DESC_SBPET, Source_Module, DT_Array1D, TF_SingleValue);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    mdi.AddInput(VAR_SBGS, UNIT_DEPTH_MM, DESC_SBGS, Source_Module, DT_Array1D, TF_SingleValue);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    mdi.AddOutput(VAR_QOUTLET, UNIT_FLOW_CMS, DESC_QOUTLET, DT_Single);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    mdi.AddOutput(VAR_QSOUTLET, UNIT_FLOW_CMS, DESC_QSOUTLET, DT_Single);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    mdi.AddInOutput(VAR_QRECH, UNIT_FLOW_CMS, DESC_QRECH, DT_Array1D, TF_SingleValue);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    mdi.AddInOutput(VAR_QS, UNIT_NON_DIM, DESC_QS, DT_Array1D, TF_SingleValue);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    mdi.AddInOutput(VAR_QI, UNIT_NON_DIM, DESC_QI, DT_Array1D, TF_SingleValue);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    mdi.AddInOutput(VAR_QG, UNIT_NON_DIM, DESC_QG, DT_Array1D, TF_SingleValue);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    mdi.AddOutput(VAR_CHST, UNIT_VOL_M3, DESC_CHST, DT_Array1D);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    mdi.AddOutput(VAR_PRECHST, UNIT_VOL_M3, DESC_PRECHST, DT_Array1D);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    mdi.AddOutput(VAR_BKST, UNIT_VOL_M3, DESC_BKST, DT_Array1D);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    mdi.AddOutput(VAR_SEEPAGE, UNIT_VOL_M3, DESC_SEEPAGE, DT_Array1D);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    mdi.AddOutput(VAR_CHWTDEPTH, UNIT_LEN_M, DESC_CHWTDEPTH, DT_Array1D);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    mdi.AddOutput(VAR_CHWTWIDTH, UNIT_LEN_M, DESC_CHWTWIDTH, DT_Array1D);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    mdi.AddOutput(VAR_CHBTMWIDTH, UNIT_LEN_M, DESC_CHBTMWIDTH, DT_Array1D);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    mdi.AddOutput(VAR_PRECHWTDEPTH, UNIT_LEN_M, DESC_PRECHWTDEPTH, DT_Array1D);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    res = mdi.GetXMLDocument();</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">char</span> *tmp = <span class="keyword">new</span> <span class="keywordtype">char</span>[res.size() + 1];</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    strprintf(tmp, res.size() + 1, <span class="stringliteral">&quot;%s&quot;</span>, res.c_str());</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">return</span> tmp;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    mdi.AddParameter(VAR_EP_CH, UNIT_WTRDLT_MMH, DESC_EP_CH, Source_ParameterDB, DT_Single);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    mdi.AddParameter(VAR_BNK0, UNIT_STRG_M3M, DESC_BNK0, Source_ParameterDB, DT_Single);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    mdi.AddParameter(VAR_CHS0_PERC, UNIT_NON_DIM, DESC_CHS0_PERC, Source_ParameterDB, DT_Single);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    mdi.AddParameter(VAR_VSEEP0, UNIT_FLOW_CMS, DESC_VSEEP0, Source_ParameterDB, DT_Single);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    mdi.AddParameter(VAR_A_BNK, UNIT_NON_DIM, DESC_A_BNK, Source_ParameterDB, DT_Single);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    mdi.AddParameter(VAR_B_BNK, UNIT_NON_DIM, DESC_B_BNK, Source_ParameterDB, DT_Single);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    mdi.AddParameter(VAR_MSK_X, UNIT_NON_DIM, DESC_MSK_X, Source_ParameterDB, DT_Single);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    mdi.AddParameter(VAR_MSK_CO1, UNIT_NON_DIM, DESC_MSK_CO1, Source_ParameterDB, DT_Single);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    mdi.AddParameter(VAR_GWRQ, UNIT_FLOW_CMS, DESC_GWRQ, Source_ParameterDB, DT_Single);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    mdi.AddParameter(VAR_SUBBSN, UNIT_NON_DIM, DESC_SUBBSN, Source_ParameterDB, DT_Raster1D);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    mdi.AddParameter(VAR_OUTLETID, UNIT_NON_DIM, DESC_OUTLETID, Source_ParameterDB, DT_Single);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="comment">// add reach information</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    mdi.AddParameter(VAR_REACH_PARAM, UNIT_NON_DIM, DESC_REACH_PARAM, Source_ParameterDB, DT_Reach);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">// add BMPs management operations, such as point source discharge</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    mdi.AddParameter(VAR_SCENARIO, UNIT_NON_DIM, DESC_SCENARIO, Source_ParameterDB, DT_Scenario);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">// Inputs from other modules, use Set1DData() for omp version, and SetValue() for mpi version.</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    mdi.AddInput(VAR_SBOF, UNIT_FLOW_CMS, DESC_SBOF, Source_Module, DT_Array1D, TF_SingleValue);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    mdi.AddInput(VAR_SBIF, UNIT_FLOW_CMS, DESC_SBIF, Source_Module, DT_Array1D, TF_SingleValue);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    mdi.AddInput(VAR_SBQG, UNIT_FLOW_CMS, DESC_SBQG, Source_Module, DT_Array1D, TF_SingleValue);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    mdi.AddInput(VAR_SBPET, UNIT_DEPTH_MM, DESC_SBPET, Source_Module, DT_Array1D, TF_SingleValue);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    mdi.AddInput(VAR_SBGS, UNIT_DEPTH_MM, DESC_SBGS, Source_Module, DT_Array1D, TF_SingleValue);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    mdi.AddOutput(VAR_QOUTLET, UNIT_FLOW_CMS, DESC_QOUTLET, DT_Single);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    mdi.AddOutput(VAR_QSOUTLET, UNIT_FLOW_CMS, DESC_QSOUTLET, DT_Single);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    mdi.AddInOutput(VAR_QRECH, UNIT_FLOW_CMS, DESC_QRECH, DT_Array1D, TF_SingleValue);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    mdi.AddInOutput(VAR_QS, UNIT_NON_DIM, DESC_QS, DT_Array1D, TF_SingleValue);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    mdi.AddInOutput(VAR_QI, UNIT_NON_DIM, DESC_QI, DT_Array1D, TF_SingleValue);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    mdi.AddInOutput(VAR_QG, UNIT_NON_DIM, DESC_QG, DT_Array1D, TF_SingleValue);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    mdi.AddOutput(VAR_CHST, UNIT_VOL_M3, DESC_CHST, DT_Array1D);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    mdi.AddOutput(VAR_PRECHST, UNIT_VOL_M3, DESC_PRECHST, DT_Array1D);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    mdi.AddOutput(VAR_BKST, UNIT_VOL_M3, DESC_BKST, DT_Array1D);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    mdi.AddOutput(VAR_SEEPAGE, UNIT_VOL_M3, DESC_SEEPAGE, DT_Array1D);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    mdi.AddOutput(VAR_CHWTDEPTH, UNIT_LEN_M, DESC_CHWTDEPTH, DT_Array1D);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    mdi.AddOutput(VAR_CHWTWIDTH, UNIT_LEN_M, DESC_CHWTWIDTH, DT_Array1D);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    mdi.AddOutput(VAR_CHBTMWIDTH, UNIT_LEN_M, DESC_CHBTMWIDTH, DT_Array1D);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    mdi.AddOutput(VAR_PRECHWTDEPTH, UNIT_LEN_M, DESC_PRECHWTDEPTH, DT_Array1D);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    res = mdi.GetXMLDocument();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">char</span> *tmp = <span class="keyword">new</span> <span class="keywordtype">char</span>[res.size() + 1];</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    strprintf(tmp, res.size() + 1, <span class="stringliteral">&quot;%s&quot;</span>, res.c_str());</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">return</span> tmp;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
 <div class="ttc" id="a00091_html"><div class="ttname"><a href="../../da/d82/a00091.html">MetadataInfo</a></div><div class="ttdoc">Metadata information of module. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/d87/a00456_source.html#l00122">MetadataInfo.h:122</a></div></div>
 <div class="ttc" id="a00105_html"><div class="ttname"><a href="../../d3/d32/a00105.html">MUSK_CH</a></div><div class="ttdoc">channel flow routing using Muskingum method </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d8a/a00599_source.html#l00049">MUSK_CH.h:49</a></div></div>
-<div class="ttc" id="a00151_html"><div class="ttname"><a href="../../dd/db2/a00151.html">SimulationModule</a></div><div class="ttdoc">Base module for all simulation modules in SEIMS. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/de0/a00465_source.html#l00040">SimulationModule.h:40</a></div></div>
+<div class="ttc" id="a00151_html"><div class="ttname"><a href="../../dd/db2/a00151.html">SimulationModule</a></div><div class="ttdoc">Base module for all simulation modules in SEIMS. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/de0/a00465_source.html#l00042">SimulationModule.h:42</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_b89a50a3d6b2f98326f9f3f569cfd788.html">modules</a></li><li class="navelem"><a class="el" href="../../dir_5bf5a4201e7cd7ac6c5f03aeeeae8b2c.html">hydrology_longterm</a></li><li class="navelem"><a class="el" href="../../dir_2957777d101c118637fac1ab94fd89f2.html">MUSK_CH</a></li><li class="navelem"><b>api.cpp</b></li>
-    <li class="footer">Generated on Mon May 7 2018 13:47:05 for SEIMS by
+    <li class="footer">Generated on Wed May 16 2018 14:09:47 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

@@ -8,5 +8,5 @@ var searchData=
   ['bmpfactory',['BMPFactory',['../d4/d51/a00017.html',1,'bmps']]],
   ['bmpplantmgtfactory',['BMPPlantMgtFactory',['../d1/d2b/a00018.html',1,'bmps']]],
   ['bmppointsrcfactory',['BMPPointSrcFactory',['../dd/da2/a00019.html',1,'bmps']]],
-  ['burningoperation',['BurningOperation',['../db/db2/a00020.html',1,'bmps::PlantManagement']]]
+  ['burnop',['BurnOp',['../db/db2/a00020.html',1,'bmps::plant_management']]]
 ];

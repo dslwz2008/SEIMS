@@ -131,12 +131,16 @@ Classes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Daily nitrogen and phosphorus mineralization and immobilization. From nminrl.f, nitvol.f, pminrl.f, and pminrl2.f of SWAT. </p>
-<dl class="section author"><dt>Author</dt><dd>Huiran Gao </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>April 2016</dd></dl>
-<p>Liang-Jun Zhu </p>
-<dl class="section date"><dt>Date</dt><dd>2016-7-24 </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>: 1. Change m_wshd_dnit etc. variables to store the statistics values of the current day<ol type="1">
-<li>m_hmntl etc. variables should be DT_Raster1D rather than DT_Single since they are soil profile values in cell!</li>
+<dl class="section author"><dt>Author</dt><dd>Huiran Gao, Liangjun Zhu : 2016-04-30 - hr - Initial implementation.<br/>
+ 2016-07-24 - lj - 1. Change m_wshd_dnit etc. variables to store the statistics values of the current day.<br/>
+<ol type="1">
+<li>m_hmntl etc. variables should be DT_Raster1D rather than DT_Single since they are soil profile values in cell!<br/>
+ 2018-05-08 - lj - 1. Reformat, especially naming style (sync update in "text.h").<br/>
+</li>
+</ol>
+<ol type="1">
+<li>Code optimization, e.g., use multiply instead of divide.<br/>
+</li>
 </ol>
 </dd></dl>
 <p>Daily nitrogen and phosphorus mineralization and immobilization. From nminrl.f, nitvol.f, pminrl.f, and pminrl2.f of SWAT </p>
@@ -147,7 +151,7 @@ Classes</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mon May 7 2018 13:47:06 for SEIMS by
+    <li class="footer">Generated on Wed May 16 2018 14:09:48 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

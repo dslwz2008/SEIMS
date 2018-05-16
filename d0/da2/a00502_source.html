@@ -121,11 +121,11 @@ $(document).ready(function(){initNavTree('d0/da2/a00502_source.html','../../');}
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;text.h&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;MetadataInfo.h&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> SEIMS_MODULE_API <a class="code" href="../../dd/db2/a00151.html">SimulationModule</a> *GetInstance() {</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> SEIMS_MODULE_API <a class="code" href="../../dd/db2/a00151.html">SimulationModule</a>* GetInstance() {</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="../../d1/d22/a00057.html">IMP_SWAT</a>();</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;}</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> SEIMS_MODULE_API <span class="keyword">const</span> <span class="keywordtype">char</span> *MetadataInformation() {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> SEIMS_MODULE_API <span class="keyword">const</span> <span class="keywordtype">char</span>* MetadataInformation() {</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="../../da/d82/a00091.html">MetadataInfo</a> mdi;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">string</span> res;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
@@ -165,10 +165,10 @@ $(document).ready(function(){initNavTree('d0/da2/a00502_source.html','../../');}
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    mdi.AddInput(VAR_LAIDAY, UNIT_AREA_RATIO, DESC_LAIDAY, Source_Module, DT_Raster1D);</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    mdi.AddInput(VAR_PET, UNIT_DEPTH_MM, DESC_PET, Source_Module, DT_Raster1D); </div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">// mdi.AddInput(VAR_SURU, UNIT_DEPTH_MM, DESC_SURU, Source_Module, DT_Raster1D); /// should be VAR_FLOW_OL</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    mdi.AddInput(VAR_OLFLOW, UNIT_DEPTH_MM, DESC_OLFLOW, Source_Module, DT_Raster1D); </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    mdi.AddInput(VAR_OLFLOW, UNIT_DEPTH_MM, DESC_OLFLOW, Source_Module, DT_Raster1D);      </div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    mdi.AddInput(VAR_DEET, UNIT_DEPTH_MM, DESC_DEET, Source_Module_Optional, DT_Raster1D); </div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    mdi.AddInput(VAR_DPST, UNIT_DEPTH_MM, DESC_DPST, Source_Module_Optional, DT_Raster1D); </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    mdi.AddInput(VAR_SEDYLD, UNIT_KG, DESC_SEDYLD, Source_Module, DT_Raster1D); </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    mdi.AddInput(VAR_SEDYLD, UNIT_KG, DESC_SEDYLD, Source_Module, DT_Raster1D);            </div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    mdi.AddInput(VAR_SED_TO_CH, UNIT_KG, DESC_SED_TO_CH, Source_Module, DT_Array1D);</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    mdi.AddInput(VAR_SANDYLD, UNIT_KG, DESC_SANDYLD, Source_Module, DT_Raster1D);</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    mdi.AddInput(VAR_SILTYLD, UNIT_KG, DESC_SILTYLD, Source_Module, DT_Raster1D);</div>
@@ -212,20 +212,20 @@ $(document).ready(function(){initNavTree('d0/da2/a00502_source.html','../../');}
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    mdi.AddOutput(VAR_POT_SA, UNIT_AREA_HA, DESC_POT_SA, DT_Raster1D);</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    res = mdi.GetXMLDocument();</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordtype">char</span> *tmp = <span class="keyword">new</span> <span class="keywordtype">char</span>[res.size() + 1];</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordtype">char</span>* tmp = <span class="keyword">new</span> <span class="keywordtype">char</span>[res.size() + 1];</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    strprintf(tmp, res.size() + 1, <span class="stringliteral">&quot;%s&quot;</span>, res.c_str());</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordflow">return</span> tmp;</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}</div>
 <div class="ttc" id="a00091_html"><div class="ttname"><a href="../../da/d82/a00091.html">MetadataInfo</a></div><div class="ttdoc">Metadata information of module. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/d87/a00456_source.html#l00122">MetadataInfo.h:122</a></div></div>
 <div class="ttc" id="a00057_html"><div class="ttname"><a href="../../d1/d22/a00057.html">IMP_SWAT</a></div><div class="ttdoc">Simulates depressional areas that do not drain to the stream network (pothole) and impounded areas su...</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/da3/a00593_source.html#l00018">pothole_SWAT.h:18</a></div></div>
-<div class="ttc" id="a00151_html"><div class="ttname"><a href="../../dd/db2/a00151.html">SimulationModule</a></div><div class="ttdoc">Base module for all simulation modules in SEIMS. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/de0/a00465_source.html#l00040">SimulationModule.h:40</a></div></div>
+<div class="ttc" id="a00151_html"><div class="ttname"><a href="../../dd/db2/a00151.html">SimulationModule</a></div><div class="ttdoc">Base module for all simulation modules in SEIMS. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/de0/a00465_source.html#l00042">SimulationModule.h:42</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_b89a50a3d6b2f98326f9f3f569cfd788.html">modules</a></li><li class="navelem"><a class="el" href="../../dir_5bf5a4201e7cd7ac6c5f03aeeeae8b2c.html">hydrology_longterm</a></li><li class="navelem"><a class="el" href="../../dir_06bdd8eb1f8b5d432d4cd084d14896cc.html">IMP_SWAT</a></li><li class="navelem"><b>api.cpp</b></li>
-    <li class="footer">Generated on Mon May 7 2018 13:47:05 for SEIMS by
+    <li class="footer">Generated on Wed May 16 2018 14:09:47 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
