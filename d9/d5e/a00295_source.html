@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims/preprocess/sd_delineation.py Source File</title>
+<title>SEIMS: seims_linux_gcc48/seims/preprocess/sd_delineation.py Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -138,16 +138,16 @@ $(document).ready(function(){initNavTree('d9/d5e/a00295_source.html','../../');}
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">from</span> osgeo.osr <span class="keyword">import</span> SpatialReference <span class="keyword">as</span> osr_SpatialReference</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">from</span> pygeoc.TauDEM <span class="keyword">import</span> TauDEMWorkflow</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">from</span> pygeoc.postTauDEM <span class="keyword">import</span> D8Util, StreamnetUtil</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">from</span> <a class="code" href="../../d5/d5b/a00695.html">pygeoc.raster</a> <span class="keyword">import</span> RasterUtilClass</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">from</span> <a class="code" href="../../df/d7d/a00696.html">pygeoc.utils</a> <span class="keyword">import</span> FileClass, UtilClass</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">from</span> <a class="code" href="../../d2/d74/a00697.html">pygeoc.vector</a> <span class="keyword">import</span> VectorUtilClass</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">from</span> <a class="code" href="../../d1/d87/a00689.html">pygeoc.raster</a> <span class="keyword">import</span> RasterUtilClass</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">from</span> <a class="code" href="../../da/dd4/a00690.html">pygeoc.utils</a> <span class="keyword">import</span> FileClass, UtilClass</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">from</span> <a class="code" href="../../db/dde/a00691.html">pygeoc.vector</a> <span class="keyword">import</span> VectorUtilClass</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">from</span> preprocess.sd_hillslope <span class="keyword">import</span> DelineateHillslope</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">from</span> preprocess.text <span class="keyword">import</span> FieldNames</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">from</span> preprocess.utility <span class="keyword">import</span> DEFAULT_NODATA</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="../../d6/d7d/a00161.html">   33</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d6/d7d/a00161.html">SpatialDelineation</a>(object):</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">class </span>SpatialDelineation(object):</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;Subbasin delineation based on TauDEM,</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="stringliteral">    as well as calculation of latitude dependent parameters&quot;&quot;&quot;</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
@@ -156,7 +156,7 @@ $(document).ready(function(){initNavTree('d9/d5e/a00295_source.html','../../');}
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="comment"># _FLD_BASINID = &#39;BASIN&#39;</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    @staticmethod</div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="../../d6/d7d/a00161.html#a67be82c1392d7b821ca316e7ae33fa7b">   42</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d6/d7d/a00161.html#a67be82c1392d7b821ca316e7ae33fa7b">output_wgs84_geojson</a>(cfg):</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="../../de/d38/a00160.html#a67be82c1392d7b821ca316e7ae33fa7b">   42</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../de/d38/a00160.html#a67be82c1392d7b821ca316e7ae33fa7b">output_wgs84_geojson</a>(cfg):</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Convert ESRI shapefile to GeoJson based on WGS84 coordinate.&quot;&quot;&quot;</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        src_srs = RasterUtilClass.read_raster(cfg.dem).srs</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        proj_srs = src_srs.ExportToProj4()</div>
@@ -177,7 +177,7 @@ $(document).ready(function(){initNavTree('d9/d5e/a00295_source.html','../../');}
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                                            shp_json_list[0])</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    @staticmethod</div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="../../d6/d7d/a00161.html#a691773c31248179355ae864b0ae18a30">   63</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d6/d7d/a00161.html#a691773c31248179355ae864b0ae18a30">original_delineation</a>(cfg):</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="../../de/d38/a00160.html#a691773c31248179355ae864b0ae18a30">   63</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../de/d38/a00160.html#a691773c31248179355ae864b0ae18a30">original_delineation</a>(cfg):</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Original Delineation by calling TauDEM functions&quot;&quot;&quot;</span></div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="comment"># Check directories</span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        UtilClass.mkdir(cfg.workspace)</div>
@@ -191,7 +191,7 @@ $(document).ready(function(){initNavTree('d9/d5e/a00295_source.html','../../');}
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                                             cfg.logs.delineation)</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    @staticmethod</div>
-<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="../../d6/d7d/a00161.html#a8021ee8331581632fd89d6916a2ae9de">   77</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d6/d7d/a00161.html#a8021ee8331581632fd89d6916a2ae9de">mask_raster_cpp</a>(bin_dir, maskfile, originalfiles, outputfiles, default_values, configfile):</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="../../de/d38/a00160.html#a8021ee8331581632fd89d6916a2ae9de">   77</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../de/d38/a00160.html#a8021ee8331581632fd89d6916a2ae9de">mask_raster_cpp</a>(bin_dir, maskfile, originalfiles, outputfiles, default_values, configfile):</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Call mask_raster program (cpp version) to mask raster&quot;&quot;&quot;</span></div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="comment"># write mask configuration file</span></div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        n = len(originalfiles)</div>
@@ -206,7 +206,7 @@ $(document).ready(function(){initNavTree('d9/d5e/a00295_source.html','../../');}
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        UtilClass.run_command(<span class="stringliteral">&#39;&quot;%s/mask_raster&quot; %s&#39;</span> % (bin_dir, configfile))</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    @staticmethod</div>
-<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="../../d6/d7d/a00161.html#a4560c6f3b28dca2285eb6b3be69b6be5">   92</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d6/d7d/a00161.html#a4560c6f3b28dca2285eb6b3be69b6be5">mask_origin_delineated_data</a>(cfg):</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="../../de/d38/a00160.html#a4560c6f3b28dca2285eb6b3be69b6be5">   92</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../de/d38/a00160.html#a4560c6f3b28dca2285eb6b3be69b6be5">mask_origin_delineated_data</a>(cfg):</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Mask the original delineated data by Subbasin raster.&quot;&quot;&quot;</span></div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        subbasin_tau_file = cfg.taudems.subbsn</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        geodata2dbdir = cfg.dirs.geodata2db</div>
@@ -261,7 +261,7 @@ $(document).ready(function(){initNavTree('d9/d5e/a00295_source.html','../../');}
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                                           output_files, default_values, config_file)</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    @staticmethod</div>
-<div class="line"><a name="l00147"></a><span class="lineno"><a class="line" href="../../d6/d7d/a00161.html#ac6fb901799f23b059d0114c2473c693a">  147</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d6/d7d/a00161.html#ac6fb901799f23b059d0114c2473c693a">post_process_of_delineated_data</a>(cfg):</div>
+<div class="line"><a name="l00147"></a><span class="lineno"><a class="line" href="../../de/d38/a00160.html#ac6fb901799f23b059d0114c2473c693a">  147</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../de/d38/a00160.html#ac6fb901799f23b059d0114c2473c693a">post_process_of_delineated_data</a>(cfg):</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Do some necessary transfer for subbasin, stream, and flow direction raster.&quot;&quot;&quot;</span></div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="comment"># inputs</span></div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        stream_net_file = cfg.taudems.streamnet_shp</div>
@@ -305,7 +305,7 @@ $(document).ready(function(){initNavTree('d9/d5e/a00295_source.html','../../');}
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                                                      output_hillslope_file)</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    @staticmethod</div>
-<div class="line"><a name="l00191"></a><span class="lineno"><a class="line" href="../../d6/d7d/a00161.html#a7a003ff983a42a9a80b8eec3ada5ef37">  191</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d6/d7d/a00161.html#a7a003ff983a42a9a80b8eec3ada5ef37">generate_lat_raster</a>(cfg):</div>
+<div class="line"><a name="l00191"></a><span class="lineno"><a class="line" href="../../de/d38/a00160.html#a7a003ff983a42a9a80b8eec3ada5ef37">  191</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../de/d38/a00160.html#a7a003ff983a42a9a80b8eec3ada5ef37">generate_lat_raster</a>(cfg):</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Generate latitude raster&quot;&quot;&quot;</span></div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        dem_file = cfg.spatials.filldem</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        ds = RasterUtilClass.read_raster(dem_file)</div>
@@ -342,7 +342,7 @@ $(document).ready(function(){initNavTree('d9/d5e/a00295_source.html','../../');}
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                                         ds.noDataValue, GDT_Float32)</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    @staticmethod</div>
-<div class="line"><a name="l00228"></a><span class="lineno"><a class="line" href="../../d6/d7d/a00161.html#a47ca1dd89b504413a457eb6e283d026e">  228</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d6/d7d/a00161.html#a47ca1dd89b504413a457eb6e283d026e">field_partition</a>(cfg):</div>
+<div class="line"><a name="l00228"></a><span class="lineno"><a class="line" href="../../de/d38/a00160.html#a47ca1dd89b504413a457eb6e283d026e">  228</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../de/d38/a00160.html#a47ca1dd89b504413a457eb6e283d026e">field_partition</a>(cfg):</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Fields partition incorporating spatial topology.</span></div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="stringliteral"></span></div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="stringliteral">        Refers to: Wu, Hui, A.-Xing Zhu, Jun-Zhi Liu, Yong-Bo Liu, and Jing-Chao Jiang. 2017.</span></div>
@@ -365,7 +365,7 @@ $(document).ready(function(){initNavTree('d9/d5e/a00295_source.html','../../');}
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                                                                     flowf, luf, demf, thresh))</div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    @staticmethod</div>
-<div class="line"><a name="l00251"></a><span class="lineno"><a class="line" href="../../d6/d7d/a00161.html#a168c174abf2a446f9df82a9f8803c198">  251</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d6/d7d/a00161.html#a168c174abf2a446f9df82a9f8803c198">workflow</a>(cfg):</div>
+<div class="line"><a name="l00251"></a><span class="lineno"><a class="line" href="../../de/d38/a00160.html#a168c174abf2a446f9df82a9f8803c198">  251</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../de/d38/a00160.html#a168c174abf2a446f9df82a9f8803c198">workflow</a>(cfg):</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Subbasin delineation workflow&quot;&quot;&quot;</span></div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        <span class="comment"># 1. Originally delineated by TauDEM</span></div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        SpatialDelineation.original_delineation(cfg)</div>
@@ -390,25 +390,24 @@ $(document).ready(function(){initNavTree('d9/d5e/a00295_source.html','../../');}
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;<span class="keywordflow">if</span> __name__ == <span class="stringliteral">&quot;__main__&quot;</span>:</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    main()</div>
-<div class="ttc" id="a00161_html_ac6fb901799f23b059d0114c2473c693a"><div class="ttname"><a href="../../d6/d7d/a00161.html#ac6fb901799f23b059d0114c2473c693a">seims.preprocess.sd_delineation.SpatialDelineation.post_process_of_delineated_data</a></div><div class="ttdeci">def post_process_of_delineated_data</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d5e/a00295_source.html#l00147">sd_delineation.py:147</a></div></div>
-<div class="ttc" id="a00161_html_a67be82c1392d7b821ca316e7ae33fa7b"><div class="ttname"><a href="../../d6/d7d/a00161.html#a67be82c1392d7b821ca316e7ae33fa7b">seims.preprocess.sd_delineation.SpatialDelineation.output_wgs84_geojson</a></div><div class="ttdeci">def output_wgs84_geojson</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d5e/a00295_source.html#l00042">sd_delineation.py:42</a></div></div>
-<div class="ttc" id="a00161_html_a47ca1dd89b504413a457eb6e283d026e"><div class="ttname"><a href="../../d6/d7d/a00161.html#a47ca1dd89b504413a457eb6e283d026e">seims.preprocess.sd_delineation.SpatialDelineation.field_partition</a></div><div class="ttdeci">def field_partition</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d5e/a00295_source.html#l00228">sd_delineation.py:228</a></div></div>
-<div class="ttc" id="a00696_html"><div class="ttname"><a href="../../df/d7d/a00696.html">utils</a></div></div>
-<div class="ttc" id="a00161_html_a7a003ff983a42a9a80b8eec3ada5ef37"><div class="ttname"><a href="../../d6/d7d/a00161.html#a7a003ff983a42a9a80b8eec3ada5ef37">seims.preprocess.sd_delineation.SpatialDelineation.generate_lat_raster</a></div><div class="ttdeci">def generate_lat_raster</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d5e/a00295_source.html#l00191">sd_delineation.py:191</a></div></div>
-<div class="ttc" id="a00161_html"><div class="ttname"><a href="../../d6/d7d/a00161.html">seims.preprocess.sd_delineation.SpatialDelineation</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d5e/a00295_source.html#l00033">sd_delineation.py:33</a></div></div>
-<div class="ttc" id="a00161_html_a4560c6f3b28dca2285eb6b3be69b6be5"><div class="ttname"><a href="../../d6/d7d/a00161.html#a4560c6f3b28dca2285eb6b3be69b6be5">seims.preprocess.sd_delineation.SpatialDelineation.mask_origin_delineated_data</a></div><div class="ttdeci">def mask_origin_delineated_data</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d5e/a00295_source.html#l00092">sd_delineation.py:92</a></div></div>
-<div class="ttc" id="a00695_html"><div class="ttname"><a href="../../d5/d5b/a00695.html">raster</a></div></div>
-<div class="ttc" id="a00161_html_a8021ee8331581632fd89d6916a2ae9de"><div class="ttname"><a href="../../d6/d7d/a00161.html#a8021ee8331581632fd89d6916a2ae9de">seims.preprocess.sd_delineation.SpatialDelineation.mask_raster_cpp</a></div><div class="ttdeci">def mask_raster_cpp</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d5e/a00295_source.html#l00077">sd_delineation.py:77</a></div></div>
-<div class="ttc" id="a00161_html_a691773c31248179355ae864b0ae18a30"><div class="ttname"><a href="../../d6/d7d/a00161.html#a691773c31248179355ae864b0ae18a30">seims.preprocess.sd_delineation.SpatialDelineation.original_delineation</a></div><div class="ttdeci">def original_delineation</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d5e/a00295_source.html#l00063">sd_delineation.py:63</a></div></div>
-<div class="ttc" id="a00161_html_a168c174abf2a446f9df82a9f8803c198"><div class="ttname"><a href="../../d6/d7d/a00161.html#a168c174abf2a446f9df82a9f8803c198">seims.preprocess.sd_delineation.SpatialDelineation.workflow</a></div><div class="ttdeci">def workflow</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d5e/a00295_source.html#l00251">sd_delineation.py:251</a></div></div>
-<div class="ttc" id="a00697_html"><div class="ttname"><a href="../../d2/d74/a00697.html">vector</a></div></div>
+<div class="ttc" id="a00691_html"><div class="ttname"><a href="../../db/dde/a00691.html">vector</a></div></div>
+<div class="ttc" id="a00160_html_a7a003ff983a42a9a80b8eec3ada5ef37"><div class="ttname"><a href="../../de/d38/a00160.html#a7a003ff983a42a9a80b8eec3ada5ef37">seims.preprocess.sd_delineation.SpatialDelineation.generate_lat_raster</a></div><div class="ttdeci">def generate_lat_raster</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d5b/a00294_source.html#l00191">sd_delineation.py:191</a></div></div>
+<div class="ttc" id="a00160_html_a47ca1dd89b504413a457eb6e283d026e"><div class="ttname"><a href="../../de/d38/a00160.html#a47ca1dd89b504413a457eb6e283d026e">seims.preprocess.sd_delineation.SpatialDelineation.field_partition</a></div><div class="ttdeci">def field_partition</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d5b/a00294_source.html#l00228">sd_delineation.py:228</a></div></div>
+<div class="ttc" id="a00160_html_ac6fb901799f23b059d0114c2473c693a"><div class="ttname"><a href="../../de/d38/a00160.html#ac6fb901799f23b059d0114c2473c693a">seims.preprocess.sd_delineation.SpatialDelineation.post_process_of_delineated_data</a></div><div class="ttdeci">def post_process_of_delineated_data</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d5b/a00294_source.html#l00147">sd_delineation.py:147</a></div></div>
+<div class="ttc" id="a00690_html"><div class="ttname"><a href="../../da/dd4/a00690.html">utils</a></div></div>
+<div class="ttc" id="a00160_html_a4560c6f3b28dca2285eb6b3be69b6be5"><div class="ttname"><a href="../../de/d38/a00160.html#a4560c6f3b28dca2285eb6b3be69b6be5">seims.preprocess.sd_delineation.SpatialDelineation.mask_origin_delineated_data</a></div><div class="ttdeci">def mask_origin_delineated_data</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d5b/a00294_source.html#l00092">sd_delineation.py:92</a></div></div>
+<div class="ttc" id="a00160_html_a168c174abf2a446f9df82a9f8803c198"><div class="ttname"><a href="../../de/d38/a00160.html#a168c174abf2a446f9df82a9f8803c198">seims.preprocess.sd_delineation.SpatialDelineation.workflow</a></div><div class="ttdeci">def workflow</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d5b/a00294_source.html#l00251">sd_delineation.py:251</a></div></div>
+<div class="ttc" id="a00160_html_a8021ee8331581632fd89d6916a2ae9de"><div class="ttname"><a href="../../de/d38/a00160.html#a8021ee8331581632fd89d6916a2ae9de">seims.preprocess.sd_delineation.SpatialDelineation.mask_raster_cpp</a></div><div class="ttdeci">def mask_raster_cpp</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d5b/a00294_source.html#l00077">sd_delineation.py:77</a></div></div>
+<div class="ttc" id="a00160_html_a691773c31248179355ae864b0ae18a30"><div class="ttname"><a href="../../de/d38/a00160.html#a691773c31248179355ae864b0ae18a30">seims.preprocess.sd_delineation.SpatialDelineation.original_delineation</a></div><div class="ttdeci">def original_delineation</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d5b/a00294_source.html#l00063">sd_delineation.py:63</a></div></div>
+<div class="ttc" id="a00689_html"><div class="ttname"><a href="../../d1/d87/a00689.html">raster</a></div></div>
+<div class="ttc" id="a00160_html_a67be82c1392d7b821ca316e7ae33fa7b"><div class="ttname"><a href="../../de/d38/a00160.html#a67be82c1392d7b821ca316e7ae33fa7b">seims.preprocess.sd_delineation.SpatialDelineation.output_wgs84_geojson</a></div><div class="ttdeci">def output_wgs84_geojson</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d5b/a00294_source.html#l00042">sd_delineation.py:42</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_e83ca20770e7fbc90f1c071d86067ace.html">preprocess</a></li><li class="navelem"><b>sd_delineation.py</b></li>
-    <li class="footer">Generated on Wed May 16 2018 14:09:46 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_483bc1739a16b87563cca23e7a392c1e.html">seims_linux_gcc48</a></li><li class="navelem"><a class="el" href="../../dir_a45053e29f104e67e5be28f13679e3c2.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_88ee9ccb3eda13ad093e0105c15391c0.html">preprocess</a></li><li class="navelem"><b>sd_delineation.py</b></li>
+    <li class="footer">Generated on Tue May 22 2018 08:17:29 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

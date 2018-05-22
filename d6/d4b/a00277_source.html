@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims/preprocess/db_import_meteorology.py Source File</title>
+<title>SEIMS: seims_linux_gcc48/seims/preprocess/db_import_meteorology.py Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -135,7 +135,7 @@ $(document).ready(function(){initNavTree('d6/d4b/a00277_source.html','../../');}
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">import</span> time</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">from</span> datetime <span class="keyword">import</span> timedelta</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">from</span> <a class="code" href="../../df/d7d/a00696.html">pygeoc.utils</a> <span class="keyword">import</span> DateClass, StringClass</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">from</span> <a class="code" href="../../da/dd4/a00690.html">pygeoc.utils</a> <span class="keyword">import</span> DateClass, StringClass</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">from</span> pymongo <span class="keyword">import</span> ASCENDING</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">from</span> preprocess.db_mongodb <span class="keyword">import</span> MongoUtil</div>
@@ -144,17 +144,17 @@ $(document).ready(function(){initNavTree('d6/d4b/a00277_source.html','../../');}
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">from</span> preprocess.utility <span class="keyword">import</span> read_data_items_from_txt, DEFAULT_NODATA, PI</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="../../d3/d52/a00023.html">   30</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d3/d52/a00023.html">ClimateStats</a>(object):</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">class </span>ClimateStats(object):</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;Common used annual climate statistics based on mean temperature, e.g. PHU.&quot;&quot;&quot;</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    _T_BASE = 0.</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">def </span>__init__(self, t_base=0.):</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        ClimateStats._T_BASE = t_base</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        self.<a class="code" href="../../d3/d52/a00023.html#a46a07b0617d737c597d2ed443a58524b">Count</a> = dict()</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        self.<a class="code" href="../../d3/d52/a00023.html#a7acdcefea49c203511173bbdd4db3f08">MeanTmp</a> = dict()</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        self.<a class="code" href="../../d3/d52/a00023.html#a4cc9866cb99b5730b43f2162b2d8353b">PHUTOT</a> = dict()</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        self.<a class="code" href="../../d3/d52/a00023.html#ae2bcf56526290a233550506d157976d0">MeanTmp0</a> = 0.</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        self.<a class="code" href="../../d3/d52/a00023.html#add562d0ccfd94f10f1e334b5e6250047">PHU0</a> = 0.</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        self.Count = dict()</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        self.MeanTmp = dict()</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        self.PHUTOT = dict()</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        self.MeanTmp0 = 0.</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        self.PHU0 = 0.</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
 <div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="../../d3/d52/a00023.html#a2e5dab48b659d70b4d0d2a3fe0b97605">   42</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d3/d52/a00023.html#a2e5dab48b659d70b4d0d2a3fe0b97605">add_item</a>(self, item_dict):</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Add mean temperature of each day. Dict MUST have {YEAR: 2017, TMEAN: 10.} at least.&quot;&quot;&quot;</span></div>
@@ -188,7 +188,7 @@ $(document).ready(function(){initNavTree('d6/d4b/a00277_source.html','../../');}
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        self.<a class="code" href="../../d3/d52/a00023.html#ae2bcf56526290a233550506d157976d0">MeanTmp0</a> = round(self.<a class="code" href="../../d3/d52/a00023.html#ae2bcf56526290a233550506d157976d0">MeanTmp0</a> / len(list(self.Count.keys())), 1)</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="../../d4/de8/a00061.html">   74</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d4/de8/a00061.html">ImportMeteoData</a>(object):</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keyword">class </span><a class="code" href="../../d4/de8/a00061.html">ImportMeteoData</a>(object):</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;Meteorological daily data import, and calculate related statistical values&quot;&quot;&quot;</span></div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    @staticmethod</div>
@@ -367,25 +367,25 @@ $(document).ready(function(){initNavTree('d6/d4b/a00277_source.html','../../');}
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;<span class="keywordflow">if</span> __name__ == <span class="stringliteral">&quot;__main__&quot;</span>:</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    main()</div>
-<div class="ttc" id="a00023_html_a7acdcefea49c203511173bbdd4db3f08"><div class="ttname"><a href="../../d3/d52/a00023.html#a7acdcefea49c203511173bbdd4db3f08">seims.preprocess.db_import_meteorology.ClimateStats.MeanTmp</a></div><div class="ttdeci">MeanTmp</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d4b/a00277_source.html#l00037">db_import_meteorology.py:37</a></div></div>
-<div class="ttc" id="a00061_html_a74561b67fd16e1f4ba88a057af391c1c"><div class="ttname"><a href="../../d4/de8/a00061.html#a74561b67fd16e1f4ba88a057af391c1c">seims.preprocess.db_import_meteorology.ImportMeteoData.daily_data_from_txt</a></div><div class="ttdeci">def daily_data_from_txt</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d4b/a00277_source.html#l00078">db_import_meteorology.py:78</a></div></div>
-<div class="ttc" id="a00023_html"><div class="ttname"><a href="../../d3/d52/a00023.html">seims.preprocess.db_import_meteorology.ClimateStats</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d4b/a00277_source.html#l00030">db_import_meteorology.py:30</a></div></div>
-<div class="ttc" id="a00023_html_a2e5dab48b659d70b4d0d2a3fe0b97605"><div class="ttname"><a href="../../d3/d52/a00023.html#a2e5dab48b659d70b4d0d2a3fe0b97605">seims.preprocess.db_import_meteorology.ClimateStats.add_item</a></div><div class="ttdeci">def add_item</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d4b/a00277_source.html#l00042">db_import_meteorology.py:42</a></div></div>
-<div class="ttc" id="a00696_html"><div class="ttname"><a href="../../df/d7d/a00696.html">utils</a></div></div>
-<div class="ttc" id="a00061_html_a0d77d842d952c27908e102fdadf05429"><div class="ttname"><a href="../../d4/de8/a00061.html#a0d77d842d952c27908e102fdadf05429">seims.preprocess.db_import_meteorology.ImportMeteoData.workflow</a></div><div class="ttdeci">def workflow</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d4b/a00277_source.html#l00228">db_import_meteorology.py:228</a></div></div>
-<div class="ttc" id="a00023_html_a46a07b0617d737c597d2ed443a58524b"><div class="ttname"><a href="../../d3/d52/a00023.html#a46a07b0617d737c597d2ed443a58524b">seims.preprocess.db_import_meteorology.ClimateStats.Count</a></div><div class="ttdeci">Count</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d4b/a00277_source.html#l00036">db_import_meteorology.py:36</a></div></div>
-<div class="ttc" id="a00061_html"><div class="ttname"><a href="../../d4/de8/a00061.html">seims.preprocess.db_import_meteorology.ImportMeteoData</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d4b/a00277_source.html#l00074">db_import_meteorology.py:74</a></div></div>
-<div class="ttc" id="a00023_html_ae2bcf56526290a233550506d157976d0"><div class="ttname"><a href="../../d3/d52/a00023.html#ae2bcf56526290a233550506d157976d0">seims.preprocess.db_import_meteorology.ClimateStats.MeanTmp0</a></div><div class="ttdeci">MeanTmp0</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d4b/a00277_source.html#l00039">db_import_meteorology.py:39</a></div></div>
-<div class="ttc" id="a00023_html_a4cc9866cb99b5730b43f2162b2d8353b"><div class="ttname"><a href="../../d3/d52/a00023.html#a4cc9866cb99b5730b43f2162b2d8353b">seims.preprocess.db_import_meteorology.ClimateStats.PHUTOT</a></div><div class="ttdeci">PHUTOT</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d4b/a00277_source.html#l00038">db_import_meteorology.py:38</a></div></div>
-<div class="ttc" id="a00023_html_add562d0ccfd94f10f1e334b5e6250047"><div class="ttname"><a href="../../d3/d52/a00023.html#add562d0ccfd94f10f1e334b5e6250047">seims.preprocess.db_import_meteorology.ClimateStats.PHU0</a></div><div class="ttdeci">PHU0</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d4b/a00277_source.html#l00040">db_import_meteorology.py:40</a></div></div>
-<div class="ttc" id="a00023_html_a442f056b9ef4a87904c71d670866cb8b"><div class="ttname"><a href="../../d3/d52/a00023.html#a442f056b9ef4a87904c71d670866cb8b">seims.preprocess.db_import_meteorology.ClimateStats.annual_stats</a></div><div class="ttdeci">def annual_stats</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d4b/a00277_source.html#l00063">db_import_meteorology.py:63</a></div></div>
+<div class="ttc" id="a00023_html_a7acdcefea49c203511173bbdd4db3f08"><div class="ttname"><a href="../../d3/d52/a00023.html#a7acdcefea49c203511173bbdd4db3f08">seims.preprocess.db_import_meteorology.ClimateStats.MeanTmp</a></div><div class="ttdeci">MeanTmp</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d28/a00276_source.html#l00037">db_import_meteorology.py:37</a></div></div>
+<div class="ttc" id="a00061_html_a74561b67fd16e1f4ba88a057af391c1c"><div class="ttname"><a href="../../d4/de8/a00061.html#a74561b67fd16e1f4ba88a057af391c1c">seims.preprocess.db_import_meteorology.ImportMeteoData.daily_data_from_txt</a></div><div class="ttdeci">def daily_data_from_txt</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d28/a00276_source.html#l00078">db_import_meteorology.py:78</a></div></div>
+<div class="ttc" id="a00023_html"><div class="ttname"><a href="../../d3/d52/a00023.html">seims.preprocess.db_import_meteorology.ClimateStats</a></div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d28/a00276_source.html#l00030">db_import_meteorology.py:30</a></div></div>
+<div class="ttc" id="a00023_html_a2e5dab48b659d70b4d0d2a3fe0b97605"><div class="ttname"><a href="../../d3/d52/a00023.html#a2e5dab48b659d70b4d0d2a3fe0b97605">seims.preprocess.db_import_meteorology.ClimateStats.add_item</a></div><div class="ttdeci">def add_item</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d28/a00276_source.html#l00042">db_import_meteorology.py:42</a></div></div>
+<div class="ttc" id="a00061_html_a0d77d842d952c27908e102fdadf05429"><div class="ttname"><a href="../../d4/de8/a00061.html#a0d77d842d952c27908e102fdadf05429">seims.preprocess.db_import_meteorology.ImportMeteoData.workflow</a></div><div class="ttdeci">def workflow</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d28/a00276_source.html#l00228">db_import_meteorology.py:228</a></div></div>
+<div class="ttc" id="a00023_html_a46a07b0617d737c597d2ed443a58524b"><div class="ttname"><a href="../../d3/d52/a00023.html#a46a07b0617d737c597d2ed443a58524b">seims.preprocess.db_import_meteorology.ClimateStats.Count</a></div><div class="ttdeci">Count</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d28/a00276_source.html#l00036">db_import_meteorology.py:36</a></div></div>
+<div class="ttc" id="a00061_html"><div class="ttname"><a href="../../d4/de8/a00061.html">seims.preprocess.db_import_meteorology.ImportMeteoData</a></div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d28/a00276_source.html#l00074">db_import_meteorology.py:74</a></div></div>
+<div class="ttc" id="a00023_html_ae2bcf56526290a233550506d157976d0"><div class="ttname"><a href="../../d3/d52/a00023.html#ae2bcf56526290a233550506d157976d0">seims.preprocess.db_import_meteorology.ClimateStats.MeanTmp0</a></div><div class="ttdeci">MeanTmp0</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d28/a00276_source.html#l00039">db_import_meteorology.py:39</a></div></div>
+<div class="ttc" id="a00690_html"><div class="ttname"><a href="../../da/dd4/a00690.html">utils</a></div></div>
+<div class="ttc" id="a00023_html_a4cc9866cb99b5730b43f2162b2d8353b"><div class="ttname"><a href="../../d3/d52/a00023.html#a4cc9866cb99b5730b43f2162b2d8353b">seims.preprocess.db_import_meteorology.ClimateStats.PHUTOT</a></div><div class="ttdeci">PHUTOT</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d28/a00276_source.html#l00038">db_import_meteorology.py:38</a></div></div>
+<div class="ttc" id="a00023_html_add562d0ccfd94f10f1e334b5e6250047"><div class="ttname"><a href="../../d3/d52/a00023.html#add562d0ccfd94f10f1e334b5e6250047">seims.preprocess.db_import_meteorology.ClimateStats.PHU0</a></div><div class="ttdeci">PHU0</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d28/a00276_source.html#l00040">db_import_meteorology.py:40</a></div></div>
+<div class="ttc" id="a00023_html_a442f056b9ef4a87904c71d670866cb8b"><div class="ttname"><a href="../../d3/d52/a00023.html#a442f056b9ef4a87904c71d670866cb8b">seims.preprocess.db_import_meteorology.ClimateStats.annual_stats</a></div><div class="ttdeci">def annual_stats</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d28/a00276_source.html#l00063">db_import_meteorology.py:63</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_e83ca20770e7fbc90f1c071d86067ace.html">preprocess</a></li><li class="navelem"><b>db_import_meteorology.py</b></li>
-    <li class="footer">Generated on Wed May 16 2018 14:09:46 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_483bc1739a16b87563cca23e7a392c1e.html">seims_linux_gcc48</a></li><li class="navelem"><a class="el" href="../../dir_a45053e29f104e67e5be28f13679e3c2.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_88ee9ccb3eda13ad093e0105c15391c0.html">preprocess</a></li><li class="navelem"><b>db_import_meteorology.py</b></li>
+    <li class="footer">Generated on Tue May 22 2018 08:17:29 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

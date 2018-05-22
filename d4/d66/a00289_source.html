@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims/preprocess/db_mongodb.py Source File</title>
+<title>SEIMS: seims_linux_gcc48/seims/preprocess/db_mongodb.py Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -136,7 +136,7 @@ $(document).ready(function(){initNavTree('d4/d66/a00289_source.html','../../');}
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">from</span> preprocess.text <span class="keyword">import</span> DBTableNames, ModelParamFields</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="../../dc/d87/a00032.html">   22</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../dc/d87/a00032.html">ConnectMongoDB</a>(object):</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">class </span>ConnectMongoDB(object):</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;Connect to MongoDB, and close when finished.&quot;&quot;&quot;</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
 <div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="../../dc/d87/a00032.html#aeb589833b276ea3670b5e01e752d2f3b">   25</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dc/d87/a00032.html#aeb589833b276ea3670b5e01e752d2f3b">__init__</a>(self, ip, port, maxPoolSize=None):</div>
@@ -156,7 +156,7 @@ $(document).ready(function(){initNavTree('d4/d66/a00289_source.html','../../');}
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        self.conn.close()</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="../../d9/dcc/a00102.html">   42</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d9/dcc/a00102.html">MongoQuery</a>(object):</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">class </span><a class="code" href="../../d9/dcc/a00102.html">MongoQuery</a>(object):</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="stringliteral">    Query data from MongoDB</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="stringliteral">    &quot;&quot;&quot;</span></div>
@@ -171,7 +171,7 @@ $(document).ready(function(){initNavTree('d4/d66/a00289_source.html','../../');}
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">return</span> param_dict.get(field)</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="../../d5/d1e/a00103.html">   57</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d5/d1e/a00103.html">MongoUtil</a>(object):</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">class </span><a class="code" href="../../d5/d1e/a00103.html">MongoUtil</a>(object):</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;Some utility functions.&quot;&quot;&quot;</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    @staticmethod</div>
@@ -181,22 +181,21 @@ $(document).ready(function(){initNavTree('d4/d66/a00289_source.html','../../');}
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            bulk.execute()</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">except</span> InvalidOperation:</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            print(<span class="stringliteral">&#39;WARNING: %s&#39;</span> % errmsg)</div>
-<div class="ttc" id="a00032_html_a236384426c1f9e1d8f14948acee3cd8c"><div class="ttname"><a href="../../dc/d87/a00032.html#a236384426c1f9e1d8f14948acee3cd8c">seims.preprocess.db_mongodb.ConnectMongoDB.get_conn</a></div><div class="ttdeci">def get_conn</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d66/a00289_source.html#l00033">db_mongodb.py:33</a></div></div>
-<div class="ttc" id="a00102_html_acd94eeb24f9384c2c2e7403b26250dfb"><div class="ttname"><a href="../../d9/dcc/a00102.html#acd94eeb24f9384c2c2e7403b26250dfb">seims.preprocess.db_mongodb.MongoQuery.get_init_parameter_value</a></div><div class="ttdeci">def get_init_parameter_value</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d66/a00289_source.html#l00048">db_mongodb.py:48</a></div></div>
-<div class="ttc" id="a00103_html"><div class="ttname"><a href="../../d5/d1e/a00103.html">seims.preprocess.db_mongodb.MongoUtil</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d66/a00289_source.html#l00057">db_mongodb.py:57</a></div></div>
-<div class="ttc" id="a00032_html_aee1e4d52ca8bc52c0cf3dd9749633281"><div class="ttname"><a href="../../dc/d87/a00032.html#aee1e4d52ca8bc52c0cf3dd9749633281">seims.preprocess.db_mongodb.ConnectMongoDB.conn</a></div><div class="ttdeci">conn</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d66/a00289_source.html#l00028">db_mongodb.py:28</a></div></div>
-<div class="ttc" id="a00032_html_aeb589833b276ea3670b5e01e752d2f3b"><div class="ttname"><a href="../../dc/d87/a00032.html#aeb589833b276ea3670b5e01e752d2f3b">seims.preprocess.db_mongodb.ConnectMongoDB.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d66/a00289_source.html#l00025">db_mongodb.py:25</a></div></div>
-<div class="ttc" id="a00032_html"><div class="ttname"><a href="../../dc/d87/a00032.html">seims.preprocess.db_mongodb.ConnectMongoDB</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d66/a00289_source.html#l00022">db_mongodb.py:22</a></div></div>
-<div class="ttc" id="a00032_html_a31056a344b03832cac4725c5403816ec"><div class="ttname"><a href="../../dc/d87/a00032.html#a31056a344b03832cac4725c5403816ec">seims.preprocess.db_mongodb.ConnectMongoDB.close</a></div><div class="ttdeci">def close</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d66/a00289_source.html#l00037">db_mongodb.py:37</a></div></div>
-<div class="ttc" id="a00103_html_a89085d501f1b08989c284d60d22684a9"><div class="ttname"><a href="../../d5/d1e/a00103.html#a89085d501f1b08989c284d60d22684a9">seims.preprocess.db_mongodb.MongoUtil.run_bulk</a></div><div class="ttdeci">def run_bulk</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d66/a00289_source.html#l00061">db_mongodb.py:61</a></div></div>
-<div class="ttc" id="a00102_html"><div class="ttname"><a href="../../d9/dcc/a00102.html">seims.preprocess.db_mongodb.MongoQuery</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d66/a00289_source.html#l00042">db_mongodb.py:42</a></div></div>
+<div class="ttc" id="a00032_html_a236384426c1f9e1d8f14948acee3cd8c"><div class="ttname"><a href="../../dc/d87/a00032.html#a236384426c1f9e1d8f14948acee3cd8c">seims.preprocess.db_mongodb.ConnectMongoDB.get_conn</a></div><div class="ttdeci">def get_conn</div><div class="ttdef"><b>Definition:</b> <a href="../../da/ddc/a00288_source.html#l00033">db_mongodb.py:33</a></div></div>
+<div class="ttc" id="a00102_html_acd94eeb24f9384c2c2e7403b26250dfb"><div class="ttname"><a href="../../d9/dcc/a00102.html#acd94eeb24f9384c2c2e7403b26250dfb">seims.preprocess.db_mongodb.MongoQuery.get_init_parameter_value</a></div><div class="ttdeci">def get_init_parameter_value</div><div class="ttdef"><b>Definition:</b> <a href="../../da/ddc/a00288_source.html#l00048">db_mongodb.py:48</a></div></div>
+<div class="ttc" id="a00103_html"><div class="ttname"><a href="../../d5/d1e/a00103.html">seims.preprocess.db_mongodb.MongoUtil</a></div><div class="ttdef"><b>Definition:</b> <a href="../../da/ddc/a00288_source.html#l00057">db_mongodb.py:57</a></div></div>
+<div class="ttc" id="a00032_html_aee1e4d52ca8bc52c0cf3dd9749633281"><div class="ttname"><a href="../../dc/d87/a00032.html#aee1e4d52ca8bc52c0cf3dd9749633281">seims.preprocess.db_mongodb.ConnectMongoDB.conn</a></div><div class="ttdeci">conn</div><div class="ttdef"><b>Definition:</b> <a href="../../da/ddc/a00288_source.html#l00028">db_mongodb.py:28</a></div></div>
+<div class="ttc" id="a00032_html_aeb589833b276ea3670b5e01e752d2f3b"><div class="ttname"><a href="../../dc/d87/a00032.html#aeb589833b276ea3670b5e01e752d2f3b">seims.preprocess.db_mongodb.ConnectMongoDB.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../da/ddc/a00288_source.html#l00025">db_mongodb.py:25</a></div></div>
+<div class="ttc" id="a00032_html_a31056a344b03832cac4725c5403816ec"><div class="ttname"><a href="../../dc/d87/a00032.html#a31056a344b03832cac4725c5403816ec">seims.preprocess.db_mongodb.ConnectMongoDB.close</a></div><div class="ttdeci">def close</div><div class="ttdef"><b>Definition:</b> <a href="../../da/ddc/a00288_source.html#l00037">db_mongodb.py:37</a></div></div>
+<div class="ttc" id="a00103_html_a89085d501f1b08989c284d60d22684a9"><div class="ttname"><a href="../../d5/d1e/a00103.html#a89085d501f1b08989c284d60d22684a9">seims.preprocess.db_mongodb.MongoUtil.run_bulk</a></div><div class="ttdeci">def run_bulk</div><div class="ttdef"><b>Definition:</b> <a href="../../da/ddc/a00288_source.html#l00061">db_mongodb.py:61</a></div></div>
+<div class="ttc" id="a00102_html"><div class="ttname"><a href="../../d9/dcc/a00102.html">seims.preprocess.db_mongodb.MongoQuery</a></div><div class="ttdef"><b>Definition:</b> <a href="../../da/ddc/a00288_source.html#l00042">db_mongodb.py:42</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_e83ca20770e7fbc90f1c071d86067ace.html">preprocess</a></li><li class="navelem"><b>db_mongodb.py</b></li>
-    <li class="footer">Generated on Wed May 16 2018 14:09:46 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_483bc1739a16b87563cca23e7a392c1e.html">seims_linux_gcc48</a></li><li class="navelem"><a class="el" href="../../dir_a45053e29f104e67e5be28f13679e3c2.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_88ee9ccb3eda13ad093e0105c15391c0.html">preprocess</a></li><li class="navelem"><b>db_mongodb.py</b></li>
+    <li class="footer">Generated on Tue May 22 2018 08:17:29 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

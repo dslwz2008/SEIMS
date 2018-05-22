@@ -1,28 +1,9 @@
 var a00777 =
 [
-    [ "IUH_SED_OL", "d0/d7d/a00786.html", "d0/d7d/a00786" ],
-    [ "DEP_LINSLEY", "d1/dd1/a00804.html", "d1/dd1/a00804" ],
-    [ "GWA_RE", "d7/dff/a00805.html", "d7/dff/a00805" ],
-    [ "IKW_REACH", "d0/dad/a00806.html", "d0/dad/a00806" ],
-    [ "IUH_IF", "df/dc7/a00807.html", "df/dc7/a00807" ],
-    [ "IUH_OL", "d7/dc8/a00808.html", "d7/dc8/a00808" ],
-    [ "MUSK_CH", "dd/d7e/a00809.html", "dd/d7e/a00809" ],
-    [ "PER_PI", "d4/dfd/a00810.html", "d4/dfd/a00810" ],
-    [ "PER_STR", "dd/d07/a00811.html", "dd/d07/a00811" ],
-    [ "PET_H", "d8/db7/a00812.html", "d8/db7/a00812" ],
-    [ "PET_PM", "de/d9d/a00813.html", "de/d9d/a00813" ],
-    [ "PET_PT", "da/d71/a00814.html", "da/d71/a00814" ],
-    [ "SET_LM", "d8/d2d/a00815.html", "d8/d2d/a00815" ],
-    [ "SNO_DD", "d7/d60/a00816.html", "d7/d60/a00816" ],
-    [ "SNO_SP", "dc/d5e/a00817.html", "dc/d5e/a00817" ],
-    [ "SNO_WB", "d3/d60/a00818.html", "d3/d60/a00818" ],
-    [ "SOL_WB", "d7/d4f/a00819.html", "d7/d4f/a00819" ],
-    [ "SRD_MB", "dc/d00/a00820.html", "dc/d00/a00820" ],
-    [ "SSM_PE", "d6/d8b/a00821.html", "d6/d8b/a00821" ],
-    [ "SSR_DA", "d6/da7/a00822.html", null ],
-    [ "STP_FP", "d3/db4/a00823.html", "d3/db4/a00823" ],
-    [ "SUR_CN", "d8/d1c/a00824.html", "d8/d1c/a00824" ],
-    [ "SUR_ES", "dd/d5f/a00825.html", "dd/d5f/a00825" ],
-    [ "SUR_GA", "da/d90/a00826.html", "da/d90/a00826" ],
-    [ "SUR_MR", "dc/d1b/a00827.html", "dc/d1b/a00827" ]
+    [ "clsTSD_RD", "df/d61/a00031.html", [
+      [ "Get1DData", "df/d61/a00031.html#a6f76ed81c00691617c80974198ea26fb", null ],
+      [ "Set1DData", "df/d61/a00031.html#a5b42430983cfa8542be04854e8612b9b", null ],
+      [ "m_nStations", "df/d61/a00031.html#a4754e8968ca858275d040fb67c8f8257", null ],
+      [ "m_stationData", "df/d61/a00031.html#a44905545bd698ee830b4aa494e6f6883", null ]
+    ] ]
 ];

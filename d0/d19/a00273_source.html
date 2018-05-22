@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims/preprocess/db_build_mongodb.py Source File</title>
+<title>SEIMS: seims_linux_gcc48/seims/preprocess/db_build_mongodb.py Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -131,7 +131,7 @@ $(document).ready(function(){initNavTree('d0/d19/a00273_source.html','../../');}
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keywordflow">if</span> os.path.abspath(os.path.join(sys.path[0], <span class="stringliteral">&#39;..&#39;</span>)) <span class="keywordflow">not</span> <span class="keywordflow">in</span> sys.path:</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    sys.path.insert(0, os.path.abspath(os.path.join(sys.path[0], <span class="stringliteral">&#39;..&#39;</span>)))</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">from</span> <a class="code" href="../../df/d7d/a00696.html">pygeoc.utils</a> <span class="keyword">import</span> UtilClass</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">from</span> <a class="code" href="../../da/dd4/a00690.html">pygeoc.utils</a> <span class="keyword">import</span> UtilClass</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">from</span> preprocess.bmp_import_scenario <span class="keyword">import</span> ImportScenario2Mongo</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">from</span> preprocess.db_import_interpolation_weights <span class="keyword">import</span> ImportWeightData</div>
@@ -147,7 +147,7 @@ $(document).ready(function(){initNavTree('d0/d19/a00273_source.html','../../');}
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">from</span> preprocess.utility <span class="keyword">import</span> status_output</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="../../df/d03/a00062.html">   33</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../df/d03/a00062.html">ImportMongodbClass</a>(object):</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">class </span>ImportMongodbClass(object):</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;Separated function to import data into MongoDB.&quot;&quot;&quot;</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
 <div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="../../df/d03/a00062.html#ad5fc6f1afc8c22ce13dbf3e2928e7eb2">   36</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../df/d03/a00062.html#ad5fc6f1afc8c22ce13dbf3e2928e7eb2">__init__</a>(self):</div>
@@ -282,21 +282,20 @@ $(document).ready(function(){initNavTree('d0/d19/a00273_source.html','../../');}
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="keywordflow">if</span> __name__ == <span class="stringliteral">&quot;__main__&quot;</span>:</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    main()</div>
-<div class="ttc" id="a00062_html"><div class="ttname"><a href="../../df/d03/a00062.html">seims.preprocess.db_build_mongodb.ImportMongodbClass</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d19/a00273_source.html#l00033">db_build_mongodb.py:33</a></div></div>
-<div class="ttc" id="a00696_html"><div class="ttname"><a href="../../df/d7d/a00696.html">utils</a></div></div>
-<div class="ttc" id="a00062_html_ab5f368e0fdf47a191a91d99dfa127c32"><div class="ttname"><a href="../../df/d03/a00062.html#ab5f368e0fdf47a191a91d99dfa127c32">seims.preprocess.db_build_mongodb.ImportMongodbClass.iuh</a></div><div class="ttdeci">def iuh</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d19/a00273_source.html#l00071">db_build_mongodb.py:71</a></div></div>
-<div class="ttc" id="a00062_html_ad5fc6f1afc8c22ce13dbf3e2928e7eb2"><div class="ttname"><a href="../../df/d03/a00062.html#ad5fc6f1afc8c22ce13dbf3e2928e7eb2">seims.preprocess.db_build_mongodb.ImportMongodbClass.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d19/a00273_source.html#l00036">db_build_mongodb.py:36</a></div></div>
-<div class="ttc" id="a00062_html_a9faea1b7a46ce844f158d9c4844da8c4"><div class="ttname"><a href="../../df/d03/a00062.html#a9faea1b7a46ce844f158d9c4844da8c4">seims.preprocess.db_build_mongodb.ImportMongodbClass.spatial_rasters</a></div><div class="ttdeci">def spatial_rasters</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d19/a00273_source.html#l00048">db_build_mongodb.py:48</a></div></div>
-<div class="ttc" id="a00062_html_adfbe97062368e43c6becdd2583fda016"><div class="ttname"><a href="../../df/d03/a00062.html#adfbe97062368e43c6becdd2583fda016">seims.preprocess.db_build_mongodb.ImportMongodbClass.climate_data</a></div><div class="ttdeci">def climate_data</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d19/a00273_source.html#l00041">db_build_mongodb.py:41</a></div></div>
-<div class="ttc" id="a00062_html_afed639509abc2da6b890208e25b52d1f"><div class="ttname"><a href="../../df/d03/a00062.html#afed639509abc2da6b890208e25b52d1f">seims.preprocess.db_build_mongodb.ImportMongodbClass.grid_layering</a></div><div class="ttdeci">def grid_layering</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d19/a00273_source.html#l00083">db_build_mongodb.py:83</a></div></div>
-<div class="ttc" id="a00062_html_ad1ff36e535a0989c84ae12598c0cd675"><div class="ttname"><a href="../../df/d03/a00062.html#ad1ff36e535a0989c84ae12598c0cd675">seims.preprocess.db_build_mongodb.ImportMongodbClass.workflow</a></div><div class="ttdeci">def workflow</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d19/a00273_source.html#l00093">db_build_mongodb.py:93</a></div></div>
+<div class="ttc" id="a00062_html_ab5f368e0fdf47a191a91d99dfa127c32"><div class="ttname"><a href="../../df/d03/a00062.html#ab5f368e0fdf47a191a91d99dfa127c32">seims.preprocess.db_build_mongodb.ImportMongodbClass.iuh</a></div><div class="ttdeci">def iuh</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dd6/a00272_source.html#l00071">db_build_mongodb.py:71</a></div></div>
+<div class="ttc" id="a00062_html_ad5fc6f1afc8c22ce13dbf3e2928e7eb2"><div class="ttname"><a href="../../df/d03/a00062.html#ad5fc6f1afc8c22ce13dbf3e2928e7eb2">seims.preprocess.db_build_mongodb.ImportMongodbClass.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dd6/a00272_source.html#l00036">db_build_mongodb.py:36</a></div></div>
+<div class="ttc" id="a00690_html"><div class="ttname"><a href="../../da/dd4/a00690.html">utils</a></div></div>
+<div class="ttc" id="a00062_html_a9faea1b7a46ce844f158d9c4844da8c4"><div class="ttname"><a href="../../df/d03/a00062.html#a9faea1b7a46ce844f158d9c4844da8c4">seims.preprocess.db_build_mongodb.ImportMongodbClass.spatial_rasters</a></div><div class="ttdeci">def spatial_rasters</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dd6/a00272_source.html#l00048">db_build_mongodb.py:48</a></div></div>
+<div class="ttc" id="a00062_html_adfbe97062368e43c6becdd2583fda016"><div class="ttname"><a href="../../df/d03/a00062.html#adfbe97062368e43c6becdd2583fda016">seims.preprocess.db_build_mongodb.ImportMongodbClass.climate_data</a></div><div class="ttdeci">def climate_data</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dd6/a00272_source.html#l00041">db_build_mongodb.py:41</a></div></div>
+<div class="ttc" id="a00062_html_afed639509abc2da6b890208e25b52d1f"><div class="ttname"><a href="../../df/d03/a00062.html#afed639509abc2da6b890208e25b52d1f">seims.preprocess.db_build_mongodb.ImportMongodbClass.grid_layering</a></div><div class="ttdeci">def grid_layering</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dd6/a00272_source.html#l00083">db_build_mongodb.py:83</a></div></div>
+<div class="ttc" id="a00062_html_ad1ff36e535a0989c84ae12598c0cd675"><div class="ttname"><a href="../../df/d03/a00062.html#ad1ff36e535a0989c84ae12598c0cd675">seims.preprocess.db_build_mongodb.ImportMongodbClass.workflow</a></div><div class="ttdeci">def workflow</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dd6/a00272_source.html#l00093">db_build_mongodb.py:93</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_e83ca20770e7fbc90f1c071d86067ace.html">preprocess</a></li><li class="navelem"><b>db_build_mongodb.py</b></li>
-    <li class="footer">Generated on Wed May 16 2018 14:09:46 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_483bc1739a16b87563cca23e7a392c1e.html">seims_linux_gcc48</a></li><li class="navelem"><a class="el" href="../../dir_a45053e29f104e67e5be28f13679e3c2.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_88ee9ccb3eda13ad093e0105c15391c0.html">preprocess</a></li><li class="navelem"><b>db_build_mongodb.py</b></li>
+    <li class="footer">Generated on Tue May 22 2018 08:17:29 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

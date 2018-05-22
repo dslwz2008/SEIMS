@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims/src/ccgl/data/readme.md Source File</title>
+<title>SEIMS: seims/src/ccgl/src/basic.cpp Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -93,7 +93,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('de/dc8/a00325.html','../../');});
+$(document).ready(function(){initNavTree('de/dc8/a00325_source.html','../../');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -112,16 +112,159 @@ $(document).ready(function(){initNavTree('de/dc8/a00325.html','../../');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">seims/src/ccgl/data/readme.md</div>  </div>
+<div class="title">basic.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"></div><!-- fragment --></div><!-- contents -->
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;basic.h&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;ctime&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#ifdef SUPPORT_OMP</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &lt;omp.h&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SUPPORT_OMP */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">using</span> std::string;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="../../d2/d85/a00679.html">   13</a></span>&#160;<span class="keyword">namespace </span>ccgl {</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="../../df/d98/a00107.html#a75da50ae888ba03fbb9f14dc2234aff3">   15</a></span>&#160;<a class="code" href="../../df/d98/a00107.html#a75da50ae888ba03fbb9f14dc2234aff3">NotCopyable::NotCopyable</a>() {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<a class="code" href="../../df/d98/a00107.html#a75da50ae888ba03fbb9f14dc2234aff3">NotCopyable::NotCopyable</a>(<span class="keyword">const</span> <a class="code" href="../../df/d98/a00107.html">NotCopyable</a>&amp;) {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;NotCopyable&amp; NotCopyable::operator=(<span class="keyword">const</span> NotCopyable&amp;) {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="../../d4/d3e/a00116.html#a2b3c01918a24dafca477929fc10b5558">   26</a></span>&#160;<a class="code" href="../../d4/d3e/a00116.html#a2b3c01918a24dafca477929fc10b5558">Object::~Object</a>() {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="../../db/db6/a00074.html#a7325510a5111ae7d2a75662393075e10">   30</a></span>&#160;<a class="code" href="../../db/db6/a00074.html#a7325510a5111ae7d2a75662393075e10">Interface::~Interface</a>() {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="../../d9/df8/a00096.html#af26bff835a1e1d4d3a635ec907e2cdb4">   33</a></span>&#160;<a class="code" href="../../d9/df8/a00096.html#af26bff835a1e1d4d3a635ec907e2cdb4">ModelException::ModelException</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; class_name, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; function_name, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; msg):</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    runtime_error_(<span class="stringliteral">&quot;Class:&quot;</span> + class_name + <span class="stringliteral">&quot;\n&quot;</span> + <span class="stringliteral">&quot;Function:&quot;</span> +</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                   function_name + <span class="stringliteral">&quot;\n&quot;</span> + <span class="stringliteral">&quot;Message:&quot;</span> + msg) {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="../../d9/df8/a00096.html#a5d61b4959ddd7ffdc1e1b87dd3adddae">   38</a></span>&#160;<span class="keywordtype">string</span> <a class="code" href="../../d9/df8/a00096.html#a5d61b4959ddd7ffdc1e1b87dd3adddae">ModelException::ToString</a>() {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">return</span> runtime_error_.what();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="../../d9/df8/a00096.html#addf4a42bb2101c234648c2128089ec3e">   42</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="../../d9/df8/a00096.html#addf4a42bb2101c234648c2128089ec3e">ModelException::what</a>() const NOEXCEPT {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">return</span> runtime_error_.what();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="../../d2/d85/a00679.html#aab46be883ceebb9111d1994c54136fc8">   46</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../d2/d85/a00679.html#aab46be883ceebb9111d1994c54136fc8">IsIpAddress</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* ip) {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">bool</span> rv = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">int</span> tmp1, tmp2, tmp3, tmp4;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordtype">int</span> i = stringscanf(ip, <span class="stringliteral">&quot;%d.%d.%d.%d&quot;</span>, &amp;tmp1, &amp;tmp2, &amp;tmp3, &amp;tmp4);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">if</span> (i != 4) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            rv = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="comment">//cout &lt;&lt; &quot;IP Address format is not correct!&quot; &lt;&lt; endl;</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">if</span> (tmp1 &gt; 255 || tmp2 &gt; 255 || tmp3 &gt; 255 || tmp4 &gt; 255 ||</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            tmp1 &lt; 0 || tmp2 &lt; 0 || tmp3 &lt; 0 || tmp4 &lt; 0) {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            rv = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="comment">//cout &lt;&lt; &quot;IP Address format is not correct!&quot; &lt;&lt; endl;</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keywordtype">char</span>* p_char = ip; *p_char != 0; p_char++) {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keywordflow">if</span> (*p_char != <span class="charliteral">&#39;.&#39;</span> &amp;&amp; (*p_char &lt; &#39;0&#39; || *p_char &gt; <span class="charliteral">&#39;9&#39;</span>)) {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                rv = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="comment">//cout &lt;&lt; &quot;IP Address format is not correct!&quot; &lt;&lt; endl;</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">return</span> rv;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="../../d2/d85/a00679.html#ae3a68eab2f2e8c11c646c31e37dfc000">   74</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d2/d85/a00679.html#ae3a68eab2f2e8c11c646c31e37dfc000">Log</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; msg, <span class="keywordtype">string</span> logpath <span class="comment">/* = &quot;debugInfo.log&quot; */</span>) {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keyword">struct </span>tm timeptr;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    time_t now;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">char</span> buffer[32];</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    time(&amp;now);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#ifdef windows</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor"></span>    localtime_s(&amp;timeptr, &amp;now);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    asctime_s(buffer, 32, &amp;timeptr);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor"></span>    localtime_r(&amp;now, &amp;timeptr);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    asctime_r(&amp;timeptr, buffer);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* windows */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor"></span>    <span class="keywordtype">string</span> timestamp = buffer;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    timestamp = timestamp.substr(0, timestamp.length() - 1);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    std::fstream fs(logpath.c_str(), std::ios::app);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">if</span> (fs.is_open()) {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        fs &lt;&lt; timestamp;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        fs &lt;&lt; <span class="stringliteral">&quot;: &quot;</span>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        fs &lt;&lt; msg;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        fs &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        fs.close();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="../../d2/d85/a00679.html#a2d8929c0ad150960804264c58a202b0b">   98</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d2/d85/a00679.html#a2d8929c0ad150960804264c58a202b0b">GetAvailableThreadNum</a>() {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#ifdef windows</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor"></span>    SYSTEM_INFO sysinfo;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    GetSystemInfo(&amp;sysinfo);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">return</span> sysinfo.dwNumberOfProcessors;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* windows */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#ifdef linux</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">return</span> CVT_INT(sysconf(_SC_NPROCESSORS_ONLN));</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* linux */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#ifdef macos</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">return</span> CVT_INT(sysconf(_SC_NPROCESSORS_ONLN));</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* macOS X 10.5 and later */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor"></span>}</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="../../d2/d85/a00679.html#a57cb6a67e8fa61ebbd975531293499b7">  112</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d2/d85/a00679.html#a57cb6a67e8fa61ebbd975531293499b7">SetDefaultOpenMPThread</a>() {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor">#ifdef SUPPORT_OMP</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor"></span>    <span class="comment">// omp thread have not been set</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordflow">if</span> (omp_get_num_threads() &lt;= 1) {</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="comment">// set one half of the available threads as default</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        omp_set_num_threads(<a class="code" href="../../d2/d85/a00679.html#a2d8929c0ad150960804264c58a202b0b">GetAvailableThreadNum</a>() / 2);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    }</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SUPPORT_OMP */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="preprocessor"></span>}</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="../../d2/d85/a00679.html#ae3d5ae8abc83b26a8eb3680c6fd51ddf">  123</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d2/d85/a00679.html#ae3d5ae8abc83b26a8eb3680c6fd51ddf">SetOpenMPThread</a>(<span class="keywordtype">int</span> n) {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="preprocessor">#ifdef SUPPORT_OMP</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="preprocessor"></span>    omp_set_num_threads(n);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SUPPORT_OMP */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="preprocessor"></span>}</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="../../d2/d85/a00679.html#ac10e5077b978304f6bd34433d9ee2a5f">  130</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d2/d85/a00679.html#ac10e5077b978304f6bd34433d9ee2a5f">StatusMessage</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* msg) {</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="preprocessor">#ifdef _DEBUG</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="preprocessor"></span>    std::cout &lt;&lt; msg &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* DEBUG */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="preprocessor"></span>}</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;} <span class="comment">/* namespace: ccgl */</span></div>
+<div class="ttc" id="a00096_html_addf4a42bb2101c234648c2128089ec3e"><div class="ttname"><a href="../../d9/df8/a00096.html#addf4a42bb2101c234648c2128089ec3e">ccgl::ModelException::what</a></div><div class="ttdeci">const char * what() const NOEXCEPT OVERRIDE</div><div class="ttdoc">Overload function to construct error information. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/dc8/a00325_source.html#l00042">basic.cpp:42</a></div></div>
+<div class="ttc" id="a00679_html_ae3d5ae8abc83b26a8eb3680c6fd51ddf"><div class="ttname"><a href="../../d2/d85/a00679.html#ae3d5ae8abc83b26a8eb3680c6fd51ddf">ccgl::SetOpenMPThread</a></div><div class="ttdeci">void SetOpenMPThread(int n)</div><div class="ttdoc">Set the omp thread number by given thread number. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/dc8/a00325_source.html#l00123">basic.cpp:123</a></div></div>
+<div class="ttc" id="a00116_html_a2b3c01918a24dafca477929fc10b5558"><div class="ttname"><a href="../../d4/d3e/a00116.html#a2b3c01918a24dafca477929fc10b5558">ccgl::Object::~Object</a></div><div class="ttdeci">virtual ~Object()</div><div class="ttdoc">DefaultClass. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/dc8/a00325_source.html#l00026">basic.cpp:26</a></div></div>
+<div class="ttc" id="a00679_html_aab46be883ceebb9111d1994c54136fc8"><div class="ttname"><a href="../../d2/d85/a00679.html#aab46be883ceebb9111d1994c54136fc8">ccgl::IsIpAddress</a></div><div class="ttdeci">bool IsIpAddress(const char *ip)</div><div class="ttdoc">Check if the IP address is valid. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/dc8/a00325_source.html#l00046">basic.cpp:46</a></div></div>
+<div class="ttc" id="a00107_html_a75da50ae888ba03fbb9f14dc2234aff3"><div class="ttname"><a href="../../df/d98/a00107.html#a75da50ae888ba03fbb9f14dc2234aff3">ccgl::NotCopyable::NotCopyable</a></div><div class="ttdeci">NotCopyable()</div><div class="ttdoc">NotCopyable implementation. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/dc8/a00325_source.html#l00015">basic.cpp:15</a></div></div>
+<div class="ttc" id="a00679_html_ae3a68eab2f2e8c11c646c31e37dfc000"><div class="ttname"><a href="../../d2/d85/a00679.html#ae3a68eab2f2e8c11c646c31e37dfc000">ccgl::Log</a></div><div class="ttdeci">void Log(const string &amp;msg, string logpath)</div><div class="ttdoc">Writes an entry to the log file. Normally only used for debug. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/dc8/a00325_source.html#l00074">basic.cpp:74</a></div></div>
+<div class="ttc" id="a00096_html_af26bff835a1e1d4d3a635ec907e2cdb4"><div class="ttname"><a href="../../d9/df8/a00096.html#af26bff835a1e1d4d3a635ec907e2cdb4">ccgl::ModelException::ModelException</a></div><div class="ttdeci">ModelException(const string &amp;class_name, const string &amp;function_name, const string &amp;msg)</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/dc8/a00325_source.html#l00033">basic.cpp:33</a></div></div>
+<div class="ttc" id="a00074_html_a7325510a5111ae7d2a75662393075e10"><div class="ttname"><a href="../../db/db6/a00074.html#a7325510a5111ae7d2a75662393075e10">ccgl::Interface::~Interface</a></div><div class="ttdeci">virtual ~Interface()</div><div class="ttdoc">Interface. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/dc8/a00325_source.html#l00030">basic.cpp:30</a></div></div>
+<div class="ttc" id="a00096_html_a5d61b4959ddd7ffdc1e1b87dd3adddae"><div class="ttname"><a href="../../d9/df8/a00096.html#a5d61b4959ddd7ffdc1e1b87dd3adddae">ccgl::ModelException::ToString</a></div><div class="ttdeci">string ToString()</div><div class="ttdoc">Construct error information (string version) </div><div class="ttdef"><b>Definition:</b> <a href="../../de/dc8/a00325_source.html#l00038">basic.cpp:38</a></div></div>
+<div class="ttc" id="a00679_html_a2d8929c0ad150960804264c58a202b0b"><div class="ttname"><a href="../../d2/d85/a00679.html#a2d8929c0ad150960804264c58a202b0b">ccgl::GetAvailableThreadNum</a></div><div class="ttdeci">int GetAvailableThreadNum()</div><div class="ttdoc">Detect the available threads number reference: </div><div class="ttdef"><b>Definition:</b> <a href="../../de/dc8/a00325_source.html#l00098">basic.cpp:98</a></div></div>
+<div class="ttc" id="a00679_html_a57cb6a67e8fa61ebbd975531293499b7"><div class="ttname"><a href="../../d2/d85/a00679.html#a57cb6a67e8fa61ebbd975531293499b7">ccgl::SetDefaultOpenMPThread</a></div><div class="ttdeci">void SetDefaultOpenMPThread()</div><div class="ttdoc">Set the default omp thread number if necessary. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/dc8/a00325_source.html#l00112">basic.cpp:112</a></div></div>
+<div class="ttc" id="a00679_html_ac10e5077b978304f6bd34433d9ee2a5f"><div class="ttname"><a href="../../d2/d85/a00679.html#ac10e5077b978304f6bd34433d9ee2a5f">ccgl::StatusMessage</a></div><div class="ttdeci">void StatusMessage(const char *msg)</div><div class="ttdoc">Print status messages for Debug. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/dc8/a00325_source.html#l00130">basic.cpp:130</a></div></div>
+<div class="ttc" id="a00107_html"><div class="ttname"><a href="../../df/d98/a00107.html">ccgl::NotCopyable</a></div><div class="ttdoc">Base class for classes that cannot be copied. By inheriting this class you can disable copying of you...</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d23/a00326_source.html#l00281">basic.h:281</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>readme.md</b></li>
-    <li class="footer">Generated on Wed May 16 2018 14:09:46 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_1635fbfac89ac2806d51d330c1bf9d4d.html">ccgl</a></li><li class="navelem"><a class="el" href="../../dir_0346555d3ab8b65a5051eedf2d137b94.html">src</a></li><li class="navelem"><b>basic.cpp</b></li>
+    <li class="footer">Generated on Tue May 22 2018 08:17:29 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: IKW_REACH</title>
+<title>SEIMS: PET_PM</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -108,35 +108,51 @@ $(document).ready(function(){initNavTree('d0/dad/a00806.html','../../');});
   <div class="summary">
 <a href="#nested-classes">Classes</a>  </div>
   <div class="headertitle">
-<div class="title">IKW_REACH<div class="ingroups"><a class="el" href="../../d2/d02/a00777.html">Hydrology_longterm</a></div></div>  </div>
+<div class="title">PET_PM<div class="ingroups"><a class="el" href="../../dd/de5/a00771.html">Hydrology_longterm</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>channel flow routing using <a class="el" href="../../d7/d70/a00106.html" title="Channel routing using Muskingum-Cunge method. ">Muskingum</a> method  
+<p>Potential evapotranspiration using Penman Monteith Method.  
 <a href="#details">More...</a></p>
 <div class="dynheader">
-Collaboration diagram for IKW_REACH:</div>
+Collaboration diagram for PET_PM:</div>
 <div class="dyncontent">
 <center><table><tr><td><img src="../../d0/dad/a00806.png" border="0" alt="" usemap="#d0_2dad_2a00806"/>
 <map name="d0_2dad_2a00806" id="d0_2dad_2a00806">
-<area shape="rect" id="node1" href="../../d2/d02/a00777.html" title="Longterm hydrology related modules. " alt="" coords="6,4,173,33"/></map>
+<area shape="rect" id="node1" href="../../dd/de5/a00771.html" title="Longterm hydrology related modules. " alt="" coords="6,4,173,33"/></map>
 </td></tr></table></center>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d2e/a00056.html">IKW_REACH</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overland routing using 4-point implicit finite difference method.  <a href="../../d9/d2e/a00056.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d12/a00126.html">PETPenmanMonteith</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Penman Monteith Method to Compute PET.  <a href="../../d7/d12/a00126.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>channel flow routing using <a class="el" href="../../d7/d70/a00106.html" title="Channel routing using Muskingum-Cunge method. ">Muskingum</a> method </p>
+<p>Potential evapotranspiration using Penman Monteith Method. </p>
+<dl class="section author"><dt>Author</dt><dd>Junzhi Liu </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>Nov. 2010  LiangJun Zhu </dd>
+<dd>
+May. 2016 </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>: 1. Add m_tMean from database, which may be measurement value or the mean of tMax and tMin;<ol type="1">
+<li>The PET calculate is changed from site-based to cell-based, because PET is not only dependent on Climate site data;</li>
+</ol>
+</dd></dl>
+<ol type="1">
+<li>Add ecology related parameters (initialized value).</li>
+<li>Add potential plant transpiration as output.</li>
+<li>Add m_VPD, m_dayLen as outputs, which will be used in BIO_EPIC module</li>
+<li>change m_vpd2 and m_gsi from DT_Single to DT_Raster1D, see readplant.f of SWAT</li>
+<li>Add m_phuBase as outputs, which will be used in MGT_SWAT module</li>
+</ol>
+<p>Penman Monteith Method to Compute PET </p>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed May 16 2018 14:09:48 for SEIMS by
+    <li class="footer">Generated on Tue May 22 2018 08:17:32 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

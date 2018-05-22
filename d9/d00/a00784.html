@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: AET_PTH</title>
+<title>SEIMS: SEDR_SBAGNOLD</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -108,35 +108,43 @@ $(document).ready(function(){initNavTree('d9/d00/a00784.html','../../');});
   <div class="summary">
 <a href="#nested-classes">Classes</a>  </div>
   <div class="headertitle">
-<div class="title">AET_PTH<div class="ingroups"><a class="el" href="../../de/d42/a00780.html">Ecology</a></div></div>  </div>
+<div class="title">SEDR_SBAGNOLD<div class="ingroups"><a class="el" href="../../d9/d9c/a00772.html">Erosion</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Potential plant transpiration for Priestley-Taylor and Hargreaves ET methods and potential and actual soil evaporation. Code from SWAT, etact.f.  
+<p>Sediment routing using simplified version of Bagnold(1997) stream power equation which is also the original SWAT method. This module routes sediment from subbasin to basin outlet deposition is based on fall velocity and degradation on stream reWrite from route.f and rtsed.f of SWAT.  
 <a href="#details">More...</a></p>
 <div class="dynheader">
-Collaboration diagram for AET_PTH:</div>
+Collaboration diagram for SEDR_SBAGNOLD:</div>
 <div class="dyncontent">
 <center><table><tr><td><img src="../../d9/d00/a00784.png" border="0" alt="" usemap="#d9_2d00_2a00784"/>
 <map name="d9_2d00_2a00784" id="d9_2d00_2a00784">
-<area shape="rect" id="node2" href="../../de/d42/a00780.html" title="Ecology related modules. " alt="" coords="5,4,85,33"/></map>
+<area shape="rect" id="node1" href="../../d9/d9c/a00772.html" title="Erosion related modules. " alt="" coords="5,4,83,33"/></map>
 </td></tr></table></center>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d5e/a00007.html">AET_PT_H</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Potential plant transpiration for Priestley-Taylor and Hargreaves ET methods Actual soil evaporation is also calculated.  <a href="../../de/d5e/a00007.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da7/a00144.html">SEDR_SBAGNOLD</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sediment routing using variable channel dimension(VCD) method at daily time scale.  <a href="../../d5/da7/a00144.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Potential plant transpiration for Priestley-Taylor and Hargreaves ET methods and potential and actual soil evaporation. Code from SWAT, etact.f. </p>
-<dl class="section author"><dt>Author</dt><dd>Liang-Jun Zhu </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>May 2016 : 2016-07-15 - lj - 1. Code reformat with common functions, such as Release1DArray.<br/>
+<p>Sediment routing using simplified version of Bagnold(1997) stream power equation which is also the original SWAT method. This module routes sediment from subbasin to basin outlet deposition is based on fall velocity and degradation on stream reWrite from route.f and rtsed.f of SWAT. </p>
+<dl class="section author"><dt>Author</dt><dd>Hui Wu, Liangjun Zhu, Junzhi Liu  2012-07-31 - wh - Initial implementation.<br/>
+ 2016-05-30 - lj - 1. move m_erodibilityFactor, m_coverFactor, to reach collection of MongoDB as inputs, and is DT_Array1D.<br/>
 <ol type="1">
-<li>VAR_SNSB should be output other than input.<br/>
- 2018-05-07 - lj - Reformat code style.<br/>
- Potential plant transpiration for Priestley-Taylor and Hargreaves ET methods Actual soil evaporation is also calculated. </li>
+<li>add point source loadings from Scenario database.<br/>
+</li>
+<li>add SEDRECHConc output with the unit g/cm3 (i.e., Mg/m3).<br/>
+ 2016-08-31 - jz - Code review.<br/>
+ 2016-09-30 - lj - 1. ReCheck and Update code according to route.f and rtsed.f<br/>
+</li>
+</ol>
+<ol type="1">
+<li>Change the module name from SEDR_VCD to <a class="el" href="../../d5/da7/a00144.html" title="Sediment routing using variable channel dimension(VCD) method at daily time scale. ">SEDR_SBAGNOLD</a>.<br/>
+ 2018-05-14 - lj - Code review and reformat.<br/>
+ Sediment routing using Simplified version of Bagnold(1997) stream power equation </li>
 </ol>
 </dd></dl>
 </div><!-- contents -->
@@ -144,7 +152,7 @@ Classes</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed May 16 2018 14:09:48 for SEIMS by
+    <li class="footer">Generated on Tue May 22 2018 08:17:32 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: GWA_RE</title>
+<title>SEIMS: PET_H</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -108,53 +108,46 @@ $(document).ready(function(){initNavTree('d7/dff/a00805.html','../../');});
   <div class="summary">
 <a href="#nested-classes">Classes</a>  </div>
   <div class="headertitle">
-<div class="title">GWA_RE<div class="ingroups"><a class="el" href="../../d2/d02/a00777.html">Hydrology_longterm</a></div></div>  </div>
+<div class="title">PET_H<div class="ingroups"><a class="el" href="../../dd/de5/a00771.html">Hydrology_longterm</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Reservoir Method to calculate groundwater balance and baseflow.  
+<p>Potential evapotranspiration using Hargreaves method.  
 <a href="#details">More...</a></p>
 <div class="dynheader">
-Collaboration diagram for GWA_RE:</div>
+Collaboration diagram for PET_H:</div>
 <div class="dyncontent">
 <center><table><tr><td><img src="../../d7/dff/a00805.png" border="0" alt="" usemap="#d7_2dff_2a00805"/>
 <map name="d7_2dff_2a00805" id="d7_2dff_2a00805">
-<area shape="rect" id="node1" href="../../d2/d02/a00777.html" title="Longterm hydrology related modules. " alt="" coords="6,4,173,33"/></map>
+<area shape="rect" id="node2" href="../../dd/de5/a00771.html" title="Longterm hydrology related modules. " alt="" coords="6,4,173,33"/></map>
 </td></tr></table></center>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db1/a00140.html">ReservoirMethod</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reservoir Method to calculate groundwater balance and baseflow of longterm model.  <a href="../../d5/db1/a00140.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dfe/a00125.html">PETHargreaves</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hargreaves method to Compute PET.  <a href="../../dc/dfe/a00125.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Reservoir Method to calculate groundwater balance and baseflow. </p>
-<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Wu Hui </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>24-January-2011</dd></dl>
-<p>Revision: Zhiqiang Yu Date: 2011-2-11</p>
-<p>Revision: Zhiqiang Yu Date: 2011-2-18 Description:</p>
-<ol type="1">
-<li>Add judgment to calculation of EG (Revap). The average percolation of one subbasin is first calculated. If the percolation is less than 0.01, EG is set to 0 directly. (in function setInputs of class subbasin)</li>
-<li>Add member variable m_isRevapChanged to class subbasin. This variable is the flag whether the Revap is changed by current time step. This flag can avoid repeating setting values when converting subbasin average Revap to cell Revap.(in function Execute of class <a class="el" href="../../d5/db1/a00140.html" title="Reservoir Method to calculate groundwater balance and baseflow of longterm model. ...">ReservoirMethod</a>)</li>
+<p>Potential evapotranspiration using Hargreaves method. </p>
+<dl class="section author"><dt>Author</dt><dd>Junzhi Liu </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>Nov. 2010  LiangJun Zhu </dd>
+<dd>
+May. 2016 </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>: 1. Add m_tMean from database, which may be measurement value or the mean of tMax and tMin;<ol type="1">
+<li>The PET calculate is changed from site-based to cell-based, because PET is not only dependent on Climate site data;</li>
+<li>Add m_VPD, m_dayLen as outputs, which will be used in BIO_EPIC module</li>
+<li>Add m_phuBase as outputs, which will be used in MGT_SWAT module</li>
 </ol>
-<p>Revision: Zhiqiang Yu Date: 2011-3-14 Description:</p>
-<ol type="1">
-<li>Add codes to process the groundwater which comes from bank storage in channel routing module. The water volume of this part of groundwater is added to the groundwater storage. The input variable "T_GWNEW" is used for this purpose. One additional parameter is added to function setInputs of class subbasin. See equation 8 in memo "Channel water balance" for detailed reference.</li>
-</ol>
-<p>Revision: Liang-Jun Zhu Date: 2016-7-27 Description:</p>
-<ol type="1">
-<li>Move subbasin class to base/data module for sharing with other modules</li>
-</ol>
-<p>Reservoir Method to calculate groundwater balance and baseflow of longterm model </p>
+</dd></dl>
+<p>Calculate potential evapotranspiration using Hargreaves method </p>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed May 16 2018 14:09:48 for SEIMS by
+    <li class="footer">Generated on Tue May 22 2018 08:17:32 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims/src/seims_main/modules/erosion/MUSLE_AS/api.cpp Source File</title>
+<title>SEIMS: seims/src/seims_main/modules/erosion/MUSLE_I30/api.cpp Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -115,77 +115,71 @@ $(document).ready(function(){initNavTree('db/d8e/a00482_source.html','../../');}
 <div class="title">api.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;api.h&quot;</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;MUSLE_I30.h&quot;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;MUSLE_AS.h&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;MetadataInfo.h&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;text.h&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> SEIMS_MODULE_API <a class="code" href="../../dd/db2/a00151.html">SimulationModule</a>* GetInstance() {</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="../../df/d98/a00107.html">MUSLE_AS</a>();</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;}</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// function to return the XML Metadata document string</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> SEIMS_MODULE_API <span class="keyword">const</span> <span class="keywordtype">char</span>* MetadataInformation() {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="../../da/d82/a00091.html">MetadataInfo</a> mdi;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="comment">// set the information properties</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    mdi.SetAuthor(<span class="stringliteral">&quot;Zhiqiang Yu, Liangjun Zhu&quot;</span>);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    mdi.SetClass(MCLS_OL_EROSION, MCLSDESC_OL_EROSION);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    mdi.SetDescription(MDESC_MUSLE_AS);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    mdi.SetEmail(SEIMS_EMAIL);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    mdi.SetID(MID_MUSLE_AS);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    mdi.SetName(MID_MUSLE_AS);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    mdi.SetVersion(<span class="stringliteral">&quot;1.2&quot;</span>);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    mdi.SetWebsite(SEIMS_SITE);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    mdi.SetHelpfile(<span class="stringliteral">&quot;MUSLE_AS.chm&quot;</span>);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    mdi.AddParameter(Tag_CellWidth, UNIT_LEN_M, DESC_CellWidth, Source_ParameterDB, DT_Single);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    mdi.AddParameter(VAR_DEPRATIO, UNIT_NON_DIM, DESC_DEPRATIO, Source_ParameterDB, DT_Single);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    mdi.AddParameter(VAR_USLE_K, UNIT_NON_DIM, DESC_USLE_K, Source_ParameterDB, DT_Raster2D);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    mdi.AddParameter(VAR_USLE_C, UNIT_NON_DIM, DESC_USLE_C, Source_ParameterDB, DT_Raster1D);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    mdi.AddParameter(VAR_USLE_P, UNIT_NON_DIM, DESC_USLE_P, Source_ParameterDB, DT_Raster1D);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    mdi.AddParameter(VAR_ACC, UNIT_NON_DIM, DESC_ACC, Source_ParameterDB, DT_Raster1D);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    mdi.AddParameter(VAR_SLOPE, UNIT_PERCENT, DESC_SLOPE, Source_ParameterDB, DT_Raster1D);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    mdi.AddParameter(VAR_STREAM_LINK, UNIT_NON_DIM, DESC_STREAM_LINK, Source_ParameterDB, DT_Raster1D);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    mdi.AddParameter(VAR_DETACH_SAND, UNIT_NON_DIM, DESC_DETACH_SAND, Source_ParameterDB, DT_Raster1D);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    mdi.AddParameter(VAR_DETACH_SILT, UNIT_NON_DIM, DESC_DETACH_SILT, Source_ParameterDB, DT_Raster1D);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    mdi.AddParameter(VAR_DETACH_CLAY, UNIT_NON_DIM, DESC_DETACH_CLAY, Source_ParameterDB, DT_Raster1D);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    mdi.AddParameter(VAR_DETACH_SAG, UNIT_NON_DIM, DESC_DETACH_SAG, Source_ParameterDB, DT_Raster1D);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    mdi.AddParameter(VAR_DETACH_LAG, UNIT_NON_DIM, DESC_DETACH_LAG, Source_ParameterDB, DT_Raster1D);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">//input from other module</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">// mdi.AddInput(VAR_SURU, UNIT_DEPTH_MM, DESC_SURU, Source_Module, DT_Raster1D); // use SURU or OLFLOW???</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    mdi.AddInput(VAR_OLFLOW, UNIT_DEPTH_MM, DESC_OLFLOW, Source_Module, DT_Raster1D);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    mdi.AddInput(VAR_SNAC, UNIT_DEPTH_MM, DESC_SNAC, Source_Module, DT_Raster1D);</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;api.h&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> SEIMS_MODULE_API <a class="code" href="../../d9/d7d/a00150.html">SimulationModule</a> *GetInstance() {</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">new</span> MUSLE_I30();</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;}</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">// function to return the XML Metadata document string</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> SEIMS_MODULE_API <span class="keyword">const</span> <span class="keywordtype">char</span> *MetadataInformation() {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="../../da/d82/a00091.html">MetadataInfo</a> mdi;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="comment">// set the information properties</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    mdi.SetAuthor(<span class="stringliteral">&quot;Zhiqiang Yu&quot;</span>);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    mdi.SetClass(<span class="stringliteral">&quot;erosion&quot;</span>, <span class="stringliteral">&quot;Calculate the amount of sediment yield.&quot;</span>);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    mdi.SetDescription(<span class="stringliteral">&quot;use MUSLE method to calcualte sediment yield of each cell&quot;</span>);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    mdi.SetEmail(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    mdi.SetID(<span class="stringliteral">&quot;MUSLE_I30&quot;</span>);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    mdi.SetName(<span class="stringliteral">&quot;MUSLE_I30&quot;</span>);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    mdi.SetVersion(<span class="stringliteral">&quot;0.5&quot;</span>);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    mdi.SetWebsite(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    mdi.SetHelpfile(<span class="stringliteral">&quot;MUSLE_I30.chm&quot;</span>);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    mdi.AddParameter(<span class="stringliteral">&quot;cellwidth&quot;</span>, <span class="stringliteral">&quot;m&quot;</span>, <span class="stringliteral">&quot;the width (length) of cell&quot;</span>, <span class="stringliteral">&quot;mask.asc&quot;</span>, DT_Single);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    mdi.AddParameter(<span class="stringliteral">&quot;USLE_C&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;the cover management factor&quot;</span>, <span class="stringliteral">&quot;ParameterDB_Sediment&quot;</span>, DT_Raster1D);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    mdi.AddParameter(<span class="stringliteral">&quot;USLE_P&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;the erosion control practice factor &quot;</span>, <span class="stringliteral">&quot;ParameterDB_Sediment&quot;</span>, DT_Raster1D);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    mdi.AddParameter(<span class="stringliteral">&quot;USLE_K&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;the soil erodibility factor&quot;</span>, <span class="stringliteral">&quot;ParameterDB_Sediment&quot;</span>, DT_Raster1D);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    mdi.AddParameter(<span class="stringliteral">&quot;flow_acc&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;the number of flow accumulation cells of each cell&quot;</span>, <span class="stringliteral">&quot;ParameterDB_Sediment&quot;</span>,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                     DT_Raster1D);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    mdi.AddParameter(<span class="stringliteral">&quot;slope&quot;</span>, <span class="stringliteral">&quot;%&quot;</span>, <span class="stringliteral">&quot;slope of the cell&quot;</span>, <span class="stringliteral">&quot;ParameterDB_WaterBalance&quot;</span>, DT_Raster1D);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    mdi.AddParameter(<span class="stringliteral">&quot;T0_s&quot;</span>, <span class="stringliteral">&quot;hr&quot;</span>, <span class="stringliteral">&quot;time of concentration&quot;</span>, <span class="stringliteral">&quot;ParameterDB_Sediment&quot;</span>, DT_Raster1D);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    mdi.AddParameter(<span class="stringliteral">&quot;adj_pkr&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;peak rate adjustment factor&quot;</span>, <span class="stringliteral">&quot;ParameterDB_Sediment&quot;</span>, DT_Single);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    mdi.AddParameter(<span class="stringliteral">&quot;rain_yrs&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;number of yeares of data used to obtain values for RAINHHMX&quot;</span>,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                     <span class="stringliteral">&quot;ParameterDB_Sediment&quot;</span>, DT_Single);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    mdi.AddParameter(<span class="stringliteral">&quot;p_stat&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;static information of precipitation&quot;</span>, <span class="stringliteral">&quot;HydroclimateDB&quot;</span>, DT_Array2D);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">//input from other module</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    mdi.AddInput(<span class="stringliteral">&quot;D_SURU&quot;</span>, <span class="stringliteral">&quot;mm&quot;</span>, <span class="stringliteral">&quot;surface runoff&quot;</span>, <span class="stringliteral">&quot;Module&quot;</span>, DT_Raster1D);        <span class="comment">//from depression module</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    mdi.AddInput(<span class="stringliteral">&quot;D_SNAC&quot;</span>, <span class="stringliteral">&quot;mm&quot;</span>, <span class="stringliteral">&quot;snow accumulation&quot;</span>, <span class="stringliteral">&quot;Module&quot;</span>, DT_Raster1D);    <span class="comment">//from snow water balance module</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    mdi.AddInput(<span class="stringliteral">&quot;D_P&quot;</span>, <span class="stringliteral">&quot;mm&quot;</span>, <span class="stringliteral">&quot;precipitation&quot;</span>, <span class="stringliteral">&quot;Module&quot;</span>, DT_Raster1D);            <span class="comment">//from interpolation module</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    mdi.AddInput(<span class="stringliteral">&quot;D_SNME&quot;</span>, <span class="stringliteral">&quot;mm&quot;</span>, <span class="stringliteral">&quot;snow melt&quot;</span>, <span class="stringliteral">&quot;Module&quot;</span>, DT_Raster1D);            <span class="comment">//from snow melt module</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">// set the output variables</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    mdi.AddOutput(VAR_SOER, UNIT_KG, DESC_SOER, DT_Raster1D);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    mdi.AddOutput(VAR_USLE_LS, UNIT_NON_DIM, DESC_USLE_LS, DT_Raster1D);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    mdi.AddOutput(VAR_SANDYLD, UNIT_KG, DESC_SANDYLD, DT_Raster1D);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    mdi.AddOutput(VAR_SILTYLD, UNIT_KG, DESC_SILTYLD, DT_Raster1D);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    mdi.AddOutput(VAR_CLAYYLD, UNIT_KG, DESC_CLAYYLD, DT_Raster1D);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    mdi.AddOutput(VAR_SAGYLD, UNIT_KG, DESC_SAGYLD, DT_Raster1D);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    mdi.AddOutput(VAR_LAGYLD, UNIT_KG, DESC_LAGYLD, DT_Raster1D);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">// write out the XML file</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">string</span> res = mdi.GetXMLDocument();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">char</span>* tmp = <span class="keyword">new</span> <span class="keywordtype">char</span>[res.size() + 1];</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    strprintf(tmp, res.size() + 1, <span class="stringliteral">&quot;%s&quot;</span>, res.c_str());</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">return</span> tmp;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
-<div class="ttc" id="a00091_html"><div class="ttname"><a href="../../da/d82/a00091.html">MetadataInfo</a></div><div class="ttdoc">Metadata information of module. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/d87/a00456_source.html#l00122">MetadataInfo.h:122</a></div></div>
-<div class="ttc" id="a00151_html"><div class="ttname"><a href="../../dd/db2/a00151.html">SimulationModule</a></div><div class="ttdoc">Base module for all simulation modules in SEIMS. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/de0/a00465_source.html#l00042">SimulationModule.h:42</a></div></div>
-<div class="ttc" id="a00107_html"><div class="ttname"><a href="../../df/d98/a00107.html">MUSLE_AS</a></div><div class="ttdoc">use MUSLE method to calculate sediment yield of each cell </div><div class="ttdef"><b>Definition:</b> <a href="../../de/de7/a00550_source.html#l00025">MUSLE_AS.h:25</a></div></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    mdi.AddOutput(<span class="stringliteral">&quot;SOER&quot;</span>, <span class="stringliteral">&quot;metric tons&quot;</span>, <span class="stringliteral">&quot;distribution of soil erosion&quot;</span>, DT_Raster1D);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">// write out the XML file.</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">string</span> res = mdi.GetXMLDocument();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">char</span> *tmp = <span class="keyword">new</span> <span class="keywordtype">char</span>[res.size() + 1];</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    strprintf(tmp, res.size() + 1, <span class="stringliteral">&quot;%s&quot;</span>, res.c_str());</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">return</span> tmp;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
+<div class="ttc" id="a00091_html"><div class="ttname"><a href="../../da/d82/a00091.html">MetadataInfo</a></div><div class="ttdoc">Metadata information of module. </div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d63/a00455_source.html#l00122">MetadataInfo.h:122</a></div></div>
+<div class="ttc" id="a00150_html"><div class="ttname"><a href="../../d9/d7d/a00150.html">SimulationModule</a></div><div class="ttdoc">Base module for all simulation modules in SEIMS. </div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d9d/a00464_source.html#l00042">SimulationModule.h:42</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_b89a50a3d6b2f98326f9f3f569cfd788.html">modules</a></li><li class="navelem"><a class="el" href="../../dir_0416dddcf4ae60131836efd2402708ae.html">erosion</a></li><li class="navelem"><a class="el" href="../../dir_b627c2baceb35d13f78c327a406f023c.html">MUSLE_AS</a></li><li class="navelem"><b>api.cpp</b></li>
-    <li class="footer">Generated on Wed May 16 2018 14:09:47 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_b89a50a3d6b2f98326f9f3f569cfd788.html">modules</a></li><li class="navelem"><a class="el" href="../../dir_0416dddcf4ae60131836efd2402708ae.html">erosion</a></li><li class="navelem"><a class="el" href="../../dir_a8ef91848398976192253ddf3019617e.html">MUSLE_I30</a></li><li class="navelem"><b>api.cpp</b></li>
+    <li class="footer">Generated on Tue May 22 2018 08:17:30 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

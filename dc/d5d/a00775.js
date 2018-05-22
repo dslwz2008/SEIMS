@@ -1,5 +1,5 @@
 var a00775 =
 [
-    [ "ITP", "da/d96/a00782.html", "da/d96/a00782" ],
-    [ "TSD_RD", "dc/d0c/a00783.html", "dc/d0c/a00783" ]
+    [ "NPSMGT", "d6/d8b/a00821.html", "d6/d8b/a00821" ],
+    [ "PLTMGT_SWAT", "d6/da7/a00822.html", "d6/da7/a00822" ]
 ];

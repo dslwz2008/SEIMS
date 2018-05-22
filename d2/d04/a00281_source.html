@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims/preprocess/db_import_observed.py Source File</title>
+<title>SEIMS: seims_linux_gcc48/seims/preprocess/db_import_observed.py Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -136,8 +136,8 @@ $(document).ready(function(){initNavTree('d2/d04/a00281_source.html','../../');}
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">import</span> time</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">from</span> datetime <span class="keyword">import</span> timedelta</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">from</span> <a class="code" href="../../d5/d5b/a00695.html">pygeoc.raster</a> <span class="keyword">import</span> RasterUtilClass</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">from</span> <a class="code" href="../../df/d7d/a00696.html">pygeoc.utils</a> <span class="keyword">import</span> StringClass, FileClass</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">from</span> <a class="code" href="../../d1/d87/a00689.html">pygeoc.raster</a> <span class="keyword">import</span> RasterUtilClass</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">from</span> <a class="code" href="../../da/dd4/a00690.html">pygeoc.utils</a> <span class="keyword">import</span> StringClass, FileClass</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">from</span> preprocess.db_mongodb <span class="keyword">import</span> MongoUtil, MongoQuery</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">from</span> preprocess.hydro_climate_utility <span class="keyword">import</span> HydroClimateUtilClass</div>
@@ -145,7 +145,7 @@ $(document).ready(function(){initNavTree('d2/d04/a00281_source.html','../../');}
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">from</span> preprocess.utility <span class="keyword">import</span> read_data_items_from_txt</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="../../d1/d6f/a00063.html">   31</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d1/d6f/a00063.html">ImportObservedData</a>(object):</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">class </span>ImportObservedData(object):</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="stringliteral">    Import observed values for current model. The procedure including several steps:</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="stringliteral">        1. Read monitor station information, filter by LocalX and LocalY coordinates,</span></div>
@@ -428,19 +428,18 @@ $(document).ready(function(){initNavTree('d2/d04/a00281_source.html','../../');}
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;<span class="keywordflow">if</span> __name__ == <span class="stringliteral">&quot;__main__&quot;</span>:</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    main()</div>
-<div class="ttc" id="a00696_html"><div class="ttname"><a href="../../df/d7d/a00696.html">utils</a></div></div>
-<div class="ttc" id="a00063_html"><div class="ttname"><a href="../../d1/d6f/a00063.html">seims.preprocess.db_import_observed.ImportObservedData</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d04/a00281_source.html#l00031">db_import_observed.py:31</a></div></div>
-<div class="ttc" id="a00695_html"><div class="ttname"><a href="../../d5/d5b/a00695.html">raster</a></div></div>
-<div class="ttc" id="a00063_html_a8ef4290fb4e381f6a5b22cf504bad8d0"><div class="ttname"><a href="../../d1/d6f/a00063.html#a8ef4290fb4e381f6a5b22cf504bad8d0">seims.preprocess.db_import_observed.ImportObservedData.workflow</a></div><div class="ttdeci">def workflow</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d04/a00281_source.html#l00263">db_import_observed.py:263</a></div></div>
-<div class="ttc" id="a00063_html_a228f81d0e289431a741b6fa822257d95"><div class="ttname"><a href="../../d1/d6f/a00063.html#a228f81d0e289431a741b6fa822257d95">seims.preprocess.db_import_observed.ImportObservedData.data_from_txt</a></div><div class="ttdeci">def data_from_txt</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d04/a00281_source.html#l00069">db_import_observed.py:69</a></div></div>
-<div class="ttc" id="a00063_html_aad44260a37dec30020c17f1db5ead0e6"><div class="ttname"><a href="../../d1/d6f/a00063.html#aad44260a37dec30020c17f1db5ead0e6">seims.preprocess.db_import_observed.ImportObservedData.match_subbasin</a></div><div class="ttdeci">def match_subbasin</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d04/a00281_source.html#l00041">db_import_observed.py:41</a></div></div>
+<div class="ttc" id="a00690_html"><div class="ttname"><a href="../../da/dd4/a00690.html">utils</a></div></div>
+<div class="ttc" id="a00063_html_a8ef4290fb4e381f6a5b22cf504bad8d0"><div class="ttname"><a href="../../d1/d6f/a00063.html#a8ef4290fb4e381f6a5b22cf504bad8d0">seims.preprocess.db_import_observed.ImportObservedData.workflow</a></div><div class="ttdeci">def workflow</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/dcd/a00280_source.html#l00263">db_import_observed.py:263</a></div></div>
+<div class="ttc" id="a00689_html"><div class="ttname"><a href="../../d1/d87/a00689.html">raster</a></div></div>
+<div class="ttc" id="a00063_html_a228f81d0e289431a741b6fa822257d95"><div class="ttname"><a href="../../d1/d6f/a00063.html#a228f81d0e289431a741b6fa822257d95">seims.preprocess.db_import_observed.ImportObservedData.data_from_txt</a></div><div class="ttdeci">def data_from_txt</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/dcd/a00280_source.html#l00069">db_import_observed.py:69</a></div></div>
+<div class="ttc" id="a00063_html_aad44260a37dec30020c17f1db5ead0e6"><div class="ttname"><a href="../../d1/d6f/a00063.html#aad44260a37dec30020c17f1db5ead0e6">seims.preprocess.db_import_observed.ImportObservedData.match_subbasin</a></div><div class="ttdeci">def match_subbasin</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/dcd/a00280_source.html#l00041">db_import_observed.py:41</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_e83ca20770e7fbc90f1c071d86067ace.html">preprocess</a></li><li class="navelem"><b>db_import_observed.py</b></li>
-    <li class="footer">Generated on Wed May 16 2018 14:09:46 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_483bc1739a16b87563cca23e7a392c1e.html">seims_linux_gcc48</a></li><li class="navelem"><a class="el" href="../../dir_a45053e29f104e67e5be28f13679e3c2.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_88ee9ccb3eda13ad093e0105c15391c0.html">preprocess</a></li><li class="navelem"><b>db_import_observed.py</b></li>
+    <li class="footer">Generated on Tue May 22 2018 08:17:29 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

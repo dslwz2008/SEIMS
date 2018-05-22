@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: PI_MCS</title>
+<title>SEIMS: IUH_OL</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -108,38 +108,58 @@ $(document).ready(function(){initNavTree('d7/d0a/a00801.html','../../');});
   <div class="summary">
 <a href="#nested-classes">Classes</a>  </div>
   <div class="headertitle">
-<div class="title">PI_MCS<div class="ingroups"><a class="el" href="../../d9/dd4/a00776.html">Hydrology</a></div></div>  </div>
+<div class="title">IUH_OL<div class="ingroups"><a class="el" href="../../dd/de5/a00771.html">Hydrology_longterm</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Precipitation interception based on Maximum Canopy Storage Equation given by Aston(1979), Code adapted from openLISEM file: lisInterception.cpp This module is STORM_MODE and LONGTERM_MODE compatibility.  
+<p>IUH overland method to calculate overland flow routing.  
 <a href="#details">More...</a></p>
 <div class="dynheader">
-Collaboration diagram for PI_MCS:</div>
+Collaboration diagram for IUH_OL:</div>
 <div class="dyncontent">
 <center><table><tr><td><img src="../../d7/d0a/a00801.png" border="0" alt="" usemap="#d7_2d0a_2a00801"/>
 <map name="d7_2d0a_2a00801" id="d7_2d0a_2a00801">
-<area shape="rect" id="node2" href="../../d9/dd4/a00776.html" title="Hydrology related modules, include storm processes. " alt="" coords="6,4,101,33"/></map>
+<area shape="rect" id="node1" href="../../dd/de5/a00771.html" title="Longterm hydrology related modules. " alt="" coords="6,4,173,33"/></map>
 </td></tr></table></center>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/de2/a00024.html">clsPI_MCS</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class for Precipitation Interception module based on Maximum Canopy Storage.  <a href="../../dc/de2/a00024.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dec/a00080.html">IUH_OL</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">IUH overland method to calculate overland flow routing.  <a href="../../da/dec/a00080.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Precipitation interception based on Maximum Canopy Storage Equation given by Aston(1979), Code adapted from openLISEM file: lisInterception.cpp This module is STORM_MODE and LONGTERM_MODE compatibility. </p>
-<dl class="section author"><dt>Author</dt><dd>Liangjun Zhu </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>Apr 2017</dd></dl>
-<p>Module for Precipitation Interception module based on Maximum Canopy Storage. </p>
+<p>IUH overland method to calculate overland flow routing. </p>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Wu Hui </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>24-January-2011</dd></dl>
+<p>Revision: Zhiqiang YU Date: 2011-2-22 Description:</p>
+<ol type="1">
+<li>Add parameter CellWidth.</li>
+<li>Delete parameter uhminCell and uhmaxCell because the parameter Ol_iuh contains these information. The first and second column of Ol_iuh is min time and max time.</li>
+<li>The number of subbasins (m_nsub) should get from m_subbasin rather than from main program. So does variable m_nCells.</li>
+<li>Add variable m_iuhCols to store the number of columns of Ol_iuh. In the meantime, add one parameter nCols to function SetIUHCell.</li>
+<li>Add variable m_cellFlow to store the flow of each cell in each day between min time and max time. Its number of columns equals to the maximum of second column of Ol_iuh add 1.</li>
+<li>Add function initial to initialize some variables.</li>
+<li>Modify function Execute.</li>
+</ol>
+<p>Revision: Liang-Jun Zhu Date: 2016-7-29 Description:</p>
+<ol type="1">
+<li>Unify the code style.</li>
+<li>Replace VAR_SUBBASIN with VAR_SUBBASIN_PARAM, which is common used by several modules. Date: 2018-3-20 Description:</li>
+</ol>
+<ol type="1">
+<li>The length of subbasin related array should equal to the count of subbasins, for both mpi version and omp version.</li>
+<li>2017-8-23 lj Solve inconsistent results when using openmp to reducing raster data according to subbasin ID.</li>
+</ol>
+<p>IUH overland method to calculate overland flow routing </p>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed May 16 2018 14:09:48 for SEIMS by
+    <li class="footer">Generated on Tue May 22 2018 08:17:32 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

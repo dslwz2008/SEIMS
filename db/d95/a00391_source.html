@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims/src/grid_layering/GridLayeringDinf.cpp Source File</title>
+<title>SEIMS: seims/src/grid_layering/GridLayeringDinf.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -112,160 +112,51 @@ $(document).ready(function(){initNavTree('db/d95/a00391_source.html','../../');}
 
 <div class="header">
   <div class="headertitle">
-<div class="title">GridLayeringDinf.cpp</div>  </div>
+<div class="title">GridLayeringDinf.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;GridLayeringDinf.h&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;GridLayeringDinf::GridLayeringDinf(<span class="keyword">const</span> <span class="keywordtype">int</span> <span class="keywordtype">id</span>, MongoGridFs* gfs, <span class="keyword">const</span> <span class="keywordtype">char</span>* out_dir) :</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;    GridLayering(id, gfs, out_dir),</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    flow_angle_(nullptr),</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    angle_(nullptr), flow_in_angle_(nullptr),</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    flow_angle_name_(<span class="stringliteral">&quot;&quot;</span>), flowin_angle_name_(<span class="stringliteral">&quot;&quot;</span>) {</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keywordtype">string</span> prefix = ValueToString(subbasin_id_);</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    flowdir_name_ = prefix + <span class="stringliteral">&quot;_FLOW_DIR_DINF&quot;</span>;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    flow_angle_name_ = prefix + <span class="stringliteral">&quot;_FLOW_DIR_ANGLE_DINF&quot;</span>;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    flowin_index_name_ = prefix + <span class="stringliteral">&quot;_FLOWIN_INDEX_DINF&quot;</span>;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    flowin_angle_name_ = prefix + <span class="stringliteral">&quot;_FLOWIN_PERCENTAGE_DINF&quot;</span>;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    flowout_index_name_ = prefix + <span class="stringliteral">&quot;_FLOWOUT_INDEX_DINF&quot;</span>;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    layering_updown_name_ = prefix + <span class="stringliteral">&quot;_ROUTING_LAYERS_UP_DOWN_DINF&quot;</span>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    layering_downup_name_ = prefix + <span class="stringliteral">&quot;_ROUTING_LAYERS_DOWN_UP_DINF&quot;</span>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;GridLayeringDinf::~GridLayeringDinf() {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> != <a class="code" href="../../d2/d79/a00051.html#a1f1b5338e58c7a277f5d87c657a2370f">flow_angle_</a>) <span class="keyword">delete</span> <a class="code" href="../../d2/d79/a00051.html#a1f1b5338e58c7a277f5d87c657a2370f">flow_angle_</a>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> != <a class="code" href="../../d2/d79/a00051.html#a3998ba4ad7c547d426407dcb6845a6de">flow_in_angle_</a>) <span class="keyword">delete</span> <a class="code" href="../../d2/d79/a00051.html#a3998ba4ad7c547d426407dcb6845a6de">flow_in_angle_</a>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keywordtype">bool</span> GridLayeringDinf::LoadData() {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    flowdir_ = clsRasterData&lt;int&gt;::Init(gfs_, flowdir_name_.c_str(), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == flowdir_) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    n_rows_ = flowdir_-&gt;GetRows();</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    n_cols_ = flowdir_-&gt;GetCols();</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    dir_nodata_ = flowdir_-&gt;GetNoDataValue();</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    flowdir_matrix_ = flowdir_-&gt;GetRasterDataPointer();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">if</span> (dir_nodata_ != out_nodata_) flowdir_-&gt;ReplaceNoData(out_nodata_);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="../../d2/d79/a00051.html#a1f1b5338e58c7a277f5d87c657a2370f">flow_angle_</a> = clsRasterData&lt;float&gt;::Init(gfs_, <a class="code" href="../../d2/d79/a00051.html#acddeb0771c1d005a9f216a4c18ae6b69">flow_angle_name_</a>.c_str(), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == <a class="code" href="../../d2/d79/a00051.html#a1f1b5338e58c7a277f5d87c657a2370f">flow_angle_</a>) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="../../d2/d79/a00051.html#a70651559f6251e6c7fab1151e1f5eefd">angle_</a> = <a class="code" href="../../d2/d79/a00051.html#a1f1b5338e58c7a277f5d87c657a2370f">flow_angle_</a>-&gt;GetRasterDataPointer();</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="../../d2/d79/a00051.html#afee1b80a702aaef166af777cb7ecb03c">   38</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d2/d79/a00051.html#afee1b80a702aaef166af777cb7ecb03c">GridLayeringDinf::BuildMultiFlowOutAngleArray</a>(<span class="keywordtype">int</span>*&amp; compressed_dir,</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                                   <span class="keywordtype">int</span>*&amp; connect_count, <span class="keywordtype">float</span>*&amp; p_output) {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    p_output[0] = CVT_FLT(n_valid_cells_);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">int</span> counter = 1;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; n_rows_; i++) {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; n_cols_; j++) {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keywordtype">int</span> index = i * n_cols_ + j;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keywordflow">if</span> (pos_index_[index] &lt; 0) <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            p_output[counter++] = CVT_FLT(connect_count[index]);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordtype">int</span> acc_flowin_dir = compressed_dir[index];</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordflow">if</span> (acc_flowin_dir &amp; 1) {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <span class="keywordflow">if</span> (j != n_cols_ - 1 &amp;&amp; compressed_dir[index + 1] != dir_nodata_) {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                    p_output[counter++] = <a class="code" href="../../d2/d79/a00051.html#ac0f926952893b430ba994197624d947f">GetPercentage</a>(<a class="code" href="../../d2/d79/a00051.html#a70651559f6251e6c7fab1151e1f5eefd">angle_</a>[index + 1], 0, 1);;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                }</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            }</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordflow">if</span> (acc_flowin_dir &amp; 2) {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="keywordflow">if</span> (i != n_rows_ - 1 &amp;&amp; j != n_cols_ - 1 &amp;&amp;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                    compressed_dir[index + n_cols_ + 1] != dir_nodata_) {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                    p_output[counter++] = <a class="code" href="../../d2/d79/a00051.html#ac0f926952893b430ba994197624d947f">GetPercentage</a>(<a class="code" href="../../d2/d79/a00051.html#a70651559f6251e6c7fab1151e1f5eefd">angle_</a>[index + n_cols_ + 1], 1, 1);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keywordflow">if</span> (acc_flowin_dir &amp; 4) {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <span class="keywordflow">if</span> (i != n_rows_ - 1 &amp;&amp; compressed_dir[index + n_cols_] != dir_nodata_) {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                    p_output[counter++] = <a class="code" href="../../d2/d79/a00051.html#ac0f926952893b430ba994197624d947f">GetPercentage</a>(<a class="code" href="../../d2/d79/a00051.html#a70651559f6251e6c7fab1151e1f5eefd">angle_</a>[index + n_cols_], 1, 0);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="keywordflow">if</span> (acc_flowin_dir &amp; 8) {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <span class="keywordflow">if</span> (i != n_rows_ - 1 &amp;&amp; j != 0 &amp;&amp; compressed_dir[index + n_cols_ - 1] != dir_nodata_) {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                    p_output[counter++] = <a class="code" href="../../d2/d79/a00051.html#ac0f926952893b430ba994197624d947f">GetPercentage</a>(<a class="code" href="../../d2/d79/a00051.html#a70651559f6251e6c7fab1151e1f5eefd">angle_</a>[index + n_cols_ - 1], 1, -1);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            }</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="keywordflow">if</span> (acc_flowin_dir &amp; 16) {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <span class="keywordflow">if</span> (j != 0 &amp;&amp; compressed_dir[index - 1] != dir_nodata_) {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                    p_output[counter++] = <a class="code" href="../../d2/d79/a00051.html#ac0f926952893b430ba994197624d947f">GetPercentage</a>(<a class="code" href="../../d2/d79/a00051.html#a70651559f6251e6c7fab1151e1f5eefd">angle_</a>[index - 1], 0, -1);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                }</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keywordflow">if</span> (acc_flowin_dir &amp; 32) {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <span class="keywordflow">if</span> (i != 0 &amp;&amp; j != 0 &amp;&amp; compressed_dir[index - n_cols_ - 1] != dir_nodata_) {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                    p_output[counter++] = <a class="code" href="../../d2/d79/a00051.html#ac0f926952893b430ba994197624d947f">GetPercentage</a>(<a class="code" href="../../d2/d79/a00051.html#a70651559f6251e6c7fab1151e1f5eefd">angle_</a>[index - n_cols_ - 1], -1, -1);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            }</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="keywordflow">if</span> (acc_flowin_dir &amp; 64) {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                <span class="keywordflow">if</span> (i != 0 &amp;&amp; compressed_dir[index - n_cols_] != dir_nodata_) {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                    p_output[counter++] = <a class="code" href="../../d2/d79/a00051.html#ac0f926952893b430ba994197624d947f">GetPercentage</a>(<a class="code" href="../../d2/d79/a00051.html#a70651559f6251e6c7fab1151e1f5eefd">angle_</a>[index - n_cols_], -1, 0);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                }</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            }</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="keywordflow">if</span> (acc_flowin_dir &amp; 128) {</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <span class="keywordflow">if</span> (i != 0 &amp;&amp; j != n_cols_ - 1 &amp;&amp; compressed_dir[index - n_cols_ + 1] != dir_nodata_) {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                    p_output[counter++] = <a class="code" href="../../d2/d79/a00051.html#ac0f926952893b430ba994197624d947f">GetPercentage</a>(<a class="code" href="../../d2/d79/a00051.html#a70651559f6251e6c7fab1151e1f5eefd">angle_</a>[index - n_cols_ + 1], -1, 1);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                }</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            }</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        }</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keywordtype">bool</span> GridLayeringDinf::OutputFlowIn() {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    GetReverseDirMatrix();</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    CountFlowInCells();</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    BuildFlowInCellsArray();</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">string</span> header = <span class="stringliteral">&quot;ID\tUpstreamCount\tUpstreamID&quot;</span>;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordtype">int</span> datalength = n_valid_cells_ + flow_in_count_ + 1;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">bool</span> flag1 = Output2DimensionArrayTxt(flowin_index_name_, header, flow_in_cells_) &amp;&amp;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            OutputArrayAsGfs(flowin_index_name_, datalength, flow_in_cells_);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == <a class="code" href="../../d2/d79/a00051.html#a3998ba4ad7c547d426407dcb6845a6de">flow_in_angle_</a>) Initialize1DArray(datalength, <a class="code" href="../../d2/d79/a00051.html#a3998ba4ad7c547d426407dcb6845a6de">flow_in_angle_</a>, 0.f);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    this-&gt;<a class="code" href="../../d2/d79/a00051.html#afee1b80a702aaef166af777cb7ecb03c">BuildMultiFlowOutAngleArray</a>(flowdir_matrix_, flow_in_num_, <a class="code" href="../../d2/d79/a00051.html#a3998ba4ad7c547d426407dcb6845a6de">flow_in_angle_</a>);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    header = <span class="stringliteral">&quot;ID\tUpstreamCount\tFlowInPartition&quot;</span>;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordtype">bool</span> flag2 = Output2DimensionArrayTxt(<a class="code" href="../../d2/d79/a00051.html#a656b6eb1c27e1cfa26a872e2d57281ae">flowin_angle_name_</a>, header, <a class="code" href="../../d2/d79/a00051.html#a3998ba4ad7c547d426407dcb6845a6de">flow_in_angle_</a>) &amp;&amp;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            OutputArrayAsGfs(<a class="code" href="../../d2/d79/a00051.html#a656b6eb1c27e1cfa26a872e2d57281ae">flowin_angle_name_</a>, datalength, <a class="code" href="../../d2/d79/a00051.html#a3998ba4ad7c547d426407dcb6845a6de">flow_in_angle_</a>);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">return</span> flag1 &amp;&amp; flag2;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="keywordtype">bool</span> GridLayeringDinf::OutputFlowOut() {</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    CountFlowOutCells();</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    BuildFlowOutCellsArray();</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordtype">string</span> header = <span class="stringliteral">&quot;ID\tDownstreamCount\tDownstreamID&quot;</span>;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordtype">int</span> datalength = n_valid_cells_ + flow_out_count_ + 1;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">return</span> Output2DimensionArrayTxt(flowout_index_name_, header, flow_out_cells_) &amp;&amp;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            OutputArrayAsGfs(flowout_index_name_, datalength, flow_out_cells_);</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;}</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
-<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="../../d2/d79/a00051.html#ac0f926952893b430ba994197624d947f">  122</a></span>&#160;<span class="keywordtype">float</span> <a class="code" href="../../d2/d79/a00051.html#ac0f926952893b430ba994197624d947f">GridLayeringDinf::GetPercentage</a>(<span class="keyword">const</span> <span class="keywordtype">float</span> angle, <span class="keyword">const</span> <span class="keywordtype">int</span> di, <span class="keyword">const</span> <span class="keywordtype">int</span> dj) {</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordtype">float</span> a = 4.f * angle / PI;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordtype">int</span> n = int(a) % 7;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordtype">float</span> r = a - n;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordflow">switch</span> (n) {</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keywordflow">case</span> 0: { <span class="keywordflow">return</span> di != 0 ? r : 1 - r; }</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keywordflow">case</span> 1: { <span class="keywordflow">return</span> dj == 0 ? r : 1 - r; }</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keywordflow">case</span> 2: { <span class="keywordflow">return</span> dj != 0 ? r : 1 - r; }</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keywordflow">case</span> 3: { <span class="keywordflow">return</span> di == 0 ? r : 1 - r; }</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keywordflow">case</span> 4: { <span class="keywordflow">return</span> di != 0 ? r : 1 - r; }</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keywordflow">case</span> 5: { <span class="keywordflow">return</span> dj == 0 ? r : 1 - r; }</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="keywordflow">case</span> 6: { <span class="keywordflow">return</span> dj != 0 ? r : 1 - r; }</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="keywordflow">case</span> 7: { <span class="keywordflow">return</span> di == 0 ? r : 1 - r; }</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="keywordflow">default</span>: {</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            cout &lt;&lt; <span class="stringliteral">&quot;Invalid angle value: &quot;</span> &lt;&lt; angle &lt;&lt; endl;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            exit(-1);</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        }</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    }</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;}</div>
-<div class="ttc" id="a00051_html_ac0f926952893b430ba994197624d947f"><div class="ttname"><a href="../../d2/d79/a00051.html#ac0f926952893b430ba994197624d947f">GridLayeringDinf::GetPercentage</a></div><div class="ttdeci">static float GetPercentage(float angle, int di, int dj)</div><div class="ttdoc">Get flow partition of Dinf model in delta row (i) and delta col (j) </div><div class="ttdef"><b>Definition:</b> <a href="../../db/d95/a00391_source.html#l00122">GridLayeringDinf.cpp:122</a></div></div>
-<div class="ttc" id="a00051_html_a1f1b5338e58c7a277f5d87c657a2370f"><div class="ttname"><a href="../../d2/d79/a00051.html#a1f1b5338e58c7a277f5d87c657a2370f">GridLayeringDinf::flow_angle_</a></div><div class="ttdeci">FloatRaster * flow_angle_</div><div class="ttdoc">Flow direction in radiation. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d27/a00392_source.html#l00036">GridLayeringDinf.h:36</a></div></div>
-<div class="ttc" id="a00051_html_a70651559f6251e6c7fab1151e1f5eefd"><div class="ttname"><a href="../../d2/d79/a00051.html#a70651559f6251e6c7fab1151e1f5eefd">GridLayeringDinf::angle_</a></div><div class="ttdeci">float * angle_</div><div class="ttdoc">Flow angle array. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d27/a00392_source.html#l00037">GridLayeringDinf.h:37</a></div></div>
-<div class="ttc" id="a00051_html_acddeb0771c1d005a9f216a4c18ae6b69"><div class="ttname"><a href="../../d2/d79/a00051.html#acddeb0771c1d005a9f216a4c18ae6b69">GridLayeringDinf::flow_angle_name_</a></div><div class="ttdeci">string flow_angle_name_</div><div class="ttdoc">Dinf flow direction name. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d27/a00392_source.html#l00040">GridLayeringDinf.h:40</a></div></div>
-<div class="ttc" id="a00051_html_afee1b80a702aaef166af777cb7ecb03c"><div class="ttname"><a href="../../d2/d79/a00051.html#afee1b80a702aaef166af777cb7ecb03c">GridLayeringDinf::BuildMultiFlowOutAngleArray</a></div><div class="ttdeci">void BuildMultiFlowOutAngleArray(int *&amp;compressed_dir, int *&amp;connect_count, float *&amp;p_output)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d95/a00391_source.html#l00038">GridLayeringDinf.cpp:38</a></div></div>
-<div class="ttc" id="a00051_html_a656b6eb1c27e1cfa26a872e2d57281ae"><div class="ttname"><a href="../../d2/d79/a00051.html#a656b6eb1c27e1cfa26a872e2d57281ae">GridLayeringDinf::flowin_angle_name_</a></div><div class="ttdeci">string flowin_angle_name_</div><div class="ttdoc">Output of flow in partition. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d27/a00392_source.html#l00041">GridLayeringDinf.h:41</a></div></div>
-<div class="ttc" id="a00051_html_a3998ba4ad7c547d426407dcb6845a6de"><div class="ttname"><a href="../../d2/d79/a00051.html#a3998ba4ad7c547d426407dcb6845a6de">GridLayeringDinf::flow_in_angle_</a></div><div class="ttdeci">float * flow_in_angle_</div><div class="ttdoc">Flow in partition,. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d27/a00392_source.html#l00038">GridLayeringDinf.h:38</a></div></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef GRID_LAYERING_DINF_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define GRID_LAYERING_DINF_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;GridLayering.h&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="../../d2/d79/a00051.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d2/d79/a00051.html">GridLayeringDinf</a>: <span class="keyword">public</span> GridLayering {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="../../d2/d79/a00051.html">GridLayeringDinf</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, MongoGridFs* gfs, <span class="keyword">const</span> <span class="keywordtype">char</span>* out_dir);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="../../d2/d79/a00051.html">GridLayeringDinf</a>();</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">bool</span> LoadData() OVERRIDE;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">bool</span> OutputFlowIn() OVERRIDE;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">bool</span> OutputFlowOut() OVERRIDE;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">float</span> <a class="code" href="../../d2/d79/a00051.html#ac0f926952893b430ba994197624d947f">GetPercentage</a>(<span class="keywordtype">float</span> angle, <span class="keywordtype">int</span> di, <span class="keywordtype">int</span> dj);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d2/d79/a00051.html#afee1b80a702aaef166af777cb7ecb03c">BuildMultiFlowOutAngleArray</a>(<span class="keywordtype">int</span>*&amp; compressed_dir,</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                                     <span class="keywordtype">int</span>*&amp; connect_count, <span class="keywordtype">float</span>*&amp; p_output);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="../../d2/d79/a00051.html#a1f1b5338e58c7a277f5d87c657a2370f">   36</a></span>&#160;    FloatRaster* <a class="code" href="../../d2/d79/a00051.html#a1f1b5338e58c7a277f5d87c657a2370f">flow_angle_</a>; </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="../../d2/d79/a00051.html#a70651559f6251e6c7fab1151e1f5eefd">   37</a></span>&#160;    <span class="keywordtype">float</span>* <a class="code" href="../../d2/d79/a00051.html#a70651559f6251e6c7fab1151e1f5eefd">angle_</a>;            </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="../../d2/d79/a00051.html#a3998ba4ad7c547d426407dcb6845a6de">   38</a></span>&#160;    <span class="keywordtype">float</span>* <a class="code" href="../../d2/d79/a00051.html#a3998ba4ad7c547d426407dcb6845a6de">flow_in_angle_</a>;    </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="../../d2/d79/a00051.html#acddeb0771c1d005a9f216a4c18ae6b69">   40</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="../../d2/d79/a00051.html#acddeb0771c1d005a9f216a4c18ae6b69">flow_angle_name_</a>;   </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="../../d2/d79/a00051.html#a656b6eb1c27e1cfa26a872e2d57281ae">   41</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="../../d2/d79/a00051.html#a656b6eb1c27e1cfa26a872e2d57281ae">flowin_angle_name_</a>; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;};</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* GRID_LAYERING_DINF_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="a00051_html_ac0f926952893b430ba994197624d947f"><div class="ttname"><a href="../../d2/d79/a00051.html#ac0f926952893b430ba994197624d947f">GridLayeringDinf::GetPercentage</a></div><div class="ttdeci">static float GetPercentage(float angle, int di, int dj)</div><div class="ttdoc">Get flow partition of Dinf model in delta row (i) and delta col (j) </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d0a/a00390_source.html#l00122">GridLayeringDinf.cpp:122</a></div></div>
+<div class="ttc" id="a00051_html_a1f1b5338e58c7a277f5d87c657a2370f"><div class="ttname"><a href="../../d2/d79/a00051.html#a1f1b5338e58c7a277f5d87c657a2370f">GridLayeringDinf::flow_angle_</a></div><div class="ttdeci">FloatRaster * flow_angle_</div><div class="ttdoc">Flow direction in radiation. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/d95/a00391_source.html#l00036">GridLayeringDinf.h:36</a></div></div>
+<div class="ttc" id="a00051_html_a70651559f6251e6c7fab1151e1f5eefd"><div class="ttname"><a href="../../d2/d79/a00051.html#a70651559f6251e6c7fab1151e1f5eefd">GridLayeringDinf::angle_</a></div><div class="ttdeci">float * angle_</div><div class="ttdoc">Flow angle array. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/d95/a00391_source.html#l00037">GridLayeringDinf.h:37</a></div></div>
+<div class="ttc" id="a00051_html_acddeb0771c1d005a9f216a4c18ae6b69"><div class="ttname"><a href="../../d2/d79/a00051.html#acddeb0771c1d005a9f216a4c18ae6b69">GridLayeringDinf::flow_angle_name_</a></div><div class="ttdeci">string flow_angle_name_</div><div class="ttdoc">Dinf flow direction name. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/d95/a00391_source.html#l00040">GridLayeringDinf.h:40</a></div></div>
+<div class="ttc" id="a00051_html_afee1b80a702aaef166af777cb7ecb03c"><div class="ttname"><a href="../../d2/d79/a00051.html#afee1b80a702aaef166af777cb7ecb03c">GridLayeringDinf::BuildMultiFlowOutAngleArray</a></div><div class="ttdeci">void BuildMultiFlowOutAngleArray(int *&amp;compressed_dir, int *&amp;connect_count, float *&amp;p_output)</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d0a/a00390_source.html#l00038">GridLayeringDinf.cpp:38</a></div></div>
+<div class="ttc" id="a00051_html_a656b6eb1c27e1cfa26a872e2d57281ae"><div class="ttname"><a href="../../d2/d79/a00051.html#a656b6eb1c27e1cfa26a872e2d57281ae">GridLayeringDinf::flowin_angle_name_</a></div><div class="ttdeci">string flowin_angle_name_</div><div class="ttdoc">Output of flow in partition. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/d95/a00391_source.html#l00041">GridLayeringDinf.h:41</a></div></div>
+<div class="ttc" id="a00051_html"><div class="ttname"><a href="../../d2/d79/a00051.html">GridLayeringDinf</a></div><div class="ttdoc">Grid layering based on Dinf model. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/d95/a00391_source.html#l00013">GridLayeringDinf.h:13</a></div></div>
+<div class="ttc" id="a00051_html_a3998ba4ad7c547d426407dcb6845a6de"><div class="ttname"><a href="../../d2/d79/a00051.html#a3998ba4ad7c547d426407dcb6845a6de">GridLayeringDinf::flow_in_angle_</a></div><div class="ttdeci">float * flow_in_angle_</div><div class="ttdoc">Flow in partition,. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/d95/a00391_source.html#l00038">GridLayeringDinf.h:38</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_e18f81762effd1d09ce50d10289caf24.html">grid_layering</a></li><li class="navelem"><b>GridLayeringDinf.cpp</b></li>
-    <li class="footer">Generated on Wed May 16 2018 14:09:46 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_e18f81762effd1d09ce50d10289caf24.html">grid_layering</a></li><li class="navelem"><b>GridLayeringDinf.h</b></li>
+    <li class="footer">Generated on Tue May 22 2018 08:17:30 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

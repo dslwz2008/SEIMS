@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims/src/seims_main/main/main_mpi/main.cpp Source File</title>
+<title>SEIMS: seims/src/seims_main/main/main_omp/main.cpp Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -123,111 +123,66 @@ $(document).ready(function(){initNavTree('dd/dcb/a00375_source.html','../../');}
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define USE_MONGODB</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif </span><span class="comment">/* USE_MONGODB */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;parallel.h&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;text.h&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keyword">const</span> <span class="keywordtype">char</span>** argv) {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="../../d0/d89/a00071.html">InputArgs</a>* input_args = <a class="code" href="../../d0/d89/a00071.html#aea43417dd8b7fcf7db22292cbcb7663c">InputArgs::Init</a>(argc, argv);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == input_args) { exit(EXIT_FAILURE); }</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    GDALAllRegister();</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">int</span> numprocs;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">int</span> world_rank;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">int</span> name_len;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">char</span> processor_name[MPI_MAX_PROCESSOR_NAME];</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    MPI_Init(NULL, NULL);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        MPI_Comm_size(MCW, &amp;numprocs);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        MPI_Comm_rank(MCW, &amp;world_rank);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        MPI_Get_processor_name(processor_name, &amp;name_len);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        MPI_Group MPI_GROUP_WORLD, slave_group;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        MPI_Comm slave_comm;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        MPI_Comm_group(MCW, &amp;MPI_GROUP_WORLD);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="comment">// create the master, transfer and calculation groups</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">int</span> not_slave_ranks[] = {MASTER_RANK};</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="comment">// create slaveGroup which exclude the master rank (i.e., notSlaveRanks)</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        MPI_Group_excl(MPI_GROUP_WORLD, 1, not_slave_ranks, &amp;slave_group);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        MPI_Comm_create(MCW, slave_group, &amp;slave_comm);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordflow">if</span> (numprocs &lt; 2) {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            cout &lt;&lt; <span class="stringliteral">&quot;The number of processors must be greater than 1!&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            MPI_Abort(MCW, 1);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordtype">int</span> nslaves = numprocs - 1;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keywordflow">if</span> (world_rank == MASTER_RANK) {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                MongoClient* mclient = MongoClient::Init(input_args-&gt;<a class="code" href="../../d0/d89/a00071.html#a9f6003f25dafa748bc2b333302e02524">host_ip</a>, input_args-&gt;<a class="code" href="../../d0/d89/a00071.html#ad7e3d223d5cedfc497884451e149aa2c">port</a>);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == mclient) {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                    cout &lt;&lt; <span class="stringliteral">&quot;Connect to MongoDB (&quot;</span> &lt;&lt; input_args-&gt;<a class="code" href="../../d0/d89/a00071.html#a9f6003f25dafa748bc2b333302e02524">host_ip</a></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                            &lt;&lt; <span class="stringliteral">&quot;:&quot;</span> &lt;&lt; input_args-&gt;<a class="code" href="../../d0/d89/a00071.html#ad7e3d223d5cedfc497884451e149aa2c">port</a> &lt;&lt; <span class="stringliteral">&quot;) failed!&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                    MPI_Abort(MCW, 2);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                }</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                <span class="comment">// read river topology data</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                map&lt;int, SubbasinStruct *&gt; subbasin_map;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                set&lt;int&gt; group_set;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <span class="keywordtype">string</span> group_method = REACH_KMETIS; <span class="comment">// by default</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="keywordflow">if</span> (CreateReachTopology(mclient, input_args-&gt;<a class="code" href="../../d0/d89/a00071.html#ae9b5e683c6560164cd06ed85f556bcf7">model_name</a>, group_method,</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                        nslaves, subbasin_map, group_set) != 0) {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                    cout &lt;&lt; <span class="stringliteral">&quot;Read and create reaches topology information failed.&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                    MPI_Abort(MCW, 1);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <span class="keyword">delete</span> mclient;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <span class="keywordflow">if</span> (<span class="keywordtype">size_t</span>(nslaves) != group_set.size()) {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                    group_set.clear();</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                    cout &lt;&lt; <span class="stringliteral">&quot;The number of slave processes (&quot;</span> &lt;&lt; nslaves &lt;&lt; <span class="stringliteral">&quot;) is not consist with the group number(&quot;</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                            &lt;&lt; group_set.size() &lt;&lt; <span class="stringliteral">&quot;).&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                    MPI_Abort(MCW, 1);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                <span class="comment">// Run management process on master rank</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                MasterProcess(subbasin_map, group_set);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <span class="comment">// Release memory</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = subbasin_map.begin(); it != subbasin_map.end();) {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                    <span class="keyword">delete</span> it-&gt;second;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                    subbasin_map.erase(it++);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                }</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <span class="comment">// Run computing process on slave ranks</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                CalculateProcess(world_rank, numprocs, nslaves, slave_comm, input_args);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            }</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            MPI_Barrier(MCW);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <span class="comment">// free MPI sources</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            MPI_Group_free(&amp;MPI_GROUP_WORLD);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            MPI_Group_free(&amp;slave_group);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="comment">// VS2013: Fatal error in MPI_Comm_free: Invalid communicator, error stack.</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="comment">// I still think the communicator should be released. by lj.</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="comment">// MPI_Comm_free(&amp;slaveComm);</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        } <span class="keywordflow">catch</span> (<a class="code" href="../../d9/df8/a00096.html">ModelException</a>&amp; e) {</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            cout &lt;&lt; e.<a class="code" href="../../d9/df8/a00096.html#addf4a42bb2101c234648c2128089ec3e">what</a>() &lt;&lt; endl;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            MPI_Abort(MCW, 3);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        }</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">catch</span> (std::exception&amp; e) {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            cout &lt;&lt; e.what() &lt;&lt; endl;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            MPI_Abort(MCW, 4);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            cout &lt;&lt; <span class="stringliteral">&quot;Unknown exception occurred!&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            MPI_Abort(MCW, 5);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        }</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keyword">delete</span> input_args;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    MPI_Finalize();</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
-<div class="ttc" id="a00096_html_addf4a42bb2101c234648c2128089ec3e"><div class="ttname"><a href="../../d9/df8/a00096.html#addf4a42bb2101c234648c2128089ec3e">ccgl::ModelException::what</a></div><div class="ttdeci">const char * what() const NOEXCEPT OVERRIDE</div><div class="ttdoc">Overload function to construct error information. </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d23/a00326_source.html#l00042">basic.cpp:42</a></div></div>
-<div class="ttc" id="a00096_html"><div class="ttname"><a href="../../d9/df8/a00096.html">ccgl::ModelException</a></div><div class="ttdoc">Print the exception message. </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dfc/a00327_source.html#l00312">basic.h:312</a></div></div>
-<div class="ttc" id="a00071_html_aea43417dd8b7fcf7db22292cbcb7663c"><div class="ttname"><a href="../../d0/d89/a00071.html#aea43417dd8b7fcf7db22292cbcb7663c">InputArgs::Init</a></div><div class="ttdeci">static InputArgs * Init(int argc, const char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/dc3/a00453_source.html#l00003">invoke.cpp:3</a></div></div>
-<div class="ttc" id="a00071_html_ad7e3d223d5cedfc497884451e149aa2c"><div class="ttname"><a href="../../d0/d89/a00071.html#ad7e3d223d5cedfc497884451e149aa2c">InputArgs::port</a></div><div class="ttdeci">uint16_t port</div><div class="ttdoc">port of MongoDB, 27017 is default </div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d9f/a00454_source.html#l00030">invoke.h:30</a></div></div>
-<div class="ttc" id="a00071_html_a9f6003f25dafa748bc2b333302e02524"><div class="ttname"><a href="../../d0/d89/a00071.html#a9f6003f25dafa748bc2b333302e02524">InputArgs::host_ip</a></div><div class="ttdeci">char host_ip[16]</div><div class="ttdoc">Host IP address of MongoDB database. </div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d9f/a00454_source.html#l00029">invoke.h:29</a></div></div>
-<div class="ttc" id="a00071_html_ae9b5e683c6560164cd06ed85f556bcf7"><div class="ttname"><a href="../../d0/d89/a00071.html#ae9b5e683c6560164cd06ed85f556bcf7">InputArgs::model_name</a></div><div class="ttdeci">string model_name</div><div class="ttdoc">model_name </div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d9f/a00454_source.html#l00028">invoke.h:28</a></div></div>
-<div class="ttc" id="a00071_html"><div class="ttname"><a href="../../d0/d89/a00071.html">InputArgs</a></div><div class="ttdoc">Parse the input arguments of SEIMS. </div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d9f/a00454_source.html#l00018">invoke.h:18</a></div></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;basic.h&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;seims.h&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;invoke.h&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;ModelMain.h&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keyword">const</span> <span class="keywordtype">char</span>** argv) {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="../../d0/d89/a00071.html">InputArgs</a>* input_args = <a class="code" href="../../d0/d89/a00071.html#aea43417dd8b7fcf7db22292cbcb7663c">InputArgs::Init</a>(argc, argv);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == input_args) { exit(EXIT_FAILURE); }</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    GDALAllRegister();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordtype">string</span> module_path = GetAppPath();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        MongoClient* mongo_client = MongoClient::Init(input_args-&gt;<a class="code" href="../../d0/d89/a00071.html#a9f6003f25dafa748bc2b333302e02524">host_ip</a>, input_args-&gt;<a class="code" href="../../d0/d89/a00071.html#ad7e3d223d5cedfc497884451e149aa2c">port</a>);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == mongo_client) {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="../../d9/df8/a00096.html">ModelException</a>(<span class="stringliteral">&quot;MongoDBClient&quot;</span>, <span class="stringliteral">&quot;Constructor&quot;</span>, <span class="stringliteral">&quot;Failed to connect to MongoDB!&quot;</span>);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        ModuleFactory* module_factory = ModuleFactory::Init(module_path, input_args);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == module_factory) {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="../../d9/df8/a00096.html">ModelException</a>(<span class="stringliteral">&quot;ModuleFactory&quot;</span>, <span class="stringliteral">&quot;Constructor&quot;</span>, <span class="stringliteral">&quot;Failed in constructing ModuleFactory!&quot;</span>);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="../../de/d8c/a00036.html">DataCenterMongoDB</a>* data_center = <span class="keyword">new</span> <a class="code" href="../../de/d8c/a00036.html">DataCenterMongoDB</a>(input_args, mongo_client, module_factory);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="../../d1/d84/a00097.html">ModelMain</a>* model_main = <span class="keyword">new</span> <a class="code" href="../../d1/d84/a00097.html">ModelMain</a>(data_center, module_factory);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        model_main-&gt;<a class="code" href="../../d1/d84/a00097.html#a37fd70bd42f4184fdef228ab53678318">Execute</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        model_main-&gt;<a class="code" href="../../d1/d84/a00097.html#af0fea434e96cdfb449e530671408c860">Output</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keyword">delete</span> model_main;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keyword">delete</span> data_center;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keyword">delete</span> module_factory;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keyword">delete</span> mongo_client;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keyword">delete</span> input_args;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    } <span class="keywordflow">catch</span> (<a class="code" href="../../d9/df8/a00096.html">ModelException</a>&amp; e) {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        cout &lt;&lt; e.<a class="code" href="../../d9/df8/a00096.html#a5d61b4959ddd7ffdc1e1b87dd3adddae">ToString</a>() &lt;&lt; endl;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        exit(EXIT_FAILURE);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">catch</span> (std::exception&amp; e) {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        cout &lt;&lt; e.what() &lt;&lt; endl;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        exit(EXIT_FAILURE);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">catch</span> (...) {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;Unknown exception occurred!&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        exit(EXIT_FAILURE);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
+<div class="ttc" id="a00097_html_af0fea434e96cdfb449e530671408c860"><div class="ttname"><a href="../../d1/d84/a00097.html#af0fea434e96cdfb449e530671408c860">ModelMain::Output</a></div><div class="ttdeci">double Output()</div><div class="ttdoc">Write output files, e.g., Q.txt, return time-consuming (s). </div><div class="ttdef"><b>Definition:</b> <a href="../../d7/db5/a00472_source.html#l00174">ModelMain.cpp:174</a></div></div>
+<div class="ttc" id="a00096_html"><div class="ttname"><a href="../../d9/df8/a00096.html">ccgl::ModelException</a></div><div class="ttdoc">Print the exception message. </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d23/a00326_source.html#l00312">basic.h:312</a></div></div>
+<div class="ttc" id="a00096_html_a5d61b4959ddd7ffdc1e1b87dd3adddae"><div class="ttname"><a href="../../d9/df8/a00096.html#a5d61b4959ddd7ffdc1e1b87dd3adddae">ccgl::ModelException::ToString</a></div><div class="ttdeci">string ToString()</div><div class="ttdoc">Construct error information (string version) </div><div class="ttdef"><b>Definition:</b> <a href="../../de/dc8/a00325_source.html#l00038">basic.cpp:38</a></div></div>
+<div class="ttc" id="a00097_html_a37fd70bd42f4184fdef228ab53678318"><div class="ttname"><a href="../../d1/d84/a00097.html#a37fd70bd42f4184fdef228ab53678318">ModelMain::Execute</a></div><div class="ttdeci">void Execute()</div><div class="ttdoc">Execute all the modules, aggregate output data, and write the total time-consuming, etc. </div><div class="ttdef"><b>Definition:</b> <a href="../../d7/db5/a00472_source.html#l00132">ModelMain.cpp:132</a></div></div>
+<div class="ttc" id="a00071_html_aea43417dd8b7fcf7db22292cbcb7663c"><div class="ttname"><a href="../../d0/d89/a00071.html#aea43417dd8b7fcf7db22292cbcb7663c">InputArgs::Init</a></div><div class="ttdeci">static InputArgs * Init(int argc, const char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d0b/a00452_source.html#l00003">invoke.cpp:3</a></div></div>
+<div class="ttc" id="a00071_html_ad7e3d223d5cedfc497884451e149aa2c"><div class="ttname"><a href="../../d0/d89/a00071.html#ad7e3d223d5cedfc497884451e149aa2c">InputArgs::port</a></div><div class="ttdeci">uint16_t port</div><div class="ttdoc">port of MongoDB, 27017 is default </div><div class="ttdef"><b>Definition:</b> <a href="../../da/dc3/a00453_source.html#l00030">invoke.h:30</a></div></div>
+<div class="ttc" id="a00071_html_a9f6003f25dafa748bc2b333302e02524"><div class="ttname"><a href="../../d0/d89/a00071.html#a9f6003f25dafa748bc2b333302e02524">InputArgs::host_ip</a></div><div class="ttdeci">char host_ip[16]</div><div class="ttdoc">Host IP address of MongoDB database. </div><div class="ttdef"><b>Definition:</b> <a href="../../da/dc3/a00453_source.html#l00029">invoke.h:29</a></div></div>
+<div class="ttc" id="a00097_html"><div class="ttname"><a href="../../d1/d84/a00097.html">ModelMain</a></div><div class="ttdoc">Control the simulation of SEIMS. </div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d8e/a00473_source.html#l00038">ModelMain.h:38</a></div></div>
+<div class="ttc" id="a00071_html"><div class="ttname"><a href="../../d0/d89/a00071.html">InputArgs</a></div><div class="ttdoc">Parse the input arguments of SEIMS. </div><div class="ttdef"><b>Definition:</b> <a href="../../da/dc3/a00453_source.html#l00018">invoke.h:18</a></div></div>
+<div class="ttc" id="a00036_html"><div class="ttname"><a href="../../de/d8c/a00036.html">DataCenterMongoDB</a></div><div class="ttdoc">Data center for running SEIMS based on MongoDB. including configuration, input data, output data, etc. All interaction with database should be implemented here. </div><div class="ttdef"><b>Definition:</b> <a href="../../d0/dc5/a00435_source.html#l00019">DataCenterMongoDB.h:19</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_c151e3c36c54954dcb4737f82d8a1963.html">main</a></li><li class="navelem"><a class="el" href="../../dir_c959c6c529103227cdb83d2a16e8fd6e.html">main_mpi</a></li><li class="navelem"><b>main.cpp</b></li>
-    <li class="footer">Generated on Wed May 16 2018 14:09:46 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_c151e3c36c54954dcb4737f82d8a1963.html">main</a></li><li class="navelem"><a class="el" href="../../dir_37d1583536611718be90d0be15bfcf38.html">main_omp</a></li><li class="navelem"><b>main.cpp</b></li>
+    <li class="footer">Generated on Tue May 22 2018 08:17:30 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
