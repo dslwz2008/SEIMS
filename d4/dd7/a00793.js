@@ -1,15 +1,25 @@
 var a00793 =
 [
-    [ "Percolation_DARCY", "de/d36/a00123.html", [
-      [ "Percolation_DARCY", "de/d36/a00123.html#a84f0b196ef639dbea5ce342c529b2034", null ],
-      [ "~Percolation_DARCY", "de/d36/a00123.html#a60667d5bb9b95854bdb040db602676ef", null ],
-      [ "CheckInputData", "de/d36/a00123.html#abb6090f6b3d55346fca32d2d3a898f87", null ],
-      [ "CheckInputSize", "de/d36/a00123.html#a143d4b94fb76af864497e1967b03c766", null ],
-      [ "Execute", "de/d36/a00123.html#a7077d8ca7383647ba502ae4642cef522", null ],
-      [ "Get1DData", "de/d36/a00123.html#adf099bc54de41d7170d0c8c220eaaa79", null ],
-      [ "Set1DData", "de/d36/a00123.html#ab03be89de87565cab283227e101b4b4d", null ],
-      [ "SetValue", "de/d36/a00123.html#a71b3bfe33c9cdd7d43af1bea3315306c", null ],
-      [ "m_CellWidth", "de/d36/a00123.html#a643470992487d07f02262402488f8a7d", null ],
-      [ "m_nCells", "de/d36/a00123.html#a4739225f554d4e88e458d3c5d4144704", null ]
+    [ "IUH_SED_OL", "d4/d63/a00082.html", [
+      [ "Execute", "d4/d63/a00082.html#ae330df83384f1fd32875ccf2134f7634", null ],
+      [ "Get1DData", "d4/d63/a00082.html#a556cd5493fb5d5ffd890844644718afa", null ],
+      [ "GetValue", "d4/d63/a00082.html#a7b5dc1d137210d9507dd8446107c2b89", null ],
+      [ "Set1DData", "d4/d63/a00082.html#a19b51da09a0cad9cbbb6ea2bda0bef69", null ],
+      [ "Set2DData", "d4/d63/a00082.html#aa44ba566ae1413f4ec4332d48cc1630c", null ],
+      [ "SetValue", "d4/d63/a00082.html#a06ce8e5110bad4307f03c8b1a6e8519b", null ],
+      [ "m_cellArea", "d4/d63/a00082.html#aa683f278ed268d40b39359547808e649", null ],
+      [ "m_cellFlowCols", "d4/d63/a00082.html#ad85b3bfcc3dc39bada80373d1b74dde6", null ],
+      [ "m_cellSed", "d4/d63/a00082.html#aba13e8923effe2998ddf2f8275ecbd70", null ],
+      [ "m_CellWidth", "d4/d63/a00082.html#a8e58b4259fd178effde20fae5b4c29ce", null ],
+      [ "m_inputSubbsnID", "d4/d63/a00082.html#a84500d3b8846ff99a39f303fcc4817a9", null ],
+      [ "m_iuhCell", "d4/d63/a00082.html#acb0a2268f01e060d7aef13bf9d27d799", null ],
+      [ "m_iuhCols", "d4/d63/a00082.html#af24883a72015b1017b48868dfd335052", null ],
+      [ "m_nCells", "d4/d63/a00082.html#a22af7db574a746bd721febaa9e193d03", null ],
+      [ "m_nSubbsns", "d4/d63/a00082.html#a893d2ca4d541cb3c843f7c62c4e2be4f", null ],
+      [ "m_olWtrEroSed", "d4/d63/a00082.html#aac24d8b393db276d5c21dc7373a5a3e3", null ],
+      [ "m_sedtoCh", "d4/d63/a00082.html#a8de4de6d5923265f1569551f194b2817", null ],
+      [ "m_sedYield", "d4/d63/a00082.html#a3c4bcf0e0e5be4be4f3e1ca98f9b6f30", null ],
+      [ "m_subbsnID", "d4/d63/a00082.html#a0fc1a35b5d04c376cf73d7f95518e63f", null ],
+      [ "m_TimeStep", "d4/d63/a00082.html#a003460d0a8af09766524f71f56462e75", null ]
     ] ]
 ];

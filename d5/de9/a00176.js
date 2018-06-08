@@ -1,7 +1,5 @@
 var a00176 =
 [
-    [ "__init__", "d5/de9/a00176.html#ae0fc6603ac9799d85a7fe8b4c5a03bed", null ],
-    [ "__init__", "d5/de9/a00176.html#ae0fc6603ac9799d85a7fe8b4c5a03bed", null ],
-    [ "generate_plots", "d5/de9/a00176.html#aa72452361708e68658799d0ee86d8e7e", null ],
-    [ "generate_plots", "d5/de9/a00176.html#aa72452361708e68658799d0ee86d8e7e", null ]
+    [ "TillOp", "d5/de9/a00176.html#a9efc678c32f08206bcfc7580c90e2755", null ],
+    [ "dump", "d5/de9/a00176.html#a28d5d6b82d72369a02f9837ffeb0ecec", null ]
 ];

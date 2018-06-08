@@ -1,5 +1,5 @@
 var a00054 =
 [
-    [ "HvstOnlyOp", "d1/dea/a00054.html#a1452ec639055a8ae089f851edd2124f5", null ],
-    [ "dump", "d1/dea/a00054.html#a449a86ff12cf82c35a347a3910881cc7", null ]
+    [ "HvstKillOp", "d1/dea/a00054.html#ac10f438b7a0b362b36753f1cd549c54f", null ],
+    [ "dump", "d1/dea/a00054.html#ac88e71c9ef069555a8189d6b0f9772cd", null ]
 ];

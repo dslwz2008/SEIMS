@@ -1,17 +1,17 @@
 var namespaces =
 [
-    [ "bmps", "dc/de4/a00677.html", "dc/de4/a00677" ],
-    [ "ccgl", "d2/d85/a00679.html", null ],
-    [ "data_raster", "df/d9e/a00686.html", null ],
+    [ "bmps", "d1/d87/a00689.html", "d1/d87/a00689" ],
+    [ "ccgl", "db/dde/a00691.html", null ],
+    [ "data_raster", "df/dbb/a00698.html", null ],
     [ "seims", null, [
       [ "calibration", null, [
-        [ "sample_lhs", "d2/d74/a00697.html", null ]
+        [ "sample_lhs", "d4/deb/a00710.html", null ]
       ] ],
-      [ "pyseims_check", "dc/d85/a00736.html", null ]
+      [ "pyseims_check", "d5/de8/a00749.html", null ]
     ] ],
-    [ "utils_array", "d2/ddd/a00755.html", null ],
-    [ "utils_filesystem", "d9/d77/a00756.html", null ],
-    [ "utils_math", "d3/d95/a00757.html", null ],
-    [ "utils_string", "d2/d4a/a00758.html", null ],
-    [ "utils_time", "d2/d87/a00759.html", null ]
+    [ "utils_array", "d8/d20/a00768.html", null ],
+    [ "utils_filesystem", "dd/d51/a00769.html", null ],
+    [ "utils_math", "d0/d7e/a00770.html", null ],
+    [ "utils_string", "dd/de5/a00771.html", null ],
+    [ "utils_time", "d9/d9c/a00772.html", null ]
 ];

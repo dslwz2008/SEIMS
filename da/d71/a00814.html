@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: SSM_PE</title>
+<title>SEIMS: IUH_OL</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -108,35 +108,58 @@ $(document).ready(function(){initNavTree('da/d71/a00814.html','../../');});
   <div class="summary">
 <a href="#nested-classes">Classes</a>  </div>
   <div class="headertitle">
-<div class="title">SSM_PE<div class="ingroups"><a class="el" href="../../dd/de5/a00771.html">Hydrology_longterm</a></div></div>  </div>
+<div class="title">IUH_OL<div class="ingroups"><a class="el" href="../../d9/d00/a00784.html">Hydrology_longterm</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Distribution of snow sublimation (water equivalent) for a user defined period.  
+<p>IUH overland method to calculate overland flow routing.  
 <a href="#details">More...</a></p>
 <div class="dynheader">
-Collaboration diagram for SSM_PE:</div>
+Collaboration diagram for IUH_OL:</div>
 <div class="dyncontent">
 <center><table><tr><td><img src="../../da/d71/a00814.png" border="0" alt="" usemap="#da_2d71_2a00814"/>
 <map name="da_2d71_2a00814" id="da_2d71_2a00814">
-<area shape="rect" id="node1" href="../../dd/de5/a00771.html" title="Longterm hydrology related modules. " alt="" coords="6,4,173,33"/></map>
+<area shape="rect" id="node1" href="../../d9/d00/a00784.html" title="Longterm hydrology related modules. " alt="" coords="6,4,173,33"/></map>
 </td></tr></table></center>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d48/a00165.html">SSM_PE</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate distribution of snow sublimation.  <a href="../../d0/d48/a00165.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d53/a00081.html">IUH_OL</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">IUH overland method to calculate overland flow routing.  <a href="../../d8/d53/a00081.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Distribution of snow sublimation (water equivalent) for a user defined period. </p>
+<p>IUH overland method to calculate overland flow routing. </p>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Wu Hui </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>24-January-2011</dd></dl>
+<p>Revision: Zhiqiang YU Date: 2011-2-22 Description:</p>
+<ol type="1">
+<li>Add parameter CellWidth.</li>
+<li>Delete parameter uhminCell and uhmaxCell because the parameter Ol_iuh contains these information. The first and second column of Ol_iuh is min time and max time.</li>
+<li>The number of subbasins (m_nsub) should get from m_subbasin rather than from main program. So does variable m_nCells.</li>
+<li>Add variable m_iuhCols to store the number of columns of Ol_iuh. In the meantime, add one parameter nCols to function SetIUHCell.</li>
+<li>Add variable m_cellFlow to store the flow of each cell in each day between min time and max time. Its number of columns equals to the maximum of second column of Ol_iuh add 1.</li>
+<li>Add function initial to initialize some variables.</li>
+<li>Modify function Execute.</li>
+</ol>
+<p>Revision: Liang-Jun Zhu Date: 2016-7-29 Description:</p>
+<ol type="1">
+<li>Unify the code style.</li>
+<li>Replace VAR_SUBBASIN with VAR_SUBBASIN_PARAM, which is common used by several modules. Date: 2018-3-20 Description:</li>
+</ol>
+<ol type="1">
+<li>The length of subbasin related array should equal to the count of subbasins, for both mpi version and omp version.</li>
+<li>2017-8-23 lj Solve inconsistent results when using openmp to reducing raster data according to subbasin ID.</li>
+</ol>
+<p>IUH overland method to calculate overland flow routing </p>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Jun 1 2018 01:52:55 for SEIMS by
+    <li class="footer">Generated on Fri Jun 8 2018 08:48:08 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

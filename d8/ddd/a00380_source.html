@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims/src/field_partition/Cell.h Source File</title>
+<title>SEIMS: seims/src/seims_main/main/main_omp/main.cpp Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -112,98 +112,77 @@ $(document).ready(function(){initNavTree('d8/ddd/a00380_source.html','../../');}
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Cell.h</div>  </div>
+<div class="title">main.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef FIELD_PARTITION_CELL_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define FIELD_PARTITION_CELL_H</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">using</span> std::map;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">using</span> std::vector;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">class </span>Cell {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    Cell();</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    Cell(<span class="keyword">const</span> Cell &amp;org);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    ~Cell();</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">void</span> AddInCellID(<span class="keywordtype">int</span> idIn) {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        m_inCellIDs.push_back(idIn);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    }</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    std::vector&lt;int&gt; &amp;GetInCellIDs() {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordflow">return</span> m_inCellIDs;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    }</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span> SetOutCellID(<span class="keywordtype">int</span> idOut) {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        m_outCellID = idOut;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">int</span> GetOutCellID() {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">return</span> m_outCellID;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> SetID(<span class="keywordtype">int</span> <span class="keywordtype">id</span>) {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        m_id = id;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">int</span> GetID() {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordflow">return</span> m_id;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    }</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span> SetLanduseCode(<span class="keywordtype">int</span> code) {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        m_LanduseCode = code;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">int</span> GetLanduseCode() {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">return</span> m_LanduseCode;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">void</span> SetFieldID(<span class="keywordtype">int</span> <span class="keywordtype">id</span>) {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        m_FieldID = id;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">int</span> GetFieldID() {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">return</span> m_FieldID;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">void</span> SetDegree(<span class="keywordtype">int</span> de) {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        m_degree = de;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">int</span> GetDegree() {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">return</span> m_degree;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">bool</span> IsMyNeighbor(Cell *iCell, <span class="keywordtype">int</span> ncols);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span> setNeighborCellId(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, <span class="keywordtype">bool</span> bl) {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        m_IsNeighbCellmap[id] = bl;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    vector&lt;int&gt; m_inCellIDs;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">int</span> m_outCellID;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">int</span> m_id;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">int</span> m_LanduseCode;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">int</span> m_FieldID;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">int</span> m_degree;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    map&lt;int, bool&gt; m_IsNeighbCellmap;    <span class="comment">// int: cell id, bool: if neighbor cell id, true, else false</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;};</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* FIELD_PARTITION_CELL_H */</span><span class="preprocessor"></span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#if (defined _DEBUG) &amp;&amp; (defined _MSC_VER) &amp;&amp; (defined VLD)</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;vld.h&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* Run Visual Leak Detector during Debug */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef USE_MONGODB</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define USE_MONGODB</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif </span><span class="comment">/* USE_MONGODB */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;basic.h&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;seims.h&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;invoke.h&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;ModelMain.h&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keyword">const</span> <span class="keywordtype">char</span>** argv) {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="../../d6/d2c/a00072.html">InputArgs</a>* input_args = <a class="code" href="../../d6/d2c/a00072.html#aea43417dd8b7fcf7db22292cbcb7663c">InputArgs::Init</a>(argc, argv);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == input_args) { exit(EXIT_FAILURE); }</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    GDALAllRegister();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordtype">string</span> module_path = GetAppPath();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        MongoClient* mongo_client = MongoClient::Init(input_args-&gt;<a class="code" href="../../d6/d2c/a00072.html#ad15b3bcc0069ee8e787fa91227a5a77b">host</a>.c_str(), input_args-&gt;<a class="code" href="../../d6/d2c/a00072.html#ad7e3d223d5cedfc497884451e149aa2c">port</a>);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == mongo_client) {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="../../d1/d84/a00097.html">ModelException</a>(<span class="stringliteral">&quot;MongoDBClient&quot;</span>, <span class="stringliteral">&quot;Constructor&quot;</span>, <span class="stringliteral">&quot;Failed to connect to MongoDB!&quot;</span>);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        ModuleFactory* module_factory = ModuleFactory::Init(module_path, input_args);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == module_factory) {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="../../d1/d84/a00097.html">ModelException</a>(<span class="stringliteral">&quot;ModuleFactory&quot;</span>, <span class="stringliteral">&quot;Constructor&quot;</span>, <span class="stringliteral">&quot;Failed in constructing ModuleFactory!&quot;</span>);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="../../de/d8c/a00036.html">DataCenterMongoDB</a>* data_center = <span class="keyword">new</span> <a class="code" href="../../de/d8c/a00036.html">DataCenterMongoDB</a>(input_args, mongo_client, module_factory);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="../../d1/d44/a00098.html">ModelMain</a>* model_main = <span class="keyword">new</span> <a class="code" href="../../d1/d44/a00098.html">ModelMain</a>(data_center, module_factory);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        model_main-&gt;<a class="code" href="../../d1/d44/a00098.html#a37fd70bd42f4184fdef228ab53678318">Execute</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        model_main-&gt;<a class="code" href="../../d1/d44/a00098.html#af0fea434e96cdfb449e530671408c860">Output</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keyword">delete</span> model_main;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keyword">delete</span> data_center;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keyword">delete</span> module_factory;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keyword">delete</span> mongo_client;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keyword">delete</span> input_args;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    } <span class="keywordflow">catch</span> (<a class="code" href="../../d1/d84/a00097.html">ModelException</a>&amp; e) {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        cout &lt;&lt; e.<a class="code" href="../../d1/d84/a00097.html#a5d61b4959ddd7ffdc1e1b87dd3adddae">ToString</a>() &lt;&lt; endl;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        exit(EXIT_FAILURE);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">catch</span> (std::exception&amp; e) {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        cout &lt;&lt; e.what() &lt;&lt; endl;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        exit(EXIT_FAILURE);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">catch</span> (...) {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;Unknown exception occurred!&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        exit(EXIT_FAILURE);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
+<div class="ttc" id="a00072_html_aea43417dd8b7fcf7db22292cbcb7663c"><div class="ttname"><a href="../../d6/d2c/a00072.html#aea43417dd8b7fcf7db22292cbcb7663c">InputArgs::Init</a></div><div class="ttdeci">static InputArgs * Init(int argc, const char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/dbd/a00457_source.html#l00030">invoke.cpp:30</a></div></div>
+<div class="ttc" id="a00072_html_ad7e3d223d5cedfc497884451e149aa2c"><div class="ttname"><a href="../../d6/d2c/a00072.html#ad7e3d223d5cedfc497884451e149aa2c">InputArgs::port</a></div><div class="ttdeci">uint16_t port</div><div class="ttdoc">port of MongoDB, 27017 is default </div><div class="ttdef"><b>Definition:</b> <a href="../../da/d65/a00458_source.html#l00032">invoke.h:32</a></div></div>
+<div class="ttc" id="a00098_html_af0fea434e96cdfb449e530671408c860"><div class="ttname"><a href="../../d1/d44/a00098.html#af0fea434e96cdfb449e530671408c860">ModelMain::Output</a></div><div class="ttdeci">double Output()</div><div class="ttdoc">Write output files, e.g., Q.txt, return time-consuming (s). </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d89/a00484_source.html#l00174">ModelMain.cpp:174</a></div></div>
+<div class="ttc" id="a00072_html_ad15b3bcc0069ee8e787fa91227a5a77b"><div class="ttname"><a href="../../d6/d2c/a00072.html#ad15b3bcc0069ee8e787fa91227a5a77b">InputArgs::host</a></div><div class="ttdeci">string host</div><div class="ttdoc">Host IP address of MongoDB database. </div><div class="ttdef"><b>Definition:</b> <a href="../../da/d65/a00458_source.html#l00031">invoke.h:31</a></div></div>
+<div class="ttc" id="a00097_html_a5d61b4959ddd7ffdc1e1b87dd3adddae"><div class="ttname"><a href="../../d1/d84/a00097.html#a5d61b4959ddd7ffdc1e1b87dd3adddae">ccgl::ModelException::ToString</a></div><div class="ttdeci">string ToString()</div><div class="ttdoc">Construct error information (string version) </div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d4e/a00329_source.html#l00038">basic.cpp:38</a></div></div>
+<div class="ttc" id="a00098_html"><div class="ttname"><a href="../../d1/d44/a00098.html">ModelMain</a></div><div class="ttdoc">Control the simulation of SEIMS. </div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d1a/a00485_source.html#l00038">ModelMain.h:38</a></div></div>
+<div class="ttc" id="a00072_html"><div class="ttname"><a href="../../d6/d2c/a00072.html">InputArgs</a></div><div class="ttdoc">Parse the input arguments of SEIMS. </div><div class="ttdef"><b>Definition:</b> <a href="../../da/d65/a00458_source.html#l00019">invoke.h:19</a></div></div>
+<div class="ttc" id="a00097_html"><div class="ttname"><a href="../../d1/d84/a00097.html">ccgl::ModelException</a></div><div class="ttdoc">Print the exception message. </div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dbb/a00330_source.html#l00311">basic.h:311</a></div></div>
+<div class="ttc" id="a00098_html_a37fd70bd42f4184fdef228ab53678318"><div class="ttname"><a href="../../d1/d44/a00098.html#a37fd70bd42f4184fdef228ab53678318">ModelMain::Execute</a></div><div class="ttdeci">void Execute()</div><div class="ttdoc">Execute all the modules, aggregate output data, and write the total time-consuming, etc. </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d89/a00484_source.html#l00132">ModelMain.cpp:132</a></div></div>
+<div class="ttc" id="a00036_html"><div class="ttname"><a href="../../de/d8c/a00036.html">DataCenterMongoDB</a></div><div class="ttdoc">Data center for running SEIMS based on MongoDB. including configuration, input data, output data, etc. All interaction with database should be implemented here. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/df8/a00440_source.html#l00019">DataCenterMongoDB.h:19</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_5dad1625e7f9729766baa8f13d29b59c.html">field_partition</a></li><li class="navelem"><b>Cell.h</b></li>
-    <li class="footer">Generated on Fri Jun 1 2018 01:52:53 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_c151e3c36c54954dcb4737f82d8a1963.html">main</a></li><li class="navelem"><a class="el" href="../../dir_37d1583536611718be90d0be15bfcf38.html">main_omp</a></li><li class="navelem"><b>main.cpp</b></li>
+    <li class="footer">Generated on Fri Jun 8 2018 08:48:06 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

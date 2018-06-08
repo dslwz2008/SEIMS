@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: NUTRSED</title>
+<title>SEIMS: SSR_DA</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -105,53 +105,33 @@ $(document).ready(function(){initNavTree('d8/d64/a00828.html','../../');});
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
   <div class="headertitle">
-<div class="title">NUTRSED<div class="ingroups"><a class="el" href="../../d8/dba/a00773.html">Nutrient</a></div></div>  </div>
+<div class="title">SSR_DA<div class="ingroups"><a class="el" href="../../d9/d00/a00784.html">Hydrology_longterm</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Nutrient removed and lost in surface runoff. Support three carbon model, static method (orgn.f), C-FARM one carbon model (orgncswat.f), and CENTURY C/N cycling model (NCsed_leach.f90) from SWAT As for phosphorus, psed.f of SWAT calculates the attached to sediment in surface runoff.  
+<p>Subsurface runoff using Darcy's law and the kinematic approximation Water is routed cell-to-cell according to D8 flow direction.  
 <a href="#details">More...</a></p>
 <div class="dynheader">
-Collaboration diagram for NUTRSED:</div>
+Collaboration diagram for SSR_DA:</div>
 <div class="dyncontent">
 <center><table><tr><td><img src="../../d8/d64/a00828.png" border="0" alt="" usemap="#d8_2d64_2a00828"/>
 <map name="d8_2d64_2a00828" id="d8_2d64_2a00828">
-<area shape="rect" id="node1" href="../../d8/dba/a00773.html" title="Nutrient related modules. " alt="" coords="6,4,85,33"/></map>
+<area shape="rect" id="node1" href="../../d9/d00/a00784.html" title="Longterm hydrology related modules. " alt="" coords="6,4,173,33"/></map>
 </td></tr></table></center>
 </div>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/da3/a00115.html">NutrientTransportSediment</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nutrient removed and lost with the eroded sediment in surface runoff.  <a href="../../d2/da3/a00115.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Nutrient removed and lost in surface runoff. Support three carbon model, static method (orgn.f), C-FARM one carbon model (orgncswat.f), and CENTURY C/N cycling model (NCsed_leach.f90) from SWAT As for phosphorus, psed.f of SWAT calculates the attached to sediment in surface runoff. </p>
-<dl class="section author"><dt>Author</dt><dd>Huiran Gao, Liangjun Zhu </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>April 2016 : 2016-04-30 - hr - Initial implementation.<br/>
- 2016-09-28 - lj - 1. Code revision.<br/>
-<ol type="1">
-<li>Add CENTURY model of calculating organic nitrogen removed in surface runoff.<br/>
- 2017-08-23 - lj - Solve inconsistent results when using openmp to reducing raster data according to subbasin ID.<br/>
- 2018-05-08 - lj - 1. Reformat, especially naming style (sync update in "text.h").<br/>
-</li>
-</ol>
-<ol type="1">
-<li>Code optimization, e.g., use multiply instead of divide.<br/>
- 1. Ammonian adsorbed to soil should be considered.</li>
-</ol>
-</dd></dl>
-<p>Nutrient removed and lost with the eroded sediment in surface runoff </p>
+<p>Subsurface runoff using Darcy's law and the kinematic approximation Water is routed cell-to-cell according to D8 flow direction. </p>
+<dl class="section author"><dt>Author</dt><dd>Junzhi Liu  Liang-Jun Zhu </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2018-3-26 </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>: 2016-7-24 Add support of multi soil layers of each cells. 2017-8-23 Solve inconsistent results when using openmp to reducing raster data according to subbasin ID.</dd></dl>
+<p>Subsurface runoff using Darcy's law and the kinematic approximation </p>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Jun 1 2018 01:52:55 for SEIMS by
+    <li class="footer">Generated on Fri Jun 8 2018 08:48:08 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims.preprocess.text.ModelNameUtils Class Reference</title>
+<title>SEIMS: ModelMain Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -114,97 +114,539 @@ $(document).ready(function(){initNavTree('d1/d44/a00098.html','../../');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="../../d6/dea/a01094.html">List of all members</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="../../d8/dbb/a00932.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">seims.preprocess.text.ModelNameUtils Class Reference</div>  </div>
+<div class="title">ModelMain Class Reference<div class="ingroups"><a class="el" href="../../d3/d95/a00779.html">Seims_omp</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Inherits object, and object.</p>
+<p>Control the simulation of SEIMS.  
+ <a href="../../d1/d44/a00098.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d6/d1a/a00485_source.html">ModelMain.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for ModelMain:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d0/d5b/a00933.png" border="0" usemap="#_model_main_inherit__map" alt="Inheritance graph"/></div>
+<map name="_model_main_inherit__map" id="_model_main_inherit__map">
+<area shape="rect" id="node2" href="../../d9/da5/a00075.html" title="Base type of all interfaces. All interface types are encouraged to be virtual inherited. " alt="" coords="48,173,168,259"/><area shape="rect" id="node3" href="../../d1/dd6/a00108.html" title="Base class for classes that cannot be copied. By inheriting this class you can disable copying of you..." alt="" coords="31,5,184,125"/></map>
+</div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a7166e2a6fbf4f60a711c6a8b52075d2e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d44/a00098.html#a7166e2a6fbf4f60a711c6a8b52075d2e">standardize_climate_dbname</a></td></tr>
-<tr class="separator:a7166e2a6fbf4f60a711c6a8b52075d2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7166e2a6fbf4f60a711c6a8b52075d2e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d44/a00098.html#a7166e2a6fbf4f60a711c6a8b52075d2e">standardize_climate_dbname</a></td></tr>
-<tr class="separator:a7166e2a6fbf4f60a711c6a8b52075d2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:ab51df1801514632aaec1ee932021ab31"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d44/a00098.html#ab51df1801514632aaec1ee932021ab31">ModelMain</a> (<a class="el" href="../../de/d8c/a00036.html">DataCenterMongoDB</a> *data_center, ModuleFactory *factory)</td></tr>
+<tr class="memdesc:ab51df1801514632aaec1ee932021ab31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor independent to any database IO, instead of the.  <a href="#ab51df1801514632aaec1ee932021ab31">More...</a><br/></td></tr>
+<tr class="separator:ab51df1801514632aaec1ee932021ab31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37fd70bd42f4184fdef228ab53678318"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d44/a00098.html#a37fd70bd42f4184fdef228ab53678318">Execute</a> ()</td></tr>
+<tr class="memdesc:a37fd70bd42f4184fdef228ab53678318"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute all the modules, aggregate output data, and write the total time-consuming, etc.  <a href="#a37fd70bd42f4184fdef228ab53678318">More...</a><br/></td></tr>
+<tr class="separator:a37fd70bd42f4184fdef228ab53678318"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0fea434e96cdfb449e530671408c860"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af0fea434e96cdfb449e530671408c860"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d44/a00098.html#af0fea434e96cdfb449e530671408c860">Output</a> ()</td></tr>
+<tr class="memdesc:af0fea434e96cdfb449e530671408c860"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write output files, e.g., Q.txt, return time-consuming (s). <br/></td></tr>
+<tr class="separator:af0fea434e96cdfb449e530671408c860"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb8f3e05b13c4b24eeb631ed6f8bbe79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d44/a00098.html#aeb8f3e05b13c4b24eeb631ed6f8bbe79">CheckAvailableOutput</a> ()</td></tr>
+<tr class="memdesc:aeb8f3e05b13c4b24eeb631ed6f8bbe79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the validation of outputs.  <a href="#aeb8f3e05b13c4b24eeb631ed6f8bbe79">More...</a><br/></td></tr>
+<tr class="separator:aeb8f3e05b13c4b24eeb631ed6f8bbe79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fc18f3381bbd34f9dc24b6f36ebecb2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d44/a00098.html#a0fc18f3381bbd34f9dc24b6f36ebecb2">AppendOutputData</a> (time_t time)</td></tr>
+<tr class="memdesc:a0fc18f3381bbd34f9dc24b6f36ebecb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append output data to Output Item by the corresponding aggregation type.  <a href="#a0fc18f3381bbd34f9dc24b6f36ebecb2">More...</a><br/></td></tr>
+<tr class="separator:a0fc18f3381bbd34f9dc24b6f36ebecb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c120f81c5fe6e87942f40535666ebd9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3c120f81c5fe6e87942f40535666ebd9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d44/a00098.html#a3c120f81c5fe6e87942f40535666ebd9">OutputExecuteTime</a> ()</td></tr>
+<tr class="memdesc:a3c120f81c5fe6e87942f40535666ebd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print execution time on the screen. <br/></td></tr>
+<tr class="separator:a3c120f81c5fe6e87942f40535666ebd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc563d00de9ae78f64936924d2b9c275"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d44/a00098.html#afc563d00de9ae78f64936924d2b9c275">StepHillSlope</a> (time_t t, int yearIdx, int subIndex)</td></tr>
+<tr class="memdesc:afc563d00de9ae78f64936924d2b9c275"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute hillslope modules in current time.  <a href="#afc563d00de9ae78f64936924d2b9c275">More...</a><br/></td></tr>
+<tr class="separator:afc563d00de9ae78f64936924d2b9c275"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49616f1b5a88da44949d1e317518dfe5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d44/a00098.html#a49616f1b5a88da44949d1e317518dfe5">StepChannel</a> (time_t t, int yearIdx)</td></tr>
+<tr class="memdesc:a49616f1b5a88da44949d1e317518dfe5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute channel modules in current time.  <a href="#a49616f1b5a88da44949d1e317518dfe5">More...</a><br/></td></tr>
+<tr class="separator:a49616f1b5a88da44949d1e317518dfe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d3df56b0f96d8fdaa803af791813271"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d44/a00098.html#a5d3df56b0f96d8fdaa803af791813271">StepOverall</a> (time_t startT, time_t endT)</td></tr>
+<tr class="memdesc:a5d3df56b0f96d8fdaa803af791813271"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute overall modules in the entire simulation period, e.g., COST module.  <a href="#a5d3df56b0f96d8fdaa803af791813271">More...</a><br/></td></tr>
+<tr class="separator:a5d3df56b0f96d8fdaa803af791813271"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70f81772c04f383fc3b3dde982162208"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a70f81772c04f383fc3b3dde982162208"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d44/a00098.html#a70f81772c04f383fc3b3dde982162208">GetModuleCount</a> () const </td></tr>
+<tr class="memdesc:a70f81772c04f383fc3b3dde982162208"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get module counts of current SEIMS. <br/></td></tr>
+<tr class="separator:a70f81772c04f383fc3b3dde982162208"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3c0830e7d258d4a172c50f92c6f5533"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad3c0830e7d258d4a172c50f92c6f5533"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d44/a00098.html#ad3c0830e7d258d4a172c50f92c6f5533">GetModuleID</a> (int i) const </td></tr>
+<tr class="memdesc:ad3c0830e7d258d4a172c50f92c6f5533"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get module ID by index in ModuleFactory. <br/></td></tr>
+<tr class="separator:ad3c0830e7d258d4a172c50f92c6f5533"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8314a9c9b12e3460f9b085f1dcdf18d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa8314a9c9b12e3460f9b085f1dcdf18d"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d44/a00098.html#aa8314a9c9b12e3460f9b085f1dcdf18d">GetModuleExecuteTime</a> (int i) const </td></tr>
+<tr class="memdesc:aa8314a9c9b12e3460f9b085f1dcdf18d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get module execute time by index in ModuleFactory. <br/></td></tr>
+<tr class="separator:aa8314a9c9b12e3460f9b085f1dcdf18d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa63837a874ca3262784d548cb2a9bb71"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa63837a874ca3262784d548cb2a9bb71"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d44/a00098.html#aa63837a874ca3262784d548cb2a9bb71">GetReadDataTime</a> () const </td></tr>
+<tr class="memdesc:aa63837a874ca3262784d548cb2a9bb71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get time consuming of read data. <br/></td></tr>
+<tr class="separator:aa63837a874ca3262784d548cb2a9bb71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76bc77809bac87c75a8257e3e4ceb64b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a76bc77809bac87c75a8257e3e4ceb64b"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d44/a00098.html#a76bc77809bac87c75a8257e3e4ceb64b">IncludeChannelProcesses</a> ()</td></tr>
+<tr class="memdesc:a76bc77809bac87c75a8257e3e4ceb64b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Include channel processes or not? <br/></td></tr>
+<tr class="separator:a76bc77809bac87c75a8257e3e4ceb64b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a58ce7f8504b25523d99b6152aebc5b41"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a58ce7f8504b25523d99b6152aebc5b41"></a>
+<a class="el" href="../../de/d8c/a00036.html">DataCenterMongoDB</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d44/a00098.html#a58ce7f8504b25523d99b6152aebc5b41">m_dataCenter</a></td></tr>
+<tr class="memdesc:a58ce7f8504b25523d99b6152aebc5b41"><td class="mdescLeft">&#160;</td><td class="mdescRight">inherited <a class="el" href="../../d4/d8c/a00035.html" title="Data center for running SEIMS including configuration, input data, output data, etc. All interaction with database should be implemented here. ">DataCenter</a> <br/></td></tr>
+<tr class="separator:a58ce7f8504b25523d99b6152aebc5b41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e06165b5bc3ccaa4e5efa1044c9c330"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2e06165b5bc3ccaa4e5efa1044c9c330"></a>
+ModuleFactory *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d44/a00098.html#a2e06165b5bc3ccaa4e5efa1044c9c330">m_factory</a></td></tr>
+<tr class="memdesc:a2e06165b5bc3ccaa4e5efa1044c9c330"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modules factory. <br/></td></tr>
+<tr class="separator:a2e06165b5bc3ccaa4e5efa1044c9c330"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a520793503b0d58f1badacdd89934633c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a520793503b0d58f1badacdd89934633c"></a>
+<a class="el" href="../../d9/d7d/a00150.html">SettingsInput</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d44/a00098.html#a520793503b0d58f1badacdd89934633c">m_input</a></td></tr>
+<tr class="memdesc:a520793503b0d58f1badacdd89934633c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The basic input settings. <br/></td></tr>
+<tr class="separator:a520793503b0d58f1badacdd89934633c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae63c8ce50dc6560d6e7d33031ff9eee8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae63c8ce50dc6560d6e7d33031ff9eee8"></a>
+SettingsOutput *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d44/a00098.html#ae63c8ce50dc6560d6e7d33031ff9eee8">m_output</a></td></tr>
+<tr class="memdesc:ae63c8ce50dc6560d6e7d33031ff9eee8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The user-defined outputs, Q, SED, etc. <br/></td></tr>
+<tr class="separator:ae63c8ce50dc6560d6e7d33031ff9eee8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04fc9113a3d4bc51d0eebd33e15928aa"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a04fc9113a3d4bc51d0eebd33e15928aa"></a>
+FloatRaster *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d44/a00098.html#a04fc9113a3d4bc51d0eebd33e15928aa">m_maskRaster</a></td></tr>
+<tr class="memdesc:a04fc9113a3d4bc51d0eebd33e15928aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mask raster data. <br/></td></tr>
+<tr class="separator:a04fc9113a3d4bc51d0eebd33e15928aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d26d739a70ed11ffc6197df840fb127"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2d26d739a70ed11ffc6197df840fb127"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d44/a00098.html#a2d26d739a70ed11ffc6197df840fb127">m_outputPath</a></td></tr>
+<tr class="memdesc:a2d26d739a70ed11ffc6197df840fb127"><td class="mdescLeft">&#160;</td><td class="mdescRight">Path of output scenario. <br/></td></tr>
+<tr class="separator:a2d26d739a70ed11ffc6197df840fb127"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50399b9d5c1ab95c36a72d6e0bd49fc7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a50399b9d5c1ab95c36a72d6e0bd49fc7"></a>
+time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d44/a00098.html#a50399b9d5c1ab95c36a72d6e0bd49fc7">m_dtDaily</a></td></tr>
+<tr class="memdesc:a50399b9d5c1ab95c36a72d6e0bd49fc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Daily time interval, seconds. <br/></td></tr>
+<tr class="separator:a50399b9d5c1ab95c36a72d6e0bd49fc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75ff229a26546a1925f3d2302ee5037c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a75ff229a26546a1925f3d2302ee5037c"></a>
+time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d44/a00098.html#a75ff229a26546a1925f3d2302ee5037c">m_dtHs</a></td></tr>
+<tr class="memdesc:a75ff229a26546a1925f3d2302ee5037c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hillslope time interval, seconds. <br/></td></tr>
+<tr class="separator:a75ff229a26546a1925f3d2302ee5037c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43992993e2ab5f34350a353440e8abd6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a43992993e2ab5f34350a353440e8abd6"></a>
+time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d44/a00098.html#a43992993e2ab5f34350a353440e8abd6">m_dtCh</a></td></tr>
+<tr class="memdesc:a43992993e2ab5f34350a353440e8abd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Channel time interval, seconds. <br/></td></tr>
+<tr class="separator:a43992993e2ab5f34350a353440e8abd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a208d36bf750782d6d7248b279c38bf68"><td class="memItemLeft" align="right" valign="top">vector&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d44/a00098.html#a208d36bf750782d6d7248b279c38bf68">m_moduleIDs</a></td></tr>
+<tr class="memdesc:a208d36bf750782d6d7248b279c38bf68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Module unique IDs, the same sequences with.  <a href="#a208d36bf750782d6d7248b279c38bf68">More...</a><br/></td></tr>
+<tr class="separator:a208d36bf750782d6d7248b279c38bf68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af55e2c58ce2e4b8010a225d2dceacb04"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af55e2c58ce2e4b8010a225d2dceacb04"></a>
+vector&lt; <a class="el" href="../../d8/dfa/a00121.html">ParamInfo</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d44/a00098.html#af55e2c58ce2e4b8010a225d2dceacb04">m_tfValueInputs</a></td></tr>
+<tr class="memdesc:af55e2c58ce2e4b8010a225d2dceacb04"><td class="mdescLeft">&#160;</td><td class="mdescRight">transferred single value across subbasins <br/></td></tr>
+<tr class="separator:af55e2c58ce2e4b8010a225d2dceacb04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab128f988469ee7670c60d7ad6e1a226d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab128f988469ee7670c60d7ad6e1a226d"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d44/a00098.html#ab128f988469ee7670c60d7ad6e1a226d">m_readFileTime</a></td></tr>
+<tr class="memdesc:ab128f988469ee7670c60d7ad6e1a226d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time consuming for read data. <br/></td></tr>
+<tr class="separator:ab128f988469ee7670c60d7ad6e1a226d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d95a955d68e31885334312d7983753f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3d95a955d68e31885334312d7983753f"></a>
+vector&lt; <a class="el" href="../../dd/db2/a00151.html">SimulationModule</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d44/a00098.html#a3d95a955d68e31885334312d7983753f">m_simulationModules</a></td></tr>
+<tr class="memdesc:a3d95a955d68e31885334312d7983753f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modules list in the model run. <br/></td></tr>
+<tr class="separator:a3d95a955d68e31885334312d7983753f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54fe02dcc9070c05a240d88844f11dc3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a54fe02dcc9070c05a240d88844f11dc3"></a>
+vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d44/a00098.html#a54fe02dcc9070c05a240d88844f11dc3">m_hillslopeModules</a></td></tr>
+<tr class="memdesc:a54fe02dcc9070c05a240d88844f11dc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hillslope modules index list. <br/></td></tr>
+<tr class="separator:a54fe02dcc9070c05a240d88844f11dc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20a5df479351d1e282da19d967949597"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a20a5df479351d1e282da19d967949597"></a>
+vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d44/a00098.html#a20a5df479351d1e282da19d967949597">m_channelModules</a></td></tr>
+<tr class="memdesc:a20a5df479351d1e282da19d967949597"><td class="mdescLeft">&#160;</td><td class="mdescRight">Channel modules index list. <br/></td></tr>
+<tr class="separator:a20a5df479351d1e282da19d967949597"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64184072584a15637fe43d85083ac991"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a64184072584a15637fe43d85083ac991"></a>
+vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d44/a00098.html#a64184072584a15637fe43d85083ac991">m_ecoModules</a></td></tr>
+<tr class="memdesc:a64184072584a15637fe43d85083ac991"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ecology modules index list. <br/></td></tr>
+<tr class="separator:a64184072584a15637fe43d85083ac991"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34f44bc74b03ab4dc0f14530af2b8eef"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a34f44bc74b03ab4dc0f14530af2b8eef"></a>
+vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d44/a00098.html#a34f44bc74b03ab4dc0f14530af2b8eef">m_overallModules</a></td></tr>
+<tr class="memdesc:a34f44bc74b03ab4dc0f14530af2b8eef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whole simulation scale modules index list. <br/></td></tr>
+<tr class="separator:a34f44bc74b03ab4dc0f14530af2b8eef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6bf777d16df8e260af73544440b9b87"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa6bf777d16df8e260af73544440b9b87"></a>
+vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d44/a00098.html#aa6bf777d16df8e260af73544440b9b87">m_executeTime</a></td></tr>
+<tr class="memdesc:aa6bf777d16df8e260af73544440b9b87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute time list of each module. <br/></td></tr>
+<tr class="separator:aa6bf777d16df8e260af73544440b9b87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3ce93557fdea6c360dea2d13a8ffb8c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa3ce93557fdea6c360dea2d13a8ffb8c"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d44/a00098.html#aa3ce93557fdea6c360dea2d13a8ffb8c">m_nTFValues</a></td></tr>
+<tr class="memdesc:aa3ce93557fdea6c360dea2d13a8ffb8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">transferred value inputs cout <br/></td></tr>
+<tr class="separator:aa3ce93557fdea6c360dea2d13a8ffb8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d48d80805b9183a8a3c142d439f841f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6d48d80805b9183a8a3c142d439f841f"></a>
+vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d44/a00098.html#a6d48d80805b9183a8a3c142d439f841f">m_tfValueFromModuleIdxs</a></td></tr>
+<tr class="memdesc:a6d48d80805b9183a8a3c142d439f841f"><td class="mdescLeft">&#160;</td><td class="mdescRight">from module index corresponding to each transferred value inputs <br/></td></tr>
+<tr class="separator:a6d48d80805b9183a8a3c142d439f841f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae1f5bba1024722ba735805b06cb901d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aae1f5bba1024722ba735805b06cb901d"></a>
+vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d44/a00098.html#aae1f5bba1024722ba735805b06cb901d">m_tfValueToModuleIdxs</a></td></tr>
+<tr class="memdesc:aae1f5bba1024722ba735805b06cb901d"><td class="mdescLeft">&#160;</td><td class="mdescRight">to module index corresponding to each transferred value inputs <br/></td></tr>
+<tr class="separator:aae1f5bba1024722ba735805b06cb901d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a628ac7dc07f6bc8004179b679bfa3a64"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a628ac7dc07f6bc8004179b679bfa3a64"></a>
+vector&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d44/a00098.html#a628ac7dc07f6bc8004179b679bfa3a64">m_tfValueNames</a></td></tr>
+<tr class="memdesc:a628ac7dc07f6bc8004179b679bfa3a64"><td class="mdescLeft">&#160;</td><td class="mdescRight">parameter name corresponding to each transferred value inputs <br/></td></tr>
+<tr class="separator:a628ac7dc07f6bc8004179b679bfa3a64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93fdbeccd5de43cd45245b3556841e18"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a93fdbeccd5de43cd45245b3556841e18"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d44/a00098.html#a93fdbeccd5de43cd45245b3556841e18">m_firstRunOverland</a></td></tr>
+<tr class="memdesc:a93fdbeccd5de43cd45245b3556841e18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is the first run of overland. <br/></td></tr>
+<tr class="separator:a93fdbeccd5de43cd45245b3556841e18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00eb7f2eb883212243c0853773cb089a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a00eb7f2eb883212243c0853773cb089a"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d44/a00098.html#a00eb7f2eb883212243c0853773cb089a">m_firstRunChannel</a></td></tr>
+<tr class="memdesc:a00eb7f2eb883212243c0853773cb089a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is the first run of channel. <br/></td></tr>
+<tr class="separator:a00eb7f2eb883212243c0853773cb089a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_methods_a00075"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a00075')"><img src="../../closed.png" alt="-"/>&#160;Private Member Functions inherited from <a class="el" href="../../d9/da5/a00075.html">ccgl::Interface</a></td></tr>
+<tr class="memitem:a7325510a5111ae7d2a75662393075e10 inherit pub_methods_a00075"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7325510a5111ae7d2a75662393075e10"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#a7325510a5111ae7d2a75662393075e10">~Interface</a> ()</td></tr>
+<tr class="memdesc:a7325510a5111ae7d2a75662393075e10 inherit pub_methods_a00075"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d9/da5/a00075.html" title="Base type of all interfaces. All interface types are encouraged to be virtual inherited. ">Interface</a>. <br/></td></tr>
+<tr class="separator:a7325510a5111ae7d2a75662393075e10 inherit pub_methods_a00075"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><pre class="fragment">Simulation Model related tags</pre> 
-<p>Definition at line <a class="el" href="../../d1/d67/a00310_source.html#l00014">14</a> of file <a class="el" href="../../d1/d67/a00310_source.html">text.py</a>.</p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a7166e2a6fbf4f60a711c6a8b52075d2e"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">def seims.preprocess.text.ModelNameUtils.standardize_climate_dbname </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>climatedbname</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<pre class="fragment">standardize climate database name</pre> 
-<p>Definition at line <a class="el" href="../../d1/d67/a00310_source.html#l00038">38</a> of file <a class="el" href="../../d1/d67/a00310_source.html">text.py</a>.</p>
+<div class="textblock"><p>Control the simulation of SEIMS. </p>
+<dl class="section author"><dt>Author</dt><dd>Junzhi Liu, LiangJun Zhu </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>2.0 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>May 2017  LJ - Refactoring, May 2017 The <a class="el" href="../../d1/d44/a00098.html" title="Control the simulation of SEIMS. ">ModelMain</a> class mainly focuses on the entire workflow.include build-in libs include utility classes and const definition of SEIMS include data related include module_setting related</dd></dl>
+<p>SEIMS OpenMP version, Class to control the whole model </p>
 
-</div>
-</div>
-<a class="anchor" id="a7166e2a6fbf4f60a711c6a8b52075d2e"></a>
+<p>Definition at line <a class="el" href="../../d6/d1a/a00485_source.html#l00038">38</a> of file <a class="el" href="../../d6/d1a/a00485_source.html">ModelMain.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="ab51df1801514632aaec1ee932021ab31"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">def seims.preprocess.text.ModelNameUtils.standardize_climate_dbname </td>
+          <td class="memname">ModelMain::ModelMain </td>
           <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>climatedbname</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="../../de/d8c/a00036.html">DataCenterMongoDB</a> *&#160;</td>
+          <td class="paramname"><em>data_center</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">ModuleFactory *&#160;</td>
+          <td class="paramname"><em>factory</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
-<pre class="fragment">standardize climate database name</pre> 
-<p>Definition at line <a class="el" href="../../d1/d5d/a00311_source.html#l00038">38</a> of file <a class="el" href="../../d1/d5d/a00311_source.html">text.py</a>.</p>
+
+<p>Constructor independent to any database IO, instead of the. </p>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../d4/d8c/a00035.html" title="Data center for running SEIMS including configuration, input data, output data, etc. All interaction with database should be implemented here. ">DataCenter</a> object </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">data_center</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../d4/d8c/a00035.html" title="Data center for running SEIMS including configuration, input data, output data, etc. All interaction with database should be implemented here. ">DataCenter</a>, </dd>
+<dd>
+<a class="el" href="../../de/d8c/a00036.html" title="Data center for running SEIMS based on MongoDB. including configuration, input data, output data, etc. All interaction with database should be implemented here. ">DataCenterMongoDB</a>, or others in future </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">factory</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See Also</dt><dd>ModuleFactory, assemble the module workspace </dd></dl>
+<p>Get SettingInput and SettingOutput</p>
+<p>Get mask raster data, Output folder name, etc</p>
+<p>Get time-step of daily, hillslope, and channel scales</p>
+<p>Get module IDs</p>
+<p>Get transferred value inputs</p>
+<p>Create module list</p>
+<p>Load data from MongoDB, including calibration of value, 1D data, and 2D data.</p>
+<p>Check the validation of settings of output files, i.e. available of parameter and time ranges</p>
+<p>Update model data if the scenario has requested.</p>
+<p>TODO </p>
+
+<p>Definition at line <a class="el" href="../../d8/d89/a00484_source.html#l00008">8</a> of file <a class="el" href="../../d8/d89/a00484_source.html">ModelMain.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d1/d44/a00098_a7166e2a6fbf4f60a711c6a8b52075d2e_cgraph.png" border="0" usemap="#d1/d44/a00098_a7166e2a6fbf4f60a711c6a8b52075d2e_cgraph" alt=""/></div>
-<map name="d1/d44/a00098_a7166e2a6fbf4f60a711c6a8b52075d2e_cgraph" id="d1/d44/a00098_a7166e2a6fbf4f60a711c6a8b52075d2e_cgraph">
-</map>
+<div class="center"><img src="../../d1/d44/a00098_ab51df1801514632aaec1ee932021ab31_cgraph.png" border="0" usemap="#d1/d44/a00098_ab51df1801514632aaec1ee932021ab31_cgraph" alt=""/></div>
+<map name="d1/d44/a00098_ab51df1801514632aaec1ee932021ab31_cgraph" id="d1/d44/a00098_ab51df1801514632aaec1ee932021ab31_cgraph">
+<area shape="rect" id="node2" href="../../d9/d7d/a00150.html#a69c16babc6f91db1fb907c7045ae3e09" title="Get daily time interval of simulation in sec. " alt="" coords="1163,5,1362,35"/><area shape="rect" id="node3" href="../../d9/d7d/a00150.html#a17ed459d318f4ec26f9b3a66cfdbe3a4" title="Get time interval for hillslope scale processes. " alt="" coords="1151,59,1375,88"/><area shape="rect" id="node4" href="../../d9/d7d/a00150.html#ad7101c381420f6ab59862b085647f21b" title="Get time interval for channel scale processes. " alt="" coords="1151,165,1374,195"/><area shape="rect" id="node5" href="../../d4/d8c/a00035.html#af5d81ad0d9e8eb0f6c2c4d52a5bc67b8" title="Load data for each module, return time span. " alt="" coords="243,524,509,553"/><area shape="rect" id="node31" href="../../dd/db2/a00151.html#a272481bef46db20353da33e95a5f5426" title="Get time step type, default is hillslope process. Remember to OVERRIDE this function to return other ..." alt="" coords="266,578,486,625"/><area shape="rect" id="node32" href="../../d1/d44/a00098.html#aeb8f3e05b13c4b24eeb631ed6f8bbe79" title="Check whether the validation of outputs. " alt="" coords="265,649,487,695"/><area shape="rect" id="node35" href="../../d4/d8c/a00035.html#aec7b60d349afde612e03654f38ee28fd" title="Update model parameters (value, 1D raster, and 2D raster, etc.) by Scenario, e.g., areal BMPs. " alt="" coords="253,821,499,867"/><area shape="rect" id="node6" href="../../d4/d8c/a00035.html#aa2e71d901f979e9342c0d12cb5467d11" title="Set data for modules, include all datatype. " alt="" coords="605,539,776,568"/><area shape="rect" id="node30" href="../../db/dde/a00691.html#ac10e5077b978304f6bd34433d9ee2a5f" title="Print status messages for Debug. " alt="" coords="894,859,1063,888"/><area shape="rect" id="node7" href="../../d4/d8c/a00035.html#a04746eff11f82dadf6bd5d941459b692" title="Set single Value. " alt="" coords="889,112,1068,141"/><area shape="rect" id="node9" href="../../d4/d8c/a00035.html#a09807ec403996b50c978e426447cde50" title="Set 1D Data. " alt="" coords="883,459,1074,488"/><area shape="rect" id="node17" href="../../d4/d8c/a00035.html#af70255b824f96dbb29687158e3c3fd2b" title="Set 2D Data. " alt="" coords="883,699,1074,728"/><area shape="rect" id="node22" href="../../d4/d8c/a00035.html#a9dedcab359fe8d882c4d452d7ae6ee41" title="Set raster data. " alt="" coords="887,619,1070,648"/><area shape="rect" id="node24" href="../../d4/d8c/a00035.html#aee2bd45e4ab62ccea67381782493f265" title="Set BMPs Scenario data. " alt="" coords="879,752,1079,781"/><area shape="rect" id="node26" href="../../d4/d8c/a00035.html#aadd7c9ecd30639719008312492b998c2" title="Set Reaches information. " alt="" coords="879,805,1079,835"/><area shape="rect" id="node28" href="../../d4/d8c/a00035.html#ab76fb7579d949f7b50506163b1a0dd37" title="Set Subbasins information. " alt="" coords="873,325,1085,355"/><area shape="rect" id="node8" href="../../dd/db2/a00151.html#aa6c47c9ce1baf8633eebb7dd71902151" title="Set data, DT_Single. " alt="" coords="1150,112,1375,141"/><area shape="rect" id="node10" href="../../dd/db2/a00151.html#aba2d6fc2b0e4f8ccf202e0752c45d55c" title="Set 1D data, by default, DT_Raster1D. " alt="" coords="1143,592,1382,621"/><area shape="rect" id="node11" href="../../d1/d51/a00079.html#a448b8fb33bbd44024d4e85d2152f373c" title="Get the weight data read from mongoDB. " alt="" coords="1143,432,1383,461"/><area shape="rect" id="node12" href="../../d4/d8c/a00035.html#af82631bff13f9442fbb505d4b72d73c0" title="Read 1D array data. " alt="" coords="1141,485,1385,515"/><area shape="rect" id="node13" href="../../d4/d8c/a00035.html#ad96e107232d26b2f5906123f9040bad1" title="Read interpolated weight data and insert to m_weightDataMap. " alt="" coords="1137,539,1389,568"/><area shape="rect" id="node14" href="../../d1/d6e/a00073.html#a536b4b46be1b7b05f2a5371d7b9b41a3" title="Get site number of given site type. " alt="" coords="1151,272,1375,301"/><area shape="rect" id="node15" href="../../d1/d6e/a00073.html#a7ae9d237348c296459316a84a0372989" title="Get elevations of given site type. " alt="" coords="1159,325,1366,355"/><area shape="rect" id="node16" href="../../d1/d6e/a00073.html#a18de5cb1a83d3446a2fda16a3550241b" title="Get latitudes of given site type. " alt="" coords="1164,379,1361,408"/><area shape="rect" id="node18" href="../../dd/db2/a00151.html#a02762cb7e236819fd5365ac4cb400fe6" title="Set 2D data, by default, DT_Raster2D. " alt="" coords="1143,699,1382,728"/><area shape="rect" id="node19" href="../../d4/d8c/a00035.html#a3132283a3171db0f27936ce4db38b621" title="Read 2D array data and insert to m_2DArrayMap The matrix format is as follows: 5 (Row number) RowIdx ..." alt="" coords="1141,859,1385,888"/><area shape="rect" id="node20" href="../../d4/d8c/a00035.html#a68c55287d7e2ae8f73ceee7e5d19b91d" title="Read IUH data and insert to m_2DArrayMap. " alt="" coords="1159,752,1366,781"/><area shape="rect" id="node21" href="../../d4/d8c/a00035.html#ad575a764c743cd8b7e3151fa387b21c4" title="Make lapse 2D array data and insert to m_2DArrayMap. " alt="" coords="1155,805,1370,835"/><area shape="rect" id="node23" href="../../d4/d8c/a00035.html#a0bf0785ae2dac466a689abdacba7ffab" title="Read raster data, both 1D and 2D, and insert to m_rsMap. " alt="" coords="1147,645,1379,675"/><area shape="rect" id="node25" href="../../dd/db2/a00151.html#a61a80ae537e24396433c9514c75735db" title="Set pointer of Scenario class which contains all BMP information. Added by LJ, 2016&#45;6&#45;14. " alt="" coords="1139,912,1386,941"/><area shape="rect" id="node27" href="../../dd/db2/a00151.html#aa57cb2bd2e75ba91bba985d2cd1d6221" title="Set pointer of clsReaches class which contains all reaches information. Added by LJ, 2016&#45;7&#45;2. " alt="" coords="1139,965,1386,995"/><area shape="rect" id="node29" href="../../dd/db2/a00151.html#ad38e9f3ef28b26f42bfaaf834a9a9f32" title="Set pointer of clsSubbasins class which contains all subbasins information. Added by LJ..." alt="" coords="1133,219,1392,248"/><area shape="rect" id="node33" href="../../d9/d7d/a00150.html#a1c1ddf5b5cc1d5cefccf37cb5c2f50c6" title="Get start time of simulation. " alt="" coords="583,643,798,672"/><area shape="rect" id="node34" href="../../d9/d7d/a00150.html#a93b6b15e3af5b2732bf2995554805cbc" title="Get end time of simulation. " alt="" coords="585,696,796,725"/><area shape="rect" id="node36" href="../../d7/dce/a00143.html#a8f475402e33dff97b8bde0e7a94c9e17" title="Get BMPs Factories. " alt="" coords="557,892,824,921"/><area shape="rect" id="node37" href="../../d7/d7a/a00016.html#a10db8064a895a8f2bfd594fc4fab9235" title="Get areal BMP parameters. " alt="" coords="573,946,809,993"/><area shape="rect" id="node38" href="../../d7/d7a/a00016.html#aa3fade2c20ebfbdfa1ee0b363a799e0c" title="Get management fields data. " alt="" coords="573,750,809,797"/><area shape="rect" id="node39" href="../../d7/d7a/a00016.html#a78af9b8c7869248b96e574406259ad8c" title="Get effect unit IDs. " alt="" coords="573,821,809,867"/></map>
 </div>
 </p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>seims/preprocess/<a class="el" href="../../d1/d67/a00310_source.html">text.py</a></li>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a0fc18f3381bbd34f9dc24b6f36ebecb2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ModelMain::AppendOutputData </td>
+          <td>(</td>
+          <td class="paramtype">time_t&#160;</td>
+          <td class="paramname"><em>time</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Append output data to Output Item by the corresponding aggregation type. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">time</td><td>Current simulation time </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="../../d8/d89/a00484_source.html#l00222">222</a> of file <a class="el" href="../../d8/d89/a00484_source.html">ModelMain.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/d44/a00098_a0fc18f3381bbd34f9dc24b6f36ebecb2_cgraph.png" border="0" usemap="#d1/d44/a00098_a0fc18f3381bbd34f9dc24b6f36ebecb2_cgraph" alt=""/></div>
+<map name="d1/d44/a00098_a0fc18f3381bbd34f9dc24b6f36ebecb2_cgraph" id="d1/d44/a00098_a0fc18f3381bbd34f9dc24b6f36ebecb2_cgraph">
+<area shape="rect" id="node2" href="../../de/d76/a00134.html#ab0c2bcd87797bff74be13dfb72a57710" title="get start time time_t " alt="" coords="316,5,527,35"/><area shape="rect" id="node3" href="../../de/d76/a00134.html#a42dd1b1b4254b741a00822ebd6d5e2e8" title="Get end time time_t. " alt="" coords="318,59,525,88"/><area shape="rect" id="node4" href="../../dd/db2/a00151.html#aafd60bc9d4176a0cf64af01aed881980" title="Get value, DT_Single. " alt="" coords="308,112,535,141"/><area shape="rect" id="node5" href="../../dd/db2/a00151.html#ad834fe6ed6d11b333fd34e1ff605ebb7" title="Get 1D data, by default, DT_Raster1D. " alt="" coords="302,165,541,195"/><area shape="rect" id="node6" href="../../dd/db2/a00151.html#ad327a319166273468db98800501f5946" title="Get 2D data, by default, DT_Raster2D. " alt="" coords="302,219,541,248"/><area shape="rect" id="node7" href="../../de/d76/a00134.html#acba827dcdf97794da4ae43e0de048bad" title="Add 1D time series data result to. " alt="" coords="320,273,523,319"/><area shape="rect" id="node8" href="../../de/d76/a00134.html#a796b76b5523eba12dbc1e3e972ca9aa1" title="Aggregate the 2D raster data from the given data parameter using the given method type..." alt="" coords="325,343,518,390"/><area shape="rect" id="node9" href="../../de/d76/a00134.html#ae374a8bb064ce806e48f1de099a48271" title="PrintInfoItem::AggregateData" alt="" coords="308,415,535,444"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aeb8f3e05b13c4b24eeb631ed6f8bbe79"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ModelMain::CheckAvailableOutput </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check whether the validation of outputs. </p>
+<ol type="1">
+<li>The output id should be valid for modules in config files;</li>
+<li>The date range should be in the data range of file.in; </li>
+</ol>
+
+<p>Definition at line <a class="el" href="../../d8/d89/a00484_source.html#l00200">200</a> of file <a class="el" href="../../d8/d89/a00484_source.html">ModelMain.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/d44/a00098_aeb8f3e05b13c4b24eeb631ed6f8bbe79_cgraph.png" border="0" usemap="#d1/d44/a00098_aeb8f3e05b13c4b24eeb631ed6f8bbe79_cgraph" alt=""/></div>
+<map name="d1/d44/a00098_aeb8f3e05b13c4b24eeb631ed6f8bbe79_cgraph" id="d1/d44/a00098_aeb8f3e05b13c4b24eeb631ed6f8bbe79_cgraph">
+<area shape="rect" id="node2" href="../../d9/d7d/a00150.html#a1c1ddf5b5cc1d5cefccf37cb5c2f50c6" title="Get start time of simulation. " alt="" coords="278,5,493,35"/><area shape="rect" id="node3" href="../../d9/d7d/a00150.html#a93b6b15e3af5b2732bf2995554805cbc" title="Get end time of simulation. " alt="" coords="280,59,491,88"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a37fd70bd42f4184fdef228ab53678318"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ModelMain::Execute </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Execute all the modules, aggregate output data, and write the total time-consuming, etc. </p>
+<p>Calculate index of current year of the entire simulation </p>
+
+<p>Definition at line <a class="el" href="../../d8/d89/a00484_source.html#l00132">132</a> of file <a class="el" href="../../d8/d89/a00484_source.html">ModelMain.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/d44/a00098_a37fd70bd42f4184fdef228ab53678318_cgraph.png" border="0" usemap="#d1/d44/a00098_a37fd70bd42f4184fdef228ab53678318_cgraph" alt=""/></div>
+<map name="d1/d44/a00098_a37fd70bd42f4184fdef228ab53678318_cgraph" id="d1/d44/a00098_a37fd70bd42f4184fdef228ab53678318_cgraph">
+<area shape="rect" id="node2" href="../../d9/d7d/a00150.html#a1c1ddf5b5cc1d5cefccf37cb5c2f50c6" title="Get start time of simulation. " alt="" coords="239,5,454,35"/><area shape="rect" id="node3" href="../../d9/d7d/a00150.html#a93b6b15e3af5b2732bf2995554805cbc" title="Get end time of simulation. " alt="" coords="241,59,452,88"/><area shape="rect" id="node4" href="../../db/dde/a00691.html#ac10e5077b978304f6bd34433d9ee2a5f" title="Print status messages for Debug. " alt="" coords="262,112,431,141"/><area shape="rect" id="node5" href="../../d1/d44/a00098.html#afc563d00de9ae78f64936924d2b9c275" title="Execute hillslope modules in current time. " alt="" coords="243,165,451,195"/><area shape="rect" id="node13" href="../../d1/d44/a00098.html#a49616f1b5a88da44949d1e317518dfe5" title="Execute channel modules in current time. " alt="" coords="245,219,448,248"/><area shape="rect" id="node14" href="../../d1/d44/a00098.html#a0fc18f3381bbd34f9dc24b6f36ebecb2" title="Append output data to Output Item by the corresponding aggregation type. " alt="" coords="223,405,470,435"/><area shape="rect" id="node23" href="../../d1/d44/a00098.html#a5d3df56b0f96d8fdaa803af791813271" title="Execute overall modules in the entire simulation period, e.g., COST module. " alt="" coords="250,272,443,301"/><area shape="rect" id="node24" href="../../d1/d44/a00098.html#a3c120f81c5fe6e87942f40535666ebd9" title="Print execution time on the screen. " alt="" coords="221,459,472,488"/><area shape="rect" id="node6" href="../../d4/d8c/a00035.html#aa611544ddb717d2d664e8aec368639c1" title="Update inputs, such climate data. " alt="" coords="541,93,739,123"/><area shape="rect" id="node11" href="../../dd/db2/a00151.html#a1a3a7bd2ff8748ec360e9464c358500b" title="Reset subtime step. " alt="" coords="525,147,755,194"/><area shape="rect" id="node12" href="../../dd/db2/a00151.html#a686c39c1c4894cc144699ba0681d509d" title="Execute the simulation. " alt="" coords="531,219,749,248"/><area shape="rect" id="node7" href="../../d1/d6e/a00073.html#abdd4eb90118878e83a98a8ba41a87cc5" title="Get time series data. " alt="" coords="808,67,1064,96"/><area shape="rect" id="node10" href="../../dd/db2/a00151.html#aba2d6fc2b0e4f8ccf202e0752c45d55c" title="Set 1D data, by default, DT_Raster1D. " alt="" coords="817,120,1055,149"/><area shape="rect" id="node8" href="../../d9/dec/a00090.html#a5adee45804fa27da97ecf8e5979717ea" title="Get Number of site. " alt="" coords="1113,35,1349,64"/><area shape="rect" id="node9" href="../../d9/dec/a00090.html#a2195da07e9d304304905d020d32e9760" title="Get site data by time. " alt="" coords="1123,89,1338,135"/><area shape="rect" id="node15" href="../../de/d76/a00134.html#ab0c2bcd87797bff74be13dfb72a57710" title="get start time time_t " alt="" coords="535,272,745,301"/><area shape="rect" id="node16" href="../../de/d76/a00134.html#a42dd1b1b4254b741a00822ebd6d5e2e8" title="Get end time time_t. " alt="" coords="537,325,743,355"/><area shape="rect" id="node17" href="../../dd/db2/a00151.html#aafd60bc9d4176a0cf64af01aed881980" title="Get value, DT_Single. " alt="" coords="527,379,753,408"/><area shape="rect" id="node18" href="../../dd/db2/a00151.html#ad834fe6ed6d11b333fd34e1ff605ebb7" title="Get 1D data, by default, DT_Raster1D. " alt="" coords="521,432,759,461"/><area shape="rect" id="node19" href="../../dd/db2/a00151.html#ad327a319166273468db98800501f5946" title="Get 2D data, by default, DT_Raster2D. " alt="" coords="521,485,759,515"/><area shape="rect" id="node20" href="../../de/d76/a00134.html#acba827dcdf97794da4ae43e0de048bad" title="Add 1D time series data result to. " alt="" coords="539,539,741,586"/><area shape="rect" id="node21" href="../../de/d76/a00134.html#a796b76b5523eba12dbc1e3e972ca9aa1" title="Aggregate the 2D raster data from the given data parameter using the given method type..." alt="" coords="543,610,737,657"/><area shape="rect" id="node22" href="../../de/d76/a00134.html#ae374a8bb064ce806e48f1de099a48271" title="PrintInfoItem::AggregateData" alt="" coords="527,681,753,711"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a49616f1b5a88da44949d1e317518dfe5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ModelMain::StepChannel </td>
+          <td>(</td>
+          <td class="paramtype">time_t&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>yearIdx</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Execute channel modules in current time. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">t</td><td>Current time </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">yearIdx</td><td>Year index of the entire simulation period </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="../../d8/d89/a00484_source.html#l00099">99</a> of file <a class="el" href="../../d8/d89/a00484_source.html">ModelMain.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/d44/a00098_a49616f1b5a88da44949d1e317518dfe5_cgraph.png" border="0" usemap="#d1/d44/a00098_a49616f1b5a88da44949d1e317518dfe5_cgraph" alt=""/></div>
+<map name="d1/d44/a00098_a49616f1b5a88da44949d1e317518dfe5_cgraph" id="d1/d44/a00098_a49616f1b5a88da44949d1e317518dfe5_cgraph">
+<area shape="rect" id="node2" href="../../dd/db2/a00151.html#a686c39c1c4894cc144699ba0681d509d" title="Execute the simulation. " alt="" coords="257,4,474,33"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="afc563d00de9ae78f64936924d2b9c275"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ModelMain::StepHillSlope </td>
+          <td>(</td>
+          <td class="paramtype">time_t&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>yearIdx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>subIndex</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Execute hillslope modules in current time. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">t</td><td>Current time </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">yearIdx</td><td>Year index of the entire simulation period </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">subIndex</td><td>Time step index of the entire simulation period </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="../../d8/d89/a00484_source.html#l00075">75</a> of file <a class="el" href="../../d8/d89/a00484_source.html">ModelMain.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/d44/a00098_afc563d00de9ae78f64936924d2b9c275_cgraph.png" border="0" usemap="#d1/d44/a00098_afc563d00de9ae78f64936924d2b9c275_cgraph" alt=""/></div>
+<map name="d1/d44/a00098_afc563d00de9ae78f64936924d2b9c275_cgraph" id="d1/d44/a00098_afc563d00de9ae78f64936924d2b9c275_cgraph">
+<area shape="rect" id="node2" href="../../d4/d8c/a00035.html#aa611544ddb717d2d664e8aec368639c1" title="Update inputs, such climate data. " alt="" coords="278,64,477,93"/><area shape="rect" id="node7" href="../../dd/db2/a00151.html#a1a3a7bd2ff8748ec360e9464c358500b" title="Reset subtime step. " alt="" coords="262,118,493,165"/><area shape="rect" id="node8" href="../../dd/db2/a00151.html#a686c39c1c4894cc144699ba0681d509d" title="Execute the simulation. " alt="" coords="269,189,486,219"/><area shape="rect" id="node3" href="../../d1/d6e/a00073.html#abdd4eb90118878e83a98a8ba41a87cc5" title="Get time series data. " alt="" coords="541,37,797,67"/><area shape="rect" id="node6" href="../../dd/db2/a00151.html#aba2d6fc2b0e4f8ccf202e0752c45d55c" title="Set 1D data, by default, DT_Raster1D. " alt="" coords="550,91,789,120"/><area shape="rect" id="node4" href="../../d9/dec/a00090.html#a5adee45804fa27da97ecf8e5979717ea" title="Get Number of site. " alt="" coords="846,5,1082,35"/><area shape="rect" id="node5" href="../../d9/dec/a00090.html#a2195da07e9d304304905d020d32e9760" title="Get site data by time. " alt="" coords="857,59,1071,106"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a5d3df56b0f96d8fdaa803af791813271"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ModelMain::StepOverall </td>
+          <td>(</td>
+          <td class="paramtype">time_t&#160;</td>
+          <td class="paramname"><em>startT</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">time_t&#160;</td>
+          <td class="paramname"><em>endT</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Execute overall modules in the entire simulation period, e.g., COST module. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">startT</td><td>Start time period </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">endT</td><td>End time period </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="../../d8/d89/a00484_source.html#l00118">118</a> of file <a class="el" href="../../d8/d89/a00484_source.html">ModelMain.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/d44/a00098_a5d3df56b0f96d8fdaa803af791813271_cgraph.png" border="0" usemap="#d1/d44/a00098_a5d3df56b0f96d8fdaa803af791813271_cgraph" alt=""/></div>
+<map name="d1/d44/a00098_a5d3df56b0f96d8fdaa803af791813271_cgraph" id="d1/d44/a00098_a5d3df56b0f96d8fdaa803af791813271_cgraph">
+<area shape="rect" id="node2" href="../../dd/db2/a00151.html#a686c39c1c4894cc144699ba0681d509d" title="Execute the simulation. " alt="" coords="249,4,466,33"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a208d36bf750782d6d7248b279c38bf68"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt;string&gt; ModelMain::m_moduleIDs</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Module unique IDs, the same sequences with. </p>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../d1/d44/a00098.html#a3d95a955d68e31885334312d7983753f" title="Modules list in the model run. ">m_simulationModules</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="../../d6/d1a/a00485_source.html#l00127">127</a> of file <a class="el" href="../../d6/d1a/a00485_source.html">ModelMain.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>seims/src/seims_main/main/main_omp/<a class="el" href="../../d6/d1a/a00485_source.html">ModelMain.h</a></li>
+<li>seims/src/seims_main/main/main_omp/<a class="el" href="../../d8/d89/a00484_source.html">ModelMain.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>seims</b></li><li class="navelem"><b>preprocess</b></li><li class="navelem"><b>text</b></li><li class="navelem"><a class="el" href="../../d1/d44/a00098.html">ModelNameUtils</a></li>
-    <li class="footer">Generated on Fri Jun 1 2018 01:52:56 for SEIMS by
+    <li class="navelem"><a class="el" href="../../d1/d44/a00098.html">ModelMain</a></li>
+    <li class="footer">Generated on Fri Jun 8 2018 08:48:08 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

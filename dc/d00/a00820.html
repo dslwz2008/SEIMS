@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: SUR_MR</title>
+<title>SEIMS: PET_PT</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -108,66 +108,46 @@ $(document).ready(function(){initNavTree('dc/d00/a00820.html','../../');});
   <div class="summary">
 <a href="#nested-classes">Classes</a>  </div>
   <div class="headertitle">
-<div class="title">SUR_MR<div class="ingroups"><a class="el" href="../../dd/de5/a00771.html">Hydrology_longterm</a></div></div>  </div>
+<div class="title">PET_PT<div class="ingroups"><a class="el" href="../../d9/d00/a00784.html">Hydrology_longterm</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Modified Rational Method to calculate infiltration and excess precipitation.  
+<p>Potential evapotranspiration using PriestleyTaylor method.  
 <a href="#details">More...</a></p>
 <div class="dynheader">
-Collaboration diagram for SUR_MR:</div>
+Collaboration diagram for PET_PT:</div>
 <div class="dyncontent">
 <center><table><tr><td><img src="../../dc/d00/a00820.png" border="0" alt="" usemap="#dc_2d00_2a00820"/>
 <map name="dc_2d00_2a00820" id="dc_2d00_2a00820">
-<area shape="rect" id="node1" href="../../dd/de5/a00771.html" title="Longterm hydrology related modules. " alt="" coords="6,4,173,33"/></map>
+<area shape="rect" id="node1" href="../../d9/d00/a00784.html" title="Longterm hydrology related modules. " alt="" coords="6,4,173,33"/></map>
 </td></tr></table></center>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html">SUR_MR</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modified Rational Method to calculate infiltration and excess precipitation.  <a href="../../d7/d3f/a00173.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d88/a00128.html">PETPriestleyTaylor</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Priestley Taylor Method to Compute PET.  <a href="../../d1/d88/a00128.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Modified Rational Method to calculate infiltration and excess precipitation. </p>
+<p>Potential evapotranspiration using PriestleyTaylor method. </p>
 <dl class="section author"><dt>Author</dt><dd>Junzhi Liu </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>19-January-2011</dd></dl>
-<p>Revision: Zhiqiang Yu Date: 2011-2-15 Description:</p>
-<ol type="1">
-<li><a class="el" href="../../df/d6a/a00119.html" title="Model parameter information class. ">Parameter</a> S_M_frozen would be s_frozen and DT_Single.</li>
-<li><a class="el" href="../../df/d6a/a00119.html" title="Model parameter information class. ">Parameter</a> sfrozen would be t_soil and in WaterBalance table.</li>
-<li>Delete parameter Moist_in.</li>
-<li>Rename the input and output variables. See metadata rules for names.</li>
-<li>In function execute, do not change m_pNet[i] directly. This will have influence on another modules who will use net precipitation. Use local variable to replace it.</li>
-<li>Add API function GetValue.</li>
+<dl class="section date"><dt>Date</dt><dd>Nov. 2010  LiangJun Zhu </dd>
+<dd>
+May. 2016 </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>: 1. Add m_tMean from database, which may be measurement value or the mean of tMax and tMin;<ol type="1">
+<li>The PET calculate is changed from site-based to cell-based, because PET is not only dependent on Climate site data;</li>
+<li>Add m_VPD, m_dayLen as outputs, which will be used in BIO_EPIC module</li>
+<li>Add m_phuBase as outputs, which will be used in MGT_SWAT module</li>
 </ol>
-<p>Revision: Junzhi Liu Date: 2011-2-19</p>
-<ol type="1">
-<li>Rename m_excess to m_pe</li>
-<li>Take snowmelt into consideration when calculating PE, PE=P_NET+Snowmelt-F</li>
-</ol>
-<p>Revision: Junzhi Liu Date: 2013-10-28</p>
-<ol type="1">
-<li>Add multi-layers support for soil parameters</li>
-</ol>
-<p>Revision: LiangJun Zhu Date: 2016-5-27</p>
-<ol type="1">
-<li>Update the support for multi-layers soil parameters</li>
-</ol>
-<p>Revision: LiangJun Zhu Date: 2016-7-14</p>
-<ol type="1">
-<li>Remove snowmelt as AddInput, because snowmelt is considered into net precipitation in SnowMelt moudule, by the meantime, this can avoid runtime error when SnowMelt module is not configured.</li>
-<li>Change the unit of soil moisture from mm H2O/mm Soil to mm H2O, which is more rational.</li>
-<li>Change soil moisture to soil storage which is coincident with SWAT, and do not include wilting point.</li>
-</ol>
-<p>Modified Rational Method to calculate infiltration and excess precipitation </p>
+</dd></dl>
+<p>Calculate potential evapotranspiration using PriestleyTaylor method </p>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Jun 1 2018 01:52:55 for SEIMS by
+    <li class="footer">Generated on Fri Jun 8 2018 08:48:08 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

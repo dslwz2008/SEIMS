@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims/src/seims_main/base/module_setting/ParamInfo.h Source File</title>
+<title>SEIMS: seims/src/seims_main/base/module_setting/MetadataInfo.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -112,96 +112,344 @@ $(document).ready(function(){initNavTree('db/db1/a00460_source.html','../../');}
 
 <div class="header">
   <div class="headertitle">
-<div class="title">ParamInfo.h</div>  </div>
+<div class="title">MetadataInfo.h</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef SEIMS_PARAMETER_INFO_H</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SEIMS_PARAMETER_INFO_H</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef SEIMS_METADATA_INFO_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SEIMS_METADATA_INFO_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;basic.h&quot;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;MetadataInfoConst.h&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;basic.h&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">using namespace </span>ccgl;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">using</span> std::vector;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="../../d4/d98/a00120.html">   26</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d4/d98/a00120.html">ParamInfo</a> {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="../../d4/d98/a00120.html">ParamInfo</a>();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="../../d4/d98/a00120.html">ParamInfo</a>(<span class="keyword">const</span> <a class="code" href="../../d4/d98/a00120.html">ParamInfo</a>&amp; another);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    ~<a class="code" href="../../d4/d98/a00120.html">ParamInfo</a>();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">float</span> GetAdjustedValue(<span class="keywordtype">float</span> pre_value = NODATA_VALUE);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> Adjust1DArray(<span class="keywordtype">int</span> n, <span class="keywordtype">float</span>* data);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> Adjust1DRaster(<span class="keywordtype">int</span> n, <span class="keywordtype">float</span>* data);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> Adjust1DRaster(<span class="keywordtype">int</span> n, <span class="keywordtype">float</span>* data, <span class="keyword">const</span> <span class="keywordtype">float</span>* units, vector&lt;int&gt; selunits,</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                        <span class="keyword">const</span> <span class="keywordtype">float</span>* lu, vector&lt;int&gt; sellu);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> Adjust2DArray(<span class="keywordtype">int</span> n, <span class="keywordtype">float</span>** data);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">void</span> Adjust2DRaster(<span class="keywordtype">int</span> n, <span class="keywordtype">int</span> lyr, <span class="keywordtype">float</span>** data);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">void</span> Adjust2DRaster(<span class="keywordtype">int</span> n, <span class="keywordtype">int</span> lyr, <span class="keywordtype">float</span>** data, <span class="keywordtype">float</span>* units, vector&lt;int&gt; selunits,</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                        <span class="keywordtype">float</span>* lu, vector&lt;int&gt; sellu);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="../../d4/d98/a00120.html#a4aa99ac42f641ff345421f4a09c43d96">   66</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="../../d4/d98/a00120.html#a4aa99ac42f641ff345421f4a09c43d96">Name</a>;</div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="../../d4/d98/a00120.html#ad24cdb755575319abde9c186a34920de">   68</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="../../d4/d98/a00120.html#ad24cdb755575319abde9c186a34920de">Units</a>;</div>
-<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="../../d4/d98/a00120.html#ac3a3033becc4c70b37e273e76c37bcee">   70</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="../../d4/d98/a00120.html#ac3a3033becc4c70b37e273e76c37bcee">Description</a>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="../../d4/d98/a00120.html#a7fff4547600ebc1df4054a5337aaeab3">   72</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="../../d4/d98/a00120.html#a7fff4547600ebc1df4054a5337aaeab3">ModuleID</a>;</div>
-<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="../../d4/d98/a00120.html#ae67c0395380ce7ec6424c8ac379560c4">   74</a></span>&#160;    <a class="code" href="../../df/d5f/a00762.html#gac6cf78ef837450cfb19495fe34976b8c">dimensionTypes</a> <a class="code" href="../../d4/d98/a00120.html#ae67c0395380ce7ec6424c8ac379560c4">Dimension</a>;</div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="../../d4/d98/a00120.html#a50d1d69eca0398a211bc13ba473ef9c1">   76</a></span>&#160;    <a class="code" href="../../df/d5f/a00762.html#ga44c7aa1266bcfcaebbafc0ffc48fc952">transferTypes</a> <a class="code" href="../../d4/d98/a00120.html#a50d1d69eca0398a211bc13ba473ef9c1">Transfer</a>;</div>
-<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="../../d4/d98/a00120.html#a75b10030638c69b20262b5a1a39ec67e">   78</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="../../d4/d98/a00120.html#a75b10030638c69b20262b5a1a39ec67e">Source</a>;</div>
-<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="../../d4/d98/a00120.html#a698d9a7a6b8fad7c2aabdc7c64428f26">   80</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="../../d4/d98/a00120.html#a698d9a7a6b8fad7c2aabdc7c64428f26">Value</a>;</div>
-<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="../../d4/d98/a00120.html#a425eb6b82f198365698c84f5f830b73b">   82</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="../../d4/d98/a00120.html#a425eb6b82f198365698c84f5f830b73b">Impact</a>;</div>
-<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="../../d4/d98/a00120.html#aade23df743899af61f36a76dd257b0df">   84</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="../../d4/d98/a00120.html#aade23df743899af61f36a76dd257b0df">Change</a>;</div>
-<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="../../d4/d98/a00120.html#a752f09515c81e1159c225fbc14668a58">   86</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="../../d4/d98/a00120.html#a752f09515c81e1159c225fbc14668a58">Maximum</a>;</div>
-<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="../../d4/d98/a00120.html#a3b79895b2e6a6a4853f1786fdd3b369f">   88</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="../../d4/d98/a00120.html#a3b79895b2e6a6a4853f1786fdd3b369f">Minimun</a>;</div>
-<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="../../d4/d98/a00120.html#ae356227ba8d20639ed0ca4171bd8641a">   90</a></span>&#160;    <a class="code" href="../../d4/d98/a00120.html">ParamInfo</a>* <a class="code" href="../../d4/d98/a00120.html#ae356227ba8d20639ed0ca4171bd8641a">DependPara</a>;</div>
-<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="../../d4/d98/a00120.html#a3c615ed4e44899b451debfc09a332d48">   92</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="../../d4/d98/a00120.html#a3c615ed4e44899b451debfc09a332d48">ClimateType</a>;</div>
-<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="../../d4/d98/a00120.html#ae7bced3619362c2e409dedec1e92e190">   94</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d4/d98/a00120.html#ae7bced3619362c2e409dedec1e92e190">IsConstant</a>;</div>
-<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="../../d4/d98/a00120.html#a42595f7deafb51cf7d6853afb23d46f7">   96</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d4/d98/a00120.html#a42595f7deafb51cf7d6853afb23d46f7">IsOutput</a>;</div>
-<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="../../d4/d98/a00120.html#a5ddbf5d8c944f7753d085f9608074bb0">   98</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d4/d98/a00120.html#a5ddbf5d8c944f7753d085f9608074bb0">OutputToOthers</a>;</div>
-<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="../../d4/d98/a00120.html#a5d2574f1f2a900afdb13187151711459">  100</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="../../d4/d98/a00120.html#a5d2574f1f2a900afdb13187151711459">BasicName</a>;</div>
-<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="../../d4/d98/a00120.html#a70a61323cb067362136148b1ca21d353">  102</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d4/d98/a00120.html#a70a61323cb067362136148b1ca21d353">initialized</a>;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;};</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SEIMS_PARAMETER_INFO_H */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="a00120_html_a698d9a7a6b8fad7c2aabdc7c64428f26"><div class="ttname"><a href="../../d4/d98/a00120.html#a698d9a7a6b8fad7c2aabdc7c64428f26">ParamInfo::Value</a></div><div class="ttdeci">float Value</div><div class="ttdoc">Value. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db1/a00460_source.html#l00080">ParamInfo.h:80</a></div></div>
-<div class="ttc" id="a00120_html_a7fff4547600ebc1df4054a5337aaeab3"><div class="ttname"><a href="../../d4/d98/a00120.html#a7fff4547600ebc1df4054a5337aaeab3">ParamInfo::ModuleID</a></div><div class="ttdeci">string ModuleID</div><div class="ttdoc">Used by Module Ids. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db1/a00460_source.html#l00072">ParamInfo.h:72</a></div></div>
-<div class="ttc" id="a00120_html_ae7bced3619362c2e409dedec1e92e190"><div class="ttname"><a href="../../d4/d98/a00120.html#ae7bced3619362c2e409dedec1e92e190">ParamInfo::IsConstant</a></div><div class="ttdeci">bool IsConstant</div><div class="ttdoc">Is constant or not. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db1/a00460_source.html#l00094">ParamInfo.h:94</a></div></div>
-<div class="ttc" id="a00120_html_a50d1d69eca0398a211bc13ba473ef9c1"><div class="ttname"><a href="../../d4/d98/a00120.html#a50d1d69eca0398a211bc13ba473ef9c1">ParamInfo::Transfer</a></div><div class="ttdeci">transferTypes Transfer</div><div class="ttdoc">Data transfer type. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db1/a00460_source.html#l00076">ParamInfo.h:76</a></div></div>
-<div class="ttc" id="a00762_html_gac6cf78ef837450cfb19495fe34976b8c"><div class="ttname"><a href="../../df/d5f/a00762.html#gac6cf78ef837450cfb19495fe34976b8c">dimensionTypes</a></div><div class="ttdeci">dimensionTypes</div><div class="ttdoc">enum of dimension data types </div><div class="ttdef"><b>Definition:</b> <a href="../../de/d87/a00456_source.html#l00062">MetadataInfoConst.h:62</a></div></div>
-<div class="ttc" id="a00120_html_ac3a3033becc4c70b37e273e76c37bcee"><div class="ttname"><a href="../../d4/d98/a00120.html#ac3a3033becc4c70b37e273e76c37bcee">ParamInfo::Description</a></div><div class="ttdeci">string Description</div><div class="ttdoc">Description. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db1/a00460_source.html#l00070">ParamInfo.h:70</a></div></div>
-<div class="ttc" id="a00120_html_ae356227ba8d20639ed0ca4171bd8641a"><div class="ttname"><a href="../../d4/d98/a00120.html#ae356227ba8d20639ed0ca4171bd8641a">ParamInfo::DependPara</a></div><div class="ttdeci">ParamInfo * DependPara</div><div class="ttdoc">Dependence parameters. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db1/a00460_source.html#l00090">ParamInfo.h:90</a></div></div>
-<div class="ttc" id="a00120_html_a752f09515c81e1159c225fbc14668a58"><div class="ttname"><a href="../../d4/d98/a00120.html#a752f09515c81e1159c225fbc14668a58">ParamInfo::Maximum</a></div><div class="ttdeci">float Maximum</div><div class="ttdoc">Absolute maximum value. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db1/a00460_source.html#l00086">ParamInfo.h:86</a></div></div>
-<div class="ttc" id="a00120_html_a5ddbf5d8c944f7753d085f9608074bb0"><div class="ttname"><a href="../../d4/d98/a00120.html#a5ddbf5d8c944f7753d085f9608074bb0">ParamInfo::OutputToOthers</a></div><div class="ttdeci">bool OutputToOthers</div><div class="ttdoc">Is output to other modules or not. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db1/a00460_source.html#l00098">ParamInfo.h:98</a></div></div>
-<div class="ttc" id="a00762_html_ga44c7aa1266bcfcaebbafc0ffc48fc952"><div class="ttname"><a href="../../df/d5f/a00762.html#ga44c7aa1266bcfcaebbafc0ffc48fc952">transferTypes</a></div><div class="ttdeci">transferTypes</div><div class="ttdoc">Data be transferred across subbasins for MPI version. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/d87/a00456_source.html#l00081">MetadataInfoConst.h:81</a></div></div>
-<div class="ttc" id="a00120_html_a3c615ed4e44899b451debfc09a332d48"><div class="ttname"><a href="../../d4/d98/a00120.html#a3c615ed4e44899b451debfc09a332d48">ParamInfo::ClimateType</a></div><div class="ttdeci">string ClimateType</div><div class="ttdoc">Climate type. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db1/a00460_source.html#l00092">ParamInfo.h:92</a></div></div>
-<div class="ttc" id="a00120_html"><div class="ttname"><a href="../../d4/d98/a00120.html">ParamInfo</a></div><div class="ttdoc">Class to store and manage parameter information from the parameter database. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db1/a00460_source.html#l00026">ParamInfo.h:26</a></div></div>
-<div class="ttc" id="a00120_html_aade23df743899af61f36a76dd257b0df"><div class="ttname"><a href="../../d4/d98/a00120.html#aade23df743899af61f36a76dd257b0df">ParamInfo::Change</a></div><div class="ttdeci">string Change</div><div class="ttdoc">Change type. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db1/a00460_source.html#l00084">ParamInfo.h:84</a></div></div>
-<div class="ttc" id="a00120_html_a70a61323cb067362136148b1ca21d353"><div class="ttname"><a href="../../d4/d98/a00120.html#a70a61323cb067362136148b1ca21d353">ParamInfo::initialized</a></div><div class="ttdeci">bool initialized</div><div class="ttdoc">whether is initialized </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db1/a00460_source.html#l00102">ParamInfo.h:102</a></div></div>
-<div class="ttc" id="a00120_html_a42595f7deafb51cf7d6853afb23d46f7"><div class="ttname"><a href="../../d4/d98/a00120.html#a42595f7deafb51cf7d6853afb23d46f7">ParamInfo::IsOutput</a></div><div class="ttdeci">bool IsOutput</div><div class="ttdoc">Is output or not. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db1/a00460_source.html#l00096">ParamInfo.h:96</a></div></div>
-<div class="ttc" id="a00120_html_ad24cdb755575319abde9c186a34920de"><div class="ttname"><a href="../../d4/d98/a00120.html#ad24cdb755575319abde9c186a34920de">ParamInfo::Units</a></div><div class="ttdeci">string Units</div><div class="ttdoc">Units. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db1/a00460_source.html#l00068">ParamInfo.h:68</a></div></div>
-<div class="ttc" id="a00120_html_a5d2574f1f2a900afdb13187151711459"><div class="ttname"><a href="../../d4/d98/a00120.html#a5d2574f1f2a900afdb13187151711459">ParamInfo::BasicName</a></div><div class="ttdeci">string BasicName</div><div class="ttdoc">Basic name. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db1/a00460_source.html#l00100">ParamInfo.h:100</a></div></div>
-<div class="ttc" id="a00120_html_ae67c0395380ce7ec6424c8ac379560c4"><div class="ttname"><a href="../../d4/d98/a00120.html#ae67c0395380ce7ec6424c8ac379560c4">ParamInfo::Dimension</a></div><div class="ttdeci">dimensionTypes Dimension</div><div class="ttdoc">Data dimension type. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db1/a00460_source.html#l00074">ParamInfo.h:74</a></div></div>
-<div class="ttc" id="a00120_html_a425eb6b82f198365698c84f5f830b73b"><div class="ttname"><a href="../../d4/d98/a00120.html#a425eb6b82f198365698c84f5f830b73b">ParamInfo::Impact</a></div><div class="ttdeci">float Impact</div><div class="ttdoc">Impact value. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db1/a00460_source.html#l00082">ParamInfo.h:82</a></div></div>
-<div class="ttc" id="a00120_html_a3b79895b2e6a6a4853f1786fdd3b369f"><div class="ttname"><a href="../../d4/d98/a00120.html#a3b79895b2e6a6a4853f1786fdd3b369f">ParamInfo::Minimun</a></div><div class="ttdeci">float Minimun</div><div class="ttdoc">Absolute minimum value. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db1/a00460_source.html#l00088">ParamInfo.h:88</a></div></div>
-<div class="ttc" id="a00120_html_a75b10030638c69b20262b5a1a39ec67e"><div class="ttname"><a href="../../d4/d98/a00120.html#a75b10030638c69b20262b5a1a39ec67e">ParamInfo::Source</a></div><div class="ttdeci">string Source</div><div class="ttdoc">Source, to identify which the parameters can be derived. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db1/a00460_source.html#l00078">ParamInfo.h:78</a></div></div>
-<div class="ttc" id="a00120_html_a4aa99ac42f641ff345421f4a09c43d96"><div class="ttname"><a href="../../d4/d98/a00120.html#a4aa99ac42f641ff345421f4a09c43d96">ParamInfo::Name</a></div><div class="ttdeci">string Name</div><div class="ttdoc">Name. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db1/a00460_source.html#l00066">ParamInfo.h:66</a></div></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">using namespace </span>ccgl;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">using</span> std::vector;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="../../d9/df8/a00096.html">   24</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../d9/df8/a00096.html">ModelClass</a> {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="../../d9/df8/a00096.html">ModelClass</a>(): Name(<span class="stringliteral">&quot;&quot;</span>), Description(<span class="stringliteral">&quot;&quot;</span>) {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">string</span> Name;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">string</span> Description;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;};</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="../../d2/db1/a00070.html">   38</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../d2/db1/a00070.html">Information</a> {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="../../d2/db1/a00070.html">Information</a>() : Id(<span class="stringliteral">&quot;&quot;</span>), Name(<span class="stringliteral">&quot;&quot;</span>), Description(<span class="stringliteral">&quot;&quot;</span>), Version(<span class="stringliteral">&quot;&quot;</span>), Author(<span class="stringliteral">&quot;&quot;</span>),</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                    EMail(<span class="stringliteral">&quot;&quot;</span>), Website(<span class="stringliteral">&quot;&quot;</span>), Helpfile(<span class="stringliteral">&quot;&quot;</span>) {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="../../d2/db1/a00070.html#a648bb8c9d3e9459afe4f131fa389352a">   43</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="../../d2/db1/a00070.html#a648bb8c9d3e9459afe4f131fa389352a">Id</a>;          </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="../../d2/db1/a00070.html#aa411bbe0edd95d200b59c0b7606173d3">   44</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="../../d2/db1/a00070.html#aa411bbe0edd95d200b59c0b7606173d3">Name</a>;        </div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="../../d2/db1/a00070.html#a9f0b0e91a740ff0e1f3d0b48b069983a">   45</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="../../d2/db1/a00070.html#a9f0b0e91a740ff0e1f3d0b48b069983a">Description</a>; </div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="../../d2/db1/a00070.html#a0fea44ad14e758340799fe8ce77b8330">   46</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="../../d2/db1/a00070.html#a0fea44ad14e758340799fe8ce77b8330">Version</a>;     </div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="../../d2/db1/a00070.html#a1b8fa5ae955f80cbd549cd3186788d3f">   47</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="../../d2/db1/a00070.html#a1b8fa5ae955f80cbd549cd3186788d3f">Author</a>;      </div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="../../d2/db1/a00070.html#a0ea3ec0a518e6f2a6afcfe5a47e6a092">   48</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="../../d2/db1/a00070.html#a0ea3ec0a518e6f2a6afcfe5a47e6a092">EMail</a>;       </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="../../d2/db1/a00070.html#af713e5818c8dff3d1c81c2dbd711e4c4">   49</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="../../d2/db1/a00070.html#af713e5818c8dff3d1c81c2dbd711e4c4">Website</a>;     </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="../../d2/db1/a00070.html#a8e1e2fee4394c6306a3fd80387281d94">   50</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="../../d2/db1/a00070.html#a8e1e2fee4394c6306a3fd80387281d94">Helpfile</a>;    </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;};</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="../../df/d86/a00012.html">   59</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../df/d86/a00012.html">baseParameter</a> {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="../../df/d86/a00012.html">baseParameter</a>() : Name(<span class="stringliteral">&quot;&quot;</span>), Units(<span class="stringliteral">&quot;&quot;</span>), Description(<span class="stringliteral">&quot;&quot;</span>), Dimension(DT_Unknown) {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="../../df/d86/a00012.html#adbe1b85de6038485f9bcbdc1ee99dab1">   63</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="../../df/d86/a00012.html#adbe1b85de6038485f9bcbdc1ee99dab1">Name</a>;              </div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="../../df/d86/a00012.html#a5d7787b19474e3fe73db9cc7218808ea">   64</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="../../df/d86/a00012.html#a5d7787b19474e3fe73db9cc7218808ea">Units</a>;             </div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="../../df/d86/a00012.html#a72591cce053c48d45507d23ed1187276">   65</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="../../df/d86/a00012.html#a72591cce053c48d45507d23ed1187276">Description</a>;       </div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="../../df/d86/a00012.html#ade2494970a4d547247921bd92186ff8d">   66</a></span>&#160;    <a class="code" href="../../dc/d5d/a00775.html#gac6cf78ef837450cfb19495fe34976b8c">dimensionTypes</a> <a class="code" href="../../df/d86/a00012.html#ade2494970a4d547247921bd92186ff8d">Dimension</a>; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;};</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="../../d4/d98/a00120.html">   75</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../d4/d98/a00120.html">Parameter</a>: <a class="code" href="../../df/d86/a00012.html">baseParameter</a> {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="../../d4/d98/a00120.html">Parameter</a>() : Source(<span class="stringliteral">&quot;&quot;</span>) {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="../../d4/d98/a00120.html#a96b1cb9b1ecc5c1fea4bf390554748ea">   79</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="../../d4/d98/a00120.html#a96b1cb9b1ecc5c1fea4bf390554748ea">Source</a>; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;};</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="../../db/db6/a00074.html">   88</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../db/db6/a00074.html">InputVariable</a>: <a class="code" href="../../d4/d98/a00120.html">Parameter</a> {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <a class="code" href="../../db/db6/a00074.html">InputVariable</a>() : tfType(TF_Whole) {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <a class="code" href="../../dc/d5d/a00775.html#ga44c7aa1266bcfcaebbafc0ffc48fc952">transferTypes</a> tfType;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;};</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="../../df/d6a/a00119.html">  100</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../df/d6a/a00119.html">OutputVariable</a>: <a class="code" href="../../df/d86/a00012.html">baseParameter</a> {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <a class="code" href="../../df/d6a/a00119.html">OutputVariable</a>() : tfType(TF_Whole) {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <a class="code" href="../../dc/d5d/a00775.html#ga44c7aa1266bcfcaebbafc0ffc48fc952">transferTypes</a> tfType;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;};</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="../../d0/d89/a00071.html">  112</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../d0/d89/a00071.html">InOutputVariable</a>: <a class="code" href="../../db/db6/a00074.html">InputVariable</a> {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <a class="code" href="../../d0/d89/a00071.html">InOutputVariable</a>() {</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;};</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="../../d1/dc1/a00092.html">  122</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d1/dc1/a00092.html">MetadataInfo</a>: <a class="code" href="../../d9/da5/a00075.html">Interface</a> {</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <a class="code" href="../../d1/dc1/a00092.html">MetadataInfo</a>() { m_strSchemaVersion = <span class="stringliteral">&quot;0.4&quot;</span>; }</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    ~<a class="code" href="../../d1/dc1/a00092.html">MetadataInfo</a>();</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordtype">string</span> SchemaVersion() { <span class="keywordflow">return</span> m_strSchemaVersion; }</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordtype">void</span> SetClass(<span class="keyword">const</span> <span class="keywordtype">char</span>* name, <span class="keyword">const</span> <span class="keywordtype">char</span>* description);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordtype">string</span> GetClassName() { <span class="keywordflow">return</span> m_oClass.Name; }</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordtype">string</span> GetClassDescription() { <span class="keywordflow">return</span> m_oClass.Description; }</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordtype">void</span> SetID(<span class="keyword">const</span> <span class="keywordtype">char</span>* ID) { m_Info.Id = ID; }</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordtype">string</span> GetID() { <span class="keywordflow">return</span> m_Info.Id; }</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordtype">void</span> SetName(<span class="keyword">const</span> <span class="keywordtype">char</span>* name) { m_Info.Name = name; }</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordtype">string</span> GetName() { <span class="keywordflow">return</span> m_Info.Name; }</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordtype">void</span> SetDescription(<span class="keyword">const</span> <span class="keywordtype">char</span>* description) { m_Info.Description = description; }</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordtype">string</span> GetDescription() { <span class="keywordflow">return</span> m_Info.Description; }</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordtype">void</span> SetVersion(<span class="keyword">const</span> <span class="keywordtype">char</span>* version) { m_Info.Version = version; }</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordtype">string</span> GetVersion() { <span class="keywordflow">return</span> m_Info.Version; }</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordtype">void</span> SetAuthor(<span class="keyword">const</span> <span class="keywordtype">char</span>* author) { m_Info.Author = author; }</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordtype">string</span> GetAuthor() { <span class="keywordflow">return</span> m_Info.Author; }</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordtype">void</span> SetEmail(<span class="keyword">const</span> <span class="keywordtype">char</span>* email) { m_Info.EMail = email; }</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keywordtype">string</span> GetEmail() { <span class="keywordflow">return</span> m_Info.EMail; }</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordtype">void</span> SetWebsite(<span class="keyword">const</span> <span class="keywordtype">char</span>* site) { m_Info.Website = site; }</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordtype">string</span> GetWebsite() { <span class="keywordflow">return</span> m_Info.Website; }</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordtype">void</span> SetHelpfile(<span class="keyword">const</span> <span class="keywordtype">char</span>* file) { m_Info.Helpfile = file; }</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keywordtype">string</span> GetHelpfile() { <span class="keywordflow">return</span> m_Info.Helpfile; }</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="comment">/************ INPUT PARAMETERS FROM OTHER MODULES ************/</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordtype">int</span> GetInputCount() { <span class="keywordflow">return</span> int(m_vInputs.size()); }</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordtype">int</span> AddInput(<span class="keyword">const</span> <span class="keywordtype">char</span>* name, <span class="keyword">const</span> <span class="keywordtype">char</span>* units, <span class="keyword">const</span> <span class="keywordtype">char</span>* desc, <span class="keyword">const</span> <span class="keywordtype">char</span>* source, <a class="code" href="../../dc/d5d/a00775.html#gac6cf78ef837450cfb19495fe34976b8c">dimensionTypes</a> dimType,</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                 <a class="code" href="../../dc/d5d/a00775.html#ga44c7aa1266bcfcaebbafc0ffc48fc952">transferTypes</a> tfType = TF_Whole);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordtype">string</span> GetInputName(<span class="keywordtype">int</span> index) { <span class="keywordflow">return</span> index &gt;= 0 &amp;&amp; index &lt; m_vInputs.size() ? m_vInputs[index].Name : <span class="stringliteral">&quot;&quot;</span>; }</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keywordtype">string</span> GetInputUnits(<span class="keywordtype">int</span> index) { <span class="keywordflow">return</span> index &gt;= 0 &amp;&amp; index &lt; m_vInputs.size() ? m_vInputs[index].Units : <span class="stringliteral">&quot;&quot;</span>; }</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keywordtype">string</span> GetInputDescription(<span class="keywordtype">int</span> index) {</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <span class="keywordflow">return</span> index &gt;= 0 &amp;&amp; index &lt; m_vInputs.size() ? m_vInputs[index].Description : <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    }</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keywordtype">string</span> GetInputSource(<span class="keywordtype">int</span> index) {</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <span class="keywordflow">return</span> index &gt;= 0 &amp;&amp; index &lt; m_vInputs.size() ? m_vInputs[index].Source : <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    }</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <a class="code" href="../../dc/d5d/a00775.html#gac6cf78ef837450cfb19495fe34976b8c">dimensionTypes</a> GetInputDimension(<span class="keywordtype">int</span> index) {</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="keywordflow">return</span> index &gt;= 0 &amp;&amp; index &lt; m_vInputs.size() ? m_vInputs[index].Dimension : DT_Unknown;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    }</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <a class="code" href="../../dc/d5d/a00775.html#ga44c7aa1266bcfcaebbafc0ffc48fc952">transferTypes</a> GetInputTfType(<span class="keywordtype">int</span> index) {</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="keywordflow">return</span> index &gt;= 0 &amp;&amp; index &lt; m_vInputs.size() ? m_vInputs[index].tfType : TF_Whole;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    }</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <a class="code" href="../../db/db6/a00074.html">InputVariable</a> GetInput(<span class="keywordtype">int</span> index) {</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <span class="keywordflow">return</span> index &gt;= 0 &amp;&amp; index &lt; m_vInputs.size() ? m_vInputs[index] : <a class="code" href="../../db/db6/a00074.html">InputVariable</a>();</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    }</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="comment">/************ OUTPUT PARAMETERS ************/</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keywordtype">int</span> GetOutputCount() { <span class="keywordflow">return</span> int(m_vOutputs.size()); }</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="keywordtype">int</span> AddOutput(<span class="keyword">const</span> <span class="keywordtype">char</span>* name, <span class="keyword">const</span> <span class="keywordtype">char</span>* units, <span class="keyword">const</span> <span class="keywordtype">char</span>* desc, <a class="code" href="../../dc/d5d/a00775.html#gac6cf78ef837450cfb19495fe34976b8c">dimensionTypes</a> dimType,</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                  <a class="code" href="../../dc/d5d/a00775.html#ga44c7aa1266bcfcaebbafc0ffc48fc952">transferTypes</a> tfType = TF_Whole);</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="keywordtype">string</span> GetOutputName(<span class="keywordtype">int</span> index) { <span class="keywordflow">return</span> index &gt;= 0 &amp;&amp; index &lt; m_vOutputs.size() ? m_vOutputs[index].Name : <span class="stringliteral">&quot;&quot;</span>; }</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="keywordtype">string</span> GetOutputUnits(<span class="keywordtype">int</span> index) {</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        <span class="keywordflow">return</span> index &gt;= 0 &amp;&amp; index &lt; m_vOutputs.size() ? m_vOutputs[index].Units : <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    }</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="keywordtype">string</span> GetOutputDescription(<span class="keywordtype">int</span> index) {</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        <span class="keywordflow">return</span> index &gt;= 0 &amp;&amp; index &lt; m_vOutputs.size() ? m_vOutputs[index].Description : <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    }</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <a class="code" href="../../dc/d5d/a00775.html#gac6cf78ef837450cfb19495fe34976b8c">dimensionTypes</a> GetOutputDimension(<span class="keywordtype">int</span> index) {</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        <span class="keywordflow">return</span> index &gt;= 0 &amp;&amp; index &lt; m_vOutputs.size() ? m_vOutputs[index].Dimension : DT_Unknown;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    }</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <a class="code" href="../../dc/d5d/a00775.html#ga44c7aa1266bcfcaebbafc0ffc48fc952">transferTypes</a> GetOutputTfType(<span class="keywordtype">int</span> index) {</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        <span class="keywordflow">return</span> index &gt;= 0 &amp;&amp; index &lt; m_vOutputs.size() ? m_vOutputs[index].tfType : TF_Whole;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    }</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <a class="code" href="../../df/d6a/a00119.html">OutputVariable</a> GetOutput(<span class="keywordtype">int</span> index) {</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        <span class="keywordflow">return</span> index &gt;= 0 &amp;&amp; index &lt; m_vOutputs.size() ? m_vOutputs[index] : <a class="code" href="../../df/d6a/a00119.html">OutputVariable</a>();</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    }</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="comment">/************ IN/OUTPUT PARAMETERS ************/</span></div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keywordtype">int</span> GetInOutputCount() { <span class="keywordflow">return</span> int(m_vInOutputs.size()); }</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="keywordtype">int</span> AddInOutput(<span class="keyword">const</span> <span class="keywordtype">char</span>* name, <span class="keyword">const</span> <span class="keywordtype">char</span>* units, <span class="keyword">const</span> <span class="keywordtype">char</span>* desc, <a class="code" href="../../dc/d5d/a00775.html#gac6cf78ef837450cfb19495fe34976b8c">dimensionTypes</a> dimType,</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                    <a class="code" href="../../dc/d5d/a00775.html#ga44c7aa1266bcfcaebbafc0ffc48fc952">transferTypes</a> tfType = TF_Whole);</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="keywordtype">string</span> GetInOutputName(<span class="keywordtype">int</span> index) {</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        <span class="keywordflow">return</span> index &gt;= 0 &amp;&amp; index &lt; m_vInOutputs.size() ? m_vInOutputs[index].Name : <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    }</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <span class="keywordtype">string</span> GetInOutputUnits(<span class="keywordtype">int</span> index) {</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        <span class="keywordflow">return</span> index &gt;= 0 &amp;&amp; index &lt; m_vInOutputs.size() ? m_vInOutputs[index].Units : <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    }</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="keywordtype">string</span> GetInOutputDescription(<span class="keywordtype">int</span> index) {</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        <span class="keywordflow">return</span> index &gt;= 0 &amp;&amp; index &lt; m_vInOutputs.size() ? m_vInOutputs[index].Description : <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    }</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <a class="code" href="../../dc/d5d/a00775.html#gac6cf78ef837450cfb19495fe34976b8c">dimensionTypes</a> GetInOutputDimension(<span class="keywordtype">int</span> index) {</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        <span class="keywordflow">return</span> index &gt;= 0 &amp;&amp; index &lt; m_vInOutputs.size() ? m_vInOutputs[index].Dimension : DT_Unknown;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    }</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <a class="code" href="../../dc/d5d/a00775.html#ga44c7aa1266bcfcaebbafc0ffc48fc952">transferTypes</a> GetInOutputTfType(<span class="keywordtype">int</span> index) {</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        <span class="keywordflow">return</span> index &gt;= 0 &amp;&amp; index &lt; m_vInOutputs.size() ? m_vInOutputs[index].tfType : TF_Whole;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    }</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <a class="code" href="../../d0/d89/a00071.html">InOutputVariable</a> GetInOutput(<span class="keywordtype">int</span> index) {</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        <span class="keywordflow">return</span> index &gt;= 0 &amp;&amp; index &lt; m_vInOutputs.size() ? m_vInOutputs[index] : <a class="code" href="../../d0/d89/a00071.html">InOutputVariable</a>();</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    }</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="comment">/************ PARAMETERS FROM DATABASE ************/</span></div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="keywordtype">int</span> GetParameterCount() { <span class="keywordflow">return</span> int(m_vParameters.size()); }</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="keywordtype">int</span> AddParameter(<span class="keyword">const</span> <span class="keywordtype">char</span>* name, <span class="keyword">const</span> <span class="keywordtype">char</span>* units, <span class="keyword">const</span> <span class="keywordtype">char</span>* desc, <span class="keyword">const</span> <span class="keywordtype">char</span>* source, <a class="code" href="../../dc/d5d/a00775.html#gac6cf78ef837450cfb19495fe34976b8c">dimensionTypes</a> dimType);</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="keywordtype">string</span> GetParameterName(<span class="keywordtype">int</span> index) {</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        <span class="keywordflow">return</span> index &gt;= 0 &amp;&amp; index &lt; m_vParameters.size() ? m_vParameters[index].Name : <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    }</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="keywordtype">string</span> GetParameterUnits(<span class="keywordtype">int</span> index) {</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        <span class="keywordflow">return</span> index &gt;= 0 &amp;&amp; index &lt; m_vParameters.size() ? m_vParameters[index].Units : <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    }</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <span class="keywordtype">string</span> GetParameterDescription(<span class="keywordtype">int</span> index) {</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        <span class="keywordflow">return</span> index &gt;= 0 &amp;&amp; index &lt; m_vParameters.size() ? m_vParameters[index].Description : <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    }</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <span class="keywordtype">string</span> GetParameterSource(<span class="keywordtype">int</span> index) {</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        <span class="keywordflow">return</span> index &gt;= 0 &amp;&amp; index &lt; m_vParameters.size() ? m_vParameters[index].Source : <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    }</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    <a class="code" href="../../dc/d5d/a00775.html#gac6cf78ef837450cfb19495fe34976b8c">dimensionTypes</a> GetParameterDimension(<span class="keywordtype">int</span> index) {</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        <span class="keywordflow">return</span> index &gt;= 0 &amp;&amp; index &lt; m_vParameters.size() ? m_vParameters[index].Dimension : DT_Unknown;</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    }</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <a class="code" href="../../d4/d98/a00120.html">Parameter</a> GetParameter(<span class="keywordtype">int</span> index) {</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        <span class="keywordflow">return</span> index &gt;= 0 &amp;&amp; index &lt; m_vParameters.size() ? m_vParameters[index] : <a class="code" href="../../d4/d98/a00120.html">Parameter</a>();</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    }</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <span class="comment">/************ DEPENDENT MODULES ************/</span></div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <span class="keywordtype">int</span> GetDependencyCount() { <span class="keywordflow">return</span> int(m_vDependencies.size()); }</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <span class="keywordtype">int</span> AddDependency(<span class="keyword">const</span> <span class="keywordtype">char</span>* name, <span class="keyword">const</span> <span class="keywordtype">char</span>* description);</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <span class="keywordtype">string</span> GetDependencyName(<span class="keywordtype">int</span> index) {</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        <span class="keywordflow">return</span> index &gt;= 0 &amp;&amp; index &lt; m_vDependencies.size() ? m_vDependencies[index].Name : <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    }</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <span class="keywordtype">string</span> GetDependencyDescription(<span class="keywordtype">int</span> index) {</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        <span class="keywordflow">return</span> index &gt;= 0 &amp;&amp; index &lt; m_vDependencies.size() ? m_vDependencies[index].Description : <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    }</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <a class="code" href="../../d9/df8/a00096.html">ModelClass</a> GetDependency(<span class="keywordtype">int</span> index) {</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        <span class="keywordflow">return</span> index &gt;= 0 &amp;&amp; index &lt; m_vDependencies.size() ? m_vDependencies[index] : <a class="code" href="../../d9/df8/a00096.html">ModelClass</a>();</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    }</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    <span class="keywordtype">string</span> GetXMLDocument();</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <span class="keywordtype">void</span> OpenTag(<span class="keywordtype">string</span> name, <span class="keywordtype">string</span> attributes, <span class="keywordtype">int</span> indent, <span class="keywordtype">string</span>* sb);</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <span class="keywordtype">void</span> CloseTag(<span class="keywordtype">string</span> name, <span class="keywordtype">int</span> indent, <span class="keywordtype">string</span>* sb);</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    <span class="keywordtype">void</span> FullTag(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; name, <span class="keywordtype">int</span> indent, <span class="keywordtype">string</span>&amp; content, <span class="keywordtype">string</span>* sb);</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <span class="keywordtype">void</span> WriteClass(<span class="keywordtype">int</span> indent, <span class="keywordtype">string</span>* sb);</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    <span class="keywordtype">void</span> WriteInformation(<span class="keywordtype">int</span> indent, <span class="keywordtype">string</span>* sb);</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    <span class="keywordtype">void</span> WriteInputs(<span class="keywordtype">int</span> indent, <span class="keywordtype">string</span>* sb);</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    <span class="keywordtype">void</span> WriteOutputs(<span class="keywordtype">int</span> indent, <span class="keywordtype">string</span>* sb);</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <span class="keywordtype">void</span> WriteInOutputs(<span class="keywordtype">int</span> indent, <span class="keywordtype">string</span>* sb);</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    <span class="keywordtype">void</span> WriteParameters(<span class="keywordtype">int</span> indent, <span class="keywordtype">string</span>* sb);</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    <span class="keywordtype">void</span> WriteDependencies(<span class="keywordtype">int</span> indent, <span class="keywordtype">string</span>* sb);</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    <span class="keywordtype">void</span> WriteXMLHeader(<span class="keywordtype">string</span>* sb);</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    <span class="keywordtype">void</span> DimensionTag(<span class="keywordtype">string</span> tag, <span class="keywordtype">int</span> indent, <a class="code" href="../../dc/d5d/a00775.html#gac6cf78ef837450cfb19495fe34976b8c">dimensionTypes</a> dimType, <span class="keywordtype">string</span>* sb);</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    <span class="keywordtype">void</span> TransferTypeTag(<span class="keywordtype">string</span> tag, <span class="keywordtype">int</span> indent, <a class="code" href="../../dc/d5d/a00775.html#ga44c7aa1266bcfcaebbafc0ffc48fc952">transferTypes</a> tfType, <span class="keywordtype">string</span>* sb);</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00336"></a><span class="lineno"><a class="line" href="../../d1/dc1/a00092.html#ae0991113a1ad420c68e3475bf5d4b830">  336</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="../../d1/dc1/a00092.html#ae0991113a1ad420c68e3475bf5d4b830">m_strSchemaVersion</a>;             </div>
+<div class="line"><a name="l00337"></a><span class="lineno"><a class="line" href="../../d1/dc1/a00092.html#a1a8276b621b77495068b9a4a9f3d098c">  337</a></span>&#160;    <a class="code" href="../../d9/df8/a00096.html">ModelClass</a> <a class="code" href="../../d1/dc1/a00092.html#a1a8276b621b77495068b9a4a9f3d098c">m_oClass</a>;                   </div>
+<div class="line"><a name="l00338"></a><span class="lineno"><a class="line" href="../../d1/dc1/a00092.html#a198c06e1084efade404ae7cb0c8b2920">  338</a></span>&#160;    <a class="code" href="../../d2/db1/a00070.html">Information</a> <a class="code" href="../../d1/dc1/a00092.html#a198c06e1084efade404ae7cb0c8b2920">m_Info</a>;                    </div>
+<div class="line"><a name="l00339"></a><span class="lineno"><a class="line" href="../../d1/dc1/a00092.html#a96dd309d3ec5f6d9056114fcb6e9c15f">  339</a></span>&#160;    vector&lt;Parameter&gt; <a class="code" href="../../d1/dc1/a00092.html#a96dd309d3ec5f6d9056114fcb6e9c15f">m_vParameters</a>;       </div>
+<div class="line"><a name="l00340"></a><span class="lineno"><a class="line" href="../../d1/dc1/a00092.html#a37676224841b1dfb9e6e8b7e55ba4c76">  340</a></span>&#160;    vector&lt;InputVariable&gt; <a class="code" href="../../d1/dc1/a00092.html#a37676224841b1dfb9e6e8b7e55ba4c76">m_vInputs</a>;       </div>
+<div class="line"><a name="l00341"></a><span class="lineno"><a class="line" href="../../d1/dc1/a00092.html#ab01cd84b9e3e756ad9716ad679c2b472">  341</a></span>&#160;    vector&lt;OutputVariable&gt; <a class="code" href="../../d1/dc1/a00092.html#ab01cd84b9e3e756ad9716ad679c2b472">m_vOutputs</a>;     </div>
+<div class="line"><a name="l00342"></a><span class="lineno"><a class="line" href="../../d1/dc1/a00092.html#a12cbab2b2ef11537531e2e5e5e663112">  342</a></span>&#160;    vector&lt;InOutputVariable&gt; <a class="code" href="../../d1/dc1/a00092.html#a12cbab2b2ef11537531e2e5e5e663112">m_vInOutputs</a>; </div>
+<div class="line"><a name="l00343"></a><span class="lineno"><a class="line" href="../../d1/dc1/a00092.html#ae9b5c3ff81df63f0451f444cd16c12f9">  343</a></span>&#160;    vector&lt;ModelClass&gt; <a class="code" href="../../d1/dc1/a00092.html#ae9b5c3ff81df63f0451f444cd16c12f9">m_vDependencies</a>;    </div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;};</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SEIMS_METADATA_INFO_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="a00092_html_a37676224841b1dfb9e6e8b7e55ba4c76"><div class="ttname"><a href="../../d1/dc1/a00092.html#a37676224841b1dfb9e6e8b7e55ba4c76">MetadataInfo::m_vInputs</a></div><div class="ttdeci">vector&lt; InputVariable &gt; m_vInputs</div><div class="ttdoc">list of input parameters for the module </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db1/a00460_source.html#l00340">MetadataInfo.h:340</a></div></div>
+<div class="ttc" id="a00092_html_a198c06e1084efade404ae7cb0c8b2920"><div class="ttname"><a href="../../d1/dc1/a00092.html#a198c06e1084efade404ae7cb0c8b2920">MetadataInfo::m_Info</a></div><div class="ttdeci">Information m_Info</div><div class="ttdoc">the general information for the module </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db1/a00460_source.html#l00338">MetadataInfo.h:338</a></div></div>
+<div class="ttc" id="a00070_html_aa411bbe0edd95d200b59c0b7606173d3"><div class="ttname"><a href="../../d2/db1/a00070.html#aa411bbe0edd95d200b59c0b7606173d3">Information::Name</a></div><div class="ttdeci">string Name</div><div class="ttdoc">Module Name. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db1/a00460_source.html#l00044">MetadataInfo.h:44</a></div></div>
+<div class="ttc" id="a00012_html_a72591cce053c48d45507d23ed1187276"><div class="ttname"><a href="../../df/d86/a00012.html#a72591cce053c48d45507d23ed1187276">baseParameter::Description</a></div><div class="ttdeci">string Description</div><div class="ttdoc">Description. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db1/a00460_source.html#l00065">MetadataInfo.h:65</a></div></div>
+<div class="ttc" id="a00070_html_a1b8fa5ae955f80cbd549cd3186788d3f"><div class="ttname"><a href="../../d2/db1/a00070.html#a1b8fa5ae955f80cbd549cd3186788d3f">Information::Author</a></div><div class="ttdeci">string Author</div><div class="ttdoc">Author. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db1/a00460_source.html#l00047">MetadataInfo.h:47</a></div></div>
+<div class="ttc" id="a00092_html_ae0991113a1ad420c68e3475bf5d4b830"><div class="ttname"><a href="../../d1/dc1/a00092.html#ae0991113a1ad420c68e3475bf5d4b830">MetadataInfo::m_strSchemaVersion</a></div><div class="ttdeci">string m_strSchemaVersion</div><div class="ttdoc">latest XML schema version supported by this class </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db1/a00460_source.html#l00336">MetadataInfo.h:336</a></div></div>
+<div class="ttc" id="a00092_html_a1a8276b621b77495068b9a4a9f3d098c"><div class="ttname"><a href="../../d1/dc1/a00092.html#a1a8276b621b77495068b9a4a9f3d098c">MetadataInfo::m_oClass</a></div><div class="ttdeci">ModelClass m_oClass</div><div class="ttdoc">class name for the module </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db1/a00460_source.html#l00337">MetadataInfo.h:337</a></div></div>
+<div class="ttc" id="a00096_html"><div class="ttname"><a href="../../d9/df8/a00096.html">ModelClass</a></div><div class="ttdoc">Module basic description. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db1/a00460_source.html#l00024">MetadataInfo.h:24</a></div></div>
+<div class="ttc" id="a00092_html_a12cbab2b2ef11537531e2e5e5e663112"><div class="ttname"><a href="../../d1/dc1/a00092.html#a12cbab2b2ef11537531e2e5e5e663112">MetadataInfo::m_vInOutputs</a></div><div class="ttdeci">vector&lt; InOutputVariable &gt; m_vInOutputs</div><div class="ttdoc">list of In/Output parameters for the module for MPI version </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db1/a00460_source.html#l00342">MetadataInfo.h:342</a></div></div>
+<div class="ttc" id="a00070_html"><div class="ttname"><a href="../../d2/db1/a00070.html">Information</a></div><div class="ttdoc">Module development information class. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db1/a00460_source.html#l00038">MetadataInfo.h:38</a></div></div>
+<div class="ttc" id="a00075_html"><div class="ttname"><a href="../../d9/da5/a00075.html">ccgl::Interface</a></div><div class="ttdoc">Base type of all interfaces. All interface types are encouraged to be virtual inherited. </div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dbb/a00330_source.html#l00302">basic.h:302</a></div></div>
+<div class="ttc" id="a00775_html_ga44c7aa1266bcfcaebbafc0ffc48fc952"><div class="ttname"><a href="../../dc/d5d/a00775.html#ga44c7aa1266bcfcaebbafc0ffc48fc952">transferTypes</a></div><div class="ttdeci">transferTypes</div><div class="ttdoc">Data be transferred across subbasins for MPI version. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d5f/a00461_source.html#l00081">MetadataInfoConst.h:81</a></div></div>
+<div class="ttc" id="a00012_html"><div class="ttname"><a href="../../df/d86/a00012.html">baseParameter</a></div><div class="ttdoc">Basic model parameter information. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db1/a00460_source.html#l00059">MetadataInfo.h:59</a></div></div>
+<div class="ttc" id="a00012_html_ade2494970a4d547247921bd92186ff8d"><div class="ttname"><a href="../../df/d86/a00012.html#ade2494970a4d547247921bd92186ff8d">baseParameter::Dimension</a></div><div class="ttdeci">dimensionTypes Dimension</div><div class="ttdoc">Data dimension type. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db1/a00460_source.html#l00066">MetadataInfo.h:66</a></div></div>
+<div class="ttc" id="a00120_html"><div class="ttname"><a href="../../d4/d98/a00120.html">Parameter</a></div><div class="ttdoc">Model parameter information class. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db1/a00460_source.html#l00075">MetadataInfo.h:75</a></div></div>
+<div class="ttc" id="a00012_html_adbe1b85de6038485f9bcbdc1ee99dab1"><div class="ttname"><a href="../../df/d86/a00012.html#adbe1b85de6038485f9bcbdc1ee99dab1">baseParameter::Name</a></div><div class="ttdeci">string Name</div><div class="ttdoc">Name. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db1/a00460_source.html#l00063">MetadataInfo.h:63</a></div></div>
+<div class="ttc" id="a00070_html_a8e1e2fee4394c6306a3fd80387281d94"><div class="ttname"><a href="../../d2/db1/a00070.html#a8e1e2fee4394c6306a3fd80387281d94">Information::Helpfile</a></div><div class="ttdeci">string Helpfile</div><div class="ttdoc">Helpfile. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db1/a00460_source.html#l00050">MetadataInfo.h:50</a></div></div>
+<div class="ttc" id="a00070_html_a648bb8c9d3e9459afe4f131fa389352a"><div class="ttname"><a href="../../d2/db1/a00070.html#a648bb8c9d3e9459afe4f131fa389352a">Information::Id</a></div><div class="ttdeci">string Id</div><div class="ttdoc">Module ID. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db1/a00460_source.html#l00043">MetadataInfo.h:43</a></div></div>
+<div class="ttc" id="a00074_html"><div class="ttname"><a href="../../db/db6/a00074.html">InputVariable</a></div><div class="ttdoc">Input variable information class. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db1/a00460_source.html#l00088">MetadataInfo.h:88</a></div></div>
+<div class="ttc" id="a00092_html_a96dd309d3ec5f6d9056114fcb6e9c15f"><div class="ttname"><a href="../../d1/dc1/a00092.html#a96dd309d3ec5f6d9056114fcb6e9c15f">MetadataInfo::m_vParameters</a></div><div class="ttdeci">vector&lt; Parameter &gt; m_vParameters</div><div class="ttdoc">list of parameters for the module </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db1/a00460_source.html#l00339">MetadataInfo.h:339</a></div></div>
+<div class="ttc" id="a00092_html_ae9b5c3ff81df63f0451f444cd16c12f9"><div class="ttname"><a href="../../d1/dc1/a00092.html#ae9b5c3ff81df63f0451f444cd16c12f9">MetadataInfo::m_vDependencies</a></div><div class="ttdeci">vector&lt; ModelClass &gt; m_vDependencies</div><div class="ttdoc">list of dependency classes for the module </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db1/a00460_source.html#l00343">MetadataInfo.h:343</a></div></div>
+<div class="ttc" id="a00120_html_a96b1cb9b1ecc5c1fea4bf390554748ea"><div class="ttname"><a href="../../d4/d98/a00120.html#a96b1cb9b1ecc5c1fea4bf390554748ea">Parameter::Source</a></div><div class="ttdeci">string Source</div><div class="ttdoc">Source type. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db1/a00460_source.html#l00079">MetadataInfo.h:79</a></div></div>
+<div class="ttc" id="a00092_html"><div class="ttname"><a href="../../d1/dc1/a00092.html">MetadataInfo</a></div><div class="ttdoc">Metadata information of module. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db1/a00460_source.html#l00122">MetadataInfo.h:122</a></div></div>
+<div class="ttc" id="a00070_html_af713e5818c8dff3d1c81c2dbd711e4c4"><div class="ttname"><a href="../../d2/db1/a00070.html#af713e5818c8dff3d1c81c2dbd711e4c4">Information::Website</a></div><div class="ttdeci">string Website</div><div class="ttdoc">Website. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db1/a00460_source.html#l00049">MetadataInfo.h:49</a></div></div>
+<div class="ttc" id="a00070_html_a0ea3ec0a518e6f2a6afcfe5a47e6a092"><div class="ttname"><a href="../../d2/db1/a00070.html#a0ea3ec0a518e6f2a6afcfe5a47e6a092">Information::EMail</a></div><div class="ttdeci">string EMail</div><div class="ttdoc">Email. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db1/a00460_source.html#l00048">MetadataInfo.h:48</a></div></div>
+<div class="ttc" id="a00775_html_gac6cf78ef837450cfb19495fe34976b8c"><div class="ttname"><a href="../../dc/d5d/a00775.html#gac6cf78ef837450cfb19495fe34976b8c">dimensionTypes</a></div><div class="ttdeci">dimensionTypes</div><div class="ttdoc">enum of dimension data types </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d5f/a00461_source.html#l00062">MetadataInfoConst.h:62</a></div></div>
+<div class="ttc" id="a00092_html_ab01cd84b9e3e756ad9716ad679c2b472"><div class="ttname"><a href="../../d1/dc1/a00092.html#ab01cd84b9e3e756ad9716ad679c2b472">MetadataInfo::m_vOutputs</a></div><div class="ttdeci">vector&lt; OutputVariable &gt; m_vOutputs</div><div class="ttdoc">list of output parameters for the module </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db1/a00460_source.html#l00341">MetadataInfo.h:341</a></div></div>
+<div class="ttc" id="a00012_html_a5d7787b19474e3fe73db9cc7218808ea"><div class="ttname"><a href="../../df/d86/a00012.html#a5d7787b19474e3fe73db9cc7218808ea">baseParameter::Units</a></div><div class="ttdeci">string Units</div><div class="ttdoc">Units. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db1/a00460_source.html#l00064">MetadataInfo.h:64</a></div></div>
+<div class="ttc" id="a00070_html_a0fea44ad14e758340799fe8ce77b8330"><div class="ttname"><a href="../../d2/db1/a00070.html#a0fea44ad14e758340799fe8ce77b8330">Information::Version</a></div><div class="ttdeci">string Version</div><div class="ttdoc">Module Version. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db1/a00460_source.html#l00046">MetadataInfo.h:46</a></div></div>
+<div class="ttc" id="a00070_html_a9f0b0e91a740ff0e1f3d0b48b069983a"><div class="ttname"><a href="../../d2/db1/a00070.html#a9f0b0e91a740ff0e1f3d0b48b069983a">Information::Description</a></div><div class="ttdeci">string Description</div><div class="ttdoc">Module Description. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db1/a00460_source.html#l00045">MetadataInfo.h:45</a></div></div>
+<div class="ttc" id="a00119_html"><div class="ttname"><a href="../../df/d6a/a00119.html">OutputVariable</a></div><div class="ttdoc">Output variable information class. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db1/a00460_source.html#l00100">MetadataInfo.h:100</a></div></div>
+<div class="ttc" id="a00071_html"><div class="ttname"><a href="../../d0/d89/a00071.html">InOutputVariable</a></div><div class="ttdoc">Input and output variable information class. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/db1/a00460_source.html#l00112">MetadataInfo.h:112</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_d9d8c03d94c229237348b60b53b769ac.html">base</a></li><li class="navelem"><a class="el" href="../../dir_cce2c0ac50386f26b5b526fa8626cc77.html">module_setting</a></li><li class="navelem"><b>ParamInfo.h</b></li>
-    <li class="footer">Generated on Fri Jun 1 2018 01:52:54 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_d9d8c03d94c229237348b60b53b769ac.html">base</a></li><li class="navelem"><a class="el" href="../../dir_cce2c0ac50386f26b5b526fa8626cc77.html">module_setting</a></li><li class="navelem"><b>MetadataInfo.h</b></li>
+    <li class="footer">Generated on Fri Jun 8 2018 08:48:06 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

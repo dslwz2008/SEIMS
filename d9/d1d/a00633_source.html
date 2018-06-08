@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims/src/seims_main/modules/management/NPSMGT/NonPointSource_Management.h Source File</title>
+<title>SEIMS: seims/src/seims_main/modules/hydrology_longterm/SSR_DA/SSR_DA.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -112,81 +112,99 @@ $(document).ready(function(){initNavTree('d9/d1d/a00633_source.html','../../');}
 
 <div class="header">
   <div class="headertitle">
-<div class="title">NonPointSource_Management.h</div>  </div>
+<div class="title">SSR_DA.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * \brief Non point source management</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * \author Liang-Jun Zhu</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * \date Jul. 2016</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef SEIMS_MODULE_NPSMGT_H</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SEIMS_MODULE_NPSMGT_H</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;SimulationModule.h&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="../../dd/d42/a00109.html">   20</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../dd/d42/a00109.html">NPS_Management</a>: <span class="keyword">public</span> <a class="code" href="../../d9/d7d/a00150.html">SimulationModule</a> {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="../../dd/d42/a00109.html">NPS_Management</a>();</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    ~<a class="code" href="../../dd/d42/a00109.html">NPS_Management</a>();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../dd/d42/a00109.html#a8e92d2649f2d858e37c2be1699f06d0f">Execute</a>() OVERRIDE;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dd/d42/a00109.html#a2074230c2baf358179765ab72851e18e">SetValue</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* key, <span class="keywordtype">float</span> value) OVERRIDE;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dd/d42/a00109.html#a8e5f833f0de6060a761d5f9bc3c18856">Set2DData</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* key, <span class="keywordtype">int</span> n, <span class="keywordtype">int</span> col, <span class="keywordtype">float</span>** data) OVERRIDE;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dd/d42/a00109.html#a41f1d808629fdcbef18364fe4c811c40">SetScenario</a>(<a class="code" href="../../d7/dce/a00143.html">Scenario</a>* sce) OVERRIDE;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../dd/d42/a00109.html#a41c8c39ef5e3040aca888354e87f4155">CheckInputData</a>();</div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#ifndef SEIMS_MODULE_SSR_DA_H</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SEIMS_MODULE_SSR_DA_H</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;SimulationModule.h&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">class </span>SSR_DA : <span class="keyword">public</span> <a class="code" href="../../dd/db2/a00151.html">SimulationModule</a> {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    SSR_DA();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    ~SSR_DA();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../dd/db2/a00151.html#a686c39c1c4894cc144699ba0681d509d">Execute</a>() OVERRIDE;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> SetValue(const <span class="keywordtype">char</span> *key, <span class="keywordtype">float</span> data) OVERRIDE;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">void</span> Set1DData(const <span class="keywordtype">char</span> *key, <span class="keywordtype">int</span> nRows, <span class="keywordtype">float</span> *data) OVERRIDE;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> Set2DData(const <span class="keywordtype">char</span> *key, <span class="keywordtype">int</span> nrows, <span class="keywordtype">int</span> ncols, <span class="keywordtype">float</span> **data) OVERRIDE;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../dd/d42/a00109.html#a122dc1e511db3a30a5f0549055a5b1d0">CheckInputSize</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* key, <span class="keywordtype">int</span> n);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="../../dd/d42/a00109.html#afadfb847258dc44ae2b1ef4b16bfbf09">   51</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../dd/d42/a00109.html#afadfb847258dc44ae2b1ef4b16bfbf09">m_nCells</a>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="../../dd/d42/a00109.html#a41c661b380dac052247b6ba0232c267c">   53</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="../../dd/d42/a00109.html#a41c661b380dac052247b6ba0232c267c">m_cellWth</a>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="../../dd/d42/a00109.html#ad4910bf774f0e3f4c4383245d4e1a04b">   55</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="../../dd/d42/a00109.html#ad4910bf774f0e3f4c4383245d4e1a04b">m_cellArea</a>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="../../dd/d42/a00109.html#a4b94da1db3f1e05b3ec9f7cda0af2fbe">   57</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="../../dd/d42/a00109.html#a4b94da1db3f1e05b3ec9f7cda0af2fbe">m_timestep</a>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="../../dd/d42/a00109.html#a9aba732681a294fe337bb6dfa8697365">   59</a></span>&#160;    <span class="keywordtype">float</span>* <a class="code" href="../../dd/d42/a00109.html#a9aba732681a294fe337bb6dfa8697365">m_mgtFields</a>;</div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="../../dd/d42/a00109.html#ab8e701012ecab799f78a1a2dcc0c6ab6">   65</a></span>&#160;    map&lt;int, BMPArealSrcFactory *&gt; <a class="code" href="../../dd/d42/a00109.html#ab8e701012ecab799f78a1a2dcc0c6ab6">m_arealSrcFactory</a>;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="../../dd/d42/a00109.html#ae08b1ba8fbf2c419d76bf30176264dd5">   70</a></span>&#160;    <span class="keywordtype">float</span>** <a class="code" href="../../dd/d42/a00109.html#ae08b1ba8fbf2c419d76bf30176264dd5">m_soilWtrSto</a>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="../../dd/d42/a00109.html#a0edf60fbf3e0105aac524464c35ddd0b">   72</a></span>&#160;    <span class="keywordtype">float</span>** <a class="code" href="../../dd/d42/a00109.html#a0edf60fbf3e0105aac524464c35ddd0b">m_soilNO3</a>;</div>
-<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="../../dd/d42/a00109.html#ab6050f1c20eea7ee353856067cc38f82">   74</a></span>&#160;    <span class="keywordtype">float</span>** <a class="code" href="../../dd/d42/a00109.html#ab6050f1c20eea7ee353856067cc38f82">m_soilNH4</a>;</div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="../../dd/d42/a00109.html#a33ea790f5c51440d4ccca3ab01c3108a">   76</a></span>&#160;    <span class="keywordtype">float</span>** <a class="code" href="../../dd/d42/a00109.html#a33ea790f5c51440d4ccca3ab01c3108a">m_soilSolP</a>;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">float</span>** m_soilStabOrgN;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">float</span>** m_soilHumOrgP;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;};</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SEIMS_MODULE_NPSMGT_H */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="a00109_html_ab6050f1c20eea7ee353856067cc38f82"><div class="ttname"><a href="../../dd/d42/a00109.html#ab6050f1c20eea7ee353856067cc38f82">NPS_Management::m_soilNH4</a></div><div class="ttdeci">float ** m_soilNH4</div><div class="ttdoc">ammonium kg/ha </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d1d/a00633_source.html#l00074">NonPointSource_Management.h:74</a></div></div>
-<div class="ttc" id="a00109_html_a9aba732681a294fe337bb6dfa8697365"><div class="ttname"><a href="../../dd/d42/a00109.html#a9aba732681a294fe337bb6dfa8697365">NPS_Management::m_mgtFields</a></div><div class="ttdeci">float * m_mgtFields</div><div class="ttdoc">management fields raster </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d1d/a00633_source.html#l00059">NonPointSource_Management.h:59</a></div></div>
-<div class="ttc" id="a00109_html_a4b94da1db3f1e05b3ec9f7cda0af2fbe"><div class="ttname"><a href="../../dd/d42/a00109.html#a4b94da1db3f1e05b3ec9f7cda0af2fbe">NPS_Management::m_timestep</a></div><div class="ttdeci">float m_timestep</div><div class="ttdoc">time step (second) </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d1d/a00633_source.html#l00057">NonPointSource_Management.h:57</a></div></div>
-<div class="ttc" id="a00109_html_ab8e701012ecab799f78a1a2dcc0c6ab6"><div class="ttname"><a href="../../dd/d42/a00109.html#ab8e701012ecab799f78a1a2dcc0c6ab6">NPS_Management::m_arealSrcFactory</a></div><div class="ttdeci">map&lt; int, BMPArealSrcFactory * &gt; m_arealSrcFactory</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d1d/a00633_source.html#l00065">NonPointSource_Management.h:65</a></div></div>
-<div class="ttc" id="a00109_html_afadfb847258dc44ae2b1ef4b16bfbf09"><div class="ttname"><a href="../../dd/d42/a00109.html#afadfb847258dc44ae2b1ef4b16bfbf09">NPS_Management::m_nCells</a></div><div class="ttdeci">int m_nCells</div><div class="ttdoc">valid cells number </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d1d/a00633_source.html#l00051">NonPointSource_Management.h:51</a></div></div>
-<div class="ttc" id="a00150_html"><div class="ttname"><a href="../../d9/d7d/a00150.html">SimulationModule</a></div><div class="ttdoc">Base module for all simulation modules in SEIMS. </div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d9d/a00464_source.html#l00042">SimulationModule.h:42</a></div></div>
-<div class="ttc" id="a00109_html_a0edf60fbf3e0105aac524464c35ddd0b"><div class="ttname"><a href="../../dd/d42/a00109.html#a0edf60fbf3e0105aac524464c35ddd0b">NPS_Management::m_soilNO3</a></div><div class="ttdeci">float ** m_soilNO3</div><div class="ttdoc">nitrate kg/ha </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d1d/a00633_source.html#l00072">NonPointSource_Management.h:72</a></div></div>
-<div class="ttc" id="a00143_html"><div class="ttname"><a href="../../d7/dce/a00143.html">bmps::Scenario</a></div><div class="ttdoc">Main class of scenario in BMP database. </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/de7/a00417_source.html#l00039">Scenario.h:39</a></div></div>
-<div class="ttc" id="a00109_html"><div class="ttname"><a href="../../dd/d42/a00109.html">NPS_Management</a></div><div class="ttdoc">All management operation in SWAT, e.g., plantop, killop, harvestop, etc. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d1d/a00633_source.html#l00020">NonPointSource_Management.h:20</a></div></div>
-<div class="ttc" id="a00109_html_a2074230c2baf358179765ab72851e18e"><div class="ttname"><a href="../../dd/d42/a00109.html#a2074230c2baf358179765ab72851e18e">NPS_Management::SetValue</a></div><div class="ttdeci">void SetValue(const char *key, float value) OVERRIDE</div><div class="ttdoc">Set data, DT_Single. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d2a/a00632_source.html#l00038">NonPointSource_Management.cpp:38</a></div></div>
-<div class="ttc" id="a00109_html_a8e92d2649f2d858e37c2be1699f06d0f"><div class="ttname"><a href="../../dd/d42/a00109.html#a8e92d2649f2d858e37c2be1699f06d0f">NPS_Management::Execute</a></div><div class="ttdeci">int Execute() OVERRIDE</div><div class="ttdoc">Execute the simulation. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d2a/a00632_source.html#l00084">NonPointSource_Management.cpp:84</a></div></div>
-<div class="ttc" id="a00109_html_a41f1d808629fdcbef18364fe4c811c40"><div class="ttname"><a href="../../dd/d42/a00109.html#a41f1d808629fdcbef18364fe4c811c40">NPS_Management::SetScenario</a></div><div class="ttdeci">void SetScenario(Scenario *sce) OVERRIDE</div><div class="ttdoc">Set pointer of Scenario class which contains all BMP information. Added by LJ, 2016-6-14. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d2a/a00632_source.html#l00061">NonPointSource_Management.cpp:61</a></div></div>
-<div class="ttc" id="a00109_html_a41c661b380dac052247b6ba0232c267c"><div class="ttname"><a href="../../dd/d42/a00109.html#a41c661b380dac052247b6ba0232c267c">NPS_Management::m_cellWth</a></div><div class="ttdeci">float m_cellWth</div><div class="ttdoc">cell width (m) </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d1d/a00633_source.html#l00053">NonPointSource_Management.h:53</a></div></div>
-<div class="ttc" id="a00109_html_ad4910bf774f0e3f4c4383245d4e1a04b"><div class="ttname"><a href="../../dd/d42/a00109.html#ad4910bf774f0e3f4c4383245d4e1a04b">NPS_Management::m_cellArea</a></div><div class="ttdeci">float m_cellArea</div><div class="ttdoc">area of cell (m^2) </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d1d/a00633_source.html#l00055">NonPointSource_Management.h:55</a></div></div>
-<div class="ttc" id="a00109_html_a122dc1e511db3a30a5f0549055a5b1d0"><div class="ttname"><a href="../../dd/d42/a00109.html#a122dc1e511db3a30a5f0549055a5b1d0">NPS_Management::CheckInputSize</a></div><div class="ttdeci">bool CheckInputSize(const char *key, int n)</div><div class="ttdoc">check the input size. Make sure all the input data have same dimension. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d2a/a00632_source.html#l00022">NonPointSource_Management.cpp:22</a></div></div>
-<div class="ttc" id="a00109_html_a41c8c39ef5e3040aca888354e87f4155"><div class="ttname"><a href="../../dd/d42/a00109.html#a41c8c39ef5e3040aca888354e87f4155">NPS_Management::CheckInputData</a></div><div class="ttdeci">bool CheckInputData()</div><div class="ttdoc">check the input data. Make sure all the input data is available. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d2a/a00632_source.html#l00079">NonPointSource_Management.cpp:79</a></div></div>
-<div class="ttc" id="a00109_html_ae08b1ba8fbf2c419d76bf30176264dd5"><div class="ttname"><a href="../../dd/d42/a00109.html#ae08b1ba8fbf2c419d76bf30176264dd5">NPS_Management::m_soilWtrSto</a></div><div class="ttdeci">float ** m_soilWtrSto</div><div class="ttdoc">variables to be updated (optionals) </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d1d/a00633_source.html#l00070">NonPointSource_Management.h:70</a></div></div>
-<div class="ttc" id="a00109_html_a8e5f833f0de6060a761d5f9bc3c18856"><div class="ttname"><a href="../../dd/d42/a00109.html#a8e5f833f0de6060a761d5f9bc3c18856">NPS_Management::Set2DData</a></div><div class="ttdeci">void Set2DData(const char *key, int n, int col, float **data) OVERRIDE</div><div class="ttdoc">Set 2D data, by default, DT_Raster2D. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d2a/a00632_source.html#l00047">NonPointSource_Management.cpp:47</a></div></div>
-<div class="ttc" id="a00109_html_a33ea790f5c51440d4ccca3ab01c3108a"><div class="ttname"><a href="../../dd/d42/a00109.html#a33ea790f5c51440d4ccca3ab01c3108a">NPS_Management::m_soilSolP</a></div><div class="ttdeci">float ** m_soilSolP</div><div class="ttdoc">soluble phosphorus kg/ha </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d1d/a00633_source.html#l00076">NonPointSource_Management.h:76</a></div></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">void</span> GetValue(const <span class="keywordtype">char</span> *key, <span class="keywordtype">float</span> *value) OVERRIDE;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> Get1DData(const <span class="keywordtype">char</span> *key, <span class="keywordtype">int</span> *n, <span class="keywordtype">float</span> **data) OVERRIDE;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">void</span> Get2DData(const <span class="keywordtype">char</span> *key, <span class="keywordtype">int</span> *nRows, <span class="keywordtype">int</span> *nCols, <span class="keywordtype">float</span> ***data) OVERRIDE;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;private:</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">bool</span> CheckInputData();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">bool</span> CheckInputSize(const <span class="keywordtype">char</span> *key, <span class="keywordtype">int</span> n);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">void</span>  InitialOutputs();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">bool</span> FlowInSoil(<span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;private:</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">int</span> m_inputSubbsnID;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">int</span> m_nCells;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">float</span> m_CellWth;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">int</span> m_maxSoilLyrs;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">float</span> *m_nSoilLyrs;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">float</span> **m_soilThk;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">//float m_upSoilDepth;</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment"></span>    <span class="comment">//float *m_rootDepth;</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">int</span> m_dt;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">float</span> m_ki;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">float</span> m_soilFrozenTemp;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">float</span> *m_slope;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordtype">float</span> **m_ks;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment">//float **m_porosity;</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">float</span> **m_soilSat;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">float</span> **m_poreIdx;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordtype">float</span> **m_soilFC;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">float</span> **m_soilWP;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">float</span> **m_soilWtrSto;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordtype">float</span> *m_soilWtrStoPrfl;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordtype">float</span> *m_soilTemp;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordtype">float</span> *m_chWidth;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordtype">float</span> *m_rchID;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordtype">float</span> **m_flowInIdxD8;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordtype">float</span> **m_flowInPercentage;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordtype">float</span> **m_rteLyrs;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordtype">int</span> m_nRteLyrs;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordtype">int</span> m_nSubbsns;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordtype">float</span> *m_subbsnID;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="comment">// outputs</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordtype">float</span> **m_subSurfRf;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keywordtype">float</span> **m_subSurfRfVol;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordtype">float</span> *m_ifluQ2Rch;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;};</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SEIMS_MODULE_SSR_DA_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="a00151_html_a686c39c1c4894cc144699ba0681d509d"><div class="ttname"><a href="../../dd/db2/a00151.html#a686c39c1c4894cc144699ba0681d509d">SimulationModule::Execute</a></div><div class="ttdeci">virtual int Execute()</div><div class="ttdoc">Execute the simulation. </div><div class="ttdef"><b>Definition:</b> <a href="../../dc/ddf/a00469_source.html#l00049">SimulationModule.h:49</a></div></div>
+<div class="ttc" id="a00151_html"><div class="ttname"><a href="../../dd/db2/a00151.html">SimulationModule</a></div><div class="ttdoc">Base module for all simulation modules in SEIMS. </div><div class="ttdef"><b>Definition:</b> <a href="../../dc/ddf/a00469_source.html#l00041">SimulationModule.h:41</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_b89a50a3d6b2f98326f9f3f569cfd788.html">modules</a></li><li class="navelem"><a class="el" href="../../dir_c45a69ff562c5683ce5320a99c4bd799.html">management</a></li><li class="navelem"><a class="el" href="../../dir_50a71d2a3869972c287d4538ef398de4.html">NPSMGT</a></li><li class="navelem"><b>NonPointSource_Management.h</b></li>
-    <li class="footer">Generated on Fri Jun 1 2018 01:52:55 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_b89a50a3d6b2f98326f9f3f569cfd788.html">modules</a></li><li class="navelem"><a class="el" href="../../dir_5bf5a4201e7cd7ac6c5f03aeeeae8b2c.html">hydrology_longterm</a></li><li class="navelem"><a class="el" href="../../dir_4ac8341ef401fdb228f6ce198110b93b.html">SSR_DA</a></li><li class="navelem"><b>SSR_DA.h</b></li>
+    <li class="footer">Generated on Fri Jun 8 2018 08:48:07 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

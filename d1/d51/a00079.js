@@ -1,16 +1,13 @@
 var a00079 =
 [
-    [ "Execute", "d1/d51/a00079.html#a6853c086a0dcd7d088c8dfdb40acf001", null ],
-    [ "Get1DData", "d1/d51/a00079.html#a6e006ddf6e807caef21a4a10373bc039", null ],
-    [ "Set1DData", "d1/d51/a00079.html#a3a48900e5e135873557243d5f4bd8216", null ],
-    [ "Set2DData", "d1/d51/a00079.html#ac9dd042ac3e1bf84b684645eb6c908cb", null ],
-    [ "SetValue", "d1/d51/a00079.html#a8579e0c8aa1cd3699fc07194cf46b225", null ],
-    [ "m_CellWidth", "d1/d51/a00079.html#a4bec3ee56afb50a1cd461d50126afcd1", null ],
-    [ "m_iuhCols", "d1/d51/a00079.html#a4adc23a16f2d8183bcd5939d44dec7fe", null ],
-    [ "m_nCells", "d1/d51/a00079.html#a1a15a806c2f954ecf054512eda201e94", null ],
-    [ "m_nsub", "d1/d51/a00079.html#a866d24a706dd4ee2e67800ca8a1e5c56", null ],
-    [ "m_Q_SBIF", "d1/d51/a00079.html#a958b7bc07852d63f35292a78a53dbde1", null ],
-    [ "m_ssru", "d1/d51/a00079.html#aa347d138f8f6cbcc4743d7136ccabd9d", null ],
-    [ "m_subbasin", "d1/d51/a00079.html#aece6dc8113e25c82bc36f555065121b1", null ],
-    [ "m_TimeStep", "d1/d51/a00079.html#afae148be24efecf23ba25c5729891954", null ]
+    [ "ItpWeightData", "d1/d51/a00079.html#a30e95a3f7ab6b94b99a05c99283d916d", null ],
+    [ "~ItpWeightData", "d1/d51/a00079.html#aea2893a0c75f14357e8aea49fe39fbbc", null ],
+    [ "Dump", "d1/d51/a00079.html#a7656e6485dd03f94c16d8abd617608fe", null ],
+    [ "Dump", "d1/d51/a00079.html#ab5a9fbff2d82120b9b518cc850fc57c8", null ],
+    [ "GetWeightData", "d1/d51/a00079.html#a448b8fb33bbd44024d4e85d2152f373c", null ],
+    [ "ReadFromMongoDB", "d1/d51/a00079.html#a33ac6e3009823c3596d268de63810aaa", null ],
+    [ "filename_", "d1/d51/a00079.html#a7e22429d61a8140581a5c5ad493b1efa", null ],
+    [ "itp_weight_data_", "d1/d51/a00079.html#a827f3cdcee00f75221373d5157b10ab2", null ],
+    [ "n_cols_", "d1/d51/a00079.html#a61a2c495d58d27d8b350da740c49f8b9", null ],
+    [ "n_rows_", "d1/d51/a00079.html#aeab383354dccc7faf365fe9c86c389d9", null ]
 ];
