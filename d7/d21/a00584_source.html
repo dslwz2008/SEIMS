@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims/src/seims_main/modules/hydrology/PI_MCS/Interception_MCS.h Source File</title>
+<title>SEIMS: seims/src/seims_main/modules/erosion/MUSLE_I30/MUSLE_I30.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -112,102 +112,90 @@ $(document).ready(function(){initNavTree('d7/d21/a00584_source.html','../../');}
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Interception_MCS.h</div>  </div>
+<div class="title">MUSLE_I30.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#ifndef SEIMS_MODULE_PI_MCS_H</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SEIMS_MODULE_PI_MCS_H</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;SimulationModule.h&quot;</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;SimulationModule.h&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">class </span>MUSLE_I30 : <span class="keyword">public</span> <a class="code" href="../../da/d01/a00153.html">SimulationModule</a> {</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    MUSLE_I30(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    ~MUSLE_I30(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> Execute(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="../../dc/de2/a00024.html">   25</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../dc/de2/a00024.html">clsPI_MCS</a>: <span class="keyword">public</span> <a class="code" href="../../dd/db2/a00151.html">SimulationModule</a> {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="../../dc/de2/a00024.html">clsPI_MCS</a>();</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> SetValue(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">float</span> data);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> Set1DData(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">int</span> n, <span class="keywordtype">float</span> *data);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> Get1DData(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">int</span> *n, <span class="keywordtype">float</span> **data);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> Set2DData(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">int</span> nRows, <span class="keywordtype">int</span> nCols, <span class="keywordtype">float</span> **data);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">bool</span> CheckInputSize(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">int</span> n);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">bool</span> CheckInputData(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    ~<a class="code" href="../../dc/de2/a00024.html">clsPI_MCS</a>();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    time_t m_Date;<span class="comment">//</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dc/de2/a00024.html#ad9491145baaf7f56e6e9a465186d3641">Set1DData</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* key, <span class="keywordtype">int</span> nRows, <span class="keywordtype">float</span>* data) OVERRIDE;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dc/de2/a00024.html#a99e561659805a7d50d8dfdac1687ef6a">SetValue</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* key, <span class="keywordtype">float</span> value) OVERRIDE;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dc/de2/a00024.html#a531cf3a72ff409b46229d92bc4f990c3">Get1DData</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* key, <span class="keywordtype">int</span>* nRows, <span class="keywordtype">float</span>** data) OVERRIDE;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../dc/de2/a00024.html#a872b43bd459b19ba52e94c616cc963d2">Execute</a>() OVERRIDE;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../dc/de2/a00024.html#ab7bef2043ba56b88f182e007c49fede8">CheckInputData</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">int</span> m_cellSize;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">int</span> m_cellWidth;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">//grid from parameter</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">float</span> *m_usle_p;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">float</span> *m_usle_k;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">float</span> *m_usle_c;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">float</span> *m_slope;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">float</span> *m_flowacc;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">float</span> *m_usle_ls;   <span class="comment">//LS factor</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">float</span> m_cellAreaKM;    <span class="comment">//A in qp, km^2</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">float</span> *m_slopeForPq;<span class="comment">//S^0.16 in qp</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../dc/de2/a00024.html#a0d4de4a3d76f7172b82afc6c75a240de">CheckInputSize</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* key, <span class="keywordtype">int</span> n);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dc/de2/a00024.html#a304e994df864e5825d44ad1004b85d2f">InitialOutputs</a>();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">/* Parameters from database */</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">// The embankment area ratio of paddy rice cells</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">float</span> m_embnkFr;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// The fraction of precipitation fall on the embankment that drain into ditches or canals directly</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">float</span> m_pcp2CanalFr;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">// landuse</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">float</span>* m_landUse;</div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="../../dc/de2/a00024.html#aeb07e3265f217ed76faa17f322e41c60">   68</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="../../dc/de2/a00024.html#aeb07e3265f217ed76faa17f322e41c60">m_intcpStoCapExp</a>;</div>
-<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="../../dc/de2/a00024.html#a25fcb048c0a0ec8358c4ff0c07649e2d">   70</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="../../dc/de2/a00024.html#a25fcb048c0a0ec8358c4ff0c07649e2d">m_initIntcpSto</a>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="../../dc/de2/a00024.html#a8f8b573eb99075b626badfc7bb1da763">   72</a></span>&#160;    <span class="keywordtype">float</span>* <a class="code" href="../../dc/de2/a00024.html#a8f8b573eb99075b626badfc7bb1da763">m_maxIntcpStoCap</a>;</div>
-<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="../../dc/de2/a00024.html#af0041a8629fed8621db3408dcc5ee515">   74</a></span>&#160;    <span class="keywordtype">float</span>* <a class="code" href="../../dc/de2/a00024.html#af0041a8629fed8621db3408dcc5ee515">m_minIntcpStoCap</a>;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#ifdef STORM_MODE</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor"></span>    <span class="keywordtype">float</span> m_hilldt;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">float</span> *m_slope;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">/* Input variables from other module&#39;s output */</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="../../dc/de2/a00024.html#aa27abde2795b36e6f08a53b5b04a9c1f">   88</a></span>&#160;    <span class="keywordtype">float</span>* <a class="code" href="../../dc/de2/a00024.html#aa27abde2795b36e6f08a53b5b04a9c1f">m_pcp</a>;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#ifndef STORM_MODE</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor"></span>    <span class="keywordtype">float</span>* <a class="code" href="../../dc/de2/a00024.html#acf88ee40616b4ed33ab11442d45d9318">m_pet</a>;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="comment">/* Results */</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
-<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="../../dc/de2/a00024.html#ae6ff6333d3887af3540a4dcffbfa5489">   97</a></span>&#160;    <span class="keywordtype">float</span>* <a class="code" href="../../dc/de2/a00024.html#ae6ff6333d3887af3540a4dcffbfa5489">m_canSto</a>;</div>
-<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="../../dc/de2/a00024.html#a30aacc2b2c8a872fb79f5f75f949c2db">   99</a></span>&#160;    <span class="keywordtype">float</span>* <a class="code" href="../../dc/de2/a00024.html#a30aacc2b2c8a872fb79f5f75f949c2db">m_intcpLoss</a>;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor">#ifndef STORM_MODE</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor"></span>    <span class="keywordtype">float</span>* <a class="code" href="../../dc/de2/a00024.html#aa2eb479fd2ea0358582729b4e150990a">m_IntcpET</a>;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor"></span>    <span class="keywordtype">float</span>* <a class="code" href="../../dc/de2/a00024.html#a0221805f3e9afba7e6b1440abf48fb4d">m_netPcp</a>;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="comment">/* Others */</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
-<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="../../dc/de2/a00024.html#aea8564277bb1b4082b18916145146968">  110</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../dc/de2/a00024.html#aea8564277bb1b4082b18916145146968">m_nCells</a>;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;};</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SEIMS_MODULE_PI_MCS_H */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="a00024_html"><div class="ttname"><a href="../../dc/de2/a00024.html">clsPI_MCS</a></div><div class="ttdoc">Class for Precipitation Interception module based on Maximum Canopy Storage. </div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d21/a00584_source.html#l00025">Interception_MCS.h:25</a></div></div>
-<div class="ttc" id="a00024_html_aeb07e3265f217ed76faa17f322e41c60"><div class="ttname"><a href="../../dc/de2/a00024.html#aeb07e3265f217ed76faa17f322e41c60">clsPI_MCS::m_intcpStoCapExp</a></div><div class="ttdeci">float m_intcpStoCapExp</div><div class="ttdoc">Calibration parameter of interception storage, the sine-shaped curve controller exponent b...</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d21/a00584_source.html#l00068">Interception_MCS.h:68</a></div></div>
-<div class="ttc" id="a00024_html_aa2eb479fd2ea0358582729b4e150990a"><div class="ttname"><a href="../../dc/de2/a00024.html#aa2eb479fd2ea0358582729b4e150990a">clsPI_MCS::m_IntcpET</a></div><div class="ttdeci">float * m_IntcpET</div><div class="ttdoc">Evaporation loss from intercepted rainfall, mm. </div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d21/a00584_source.html#l00102">Interception_MCS.h:102</a></div></div>
-<div class="ttc" id="a00024_html_aea8564277bb1b4082b18916145146968"><div class="ttname"><a href="../../dc/de2/a00024.html#aea8564277bb1b4082b18916145146968">clsPI_MCS::m_nCells</a></div><div class="ttdeci">int m_nCells</div><div class="ttdoc">number of valid cells </div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d21/a00584_source.html#l00110">Interception_MCS.h:110</a></div></div>
-<div class="ttc" id="a00024_html_a25fcb048c0a0ec8358c4ff0c07649e2d"><div class="ttname"><a href="../../dc/de2/a00024.html#a25fcb048c0a0ec8358c4ff0c07649e2d">clsPI_MCS::m_initIntcpSto</a></div><div class="ttdeci">float m_initIntcpSto</div><div class="ttdoc">Calibration parameter, the initial interception storage for all cells, mm. </div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d21/a00584_source.html#l00070">Interception_MCS.h:70</a></div></div>
-<div class="ttc" id="a00024_html_a531cf3a72ff409b46229d92bc4f990c3"><div class="ttname"><a href="../../dc/de2/a00024.html#a531cf3a72ff409b46229d92bc4f990c3">clsPI_MCS::Get1DData</a></div><div class="ttdeci">void Get1DData(const char *key, int *nRows, float **data) OVERRIDE</div><div class="ttdoc">Get 1D data, by default, DT_Raster1D. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d80/a00583_source.html#l00060">Interception_MCS.cpp:60</a></div></div>
-<div class="ttc" id="a00024_html_ab7bef2043ba56b88f182e007c49fede8"><div class="ttname"><a href="../../dc/de2/a00024.html#ab7bef2043ba56b88f182e007c49fede8">clsPI_MCS::CheckInputData</a></div><div class="ttdeci">bool CheckInputData()</div><div class="ttdoc">check the input data. Make sure all the input data is available. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d80/a00583_source.html#l00157">Interception_MCS.cpp:157</a></div></div>
-<div class="ttc" id="a00024_html_ae6ff6333d3887af3540a4dcffbfa5489"><div class="ttname"><a href="../../dc/de2/a00024.html#ae6ff6333d3887af3540a4dcffbfa5489">clsPI_MCS::m_canSto</a></div><div class="ttdeci">float * m_canSto</div><div class="ttdoc">current interception storage, the initial value equal to 0, mm </div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d21/a00584_source.html#l00097">Interception_MCS.h:97</a></div></div>
-<div class="ttc" id="a00024_html_acf88ee40616b4ed33ab11442d45d9318"><div class="ttname"><a href="../../dc/de2/a00024.html#acf88ee40616b4ed33ab11442d45d9318">clsPI_MCS::m_pet</a></div><div class="ttdeci">float * m_pet</div><div class="ttdoc">PET, mm. </div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d21/a00584_source.html#l00091">Interception_MCS.h:91</a></div></div>
-<div class="ttc" id="a00024_html_aa27abde2795b36e6f08a53b5b04a9c1f"><div class="ttname"><a href="../../dc/de2/a00024.html#aa27abde2795b36e6f08a53b5b04a9c1f">clsPI_MCS::m_pcp</a></div><div class="ttdeci">float * m_pcp</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d21/a00584_source.html#l00088">Interception_MCS.h:88</a></div></div>
-<div class="ttc" id="a00024_html_a0221805f3e9afba7e6b1440abf48fb4d"><div class="ttname"><a href="../../dc/de2/a00024.html#a0221805f3e9afba7e6b1440abf48fb4d">clsPI_MCS::m_netPcp</a></div><div class="ttdeci">float * m_netPcp</div><div class="ttdoc">Net precipitation (after slope correction, of course), mm. </div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d21/a00584_source.html#l00105">Interception_MCS.h:105</a></div></div>
-<div class="ttc" id="a00024_html_a872b43bd459b19ba52e94c616cc963d2"><div class="ttname"><a href="../../dc/de2/a00024.html#a872b43bd459b19ba52e94c616cc963d2">clsPI_MCS::Execute</a></div><div class="ttdeci">int Execute() OVERRIDE</div><div class="ttdoc">Execute the simulation. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d80/a00583_source.html#l00096">Interception_MCS.cpp:96</a></div></div>
-<div class="ttc" id="a00024_html_a304e994df864e5825d44ad1004b85d2f"><div class="ttname"><a href="../../dc/de2/a00024.html#a304e994df864e5825d44ad1004b85d2f">clsPI_MCS::InitialOutputs</a></div><div class="ttdeci">void InitialOutputs()</div><div class="ttdoc">Initialize output variables for the first run of the entire simulation. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d80/a00583_source.html#l00079">Interception_MCS.cpp:79</a></div></div>
-<div class="ttc" id="a00024_html_a8f8b573eb99075b626badfc7bb1da763"><div class="ttname"><a href="../../dc/de2/a00024.html#a8f8b573eb99075b626badfc7bb1da763">clsPI_MCS::m_maxIntcpStoCap</a></div><div class="ttdeci">float * m_maxIntcpStoCap</div><div class="ttdoc">Maximum storage capacity, mm. </div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d21/a00584_source.html#l00072">Interception_MCS.h:72</a></div></div>
-<div class="ttc" id="a00024_html_a30aacc2b2c8a872fb79f5f75f949c2db"><div class="ttname"><a href="../../dc/de2/a00024.html#a30aacc2b2c8a872fb79f5f75f949c2db">clsPI_MCS::m_intcpLoss</a></div><div class="ttdeci">float * m_intcpLoss</div><div class="ttdoc">Interception loss, mm. </div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d21/a00584_source.html#l00099">Interception_MCS.h:99</a></div></div>
-<div class="ttc" id="a00024_html_a0d4de4a3d76f7172b82afc6c75a240de"><div class="ttname"><a href="../../dc/de2/a00024.html#a0d4de4a3d76f7172b82afc6c75a240de">clsPI_MCS::CheckInputSize</a></div><div class="ttdeci">bool CheckInputSize(const char *key, int n)</div><div class="ttdoc">check the input size. Make sure all the input data have same dimension. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d80/a00583_source.html#l00177">Interception_MCS.cpp:177</a></div></div>
-<div class="ttc" id="a00024_html_ad9491145baaf7f56e6e9a465186d3641"><div class="ttname"><a href="../../dc/de2/a00024.html#ad9491145baaf7f56e6e9a465186d3641">clsPI_MCS::Set1DData</a></div><div class="ttdeci">void Set1DData(const char *key, int nRows, float *data) OVERRIDE</div><div class="ttdoc">Set 1D data, by default, DT_Raster1D. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d80/a00583_source.html#l00029">Interception_MCS.cpp:29</a></div></div>
-<div class="ttc" id="a00024_html_a99e561659805a7d50d8dfdac1687ef6a"><div class="ttname"><a href="../../dc/de2/a00024.html#a99e561659805a7d50d8dfdac1687ef6a">clsPI_MCS::SetValue</a></div><div class="ttdeci">void SetValue(const char *key, float value) OVERRIDE</div><div class="ttdoc">Set data, DT_Single. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d80/a00583_source.html#l00046">Interception_MCS.cpp:46</a></div></div>
-<div class="ttc" id="a00151_html"><div class="ttname"><a href="../../dd/db2/a00151.html">SimulationModule</a></div><div class="ttdoc">Base module for all simulation modules in SEIMS. </div><div class="ttdef"><b>Definition:</b> <a href="../../dc/ddf/a00469_source.html#l00041">SimulationModule.h:41</a></div></div>
-<div class="ttc" id="a00024_html_af0041a8629fed8621db3408dcc5ee515"><div class="ttname"><a href="../../dc/de2/a00024.html#af0041a8629fed8621db3408dcc5ee515">clsPI_MCS::m_minIntcpStoCap</a></div><div class="ttdeci">float * m_minIntcpStoCap</div><div class="ttdoc">Minimum storage capacity, mm. </div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d21/a00584_source.html#l00074">Interception_MCS.h:74</a></div></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">//the following four variables are for calculation of</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">//peak runoff rate using modified rational method</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">float</span> *m_alpha_month;    <span class="comment">//average half-hour rainfall fraction for each month, 1:3.2.2 P66</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">float</span> **m_p_stat;        <span class="comment">//p_stat table, 0 - RAINHHMX, 1 - PCPMM, 2 - PCPD</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">float</span> m_adj_pkr;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">float</span> m_rain_yrs;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">int</span> m_rndseed;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">float</span> *m_p;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">float</span> *m_snowMelt;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">float</span> *m_t_concentration;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">//grid from module</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">float</span> *m_snowAccumulation;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">float</span> *m_surfaceRunoff;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">//result</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">float</span> *m_sedimentYield;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">void</span> initalOutputs(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">float</span> getPeakRunoffRate(<span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">float</span> triangularDistribution(<span class="keywordtype">float</span> min, <span class="keywordtype">float</span> mean, <span class="keywordtype">float</span> max, <span class="keywordtype">int</span> *seed);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">float</span> aunif(<span class="keywordtype">int</span> *seed);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;};</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="ttc" id="a00153_html"><div class="ttname"><a href="../../da/d01/a00153.html">SimulationModule</a></div><div class="ttdoc">Base module for all simulation modules in SEIMS. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/df1/a00486_source.html#l00041">SimulationModule.h:41</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_b89a50a3d6b2f98326f9f3f569cfd788.html">modules</a></li><li class="navelem"><a class="el" href="../../dir_e30ec826fc85f262bf1bcce3dde65013.html">hydrology</a></li><li class="navelem"><a class="el" href="../../dir_e905f0c466b49d6d5d4ae5fd6da744f5.html">PI_MCS</a></li><li class="navelem"><b>Interception_MCS.h</b></li>
-    <li class="footer">Generated on Fri Jun 8 2018 08:48:07 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_b89a50a3d6b2f98326f9f3f569cfd788.html">modules</a></li><li class="navelem"><a class="el" href="../../dir_0416dddcf4ae60131836efd2402708ae.html">erosion</a></li><li class="navelem"><a class="el" href="../../dir_a8ef91848398976192253ddf3019617e.html">MUSLE_I30</a></li><li class="navelem"><b>MUSLE_I30.h</b></li>
+    <li class="footer">Generated on Sat Jun 16 2018 10:00:49 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

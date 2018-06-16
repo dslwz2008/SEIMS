@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims/src/ccgl/README.md Source File</title>
+<title>SEIMS: seims/postprocess/README.md Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -112,60 +112,33 @@ $(document).ready(function(){initNavTree('d7/ded/a00196.html','../../');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">seims/src/ccgl/README.md</div>  </div>
+<div class="title">seims/postprocess/README.md</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor"># CCGL</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span>Common Cross-platform Geographic-computing Library</div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor"># Postprecess</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span>----------------</div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">## Build status</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;+ Windows_MSVC2013x64_GDAL-1.11.4-mongo-c-driver-1.5.5: [![Build status](https:<span class="comment">//ci.appveyor.com/api/projects/status/b239pv4qvvxxythk/branch/master?svg=true)](https://ci.appveyor.com/project/crazyzlj/ccgl/branch/master)</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;+ Linux(Ubuntu trusty)_GCC-4.8_GDAL-1.10.1-mongo-c-driver-1.6.1: [![Build Status](https:<span class="comment">//travis-ci.org/crazyzlj/CCGL.svg?branch=master)](https://travis-ci.org/crazyzlj/CCGL)</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;+ Code coverage: [![codecov](https:<span class="comment">//codecov.io/gh/crazyzlj/CCGL/branch/master/graph/badge.svg)](https://codecov.io/gh/crazyzlj/CCGL)</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">## UnitTest</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor"></span>+ [Google Test](https:<span class="comment">//github.com/google/googletest) is adopted as UnitTest framework.</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;+ Unittest code should named like `test_xx.cpp` in the `test` directory.</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;+ To run UnitTest, use the common commands:</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    ```shell</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    cd &lt;path-to-CCGL&gt;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    mkdir build</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    cd build</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    cmake .. -DUNITTEST=1</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    make -j4</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    ./test/UnitTests_CCGL</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    ```</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">## Subtree</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;CCGL use CMake <span class="keywordflow">for</span> cross-platform build. The [cmake](https:<span class="comment">//github.com/lreis2415/cmake) repository is adopted as subtree.</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;+ Add subtree (<span class="keywordflow">for</span> administrator only)</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  ```</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  git remote add -f cmake git@github.com:lreis2415/cmake.git</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  git subtree add --prefix=cmake cmake master --squash</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  ```</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;+ Pull updates from remote repository</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  ```</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  git fetch cmake master</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  git subtree pull --prefix=cmake cmake master --squash</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  ```</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;+ Push local changes to remote repository</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  ```</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  git subtree push --prefix=cmake cmake master</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  ```</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;后处理程序采用与预处理程序一致的调用方式，即通过配置文件（*.ini）指定程序运行参数，通过如下形式命令调用任意一个功能脚本：</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;```bash</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;cd &lt;path to&gt;/SEIMS</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;python -m seims.postprocess.main -ini XXX.ini</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;```</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;以下分别介绍后处理程序功能及参数设置。</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">## 模拟结果出图</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor"></span>+ 相关参数设置：</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    + [PATH]下的MODEL_DIR，该目录中需有OUTPUT文件夹</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    + [MONGODB]所有参数</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    + [PARAMETERS]下的PLOT_VARIABLES，用于定于输出图标的变量，无需加引号，需与OUTPUT目录下TXT文件名一致，如Q, SED, CH_TN, 等，多个名称用空格分割</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    + [OPTIONAL_PARAMETERS]：Time_start 与Time_end 设定作图起止日期，格式为`yyyy-mm-dd`</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><b>README.md</b></li>
-    <li class="footer">Generated on Fri Jun 8 2018 08:48:05 for SEIMS by
+    <li class="footer">Generated on Sat Jun 16 2018 10:00:47 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

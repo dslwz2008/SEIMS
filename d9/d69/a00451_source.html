@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims/src/seims_main/base/data/Settings.h Source File</title>
+<title>SEIMS: seims/src/seims_main/base/data/clsSimpleTxtData.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -112,55 +112,43 @@ $(document).ready(function(){initNavTree('d9/d69/a00451_source.html','../../');}
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Settings.h</div>  </div>
+<div class="title">clsSimpleTxtData.h</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#ifndef SEIMS_SETTING_H</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SEIMS_SETTING_H</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;basic.h&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">using namespace </span>ccgl;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">using</span> std::vector;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="../../da/d1e/a00149.html">   25</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../da/d1e/a00149.html">Settings</a>: <a class="code" href="../../d9/da5/a00075.html">Interface</a> {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="../../da/d1e/a00149.html#ab7169a6eefce79566dd07db3b1e5e967">   28</a></span>&#160;    <a class="code" href="../../da/d1e/a00149.html#ab7169a6eefce79566dd07db3b1e5e967">Settings</a>() {};</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#ifndef SEIMS_SIMPLE_TEXT_H</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SEIMS_SIMPLE_TEXT_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;basic.h&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">using namespace </span>ccgl;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="../../d5/d16/a00029.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d5/d16/a00029.html">clsSimpleTxtData</a>: <a class="code" href="../../db/df8/a00076.html">Interface</a> {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="../../d5/d16/a00029.html">clsSimpleTxtData</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; filename);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    ~<a class="code" href="../../d5/d16/a00029.html">clsSimpleTxtData</a>();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> GetData(<span class="keywordtype">int</span>* n_row, <span class="keywordtype">float</span>** data);</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="../../da/d1e/a00149.html#ad8c1aba938f51d3f013a78d93906a49c">   31</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="../../da/d1e/a00149.html#ad8c1aba938f51d3f013a78d93906a49c">Settings</a>(vector&lt;vector&lt;string&gt; &gt;&amp; str2dvec) : m_Settings(str2dvec) {};</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> Dump(std::ostream* fs);</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="../../da/d1e/a00149.html">Settings</a>(vector&lt;string&gt;&amp; str1dvec);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="../../da/d1e/a00149.html#a4878fbbea86636d751c4b59957cf219b">   37</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../da/d1e/a00149.html#a4878fbbea86636d751c4b59957cf219b">SetSettingTagStrings</a>(vector&lt;vector&lt;string&gt; &gt;&amp; string2dvector) {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        m_Settings = string2dvector;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> SetSettingTagStrings(vector&lt;string&gt;&amp; stringvector);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">string</span> GetValue(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; tag);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="../../da/d1e/a00149.html#ab995632c847e6e0122b6ff58c9075409">   48</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> Dump(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; filename) {};</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    vector&lt;vector&lt;string&gt; &gt; m_Settings;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;};</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SEIMS_SETTING_H */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="a00149_html_a4878fbbea86636d751c4b59957cf219b"><div class="ttname"><a href="../../da/d1e/a00149.html#a4878fbbea86636d751c4b59957cf219b">Settings::SetSettingTagStrings</a></div><div class="ttdeci">virtual void SetSettingTagStrings(vector&lt; vector&lt; string &gt; &gt; &amp;string2dvector)</div><div class="ttdoc">Set Settings vector directly. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d69/a00451_source.html#l00037">Settings.h:37</a></div></div>
-<div class="ttc" id="a00075_html"><div class="ttname"><a href="../../d9/da5/a00075.html">ccgl::Interface</a></div><div class="ttdoc">Base type of all interfaces. All interface types are encouraged to be virtual inherited. </div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dbb/a00330_source.html#l00302">basic.h:302</a></div></div>
-<div class="ttc" id="a00149_html_ab7169a6eefce79566dd07db3b1e5e967"><div class="ttname"><a href="../../da/d1e/a00149.html#ab7169a6eefce79566dd07db3b1e5e967">Settings::Settings</a></div><div class="ttdeci">Settings()</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d69/a00451_source.html#l00028">Settings.h:28</a></div></div>
-<div class="ttc" id="a00149_html"><div class="ttname"><a href="../../da/d1e/a00149.html">Settings</a></div><div class="ttdoc">Base class for input or output Settings. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d69/a00451_source.html#l00025">Settings.h:25</a></div></div>
-<div class="ttc" id="a00149_html_ad8c1aba938f51d3f013a78d93906a49c"><div class="ttname"><a href="../../da/d1e/a00149.html#ad8c1aba938f51d3f013a78d93906a49c">Settings::Settings</a></div><div class="ttdeci">Settings(vector&lt; vector&lt; string &gt; &gt; &amp;str2dvec)</div><div class="ttdoc">Constructor via 2D string vector. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d69/a00451_source.html#l00031">Settings.h:31</a></div></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="../../d5/d16/a00029.html#a0e4bb42eeb19d8062f99a1a2e9d6f17e">   35</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../d5/d16/a00029.html#a0e4bb42eeb19d8062f99a1a2e9d6f17e">row_</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="../../d5/d16/a00029.html#ac8bb1464989a3be19ff9b2660049d085">   37</a></span>&#160;    <span class="keywordtype">float</span>* <a class="code" href="../../d5/d16/a00029.html#ac8bb1464989a3be19ff9b2660049d085">data_</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;};</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SEIMS_SIMPLE_TEXT_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="a00029_html_a0e4bb42eeb19d8062f99a1a2e9d6f17e"><div class="ttname"><a href="../../d5/d16/a00029.html#a0e4bb42eeb19d8062f99a1a2e9d6f17e">clsSimpleTxtData::row_</a></div><div class="ttdeci">int row_</div><div class="ttdoc">line number </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d69/a00451_source.html#l00035">clsSimpleTxtData.h:35</a></div></div>
+<div class="ttc" id="a00076_html"><div class="ttname"><a href="../../db/df8/a00076.html">ccgl::Interface</a></div><div class="ttdoc">Base type of all interfaces. All interface types are encouraged to be virtual inherited. </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/dc6/a00347_source.html#l00302">basic.h:302</a></div></div>
+<div class="ttc" id="a00029_html"><div class="ttname"><a href="../../d5/d16/a00029.html">clsSimpleTxtData</a></div><div class="ttdoc">read string line from text file </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d69/a00451_source.html#l00019">clsSimpleTxtData.h:19</a></div></div>
+<div class="ttc" id="a00029_html_ac8bb1464989a3be19ff9b2660049d085"><div class="ttname"><a href="../../d5/d16/a00029.html#ac8bb1464989a3be19ff9b2660049d085">clsSimpleTxtData::data_</a></div><div class="ttdeci">float * data_</div><div class="ttdoc">lines data </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d69/a00451_source.html#l00037">clsSimpleTxtData.h:37</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_d9d8c03d94c229237348b60b53b769ac.html">base</a></li><li class="navelem"><a class="el" href="../../dir_24d0af58b2644ad205aa9a0d9adbb65a.html">data</a></li><li class="navelem"><b>Settings.h</b></li>
-    <li class="footer">Generated on Fri Jun 8 2018 08:48:06 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_d9d8c03d94c229237348b60b53b769ac.html">base</a></li><li class="navelem"><a class="el" href="../../dir_24d0af58b2644ad205aa9a0d9adbb65a.html">data</a></li><li class="navelem"><b>clsSimpleTxtData.h</b></li>
+    <li class="footer">Generated on Sat Jun 16 2018 10:00:48 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

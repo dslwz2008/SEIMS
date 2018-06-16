@@ -1,5 +1,5 @@
 var a00088 =
 [
-    [ "__init__", "db/ddf/a00088.html#a9279c8f22b32a0f45e70c1ada367f110", null ],
-    [ "__init__", "db/ddf/a00088.html#a9279c8f22b32a0f45e70c1ada367f110", null ]
+    [ "__init__", "db/ddf/a00088.html#a60079de15688c3eb48b7e2dce5413d9d", null ],
+    [ "__init__", "db/ddf/a00088.html#a60079de15688c3eb48b7e2dce5413d9d", null ]
 ];

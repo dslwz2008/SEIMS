@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims/src/seims_main/modules/nutrient/NutrGW/NutrientinGroundwater.cpp Source File</title>
+<title>SEIMS: seims/src/seims_main/modules/hydrology_longterm/SSR_DA/SSR_DA.cpp Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -112,247 +112,369 @@ $(document).ready(function(){initNavTree('d9/d2a/a00654_source.html','../../');}
 
 <div class="header">
   <div class="headertitle">
-<div class="title">NutrientinGroundwater.cpp</div>  </div>
+<div class="title">SSR_DA.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;NutrientinGroundwater.h&quot;</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;SSR_DA.h&quot;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;text.h&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;NutrientinGroundwater::NutrientinGroundwater() :</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    m_inputSubbsnID(-1), m_cellWth(-1), m_nCells(-1), m_TimeStep(-1), m_gw0(NODATA_VALUE),</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    m_gwNO3Conc(nullptr), m_gwNO3(nullptr),</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    m_gwSolPConc(nullptr), m_gwSolP(nullptr), m_gw_q(nullptr), m_gwStor(nullptr),</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    m_perco_no3_gw(nullptr), m_perco_solp_gw(nullptr), m_soilNO3(nullptr),</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    m_soilSolP(nullptr), m_nSoilLayers(-1),</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    m_nSoilLyrs(nullptr), m_gwNO3ToCh(nullptr), m_gwSolPToCh(nullptr), m_nSubbsns(-1),</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    m_subbsnID(nullptr), m_subbasinsInfo(nullptr) {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;NutrientinGroundwater::~NutrientinGroundwater() {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> != <a class="code" href="../../d8/d17/a00114.html#a4f4005b0847c35325a1babf03f6499dd">m_gwNO3ToCh</a>) Release1DArray(<a class="code" href="../../d8/d17/a00114.html#a4f4005b0847c35325a1babf03f6499dd">m_gwNO3ToCh</a>);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> != <a class="code" href="../../d8/d17/a00114.html#a4938487dbb0bd6aac4a428ed5fd06de8">m_gwSolPToCh</a>) Release1DArray(<a class="code" href="../../d8/d17/a00114.html#a4938487dbb0bd6aac4a428ed5fd06de8">m_gwSolPToCh</a>);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="comment">// m_gwNO3 and m_gwSolP will be released in ~clsReaches(). By lj, 2017-12-26</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="../../d8/d17/a00114.html#a0d35a63aca7220c8374e819a864db02d">   22</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d8/d17/a00114.html#a0d35a63aca7220c8374e819a864db02d">NutrientinGroundwater::SetSubbasins</a>(<a class="code" href="../../d5/d79/a00030.html">clsSubbasins</a>* subbasins) {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == <a class="code" href="../../d8/d17/a00114.html#add5a8b8fc4e7c708529896ddd0d63f9d">m_subbasinsInfo</a>) {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="../../d8/d17/a00114.html#add5a8b8fc4e7c708529896ddd0d63f9d">m_subbasinsInfo</a> = subbasins;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="comment">// m_nSubbasins = m_subbasinsInfo-&gt;GetSubbasinNumber(); // Set in SetValue()</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="../../d8/d17/a00114.html#a44f922d84254eb26a496a3eb269babae">m_subbasinIDs</a> = <a class="code" href="../../d8/d17/a00114.html#add5a8b8fc4e7c708529896ddd0d63f9d">m_subbasinsInfo</a>-&gt;<a class="code" href="../../d5/d79/a00030.html#a3fec7496f3a78dfcaceb4a51027434f0">GetSubbasinIDs</a>();</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="../../d8/d17/a00114.html#ae2c87f5e9eaf0a26fd8050fed7a5081e">   30</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../d8/d17/a00114.html#ae2c87f5e9eaf0a26fd8050fed7a5081e">NutrientinGroundwater::CheckInputSize</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* key, <span class="keyword">const</span> <span class="keywordtype">int</span> n) {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">if</span> (n &lt;= 0) {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../d1/d84/a00097.html">ModelException</a>(MID_NUTRGW, <span class="stringliteral">&quot;CheckInputSize&quot;</span>, <span class="stringliteral">&quot;Input data for &quot;</span> + <span class="keywordtype">string</span>(key) +</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                             <span class="stringliteral">&quot; is invalid. The size could not be less than zero.&quot;</span>);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d8/d17/a00114.html#a5983448adb88f4483663208a11c2b82e">m_nCells</a> != n) {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../d8/d17/a00114.html#a5983448adb88f4483663208a11c2b82e">m_nCells</a> &lt;= 0) {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <a class="code" href="../../d8/d17/a00114.html#a5983448adb88f4483663208a11c2b82e">m_nCells</a> = n;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            std::ostringstream oss;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            oss &lt;&lt; <span class="stringliteral">&quot;Input data for &quot;</span> + string(key) &lt;&lt; <span class="stringliteral">&quot; is invalid with size: &quot;</span> &lt;&lt; n &lt;&lt;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                    <span class="stringliteral">&quot;. The origin size is &quot;</span> &lt;&lt; <a class="code" href="../../d8/d17/a00114.html#a5983448adb88f4483663208a11c2b82e">m_nCells</a> &lt;&lt; <span class="stringliteral">&quot;.\n&quot;</span>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="../../d1/d84/a00097.html">ModelException</a>(MID_NUTRGW, <span class="stringliteral">&quot;CheckInputSize&quot;</span>, oss.str());</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="../../d8/d17/a00114.html#a263dae01f2d6f27d5af918c4952e89bf">   48</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../d8/d17/a00114.html#a263dae01f2d6f27d5af918c4952e89bf">NutrientinGroundwater::CheckInputData</a>() {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    CHECK_POSITIVE(MID_NUTRGW, <a class="code" href="../../d8/d17/a00114.html#a5983448adb88f4483663208a11c2b82e">m_nCells</a>);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    CHECK_POSITIVE(MID_NUTRGW, <a class="code" href="../../d8/d17/a00114.html#ad440345df1db27d8b71febdf9da0fb8f">m_TimeStep</a>);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    CHECK_POSITIVE(MID_NUTRGW, <a class="code" href="../../d8/d17/a00114.html#a0174d30072c2752252007e5f89927ebf">m_cellWth</a>);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    CHECK_POSITIVE(MID_NUTRGW, <a class="code" href="../../d8/d17/a00114.html#acd4b5e8eec1f886a6c759d183dbb8842">m_gw0</a>);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    CHECK_POINTER(MID_NUTRGW, <a class="code" href="../../d8/d17/a00114.html#afe4dec62d26b468deab2b0b7ab3c9f31">m_gw_q</a>);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    CHECK_POINTER(MID_NUTRGW, <a class="code" href="../../d8/d17/a00114.html#adef55d701e44fa31b1e038860210fc5e">m_gwStor</a>);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    CHECK_POINTER(MID_NUTRGW, <a class="code" href="../../d8/d17/a00114.html#a2b870d6c826b49ec07b5d3b19ecbfd62">m_perco_no3_gw</a>);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    CHECK_POINTER(MID_NUTRGW, <a class="code" href="../../d8/d17/a00114.html#af5d6c2b649740b47faa91d86e1002882">m_perco_solp_gw</a>);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    CHECK_POINTER(MID_NUTRGW, <a class="code" href="../../d8/d17/a00114.html#aab5f414d5912dbc781291c7b8c1a8a08">m_nSoilLyrs</a>);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    CHECK_POINTER(MID_NUTRGW, <a class="code" href="../../d8/d17/a00114.html#a19343572f2171d417e21991f0194694e">m_soilNO3</a>);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="../../d8/d17/a00114.html#a3e1d794d84d361913c451a345db8b324">   62</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d8/d17/a00114.html#a3e1d794d84d361913c451a345db8b324">NutrientinGroundwater::SetValue</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* key, <span class="keyword">const</span> <span class="keywordtype">float</span> value) {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">string</span> sk(key);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">if</span> (StringMatch(sk, Tag_TimeStep)) <a class="code" href="../../d8/d17/a00114.html#ad440345df1db27d8b71febdf9da0fb8f">m_TimeStep</a> = CVT_INT(value);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (StringMatch(sk, Tag_CellWidth)) <a class="code" href="../../d8/d17/a00114.html#a0174d30072c2752252007e5f89927ebf">m_cellWth</a> = value;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (StringMatch(sk, VAR_GW0)) <a class="code" href="../../d8/d17/a00114.html#acd4b5e8eec1f886a6c759d183dbb8842">m_gw0</a> = value;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (StringMatch(sk, VAR_SUBBSNID_NUM)) <a class="code" href="../../d8/d17/a00114.html#af3cbc7d694e8084b161df513b15864e2">m_nSubbsns</a> = CVT_INT(value);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (StringMatch(sk, Tag_SubbasinId)) <a class="code" href="../../d8/d17/a00114.html#afa0a696addd2ce7c9c3a6a7752b0436e">m_inputSubbsnID</a> = CVT_INT(value);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../d1/d84/a00097.html">ModelException</a>(MID_NUTRGW, <span class="stringliteral">&quot;SetValue&quot;</span>, <span class="stringliteral">&quot;Parameter &quot;</span> + sk + <span class="stringliteral">&quot; does not exist.&quot;</span>);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="../../d8/d17/a00114.html#a5665679462af5a6938c8aaa343571305">   74</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d8/d17/a00114.html#a5665679462af5a6938c8aaa343571305">NutrientinGroundwater::Set1DData</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* key, <span class="keyword">const</span> <span class="keywordtype">int</span> n, <span class="keywordtype">float</span>* data) {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">string</span> sk(key);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">if</span> (StringMatch(sk, VAR_SUBBSN)) {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="../../d8/d17/a00114.html#ae2c87f5e9eaf0a26fd8050fed7a5081e">CheckInputSize</a>(key, n);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <a class="code" href="../../d8/d17/a00114.html#a759531846077727f6b24cbfcd8ffc4b4">m_subbsnID</a> = data;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (StringMatch(sk, VAR_SBQG)) <a class="code" href="../../d8/d17/a00114.html#afe4dec62d26b468deab2b0b7ab3c9f31">m_gw_q</a> = data;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (StringMatch(sk, VAR_SBGS)) <a class="code" href="../../d8/d17/a00114.html#adef55d701e44fa31b1e038860210fc5e">m_gwStor</a> = data;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (StringMatch(sk, VAR_PERCO_N_GW)) <a class="code" href="../../d8/d17/a00114.html#a2b870d6c826b49ec07b5d3b19ecbfd62">m_perco_no3_gw</a> = data;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (StringMatch(sk, VAR_PERCO_P_GW)) <a class="code" href="../../d8/d17/a00114.html#af5d6c2b649740b47faa91d86e1002882">m_perco_solp_gw</a> = data;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (StringMatch(sk, VAR_SOILLAYERS)) {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <a class="code" href="../../d8/d17/a00114.html#ae2c87f5e9eaf0a26fd8050fed7a5081e">CheckInputSize</a>(key, n);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <a class="code" href="../../d8/d17/a00114.html#aab5f414d5912dbc781291c7b8c1a8a08">m_nSoilLyrs</a> = data;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../d1/d84/a00097.html">ModelException</a>(MID_NUTRGW, <span class="stringliteral">&quot;Set1DData&quot;</span>, <span class="stringliteral">&quot;Parameter &quot;</span> + sk + <span class="stringliteral">&quot; does not exist.&quot;</span>);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;SSR_DA::SSR_DA() :</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    m_inputSubbsnID(-1), m_nCells(-1), m_CellWth(-1.f), m_maxSoilLyrs(-1), m_nSoilLyrs(nullptr),</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    m_soilThk(nullptr),</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    m_dt(-1), m_ki(NODATA_VALUE),</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    m_soilFrozenTemp(NODATA_VALUE), m_slope(nullptr), m_ks(nullptr), m_soilSat(nullptr),</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    m_poreIdx(nullptr),</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    m_soilFC(nullptr), m_soilWP(nullptr),</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    m_soilWtrSto(nullptr), m_soilWtrStoPrfl(nullptr), m_soilTemp(nullptr), m_chWidth(nullptr),</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    m_rchID(nullptr), m_flowInIdxD8(nullptr), m_rteLyrs(nullptr),</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    m_nRteLyrs(-1), m_nSubbsns(-1), m_subbsnID(nullptr),</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    m_subSurfRf(nullptr), m_subSurfRfVol(nullptr), m_ifluQ2Rch(nullptr) {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;SSR_DA::~SSR_DA() {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">if</span> (m_subSurfRf != <span class="keyword">nullptr</span>) Release2DArray(m_nCells, m_subSurfRf);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">if</span> (m_subSurfRfVol != <span class="keyword">nullptr</span>) Release2DArray(m_nCells, m_subSurfRfVol);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">if</span> (m_ifluQ2Rch != <span class="keyword">nullptr</span>) Release1DArray(m_ifluQ2Rch);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keywordtype">bool</span> SSR_DA::FlowInSoil(<span class="keyword">const</span> <span class="keywordtype">int</span> <span class="keywordtype">id</span>) {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">float</span> s0 = Max(m_slope[<span class="keywordtype">id</span>], 0.01f);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">float</span> flowWidth = m_CellWth;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment">// there is no land in this cell</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">if</span> (m_rchID[<span class="keywordtype">id</span>] &gt; 0) {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        flowWidth -= m_chWidth[id];</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">// initialize for current cell of current timestep</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; int(m_nSoilLyrs[<span class="keywordtype">id</span>]); j++) {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        m_subSurfRf[id][j] = 0.f;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        m_subSurfRfVol[id][j] = 0.f;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">/* Previous code. Update: In my view, if the flowWidth is less than 0, the subsurface flow</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">     * from the upstream cells should be added to stream cell directly, which will be summarized</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">     * for channel flow routing. By lj, 2018-4-12</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">    // return with initial values if flowWidth is less than 0</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">    if (flowWidth &lt;= 0) return true;</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">    */</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">// number of flow-in cells</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">int</span> nUpstream = CVT_INT(m_flowInIdxD8[<span class="keywordtype">id</span>][0]);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    m_soilWtrStoPrfl[id] = 0.f; <span class="comment">// update soil storage on profile</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; CVT_INT(m_nSoilLyrs[<span class="keywordtype">id</span>]); j++) {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordtype">float</span> smOld = m_soilWtrSto[id][j];</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="comment">//sum the upstream subsurface flow</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordtype">float</span> qUp = 0.f;    <span class="comment">// mm</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordtype">float</span> qUpVol = 0.f; <span class="comment">// m^3</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="comment">// If no in cells flowin (i.e., nUpstream = 0), the for-loop will be ignored.</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> upIndex = 1; upIndex &lt;= nUpstream; upIndex++) {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keywordtype">int</span> flowInID = CVT_INT(m_flowInIdxD8[<span class="keywordtype">id</span>][upIndex]);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="comment">// IMPORTANT!!! If the upstream cell is from another subbasin, CONTINUE to next upstream cell. By lj.</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">if</span> (CVT_INT(m_subbsnID[flowInID]) != CVT_INT(m_subbsnID[<span class="keywordtype">id</span>])) { <span class="keywordflow">continue</span>; }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordflow">if</span> (m_subSurfRf[flowInID][j] &gt; 0.f) {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                qUp += m_subSurfRf[flowInID][j]; <span class="comment">// * m_flowInPercentage[id][upIndex]; // TODO: Consider MFD algorithms</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                qUpVol += m_subSurfRfVol[flowInID][j];</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="comment">// add upstream water to the current cell</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">if</span> (qUp &lt; 0.f) qUp = 0.f;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">if</span> (qUpVol &lt; 0.f) qUpVol = 0.f;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="comment">// if the flowWidth is less than 0, the subsurface flow from the upstream cells</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="comment">// should be added to stream cell directly, which will be summarized</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="comment">// for channel flow routing. By lj, 2018-4-12</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">if</span> (flowWidth &lt;= 0.f) {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            m_subSurfRf[id][j] = qUp;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            m_subSurfRfVol[id][j] = qUpVol;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        m_soilWtrSto[id][j] += qUp; <span class="comment">// mm</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="comment">//TEST</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">if</span> (m_soilWtrSto[<span class="keywordtype">id</span>][j] != m_soilWtrSto[<span class="keywordtype">id</span>][j] || m_soilWtrSto[<span class="keywordtype">id</span>][j] &lt; 0.f) {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            cout &lt;&lt; <span class="stringliteral">&quot;cell id: &quot;</span> &lt;&lt; <span class="keywordtype">id</span> &lt;&lt; <span class="stringliteral">&quot;, layer: &quot;</span> &lt;&lt; j &lt;&lt; <span class="stringliteral">&quot;, moisture is less than zero: &quot;</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                    &lt;&lt; m_soilWtrSto[id][j] &lt;&lt; <span class="stringliteral">&quot;, previous: &quot;</span> &lt;&lt; smOld &lt;&lt; <span class="stringliteral">&quot;, qUp: &quot;</span> &lt;&lt; qUp &lt;&lt; <span class="stringliteral">&quot;, depth:&quot;</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                    &lt;&lt; m_soilThk[id][j] &lt;&lt; endl;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="comment">// if soil moisture is below the field capacity, no interflow will be generated</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">if</span> (m_soilWtrSto[<span class="keywordtype">id</span>][j] &lt;= m_soilFC[<span class="keywordtype">id</span>][j]) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="comment">// Otherwise, calculate interflow:</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="comment">// for the upper two layers, soil may be frozen</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="comment">// also check if there are upstream inflow</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">if</span> (j == 0 &amp;&amp; m_soilTemp[<span class="keywordtype">id</span>] &lt;= m_soilFrozenTemp &amp;&amp; qUp &lt;= 0.f) {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        }</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
-<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="../../d8/d17/a00114.html#a187c77a73be0232070d72082d52170f5">   91</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d8/d17/a00114.html#a187c77a73be0232070d72082d52170f5">NutrientinGroundwater::Set2DData</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* key, <span class="keyword">const</span> <span class="keywordtype">int</span> nRows, <span class="keyword">const</span> <span class="keywordtype">int</span> nCols, <span class="keywordtype">float</span>** data) {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <a class="code" href="../../d8/d17/a00114.html#ae2c87f5e9eaf0a26fd8050fed7a5081e">CheckInputSize</a>(key, nRows);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">string</span> sk(key);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <a class="code" href="../../d8/d17/a00114.html#a3a2975f6362a801474d7fdeb5b86908a">m_nSoilLayers</a> = nCols;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">if</span> (StringMatch(sk, VAR_SOL_NO3)) <a class="code" href="../../d8/d17/a00114.html#a19343572f2171d417e21991f0194694e">m_soilNO3</a> = data;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (StringMatch(sk, VAR_SOL_SOLP)) <a class="code" href="../../d8/d17/a00114.html#a9c175ee967929f199c8551ecd32cae1c">m_soilSolP</a> = data;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../d1/d84/a00097.html">ModelException</a>(MID_NUTRGW, <span class="stringliteral">&quot;Set2DData&quot;</span>, <span class="stringliteral">&quot;Parameter &quot;</span> + sk + <span class="stringliteral">&quot; does not exist.&quot;</span>);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
-<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="../../d8/d17/a00114.html#abe78674fa13e7a3c6a8c82a2ae16ea86">  102</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d8/d17/a00114.html#abe78674fa13e7a3c6a8c82a2ae16ea86">NutrientinGroundwater::SetReaches</a>(<a class="code" href="../../dc/d3c/a00028.html">clsReaches</a>* reaches) {</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> != reaches) {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="comment">// m_nSubbasins = reaches-&gt;GetReachNumber();</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == <a class="code" href="../../d8/d17/a00114.html#ae9f467c4141f97ac13f888793ecddd4a">m_gwNO3Conc</a>) reaches-&gt;<a class="code" href="../../dc/d3c/a00028.html#a793a91c610cf0cb41235e885c57afead">GetReachesSingleProperty</a>(REACH_GWNO3, &amp;<a class="code" href="../../d8/d17/a00114.html#ae9f467c4141f97ac13f888793ecddd4a">m_gwNO3Conc</a>);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == <a class="code" href="../../d8/d17/a00114.html#a2e43cc1eddf928c0721ccd66b90a2c79">m_gwSolPConc</a>) reaches-&gt;<a class="code" href="../../dc/d3c/a00028.html#a793a91c610cf0cb41235e885c57afead">GetReachesSingleProperty</a>(REACH_GWSOLP, &amp;<a class="code" href="../../d8/d17/a00114.html#a2e43cc1eddf928c0721ccd66b90a2c79">m_gwSolPConc</a>);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../d1/d84/a00097.html">ModelException</a>(MID_NUTRGW, <span class="stringliteral">&quot;SetReaches&quot;</span>, <span class="stringliteral">&quot;The reaches input can not to be NULL.&quot;</span>);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    }</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
-<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="../../d8/d17/a00114.html#a5973bda9b1bb326030e53d01d63f54cf">  112</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d8/d17/a00114.html#a5973bda9b1bb326030e53d01d63f54cf">NutrientinGroundwater::InitialOutputs</a>() {</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    CHECK_POSITIVE(MID_NUTRGW, <a class="code" href="../../d8/d17/a00114.html#a5983448adb88f4483663208a11c2b82e">m_nCells</a>);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="comment">// allocate the output variables</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == <a class="code" href="../../d8/d17/a00114.html#a4f4005b0847c35325a1babf03f6499dd">m_gwNO3ToCh</a>) {</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        Initialize1DArray(<a class="code" href="../../d8/d17/a00114.html#af3cbc7d694e8084b161df513b15864e2">m_nSubbsns</a> + 1, <a class="code" href="../../d8/d17/a00114.html#a4f4005b0847c35325a1babf03f6499dd">m_gwNO3ToCh</a>, 0.f);</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        Initialize1DArray(<a class="code" href="../../d8/d17/a00114.html#af3cbc7d694e8084b161df513b15864e2">m_nSubbsns</a> + 1, <a class="code" href="../../d8/d17/a00114.html#a4938487dbb0bd6aac4a428ed5fd06de8">m_gwSolPToCh</a>, 0.f);</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    }</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == <a class="code" href="../../d8/d17/a00114.html#a9945afbe39807419c23112d64de43e10">m_gwNO3</a>) {</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <a class="code" href="../../d8/d17/a00114.html#a9945afbe39807419c23112d64de43e10">m_gwNO3</a> = <span class="keyword">new</span> <span class="keywordtype">float</span>[<a class="code" href="../../d8/d17/a00114.html#af3cbc7d694e8084b161df513b15864e2">m_nSubbsns</a> + 1];</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <a class="code" href="../../d8/d17/a00114.html#a4669aa71c20f0389fe7d5460e5b93387">m_gwSolP</a> = <span class="keyword">new</span> <span class="keywordtype">float</span>[<a class="code" href="../../d8/d17/a00114.html#af3cbc7d694e8084b161df513b15864e2">m_nSubbsns</a> + 1];</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = <a class="code" href="../../d8/d17/a00114.html#a44f922d84254eb26a496a3eb269babae">m_subbasinIDs</a>.begin(); it != <a class="code" href="../../d8/d17/a00114.html#a44f922d84254eb26a496a3eb269babae">m_subbasinIDs</a>.end(); ++it) {</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            <a class="code" href="../../de/d53/a00169.html">Subbasin</a>* subbasin = <a class="code" href="../../d8/d17/a00114.html#add5a8b8fc4e7c708529896ddd0d63f9d">m_subbasinsInfo</a>-&gt;<a class="code" href="../../d5/d79/a00030.html#a56b0f6a9f5b6f962f3c4b1666f0239b5">GetSubbasinByID</a>(*it);</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            <span class="keywordtype">float</span> subArea = subbasin-&gt;<a class="code" href="../../de/d53/a00169.html#a23e5e33b027f3abdf2b52951d24afb8d">GetArea</a>();                           <span class="comment">//m^2</span></div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            <a class="code" href="../../d8/d17/a00114.html#a9945afbe39807419c23112d64de43e10">m_gwNO3</a>[*it] = <a class="code" href="../../d8/d17/a00114.html#acd4b5e8eec1f886a6c759d183dbb8842">m_gw0</a> * <a class="code" href="../../d8/d17/a00114.html#ae9f467c4141f97ac13f888793ecddd4a">m_gwNO3Conc</a>[*it] * subArea * 0.000001f; </div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            <a class="code" href="../../d8/d17/a00114.html#a4669aa71c20f0389fe7d5460e5b93387">m_gwSolP</a>[*it] = <a class="code" href="../../d8/d17/a00114.html#acd4b5e8eec1f886a6c759d183dbb8842">m_gw0</a> * <a class="code" href="../../d8/d17/a00114.html#a2e43cc1eddf928c0721ccd66b90a2c79">m_gwSolPConc</a>[*it] * subArea * 0.000001f;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        }</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    }</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
-<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="../../d8/d17/a00114.html#a7bea220b4fe7ea3e8c80931a7950669e">  132</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d8/d17/a00114.html#a7bea220b4fe7ea3e8c80931a7950669e">NutrientinGroundwater::Execute</a>() {</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <a class="code" href="../../d8/d17/a00114.html#a263dae01f2d6f27d5af918c4952e89bf">CheckInputData</a>();</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <a class="code" href="../../d8/d17/a00114.html#a5973bda9b1bb326030e53d01d63f54cf">InitialOutputs</a>();</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = <a class="code" href="../../d8/d17/a00114.html#a44f922d84254eb26a496a3eb269babae">m_subbasinIDs</a>.begin(); it != <a class="code" href="../../d8/d17/a00114.html#a44f922d84254eb26a496a3eb269babae">m_subbasinIDs</a>.end(); ++it) {</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="keywordtype">int</span> <span class="keywordtype">id</span> = *it;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <a class="code" href="../../de/d53/a00169.html">Subbasin</a>* subbasin = <a class="code" href="../../d8/d17/a00114.html#add5a8b8fc4e7c708529896ddd0d63f9d">m_subbasinsInfo</a>-&gt;<a class="code" href="../../d5/d79/a00030.html#a56b0f6a9f5b6f962f3c4b1666f0239b5">GetSubbasinByID</a>(<span class="keywordtype">id</span>);</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="keywordtype">int</span> nCells = subbasin-&gt;<a class="code" href="../../de/d53/a00169.html#ad293d96594c0d6769d39ed48f6f38d79">GetCellCount</a>();</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <span class="keywordtype">float</span> subArea = subbasin-&gt;<a class="code" href="../../de/d53/a00169.html#a23e5e33b027f3abdf2b52951d24afb8d">GetArea</a>(); <span class="comment">// m^2</span></div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="keywordtype">float</span> revap = subbasin-&gt;<a class="code" href="../../de/d53/a00169.html#a8c5e0eb10135c68a18c792b428bc41b9">GetEg</a>();</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="keywordtype">float</span> gwqVol = <a class="code" href="../../d8/d17/a00114.html#afe4dec62d26b468deab2b0b7ab3c9f31">m_gw_q</a>[id] * <a class="code" href="../../d8/d17/a00114.html#ad440345df1db27d8b71febdf9da0fb8f">m_TimeStep</a>;    <span class="comment">// m^3, water volume flow out</span></div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <span class="keywordtype">float</span> reVapVol = revap * subArea * 0.001f; <span class="comment">// m^3</span></div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="keywordtype">float</span> tmpGwStorage = <a class="code" href="../../d8/d17/a00114.html#adef55d701e44fa31b1e038860210fc5e">m_gwStor</a>[id] * subArea * 0.001f + gwqVol + reVapVol;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <a class="code" href="../../d8/d17/a00114.html#a9945afbe39807419c23112d64de43e10">m_gwNO3</a>[id] += <a class="code" href="../../d8/d17/a00114.html#a2b870d6c826b49ec07b5d3b19ecbfd62">m_perco_no3_gw</a>[id]; </div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <a class="code" href="../../d8/d17/a00114.html#a4669aa71c20f0389fe7d5460e5b93387">m_gwSolP</a>[id] += <a class="code" href="../../d8/d17/a00114.html#af5d6c2b649740b47faa91d86e1002882">m_perco_solp_gw</a>[id];</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <a class="code" href="../../d8/d17/a00114.html#ae9f467c4141f97ac13f888793ecddd4a">m_gwNO3Conc</a>[id] = <a class="code" href="../../d8/d17/a00114.html#a9945afbe39807419c23112d64de43e10">m_gwNO3</a>[id] / tmpGwStorage * 1000.f; <span class="comment">// kg / m^3 * 1000. = mg/L</span></div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <a class="code" href="../../d8/d17/a00114.html#a2e43cc1eddf928c0721ccd66b90a2c79">m_gwSolPConc</a>[id] = <a class="code" href="../../d8/d17/a00114.html#a4669aa71c20f0389fe7d5460e5b93387">m_gwSolP</a>[id] / tmpGwStorage * 1000.f;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="comment">//cout&lt;&lt;&quot;subID: &quot;&lt;&lt;id&lt;&lt;&quot;, gwQ: &quot;&lt;&lt;m_gw_q[id] &lt;&lt; &quot;, &quot;;</span></div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <a class="code" href="../../d8/d17/a00114.html#a4f4005b0847c35325a1babf03f6499dd">m_gwNO3ToCh</a>[id] = <a class="code" href="../../d8/d17/a00114.html#ae9f467c4141f97ac13f888793ecddd4a">m_gwNO3Conc</a>[id] * gwqVol * 0.001f; <span class="comment">// g/m3 * m3 / 1000 = kg</span></div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <a class="code" href="../../d8/d17/a00114.html#a4938487dbb0bd6aac4a428ed5fd06de8">m_gwSolPToCh</a>[id] = <a class="code" href="../../d8/d17/a00114.html#a2e43cc1eddf928c0721ccd66b90a2c79">m_gwSolPConc</a>[id] * gwqVol * 0.001f;</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <span class="comment">//cout&lt;&lt;&quot;subID: &quot;&lt;&lt;id&lt;&lt;&quot;, gwno3Con: &quot;&lt;&lt;m_gwno3Con[id] &lt;&lt; &quot;, no3gwToCh: &quot;&lt;&lt;m_no3gwToCh[id] &lt;&lt; &quot;, &quot;;</span></div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="comment"></span>        <span class="keywordtype">float</span> no3ToSoil = revap * 0.001f * <a class="code" href="../../d8/d17/a00114.html#ae9f467c4141f97ac13f888793ecddd4a">m_gwNO3Conc</a>[id] * 10.f; <span class="comment">// kg/ha  (m*10*g/m3=kg/ha)</span></div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="keywordtype">float</span> solpToSoil = revap * 0.001f * <a class="code" href="../../d8/d17/a00114.html#a2e43cc1eddf928c0721ccd66b90a2c79">m_gwSolPConc</a>[id] * 10.f;</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <span class="keywordtype">float</span> no3ToSoil_kg = no3ToSoil * subArea * 0.0001f; </div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="keywordtype">float</span> solpToSoil_kg = solpToSoil * subArea * 0.0001f;</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <span class="keywordtype">int</span>* cells = subbasin-&gt;<a class="code" href="../../de/d53/a00169.html#a29196da83b7034f188f1943e16febd01">GetCells</a>();</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keywordtype">int</span> index = 0;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; nCells; i++) {</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            index = cells[i];</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            <a class="code" href="../../d8/d17/a00114.html#a19343572f2171d417e21991f0194694e">m_soilNO3</a>[index][CVT_INT(<a class="code" href="../../d8/d17/a00114.html#aab5f414d5912dbc781291c7b8c1a8a08">m_nSoilLyrs</a>[index]) - 1] += no3ToSoil;</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            <a class="code" href="../../d8/d17/a00114.html#a9c175ee967929f199c8551ecd32cae1c">m_soilSolP</a>[index][CVT_INT(<a class="code" href="../../d8/d17/a00114.html#aab5f414d5912dbc781291c7b8c1a8a08">m_nSoilLyrs</a>[index]) - 1] += solpToSoil;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        }</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <a class="code" href="../../d8/d17/a00114.html#a9945afbe39807419c23112d64de43e10">m_gwNO3</a>[id] -= <a class="code" href="../../d8/d17/a00114.html#a4f4005b0847c35325a1babf03f6499dd">m_gwNO3ToCh</a>[id] + no3ToSoil_kg;</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <a class="code" href="../../d8/d17/a00114.html#a4669aa71c20f0389fe7d5460e5b93387">m_gwSolP</a>[id] -= <a class="code" href="../../d8/d17/a00114.html#a4938487dbb0bd6aac4a428ed5fd06de8">m_gwSolPToCh</a>[id] + solpToSoil_kg;</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    }</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;}</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;</div>
-<div class="line"><a name="l00175"></a><span class="lineno"><a class="line" href="../../d8/d17/a00114.html#ac5de8ca30e816ac9d32928a1810bc365">  175</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d8/d17/a00114.html#ac5de8ca30e816ac9d32928a1810bc365">NutrientinGroundwater::Get1DData</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* key, <span class="keywordtype">int</span>* n, <span class="keywordtype">float</span>** data) {</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <a class="code" href="../../d8/d17/a00114.html#a5973bda9b1bb326030e53d01d63f54cf">InitialOutputs</a>();</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keywordtype">string</span> sk(key);</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    *n = <a class="code" href="../../d8/d17/a00114.html#af3cbc7d694e8084b161df513b15864e2">m_nSubbsns</a> + 1;</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keywordflow">if</span> (StringMatch(sk, VAR_NO3GW_TOCH)) {</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        *data = <a class="code" href="../../d8/d17/a00114.html#a4f4005b0847c35325a1babf03f6499dd">m_gwNO3ToCh</a>;</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (StringMatch(sk, VAR_MINPGW_TOCH)) {</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        *data = <a class="code" href="../../d8/d17/a00114.html#a4938487dbb0bd6aac4a428ed5fd06de8">m_gwSolPToCh</a>;</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (StringMatch(sk, VAR_GWNO3_CONC)) {</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        *data = <a class="code" href="../../d8/d17/a00114.html#ae9f467c4141f97ac13f888793ecddd4a">m_gwNO3Conc</a>;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (StringMatch(sk, VAR_GWSOLP_CONC)) {</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        *data = <a class="code" href="../../d8/d17/a00114.html#a2e43cc1eddf928c0721ccd66b90a2c79">m_gwSolPConc</a>;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (StringMatch(sk, VAR_GWNO3)) {</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        *data = <a class="code" href="../../d8/d17/a00114.html#a9945afbe39807419c23112d64de43e10">m_gwNO3</a>;</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (StringMatch(sk, VAR_GWSOLP)) {</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        *data = <a class="code" href="../../d8/d17/a00114.html#a4669aa71c20f0389fe7d5460e5b93387">m_gwSolP</a>;</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../d1/d84/a00097.html">ModelException</a>(MID_NUTRGW, <span class="stringliteral">&quot;Get1DData&quot;</span>, <span class="stringliteral">&quot;Parameter &quot;</span> + sk + <span class="stringliteral">&quot; does not exist.&quot;</span>);</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    }</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;}</div>
-<div class="ttc" id="a00114_html_a4938487dbb0bd6aac4a428ed5fd06de8"><div class="ttname"><a href="../../d8/d17/a00114.html#a4938487dbb0bd6aac4a428ed5fd06de8">NutrientinGroundwater::m_gwSolPToCh</a></div><div class="ttdeci">float * m_gwSolPToCh</div><div class="ttdoc">soluble P loading to reach in groundwater to channel </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/ddc/a00655_source.html#l00111">NutrientinGroundwater.h:111</a></div></div>
-<div class="ttc" id="a00114_html_ae2c87f5e9eaf0a26fd8050fed7a5081e"><div class="ttname"><a href="../../d8/d17/a00114.html#ae2c87f5e9eaf0a26fd8050fed7a5081e">NutrientinGroundwater::CheckInputSize</a></div><div class="ttdeci">bool CheckInputSize(const char *key, int n)</div><div class="ttdoc">check the input size. Make sure all the input data have same dimension. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d2a/a00654_source.html#l00030">NutrientinGroundwater.cpp:30</a></div></div>
-<div class="ttc" id="a00114_html_a5665679462af5a6938c8aaa343571305"><div class="ttname"><a href="../../d8/d17/a00114.html#a5665679462af5a6938c8aaa343571305">NutrientinGroundwater::Set1DData</a></div><div class="ttdeci">void Set1DData(const char *key, int n, float *data) OVERRIDE</div><div class="ttdoc">Set 1D data, by default, DT_Raster1D. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d2a/a00654_source.html#l00074">NutrientinGroundwater.cpp:74</a></div></div>
-<div class="ttc" id="a00030_html"><div class="ttname"><a href="../../d5/d79/a00030.html">clsSubbasins</a></div><div class="ttdoc">Manager all Subbasin related parameters and methods. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d82/a00436_source.html#l00214">clsSubbasin.h:214</a></div></div>
-<div class="ttc" id="a00114_html_a7bea220b4fe7ea3e8c80931a7950669e"><div class="ttname"><a href="../../d8/d17/a00114.html#a7bea220b4fe7ea3e8c80931a7950669e">NutrientinGroundwater::Execute</a></div><div class="ttdeci">int Execute() OVERRIDE</div><div class="ttdoc">Execute the simulation. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d2a/a00654_source.html#l00132">NutrientinGroundwater.cpp:132</a></div></div>
-<div class="ttc" id="a00114_html_aab5f414d5912dbc781291c7b8c1a8a08"><div class="ttname"><a href="../../d8/d17/a00114.html#aab5f414d5912dbc781291c7b8c1a8a08">NutrientinGroundwater::m_nSoilLyrs</a></div><div class="ttdeci">float * m_nSoilLyrs</div><div class="ttdoc">number of soil layers of each cell </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/ddc/a00655_source.html#l00103">NutrientinGroundwater.h:103</a></div></div>
-<div class="ttc" id="a00114_html_ac5de8ca30e816ac9d32928a1810bc365"><div class="ttname"><a href="../../d8/d17/a00114.html#ac5de8ca30e816ac9d32928a1810bc365">NutrientinGroundwater::Get1DData</a></div><div class="ttdeci">void Get1DData(const char *key, int *n, float **data) OVERRIDE</div><div class="ttdoc">Get 1D data, by default, DT_Raster1D. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d2a/a00654_source.html#l00175">NutrientinGroundwater.cpp:175</a></div></div>
-<div class="ttc" id="a00114_html_a44f922d84254eb26a496a3eb269babae"><div class="ttname"><a href="../../d8/d17/a00114.html#a44f922d84254eb26a496a3eb269babae">NutrientinGroundwater::m_subbasinIDs</a></div><div class="ttdeci">vector&lt; int &gt; m_subbasinIDs</div><div class="ttdoc">subbasin IDs </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/ddc/a00655_source.html#l00117">NutrientinGroundwater.h:117</a></div></div>
-<div class="ttc" id="a00114_html_a9c175ee967929f199c8551ecd32cae1c"><div class="ttname"><a href="../../d8/d17/a00114.html#a9c175ee967929f199c8551ecd32cae1c">NutrientinGroundwater::m_soilSolP</a></div><div class="ttdeci">float ** m_soilSolP</div><div class="ttdoc">amount of soluble phosphorus stored in the soil layer </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/ddc/a00655_source.html#l00099">NutrientinGroundwater.h:99</a></div></div>
-<div class="ttc" id="a00169_html_a8c5e0eb10135c68a18c792b428bc41b9"><div class="ttname"><a href="../../de/d53/a00169.html#a8c5e0eb10135c68a18c792b428bc41b9">Subbasin::GetEg</a></div><div class="ttdeci">float GetEg()</div><div class="ttdoc">groundwater revaporization </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d82/a00436_source.html#l00117">clsSubbasin.h:117</a></div></div>
-<div class="ttc" id="a00030_html_a56b0f6a9f5b6f962f3c4b1666f0239b5"><div class="ttname"><a href="../../d5/d79/a00030.html#a56b0f6a9f5b6f962f3c4b1666f0239b5">clsSubbasins::GetSubbasinByID</a></div><div class="ttdeci">Subbasin * GetSubbasinByID(const int id)</div><div class="ttdoc">Get single reach information by subbasin ID. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d82/a00436_source.html#l00234">clsSubbasin.h:234</a></div></div>
-<div class="ttc" id="a00114_html_a5983448adb88f4483663208a11c2b82e"><div class="ttname"><a href="../../d8/d17/a00114.html#a5983448adb88f4483663208a11c2b82e">NutrientinGroundwater::m_nCells</a></div><div class="ttdeci">int m_nCells</div><div class="ttdoc">number of cells </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/ddc/a00655_source.html#l00071">NutrientinGroundwater.h:71</a></div></div>
-<div class="ttc" id="a00114_html_a19343572f2171d417e21991f0194694e"><div class="ttname"><a href="../../d8/d17/a00114.html#a19343572f2171d417e21991f0194694e">NutrientinGroundwater::m_soilNO3</a></div><div class="ttdeci">float ** m_soilNO3</div><div class="ttdoc">amount of nitrogen stored in the nitrate pool in soil layer </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/ddc/a00655_source.html#l00097">NutrientinGroundwater.h:97</a></div></div>
-<div class="ttc" id="a00114_html_a759531846077727f6b24cbfcd8ffc4b4"><div class="ttname"><a href="../../d8/d17/a00114.html#a759531846077727f6b24cbfcd8ffc4b4">NutrientinGroundwater::m_subbsnID</a></div><div class="ttdeci">float * m_subbsnID</div><div class="ttdoc">subbasin grid (subbasins ID) </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/ddc/a00655_source.html#l00119">NutrientinGroundwater.h:119</a></div></div>
-<div class="ttc" id="a00028_html_a793a91c610cf0cb41235e885c57afead"><div class="ttname"><a href="../../dc/d3c/a00028.html#a793a91c610cf0cb41235e885c57afead">clsReaches::GetReachesSingleProperty</a></div><div class="ttdeci">void GetReachesSingleProperty(const string &amp;key, float **data)</div><div class="ttdoc">Get 1D array of reach property. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/d70/a00431_source.html#l00169">clsReach.cpp:169</a></div></div>
-<div class="ttc" id="a00114_html_ad440345df1db27d8b71febdf9da0fb8f"><div class="ttname"><a href="../../d8/d17/a00114.html#ad440345df1db27d8b71febdf9da0fb8f">NutrientinGroundwater::m_TimeStep</a></div><div class="ttdeci">int m_TimeStep</div><div class="ttdoc">time step (s) </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/ddc/a00655_source.html#l00073">NutrientinGroundwater.h:73</a></div></div>
-<div class="ttc" id="a00114_html_a0174d30072c2752252007e5f89927ebf"><div class="ttname"><a href="../../d8/d17/a00114.html#a0174d30072c2752252007e5f89927ebf">NutrientinGroundwater::m_cellWth</a></div><div class="ttdeci">float m_cellWth</div><div class="ttdoc">cell width of grid map (m) </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/ddc/a00655_source.html#l00069">NutrientinGroundwater.h:69</a></div></div>
-<div class="ttc" id="a00114_html_a3a2975f6362a801474d7fdeb5b86908a"><div class="ttname"><a href="../../d8/d17/a00114.html#a3a2975f6362a801474d7fdeb5b86908a">NutrientinGroundwater::m_nSoilLayers</a></div><div class="ttdeci">int m_nSoilLayers</div><div class="ttdoc">max number of soil layers </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/ddc/a00655_source.html#l00101">NutrientinGroundwater.h:101</a></div></div>
-<div class="ttc" id="a00114_html_abe78674fa13e7a3c6a8c82a2ae16ea86"><div class="ttname"><a href="../../d8/d17/a00114.html#abe78674fa13e7a3c6a8c82a2ae16ea86">NutrientinGroundwater::SetReaches</a></div><div class="ttdeci">void SetReaches(clsReaches *reaches) OVERRIDE</div><div class="ttdoc">Set pointer of clsReaches class which contains all reaches information. Added by LJ, 2016-7-2. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d2a/a00654_source.html#l00102">NutrientinGroundwater.cpp:102</a></div></div>
-<div class="ttc" id="a00114_html_a0d35a63aca7220c8374e819a864db02d"><div class="ttname"><a href="../../d8/d17/a00114.html#a0d35a63aca7220c8374e819a864db02d">NutrientinGroundwater::SetSubbasins</a></div><div class="ttdeci">void SetSubbasins(clsSubbasins *subbasins) OVERRIDE</div><div class="ttdoc">Set pointer of clsSubbasins class which contains all subbasins information. Added by LJ...</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d2a/a00654_source.html#l00022">NutrientinGroundwater.cpp:22</a></div></div>
-<div class="ttc" id="a00169_html_a29196da83b7034f188f1943e16febd01"><div class="ttname"><a href="../../de/d53/a00169.html#a29196da83b7034f188f1943e16febd01">Subbasin::GetCells</a></div><div class="ttdeci">int * GetCells()</div><div class="ttdoc">Get index of valid cells. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d82/a00436_source.html#l00090">clsSubbasin.h:90</a></div></div>
-<div class="ttc" id="a00114_html_a4669aa71c20f0389fe7d5460e5b93387"><div class="ttname"><a href="../../d8/d17/a00114.html#a4669aa71c20f0389fe7d5460e5b93387">NutrientinGroundwater::m_gwSolP</a></div><div class="ttdeci">float * m_gwSolP</div><div class="ttdoc">kg </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/ddc/a00655_source.html#l00085">NutrientinGroundwater.h:85</a></div></div>
-<div class="ttc" id="a00114_html_adef55d701e44fa31b1e038860210fc5e"><div class="ttname"><a href="../../d8/d17/a00114.html#adef55d701e44fa31b1e038860210fc5e">NutrientinGroundwater::m_gwStor</a></div><div class="ttdeci">float * m_gwStor</div><div class="ttdoc">groundwater storage </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/ddc/a00655_source.html#l00089">NutrientinGroundwater.h:89</a></div></div>
-<div class="ttc" id="a00114_html_a4f4005b0847c35325a1babf03f6499dd"><div class="ttname"><a href="../../d8/d17/a00114.html#a4f4005b0847c35325a1babf03f6499dd">NutrientinGroundwater::m_gwNO3ToCh</a></div><div class="ttdeci">float * m_gwNO3ToCh</div><div class="ttdoc">outputs </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/ddc/a00655_source.html#l00109">NutrientinGroundwater.h:109</a></div></div>
-<div class="ttc" id="a00114_html_ae9f467c4141f97ac13f888793ecddd4a"><div class="ttname"><a href="../../d8/d17/a00114.html#ae9f467c4141f97ac13f888793ecddd4a">NutrientinGroundwater::m_gwNO3Conc</a></div><div class="ttdeci">float * m_gwNO3Conc</div><div class="ttdoc">nitrate N concentration in groundwater loading to reach (mg/L, i.e. g/m3) </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/ddc/a00655_source.html#l00079">NutrientinGroundwater.h:79</a></div></div>
-<div class="ttc" id="a00114_html_a9945afbe39807419c23112d64de43e10"><div class="ttname"><a href="../../d8/d17/a00114.html#a9945afbe39807419c23112d64de43e10">NutrientinGroundwater::m_gwNO3</a></div><div class="ttdeci">float * m_gwNO3</div><div class="ttdoc">kg </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/ddc/a00655_source.html#l00081">NutrientinGroundwater.h:81</a></div></div>
-<div class="ttc" id="a00114_html_a187c77a73be0232070d72082d52170f5"><div class="ttname"><a href="../../d8/d17/a00114.html#a187c77a73be0232070d72082d52170f5">NutrientinGroundwater::Set2DData</a></div><div class="ttdeci">void Set2DData(const char *key, int nRows, int nCols, float **data) OVERRIDE</div><div class="ttdoc">Set 2D data, by default, DT_Raster2D. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d2a/a00654_source.html#l00091">NutrientinGroundwater.cpp:91</a></div></div>
-<div class="ttc" id="a00114_html_afa0a696addd2ce7c9c3a6a7752b0436e"><div class="ttname"><a href="../../d8/d17/a00114.html#afa0a696addd2ce7c9c3a6a7752b0436e">NutrientinGroundwater::m_inputSubbsnID</a></div><div class="ttdeci">int m_inputSubbsnID</div><div class="ttdoc">current subbasin ID, 0 for the entire watershed </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/ddc/a00655_source.html#l00067">NutrientinGroundwater.h:67</a></div></div>
-<div class="ttc" id="a00114_html_a2e43cc1eddf928c0721ccd66b90a2c79"><div class="ttname"><a href="../../d8/d17/a00114.html#a2e43cc1eddf928c0721ccd66b90a2c79">NutrientinGroundwater::m_gwSolPConc</a></div><div class="ttdeci">float * m_gwSolPConc</div><div class="ttdoc">soluble P concentration in groundwater loading to reach (mg/L, i.e. g/m3) </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/ddc/a00655_source.html#l00083">NutrientinGroundwater.h:83</a></div></div>
-<div class="ttc" id="a00114_html_afe4dec62d26b468deab2b0b7ab3c9f31"><div class="ttname"><a href="../../d8/d17/a00114.html#afe4dec62d26b468deab2b0b7ab3c9f31">NutrientinGroundwater::m_gw_q</a></div><div class="ttdeci">float * m_gw_q</div><div class="ttdoc">groundwater contribution to stream flow (m3/s) </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/ddc/a00655_source.html#l00087">NutrientinGroundwater.h:87</a></div></div>
-<div class="ttc" id="a00114_html_af3cbc7d694e8084b161df513b15864e2"><div class="ttname"><a href="../../d8/d17/a00114.html#af3cbc7d694e8084b161df513b15864e2">NutrientinGroundwater::m_nSubbsns</a></div><div class="ttdeci">int m_nSubbsns</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/ddc/a00655_source.html#l00115">NutrientinGroundwater.h:115</a></div></div>
-<div class="ttc" id="a00169_html_a23e5e33b027f3abdf2b52951d24afb8d"><div class="ttname"><a href="../../de/d53/a00169.html#a23e5e33b027f3abdf2b52951d24afb8d">Subbasin::GetArea</a></div><div class="ttdeci">float GetArea()</div><div class="ttdoc">area of subbasin </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d82/a00436_source.html#l00096">clsSubbasin.h:96</a></div></div>
-<div class="ttc" id="a00114_html_af5d6c2b649740b47faa91d86e1002882"><div class="ttname"><a href="../../d8/d17/a00114.html#af5d6c2b649740b47faa91d86e1002882">NutrientinGroundwater::m_perco_solp_gw</a></div><div class="ttdeci">float * m_perco_solp_gw</div><div class="ttdoc">amount of solute P percolating past bottom of soil profile, kg </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/ddc/a00655_source.html#l00093">NutrientinGroundwater.h:93</a></div></div>
-<div class="ttc" id="a00114_html_a5973bda9b1bb326030e53d01d63f54cf"><div class="ttname"><a href="../../d8/d17/a00114.html#a5973bda9b1bb326030e53d01d63f54cf">NutrientinGroundwater::InitialOutputs</a></div><div class="ttdeci">void InitialOutputs()</div><div class="ttdoc">initial outputs </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d2a/a00654_source.html#l00112">NutrientinGroundwater.cpp:112</a></div></div>
-<div class="ttc" id="a00114_html_a263dae01f2d6f27d5af918c4952e89bf"><div class="ttname"><a href="../../d8/d17/a00114.html#a263dae01f2d6f27d5af918c4952e89bf">NutrientinGroundwater::CheckInputData</a></div><div class="ttdeci">bool CheckInputData()</div><div class="ttdoc">check the input data. Make sure all the input data is available. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d2a/a00654_source.html#l00048">NutrientinGroundwater.cpp:48</a></div></div>
-<div class="ttc" id="a00169_html"><div class="ttname"><a href="../../de/d53/a00169.html">Subbasin</a></div><div class="ttdoc">Subbasin related parameters and methods. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d82/a00436_source.html#l00026">clsSubbasin.h:26</a></div></div>
-<div class="ttc" id="a00114_html_add5a8b8fc4e7c708529896ddd0d63f9d"><div class="ttname"><a href="../../d8/d17/a00114.html#add5a8b8fc4e7c708529896ddd0d63f9d">NutrientinGroundwater::m_subbasinsInfo</a></div><div class="ttdeci">clsSubbasins * m_subbasinsInfo</div><div class="ttdoc">subbasins information </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/ddc/a00655_source.html#l00121">NutrientinGroundwater.h:121</a></div></div>
-<div class="ttc" id="a00030_html_a3fec7496f3a78dfcaceb4a51027434f0"><div class="ttname"><a href="../../d5/d79/a00030.html#a3fec7496f3a78dfcaceb4a51027434f0">clsSubbasins::GetSubbasinIDs</a></div><div class="ttdeci">vector&lt; int &gt; &amp; GetSubbasinIDs()</div><div class="ttdoc">Get subbasin IDs. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d82/a00436_source.html#l00240">clsSubbasin.h:240</a></div></div>
-<div class="ttc" id="a00169_html_ad293d96594c0d6769d39ed48f6f38d79"><div class="ttname"><a href="../../de/d53/a00169.html#ad293d96594c0d6769d39ed48f6f38d79">Subbasin::GetCellCount</a></div><div class="ttdeci">int GetCellCount()</div><div class="ttdoc">Get valid cells number. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d82/a00436_source.html#l00087">clsSubbasin.h:87</a></div></div>
-<div class="ttc" id="a00114_html_a3e1d794d84d361913c451a345db8b324"><div class="ttname"><a href="../../d8/d17/a00114.html#a3e1d794d84d361913c451a345db8b324">NutrientinGroundwater::SetValue</a></div><div class="ttdeci">void SetValue(const char *key, float value) OVERRIDE</div><div class="ttdoc">Set data, DT_Single. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d2a/a00654_source.html#l00062">NutrientinGroundwater.cpp:62</a></div></div>
-<div class="ttc" id="a00028_html"><div class="ttname"><a href="../../dc/d3c/a00028.html">clsReaches</a></div><div class="ttdoc">Read and store all reaches information as input parameters. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dd5/a00432_source.html#l00069">clsReach.h:69</a></div></div>
-<div class="ttc" id="a00114_html_acd4b5e8eec1f886a6c759d183dbb8842"><div class="ttname"><a href="../../d8/d17/a00114.html#acd4b5e8eec1f886a6c759d183dbb8842">NutrientinGroundwater::m_gw0</a></div><div class="ttdeci">float m_gw0</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/ddc/a00655_source.html#l00077">NutrientinGroundwater.h:77</a></div></div>
-<div class="ttc" id="a00114_html_a2b870d6c826b49ec07b5d3b19ecbfd62"><div class="ttname"><a href="../../d8/d17/a00114.html#a2b870d6c826b49ec07b5d3b19ecbfd62">NutrientinGroundwater::m_perco_no3_gw</a></div><div class="ttdeci">float * m_perco_no3_gw</div><div class="ttdoc">amount of nitrate percolating past bottom of soil profile, kg </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/ddc/a00655_source.html#l00091">NutrientinGroundwater.h:91</a></div></div>
-<div class="ttc" id="a00097_html"><div class="ttname"><a href="../../d1/d84/a00097.html">ccgl::ModelException</a></div><div class="ttdoc">Print the exception message. </div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dbb/a00330_source.html#l00311">basic.h:311</a></div></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordtype">float</span> k = 0.f, maxSoilWater = 0.f, soilWater = 0.f, fcSoilWater = 0.f;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        soilWater = m_soilWtrSto[id][j];</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        maxSoilWater = m_soilSat[id][j];</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        fcSoilWater = m_soilFC[id][j];</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="comment">//the moisture content can exceed the porosity in the way the algorithm is implemented</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">if</span> (m_soilWtrSto[<span class="keywordtype">id</span>][j] &gt; maxSoilWater) {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            k = m_ks[id][j];</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <span class="keywordtype">float</span> dcIndex = 2.f * m_poreIdx[id][j] + 3.f; <span class="comment">// pore disconnectedness index</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            k = m_ks[id][j] * pow(m_soilWtrSto[<span class="keywordtype">id</span>][j] / maxSoilWater, dcIndex);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <span class="keywordflow">if</span> (k &lt;= UTIL_ZERO) k = 0.f;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="comment">//cout &lt;&lt; id &lt;&lt; &quot;\t&quot; &lt;&lt; j &lt;&lt; &quot;\t&quot; &lt;&lt; k &lt;&lt; endl;</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="comment">// 1. / 3600. = 0.0002777777777777778</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        m_subSurfRf[id][j] = m_ki * s0 * k * m_dt * 0.0002777777777777778f * m_soilThk[id][j] * 0.001f / flowWidth;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="comment">// the unit is mm</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordflow">if</span> (soilWater - m_subSurfRf[<span class="keywordtype">id</span>][j] &gt; maxSoilWater) {</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            m_subSurfRf[id][j] = soilWater - maxSoilWater;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (soilWater - m_subSurfRf[<span class="keywordtype">id</span>][j] &lt; fcSoilWater) {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            m_subSurfRf[id][j] = soilWater - fcSoilWater;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        }</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        m_subSurfRf[id][j] = Max(0.f, m_subSurfRf[<span class="keywordtype">id</span>][j]);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        m_subSurfRfVol[id][j] = m_subSurfRf[id][j] * 0.001f * m_CellWth * flowWidth; <span class="comment">//m3</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        m_subSurfRfVol[id][j] = Max(UTIL_ZERO, m_subSurfRfVol[<span class="keywordtype">id</span>][j]);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="comment">//Adjust the moisture content in the current layer, and the layer immediately below it</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        m_soilWtrSto[id][j] -= m_subSurfRf[id][j];</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        m_soilWtrStoPrfl[id] += m_soilWtrSto[id][j];</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keywordflow">if</span> (m_soilWtrSto[<span class="keywordtype">id</span>][j] != m_soilWtrSto[<span class="keywordtype">id</span>][j] || m_soilWtrSto[<span class="keywordtype">id</span>][j] &lt; 0.f) {</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            cout &lt;&lt; <span class="stringliteral">&quot;cell id: &quot;</span> &lt;&lt; <span class="keywordtype">id</span> &lt;&lt; <span class="stringliteral">&quot;, layer: &quot;</span> &lt;&lt; j &lt;&lt; <span class="stringliteral">&quot;, moisture is less than zero: &quot;</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                    &lt;&lt; m_soilWtrSto[id][j] &lt;&lt; <span class="stringliteral">&quot;, subsurface runoff: &quot;</span> &lt;&lt; m_subSurfRf[id][j] &lt;&lt; <span class="stringliteral">&quot;, depth:&quot;</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                    &lt;&lt; m_soilThk[id][j] &lt;&lt; endl;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        }</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    }</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;}</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="keywordtype">int</span> SSR_DA::Execute() {</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    CheckInputData();</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    InitialOutputs();</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ilyr = 0; ilyr &lt; m_nRteLyrs; ilyr++) {</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="comment">// There are not any flow relationship within each routing layer.</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="comment">// So parallelization can be done here.</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="keywordtype">int</span> ncells = CVT_INT(m_rteLyrs[ilyr][0]);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <span class="comment">// DO NOT THROW EXCEPTION IN OMP FOR LOOP, i.e., FlowInSoil(id) function.</span></div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="keywordtype">int</span> errCount = 0;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="preprocessor">#pragma omp parallel for reduction(+: errCount)</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="preprocessor"></span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> icell = 1; icell &lt;= ncells; icell++) {</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            <span class="keywordtype">int</span> <span class="keywordtype">id</span> = CVT_INT(m_rteLyrs[ilyr][icell]);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            <span class="keywordflow">if</span> (!FlowInSoil(<span class="keywordtype">id</span>)) errCount++;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        }</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <span class="keywordflow">if</span> (errCount &gt; 0) {</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="../../da/d74/a00099.html">ModelException</a>(MID_SSR_DA, <span class="stringliteral">&quot;Execute:FlowInSoil&quot;</span>,</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                                 <span class="stringliteral">&quot;Please check the error message for more information&quot;</span>);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        }</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    }</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt;= m_nSubbsns; i++) {</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        m_ifluQ2Rch[i] = 0.f;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    }</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="preprocessor">#pragma omp parallel</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="preprocessor"></span>    {</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <span class="keywordtype">float</span>* tmp_qiSubbsn = <span class="keyword">new</span>(nothrow) <span class="keywordtype">float</span>[m_nSubbsns + 1];</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt;= m_nSubbsns; i++) {</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            tmp_qiSubbsn[i] = 0.f;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        }</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="preprocessor">#pragma omp for</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="preprocessor"></span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; m_nCells; i++) {</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            <span class="keywordflow">if</span> (m_rchID[i] &gt; 0) {</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                <span class="keywordtype">float</span> qiAllLayers = 0.f;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; CVT_INT(m_nSoilLyrs[i]); j++) {</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                    <span class="keywordflow">if</span> (m_subSurfRfVol[i][j] &gt; UTIL_ZERO) {</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                        qiAllLayers += m_subSurfRfVol[i][j] / m_dt;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                    } </div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                }</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                tmp_qiSubbsn[int(m_subbsnID[i])] += qiAllLayers;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            }</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        }</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="preprocessor">#pragma omp critical</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="preprocessor"></span>        {</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt;= m_nSubbsns; i++) {</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                m_ifluQ2Rch[i] += tmp_qiSubbsn[i];</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;            }</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        }</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <span class="keyword">delete</span>[] tmp_qiSubbsn;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        tmp_qiSubbsn = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    } <span class="comment">/* END of #pragma omp parallel */</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt;= m_nSubbsns; i++) {</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        m_ifluQ2Rch[0] += m_ifluQ2Rch[i];</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    }</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;}</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="keywordtype">void</span> SSR_DA::SetValue(<span class="keyword">const</span> <span class="keywordtype">char</span>* key, <span class="keyword">const</span> <span class="keywordtype">float</span> value) {</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordtype">string</span> s(key);</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keywordflow">if</span> (StringMatch(s, VAR_T_SOIL)) {</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        m_soilFrozenTemp = value;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (StringMatch(s, VAR_KI)) {</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        m_ki = value;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (StringMatch(s, VAR_SUBBSNID_NUM)) {</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        m_nSubbsns = CVT_INT(value);</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (StringMatch(s, Tag_SubbasinId)) {</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        m_inputSubbsnID = CVT_INT(value);</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (StringMatch(s, Tag_CellWidth)) {</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        m_CellWth = value;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (StringMatch(s, Tag_TimeStep)) {</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        m_dt = CVT_INT(value);</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../da/d74/a00099.html">ModelException</a>(MID_SSR_DA, <span class="stringliteral">&quot;SetValue&quot;</span>, <span class="stringliteral">&quot;Parameter &quot;</span> + s + <span class="stringliteral">&quot; does not exist.&quot;</span>);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    }</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;}</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="keywordtype">void</span> SSR_DA::Set1DData(<span class="keyword">const</span> <span class="keywordtype">char</span>* key, <span class="keyword">const</span> <span class="keywordtype">int</span> nRows, <span class="keywordtype">float</span>* data) {</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keywordtype">string</span> s(key);</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    CheckInputSize(key, nRows);</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="keywordflow">if</span> (StringMatch(s, VAR_SLOPE)) {</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        m_slope = data;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (StringMatch(s, VAR_CHWIDTH)) {</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        m_chWidth = data;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (StringMatch(s, VAR_STREAM_LINK)) {</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        m_rchID = data;</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (StringMatch(s, VAR_SOTE)) {</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        m_soilTemp = data;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (StringMatch(s, VAR_SUBBSN)) {</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        m_subbsnID = data;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (StringMatch(s, VAR_SOILLAYERS)) {</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        m_nSoilLyrs = data;</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (StringMatch(s, VAR_SOL_SW)) {</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        m_soilWtrStoPrfl = data;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../da/d74/a00099.html">ModelException</a>(MID_SSR_DA, <span class="stringliteral">&quot;Set1DData&quot;</span>, <span class="stringliteral">&quot;Parameter &quot;</span> + s + <span class="stringliteral">&quot; does not exist.&quot;</span>);</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    }</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;}</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="keywordtype">void</span> SSR_DA::Set2DData(<span class="keyword">const</span> <span class="keywordtype">char</span>* key, <span class="keyword">const</span> <span class="keywordtype">int</span> nrows, <span class="keyword">const</span> <span class="keywordtype">int</span> ncols, <span class="keywordtype">float</span>** data) {</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="keywordtype">string</span> sk(key);</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <span class="keywordflow">if</span> (StringMatch(sk, VAR_SOILTHICK)) {</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        CheckInputSize(key, nrows);</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        m_maxSoilLyrs = ncols;</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        m_soilThk = data;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (StringMatch(sk, VAR_CONDUCT)) {</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        CheckInputSize(key, nrows);</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        m_maxSoilLyrs = ncols;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        m_ks = data;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (StringMatch(sk, VAR_SOL_UL)) {</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        CheckInputSize(key, nrows);</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        m_maxSoilLyrs = ncols;</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        m_soilSat = data;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (StringMatch(sk, VAR_SOL_AWC)) {</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        CheckInputSize(key, nrows);</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        m_maxSoilLyrs = ncols;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        m_soilFC = data;</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (StringMatch(sk, VAR_SOL_WPMM)) {</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        CheckInputSize(key, nrows);</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        m_maxSoilLyrs = ncols;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        m_soilWP = data;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (StringMatch(sk, VAR_POREIDX)) {</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        CheckInputSize(key, nrows);</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        m_maxSoilLyrs = ncols;</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        m_poreIdx = data;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (StringMatch(sk, VAR_SOL_ST)) {</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        CheckInputSize(key, nrows);</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        m_maxSoilLyrs = ncols;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        m_soilWtrSto = data;</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (StringMatch(sk, Tag_ROUTING_LAYERS)) {</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        m_nRteLyrs = nrows;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        m_rteLyrs = data;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (StringMatch(sk, Tag_FLOWIN_INDEX_D8)) {</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        CheckInputSize(key, nrows);</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        m_flowInIdxD8 = data;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../da/d74/a00099.html">ModelException</a>(MID_SSR_DA, <span class="stringliteral">&quot;Set2DData&quot;</span>, <span class="stringliteral">&quot;Parameter &quot;</span> + sk + <span class="stringliteral">&quot; does not exist.&quot;</span>);</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    }</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;}</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;<span class="keywordtype">void</span> SSR_DA::GetValue(<span class="keyword">const</span> <span class="keywordtype">char</span>* key, <span class="keywordtype">float</span>* value) {</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    InitialOutputs();</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <span class="keywordtype">string</span> sk(key);</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <span class="keywordflow">if</span> (StringMatch(sk, VAR_SBIF) &amp;&amp; m_inputSubbsnID &gt; 0) *value = m_ifluQ2Rch[m_inputSubbsnID];</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../da/d74/a00099.html">ModelException</a>(MID_SSR_DA, <span class="stringliteral">&quot;GetValue&quot;</span>, <span class="stringliteral">&quot;Result &quot;</span> + sk + <span class="stringliteral">&quot; does not exist.&quot;</span>);</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    }</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;}</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;<span class="keywordtype">void</span> SSR_DA::Get1DData(<span class="keyword">const</span> <span class="keywordtype">char</span>* key, <span class="keywordtype">int</span>* n, <span class="keywordtype">float</span>** data) {</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    InitialOutputs();</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <span class="keywordtype">string</span> sk(key);</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <span class="keywordflow">if</span> (StringMatch(sk, VAR_SBIF)) *data = m_ifluQ2Rch;</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../da/d74/a00099.html">ModelException</a>(MID_SSR_DA, <span class="stringliteral">&quot;Get1DData&quot;</span>, <span class="stringliteral">&quot;Result &quot;</span> + sk + <span class="stringliteral">&quot; does not exist.&quot;</span>);</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    }</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    *n = m_nSubbsns + 1;</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;}</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;<span class="keywordtype">void</span> SSR_DA::Get2DData(<span class="keyword">const</span> <span class="keywordtype">char</span>* key, <span class="keywordtype">int</span>* nRows, <span class="keywordtype">int</span>* nCols, <span class="keywordtype">float</span>*** data) {</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    InitialOutputs();</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <span class="keywordtype">string</span> sk(key);</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    *nRows = m_nCells;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    *nCols = m_maxSoilLyrs;</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <span class="keywordflow">if</span> (StringMatch(sk, VAR_SSRU)) {</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        *data = m_subSurfRf;</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (StringMatch(sk, VAR_SSRUVOL)) {</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        *data = m_subSurfRfVol;</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../da/d74/a00099.html">ModelException</a>(MID_SSR_DA, <span class="stringliteral">&quot;Get2DData&quot;</span>, <span class="stringliteral">&quot;Output &quot;</span> + sk + <span class="stringliteral">&quot; does not exist.&quot;</span>);</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    }</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;}</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;<span class="keywordtype">bool</span> SSR_DA::CheckInputData() {</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    CHECK_NONNEGATIVE(MID_SSR_DA, m_inputSubbsnID);</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    CHECK_POSITIVE(MID_SSR_DA, m_nCells);</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    CHECK_POSITIVE(MID_SSR_DA, m_ki);</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    CHECK_NODATA(MID_SSR_DA, m_soilFrozenTemp);</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    CHECK_POSITIVE(MID_SSR_DA, m_dt);</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    CHECK_POSITIVE(MID_SSR_DA, m_CellWth);</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    CHECK_POSITIVE(MID_SSR_DA, m_nSubbsns);</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    CHECK_POSITIVE(MID_SSR_DA, m_nRteLyrs);</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    CHECK_POINTER(MID_SSR_DA, m_subbsnID);</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    CHECK_POINTER(MID_SSR_DA, m_nSoilLyrs);</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    CHECK_POINTER(MID_SSR_DA, m_soilThk);</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    CHECK_POINTER(MID_SSR_DA, m_slope);</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    CHECK_POINTER(MID_SSR_DA, m_poreIdx);</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    CHECK_POINTER(MID_SSR_DA, m_ks);</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    CHECK_POINTER(MID_SSR_DA, m_soilSat);</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    CHECK_POINTER(MID_SSR_DA, m_soilFC);</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    CHECK_POINTER(MID_SSR_DA, m_soilWP);</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    CHECK_POINTER(MID_SSR_DA, m_soilWtrSto);</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    CHECK_POINTER(MID_SSR_DA, m_soilWtrStoPrfl);</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    CHECK_POINTER(MID_SSR_DA, m_soilTemp);</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    CHECK_POINTER(MID_SSR_DA, m_chWidth);</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    CHECK_POINTER(MID_SSR_DA, m_rchID);</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    CHECK_POINTER(MID_SSR_DA, m_flowInIdxD8);</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    CHECK_POINTER(MID_SSR_DA, m_rteLyrs);</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;}</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;<span class="keywordtype">void</span> SSR_DA::InitialOutputs() {</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    CHECK_POSITIVE(MID_SSR_DA, m_nCells);</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    CHECK_POSITIVE(MID_SSR_DA, m_nSubbsns);</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == m_ifluQ2Rch) Initialize1DArray(m_nSubbsns + 1, m_ifluQ2Rch, 0.f);</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == m_subSurfRf) Initialize2DArray(m_nCells, m_maxSoilLyrs, m_subSurfRf, 0.f);</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == m_subSurfRfVol) Initialize2DArray(m_nCells, m_maxSoilLyrs, m_subSurfRfVol, 0.f);</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;}</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;<span class="keywordtype">bool</span> SSR_DA::CheckInputSize(<span class="keyword">const</span> <span class="keywordtype">char</span>* key, <span class="keyword">const</span> <span class="keywordtype">int</span> n) {</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    <span class="keywordflow">if</span> (n &lt;= 0) {</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../da/d74/a00099.html">ModelException</a>(MID_SSR_DA, <span class="stringliteral">&quot;CheckInputSize&quot;</span>,</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;                             <span class="stringliteral">&quot;Input data for &quot;</span> + <span class="keywordtype">string</span>(key) + <span class="stringliteral">&quot; is invalid. The size could not be less than zero.&quot;</span>);</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    }</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    <span class="keywordflow">if</span> (m_nCells != n) {</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        <span class="keywordflow">if</span> (m_nCells &lt;= 0) {</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;            m_nCells = n;</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="../../da/d74/a00099.html">ModelException</a>(MID_SSR_DA, <span class="stringliteral">&quot;CheckInputSize&quot;</span>, <span class="stringliteral">&quot;Input data for &quot;</span> + <span class="keywordtype">string</span>(key) +</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                                 <span class="stringliteral">&quot; is invalid. All the input data should have same size.&quot;</span>);</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        }</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    }</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;}</div>
+<div class="ttc" id="a00099_html"><div class="ttname"><a href="../../da/d74/a00099.html">ccgl::ModelException</a></div><div class="ttdoc">Print the exception message. </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/dc6/a00347_source.html#l00311">basic.h:311</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_b89a50a3d6b2f98326f9f3f569cfd788.html">modules</a></li><li class="navelem"><a class="el" href="../../dir_3996e886b1e07c3846ebc60dfa15d754.html">nutrient</a></li><li class="navelem"><a class="el" href="../../dir_9544f52b76267faa0d341681833bd39f.html">NutrGW</a></li><li class="navelem"><b>NutrientinGroundwater.cpp</b></li>
-    <li class="footer">Generated on Fri Jun 8 2018 08:48:07 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_b89a50a3d6b2f98326f9f3f569cfd788.html">modules</a></li><li class="navelem"><a class="el" href="../../dir_5bf5a4201e7cd7ac6c5f03aeeeae8b2c.html">hydrology_longterm</a></li><li class="navelem"><a class="el" href="../../dir_4ac8341ef401fdb228f6ce198110b93b.html">SSR_DA</a></li><li class="navelem"><b>SSR_DA.cpp</b></li>
+    <li class="footer">Generated on Sat Jun 16 2018 10:00:49 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

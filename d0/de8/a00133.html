@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims.postprocess.config.PostConfig Class Reference</title>
+<title>SEIMS: bmps::PointSourceLocations Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -115,40 +115,137 @@ $(document).ready(function(){initNavTree('d0/de8/a00133.html','../../');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="../../dd/df1/a01082.html">List of all members</a>  </div>
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="../../d2/d71/a01055.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">seims.postprocess.config.PostConfig Class Reference</div>  </div>
+<div class="title">bmps::PointSourceLocations Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Inherits object, and object.</p>
+<p>Base class of point BMP, mainly store location related parameters.  
+ <a href="../../d0/de8/a00133.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d1/d7e/a00434_source.html">BMPPointSourceFactory.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for bmps::PointSourceLocations:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d19/a01056.png" border="0" usemap="#bmps_1_1_point_source_locations_inherit__map" alt="Inheritance graph"/></div>
+<map name="bmps_1_1_point_source_locations_inherit__map" id="bmps_1_1_point_source_locations_inherit__map">
+<area shape="rect" id="node2" href="../../db/df8/a00076.html" title="Base type of all interfaces. All interface types are encouraged to be virtual inherited. " alt="" coords="59,173,179,259"/><area shape="rect" id="node3" href="../../d4/d81/a00110.html" title="Base class for classes that cannot be copied. By inheriting this class you can disable copying of you..." alt="" coords="42,5,195,125"/></map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3bcde4e46808b5c1366ffe16ff26e963"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de8/a00133.html#a3bcde4e46808b5c1366ffe16ff26e963">__init__</a></td></tr>
-<tr class="separator:a3bcde4e46808b5c1366ffe16ff26e963"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3bcde4e46808b5c1366ffe16ff26e963"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de8/a00133.html#a3bcde4e46808b5c1366ffe16ff26e963">__init__</a></td></tr>
-<tr class="separator:a3bcde4e46808b5c1366ffe16ff26e963"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbd92951c26127468555dd380012d9f0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de8/a00133.html#adbd92951c26127468555dd380012d9f0">PointSourceLocations</a> (const bson_t *&amp;bsonTable, bson_iter_t &amp;iter)</td></tr>
+<tr class="memdesc:adbd92951c26127468555dd380012d9f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor, parse point BMP location related parameters from bson object.  <a href="#adbd92951c26127468555dd380012d9f0">More...</a><br/></td></tr>
+<tr class="separator:adbd92951c26127468555dd380012d9f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a792c5bd83b5e5fd7ecfc0d76626c0b4e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de8/a00133.html#a792c5bd83b5e5fd7ecfc0d76626c0b4e">Dump</a> (std::ostream *fs)</td></tr>
+<tr class="memdesc:a792c5bd83b5e5fd7ecfc0d76626c0b4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="#a792c5bd83b5e5fd7ecfc0d76626c0b4e">More...</a><br/></td></tr>
+<tr class="separator:a792c5bd83b5e5fd7ecfc0d76626c0b4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad470eb13ba6e1425664be35f872f3935"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad470eb13ba6e1425664be35f872f3935"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de8/a00133.html#ad470eb13ba6e1425664be35f872f3935">GetPointSourceID</a> ()</td></tr>
+<tr class="memdesc:ad470eb13ba6e1425664be35f872f3935"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get point source ID. <br/></td></tr>
+<tr class="separator:ad470eb13ba6e1425664be35f872f3935"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa0f77b19b719e1f74810b08308f2c79"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaa0f77b19b719e1f74810b08308f2c79"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de8/a00133.html#aaa0f77b19b719e1f74810b08308f2c79">GetPointSourceName</a> ()</td></tr>
+<tr class="memdesc:aaa0f77b19b719e1f74810b08308f2c79"><td class="mdescLeft">&#160;</td><td class="mdescRight">name <br/></td></tr>
+<tr class="separator:aaa0f77b19b719e1f74810b08308f2c79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad78d4b0bf40619eb4d6da160dd09431"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aad78d4b0bf40619eb4d6da160dd09431"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de8/a00133.html#aad78d4b0bf40619eb4d6da160dd09431">GetLat</a> ()</td></tr>
+<tr class="memdesc:aad78d4b0bf40619eb4d6da160dd09431"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lat. <br/></td></tr>
+<tr class="separator:aad78d4b0bf40619eb4d6da160dd09431"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94e0ede4e08a5a02a96da1e4251d91cf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a94e0ede4e08a5a02a96da1e4251d91cf"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de8/a00133.html#a94e0ede4e08a5a02a96da1e4251d91cf">GetLon</a> ()</td></tr>
+<tr class="memdesc:a94e0ede4e08a5a02a96da1e4251d91cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lon. <br/></td></tr>
+<tr class="separator:a94e0ede4e08a5a02a96da1e4251d91cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77c7cfea85a520bdef9e82de3af542fc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a77c7cfea85a520bdef9e82de3af542fc"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de8/a00133.html#a77c7cfea85a520bdef9e82de3af542fc">GetLocalX</a> ()</td></tr>
+<tr class="memdesc:a77c7cfea85a520bdef9e82de3af542fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">localX <br/></td></tr>
+<tr class="separator:a77c7cfea85a520bdef9e82de3af542fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa35608290fac006b19b70c5452a5117"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afa35608290fac006b19b70c5452a5117"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de8/a00133.html#afa35608290fac006b19b70c5452a5117">GetLocalY</a> ()</td></tr>
+<tr class="memdesc:afa35608290fac006b19b70c5452a5117"><td class="mdescLeft">&#160;</td><td class="mdescRight">localY <br/></td></tr>
+<tr class="separator:afa35608290fac006b19b70c5452a5117"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf67edbfe94ed3622dbd532e436864b3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adf67edbfe94ed3622dbd532e436864b3"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de8/a00133.html#adf67edbfe94ed3622dbd532e436864b3">GetSubbasinID</a> ()</td></tr>
+<tr class="memdesc:adf67edbfe94ed3622dbd532e436864b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Located subbasin ID. <br/></td></tr>
+<tr class="separator:adf67edbfe94ed3622dbd532e436864b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92fa08eb80efd62885da3acb40ffd7d7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a92fa08eb80efd62885da3acb40ffd7d7"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de8/a00133.html#a92fa08eb80efd62885da3acb40ffd7d7">GetSize</a> ()</td></tr>
+<tr class="memdesc:a92fa08eb80efd62885da3acb40ffd7d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">size <br/></td></tr>
+<tr class="separator:a92fa08eb80efd62885da3acb40ffd7d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af97e4954263ae2d7bd0d3525277d7295"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af97e4954263ae2d7bd0d3525277d7295"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de8/a00133.html#af97e4954263ae2d7bd0d3525277d7295">GetDistanceDown</a> ()</td></tr>
+<tr class="memdesc:af97e4954263ae2d7bd0d3525277d7295"><td class="mdescLeft">&#160;</td><td class="mdescRight">Distance to the downstream reach. <br/></td></tr>
+<tr class="separator:af97e4954263ae2d7bd0d3525277d7295"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ad3f604deaafa4f9229f2f288eaf2022f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad3f604deaafa4f9229f2f288eaf2022f"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de8/a00133.html#ad3f604deaafa4f9229f2f288eaf2022f">m_pointSrcID</a></td></tr>
+<tr class="memdesc:ad3f604deaafa4f9229f2f288eaf2022f"><td class="mdescLeft">&#160;</td><td class="mdescRight">ID of point source. <br/></td></tr>
+<tr class="separator:ad3f604deaafa4f9229f2f288eaf2022f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a246325831e6e9418a63784764696356a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a246325831e6e9418a63784764696356a"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de8/a00133.html#a246325831e6e9418a63784764696356a">m_name</a></td></tr>
+<tr class="memdesc:a246325831e6e9418a63784764696356a"><td class="mdescLeft">&#160;</td><td class="mdescRight">name <br/></td></tr>
+<tr class="separator:a246325831e6e9418a63784764696356a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2898c2b118f4a29c3dc3707bf07f1d5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab2898c2b118f4a29c3dc3707bf07f1d5"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de8/a00133.html#ab2898c2b118f4a29c3dc3707bf07f1d5">m_lat</a></td></tr>
+<tr class="memdesc:ab2898c2b118f4a29c3dc3707bf07f1d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lat. <br/></td></tr>
+<tr class="separator:ab2898c2b118f4a29c3dc3707bf07f1d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0250f6fb0396b7ed544483889987f2fa"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0250f6fb0396b7ed544483889987f2fa"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de8/a00133.html#a0250f6fb0396b7ed544483889987f2fa">m_lon</a></td></tr>
+<tr class="memdesc:a0250f6fb0396b7ed544483889987f2fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lon. <br/></td></tr>
+<tr class="separator:a0250f6fb0396b7ed544483889987f2fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd5b78fa4a0a5f307b53f72babdbc6bd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afd5b78fa4a0a5f307b53f72babdbc6bd"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de8/a00133.html#afd5b78fa4a0a5f307b53f72babdbc6bd">m_localX</a></td></tr>
+<tr class="memdesc:afd5b78fa4a0a5f307b53f72babdbc6bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">localX <br/></td></tr>
+<tr class="separator:afd5b78fa4a0a5f307b53f72babdbc6bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1c79c7c9823f2266915230611396d0b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac1c79c7c9823f2266915230611396d0b"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de8/a00133.html#ac1c79c7c9823f2266915230611396d0b">m_localY</a></td></tr>
+<tr class="memdesc:ac1c79c7c9823f2266915230611396d0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">localY <br/></td></tr>
+<tr class="separator:ac1c79c7c9823f2266915230611396d0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d8b213403602ddd59e045554d9c69a5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5d8b213403602ddd59e045554d9c69a5"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de8/a00133.html#a5d8b213403602ddd59e045554d9c69a5">m_subbasinID</a></td></tr>
+<tr class="memdesc:a5d8b213403602ddd59e045554d9c69a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Located subbasin ID. <br/></td></tr>
+<tr class="separator:a5d8b213403602ddd59e045554d9c69a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ef22f19136c86154f3a687a8c5a28e6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5ef22f19136c86154f3a687a8c5a28e6"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de8/a00133.html#a5ef22f19136c86154f3a687a8c5a28e6">m_size</a></td></tr>
+<tr class="memdesc:a5ef22f19136c86154f3a687a8c5a28e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">size <br/></td></tr>
+<tr class="separator:a5ef22f19136c86154f3a687a8c5a28e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95126cd22c6aaf24d628357cc5848d09"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a95126cd22c6aaf24d628357cc5848d09"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de8/a00133.html#a95126cd22c6aaf24d628357cc5848d09">m_distDown</a></td></tr>
+<tr class="memdesc:a95126cd22c6aaf24d628357cc5848d09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Distance to the downstream reach. <br/></td></tr>
+<tr class="separator:a95126cd22c6aaf24d628357cc5848d09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_methods_a00076"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a00076')"><img src="../../closed.png" alt="-"/>&#160;Private Member Functions inherited from <a class="el" href="../../db/df8/a00076.html">ccgl::Interface</a></td></tr>
+<tr class="memitem:a7325510a5111ae7d2a75662393075e10 inherit pub_methods_a00076"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7325510a5111ae7d2a75662393075e10"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/df8/a00076.html#a7325510a5111ae7d2a75662393075e10">~Interface</a> ()</td></tr>
+<tr class="memdesc:a7325510a5111ae7d2a75662393075e10 inherit pub_methods_a00076"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../db/df8/a00076.html" title="Base type of all interfaces. All interface types are encouraged to be virtual inherited. ">Interface</a>. <br/></td></tr>
+<tr class="separator:a7325510a5111ae7d2a75662393075e10 inherit pub_methods_a00076"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><pre class="fragment">Parse postprocess configuration of SEIMS project.</pre> 
-<p>Definition at line <a class="el" href="../../de/dc2/a00228_source.html#l00024">24</a> of file <a class="el" href="../../de/dc2/a00228_source.html">config.py</a>.</p>
+<div class="textblock"><p>Base class of point BMP, mainly store location related parameters. </p>
+
+<p>Definition at line <a class="el" href="../../d1/d7e/a00434_source.html#l00024">24</a> of file <a class="el" href="../../d1/d7e/a00434_source.html">BMPPointSourceFactory.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a3bcde4e46808b5c1366ffe16ff26e963"></a>
+<a class="anchor" id="adbd92951c26127468555dd380012d9f0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">def seims.postprocess.config.PostConfig.__init__ </td>
+          <td class="memname">PointSourceLocations::PointSourceLocations </td>
           <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
+          <td class="paramtype">const bson_t *&amp;&#160;</td>
+          <td class="paramname"><em>bsonTable</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>cf</em>&#160;</td>
+          <td class="paramtype">bson_iter_t &amp;&#160;</td>
+          <td class="paramname"><em>iter</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -157,58 +254,53 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">Initialization.</pre> 
-<p>Definition at line <a class="el" href="../../de/dc2/a00228_source.html#l00027">27</a> of file <a class="el" href="../../de/dc2/a00228_source.html">config.py</a>.</p>
+
+<p>Constructor, parse point BMP location related parameters from bson object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">bsonTable</td><td>Query result from MongoDB </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">iter</td><td>Iterator of bsonTab </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="../../dd/d07/a00433_source.html#l00233">233</a> of file <a class="el" href="../../dd/d07/a00433_source.html">BMPPointSourceFactory.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a3bcde4e46808b5c1366ffe16ff26e963"></a>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a792c5bd83b5e5fd7ecfc0d76626c0b4e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">def seims.postprocess.config.PostConfig.__init__ </td>
+          <td class="memname">void PointSourceLocations::Dump </td>
           <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">std::ostream *&#160;</td>
+          <td class="paramname"><em>fs</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>cf</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">Initialization.</pre> 
-<p>Definition at line <a class="el" href="../../da/d31/a00234_source.html#l00027">27</a> of file <a class="el" href="../../da/d31/a00234_source.html">config.py</a>.</p>
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../d0/de8/a00133_a3bcde4e46808b5c1366ffe16ff26e963_cgraph.png" border="0" usemap="#d0/de8/a00133_a3bcde4e46808b5c1366ffe16ff26e963_cgraph" alt=""/></div>
-<map name="d0/de8/a00133_a3bcde4e46808b5c1366ffe16ff26e963_cgraph" id="d0/de8/a00133_a3bcde4e46808b5c1366ffe16ff26e963_cgraph">
-</map>
-</div>
-</p>
+<p>Destructor. </p>
+<p>Output </p>
+
+<p>Definition at line <a class="el" href="../../dd/d07/a00433_source.html#l00264">264</a> of file <a class="el" href="../../dd/d07/a00433_source.html">BMPPointSourceFactory.cpp</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>seims/postprocess/<a class="el" href="../../de/dc2/a00228_source.html">config.py</a></li>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>seims/src/seims_main/base/bmps/<a class="el" href="../../d1/d7e/a00434_source.html">BMPPointSourceFactory.h</a></li>
+<li>seims/src/seims_main/base/bmps/<a class="el" href="../../dd/d07/a00433_source.html">BMPPointSourceFactory.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>seims</b></li><li class="navelem"><b>postprocess</b></li><li class="navelem"><b>config</b></li><li class="navelem"><a class="el" href="../../d0/de8/a00133.html">PostConfig</a></li>
-    <li class="footer">Generated on Fri Jun 8 2018 08:48:09 for SEIMS by
+    <li class="navelem"><a class="el" href="../../de/d4c/a00711.html">bmps</a></li><li class="navelem"><a class="el" href="../../d0/de8/a00133.html">PointSourceLocations</a></li>
+    <li class="footer">Generated on Sat Jun 16 2018 10:00:51 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

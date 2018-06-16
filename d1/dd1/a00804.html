@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: IKW_IF</title>
+<title>SEIMS: Module_setting</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -106,37 +106,65 @@ $(document).ready(function(){initNavTree('d1/dd1/a00804.html','../../');});
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle">
-<div class="title">IKW_IF<div class="ingroups"><a class="el" href="../../dc/d0c/a00783.html">Hydrology</a></div></div>  </div>
+<div class="title">Module_setting<div class="ingroups"><a class="el" href="../../d7/d0a/a00801.html">Base</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Interflow routing using implicit finite difference method.  
+<p>Setting for SEIMS.  
 <a href="#details">More...</a></p>
 <div class="dynheader">
-Collaboration diagram for IKW_IF:</div>
+Collaboration diagram for Module_setting:</div>
 <div class="dyncontent">
 <center><table><tr><td><img src="../../d1/dd1/a00804.png" border="0" alt="" usemap="#d1_2dd1_2a00804"/>
 <map name="d1_2dd1_2a00804" id="d1_2dd1_2a00804">
-<area shape="rect" id="node2" href="../../dc/d0c/a00783.html" title="Hydrology related modules, include storm processes. " alt="" coords="6,4,101,33"/></map>
+<area shape="rect" id="node2" href="../../d7/d0a/a00801.html" title="Base modules, e.g., data, util, module_setting. " alt="" coords="5,4,64,33"/></map>
 </td></tr></table></center>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/df8/a00076.html">InterFlow_IKW</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interflow routing using implicit finite difference method.  <a href="../../db/df8/a00076.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html">Settings</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for input or output <a class="el" href="../../dd/db2/a00151.html" title="Base class for input or output Settings. ">Settings</a>.  <a href="../../dd/db2/a00151.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d9a/a00152.html">SettingsInput</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input settings for SEIMS.  <a href="../../d7/d9a/a00152.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d98/a00120.html">OrgOutItem</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setting Outputs for SEIMS.  <a href="../../d4/d98/a00120.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d36/a00123.html">ParamInfo</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class to store and manage parameter information from the parameter database.  <a href="../../de/d36/a00123.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d5e/a00136.html">PrintInfoItem</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class stores a single output item of an OuputID.  <a href="../../d0/d5e/a00136.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:ga0271fcfc94579b48ed1dd87309d8e118"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dd1/a00804.html#ga0271fcfc94579b48ed1dd87309d8e118">AggregationType</a> { <br/>
+&#160;&#160;<b>AT_Unknown</b> = 0, 
+<b>AT_Sum</b> = 1, 
+<b>AT_Average</b> = 2, 
+<b>AT_Minimum</b> = 3, 
+<br/>
+&#160;&#160;<b>AT_Maximum</b> = 4, 
+<b>AT_SpecificCells</b> = 5
+<br/>
+ }</td></tr>
+<tr class="memdesc:ga0271fcfc94579b48ed1dd87309d8e118"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aggregation type for OUTPUT. <br/></td></tr>
+<tr class="separator:ga0271fcfc94579b48ed1dd87309d8e118"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Interflow routing using implicit finite difference method. </p>
+<p>Setting for SEIMS. </p>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Jun 8 2018 08:48:08 for SEIMS by
+    <li class="footer">Generated on Sat Jun 16 2018 10:00:49 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

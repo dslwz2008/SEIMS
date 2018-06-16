@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims/src/seims_main/modules/climate/TSD_RD/clsTSD_RD.cpp Source File</title>
+<title>SEIMS: seims/src/seims_main/modules/hydrology_longterm/SSM_PE/api.cpp Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -112,43 +112,67 @@ $(document).ready(function(){initNavTree('d9/d8b/a00547_source.html','../../');}
 
 <div class="header">
   <div class="headertitle">
-<div class="title">clsTSD_RD.cpp</div>  </div>
+<div class="title">api.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;clsTSD_RD.h&quot;</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;SSM_PE.h&quot;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;text.h&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;api.h&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;clsTSD_RD::clsTSD_RD() : m_nStations(-1), m_stationData(nullptr) {</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;}</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;clsTSD_RD::~clsTSD_RD() {</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;}</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="../../df/d61/a00031.html#a5b42430983cfa8542be04854e8612b9b">   11</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../df/d61/a00031.html#a5b42430983cfa8542be04854e8612b9b">clsTSD_RD::Set1DData</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keyword">const</span> <span class="keywordtype">int</span> n, <span class="keywordtype">float</span> *data) {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="../../df/d61/a00031.html#a4754e8968ca858275d040fb67c8f8257">m_nStations</a> = n;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="../../df/d61/a00031.html#a44905545bd698ee830b4aa494e6f6883">m_stationData</a> = data;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="../../df/d61/a00031.html#a6f76ed81c00691617c80974198ea26fb">   16</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../df/d61/a00031.html#a6f76ed81c00691617c80974198ea26fb">clsTSD_RD::Get1DData</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">int</span> *n, <span class="keywordtype">float</span> **data) {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../df/d61/a00031.html#a4754e8968ca858275d040fb67c8f8257">m_nStations</a> &lt; 0 || <span class="keyword">nullptr</span> == <a class="code" href="../../df/d61/a00031.html#a44905545bd698ee830b4aa494e6f6883">m_stationData</a>) {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../d1/d84/a00097.html">ModelException</a>(MID_TSD_RD, <span class="stringliteral">&quot;Get1DData&quot;</span>, <span class="stringliteral">&quot;The data &quot;</span> + <span class="keywordtype">string</span>(key) + <span class="stringliteral">&quot; is NULL.&quot;</span>);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    }</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    *data = <a class="code" href="../../df/d61/a00031.html#a44905545bd698ee830b4aa494e6f6883">m_stationData</a>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    *n = <a class="code" href="../../df/d61/a00031.html#a4754e8968ca858275d040fb67c8f8257">m_nStations</a>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
-<div class="ttc" id="a00031_html_a5b42430983cfa8542be04854e8612b9b"><div class="ttname"><a href="../../df/d61/a00031.html#a5b42430983cfa8542be04854e8612b9b">clsTSD_RD::Set1DData</a></div><div class="ttdeci">void Set1DData(const char *key, int n, float *data) OVERRIDE</div><div class="ttdoc">Set 1D data, by default, DT_Raster1D. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d8b/a00547_source.html#l00011">clsTSD_RD.cpp:11</a></div></div>
-<div class="ttc" id="a00031_html_a4754e8968ca858275d040fb67c8f8257"><div class="ttname"><a href="../../df/d61/a00031.html#a4754e8968ca858275d040fb67c8f8257">clsTSD_RD::m_nStations</a></div><div class="ttdeci">int m_nStations</div><div class="ttdoc">data row number, i.e., number of stations </div><div class="ttdef"><b>Definition:</b> <a href="../../dd/de6/a00548_source.html#l00032">clsTSD_RD.h:32</a></div></div>
-<div class="ttc" id="a00031_html_a44905545bd698ee830b4aa494e6f6883"><div class="ttname"><a href="../../df/d61/a00031.html#a44905545bd698ee830b4aa494e6f6883">clsTSD_RD::m_stationData</a></div><div class="ttdeci">float * m_stationData</div><div class="ttdoc">time series data </div><div class="ttdef"><b>Definition:</b> <a href="../../dd/de6/a00548_source.html#l00034">clsTSD_RD.h:34</a></div></div>
-<div class="ttc" id="a00097_html"><div class="ttname"><a href="../../d1/d84/a00097.html">ccgl::ModelException</a></div><div class="ttdoc">Print the exception message. </div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dbb/a00330_source.html#l00311">basic.h:311</a></div></div>
-<div class="ttc" id="a00031_html_a6f76ed81c00691617c80974198ea26fb"><div class="ttname"><a href="../../df/d61/a00031.html#a6f76ed81c00691617c80974198ea26fb">clsTSD_RD::Get1DData</a></div><div class="ttdeci">void Get1DData(const char *key, int *n, float **data) OVERRIDE</div><div class="ttdoc">Get 1D data, by default, DT_Raster1D. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d8b/a00547_source.html#l00016">clsTSD_RD.cpp:16</a></div></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> SEIMS_MODULE_API <a class="code" href="../../da/d01/a00153.html">SimulationModule</a> *GetInstance() {</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="../../d5/dcb/a00170.html">SSM_PE</a>();</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;}</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">// function to return the XML Metadata document string</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> SEIMS_MODULE_API <span class="keyword">const</span> <span class="keywordtype">char</span> *MetadataInformation() {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="../../dc/d54/a00094.html">MetadataInfo</a> mdi;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="comment">// set the information properties</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    mdi.SetAuthor(<span class="stringliteral">&quot;Chunping Ou&quot;</span>);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    mdi.SetClass(MCLS_SNO_SB, MCLSDESC_SNO_SB);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    mdi.SetDescription(MDESC_SSM_PE);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    mdi.SetEmail(SEIMS_EMAIL);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    mdi.SetID(MID_SSM_PE);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    mdi.SetName(MID_SSM_PE);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    mdi.SetVersion(<span class="stringliteral">&quot;1.1&quot;</span>);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    mdi.SetWebsite(SEIMS_SITE);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    mdi.SetHelpfile(<span class="stringliteral">&quot;SSM_PE.chm&quot;</span>);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    mdi.AddParameter(VAR_K_SUBLI, UNIT_NON_DIM, DESC_K_SUBLI, Source_ParameterDB, DT_Single);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    mdi.AddParameter(VAR_K_BLOW, UNIT_NON_DIM, DESC_K_BLOW, Source_ParameterDB, DT_Single);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    mdi.AddParameter(VAR_T0, UNIT_TEMP_DEG, DESC_T0, Source_ParameterDB, DT_Single);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    mdi.AddParameter(VAR_T_SNOW, UNIT_TEMP_DEG, DESC_T_SNOW, Source_ParameterDB, DT_Single);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    mdi.AddParameter(VAR_SWE0, UNIT_DEPTH_MM, DESC_SWE0, Source_ParameterDB, DT_Single);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    mdi.AddInput(VAR_PET, UNIT_DEPTH_MM, DESC_PET, Source_Module, DT_Raster1D);  <span class="comment">// from PET module</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    mdi.AddInput(VAR_NEPR, UNIT_DEPTH_MM, DESC_NEPR, Source_Module, DT_Raster1D); <span class="comment">// from interception module</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    mdi.AddInput(VAR_SNAC, UNIT_DEPTH_MM, DESC_SNAC, Source_Module, DT_Raster1D); <span class="comment">// from snow melt module</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    mdi.AddInput(VAR_SWE, UNIT_DEPTH_MM, DESC_SWE, Source_Module, DT_Single); <span class="comment">// from snow water balance module</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">// SNRD should be added as input when snow redistribution module is accomplished. LJ</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">//mdi.AddInput(VAR_SNRD, UNIT_DEPTH_MM, DESC_SNRD, Source_Module, DT_Raster1D);  // from snow redistribution module</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    mdi.AddInput(VAR_TMEAN, UNIT_TEMP_DEG, DESC_TMEAN, Source_Module, DT_Raster1D); <span class="comment">// from interpolation module</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">// set the output variables</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    mdi.AddOutput(VAR_SNSB, UNIT_DEPTH_MM, DESC_SNSB, DT_Raster1D);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">// write out the XML file.</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">string</span> res = mdi.GetXMLDocument();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">char</span> *tmp = <span class="keyword">new</span> <span class="keywordtype">char</span>[res.size() + 1];</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    strprintf(tmp, res.size() + 1, <span class="stringliteral">&quot;%s&quot;</span>, res.c_str());</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">return</span> tmp;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
+<div class="ttc" id="a00170_html"><div class="ttname"><a href="../../d5/dcb/a00170.html">SSM_PE</a></div><div class="ttdoc">Calculate distribution of snow sublimation. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/ddd/a00653_source.html#l00025">SSM_PE.h:25</a></div></div>
+<div class="ttc" id="a00094_html"><div class="ttname"><a href="../../dc/d54/a00094.html">MetadataInfo</a></div><div class="ttdoc">Metadata information of module. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dca/a00477_source.html#l00122">MetadataInfo.h:122</a></div></div>
+<div class="ttc" id="a00153_html"><div class="ttname"><a href="../../da/d01/a00153.html">SimulationModule</a></div><div class="ttdoc">Base module for all simulation modules in SEIMS. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/df1/a00486_source.html#l00041">SimulationModule.h:41</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_b89a50a3d6b2f98326f9f3f569cfd788.html">modules</a></li><li class="navelem"><a class="el" href="../../dir_1f6eda6caf98ea53d8153999464f137e.html">climate</a></li><li class="navelem"><a class="el" href="../../dir_70fff461dcf604ed58461016f5c39188.html">TSD_RD</a></li><li class="navelem"><b>clsTSD_RD.cpp</b></li>
-    <li class="footer">Generated on Fri Jun 8 2018 08:48:06 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_b89a50a3d6b2f98326f9f3f569cfd788.html">modules</a></li><li class="navelem"><a class="el" href="../../dir_5bf5a4201e7cd7ac6c5f03aeeeae8b2c.html">hydrology_longterm</a></li><li class="navelem"><a class="el" href="../../dir_c06e46650a09b0b73012e4acecb4395f.html">SSM_PE</a></li><li class="navelem"><b>api.cpp</b></li>
+    <li class="footer">Generated on Sat Jun 16 2018 10:00:48 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: SUR_GreenAmpt Class Reference</title>
+<title>SEIMS: Subbasin Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -115,250 +115,312 @@ $(document).ready(function(){initNavTree('d7/d3f/a00173.html','../../');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
-<a href="../../dd/dac/a01008.html">List of all members</a>  </div>
+<a href="../../d6/dcf/a01031.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">SUR_GreenAmpt Class Reference<div class="ingroups"><a class="el" href="../../d0/d08/a00832.html">SUR_GA</a></div></div>  </div>
+<div class="title">Subbasin Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Green-Ampt Method to calculate infiltration and excess precipitation.  
+<p><a class="el" href="../../d7/d3f/a00173.html" title="Subbasin related parameters and methods. ">Subbasin</a> related parameters and methods.  
  <a href="../../d7/d3f/a00173.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="../../dd/db6/a00639_source.html">SUR_GreenAmpt.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="../../da/dc3/a00453_source.html">clsSubbasin.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for SUR_GreenAmpt:</div>
+Inheritance diagram for Subbasin:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d7/ded/a01009.png" border="0" usemap="#_s_u_r___green_ampt_inherit__map" alt="Inheritance graph"/></div>
-<map name="_s_u_r___green_ampt_inherit__map" id="_s_u_r___green_ampt_inherit__map">
-<area shape="rect" id="node2" href="../../dd/db2/a00151.html" title="Base module for all simulation modules in SEIMS. " alt="" coords="5,307,200,687"/><area shape="rect" id="node3" href="../../d9/da5/a00075.html" title="Base type of all interfaces. All interface types are encouraged to be virtual inherited. " alt="" coords="43,173,163,259"/><area shape="rect" id="node4" href="../../d1/dd6/a00108.html" title="Base class for classes that cannot be copied. By inheriting this class you can disable copying of you..." alt="" coords="26,5,179,125"/></map>
+<div class="center"><img src="../../df/d89/a01032.png" border="0" usemap="#_subbasin_inherit__map" alt="Inheritance graph"/></div>
+<map name="_subbasin_inherit__map" id="_subbasin_inherit__map">
+<area shape="rect" id="node2" href="../../db/df8/a00076.html" title="Base type of all interfaces. All interface types are encouraged to be virtual inherited. " alt="" coords="44,173,164,259"/><area shape="rect" id="node3" href="../../d4/d81/a00110.html" title="Base class for classes that cannot be copied. By inheriting this class you can disable copying of you..." alt="" coords="27,5,180,125"/></map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a7076790c41891c43aac9c3af73fa1460"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7076790c41891c43aac9c3af73fa1460"></a>
-virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a7076790c41891c43aac9c3af73fa1460">Execute</a> (void)</td></tr>
-<tr class="memdesc:a7076790c41891c43aac9c3af73fa1460"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute the simulation. <br/></td></tr>
-<tr class="separator:a7076790c41891c43aac9c3af73fa1460"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a810ff4ec547ae3cc1814d5d1068da36b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a810ff4ec547ae3cc1814d5d1068da36b"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a810ff4ec547ae3cc1814d5d1068da36b">SetValue</a> (const char *key, float data)</td></tr>
-<tr class="memdesc:a810ff4ec547ae3cc1814d5d1068da36b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set data, DT_Single. <br/></td></tr>
-<tr class="separator:a810ff4ec547ae3cc1814d5d1068da36b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd88df8d510ca838c6b1afe8e34be012"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acd88df8d510ca838c6b1afe8e34be012"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#acd88df8d510ca838c6b1afe8e34be012">Set1DData</a> (const char *key, int n, float *data)</td></tr>
-<tr class="memdesc:acd88df8d510ca838c6b1afe8e34be012"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set 1D data, by default, DT_Raster1D. <br/></td></tr>
-<tr class="separator:acd88df8d510ca838c6b1afe8e34be012"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20ee501475500adaaf4976c215a88f12"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a20ee501475500adaaf4976c215a88f12"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a20ee501475500adaaf4976c215a88f12">Get1DData</a> (const char *key, int *n, float **data)</td></tr>
-<tr class="memdesc:a20ee501475500adaaf4976c215a88f12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get 1D data, by default, DT_Raster1D. <br/></td></tr>
-<tr class="separator:a20ee501475500adaaf4976c215a88f12"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_a00151"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a00151')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../dd/db2/a00151.html">SimulationModule</a></td></tr>
-<tr class="memitem:af6d0b8a412ab55dcebe689dd07846465 inherit pub_methods_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af6d0b8a412ab55dcebe689dd07846465"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#af6d0b8a412ab55dcebe689dd07846465">SimulationModule</a> ()</td></tr>
-<tr class="memdesc:af6d0b8a412ab55dcebe689dd07846465 inherit pub_methods_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. <br/></td></tr>
-<tr class="separator:af6d0b8a412ab55dcebe689dd07846465 inherit pub_methods_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c993164d7a51ccfbfd33baeda7a44a7 inherit pub_methods_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0c993164d7a51ccfbfd33baeda7a44a7"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#a0c993164d7a51ccfbfd33baeda7a44a7">SetDate</a> (const time_t t, const int year_idx)</td></tr>
-<tr class="memdesc:a0c993164d7a51ccfbfd33baeda7a44a7 inherit pub_methods_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set date time, as well as the sequence number of the entire simulation. Added by LJ for statistics convenient. <br/></td></tr>
-<tr class="separator:a0c993164d7a51ccfbfd33baeda7a44a7 inherit pub_methods_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac757e94ac8fd30e3aea6fafcab24ea96 inherit pub_methods_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac757e94ac8fd30e3aea6fafcab24ea96"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#ac757e94ac8fd30e3aea6fafcab24ea96">SetTheadNumber</a> (const int thread_num)</td></tr>
-<tr class="memdesc:ac757e94ac8fd30e3aea6fafcab24ea96 inherit pub_methods_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set thread number for OpenMP. <br/></td></tr>
-<tr class="separator:ac757e94ac8fd30e3aea6fafcab24ea96 inherit pub_methods_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af7b9caed16e56bf880b171040981403e inherit pub_methods_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af7b9caed16e56bf880b171040981403e"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#af7b9caed16e56bf880b171040981403e">SetClimateDataType</a> (float value)</td></tr>
-<tr class="memdesc:af7b9caed16e56bf880b171040981403e inherit pub_methods_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set climate data type, P, M, PET etc. <br/></td></tr>
-<tr class="separator:af7b9caed16e56bf880b171040981403e inherit pub_methods_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a122e815846787e975787021df3708551 inherit pub_methods_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a122e815846787e975787021df3708551"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#a122e815846787e975787021df3708551">SetValueByIndex</a> (const char *key, int index, float value)</td></tr>
-<tr class="memdesc:a122e815846787e975787021df3708551 inherit pub_methods_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set single value to array1D by index, used in MPI version for passing values of subbasins. <br/></td></tr>
-<tr class="separator:a122e815846787e975787021df3708551 inherit pub_methods_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02762cb7e236819fd5365ac4cb400fe6 inherit pub_methods_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a02762cb7e236819fd5365ac4cb400fe6"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#a02762cb7e236819fd5365ac4cb400fe6">Set2DData</a> (const char *key, int nrows, int ncols, float **data)</td></tr>
-<tr class="memdesc:a02762cb7e236819fd5365ac4cb400fe6 inherit pub_methods_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set 2D data, by default, DT_Raster2D. <br/></td></tr>
-<tr class="separator:a02762cb7e236819fd5365ac4cb400fe6 inherit pub_methods_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aafd60bc9d4176a0cf64af01aed881980 inherit pub_methods_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aafd60bc9d4176a0cf64af01aed881980"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#aafd60bc9d4176a0cf64af01aed881980">GetValue</a> (const char *key, float *value)</td></tr>
-<tr class="memdesc:aafd60bc9d4176a0cf64af01aed881980 inherit pub_methods_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get value, DT_Single. <br/></td></tr>
-<tr class="separator:aafd60bc9d4176a0cf64af01aed881980 inherit pub_methods_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad327a319166273468db98800501f5946 inherit pub_methods_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad327a319166273468db98800501f5946"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#ad327a319166273468db98800501f5946">Get2DData</a> (const char *key, int *nrows, int *ncols, float ***data)</td></tr>
-<tr class="memdesc:ad327a319166273468db98800501f5946 inherit pub_methods_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get 2D data, by default, DT_Raster2D. <br/></td></tr>
-<tr class="separator:ad327a319166273468db98800501f5946 inherit pub_methods_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61a80ae537e24396433c9514c75735db inherit pub_methods_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a61a80ae537e24396433c9514c75735db"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#a61a80ae537e24396433c9514c75735db">SetScenario</a> (<a class="el" href="../../d7/dce/a00143.html">Scenario</a> *sce)</td></tr>
-<tr class="memdesc:a61a80ae537e24396433c9514c75735db inherit pub_methods_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set pointer of Scenario class which contains all BMP information. Added by LJ, 2016-6-14. <br/></td></tr>
-<tr class="separator:a61a80ae537e24396433c9514c75735db inherit pub_methods_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa57cb2bd2e75ba91bba985d2cd1d6221 inherit pub_methods_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa57cb2bd2e75ba91bba985d2cd1d6221"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#aa57cb2bd2e75ba91bba985d2cd1d6221">SetReaches</a> (<a class="el" href="../../dc/d3c/a00028.html">clsReaches</a> *rches)</td></tr>
-<tr class="memdesc:aa57cb2bd2e75ba91bba985d2cd1d6221 inherit pub_methods_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set pointer of <a class="el" href="../../dc/d3c/a00028.html" title="Read and store all reaches information as input parameters. ">clsReaches</a> class which contains all reaches information. Added by LJ, 2016-7-2. <br/></td></tr>
-<tr class="separator:aa57cb2bd2e75ba91bba985d2cd1d6221 inherit pub_methods_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad38e9f3ef28b26f42bfaaf834a9a9f32 inherit pub_methods_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad38e9f3ef28b26f42bfaaf834a9a9f32"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#ad38e9f3ef28b26f42bfaaf834a9a9f32">SetSubbasins</a> (<a class="el" href="../../d5/d79/a00030.html">clsSubbasins</a> *subbsns)</td></tr>
-<tr class="memdesc:ad38e9f3ef28b26f42bfaaf834a9a9f32 inherit pub_methods_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set pointer of <a class="el" href="../../d5/d79/a00030.html" title="Manager all Subbasin related parameters and methods. ">clsSubbasins</a> class which contains all subbasins information. Added by LJ, 2016-7-28. <br/></td></tr>
-<tr class="separator:ad38e9f3ef28b26f42bfaaf834a9a9f32 inherit pub_methods_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a272481bef46db20353da33e95a5f5426 inherit pub_methods_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a272481bef46db20353da33e95a5f5426"></a>
-virtual TimeStepType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#a272481bef46db20353da33e95a5f5426">GetTimeStepType</a> ()</td></tr>
-<tr class="memdesc:a272481bef46db20353da33e95a5f5426 inherit pub_methods_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get time step type, default is hillslope process. Remember to OVERRIDE this function to return other time step type for routing modules and others if necessary. <br/></td></tr>
-<tr class="separator:a272481bef46db20353da33e95a5f5426 inherit pub_methods_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a3a7bd2ff8748ec360e9464c358500b inherit pub_methods_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1a3a7bd2ff8748ec360e9464c358500b"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#a1a3a7bd2ff8748ec360e9464c358500b">ResetSubTimeStep</a> ()</td></tr>
-<tr class="memdesc:a1a3a7bd2ff8748ec360e9464c358500b inherit pub_methods_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset subtime step. <br/></td></tr>
-<tr class="separator:a1a3a7bd2ff8748ec360e9464c358500b inherit pub_methods_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2238382a3e1a264218a37b32d3947bd6 inherit pub_methods_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2238382a3e1a264218a37b32d3947bd6"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#a2238382a3e1a264218a37b32d3947bd6">IsInputsSetDone</a> ()</td></tr>
-<tr class="memdesc:a2238382a3e1a264218a37b32d3947bd6 inherit pub_methods_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the inputs parameters (i.e., parameters derived from other modules) have been set. <br/></td></tr>
-<tr class="separator:a2238382a3e1a264218a37b32d3947bd6 inherit pub_methods_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac3665a426ed6c4933f3d18a58cdd230 inherit pub_methods_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aac3665a426ed6c4933f3d18a58cdd230"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#aac3665a426ed6c4933f3d18a58cdd230">SetInputsDone</a> (const bool set_done)</td></tr>
-<tr class="memdesc:aac3665a426ed6c4933f3d18a58cdd230 inherit pub_methods_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the status of setting inputs parameters. <br/></td></tr>
-<tr class="separator:aac3665a426ed6c4933f3d18a58cdd230 inherit pub_methods_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
-<tr class="memitem:abde2a0593afd5d725a8620ea11bb0af3"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#abde2a0593afd5d725a8620ea11bb0af3">Calculate_WFMP</a> (float sol_pol, float sol_clay, float sand)</td></tr>
-<tr class="separator:abde2a0593afd5d725a8620ea11bb0af3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1447b378b2c46bb34c6c5405651224d5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a1447b378b2c46bb34c6c5405651224d5">Subbasin</a> (int id)</td></tr>
+<tr class="memdesc:a1447b378b2c46bb34c6c5405651224d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a1447b378b2c46bb34c6c5405651224d5">More...</a><br/></td></tr>
+<tr class="separator:a1447b378b2c46bb34c6c5405651224d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a994fd6e1f7911a24302a428e01c3dfad"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a994fd6e1f7911a24302a428e01c3dfad"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a994fd6e1f7911a24302a428e01c3dfad">~Subbasin</a> ()</td></tr>
+<tr class="memdesc:a994fd6e1f7911a24302a428e01c3dfad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br/></td></tr>
+<tr class="separator:a994fd6e1f7911a24302a428e01c3dfad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5fe3e959c31442126e2f01372461e33"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae5fe3e959c31442126e2f01372461e33"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#ae5fe3e959c31442126e2f01372461e33">CheckInputSize</a> (int n)</td></tr>
+<tr class="memdesc:ae5fe3e959c31442126e2f01372461e33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check input size. <br/></td></tr>
+<tr class="separator:ae5fe3e959c31442126e2f01372461e33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2db45aa67d39e7d9aaa0e814de373d9f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2db45aa67d39e7d9aaa0e814de373d9f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a2db45aa67d39e7d9aaa0e814de373d9f">SetCellList</a> (int n_cells, int *cells)</td></tr>
+<tr class="memdesc:a2db45aa67d39e7d9aaa0e814de373d9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set cell index list, as well as subbasin area. <br/></td></tr>
+<tr class="separator:a2db45aa67d39e7d9aaa0e814de373d9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e83567ef4bfeb30463fe2597ee136fb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9e83567ef4bfeb30463fe2597ee136fb"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a9e83567ef4bfeb30463fe2597ee136fb">SetArea</a> (const float area)</td></tr>
+<tr class="memdesc:a9e83567ef4bfeb30463fe2597ee136fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">area of subbasin <br/></td></tr>
+<tr class="separator:a9e83567ef4bfeb30463fe2597ee136fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af747fa272a3c0a330e1bd7b18bde3cf5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af747fa272a3c0a330e1bd7b18bde3cf5"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#af747fa272a3c0a330e1bd7b18bde3cf5">SetSlope</a> (const float slp)</td></tr>
+<tr class="memdesc:af747fa272a3c0a330e1bd7b18bde3cf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">average slope (%) <br/></td></tr>
+<tr class="separator:af747fa272a3c0a330e1bd7b18bde3cf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac044d5b119e615f5c618647ad1c2d112"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac044d5b119e615f5c618647ad1c2d112"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#ac044d5b119e615f5c618647ad1c2d112">SetSlope</a> (float *slope)</td></tr>
+<tr class="memdesc:ac044d5b119e615f5c618647ad1c2d112"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set slope of current subbasin as the average of all cells. <br/></td></tr>
+<tr class="separator:ac044d5b119e615f5c618647ad1c2d112"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9a9fb9e14d702dd7d57db7b4fed997c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab9a9fb9e14d702dd7d57db7b4fed997c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#ab9a9fb9e14d702dd7d57db7b4fed997c">SetSlopeCoefofBasin</a> (const float slope_basin)</td></tr>
+<tr class="memdesc:ab9a9fb9e14d702dd7d57db7b4fed997c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set slope correction factor of current subbasin. <br/></td></tr>
+<tr class="separator:ab9a9fb9e14d702dd7d57db7b4fed997c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ad33f37befb077569bb8c5f52482eba"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9ad33f37befb077569bb8c5f52482eba"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a9ad33f37befb077569bb8c5f52482eba">SetPet</a> (const float pet)</td></tr>
+<tr class="memdesc:a9ad33f37befb077569bb8c5f52482eba"><td class="mdescLeft">&#160;</td><td class="mdescRight">pet <br/></td></tr>
+<tr class="separator:a9ad33f37befb077569bb8c5f52482eba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a794fb2bac77c74d2155738879d09b8ad"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a794fb2bac77c74d2155738879d09b8ad"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a794fb2bac77c74d2155738879d09b8ad">SetPerco</a> (const float perco)</td></tr>
+<tr class="memdesc:a794fb2bac77c74d2155738879d09b8ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set average percolation (mm) <br/></td></tr>
+<tr class="separator:a794fb2bac77c74d2155738879d09b8ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeeabffe10657c3befcab60dccfed78f6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeeabffe10657c3befcab60dccfed78f6"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#aeeabffe10657c3befcab60dccfed78f6">SetPerde</a> (const float perde)</td></tr>
+<tr class="memdesc:aeeabffe10657c3befcab60dccfed78f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set average deep percolation (mm) <br/></td></tr>
+<tr class="separator:aeeabffe10657c3befcab60dccfed78f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63479555587a0fd6df9cf72d9874439d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a63479555587a0fd6df9cf72d9874439d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a63479555587a0fd6df9cf72d9874439d">SetEg</a> (const float eg)</td></tr>
+<tr class="memdesc:a63479555587a0fd6df9cf72d9874439d"><td class="mdescLeft">&#160;</td><td class="mdescRight">groundwater revaporization <br/></td></tr>
+<tr class="separator:a63479555587a0fd6df9cf72d9874439d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8fa638492ea97b74ee5abcdd7d4001e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af8fa638492ea97b74ee5abcdd7d4001e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#af8fa638492ea97b74ee5abcdd7d4001e">SetGw</a> (const float gw)</td></tr>
+<tr class="memdesc:af8fa638492ea97b74ee5abcdd7d4001e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set groundwater storage. <br/></td></tr>
+<tr class="separator:af8fa638492ea97b74ee5abcdd7d4001e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61472161265b790bf0772c31debdcaf2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a61472161265b790bf0772c31debdcaf2"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a61472161265b790bf0772c31debdcaf2">SetQg</a> (const float qg)</td></tr>
+<tr class="memdesc:a61472161265b790bf0772c31debdcaf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set groundwater discharge. <br/></td></tr>
+<tr class="separator:a61472161265b790bf0772c31debdcaf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6213c7eeecd5deaf3d7e5a06930da8af"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6213c7eeecd5deaf3d7e5a06930da8af"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a6213c7eeecd5deaf3d7e5a06930da8af">SetRg</a> (const float rg)</td></tr>
+<tr class="memdesc:a6213c7eeecd5deaf3d7e5a06930da8af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set groundwater runoff. <br/></td></tr>
+<tr class="separator:a6213c7eeecd5deaf3d7e5a06930da8af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeaecdfbec390799f91e3d2f8f4928ae8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeaecdfbec390799f91e3d2f8f4928ae8"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#aeaecdfbec390799f91e3d2f8f4928ae8">SetIsRevapChanged</a> (const bool isrevap)</td></tr>
+<tr class="memdesc:aeaecdfbec390799f91e3d2f8f4928ae8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is revap changed. <br/></td></tr>
+<tr class="separator:aeaecdfbec390799f91e3d2f8f4928ae8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e6096a1b504e6958a3f3b6c42e6f260"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7e6096a1b504e6958a3f3b6c42e6f260"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a7e6096a1b504e6958a3f3b6c42e6f260">GetId</a> ()</td></tr>
+<tr class="memdesc:a7e6096a1b504e6958a3f3b6c42e6f260"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get subbasin ID. <br/></td></tr>
+<tr class="separator:a7e6096a1b504e6958a3f3b6c42e6f260"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad293d96594c0d6769d39ed48f6f38d79"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad293d96594c0d6769d39ed48f6f38d79"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#ad293d96594c0d6769d39ed48f6f38d79">GetCellCount</a> ()</td></tr>
+<tr class="memdesc:ad293d96594c0d6769d39ed48f6f38d79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get valid cells number. <br/></td></tr>
+<tr class="separator:ad293d96594c0d6769d39ed48f6f38d79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29196da83b7034f188f1943e16febd01"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a29196da83b7034f188f1943e16febd01"></a>
+int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a29196da83b7034f188f1943e16febd01">GetCells</a> ()</td></tr>
+<tr class="memdesc:a29196da83b7034f188f1943e16febd01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get index of valid cells. <br/></td></tr>
+<tr class="separator:a29196da83b7034f188f1943e16febd01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a547d86d3777dce9ee836bb1be038012a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a547d86d3777dce9ee836bb1be038012a"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a547d86d3777dce9ee836bb1be038012a">GetIsOutput</a> ()</td></tr>
+<tr class="memdesc:a547d86d3777dce9ee836bb1be038012a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the output flag (true mean output), the function will be deprecated. By LJ. <br/></td></tr>
+<tr class="separator:a547d86d3777dce9ee836bb1be038012a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23e5e33b027f3abdf2b52951d24afb8d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a23e5e33b027f3abdf2b52951d24afb8d"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a23e5e33b027f3abdf2b52951d24afb8d">GetArea</a> ()</td></tr>
+<tr class="memdesc:a23e5e33b027f3abdf2b52951d24afb8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">area of subbasin <br/></td></tr>
+<tr class="separator:a23e5e33b027f3abdf2b52951d24afb8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd913bfb277d589c6cecdbd1a502bf5d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afd913bfb277d589c6cecdbd1a502bf5d"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#afd913bfb277d589c6cecdbd1a502bf5d">GetIsRevapChanged</a> ()</td></tr>
+<tr class="memdesc:afd913bfb277d589c6cecdbd1a502bf5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Revap change flat (true mean changed from last time step) <br/></td></tr>
+<tr class="separator:afd913bfb277d589c6cecdbd1a502bf5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a714878b9a3b6ac916a8d02e1a17df50f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a714878b9a3b6ac916a8d02e1a17df50f"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a714878b9a3b6ac916a8d02e1a17df50f">GetPet</a> ()</td></tr>
+<tr class="memdesc:a714878b9a3b6ac916a8d02e1a17df50f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get average PET. <br/></td></tr>
+<tr class="separator:a714878b9a3b6ac916a8d02e1a17df50f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad573e54a9af0bee3cbd7b46c17ff3be"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aad573e54a9af0bee3cbd7b46c17ff3be"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#aad573e54a9af0bee3cbd7b46c17ff3be">GetPerco</a> ()</td></tr>
+<tr class="memdesc:aad573e54a9af0bee3cbd7b46c17ff3be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get average percolation (mm) <br/></td></tr>
+<tr class="separator:aad573e54a9af0bee3cbd7b46c17ff3be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46b6bc550eabacd1186fcf914c9c07da"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a46b6bc550eabacd1186fcf914c9c07da"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a46b6bc550eabacd1186fcf914c9c07da">GetPerde</a> ()</td></tr>
+<tr class="memdesc:a46b6bc550eabacd1186fcf914c9c07da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get average deep percolation (mm) <br/></td></tr>
+<tr class="separator:a46b6bc550eabacd1186fcf914c9c07da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ba90716f872be2b109849da2ee4cabf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8ba90716f872be2b109849da2ee4cabf"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a8ba90716f872be2b109849da2ee4cabf">GetSlope</a> ()</td></tr>
+<tr class="memdesc:a8ba90716f872be2b109849da2ee4cabf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get average slope (%) <br/></td></tr>
+<tr class="separator:a8ba90716f872be2b109849da2ee4cabf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65a335174670f6b52e2451d90e9184e6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a65a335174670f6b52e2451d90e9184e6"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a65a335174670f6b52e2451d90e9184e6">GetSlopeCoef</a> ()</td></tr>
+<tr class="memdesc:a65a335174670f6b52e2451d90e9184e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get slope coefficient of basin. <br/></td></tr>
+<tr class="separator:a65a335174670f6b52e2451d90e9184e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c5e0eb10135c68a18c792b428bc41b9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8c5e0eb10135c68a18c792b428bc41b9"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a8c5e0eb10135c68a18c792b428bc41b9">GetEg</a> ()</td></tr>
+<tr class="memdesc:a8c5e0eb10135c68a18c792b428bc41b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">groundwater revaporization <br/></td></tr>
+<tr class="separator:a8c5e0eb10135c68a18c792b428bc41b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cc1ea034f13cfee68667d76e8613601"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8cc1ea034f13cfee68667d76e8613601"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a8cc1ea034f13cfee68667d76e8613601">GetGw</a> ()</td></tr>
+<tr class="memdesc:a8cc1ea034f13cfee68667d76e8613601"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get groundwater storage. <br/></td></tr>
+<tr class="separator:a8cc1ea034f13cfee68667d76e8613601"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9008da40f8e418b817446df7fc67d406"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9008da40f8e418b817446df7fc67d406"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a9008da40f8e418b817446df7fc67d406">GetQg</a> ()</td></tr>
+<tr class="memdesc:a9008da40f8e418b817446df7fc67d406"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get groundwater discharge. <br/></td></tr>
+<tr class="separator:a9008da40f8e418b817446df7fc67d406"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39d136856c1c5320fdc80a3528fa1aa6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a39d136856c1c5320fdc80a3528fa1aa6"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a39d136856c1c5320fdc80a3528fa1aa6">GetRg</a> ()</td></tr>
+<tr class="memdesc:a39d136856c1c5320fdc80a3528fa1aa6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get groundwater runoff. <br/></td></tr>
+<tr class="separator:a39d136856c1c5320fdc80a3528fa1aa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:ac07b51e8689c216f91bb39430ca9ac7a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac07b51e8689c216f91bb39430ca9ac7a"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#ac07b51e8689c216f91bb39430ca9ac7a">m_cellSize</a></td></tr>
-<tr class="memdesc:ac07b51e8689c216f91bb39430ca9ac7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">count of valid cells <br/></td></tr>
-<tr class="separator:ac07b51e8689c216f91bb39430ca9ac7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7bf83ea94ca24b1b1479929db368e969"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7bf83ea94ca24b1b1479929db368e969"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a7bf83ea94ca24b1b1479929db368e969">m_TimeStep</a></td></tr>
-<tr class="memdesc:a7bf83ea94ca24b1b1479929db368e969"><td class="mdescLeft">&#160;</td><td class="mdescRight">length of time step used to report precipitation data for sub-daily modeling (minutes) <br/></td></tr>
-<tr class="separator:a7bf83ea94ca24b1b1479929db368e969"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff484454989ece77ec67b6b967205e4f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aff484454989ece77ec67b6b967205e4f"></a>
-float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#aff484454989ece77ec67b6b967205e4f">m_Conductivity</a></td></tr>
-<tr class="memdesc:aff484454989ece77ec67b6b967205e4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">saturated hydraulic conductivity from parameter database (mm/h) <br/></td></tr>
-<tr class="separator:aff484454989ece77ec67b6b967205e4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25b1e089868440249969631d00783da2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a25b1e089868440249969631d00783da2"></a>
-float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a25b1e089868440249969631d00783da2">m_porosity</a></td></tr>
-<tr class="memdesc:a25b1e089868440249969631d00783da2"><td class="mdescLeft">&#160;</td><td class="mdescRight">soil porosity <br/></td></tr>
-<tr class="separator:a25b1e089868440249969631d00783da2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84ddb2119797e148a1ac8eece9cf82f9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a84ddb2119797e148a1ac8eece9cf82f9"></a>
-float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a84ddb2119797e148a1ac8eece9cf82f9">m_clay</a></td></tr>
-<tr class="memdesc:a84ddb2119797e148a1ac8eece9cf82f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">percent of clay content from parameter database <br/></td></tr>
-<tr class="separator:a84ddb2119797e148a1ac8eece9cf82f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a4713be900de9e1a2247d936078237e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5a4713be900de9e1a2247d936078237e"></a>
-float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a5a4713be900de9e1a2247d936078237e">m_sand</a></td></tr>
-<tr class="memdesc:a5a4713be900de9e1a2247d936078237e"><td class="mdescLeft">&#160;</td><td class="mdescRight">percent of sand content from parameter database <br/></td></tr>
-<tr class="separator:a5a4713be900de9e1a2247d936078237e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68ba75f58c1eeb950e4421fe4dcdf50a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a68ba75f58c1eeb950e4421fe4dcdf50a"></a>
-float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a68ba75f58c1eeb950e4421fe4dcdf50a">m_rootDepth</a></td></tr>
-<tr class="memdesc:a68ba75f58c1eeb950e4421fe4dcdf50a"><td class="mdescLeft">&#160;</td><td class="mdescRight">root depth of plants (m) <br/></td></tr>
-<tr class="separator:a68ba75f58c1eeb950e4421fe4dcdf50a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93dfceb8debd350b46e7b3bafc011eb6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a93dfceb8debd350b46e7b3bafc011eb6"></a>
-float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a93dfceb8debd350b46e7b3bafc011eb6">m_cn2</a></td></tr>
-<tr class="memdesc:a93dfceb8debd350b46e7b3bafc011eb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">CN under moisture condition II. <br/></td></tr>
-<tr class="separator:a93dfceb8debd350b46e7b3bafc011eb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf7e2730a65dc29feaf4cbb0471bf552"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abf7e2730a65dc29feaf4cbb0471bf552"></a>
-float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#abf7e2730a65dc29feaf4cbb0471bf552">m_P_NET</a></td></tr>
-<tr class="memdesc:abf7e2730a65dc29feaf4cbb0471bf552"><td class="mdescLeft">&#160;</td><td class="mdescRight">Net precipitation calculated in the interception module (mm) <br/></td></tr>
-<tr class="separator:abf7e2730a65dc29feaf4cbb0471bf552"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a618a2ba45a6f902c8ddbe6b68c72f1f9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a618a2ba45a6f902c8ddbe6b68c72f1f9"></a>
-float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a618a2ba45a6f902c8ddbe6b68c72f1f9">m_fieldCap</a></td></tr>
-<tr class="memdesc:a618a2ba45a6f902c8ddbe6b68c72f1f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">water content of soil at field capacity <br/></td></tr>
-<tr class="separator:a618a2ba45a6f902c8ddbe6b68c72f1f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2c99045e05e607f02e8b2659287f0b1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa2c99045e05e607f02e8b2659287f0b1"></a>
-float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#aa2c99045e05e607f02e8b2659287f0b1">m_wiltingPoint</a></td></tr>
-<tr class="memdesc:aa2c99045e05e607f02e8b2659287f0b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">plant wilting point moisture <br/></td></tr>
-<tr class="separator:aa2c99045e05e607f02e8b2659287f0b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae976555dc3aed0055f037e959624c162"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae976555dc3aed0055f037e959624c162"></a>
-float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#ae976555dc3aed0055f037e959624c162">m_soilMoisture</a></td></tr>
-<tr class="memdesc:ae976555dc3aed0055f037e959624c162"><td class="mdescLeft">&#160;</td><td class="mdescRight">soil moisture of each time step <br/></td></tr>
-<tr class="separator:ae976555dc3aed0055f037e959624c162"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad902a147abd4abe30a5649da5c275599"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad902a147abd4abe30a5649da5c275599"></a>
-float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#ad902a147abd4abe30a5649da5c275599">m_INFRate</a></td></tr>
-<tr class="memdesc:ad902a147abd4abe30a5649da5c275599"><td class="mdescLeft">&#160;</td><td class="mdescRight">initial infiltration rate or infiltration rate of watershed (mm/hr) at previous time step (t-1) <br/></td></tr>
-<tr class="separator:ad902a147abd4abe30a5649da5c275599"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22dd3741c901507c0a8d0e7916ab7977"><td class="memItemLeft" align="right" valign="top">float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a22dd3741c901507c0a8d0e7916ab7977">m_SD</a></td></tr>
-<tr class="separator:a22dd3741c901507c0a8d0e7916ab7977"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a311f8b75a3d69dcb35f0bde55cabbbc3"><td class="memItemLeft" align="right" valign="top">float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a311f8b75a3d69dcb35f0bde55cabbbc3">m_tMin</a></td></tr>
-<tr class="separator:a311f8b75a3d69dcb35f0bde55cabbbc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e49abe5a5ee95753891babc73826c77"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2e49abe5a5ee95753891babc73826c77"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a2e49abe5a5ee95753891babc73826c77">m_Tsnow</a></td></tr>
-<tr class="memdesc:a2e49abe5a5ee95753891babc73826c77"><td class="mdescLeft">&#160;</td><td class="mdescRight">snowfall temperature from the parameter database (��) <br/></td></tr>
-<tr class="separator:a2e49abe5a5ee95753891babc73826c77"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8e4673ebcaf3671bac582a0619837a4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae8e4673ebcaf3671bac582a0619837a4"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#ae8e4673ebcaf3671bac582a0619837a4">m_Tsoil</a></td></tr>
-<tr class="memdesc:ae8e4673ebcaf3671bac582a0619837a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">threshold soil freezing temperature (��) <br/></td></tr>
-<tr class="separator:ae8e4673ebcaf3671bac582a0619837a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a59923594c5dc4a0c58ca0b002cdd7beb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a59923594c5dc4a0c58ca0b002cdd7beb"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a59923594c5dc4a0c58ca0b002cdd7beb">m_Sfrozen</a></td></tr>
-<tr class="memdesc:a59923594c5dc4a0c58ca0b002cdd7beb"><td class="mdescLeft">&#160;</td><td class="mdescRight">frozen soil moisture relative to saturation above which no infiltration occur (m3/m3) <br/></td></tr>
-<tr class="separator:a59923594c5dc4a0c58ca0b002cdd7beb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad90882a48165118d6c1bd72cb3406b97"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad90882a48165118d6c1bd72cb3406b97"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#ad90882a48165118d6c1bd72cb3406b97">m_T0</a></td></tr>
-<tr class="memdesc:ad90882a48165118d6c1bd72cb3406b97"><td class="mdescLeft">&#160;</td><td class="mdescRight">snowmelt threshold temperature from the parameter database (��) <br/></td></tr>
-<tr class="separator:ad90882a48165118d6c1bd72cb3406b97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a369cd801da6dbc68dd3524525ec0c033"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a369cd801da6dbc68dd3524525ec0c033"></a>
-float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a369cd801da6dbc68dd3524525ec0c033">m_SM</a></td></tr>
-<tr class="memdesc:a369cd801da6dbc68dd3524525ec0c033"><td class="mdescLeft">&#160;</td><td class="mdescRight">snowmelt from the snowmelt module (mm) <br/></td></tr>
-<tr class="separator:a369cd801da6dbc68dd3524525ec0c033"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab535771e1c95e912dd964bc925e84284"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab535771e1c95e912dd964bc925e84284"></a>
-float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#ab535771e1c95e912dd964bc925e84284">m_SA</a></td></tr>
-<tr class="memdesc:ab535771e1c95e912dd964bc925e84284"><td class="mdescLeft">&#160;</td><td class="mdescRight">snow accumulation from the snow balance module (mm) at t+1 timestep <br/></td></tr>
-<tr class="separator:ab535771e1c95e912dd964bc925e84284"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af539c6373ac949cb6caf3cb110622dc6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af539c6373ac949cb6caf3cb110622dc6"></a>
-float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#af539c6373ac949cb6caf3cb110622dc6">m_TS</a></td></tr>
-<tr class="memdesc:af539c6373ac949cb6caf3cb110622dc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">soil temperature obtained from the soil temperature module (��) <br/></td></tr>
-<tr class="separator:af539c6373ac949cb6caf3cb110622dc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3342e7784b24b0358e537c6a7e10ff9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af3342e7784b24b0358e537c6a7e10ff9"></a>
-float **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#af3342e7784b24b0358e537c6a7e10ff9">m_mask</a></td></tr>
-<tr class="memdesc:af3342e7784b24b0358e537c6a7e10ff9"><td class="mdescLeft">&#160;</td><td class="mdescRight">array containing the row and column numbers for valid cells <br/></td></tr>
-<tr class="separator:af3342e7784b24b0358e537c6a7e10ff9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa434086908ed2bd204a683f7589540fd"><td class="memItemLeft" align="right" valign="top">float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#aa434086908ed2bd204a683f7589540fd">m_PE</a></td></tr>
-<tr class="separator:aa434086908ed2bd204a683f7589540fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8075ad37bac52e834e3d903612f7cf4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae8075ad37bac52e834e3d903612f7cf4"></a>
-float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#ae8075ad37bac52e834e3d903612f7cf4">m_INFIL</a></td></tr>
-<tr class="memdesc:ae8075ad37bac52e834e3d903612f7cf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">infiltration map of watershed (mm) of the total nCells <br/></td></tr>
-<tr class="separator:ae8075ad37bac52e834e3d903612f7cf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7196ae8dcec8656951c2a21fd903d33"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab7196ae8dcec8656951c2a21fd903d33"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#ab7196ae8dcec8656951c2a21fd903d33">subbsn_id_</a></td></tr>
+<tr class="memdesc:ab7196ae8dcec8656951c2a21fd903d33"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d7/d3f/a00173.html" title="Subbasin related parameters and methods. ">Subbasin</a> ID. <br/></td></tr>
+<tr class="separator:ab7196ae8dcec8656951c2a21fd903d33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dc449ac114a80ed1af22bd8b48f4b63"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2dc449ac114a80ed1af22bd8b48f4b63"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a2dc449ac114a80ed1af22bd8b48f4b63">n_cells_</a></td></tr>
+<tr class="memdesc:a2dc449ac114a80ed1af22bd8b48f4b63"><td class="mdescLeft">&#160;</td><td class="mdescRight">valid cells number <br/></td></tr>
+<tr class="separator:a2dc449ac114a80ed1af22bd8b48f4b63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f0d480724ad29100201a63d85c2446f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6f0d480724ad29100201a63d85c2446f"></a>
+int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a6f0d480724ad29100201a63d85c2446f">cells_</a></td></tr>
+<tr class="memdesc:a6f0d480724ad29100201a63d85c2446f"><td class="mdescLeft">&#160;</td><td class="mdescRight">index of valid cells <br/></td></tr>
+<tr class="separator:a6f0d480724ad29100201a63d85c2446f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26678b9a843a8c403c23926cd8dfacfc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a26678b9a843a8c403c23926cd8dfacfc"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a26678b9a843a8c403c23926cd8dfacfc">cell_area_</a></td></tr>
+<tr class="memdesc:a26678b9a843a8c403c23926cd8dfacfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">area of one cell, TODO, cell_areas_ should be float* when irregular polygon is supported. lj. <br/></td></tr>
+<tr class="separator:a26678b9a843a8c403c23926cd8dfacfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6aae86873f235ac7f337372e134184fc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6aae86873f235ac7f337372e134184fc"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a6aae86873f235ac7f337372e134184fc">area_</a></td></tr>
+<tr class="memdesc:a6aae86873f235ac7f337372e134184fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">area of current <a class="el" href="../../d7/d3f/a00173.html" title="Subbasin related parameters and methods. ">Subbasin</a> <br/></td></tr>
+<tr class="separator:a6aae86873f235ac7f337372e134184fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae720b1bf3c63e6875faade8e82f76220"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae720b1bf3c63e6875faade8e82f76220"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#ae720b1bf3c63e6875faade8e82f76220">pet_</a></td></tr>
+<tr class="memdesc:ae720b1bf3c63e6875faade8e82f76220"><td class="mdescLeft">&#160;</td><td class="mdescRight">PET. <br/></td></tr>
+<tr class="separator:ae720b1bf3c63e6875faade8e82f76220"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8e4e120ed498ace94defc286a9ba783"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac8e4e120ed498ace94defc286a9ba783"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#ac8e4e120ed498ace94defc286a9ba783">perco_</a></td></tr>
+<tr class="memdesc:ac8e4e120ed498ace94defc286a9ba783"><td class="mdescLeft">&#160;</td><td class="mdescRight">average percolation (mm) of each valid cells <br/></td></tr>
+<tr class="separator:ac8e4e120ed498ace94defc286a9ba783"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc97e868851643136f41a794de823b51"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abc97e868851643136f41a794de823b51"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#abc97e868851643136f41a794de823b51">pcp_</a></td></tr>
+<tr class="memdesc:abc97e868851643136f41a794de823b51"><td class="mdescLeft">&#160;</td><td class="mdescRight">precipitation <br/></td></tr>
+<tr class="separator:abc97e868851643136f41a794de823b51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad292509abf1f73de6934e50f61d044e3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad292509abf1f73de6934e50f61d044e3"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#ad292509abf1f73de6934e50f61d044e3">intercep_</a></td></tr>
+<tr class="memdesc:ad292509abf1f73de6934e50f61d044e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">interception loss <br/></td></tr>
+<tr class="separator:ad292509abf1f73de6934e50f61d044e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1df6175ef4f435ec3bae135d57a25eb4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1df6175ef4f435ec3bae135d57a25eb4"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a1df6175ef4f435ec3bae135d57a25eb4">intercep_et_</a></td></tr>
+<tr class="memdesc:a1df6175ef4f435ec3bae135d57a25eb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">ET from interception storage. <br/></td></tr>
+<tr class="separator:a1df6175ef4f435ec3bae135d57a25eb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cc4723035ec72e3d5568da8bdefdb29"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7cc4723035ec72e3d5568da8bdefdb29"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a7cc4723035ec72e3d5568da8bdefdb29">depression_et_</a></td></tr>
+<tr class="memdesc:a7cc4723035ec72e3d5568da8bdefdb29"><td class="mdescLeft">&#160;</td><td class="mdescRight">depression evaporation <br/></td></tr>
+<tr class="separator:a7cc4723035ec72e3d5568da8bdefdb29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3641d1e1b2f7c601a89fc1e5191b2c50"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3641d1e1b2f7c601a89fc1e5191b2c50"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a3641d1e1b2f7c601a89fc1e5191b2c50">infil_</a></td></tr>
+<tr class="memdesc:a3641d1e1b2f7c601a89fc1e5191b2c50"><td class="mdescLeft">&#160;</td><td class="mdescRight">infiltration loss <br/></td></tr>
+<tr class="separator:a3641d1e1b2f7c601a89fc1e5191b2c50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70f8b3c5c1bdfddac98a1352c77a4cb3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a70f8b3c5c1bdfddac98a1352c77a4cb3"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a70f8b3c5c1bdfddac98a1352c77a4cb3">soil_et_</a></td></tr>
+<tr class="memdesc:a70f8b3c5c1bdfddac98a1352c77a4cb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">soil et <br/></td></tr>
+<tr class="separator:a70f8b3c5c1bdfddac98a1352c77a4cb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a284d2d9caa16080b9a99b94d49e3f2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3a284d2d9caa16080b9a99b94d49e3f2"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a3a284d2d9caa16080b9a99b94d49e3f2">total_et_</a></td></tr>
+<tr class="memdesc:a3a284d2d9caa16080b9a99b94d49e3f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">total ET <br/></td></tr>
+<tr class="separator:a3a284d2d9caa16080b9a99b94d49e3f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10db452974c841f8fdbefcf4f30d66c3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a10db452974c841f8fdbefcf4f30d66c3"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a10db452974c841f8fdbefcf4f30d66c3">net_perco_</a></td></tr>
+<tr class="memdesc:a10db452974c841f8fdbefcf4f30d66c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">net percolation <br/></td></tr>
+<tr class="separator:a10db452974c841f8fdbefcf4f30d66c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff456f86e5c0134a658d98b838860e65"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aff456f86e5c0134a658d98b838860e65"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#aff456f86e5c0134a658d98b838860e65">runoff_</a></td></tr>
+<tr class="memdesc:aff456f86e5c0134a658d98b838860e65"><td class="mdescLeft">&#160;</td><td class="mdescRight">surface runoff generated (mm) <br/></td></tr>
+<tr class="separator:aff456f86e5c0134a658d98b838860e65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43120080f794ca6a34b68b65060ca7de"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a43120080f794ca6a34b68b65060ca7de"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a43120080f794ca6a34b68b65060ca7de">interflow_</a></td></tr>
+<tr class="memdesc:a43120080f794ca6a34b68b65060ca7de"><td class="mdescLeft">&#160;</td><td class="mdescRight">subsurface (interflow) runoff <br/></td></tr>
+<tr class="separator:a43120080f794ca6a34b68b65060ca7de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28c70457a472c55c2ae42350b4e05ef3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a28c70457a472c55c2ae42350b4e05ef3"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a28c70457a472c55c2ae42350b4e05ef3">soil_wtr_</a></td></tr>
+<tr class="memdesc:a28c70457a472c55c2ae42350b4e05ef3"><td class="mdescLeft">&#160;</td><td class="mdescRight">soil moisture (mm) <br/></td></tr>
+<tr class="separator:a28c70457a472c55c2ae42350b4e05ef3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebe971e2de3103389acf8260b1ee0548"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aebe971e2de3103389acf8260b1ee0548"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#aebe971e2de3103389acf8260b1ee0548">net_pcp_</a></td></tr>
+<tr class="memdesc:aebe971e2de3103389acf8260b1ee0548"><td class="mdescLeft">&#160;</td><td class="mdescRight">net precipitation <br/></td></tr>
+<tr class="separator:aebe971e2de3103389acf8260b1ee0548"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9332eaa3e940ebcff3594e8bfe52b7b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af9332eaa3e940ebcff3594e8bfe52b7b"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#af9332eaa3e940ebcff3594e8bfe52b7b">mean_tmp_</a></td></tr>
+<tr class="memdesc:af9332eaa3e940ebcff3594e8bfe52b7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">mean temperature <br/></td></tr>
+<tr class="separator:af9332eaa3e940ebcff3594e8bfe52b7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a581e32382bc5a0e6291b04e3a00d0bf8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a581e32382bc5a0e6291b04e3a00d0bf8"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a581e32382bc5a0e6291b04e3a00d0bf8">soil_tmp_</a></td></tr>
+<tr class="memdesc:a581e32382bc5a0e6291b04e3a00d0bf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">soil temperature <br/></td></tr>
+<tr class="separator:a581e32382bc5a0e6291b04e3a00d0bf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9486f466e16b54bdb3419e1916beca3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac9486f466e16b54bdb3419e1916beca3"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#ac9486f466e16b54bdb3419e1916beca3">gwmax_</a></td></tr>
+<tr class="memdesc:ac9486f466e16b54bdb3419e1916beca3"><td class="mdescLeft">&#160;</td><td class="mdescRight">maximum groundwater storage <br/></td></tr>
+<tr class="separator:ac9486f466e16b54bdb3419e1916beca3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cfcf4f1779fd88b3a345a1ec07c4f73"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4cfcf4f1779fd88b3a345a1ec07c4f73"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a4cfcf4f1779fd88b3a345a1ec07c4f73">kg_</a></td></tr>
+<tr class="memdesc:a4cfcf4f1779fd88b3a345a1ec07c4f73"><td class="mdescLeft">&#160;</td><td class="mdescRight">baseflow recession coefficient <br/></td></tr>
+<tr class="separator:a4cfcf4f1779fd88b3a345a1ec07c4f73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adabd6678920fa382565541d62c96d320"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adabd6678920fa382565541d62c96d320"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#adabd6678920fa382565541d62c96d320">revap_coef_</a></td></tr>
+<tr class="memdesc:adabd6678920fa382565541d62c96d320"><td class="mdescLeft">&#160;</td><td class="mdescRight">groundwater revaporization coefficient <br/></td></tr>
+<tr class="separator:adabd6678920fa382565541d62c96d320"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a334fae9ab939471e2cd001f720d73073"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a334fae9ab939471e2cd001f720d73073"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a334fae9ab939471e2cd001f720d73073">base_ex_</a></td></tr>
+<tr class="memdesc:a334fae9ab939471e2cd001f720d73073"><td class="mdescLeft">&#160;</td><td class="mdescRight">baseflow recession exponent <br/></td></tr>
+<tr class="separator:a334fae9ab939471e2cd001f720d73073"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d2b46994eff2a46beed033a76c78b10"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9d2b46994eff2a46beed033a76c78b10"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a9d2b46994eff2a46beed033a76c78b10">qg_cvt_</a></td></tr>
+<tr class="memdesc:a9d2b46994eff2a46beed033a76c78b10"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert coefficient from mm to m3/s <br/></td></tr>
+<tr class="separator:a9d2b46994eff2a46beed033a76c78b10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fdef0edc9b15a5f0cc1c78674704988"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0fdef0edc9b15a5f0cc1c78674704988"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a0fdef0edc9b15a5f0cc1c78674704988">slope_coef_</a></td></tr>
+<tr class="memdesc:a0fdef0edc9b15a5f0cc1c78674704988"><td class="mdescLeft">&#160;</td><td class="mdescRight">slope correction factor of current subbasin <br/></td></tr>
+<tr class="separator:a0fdef0edc9b15a5f0cc1c78674704988"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2e4a6d93fbffc7426c989336a5fab2a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab2e4a6d93fbffc7426c989336a5fab2a"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#ab2e4a6d93fbffc7426c989336a5fab2a">slope_</a></td></tr>
+<tr class="memdesc:ab2e4a6d93fbffc7426c989336a5fab2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">average slope of the subbasin <br/></td></tr>
+<tr class="separator:ab2e4a6d93fbffc7426c989336a5fab2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a380e2d44ee332771b01de42d47d89fc1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a380e2d44ee332771b01de42d47d89fc1"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a380e2d44ee332771b01de42d47d89fc1">revap_</a></td></tr>
+<tr class="memdesc:a380e2d44ee332771b01de42d47d89fc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">revaporization from groundwater <br/></td></tr>
+<tr class="separator:a380e2d44ee332771b01de42d47d89fc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac85f1dfdb9131e692f1bf8011965ab7a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac85f1dfdb9131e692f1bf8011965ab7a"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#ac85f1dfdb9131e692f1bf8011965ab7a">gw_</a></td></tr>
+<tr class="memdesc:ac85f1dfdb9131e692f1bf8011965ab7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">initial groundwater or time (t-1) <br/></td></tr>
+<tr class="separator:ac85f1dfdb9131e692f1bf8011965ab7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9817f41bb67af4653a5bcc14419bad2d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9817f41bb67af4653a5bcc14419bad2d"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a9817f41bb67af4653a5bcc14419bad2d">deep_perco_</a></td></tr>
+<tr class="memdesc:a9817f41bb67af4653a5bcc14419bad2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">deep percolation <br/></td></tr>
+<tr class="separator:a9817f41bb67af4653a5bcc14419bad2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abee83a6982f6e3ad7e87e32fee9927af"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abee83a6982f6e3ad7e87e32fee9927af"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#abee83a6982f6e3ad7e87e32fee9927af">qg_</a></td></tr>
+<tr class="memdesc:abee83a6982f6e3ad7e87e32fee9927af"><td class="mdescLeft">&#160;</td><td class="mdescRight">groundwater discharge (m3/s) <br/></td></tr>
+<tr class="separator:abee83a6982f6e3ad7e87e32fee9927af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2d6e6594ebe8415f3bad2119f674f17"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae2d6e6594ebe8415f3bad2119f674f17"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#ae2d6e6594ebe8415f3bad2119f674f17">rg_</a></td></tr>
+<tr class="memdesc:ae2d6e6594ebe8415f3bad2119f674f17"><td class="mdescLeft">&#160;</td><td class="mdescRight">groundwater runoff (mm) <br/></td></tr>
+<tr class="separator:ae2d6e6594ebe8415f3bad2119f674f17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2badb5eabaac3c6ed2a482c0c10a4ed"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa2badb5eabaac3c6ed2a482c0c10a4ed"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#aa2badb5eabaac3c6ed2a482c0c10a4ed">output_</a></td></tr>
+<tr class="memdesc:aa2badb5eabaac3c6ed2a482c0c10a4ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is output defined by file.out or not. <br/></td></tr>
+<tr class="separator:aa2badb5eabaac3c6ed2a482c0c10a4ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2db11326dc5ca5ee0ce5cbd273f71c95"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2db11326dc5ca5ee0ce5cbd273f71c95"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3f/a00173.html#a2db11326dc5ca5ee0ce5cbd273f71c95">revap_changed_</a></td></tr>
+<tr class="memdesc:a2db11326dc5ca5ee0ce5cbd273f71c95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is the revap (m_EG) is different from last time step. <br/></td></tr>
+<tr class="separator:a2db11326dc5ca5ee0ce5cbd273f71c95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pro_attribs_a00151"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_a00151')"><img src="../../closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="../../dd/db2/a00151.html">SimulationModule</a></td></tr>
-<tr class="memitem:aabd631c05d3e74aa9970f7415f2f5de7 inherit pro_attribs_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aabd631c05d3e74aa9970f7415f2f5de7"></a>
-time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#aabd631c05d3e74aa9970f7415f2f5de7">m_date</a></td></tr>
-<tr class="memdesc:aabd631c05d3e74aa9970f7415f2f5de7 inherit pro_attribs_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">date time <br/></td></tr>
-<tr class="separator:aabd631c05d3e74aa9970f7415f2f5de7 inherit pro_attribs_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:addfe4dd5800efd0bb827338daf65d64c inherit pro_attribs_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="addfe4dd5800efd0bb827338daf65d64c"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#addfe4dd5800efd0bb827338daf65d64c">m_yearIdx</a></td></tr>
-<tr class="memdesc:addfe4dd5800efd0bb827338daf65d64c inherit pro_attribs_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">index of current year of simulation, e.g., the simulation period from 2010 to 2015, m_yearIdx is 2 when simulate 2012. <br/></td></tr>
-<tr class="separator:addfe4dd5800efd0bb827338daf65d64c inherit pro_attribs_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac603f0cbbe34ec886e3d1a4d0615a1f9 inherit pro_attribs_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac603f0cbbe34ec886e3d1a4d0615a1f9"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#ac603f0cbbe34ec886e3d1a4d0615a1f9">m_year</a></td></tr>
-<tr class="memdesc:ac603f0cbbe34ec886e3d1a4d0615a1f9 inherit pro_attribs_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">year <br/></td></tr>
-<tr class="separator:ac603f0cbbe34ec886e3d1a4d0615a1f9 inherit pro_attribs_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0efff9f7dbe05079a5ec6c2af220b50e inherit pro_attribs_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0efff9f7dbe05079a5ec6c2af220b50e"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#a0efff9f7dbe05079a5ec6c2af220b50e">m_month</a></td></tr>
-<tr class="memdesc:a0efff9f7dbe05079a5ec6c2af220b50e inherit pro_attribs_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">month since January - [1,12] <br/></td></tr>
-<tr class="separator:a0efff9f7dbe05079a5ec6c2af220b50e inherit pro_attribs_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab47aa8b8dc82167db775d1cf0d675cb8 inherit pro_attribs_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab47aa8b8dc82167db775d1cf0d675cb8"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#ab47aa8b8dc82167db775d1cf0d675cb8">m_day</a></td></tr>
-<tr class="memdesc:ab47aa8b8dc82167db775d1cf0d675cb8 inherit pro_attribs_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">day of the month - [1,31] <br/></td></tr>
-<tr class="separator:ab47aa8b8dc82167db775d1cf0d675cb8 inherit pro_attribs_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac578cab4a35a3c2f99be05c520a6dc02 inherit pro_attribs_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac578cab4a35a3c2f99be05c520a6dc02"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#ac578cab4a35a3c2f99be05c520a6dc02">m_dayOfYear</a></td></tr>
-<tr class="memdesc:ac578cab4a35a3c2f99be05c520a6dc02 inherit pro_attribs_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">day of year - [1, 366] <br/></td></tr>
-<tr class="separator:ac578cab4a35a3c2f99be05c520a6dc02 inherit pro_attribs_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adee1865c86a9761af76cec98cac30a44 inherit pro_attribs_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adee1865c86a9761af76cec98cac30a44"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#adee1865c86a9761af76cec98cac30a44">m_tsCounter</a></td></tr>
-<tr class="memdesc:adee1865c86a9761af76cec98cac30a44 inherit pro_attribs_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">sub-timestep counter <br/></td></tr>
-<tr class="separator:adee1865c86a9761af76cec98cac30a44 inherit pro_attribs_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68422923210ead26b1651bf0e0a339f6 inherit pro_attribs_a00151"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a68422923210ead26b1651bf0e0a339f6"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#a68422923210ead26b1651bf0e0a339f6">m_inputsSetDone</a></td></tr>
-<tr class="memdesc:a68422923210ead26b1651bf0e0a339f6 inherit pro_attribs_a00151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the inputs parameters (i.e., parameters derived from other modules) have been set. <br/></td></tr>
-<tr class="separator:a68422923210ead26b1651bf0e0a339f6 inherit pro_attribs_a00151"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_a00076"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a00076')"><img src="../../closed.png" alt="-"/>&#160;Private Member Functions inherited from <a class="el" href="../../db/df8/a00076.html">ccgl::Interface</a></td></tr>
+<tr class="memitem:a7325510a5111ae7d2a75662393075e10 inherit pub_methods_a00076"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7325510a5111ae7d2a75662393075e10"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/df8/a00076.html#a7325510a5111ae7d2a75662393075e10">~Interface</a> ()</td></tr>
+<tr class="memdesc:a7325510a5111ae7d2a75662393075e10 inherit pub_methods_a00076"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../db/df8/a00076.html" title="Base type of all interfaces. All interface types are encouraged to be virtual inherited. ">Interface</a>. <br/></td></tr>
+<tr class="separator:a7325510a5111ae7d2a75662393075e10 inherit pub_methods_a00076"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Green-Ampt Method to calculate infiltration and excess precipitation. </p>
+<div class="textblock"><p><a class="el" href="../../d7/d3f/a00173.html" title="Subbasin related parameters and methods. ">Subbasin</a> related parameters and methods. </p>
+<p>: 1. Remove isOutput, since the output is handled in printInfo class</p>
+<ol type="1">
+<li>Add soil water balance related. 2016-7-28 </li>
+</ol>
 
-<p>Definition at line <a class="el" href="../../dd/db6/a00639_source.html#l00059">59</a> of file <a class="el" href="../../dd/db6/a00639_source.html">SUR_GreenAmpt.h</a>.</p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="abde2a0593afd5d725a8620ea11bb0af3"></a>
+<p>Definition at line <a class="el" href="../../da/dc3/a00453_source.html#l00026">26</a> of file <a class="el" href="../../da/dc3/a00453_source.html">clsSubbasin.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a1447b378b2c46bb34c6c5405651224d5"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -366,131 +428,43 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">float SUR_GreenAmpt::Calculate_WFMP </td>
+          <td class="memname">Subbasin::Subbasin </td>
           <td>(</td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>sol_pol</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>sol_clay</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>sand</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>wetting front matric potential.</p>
+
+<p>Constructor. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">float</td><td>sol_pol: soil porosity </td></tr>
-    <tr><td class="paramname">float</td><td>sol_clay: the percent clay content </td></tr>
-    <tr><td class="paramname">float</td><td>sand: the percent sand content </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">id</td><td><a class="el" href="../../d7/d3f/a00173.html" title="Subbasin related parameters and methods. ">Subbasin</a> ID </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wetting front matric potential </dd></dl>
 
-<p>Definition at line <a class="el" href="../../d1/daa/a00638_source.html#l00516">516</a> of file <a class="el" href="../../d1/daa/a00638_source.html">SUR_GreenAmpt.cpp</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="aa434086908ed2bd204a683f7589540fd"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">float* SUR_GreenAmpt::m_PE</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>from GIS interface Project/model subdirectory Julian day int m_julianDay; output values the excess precipitation (mm) of the total nCells </p>
-
-<p>Definition at line <a class="el" href="../../dd/db6/a00639_source.html#l00140">140</a> of file <a class="el" href="../../dd/db6/a00639_source.html">SUR_GreenAmpt.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a22dd3741c901507c0a8d0e7916ab7977"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">float* SUR_GreenAmpt::m_SD</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Initial depression storage coefficient float m_Depre_in; Depression storage capacity float* m_Depression; depression storage </p>
-
-<p>Definition at line <a class="el" href="../../dd/db6/a00639_source.html#l00114">114</a> of file <a class="el" href="../../dd/db6/a00639_source.html">SUR_GreenAmpt.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a311f8b75a3d69dcb35f0bde55cabbbc3"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">float* SUR_GreenAmpt::m_tMin</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>from interpolation module air temperature of the current day </p>
-
-<p>Definition at line <a class="el" href="../../dd/db6/a00639_source.html#l00117">117</a> of file <a class="el" href="../../dd/db6/a00639_source.html">SUR_GreenAmpt.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d1/d0b/a00452_source.html#l00005">5</a> of file <a class="el" href="../../d1/d0b/a00452_source.html">clsSubbasin.cpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>seims/src/seims_main/modules/hydrology_longterm/SUR_GA/<a class="el" href="../../dd/db6/a00639_source.html">SUR_GreenAmpt.h</a></li>
-<li>seims/src/seims_main/modules/hydrology_longterm/SUR_GA/<a class="el" href="../../d1/daa/a00638_source.html">SUR_GreenAmpt.cpp</a></li>
+<li>seims/src/seims_main/base/data/<a class="el" href="../../da/dc3/a00453_source.html">clsSubbasin.h</a></li>
+<li>seims/src/seims_main/base/data/<a class="el" href="../../d1/d0b/a00452_source.html">clsSubbasin.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../d7/d3f/a00173.html">SUR_GreenAmpt</a></li>
-    <li class="footer">Generated on Fri Jun 8 2018 08:48:08 for SEIMS by
+    <li class="navelem"><a class="el" href="../../d7/d3f/a00173.html">Subbasin</a></li>
+    <li class="footer">Generated on Sat Jun 16 2018 10:00:50 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

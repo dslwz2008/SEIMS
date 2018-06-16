@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: PET_PT</title>
+<title>SEIMS: PG_EPIC</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -108,46 +108,39 @@ $(document).ready(function(){initNavTree('dc/d00/a00820.html','../../');});
   <div class="summary">
 <a href="#nested-classes">Classes</a>  </div>
   <div class="headertitle">
-<div class="title">PET_PT<div class="ingroups"><a class="el" href="../../d9/d00/a00784.html">Hydrology_longterm</a></div></div>  </div>
+<div class="title">PG_EPIC<div class="ingroups"><a class="el" href="../../d8/d2d/a00815.html">Ecology</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Potential evapotranspiration using PriestleyTaylor method.  
+<p>Predicts daily potential growth of total plant biomass and roots and calculates leaf area index incorporated a simplified version of the EPIC plant growth model as in SWAT rev. 637, plantmod.f.  
 <a href="#details">More...</a></p>
 <div class="dynheader">
-Collaboration diagram for PET_PT:</div>
+Collaboration diagram for PG_EPIC:</div>
 <div class="dyncontent">
 <center><table><tr><td><img src="../../dc/d00/a00820.png" border="0" alt="" usemap="#dc_2d00_2a00820"/>
 <map name="dc_2d00_2a00820" id="dc_2d00_2a00820">
-<area shape="rect" id="node1" href="../../d9/d00/a00784.html" title="Longterm hydrology related modules. " alt="" coords="6,4,173,33"/></map>
+<area shape="rect" id="node2" href="../../d8/d2d/a00815.html" title="Ecology related modules. " alt="" coords="5,4,85,33"/></map>
 </td></tr></table></center>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d88/a00128.html">PETPriestleyTaylor</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Priestley Taylor Method to Compute PET.  <a href="../../d1/d88/a00128.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dd4/a00013.html">Biomass_EPIC</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Predicts daily potential growth of total plant biomass and roots and calculates leaf area index incorporated a simplified version of the EPIC plant growth model as in SWAT rev. 637.  <a href="../../d7/dd4/a00013.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Potential evapotranspiration using PriestleyTaylor method. </p>
-<dl class="section author"><dt>Author</dt><dd>Junzhi Liu </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>Nov. 2010  LiangJun Zhu </dd>
-<dd>
-May. 2016 </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>: 1. Add m_tMean from database, which may be measurement value or the mean of tMax and tMin;<ol type="1">
-<li>The PET calculate is changed from site-based to cell-based, because PET is not only dependent on Climate site data;</li>
-<li>Add m_VPD, m_dayLen as outputs, which will be used in BIO_EPIC module</li>
-<li>Add m_phuBase as outputs, which will be used in MGT_SWAT module</li>
-</ol>
-</dd></dl>
-<p>Calculate potential evapotranspiration using PriestleyTaylor method </p>
+<p>Predicts daily potential growth of total plant biomass and roots and calculates leaf area index incorporated a simplified version of the EPIC plant growth model as in SWAT rev. 637, plantmod.f. </p>
+<dl class="section author"><dt>Author</dt><dd>LiangJun Zhu : 2016-06-15 - lj - Initial implementation.<br/>
+ 2016-10-07 - lj - Add some code of CENTURY model calculation.<br/>
+ 2018-05-14 - lj - Code review and reformat code style.<br/>
+ Predicts daily potential growth of total plant biomass and roots and calculates leaf area index incorporated a simplified version of the EPIC plant growth model as in SWAT rev. 637 </dd></dl>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Jun 8 2018 08:48:08 for SEIMS by
+    <li class="footer">Generated on Sat Jun 16 2018 10:00:49 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

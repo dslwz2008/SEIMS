@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: IUH_IF</title>
+<title>SEIMS: Erosion</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -106,37 +106,49 @@ $(document).ready(function(){initNavTree('de/d9d/a00813.html','../../');});
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#groups">Modules</a>  </div>
   <div class="headertitle">
-<div class="title">IUH_IF<div class="ingroups"><a class="el" href="../../d9/d00/a00784.html">Hydrology_longterm</a></div></div>  </div>
+<div class="title">Erosion<div class="ingroups"><a class="el" href="../../dd/d7e/a00809.html">Modules</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>IUH overland method to calculate interflow routing.  
+<p>Erosion related modules.  
 <a href="#details">More...</a></p>
 <div class="dynheader">
-Collaboration diagram for IUH_IF:</div>
+Collaboration diagram for Erosion:</div>
 <div class="dyncontent">
 <center><table><tr><td><img src="../../de/d9d/a00813.png" border="0" alt="" usemap="#de_2d9d_2a00813"/>
 <map name="de_2d9d_2a00813" id="de_2d9d_2a00813">
-<area shape="rect" id="node1" href="../../d9/d00/a00784.html" title="Longterm hydrology related modules. " alt="" coords="6,4,173,33"/></map>
+<area shape="rect" id="node3" href="../../d3/db4/a00823.html" title="Kinematic wave method for channel flow erosion and deposition. " alt="" coords="275,5,415,35"/><area shape="rect" id="node4" href="../../dc/d1b/a00827.html" title="Park Equation for splash erosion. " alt="" coords="276,59,415,88"/><area shape="rect" id="node5" href="../../d8/d1c/a00824.html" title="Kinematic wave method for overland flow erosion and deposition. " alt="" coords="277,112,414,141"/><area shape="rect" id="node6" href="../../dd/d5f/a00825.html" title="use MUSLE method to calculate sediment yield of each cell " alt="" coords="291,165,400,195"/><area shape="rect" id="node7" href="../../da/d90/a00826.html" title="Sediment routing using simplified version of Bagnold(1997) stream power equation which is also the or..." alt="" coords="262,219,429,248"/><area shape="rect" id="node2" href="../../dd/d7e/a00809.html" title="All functional modules in SEIMS. " alt="" coords="5,112,88,141"/></map>
 </td></tr></table></center>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dec/a00080.html">IUH_IF</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">IUH overland method to calculate interflow routing.  <a href="../../da/dec/a00080.html#details">More...</a><br/></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="groups"></a>
+Modules</h2></td></tr>
+<tr class="memitem:d3/db4/a00823"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/db4/a00823.html">KinWavSed_CH</a></td></tr>
+<tr class="memdesc:d3/db4/a00823"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kinematic wave method for channel flow erosion and deposition. <br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:d8/d1c/a00824"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d1c/a00824.html">KinWavSed_OL</a></td></tr>
+<tr class="memdesc:d8/d1c/a00824"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kinematic wave method for overland flow erosion and deposition. <br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:dd/d5f/a00825"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d5f/a00825.html">MUSLE_AS</a></td></tr>
+<tr class="memdesc:dd/d5f/a00825"><td class="mdescLeft">&#160;</td><td class="mdescRight">use MUSLE method to calculate sediment yield of each cell <br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:da/d90/a00826"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d90/a00826.html">SEDR_SBAGNOLD</a></td></tr>
+<tr class="memdesc:da/d90/a00826"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sediment routing using simplified version of Bagnold(1997) stream power equation which is also the original SWAT method. This module routes sediment from subbasin to basin outlet deposition is based on fall velocity and degradation on stream reWrite from route.f and rtsed.f of SWAT. <br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:dc/d1b/a00827"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d1b/a00827.html">SplashEro_Park</a></td></tr>
+<tr class="memdesc:dc/d1b/a00827"><td class="mdescLeft">&#160;</td><td class="mdescRight">Park Equation for splash erosion. <br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>IUH overland method to calculate interflow routing. </p>
+<p>Erosion related modules. </p>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Jun 8 2018 08:48:08 for SEIMS by
+    <li class="footer">Generated on Sat Jun 16 2018 10:00:49 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

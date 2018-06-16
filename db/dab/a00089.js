@@ -1,7 +1,5 @@
 var a00089 =
 [
-    [ "Command", "db/dab/a00089.html#a99fb2121e3b6b6d9e9fdd6969a04029f", null ],
-    [ "Command", "db/dab/a00089.html#a99fb2121e3b6b6d9e9fdd6969a04029f", null ],
-    [ "run", "db/dab/a00089.html#ada4a0d1f8808bf376d2d8f2450376357", null ],
-    [ "run", "db/dab/a00089.html#ada4a0d1f8808bf376d2d8f2450376357", null ]
+    [ "__init__", "db/dab/a00089.html#a61a1c0a42866500fe350a80addf79bb6", null ],
+    [ "__init__", "db/dab/a00089.html#a61a1c0a42866500fe350a80addf79bb6", null ]
 ];

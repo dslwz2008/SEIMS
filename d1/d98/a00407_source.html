@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims/src/reclassify/reclassify_raster.cpp Source File</title>
+<title>SEIMS: seims/src/field_partition/FieldPartition.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -112,114 +112,45 @@ $(document).ready(function(){initNavTree('d1/d98/a00407_source.html','../../');}
 
 <div class="header">
   <div class="headertitle">
-<div class="title">reclassify_raster.cpp</div>  </div>
+<div class="title">FieldPartition.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/***************************************************************************</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">* Purpose: ReClassify raster data.</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">* Author:  Liang-Jun Zhu, Junzhi Liu</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">* E-mail:  zlj@lreis.ac.cn</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">****************************************************************************</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">* Copyright (c) 2017. Liang-Jun Zhu, Junzhi Liu</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">****************************************************************************/</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#if (defined _DEBUG) &amp;&amp; (defined _MSC_VER) &amp;&amp; (defined VLD)</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;vld.h&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* Run Visual Leak Detector during Debug */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#ifdef SUPPORT_OMP</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &lt;omp.h&gt;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SUPPORT_OMP */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;basic.h&quot;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;data_raster.h&quot;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">using namespace </span>ccgl;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">using namespace </span>data_raster;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keywordtype">bool</span> ReadReclassMap(<span class="keyword">const</span> <span class="keywordtype">char</span>* filename, map&lt;int, float&gt;&amp; reclass_map) {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    std::ifstream ofs(filename);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">int</span> n;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    ofs &gt;&gt; n;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">int</span> k;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">float</span> value;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; n; i++) {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        ofs &gt;&gt; k &gt;&gt; value;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        reclass_map[k] = value;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[]) {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="../../db/dde/a00691.html#a57cb6a67e8fa61ebbd975531293499b7">SetDefaultOpenMPThread</a>();</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    GDALAllRegister();</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">if</span> (argc &lt; 2) {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;Usage of reclassify:\n\treclassify configFile\n&quot;</span>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;\nFormat of the config file: \n\n&quot;</span>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;typeLayer defaultType\n&quot;</span>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;lookupFolder\n&quot;</span>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;outputFolder\n&quot;</span>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;numOutputs\n&quot;</span>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;attribute1\n&quot;</span>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;attribute2\n&quot;</span>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;...\n\n&quot;</span>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;NOTE: No space is allowed in the filename currently.\n&quot;</span>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        exit(-1);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">char</span>* config_file = argv[1];</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">// read input information</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">string</span> type_file, lookup_folder, output_folder, tmp;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">int</span> n = 0;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">int</span> default_type = -1;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    vector&lt;string&gt; attr_names;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// read attribute list</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    std::ifstream ifs(config_file);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    ifs &gt;&gt; type_file &gt;&gt; default_type &gt;&gt; lookup_folder &gt;&gt; output_folder &gt;&gt; n;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; n; ++i) {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        ifs &gt;&gt; tmp;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        attr_names.push_back(tmp);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    ifs.close();</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">int</span> n_len = CVT_INT(lookup_folder.length());</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">if</span> (lookup_folder.substr(n_len - 1, 1) != SEP) {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        lookup_folder += SEP;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    n_len = CVT_INT(output_folder.length());</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">if</span> (output_folder.substr(n_len - 1, 1) != SEP) {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        output_folder += SEP;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    clsRasterData&lt;float&gt;* type_raster = <a class="code" href="../../d6/d5b/a00026.html#a64db769d823cac39236be7c8423c9288">clsRasterData&lt;float&gt;::Init</a>(type_file);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; n; ++i) {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordtype">string</span> lookup_file = lookup_folder + attr_names[i] + <span class="stringliteral">&quot;.txt&quot;</span>;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordtype">string</span> output_file = output_folder + attr_names[i] + <span class="stringliteral">&quot;.tif&quot;</span>;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        clsRasterData&lt;float&gt;* output_layer = <span class="keyword">new</span> clsRasterData&lt;float&gt;(type_raster);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        map&lt;int, float&gt; reclass_map;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        ReadReclassMap(lookup_file.c_str(), reclass_map);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        output_layer-&gt;Reclassify(reclass_map);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        output_layer-&gt;OutputToFile(output_file);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keyword">delete</span> output_layer;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="comment">// release memory</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keyword">delete</span> type_raster;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
-<div class="ttc" id="a00026_html_a64db769d823cac39236be7c8423c9288"><div class="ttname"><a href="../../d6/d5b/a00026.html#a64db769d823cac39236be7c8423c9288">ccgl::data_raster::clsRasterData::Init</a></div><div class="ttdeci">static clsRasterData&lt; T, MASK_T &gt; * Init(const string &amp;filename, bool calc_pos=true, clsRasterData&lt; MASK_T &gt; *mask=nullptr, bool use_mask_ext=true, T default_value=static_cast&lt; T &gt;(NODATA_VALUE))</div><div class="ttdoc">Validation check before the constructor of clsRasterData, i.e., the raster file is existed and suppor...</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d50/a00332_source.html#l00997">data_raster.h:997</a></div></div>
-<div class="ttc" id="a00691_html_a57cb6a67e8fa61ebbd975531293499b7"><div class="ttname"><a href="../../db/dde/a00691.html#a57cb6a67e8fa61ebbd975531293499b7">ccgl::SetDefaultOpenMPThread</a></div><div class="ttdeci">void SetDefaultOpenMPThread()</div><div class="ttdoc">Set the default omp thread number if necessary. </div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d4e/a00329_source.html#l00112">basic.cpp:112</a></div></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef FIELD_PARTITION_HEADER</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define FIELD_PARTITION_HEADER</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;data_raster.h&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">using namespace </span>ccgl::data_raster;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">enum</span> FlowDirectionMethod {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    TauDEM = 0,</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    ArcGIS = 1</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;};</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#ifndef IntRaster</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define IntRaster   clsRasterData&lt;int&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#ifndef FloatRaster</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define FloatRaster clsRasterData&lt;float&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">void</span> findOutlet(FloatRaster *rsDEM, IntRaster *rsStreamLink, IntRaster *rsDir,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                FlowDirectionMethod flowDirMtd, <span class="keywordtype">int</span> &amp;rowIndex, <span class="keywordtype">int</span> &amp;colIndex);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keywordtype">void</span> DoFieldsPartition(<span class="keyword">const</span> <span class="keywordtype">char</span> *dirName, <span class="keyword">const</span> <span class="keywordtype">char</span> *LanduName, <span class="keyword">const</span> <span class="keywordtype">char</span> *maskName,</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                       <span class="keyword">const</span> <span class="keywordtype">char</span> *demName, <span class="keyword">const</span> <span class="keywordtype">char</span> *streamLinkName,</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                       FlowDirectionMethod flowDirMtd, <span class="keywordtype">int</span> threshod);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keywordtype">void</span> PrintUsage();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_beb3f9883d44e3d8b4cbf23cb03a9166.html">reclassify</a></li><li class="navelem"><b>reclassify_raster.cpp</b></li>
-    <li class="footer">Generated on Fri Jun 8 2018 08:48:06 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_5dad1625e7f9729766baa8f13d29b59c.html">field_partition</a></li><li class="navelem"><b>FieldPartition.h</b></li>
+    <li class="footer">Generated on Sat Jun 16 2018 10:00:48 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

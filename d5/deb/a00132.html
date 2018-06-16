@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: bmps::PointSourceMgtParams Class Reference</title>
+<title>SEIMS: bmps::plant_management::PltOp Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -115,177 +115,120 @@ $(document).ready(function(){initNavTree('d5/deb/a00132.html','../../');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
-<a href="../../db/d08/a01028.html">List of all members</a>  </div>
+<a href="../../d0/dc9/a01065.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">bmps::PointSourceMgtParams Class Reference</div>  </div>
+<div class="title">bmps::plant_management::PltOp Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Point source management parameters.  
+<p>Plant management operation.  
  <a href="../../d5/deb/a00132.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="../../d8/de7/a00417_source.html">BMPPointSourceFactory.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="../../d4/da8/a00437_source.html">PlantManagementOperation.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for bmps::PointSourceMgtParams:</div>
+Inheritance diagram for bmps::plant_management::PltOp:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d0/daa/a01029.png" border="0" usemap="#bmps_1_1_point_source_mgt_params_inherit__map" alt="Inheritance graph"/></div>
-<map name="bmps_1_1_point_source_mgt_params_inherit__map" id="bmps_1_1_point_source_mgt_params_inherit__map">
-<area shape="rect" id="node2" href="../../d9/da5/a00075.html" title="Base type of all interfaces. All interface types are encouraged to be virtual inherited. " alt="" coords="64,173,184,259"/><area shape="rect" id="node3" href="../../d1/dd6/a00108.html" title="Base class for classes that cannot be copied. By inheriting this class you can disable copying of you..." alt="" coords="47,5,200,125"/></map>
+<div class="center"><img src="../../d0/dfb/a01066.png" border="0" usemap="#bmps_1_1plant__management_1_1_plt_op_inherit__map" alt="Inheritance graph"/></div>
+<map name="bmps_1_1plant__management_1_1_plt_op_inherit__map" id="bmps_1_1plant__management_1_1_plt_op_inherit__map">
+<area shape="rect" id="node2" href="../../d7/d06/a00131.html" title="Base class of plant management operation. " alt="" coords="5,307,211,618"/><area shape="rect" id="node3" href="../../db/df8/a00076.html" title="Base type of all interfaces. All interface types are encouraged to be virtual inherited. " alt="" coords="48,173,168,259"/><area shape="rect" id="node4" href="../../d4/d81/a00110.html" title="Base class for classes that cannot be copied. By inheriting this class you can disable copying of you..." alt="" coords="31,5,184,125"/></map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a96fb717d1a763ff6323c602155136b4d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/deb/a00132.html#a96fb717d1a763ff6323c602155136b4d">PointSourceMgtParams</a> (const bson_t *&amp;bsonTable, bson_iter_t &amp;iter)</td></tr>
-<tr class="memdesc:a96fb717d1a763ff6323c602155136b4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor, parse point source management parameters from bson object.  <a href="#a96fb717d1a763ff6323c602155136b4d">More...</a><br/></td></tr>
-<tr class="separator:a96fb717d1a763ff6323c602155136b4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97dc5a70cbea6c9a35ddb1a8d6a5780e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/deb/a00132.html#a97dc5a70cbea6c9a35ddb1a8d6a5780e">Dump</a> (std::ostream *fs)</td></tr>
-<tr class="memdesc:a97dc5a70cbea6c9a35ddb1a8d6a5780e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="#a97dc5a70cbea6c9a35ddb1a8d6a5780e">More...</a><br/></td></tr>
-<tr class="separator:a97dc5a70cbea6c9a35ddb1a8d6a5780e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab180864d91a4d222bf7255956c417d38"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab180864d91a4d222bf7255956c417d38"></a>
-time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/deb/a00132.html#ab180864d91a4d222bf7255956c417d38">GetStartDate</a> ()</td></tr>
-<tr class="memdesc:ab180864d91a4d222bf7255956c417d38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get start date of the current management operation. <br/></td></tr>
-<tr class="separator:ab180864d91a4d222bf7255956c417d38"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa24d8b7d5fceb52b352bba97cf7cee74"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa24d8b7d5fceb52b352bba97cf7cee74"></a>
-time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/deb/a00132.html#aa24d8b7d5fceb52b352bba97cf7cee74">GetEndDate</a> ()</td></tr>
-<tr class="memdesc:aa24d8b7d5fceb52b352bba97cf7cee74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get end date. <br/></td></tr>
-<tr class="separator:aa24d8b7d5fceb52b352bba97cf7cee74"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:addc4a868d519ca2b660884677dc34f99"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="addc4a868d519ca2b660884677dc34f99"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/deb/a00132.html#addc4a868d519ca2b660884677dc34f99">GetSequence</a> ()</td></tr>
-<tr class="memdesc:addc4a868d519ca2b660884677dc34f99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get sequence number. <br/></td></tr>
-<tr class="separator:addc4a868d519ca2b660884677dc34f99"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeac482a459b92501706fc6103db8efab"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeac482a459b92501706fc6103db8efab"></a>
-string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/deb/a00132.html#aeac482a459b92501706fc6103db8efab">GetSubScenarioName</a> ()</td></tr>
-<tr class="memdesc:aeac482a459b92501706fc6103db8efab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get subScenario name. <br/></td></tr>
-<tr class="separator:aeac482a459b92501706fc6103db8efab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ca155bae13eeb30f26922e36fd55ef1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0ca155bae13eeb30f26922e36fd55ef1"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/deb/a00132.html#a0ca155bae13eeb30f26922e36fd55ef1">GetWaterVolume</a> ()</td></tr>
-<tr class="memdesc:a0ca155bae13eeb30f26922e36fd55ef1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get water volume. <br/></td></tr>
-<tr class="separator:a0ca155bae13eeb30f26922e36fd55ef1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28c3b47e3647c7fb0fd1001f86ff5745"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a28c3b47e3647c7fb0fd1001f86ff5745"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/deb/a00132.html#a28c3b47e3647c7fb0fd1001f86ff5745">GetSedment</a> ()</td></tr>
-<tr class="memdesc:a28c3b47e3647c7fb0fd1001f86ff5745"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get sediment concentration. <br/></td></tr>
-<tr class="separator:a28c3b47e3647c7fb0fd1001f86ff5745"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a527c40907229c93384bb29731f04ed32"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a527c40907229c93384bb29731f04ed32"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/deb/a00132.html#a527c40907229c93384bb29731f04ed32">GetTN</a> ()</td></tr>
-<tr class="memdesc:a527c40907229c93384bb29731f04ed32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get sediment concentration. <br/></td></tr>
-<tr class="separator:a527c40907229c93384bb29731f04ed32"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6c77dd49e50a39cf320bebd1f37a736"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae6c77dd49e50a39cf320bebd1f37a736"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/deb/a00132.html#ae6c77dd49e50a39cf320bebd1f37a736">GetNO3</a> ()</td></tr>
-<tr class="memdesc:ae6c77dd49e50a39cf320bebd1f37a736"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get NO3 concentration. <br/></td></tr>
-<tr class="separator:ae6c77dd49e50a39cf320bebd1f37a736"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d557d2d333ed9f064baf823706d15e2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2d557d2d333ed9f064baf823706d15e2"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/deb/a00132.html#a2d557d2d333ed9f064baf823706d15e2">GetNH4</a> ()</td></tr>
-<tr class="memdesc:a2d557d2d333ed9f064baf823706d15e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get NH4 concentration. <br/></td></tr>
-<tr class="separator:a2d557d2d333ed9f064baf823706d15e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80405edd741540ae449a2485c32c4cf8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a80405edd741540ae449a2485c32c4cf8"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/deb/a00132.html#a80405edd741540ae449a2485c32c4cf8">GetOrgN</a> ()</td></tr>
-<tr class="memdesc:a80405edd741540ae449a2485c32c4cf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get OrgN concentration. <br/></td></tr>
-<tr class="separator:a80405edd741540ae449a2485c32c4cf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34616e3e7ba702f92eeed6b1d93f7946"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a34616e3e7ba702f92eeed6b1d93f7946"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/deb/a00132.html#a34616e3e7ba702f92eeed6b1d93f7946">GetTP</a> ()</td></tr>
-<tr class="memdesc:a34616e3e7ba702f92eeed6b1d93f7946"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get TP concentration. <br/></td></tr>
-<tr class="separator:a34616e3e7ba702f92eeed6b1d93f7946"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2bc65aaaf5de203720e5b70a1bdb02df"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2bc65aaaf5de203720e5b70a1bdb02df"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/deb/a00132.html#a2bc65aaaf5de203720e5b70a1bdb02df">GetSolP</a> ()</td></tr>
-<tr class="memdesc:a2bc65aaaf5de203720e5b70a1bdb02df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get SolP concentration. <br/></td></tr>
-<tr class="separator:a2bc65aaaf5de203720e5b70a1bdb02df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c998d8504a5bfbd02f096bdf159cf7e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7c998d8504a5bfbd02f096bdf159cf7e"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/deb/a00132.html#a7c998d8504a5bfbd02f096bdf159cf7e">GetOrgP</a> ()</td></tr>
-<tr class="memdesc:a7c998d8504a5bfbd02f096bdf159cf7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get OrgP concentration. <br/></td></tr>
-<tr class="separator:a7c998d8504a5bfbd02f096bdf159cf7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45a60b2fe7a3195f2fc372de6fd1c6a0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a45a60b2fe7a3195f2fc372de6fd1c6a0"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/deb/a00132.html#a45a60b2fe7a3195f2fc372de6fd1c6a0">GetCOD</a> ()</td></tr>
-<tr class="memdesc:a45a60b2fe7a3195f2fc372de6fd1c6a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get COD concentration. <br/></td></tr>
-<tr class="separator:a45a60b2fe7a3195f2fc372de6fd1c6a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:a26653373961c15a5575e949ac961681e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a26653373961c15a5575e949ac961681e"></a>
-string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/deb/a00132.html#a26653373961c15a5575e949ac961681e">m_name</a></td></tr>
-<tr class="memdesc:a26653373961c15a5575e949ac961681e"><td class="mdescLeft">&#160;</td><td class="mdescRight">subSecenario name <br/></td></tr>
-<tr class="separator:a26653373961c15a5575e949ac961681e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00421a937ced62a5d17018b011f50511"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a00421a937ced62a5d17018b011f50511"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/deb/a00132.html#a00421a937ced62a5d17018b011f50511">m_seqence</a></td></tr>
-<tr class="memdesc:a00421a937ced62a5d17018b011f50511"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sequence number of management. <br/></td></tr>
-<tr class="separator:a00421a937ced62a5d17018b011f50511"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeadb0e318cb26db27cffc3bfb8baed1b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeadb0e318cb26db27cffc3bfb8baed1b"></a>
-time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/deb/a00132.html#aeadb0e318cb26db27cffc3bfb8baed1b">m_startDate</a></td></tr>
-<tr class="memdesc:aeadb0e318cb26db27cffc3bfb8baed1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start date. <br/></td></tr>
-<tr class="separator:aeadb0e318cb26db27cffc3bfb8baed1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6312e8708fd478424b9e650447d69390"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6312e8708fd478424b9e650447d69390"></a>
-time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/deb/a00132.html#a6312e8708fd478424b9e650447d69390">m_endDate</a></td></tr>
-<tr class="memdesc:a6312e8708fd478424b9e650447d69390"><td class="mdescLeft">&#160;</td><td class="mdescRight">End date. <br/></td></tr>
-<tr class="separator:a6312e8708fd478424b9e650447d69390"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80d8849a469565a72e58c3b13d4a9cef"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a80d8849a469565a72e58c3b13d4a9cef"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/deb/a00132.html#a80d8849a469565a72e58c3b13d4a9cef">m_waterVolume</a></td></tr>
-<tr class="memdesc:a80d8849a469565a72e58c3b13d4a9cef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Q Water volume m3/'size'/day ('Size' may be one cattle or one pig, depends on PTSRC code) <br/></td></tr>
-<tr class="separator:a80d8849a469565a72e58c3b13d4a9cef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef8a6e60fd3c72d1cc44111820e9395e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aef8a6e60fd3c72d1cc44111820e9395e"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/deb/a00132.html#aef8a6e60fd3c72d1cc44111820e9395e">m_sedimentConc</a></td></tr>
-<tr class="memdesc:aef8a6e60fd3c72d1cc44111820e9395e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sed Sediment concentration g/cm3, or Mg/m3. <br/></td></tr>
-<tr class="separator:aef8a6e60fd3c72d1cc44111820e9395e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a69d9fb6f38368ec4c3aeb063814280f0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a69d9fb6f38368ec4c3aeb063814280f0"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/deb/a00132.html#a69d9fb6f38368ec4c3aeb063814280f0">m_TNConc</a></td></tr>
-<tr class="memdesc:a69d9fb6f38368ec4c3aeb063814280f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">TN Total Nitrogen concentration mg/L. <br/></td></tr>
-<tr class="separator:a69d9fb6f38368ec4c3aeb063814280f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:affb6ea5cd420c7291554dad8c9946eae"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="affb6ea5cd420c7291554dad8c9946eae"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/deb/a00132.html#affb6ea5cd420c7291554dad8c9946eae">m_NO3Conc</a></td></tr>
-<tr class="memdesc:affb6ea5cd420c7291554dad8c9946eae"><td class="mdescLeft">&#160;</td><td class="mdescRight">NO3 Nitrate Nitrogen concentration mg/L. <br/></td></tr>
-<tr class="separator:affb6ea5cd420c7291554dad8c9946eae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0363bef23d21975bca8c163d3a7968ce"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0363bef23d21975bca8c163d3a7968ce"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/deb/a00132.html#a0363bef23d21975bca8c163d3a7968ce">m_NH4Conc</a></td></tr>
-<tr class="memdesc:a0363bef23d21975bca8c163d3a7968ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">NH4 Ammonium Nitrogen concentration mg/L. <br/></td></tr>
-<tr class="separator:a0363bef23d21975bca8c163d3a7968ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8bd4fe434e9a788a88c65c06035b3aaa"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8bd4fe434e9a788a88c65c06035b3aaa"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/deb/a00132.html#a8bd4fe434e9a788a88c65c06035b3aaa">m_OrgNConc</a></td></tr>
-<tr class="memdesc:a8bd4fe434e9a788a88c65c06035b3aaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">ORGN Organic Nitrogen concentration mg/L. <br/></td></tr>
-<tr class="separator:a8bd4fe434e9a788a88c65c06035b3aaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add33fa524323b66d0af1864c6fe3517d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="add33fa524323b66d0af1864c6fe3517d"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/deb/a00132.html#add33fa524323b66d0af1864c6fe3517d">m_TPConc</a></td></tr>
-<tr class="memdesc:add33fa524323b66d0af1864c6fe3517d"><td class="mdescLeft">&#160;</td><td class="mdescRight">TP Total phosphorus concentration mg/L. <br/></td></tr>
-<tr class="separator:add33fa524323b66d0af1864c6fe3517d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e2d85b5de34abf401f2dacc919c85d4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6e2d85b5de34abf401f2dacc919c85d4"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/deb/a00132.html#a6e2d85b5de34abf401f2dacc919c85d4">m_SolPConc</a></td></tr>
-<tr class="memdesc:a6e2d85b5de34abf401f2dacc919c85d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">SOLP Soluble phosphorus concentration mg/L. <br/></td></tr>
-<tr class="separator:a6e2d85b5de34abf401f2dacc919c85d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acae134b4821748b0ea9d66164084a6df"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acae134b4821748b0ea9d66164084a6df"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/deb/a00132.html#acae134b4821748b0ea9d66164084a6df">m_OrgPConc</a></td></tr>
-<tr class="memdesc:acae134b4821748b0ea9d66164084a6df"><td class="mdescLeft">&#160;</td><td class="mdescRight">ORGP Organic phosphorus concentration mg/L. <br/></td></tr>
-<tr class="separator:acae134b4821748b0ea9d66164084a6df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46e872e6dfef3f8f658090c601f5e7ce"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a46e872e6dfef3f8f658090c601f5e7ce"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/deb/a00132.html#a46e872e6dfef3f8f658090c601f5e7ce">m_COD</a></td></tr>
-<tr class="memdesc:a46e872e6dfef3f8f658090c601f5e7ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">COD mg/L. <br/></td></tr>
-<tr class="separator:a46e872e6dfef3f8f658090c601f5e7ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb9a28f5c4ded6a13819f2b679751c81"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/deb/a00132.html#aeb9a28f5c4ded6a13819f2b679751c81">PltOp</a> (int mgtOp, bool usebaseHU, float husc, int year, int month, int day, float *parameters)</td></tr>
+<tr class="memdesc:aeb9a28f5c4ded6a13819f2b679751c81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Plant.  <a href="#aeb9a28f5c4ded6a13819f2b679751c81">More...</a><br/></td></tr>
+<tr class="separator:aeb9a28f5c4ded6a13819f2b679751c81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07bf67232d0b42d1fbad506d00b9f35c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a07bf67232d0b42d1fbad506d00b9f35c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/deb/a00132.html#a07bf67232d0b42d1fbad506d00b9f35c">dump</a> (std::ostream *fs) OVERRIDE</td></tr>
+<tr class="memdesc:a07bf67232d0b42d1fbad506d00b9f35c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output. <br/></td></tr>
+<tr class="separator:a07bf67232d0b42d1fbad506d00b9f35c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_a00131"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a00131')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d7/d06/a00131.html">bmps::plant_management::PltMgtOp</a></td></tr>
+<tr class="memitem:acb6e9d50049e9a847854a3e1c9745c02 inherit pub_methods_a00131"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d06/a00131.html#acb6e9d50049e9a847854a3e1c9745c02">PltMgtOp</a> (int mgtOp, bool usebaseHU, float husc, int year, int month, int day, float *parameters)</td></tr>
+<tr class="memdesc:acb6e9d50049e9a847854a3e1c9745c02 inherit pub_methods_a00131"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#acb6e9d50049e9a847854a3e1c9745c02">More...</a><br/></td></tr>
+<tr class="separator:acb6e9d50049e9a847854a3e1c9745c02 inherit pub_methods_a00131"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pub_methods_a00075"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a00075')"><img src="../../closed.png" alt="-"/>&#160;Private Member Functions inherited from <a class="el" href="../../d9/da5/a00075.html">ccgl::Interface</a></td></tr>
-<tr class="memitem:a7325510a5111ae7d2a75662393075e10 inherit pub_methods_a00075"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7325510a5111ae7d2a75662393075e10"></a>
-virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html#a7325510a5111ae7d2a75662393075e10">~Interface</a> ()</td></tr>
-<tr class="memdesc:a7325510a5111ae7d2a75662393075e10 inherit pub_methods_a00075"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d9/da5/a00075.html" title="Base type of all interfaces. All interface types are encouraged to be virtual inherited. ">Interface</a>. <br/></td></tr>
-<tr class="separator:a7325510a5111ae7d2a75662393075e10 inherit pub_methods_a00075"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_a00131"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_a00131')"><img src="../../closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="../../d7/d06/a00131.html">bmps::plant_management::PltMgtOp</a></td></tr>
+<tr class="memitem:a4efe57d00c968714317ebe28444b6d88 inherit pro_attribs_a00131"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4efe57d00c968714317ebe28444b6d88"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d06/a00131.html#a4efe57d00c968714317ebe28444b6d88">m_useBaseHUSC</a></td></tr>
+<tr class="memdesc:a4efe57d00c968714317ebe28444b6d88 inherit pro_attribs_a00131"><td class="mdescLeft">&#160;</td><td class="mdescRight">use base hu or plant accumulated hu <br/></td></tr>
+<tr class="separator:a4efe57d00c968714317ebe28444b6d88 inherit pro_attribs_a00131"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43291ea426480483b35c9894747bd7b9 inherit pro_attribs_a00131"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a43291ea426480483b35c9894747bd7b9"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d06/a00131.html#a43291ea426480483b35c9894747bd7b9">m_frHU</a></td></tr>
+<tr class="memdesc:a43291ea426480483b35c9894747bd7b9 inherit pro_attribs_a00131"><td class="mdescLeft">&#160;</td><td class="mdescRight">husc <br/></td></tr>
+<tr class="separator:a43291ea426480483b35c9894747bd7b9 inherit pro_attribs_a00131"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d7937ad39e3961840e6644fcdeea70f inherit pro_attribs_a00131"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6d7937ad39e3961840e6644fcdeea70f"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d06/a00131.html#a6d7937ad39e3961840e6644fcdeea70f">m_year</a></td></tr>
+<tr class="memdesc:a6d7937ad39e3961840e6644fcdeea70f inherit pro_attribs_a00131"><td class="mdescLeft">&#160;</td><td class="mdescRight">year <br/></td></tr>
+<tr class="separator:a6d7937ad39e3961840e6644fcdeea70f inherit pro_attribs_a00131"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e1774938a3cc4a3e83bfb6283624568 inherit pro_attribs_a00131"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1e1774938a3cc4a3e83bfb6283624568"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d06/a00131.html#a1e1774938a3cc4a3e83bfb6283624568">m_month</a></td></tr>
+<tr class="memdesc:a1e1774938a3cc4a3e83bfb6283624568 inherit pro_attribs_a00131"><td class="mdescLeft">&#160;</td><td class="mdescRight">month <br/></td></tr>
+<tr class="separator:a1e1774938a3cc4a3e83bfb6283624568 inherit pro_attribs_a00131"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b988810d1b1d9212bcf7048755a61a2 inherit pro_attribs_a00131"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7b988810d1b1d9212bcf7048755a61a2"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d06/a00131.html#a7b988810d1b1d9212bcf7048755a61a2">m_day</a></td></tr>
+<tr class="memdesc:a7b988810d1b1d9212bcf7048755a61a2 inherit pro_attribs_a00131"><td class="mdescLeft">&#160;</td><td class="mdescRight">day <br/></td></tr>
+<tr class="separator:a7b988810d1b1d9212bcf7048755a61a2 inherit pro_attribs_a00131"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65c47c117173fa9fd208f6bb2855d915 inherit pro_attribs_a00131"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a65c47c117173fa9fd208f6bb2855d915"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d06/a00131.html#a65c47c117173fa9fd208f6bb2855d915">m_mgtOp</a></td></tr>
+<tr class="memdesc:a65c47c117173fa9fd208f6bb2855d915 inherit pro_attribs_a00131"><td class="mdescLeft">&#160;</td><td class="mdescRight">management operation code <br/></td></tr>
+<tr class="separator:a65c47c117173fa9fd208f6bb2855d915 inherit pro_attribs_a00131"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c69b23715eaa5cdf8f9a2d9f6eb68f5 inherit pro_attribs_a00131"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7c69b23715eaa5cdf8f9a2d9f6eb68f5"></a>
+float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d06/a00131.html#a7c69b23715eaa5cdf8f9a2d9f6eb68f5">m_parameters</a></td></tr>
+<tr class="memdesc:a7c69b23715eaa5cdf8f9a2d9f6eb68f5 inherit pro_attribs_a00131"><td class="mdescLeft">&#160;</td><td class="mdescRight">parameters, mgt1~mgt10 <br/></td></tr>
+<tr class="separator:a7c69b23715eaa5cdf8f9a2d9f6eb68f5 inherit pro_attribs_a00131"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Point source management parameters. </p>
+<div class="textblock"><p>Plant management operation. </p>
 
-<p>Definition at line <a class="el" href="../../d8/de7/a00417_source.html#l00094">94</a> of file <a class="el" href="../../d8/de7/a00417_source.html">BMPPointSourceFactory.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d4/da8/a00437_source.html#l00077">77</a> of file <a class="el" href="../../d4/da8/a00437_source.html">PlantManagementOperation.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a96fb717d1a763ff6323c602155136b4d"></a>
+<a class="anchor" id="aeb9a28f5c4ded6a13819f2b679751c81"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">PointSourceMgtParams::PointSourceMgtParams </td>
+          <td class="memname">PltOp::PltOp </td>
           <td>(</td>
-          <td class="paramtype">const bson_t *&amp;&#160;</td>
-          <td class="paramname"><em>bsonTable</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>mgtOp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bson_iter_t &amp;&#160;</td>
-          <td class="paramname"><em>iter</em>&#160;</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>usebaseHU</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>husc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>year</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>month</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>day</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>parameters</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -295,52 +238,24 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=".
       </table>
 </div><div class="memdoc">
 
-<p>Constructor, parse point source management parameters from bson object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">bsonTable</td><td>Query result from MongoDB </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">iter</td><td>Iterator of bsonTab </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Plant. </p>
+<p>tons/ha =&gt; kg/ha </p>
 
-<p>Definition at line <a class="el" href="../../df/d15/a00416_source.html#l00145">145</a> of file <a class="el" href="../../df/d15/a00416_source.html">BMPPointSourceFactory.cpp</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a97dc5a70cbea6c9a35ddb1a8d6a5780e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void PointSourceMgtParams::Dump </td>
-          <td>(</td>
-          <td class="paramtype">std::ostream *&#160;</td>
-          <td class="paramname"><em>fs</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Destructor. </p>
-<p>Output </p>
-
-<p>Definition at line <a class="el" href="../../df/d15/a00416_source.html#l00212">212</a> of file <a class="el" href="../../df/d15/a00416_source.html">BMPPointSourceFactory.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d4/d82/a00436_source.html#l00021">21</a> of file <a class="el" href="../../d4/d82/a00436_source.html">PlantManagementOperation.cpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>seims/src/seims_main/base/bmps/<a class="el" href="../../d8/de7/a00417_source.html">BMPPointSourceFactory.h</a></li>
-<li>seims/src/seims_main/base/bmps/<a class="el" href="../../df/d15/a00416_source.html">BMPPointSourceFactory.cpp</a></li>
+<li>seims/src/seims_main/base/bmps/<a class="el" href="../../d4/da8/a00437_source.html">PlantManagementOperation.h</a></li>
+<li>seims/src/seims_main/base/bmps/<a class="el" href="../../d4/d82/a00436_source.html">PlantManagementOperation.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../d1/d87/a00689.html">bmps</a></li><li class="navelem"><a class="el" href="../../d5/deb/a00132.html">PointSourceMgtParams</a></li>
-    <li class="footer">Generated on Fri Jun 8 2018 08:48:09 for SEIMS by
+    <li class="navelem"><a class="el" href="../../de/d4c/a00711.html">bmps</a></li><li class="navelem"><a class="el" href="../../d3/dda/a00712.html">plant_management</a></li><li class="navelem"><a class="el" href="../../d5/deb/a00132.html">PltOp</a></li>
+    <li class="footer">Generated on Sat Jun 16 2018 10:00:51 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

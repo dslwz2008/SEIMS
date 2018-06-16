@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims/src/field_partition/FieldPartition.h Source File</title>
+<title>SEIMS: seims/src/combine_raster/CombineRaster.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -112,45 +112,50 @@ $(document).ready(function(){initNavTree('d9/d0a/a00390_source.html','../../');}
 
 <div class="header">
   <div class="headertitle">
-<div class="title">FieldPartition.h</div>  </div>
+<div class="title">CombineRaster.h</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef FIELD_PARTITION_HEADER</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define FIELD_PARTITION_HEADER</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;data_raster.h&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">using namespace </span>ccgl::data_raster;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">enum</span> FlowDirectionMethod {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    TauDEM = 0,</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    ArcGIS = 1</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;};</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#ifndef COMBINE_RASTER_H</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define COMBINE_RASTER_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#ifdef USE_MONGODB</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;db_mongoc.h&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* USE_MONGODB */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;data_raster.h&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">using namespace </span>ccgl;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#ifdef USE_MONGODB</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor"></span><span class="keyword">using namespace </span>db_mongoc;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* USE_MONGODB */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor"></span><span class="keyword">using namespace </span>data_raster;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#ifndef IntRaster</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define IntRaster   clsRasterData&lt;int&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#ifndef FloatRaster</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define FloatRaster     clsRasterData&lt;float&gt;</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#ifndef FloatRaster</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define FloatRaster clsRasterData&lt;float&gt;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#ifndef IntRaster</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define IntRaster       clsRasterData&lt;int&gt;</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">void</span> findOutlet(FloatRaster *rsDEM, IntRaster *rsStreamLink, IntRaster *rsDir,</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                FlowDirectionMethod flowDirMtd, <span class="keywordtype">int</span> &amp;rowIndex, <span class="keywordtype">int</span> &amp;colIndex);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keywordtype">void</span> DoFieldsPartition(<span class="keyword">const</span> <span class="keywordtype">char</span> *dirName, <span class="keyword">const</span> <span class="keywordtype">char</span> *LanduName, <span class="keyword">const</span> <span class="keywordtype">char</span> *maskName,</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                       <span class="keyword">const</span> <span class="keywordtype">char</span> *demName, <span class="keyword">const</span> <span class="keywordtype">char</span> *streamLinkName,</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                       FlowDirectionMethod flowDirMtd, <span class="keywordtype">int</span> threshod);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keywordtype">void</span> PrintUsage();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;FloatRaster* CombineRasters(map&lt;int, FloatRaster *&gt;&amp; all_raster_data);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keywordtype">void</span> CombineRasterResults(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; folder, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; s_var,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                          <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; file_type, <span class="keywordtype">int</span> n_subbasins);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#ifdef USE_MONGODB</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keywordtype">void</span> CombineRasterResultsMongo(MongoGridFs* gfs, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; s_var,</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                               <span class="keywordtype">int</span> n_subbasins, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; folder = <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* USE_MONGODB */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* COMBINE_RASTER_H */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_5dad1625e7f9729766baa8f13d29b59c.html">field_partition</a></li><li class="navelem"><b>FieldPartition.h</b></li>
-    <li class="footer">Generated on Fri Jun 8 2018 08:48:06 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_4879c05926c8624a2b296461fbfee665.html">combine_raster</a></li><li class="navelem"><b>CombineRaster.h</b></li>
+    <li class="footer">Generated on Sat Jun 16 2018 10:00:48 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
