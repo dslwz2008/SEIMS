@@ -139,15 +139,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a654b7ddded4a7c67da14732e761e6b18"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d6d/a00111.html#a654b7ddded4a7c67da14732e761e6b18">NotRegularMeasurement</a> (MongoClient *conn, string &amp;hydroDBName, string &amp;sitesList, string &amp;siteType, time_t startTime, time_t endTime)</td></tr>
 <tr class="memdesc:a654b7ddded4a7c67da14732e761e6b18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a654b7ddded4a7c67da14732e761e6b18">More...</a><br/></td></tr>
 <tr class="separator:a654b7ddded4a7c67da14732e761e6b18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45a77687a0d93759187b3241ebcbb465"><td class="memItemLeft" align="right" valign="top">float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d6d/a00111.html#a45a77687a0d93759187b3241ebcbb465">GetSiteDataByTime</a> (time_t t) OVERRIDE</td></tr>
-<tr class="memdesc:a45a77687a0d93759187b3241ebcbb465"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="#a45a77687a0d93759187b3241ebcbb465">More...</a><br/></td></tr>
+<tr class="memitem:a45a77687a0d93759187b3241ebcbb465"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a45a77687a0d93759187b3241ebcbb465"></a>
+float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d6d/a00111.html#a45a77687a0d93759187b3241ebcbb465">GetSiteDataByTime</a> (time_t t) OVERRIDE</td></tr>
+<tr class="memdesc:a45a77687a0d93759187b3241ebcbb465"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get site date by time <em>pData</em>. <br/></td></tr>
 <tr class="separator:a45a77687a0d93759187b3241ebcbb465"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_a00092"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a00092')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d1/dc1/a00092.html">Measurement</a></td></tr>
 <tr class="memitem:aba49ae06e579cebcb0f6c36d798def44 inherit pub_methods_a00092"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dc1/a00092.html#aba49ae06e579cebcb0f6c36d798def44">Measurement</a> (MongoClient *conn, string &amp;hydroDBName, string &amp;sitesList, string &amp;siteType, time_t startTime, time_t endTime)</td></tr>
 <tr class="memdesc:aba49ae06e579cebcb0f6c36d798def44 inherit pub_methods_a00092"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize <a class="el" href="../../d1/dc1/a00092.html" title="Get HydroClimate measurement data from MongoDB. ">Measurement</a> instance from MongoDB.  <a href="#aba49ae06e579cebcb0f6c36d798def44">More...</a><br/></td></tr>
 <tr class="separator:aba49ae06e579cebcb0f6c36d798def44 inherit pub_methods_a00092"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac94dd8728fe078e337e9ac4b2187a5dc inherit pub_methods_a00092"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac94dd8728fe078e337e9ac4b2187a5dc"></a>
-virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dc1/a00092.html#ac94dd8728fe078e337e9ac4b2187a5dc">~Measurement</a> ()</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dc1/a00092.html#ac94dd8728fe078e337e9ac4b2187a5dc">~Measurement</a> ()</td></tr>
 <tr class="memdesc:ac94dd8728fe078e337e9ac4b2187a5dc inherit pub_methods_a00092"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br/></td></tr>
 <tr class="separator:ac94dd8728fe078e337e9ac4b2187a5dc inherit pub_methods_a00092"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5adee45804fa27da97ecf8e5979717ea inherit pub_methods_a00092"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5adee45804fa27da97ecf8e5979717ea"></a>
@@ -292,38 +293,6 @@ float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=".
 
 </div>
 </div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a45a77687a0d93759187b3241ebcbb465"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">float * NotRegularMeasurement::GetSiteDataByTime </td>
-          <td>(</td>
-          <td class="paramtype">time_t&#160;</td>
-          <td class="paramname"><em>t</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Destructor. </p>
-<p>Get site date by time <em>pData</em> </p>
-
-<p>Implements <a class="el" href="../../d1/dc1/a00092.html#a2195da07e9d304304905d020d32e9760">Measurement</a>.</p>
-
-<p>Definition at line <a class="el" href="../../de/dcb/a00462_source.html#l00097">97</a> of file <a class="el" href="../../de/dcb/a00462_source.html">NotRegularMeasurement.cpp</a>.</p>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>seims/src/seims_main/base/data/<a class="el" href="../../d3/d5d/a00463_source.html">NotRegularMeasurement.h</a></li>
 <li>seims/src/seims_main/base/data/<a class="el" href="../../de/dcb/a00462_source.html">NotRegularMeasurement.cpp</a></li>
@@ -334,7 +303,7 @@ float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=".
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dd/d6d/a00111.html">NotRegularMeasurement</a></li>
-    <li class="footer">Generated on Sat Jun 16 2018 10:00:50 for SEIMS by
+    <li class="footer">Generated on Thu Jun 21 2018 15:56:35 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
