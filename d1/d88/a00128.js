@@ -19,6 +19,5 @@ var a00128 =
     [ "m_phuAnn", "d1/d88/a00128.html#aea4c92e7e867a81ed7b5b3139b3ea658", null ],
     [ "m_phuBase", "d1/d88/a00128.html#a86b6751e6f43537dbcc15f7a170fa49b", null ],
     [ "m_rhd", "d1/d88/a00128.html#a211f4f93e1ea49d51b65a560bca84090", null ],
-    [ "m_srMax", "d1/d88/a00128.html#afaf194cefac4110a11600c8e6504c655", null ],
     [ "m_vpd", "d1/d88/a00128.html#a7812217542d0be2fba0c7802548c40ad", null ]
 ];

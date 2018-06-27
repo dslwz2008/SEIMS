@@ -110,6 +110,7 @@ var a00013 =
     [ "m_upTkDistP", "d7/dd4/a00013.html#a0d202e130db6a4b938129f5bcc0d4b29", null ],
     [ "m_vpd", "d7/dd4/a00013.html#a5a4a59a704f927b0d0946438535796bf", null ],
     [ "m_wavp", "d7/dd4/a00013.html#af5760cc80987fdcc6e20c62c9ee3dd9d", null ],
+    [ "m_wuse", "d7/dd4/a00013.html#abf203e1fcac842f4df86993010f02782", null ],
     [ "ubw", "d7/dd4/a00013.html#a595767c27fa19db7ca2e9e9d77b704b8", null ],
     [ "uobw", "d7/dd4/a00013.html#a4aa5d7e25cd9402e8b5042de8abfc6ed", null ]
 ];

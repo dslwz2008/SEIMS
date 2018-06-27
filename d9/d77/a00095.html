@@ -142,10 +142,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae4eaf96b5be6fa8612db59be55dd8b71"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d77/a00095.html#ae4eaf96b5be6fa8612db59be55dd8b71">Execute</a> () OVERRIDE</td></tr>
 <tr class="memdesc:ae4eaf96b5be6fa8612db59be55dd8b71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute the simulation.  <a href="#ae4eaf96b5be6fa8612db59be55dd8b71">More...</a><br/></td></tr>
 <tr class="separator:ae4eaf96b5be6fa8612db59be55dd8b71"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae405655a381d3bf6555c80c5a52360c6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae405655a381d3bf6555c80c5a52360c6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d77/a00095.html#ae405655a381d3bf6555c80c5a52360c6">SetValue</a> (const char *key, float data) OVERRIDE</td></tr>
-<tr class="memdesc:ae405655a381d3bf6555c80c5a52360c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set data, DT_Single. <br/></td></tr>
-<tr class="separator:ae405655a381d3bf6555c80c5a52360c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79a60f87c6c2f1cc402a9bdab9724dd8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a79a60f87c6c2f1cc402a9bdab9724dd8"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d77/a00095.html#a79a60f87c6c2f1cc402a9bdab9724dd8">SetValue</a> (const char *key, float value) OVERRIDE</td></tr>
+<tr class="memdesc:a79a60f87c6c2f1cc402a9bdab9724dd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set data, DT_Single. <br/></td></tr>
+<tr class="separator:a79a60f87c6c2f1cc402a9bdab9724dd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55df741d6f5bbca2d1a6216e50693b4b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d77/a00095.html#a55df741d6f5bbca2d1a6216e50693b4b">Set1DData</a> (const char *key, int n, float *data) OVERRIDE</td></tr>
 <tr class="memdesc:a55df741d6f5bbca2d1a6216e50693b4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set 1D data, by default, DT_Raster1D.  <a href="#a55df741d6f5bbca2d1a6216e50693b4b">More...</a><br/></td></tr>
 <tr class="separator:a55df741d6f5bbca2d1a6216e50693b4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -781,13 +781,13 @@ float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=".
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d77/a00095.html#a2dc638dc9c020f6ecfacd0084f431f5e">m_initialized</a></td></tr>
 <tr class="memdesc:a2dc638dc9c020f6ecfacd0084f431f5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">flag to identify the initialization <br/></td></tr>
 <tr class="separator:a2dc638dc9c020f6ecfacd0084f431f5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e5bd39db2b3462096c499035c2d8db3"><td class="memItemLeft" align="right" valign="top">float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d77/a00095.html#a0e5bd39db2b3462096c499035c2d8db3">tmp_rtfr</a></td></tr>
-<tr class="memdesc:a0e5bd39db2b3462096c499035c2d8db3"><td class="mdescLeft">&#160;</td><td class="mdescRight">fraction of roots in each soil layer  <a href="#a0e5bd39db2b3462096c499035c2d8db3">More...</a><br/></td></tr>
-<tr class="separator:a0e5bd39db2b3462096c499035c2d8db3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c9cb677f16132bd953a59d8b29b7a9b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2c9cb677f16132bd953a59d8b29b7a9b"></a>
-float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d77/a00095.html#a2c9cb677f16132bd953a59d8b29b7a9b">tmp_soilMixedMass</a></td></tr>
-<tr class="memdesc:a2c9cb677f16132bd953a59d8b29b7a9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">mass of soil mixed for the layer <br/></td></tr>
-<tr class="separator:a2c9cb677f16132bd953a59d8b29b7a9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb92e27ba9f03a5d8ad4999c2a3051ee"><td class="memItemLeft" align="right" valign="top">float **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d77/a00095.html#acb92e27ba9f03a5d8ad4999c2a3051ee">tmp_rtfr</a></td></tr>
+<tr class="memdesc:acb92e27ba9f03a5d8ad4999c2a3051ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">fraction of roots in each soil layer  <a href="#acb92e27ba9f03a5d8ad4999c2a3051ee">More...</a><br/></td></tr>
+<tr class="separator:acb92e27ba9f03a5d8ad4999c2a3051ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a509c4d0f2353378c135fb430facdccc9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a509c4d0f2353378c135fb430facdccc9"></a>
+float **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d77/a00095.html#a509c4d0f2353378c135fb430facdccc9">tmp_soilMixedMass</a></td></tr>
+<tr class="memdesc:a509c4d0f2353378c135fb430facdccc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">mass of soil mixed for the layer <br/></td></tr>
+<tr class="separator:a509c4d0f2353378c135fb430facdccc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -828,7 +828,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Plant management operations in SWAT, e.g., plantop, killop, harvestop, etc. </p>
 
-<p>Definition at line <a class="el" href="../../d8/d7a/a00669_source.html#l00033">33</a> of file <a class="el" href="../../d8/d7a/a00669_source.html">managementOperation_SWAT.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d8/d7a/a00669_source.html#l00035">35</a> of file <a class="el" href="../../d8/d7a/a00669_source.html">managementOperation_SWAT.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="abc11631c6e1a4d9ef7fd804d594e0800"></a>
 <div class="memitem">
@@ -850,7 +850,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 <p>Impound/Release operation</p>
 <p>temporary variables </p>
 
-<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l00079">79</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l00078">78</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
 
 </div>
 </div>
@@ -883,7 +883,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 <p>DT_Raster</p>
 <p>DT_Raster2D </p>
 
-<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l00508">508</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l00507">507</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
 
 </div>
 </div>
@@ -929,7 +929,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool The validity of the dimension </dd></dl>
 
-<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l00187">187</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l00186">186</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
 
 </div>
 </div>
@@ -982,7 +982,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool The validity of the dimension </dd></dl>
 
-<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l00301">301</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l00300">300</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -1030,7 +1030,7 @@ Here is the call graph for this function:</div>
 
 <p>Reimplemented from <a class="el" href="../../da/d01/a00153.html#a686c39c1c4894cc144699ba0681d509d">SimulationModule</a>.</p>
 
-<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l01821">1821</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l01829">1829</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -1083,7 +1083,7 @@ Here is the call graph for this function:</div>
 <p>calculate modifier for auto fertilization target nitrogen content'</p>
 <p>call anfert.f TODO, this will be implemented as an isolated module in the near future. </p>
 
-<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l01705">1705</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l01713">1713</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
 
 </div>
 </div>
@@ -1126,7 +1126,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>call autoirr.f TODO, this will be implemented as an isolated module in the near future. </p>
 
-<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l01689">1689</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l01697">1697</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
 
 </div>
 </div>
@@ -1169,7 +1169,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>TODO </p>
 
-<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l01778">1778</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l01786">1786</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
 
 </div>
 </div>
@@ -1212,7 +1212,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>TODO </p>
 
-<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l01773">1773</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l01781">1781</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
 
 </div>
 </div>
@@ -1299,7 +1299,7 @@ Here is the call graph for this function:</div>
 <p>bact_swf |none |fraction of manure containing active colony forming units (cfu)</p>
 <p>summary calculations, currently not used for output. TODO in the future. </p>
 
-<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l00877">877</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l00876">876</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -1351,7 +1351,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>TODO, graze.f, simulate biomass lost to grazing </p>
 
-<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l01679">1679</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l01687">1687</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
 
 </div>
 </div>
@@ -1415,7 +1415,7 @@ Here is the call graph for this function:</div>
 <p>TODO: Is necessary to isolate the curno.f function for <a class="el" href="../../d5/de9/a00176.html" title="SCS Curve Number Method to calculate infiltration and excess precipitation. ">SUR_CN</a>?</p>
 <p>reset variables </p>
 
-<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l01053">1053</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l01052">1052</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -1467,7 +1467,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>TODO to be implemented! harvestop.f </p>
 
-<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l01501">1501</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l01510">1510</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
 
 </div>
 </div>
@@ -1531,7 +1531,7 @@ Here is the call graph for this function:</div>
 <p>Call irrigate(i, vmm) /// irrigate.f</p>
 <p>subtract irrigation from shallow or deep aquifer </p>
 
-<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l00764">764</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l00763">763</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
 
 </div>
 </div>
@@ -1578,7 +1578,7 @@ Here is the call graph for this function:</div>
 <p>allocate dead roots, N and P to soil layers</p>
 <p>reset variables </p>
 
-<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l01642">1642</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l01651">1651</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -1630,7 +1630,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>TODO </p>
 
-<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l01048">1048</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l01047">1047</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
 
 </div>
 </div>
@@ -1680,7 +1680,7 @@ Here is the call graph for this function:</div>
 <p>reset curve number if necessary</p>
 <p>curno.f </p>
 
-<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l00712">712</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l00711">711</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
 
 </div>
 </div>
@@ -1731,7 +1731,7 @@ Here is the call graph for this function:</div>
 <p>force to reach the up depth.</p>
 <p>recompute total soil water storage </p>
 
-<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l01727">1727</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l01735">1735</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
 
 </div>
 </div>
@@ -1800,7 +1800,7 @@ Here is the call graph for this function:</div>
 <p>TODO sol_pst(k,jj,l) = sol_pst(k,jj,l) * WW3 + smix(20+k) * WW4</p>
 <p>TODO call tillfactor(jj,bmix,emix,dtil,sol_thick) </p>
 
-<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l01310">1310</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l01309">1309</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
 
 </div>
 </div>
@@ -1852,7 +1852,7 @@ Here is the call graph for this function:</div>
 
 <p>Reimplemented from <a class="el" href="../../da/d01/a00153.html#ad834fe6ed6d11b333fd34e1ff605ebb7">SimulationModule</a>.</p>
 
-<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l01859">1859</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l01867">1867</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -1914,7 +1914,7 @@ Here is the call graph for this function:</div>
 
 <p>Reimplemented from <a class="el" href="../../da/d01/a00153.html#ad327a319166273468db98800501f5946">SimulationModule</a>.</p>
 
-<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l01932">1932</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l01940">1940</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -1981,7 +1981,7 @@ Here is the call graph for this function:</div>
 <p>The operation will be applied either date or HUSC are satisfied, and also in case of repeated run</p>
 <p>update value </p>
 
-<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l00582">582</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l00581">581</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
 
 </div>
 </div>
@@ -2009,7 +2009,7 @@ Here is the call graph for this function:</div>
 <p>crop lookup table </p>
 <p>Check input data </p>
 
-<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l00653">653</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l00652">652</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
 
 </div>
 </div>
@@ -2037,7 +2037,7 @@ Here is the call graph for this function:</div>
 <p>fertilizer lookup table </p>
 <p>Check input data </p>
 
-<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l00672">672</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l00671">671</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
 
 </div>
 </div>
@@ -2066,7 +2066,7 @@ Here is the call graph for this function:</div>
 <p>landuse lookup table </p>
 <p>Check input data </p>
 
-<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l00633">633</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l00632">632</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
 
 </div>
 </div>
@@ -2094,7 +2094,7 @@ Here is the call graph for this function:</div>
 <p>tillage lookup table </p>
 <p>Check input data </p>
 
-<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l00692">692</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l00691">691</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
 
 </div>
 </div>
@@ -2131,7 +2131,7 @@ Here is the call graph for this function:</div>
 <p>harvestkill</p>
 <p>temporary variables </p>
 
-<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l01949">1949</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l01957">1957</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
 
 </div>
 </div>
@@ -2174,7 +2174,7 @@ Here is the call graph for this function:</div>
 <p>ensures that cumulative fractional root distribution = 1</p>
 <p>exits loop on the same layer as the previous loop </p>
 
-<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l01265">1265</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l01264">1264</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
 
 </div>
 </div>
@@ -2227,7 +2227,7 @@ Here is the call graph for this function:</div>
 </dl>
 <p>nOp is seqNo. * 1000 + operationCode </p>
 
-<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l01783">1783</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l01791">1791</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -2286,7 +2286,7 @@ Here is the call graph for this function:</div>
 
 <p>Reimplemented from <a class="el" href="../../da/d01/a00153.html#aba2d6fc2b0e4f8ccf202e0752c45d55c">SimulationModule</a>.</p>
 
-<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l00203">203</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l00202">202</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -2352,7 +2352,7 @@ Here is the call graph for this function:</div>
 
 <p>Reimplemented from <a class="el" href="../../da/d01/a00153.html#a02762cb7e236819fd5365ac4cb400fe6">SimulationModule</a>.</p>
 
-<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l00320">320</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l00319">319</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -2394,7 +2394,7 @@ Here is the call graph for this function:</div>
 
 <p>Reimplemented from <a class="el" href="../../da/d01/a00153.html#a61a80ae537e24396433c9514c75735db">SimulationModule</a>.</p>
 
-<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l00461">461</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d0/d5c/a00668_source.html#l00460">460</a> of file <a class="el" href="../../d0/d5c/a00668_source.html">managementOperation_SWAT.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -2429,7 +2429,7 @@ Here is the call graph for this function:</div>
 <p>crop lookup table </p>
 <p>Crop related parameters </p>
 
-<p>Definition at line <a class="el" href="../../d8/d7a/a00669_source.html#l00312">312</a> of file <a class="el" href="../../d8/d7a/a00669_source.html">managementOperation_SWAT.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d8/d7a/a00669_source.html#l00314">314</a> of file <a class="el" href="../../d8/d7a/a00669_source.html">managementOperation_SWAT.h</a>.</p>
 
 </div>
 </div>
@@ -2452,7 +2452,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Currently, deep and shallow aquifer are not distinguished in SEIMS. So, m_deepWaterDepth and m_shallowWaterDepth are all set to m_SBGS deepst(:) |mm H2O |depth of water in deep aquifer </p>
 
-<p>Definition at line <a class="el" href="../../d8/d7a/a00669_source.html#l00371">371</a> of file <a class="el" href="../../d8/d7a/a00669_source.html">managementOperation_SWAT.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d8/d7a/a00669_source.html#l00373">373</a> of file <a class="el" href="../../d8/d7a/a00669_source.html">managementOperation_SWAT.h</a>.</p>
 
 </div>
 </div>
@@ -2477,7 +2477,7 @@ Here is the call graph for this function:</div>
 <p>Sequence number of management operations done in the previous time step run. </p>
 <p>Temporary parameters </p>
 
-<p>Definition at line <a class="el" href="../../d8/d7a/a00669_source.html#l00234">234</a> of file <a class="el" href="../../d8/d7a/a00669_source.html">managementOperation_SWAT.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d8/d7a/a00669_source.html#l00236">236</a> of file <a class="el" href="../../d8/d7a/a00669_source.html">managementOperation_SWAT.h</a>.</p>
 
 </div>
 </div>
@@ -2502,7 +2502,7 @@ Here is the call graph for this function:</div>
 <p>fertilizer ID from fertilizer database </p>
 <p>auto fertilizer operation </p>
 
-<p>Definition at line <a class="el" href="../../d8/d7a/a00669_source.html#l00455">455</a> of file <a class="el" href="../../d8/d7a/a00669_source.html">managementOperation_SWAT.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d8/d7a/a00669_source.html#l00457">457</a> of file <a class="el" href="../../d8/d7a/a00669_source.html">managementOperation_SWAT.h</a>.</p>
 
 </div>
 </div>
@@ -2527,7 +2527,7 @@ Here is the call graph for this function:</div>
 <p>fertilizer lookup table </p>
 <p>Fertilizer related parameters </p>
 
-<p>Definition at line <a class="el" href="../../d8/d7a/a00669_source.html#l00321">321</a> of file <a class="el" href="../../d8/d7a/a00669_source.html">managementOperation_SWAT.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d8/d7a/a00669_source.html#l00323">323</a> of file <a class="el" href="../../d8/d7a/a00669_source.html">managementOperation_SWAT.h</a>.</p>
 
 </div>
 </div>
@@ -2550,7 +2550,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Release or Impound Operation </p>
 
-<p>Definition at line <a class="el" href="../../d8/d7a/a00669_source.html#l00486">486</a> of file <a class="el" href="../../d8/d7a/a00669_source.html">managementOperation_SWAT.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d8/d7a/a00669_source.html#l00488">488</a> of file <a class="el" href="../../d8/d7a/a00669_source.html">managementOperation_SWAT.h</a>.</p>
 
 </div>
 </div>
@@ -2575,7 +2575,7 @@ Here is the call graph for this function:</div>
 <p>irrigation flag </p>
 <p>Irrigation operation related </p>
 
-<p>Definition at line <a class="el" href="../../d8/d7a/a00669_source.html#l00363">363</a> of file <a class="el" href="../../d8/d7a/a00669_source.html">managementOperation_SWAT.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d8/d7a/a00669_source.html#l00365">365</a> of file <a class="el" href="../../d8/d7a/a00669_source.html">managementOperation_SWAT.h</a>.</p>
 
 </div>
 </div>
@@ -2600,7 +2600,7 @@ Here is the call graph for this function:</div>
 <p>landuse lookup table </p>
 <p>plant operation related parameters </p>
 
-<p>Definition at line <a class="el" href="../../d8/d7a/a00669_source.html#l00239">239</a> of file <a class="el" href="../../d8/d7a/a00669_source.html">managementOperation_SWAT.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d8/d7a/a00669_source.html#l00241">241</a> of file <a class="el" href="../../d8/d7a/a00669_source.html">managementOperation_SWAT.h</a>.</p>
 
 </div>
 </div>
@@ -2625,7 +2625,7 @@ Here is the call graph for this function:</div>
 <p>ndeat(:) |days |number of days cell has been grazed </p>
 <p>Grazing operation </p>
 
-<p>Definition at line <a class="el" href="../../d8/d7a/a00669_source.html#l00475">475</a> of file <a class="el" href="../../d8/d7a/a00669_source.html">managementOperation_SWAT.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d8/d7a/a00669_source.html#l00477">477</a> of file <a class="el" href="../../d8/d7a/a00669_source.html">managementOperation_SWAT.h</a>.</p>
 
 </div>
 </div>
@@ -2650,7 +2650,7 @@ Here is the call graph for this function:</div>
 <p>sol_aorgn(:,:)|kg N/ha |amount of nitrogen stored in the active organic (humic) nitrogen pool </p>
 <p>soil properties, both as input and ouput </p>
 
-<p>Definition at line <a class="el" href="../../d8/d7a/a00669_source.html#l00213">213</a> of file <a class="el" href="../../d8/d7a/a00669_source.html">managementOperation_SWAT.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d8/d7a/a00669_source.html#l00215">215</a> of file <a class="el" href="../../d8/d7a/a00669_source.html">managementOperation_SWAT.h</a>.</p>
 
 </div>
 </div>
@@ -2675,7 +2675,7 @@ Here is the call graph for this function:</div>
 <p>amount of organic matter in the soil layer classified as residue,sol_rsd(:,:)|kg/ha </p>
 <p>HarvestKill operation related </p>
 
-<p>Definition at line <a class="el" href="../../d8/d7a/a00669_source.html#l00305">305</a> of file <a class="el" href="../../d8/d7a/a00669_source.html">managementOperation_SWAT.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d8/d7a/a00669_source.html#l00307">307</a> of file <a class="el" href="../../d8/d7a/a00669_source.html">managementOperation_SWAT.h</a>.</p>
 
 </div>
 </div>
@@ -2700,7 +2700,7 @@ Here is the call graph for this function:</div>
 <p>stsol_rd(:) |mm |storing last soil root depth for use in harvestkillop/killop /// defined in swu.f </p>
 <p>Bacteria related HarvestKill, Harvest, and Kill operation related </p>
 
-<p>Definition at line <a class="el" href="../../d8/d7a/a00669_source.html#l00416">416</a> of file <a class="el" href="../../d8/d7a/a00669_source.html">managementOperation_SWAT.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d8/d7a/a00669_source.html#l00418">418</a> of file <a class="el" href="../../d8/d7a/a00669_source.html">managementOperation_SWAT.h</a>.</p>
 
 </div>
 </div>
@@ -2725,7 +2725,7 @@ Here is the call graph for this function:</div>
 <p>subbasin ID of each cell </p>
 <p>Parameters from MongoDB </p>
 
-<p>Definition at line <a class="el" href="../../d8/d7a/a00669_source.html#l00176">176</a> of file <a class="el" href="../../d8/d7a/a00669_source.html">managementOperation_SWAT.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d8/d7a/a00669_source.html#l00178">178</a> of file <a class="el" href="../../d8/d7a/a00669_source.html">managementOperation_SWAT.h</a>.</p>
 
 </div>
 </div>
@@ -2750,7 +2750,7 @@ Here is the call graph for this function:</div>
 <p>2 </p>
 <p>tillage operation related tillage lookup table </p>
 
-<p>Definition at line <a class="el" href="../../d8/d7a/a00669_source.html#l00440">440</a> of file <a class="el" href="../../d8/d7a/a00669_source.html">managementOperation_SWAT.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d8/d7a/a00669_source.html#l00442">442</a> of file <a class="el" href="../../d8/d7a/a00669_source.html">managementOperation_SWAT.h</a>.</p>
 
 </div>
 </div>
@@ -2775,7 +2775,7 @@ Here is the call graph for this function:</div>
 <p>non-lignin part of the structural litter C </p>
 <p>tillage factor on SOM decomposition, used by CENTURY model </p>
 
-<p>Definition at line <a class="el" href="../../d8/d7a/a00669_source.html#l00353">353</a> of file <a class="el" href="../../d8/d7a/a00669_source.html">managementOperation_SWAT.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d8/d7a/a00669_source.html#l00355">355</a> of file <a class="el" href="../../d8/d7a/a00669_source.html">managementOperation_SWAT.h</a>.</p>
 
 </div>
 </div>
@@ -2798,7 +2798,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>wsyf(:) |(kg/ha)/(kg/ha)|Value of harvest index between 0 and HVSTI which represents the lowest value expected due to water stress </p>
 
-<p>Definition at line <a class="el" href="../../d8/d7a/a00669_source.html#l00258">258</a> of file <a class="el" href="../../d8/d7a/a00669_source.html">managementOperation_SWAT.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d8/d7a/a00669_source.html#l00260">260</a> of file <a class="el" href="../../d8/d7a/a00669_source.html">managementOperation_SWAT.h</a>.</p>
 
 </div>
 </div>
@@ -2823,11 +2823,11 @@ Here is the call graph for this function:</div>
 <p>Water stress identifier, 1 plant water demand, 2 soil water content. </p>
 <p>auto irrigation operation related </p>
 
-<p>Definition at line <a class="el" href="../../d8/d7a/a00669_source.html#l00383">383</a> of file <a class="el" href="../../d8/d7a/a00669_source.html">managementOperation_SWAT.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d8/d7a/a00669_source.html#l00385">385</a> of file <a class="el" href="../../d8/d7a/a00669_source.html">managementOperation_SWAT.h</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a0e5bd39db2b3462096c499035c2d8db3"></a>
+<a class="anchor" id="acb92e27ba9f03a5d8ad4999c2a3051ee"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -2835,7 +2835,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">float* MGTOpt_SWAT::tmp_rtfr</td>
+          <td class="memname">float** MGTOpt_SWAT::tmp_rtfr</td>
         </tr>
       </table>
   </td>
@@ -2848,7 +2848,7 @@ Here is the call graph for this function:</div>
 <p>fraction of roots in each soil layer </p>
 <p>Temporary variables </p>
 
-<p>Definition at line <a class="el" href="../../d8/d7a/a00669_source.html#l00511">511</a> of file <a class="el" href="../../d8/d7a/a00669_source.html">managementOperation_SWAT.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d8/d7a/a00669_source.html#l00513">513</a> of file <a class="el" href="../../d8/d7a/a00669_source.html">managementOperation_SWAT.h</a>.</p>
 
 </div>
 </div>
@@ -2862,7 +2862,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d9/d77/a00095.html">MGTOpt_SWAT</a></li>
-    <li class="footer">Generated on Thu Jun 21 2018 15:56:35 for SEIMS by
+    <li class="footer">Generated on Wed Jun 27 2018 09:53:42 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

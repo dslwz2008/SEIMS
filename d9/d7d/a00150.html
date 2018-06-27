@@ -141,10 +141,10 @@ Public Member Functions</h2></td></tr>
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d7d/a00150.html#a9fd95072529e66c1030d74bcf1de198d">Execute</a> () OVERRIDE</td></tr>
 <tr class="memdesc:a9fd95072529e66c1030d74bcf1de198d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute the simulation. <br/></td></tr>
 <tr class="separator:a9fd95072529e66c1030d74bcf1de198d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae58dadd893e8840ce7089a3cbdb84574"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae58dadd893e8840ce7089a3cbdb84574"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d7d/a00150.html#ae58dadd893e8840ce7089a3cbdb84574">SetValue</a> (const char *key, float data) OVERRIDE</td></tr>
-<tr class="memdesc:ae58dadd893e8840ce7089a3cbdb84574"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set data, DT_Single. <br/></td></tr>
-<tr class="separator:ae58dadd893e8840ce7089a3cbdb84574"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a635e7b63482498a27d9df0770a9cc366"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a635e7b63482498a27d9df0770a9cc366"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d7d/a00150.html#a635e7b63482498a27d9df0770a9cc366">SetValue</a> (const char *key, float value) OVERRIDE</td></tr>
+<tr class="memdesc:a635e7b63482498a27d9df0770a9cc366"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set data, DT_Single. <br/></td></tr>
+<tr class="separator:a635e7b63482498a27d9df0770a9cc366"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a881c8262c72770fddc0278d9fc29fe2c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a881c8262c72770fddc0278d9fc29fe2c"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d7d/a00150.html#a881c8262c72770fddc0278d9fc29fe2c">Set1DData</a> (const char *key, int nRows, float *data) OVERRIDE</td></tr>
 <tr class="memdesc:a881c8262c72770fddc0278d9fc29fe2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set 1D data, by default, DT_Raster1D. <br/></td></tr>
@@ -236,16 +236,12 @@ float **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 <tr class="separator:a0b12a1220eb2ce11e41e96951e08d321"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac8b07e741541c6546ce49db99e8a112"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aac8b07e741541c6546ce49db99e8a112"></a>
 float **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d7d/a00150.html#aac8b07e741541c6546ce49db99e8a112">m_soilWtrSto</a></td></tr>
-<tr class="memdesc:aac8b07e741541c6546ce49db99e8a112"><td class="mdescLeft">&#160;</td><td class="mdescRight">soil moisture <br/></td></tr>
+<tr class="memdesc:aac8b07e741541c6546ce49db99e8a112"><td class="mdescLeft">&#160;</td><td class="mdescRight">soil moisture, mm <br/></td></tr>
 <tr class="separator:aac8b07e741541c6546ce49db99e8a112"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93f8233eaaa43d7a87a765b0ef7ad4f1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a93f8233eaaa43d7a87a765b0ef7ad4f1"></a>
 float **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d7d/a00150.html#a93f8233eaaa43d7a87a765b0ef7ad4f1">m_soilFC</a></td></tr>
-<tr class="memdesc:a93f8233eaaa43d7a87a765b0ef7ad4f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">field capacity <br/></td></tr>
+<tr class="memdesc:a93f8233eaaa43d7a87a765b0ef7ad4f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">field capacity (FC-WP, same as SWAT), mm <br/></td></tr>
 <tr class="separator:a93f8233eaaa43d7a87a765b0ef7ad4f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71cb4c9db7701ca1a8c25bcc9282e619"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a71cb4c9db7701ca1a8c25bcc9282e619"></a>
-float **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d7d/a00150.html#a71cb4c9db7701ca1a8c25bcc9282e619">m_soilWP</a></td></tr>
-<tr class="memdesc:a71cb4c9db7701ca1a8c25bcc9282e619"><td class="mdescLeft">&#160;</td><td class="mdescRight">wilting point <br/></td></tr>
-<tr class="separator:a71cb4c9db7701ca1a8c25bcc9282e619"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af380017958c1af75ae4ce2371d653c33"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af380017958c1af75ae4ce2371d653c33"></a>
 float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d7d/a00150.html#af380017958c1af75ae4ce2371d653c33">m_pet</a></td></tr>
 <tr class="memdesc:af380017958c1af75ae4ce2371d653c33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Potential evapotranspiration. <br/></td></tr>
@@ -314,7 +310,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Calculate soil Temperature according to the linearly relationship with actual soil moisture. </p>
 
-<p>Definition at line <a class="el" href="../../db/d3a/a00641_source.html#l00024">24</a> of file <a class="el" href="../../db/d3a/a00641_source.html">SET_LM.h</a>.</p>
+<p>Definition at line <a class="el" href="../../db/d3a/a00641_source.html#l00023">23</a> of file <a class="el" href="../../db/d3a/a00641_source.html">SET_LM.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a1f7a50df8fc788ff3e4488d8c7e2602a"></a>
 <div class="memitem">
@@ -387,7 +383,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool The validity of the dimension </dd></dl>
 
-<p>Definition at line <a class="el" href="../../dc/d62/a00640_source.html#l00115">115</a> of file <a class="el" href="../../dc/d62/a00640_source.html">SET_LM.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../dc/d62/a00640_source.html#l00114">114</a> of file <a class="el" href="../../dc/d62/a00640_source.html">SET_LM.cpp</a>.</p>
 
 </div>
 </div>
@@ -401,7 +397,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d9/d7d/a00150.html">SET_LM</a></li>
-    <li class="footer">Generated on Thu Jun 21 2018 15:56:35 for SEIMS by
+    <li class="footer">Generated on Wed Jun 27 2018 09:53:42 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

@@ -134,43 +134,46 @@ $(document).ready(function(){initNavTree('d7/d93/a00397_source.html','../../');}
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == input_args) { exit(EXIT_FAILURE); }</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    GDALAllRegister();</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordtype">string</span> module_path = GetAppPath();</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        MongoClient* mongo_client = MongoClient::Init(input_args-&gt;<a class="code" href="../../d1/d6e/a00073.html#ad15b3bcc0069ee8e787fa91227a5a77b">host</a>.c_str(), input_args-&gt;<a class="code" href="../../d1/d6e/a00073.html#ad7e3d223d5cedfc497884451e149aa2c">port</a>);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == mongo_client) {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="../../da/d74/a00099.html">ModelException</a>(<span class="stringliteral">&quot;MongoDBClient&quot;</span>, <span class="stringliteral">&quot;Constructor&quot;</span>, <span class="stringliteral">&quot;Failed to connect to MongoDB!&quot;</span>);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        }</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        ModuleFactory* module_factory = ModuleFactory::Init(module_path, input_args);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == module_factory) {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="../../da/d74/a00099.html">ModelException</a>(<span class="stringliteral">&quot;ModuleFactory&quot;</span>, <span class="stringliteral">&quot;Constructor&quot;</span>, <span class="stringliteral">&quot;Failed in constructing ModuleFactory!&quot;</span>);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="../../de/d8c/a00036.html">DataCenterMongoDB</a>* data_center = <span class="keyword">new</span> <a class="code" href="../../de/d8c/a00036.html">DataCenterMongoDB</a>(input_args, mongo_client,</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                                                               module_factory, input_args-&gt;<a class="code" href="../../d1/d6e/a00073.html#a66f74fba9cad01451a01faa1f7c74895">subbasin_id</a>);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="../../d0/d61/a00100.html">ModelMain</a>* model_main = <span class="keyword">new</span> <a class="code" href="../../d0/d61/a00100.html">ModelMain</a>(data_center, module_factory);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        model_main-&gt;<a class="code" href="../../d0/d61/a00100.html#a37fd70bd42f4184fdef228ab53678318">Execute</a>();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        model_main-&gt;<a class="code" href="../../d0/d61/a00100.html#af0fea434e96cdfb449e530671408c860">Output</a>();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keyword">delete</span> model_main;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keyword">delete</span> data_center;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keyword">delete</span> module_factory;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keyword">delete</span> mongo_client;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keyword">delete</span> input_args;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    } <span class="keywordflow">catch</span> (<a class="code" href="../../da/d74/a00099.html">ModelException</a>&amp; e) {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        cout &lt;&lt; e.<a class="code" href="../../da/d74/a00099.html#a5d61b4959ddd7ffdc1e1b87dd3adddae">ToString</a>() &lt;&lt; endl;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        exit(EXIT_FAILURE);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">catch</span> (std::exception&amp; e) {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        cout &lt;&lt; e.what() &lt;&lt; endl;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        exit(EXIT_FAILURE);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;Unknown exception occurred!&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        exit(EXIT_FAILURE);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordtype">double</span> input_t = TimeCounting();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordtype">string</span> module_path = GetAppPath();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        MongoClient* mongo_client = MongoClient::Init(input_args-&gt;<a class="code" href="../../d1/d6e/a00073.html#ad15b3bcc0069ee8e787fa91227a5a77b">host</a>.c_str(), input_args-&gt;<a class="code" href="../../d1/d6e/a00073.html#ad7e3d223d5cedfc497884451e149aa2c">port</a>);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == mongo_client) {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="../../da/d74/a00099.html">ModelException</a>(<span class="stringliteral">&quot;MongoDBClient&quot;</span>, <span class="stringliteral">&quot;Constructor&quot;</span>, <span class="stringliteral">&quot;Failed to connect to MongoDB!&quot;</span>);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        ModuleFactory* module_factory = ModuleFactory::Init(module_path, input_args);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == module_factory) {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="../../da/d74/a00099.html">ModelException</a>(<span class="stringliteral">&quot;ModuleFactory&quot;</span>, <span class="stringliteral">&quot;Constructor&quot;</span>, <span class="stringliteral">&quot;Failed in constructing ModuleFactory!&quot;</span>);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="../../de/d8c/a00036.html">DataCenterMongoDB</a>* data_center = <span class="keyword">new</span> <a class="code" href="../../de/d8c/a00036.html">DataCenterMongoDB</a>(input_args, mongo_client,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                                               module_factory, input_args-&gt;<a class="code" href="../../d1/d6e/a00073.html#a66f74fba9cad01451a01faa1f7c74895">subbasin_id</a>);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="../../d0/d61/a00100.html">ModelMain</a>* model_main = <span class="keyword">new</span> <a class="code" href="../../d0/d61/a00100.html">ModelMain</a>(data_center, module_factory);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;[TIMESPAN][IO  ][Input] &quot;</span> &lt;&lt; std::fixed &lt;&lt; setprecision(3) &lt;&lt; TimeCounting() - input_t &lt;&lt; endl;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        model_main-&gt;<a class="code" href="../../d0/d61/a00100.html#a37fd70bd42f4184fdef228ab53678318">Execute</a>();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        model_main-&gt;<a class="code" href="../../d0/d61/a00100.html#af0fea434e96cdfb449e530671408c860">Output</a>();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;[TIMESPAN][SIMU][ALL] &quot;</span> &lt;&lt; std::fixed &lt;&lt; setprecision(3) &lt;&lt; TimeCounting() - input_t &lt;&lt; endl;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keyword">delete</span> model_main;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keyword">delete</span> data_center;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keyword">delete</span> module_factory;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keyword">delete</span> mongo_client;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keyword">delete</span> input_args;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    } <span class="keywordflow">catch</span> (<a class="code" href="../../da/d74/a00099.html">ModelException</a>&amp; e) {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        cout &lt;&lt; e.<a class="code" href="../../da/d74/a00099.html#a5d61b4959ddd7ffdc1e1b87dd3adddae">ToString</a>() &lt;&lt; endl;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        exit(EXIT_FAILURE);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">catch</span> (std::exception&amp; e) {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        cout &lt;&lt; e.what() &lt;&lt; endl;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        exit(EXIT_FAILURE);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">catch</span> (...) {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;Unknown exception occurred!&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        exit(EXIT_FAILURE);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
 <div class="ttc" id="a00099_html_a5d61b4959ddd7ffdc1e1b87dd3adddae"><div class="ttname"><a href="../../da/d74/a00099.html#a5d61b4959ddd7ffdc1e1b87dd3adddae">ccgl::ModelException::ToString</a></div><div class="ttdeci">string ToString()</div><div class="ttdoc">Construct error information (string version) </div><div class="ttdef"><b>Definition:</b> <a href="../../d2/daf/a00346_source.html#l00038">basic.cpp:38</a></div></div>
 <div class="ttc" id="a00073_html_a66f74fba9cad01451a01faa1f7c74895"><div class="ttname"><a href="../../d1/d6e/a00073.html#a66f74fba9cad01451a01faa1f7c74895">InputArgs::subbasin_id</a></div><div class="ttdeci">int subbasin_id</div><div class="ttdoc">Subbasin ID, which will be executed, 0 for whole basin, 9999 for field-version. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dca/a00477_source.html#l00038">invoke.h:38</a></div></div>
 <div class="ttc" id="a00099_html"><div class="ttname"><a href="../../da/d74/a00099.html">ccgl::ModelException</a></div><div class="ttdoc">Print the exception message. </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/dc6/a00347_source.html#l00324">basic.h:324</a></div></div>
-<div class="ttc" id="a00100_html_af0fea434e96cdfb449e530671408c860"><div class="ttname"><a href="../../d0/d61/a00100.html#af0fea434e96cdfb449e530671408c860">ModelMain::Output</a></div><div class="ttdeci">double Output()</div><div class="ttdoc">Write output files, e.g., Q.txt, return time-consuming (s). </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/de5/a00503_source.html#l00174">ModelMain.cpp:174</a></div></div>
+<div class="ttc" id="a00100_html_af0fea434e96cdfb449e530671408c860"><div class="ttname"><a href="../../d0/d61/a00100.html#af0fea434e96cdfb449e530671408c860">ModelMain::Output</a></div><div class="ttdeci">double Output()</div><div class="ttdoc">Write output files, e.g., Q.txt, return time-consuming (s). </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/de5/a00503_source.html#l00178">ModelMain.cpp:178</a></div></div>
 <div class="ttc" id="a00100_html_a37fd70bd42f4184fdef228ab53678318"><div class="ttname"><a href="../../d0/d61/a00100.html#a37fd70bd42f4184fdef228ab53678318">ModelMain::Execute</a></div><div class="ttdeci">void Execute()</div><div class="ttdoc">Execute all the modules, aggregate output data, and write the total time-consuming, etc. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/de5/a00503_source.html#l00132">ModelMain.cpp:132</a></div></div>
 <div class="ttc" id="a00100_html"><div class="ttname"><a href="../../d0/d61/a00100.html">ModelMain</a></div><div class="ttdoc">Control the simulation of SEIMS. </div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d1c/a00504_source.html#l00038">ModelMain.h:38</a></div></div>
 <div class="ttc" id="a00073_html_aea43417dd8b7fcf7db22292cbcb7663c"><div class="ttname"><a href="../../d1/d6e/a00073.html#aea43417dd8b7fcf7db22292cbcb7663c">InputArgs::Init</a></div><div class="ttdeci">static InputArgs * Init(int argc, const char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d34/a00476_source.html#l00037">invoke.cpp:37</a></div></div>
@@ -184,7 +187,7 @@ $(document).ready(function(){initNavTree('d7/d93/a00397_source.html','../../');}
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_c151e3c36c54954dcb4737f82d8a1963.html">main</a></li><li class="navelem"><a class="el" href="../../dir_37d1583536611718be90d0be15bfcf38.html">main_omp</a></li><li class="navelem"><b>main.cpp</b></li>
-    <li class="footer">Generated on Thu Jun 21 2018 15:56:32 for SEIMS by
+    <li class="footer">Generated on Wed Jun 27 2018 09:53:39 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

@@ -175,25 +175,25 @@ $(document).ready(function(){initNavTree('d9/d2a/a00654_source.html','../../');}
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            }</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="comment">// add upstream water to the current cell</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">if</span> (qUp &lt; 0.f) qUp = 0.f;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">if</span> (qUpVol &lt; 0.f) qUpVol = 0.f;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="comment">// if the flowWidth is less than 0, the subsurface flow from the upstream cells</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="comment">// should be added to stream cell directly, which will be summarized</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="comment">// for channel flow routing. By lj, 2018-4-12</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">if</span> (flowWidth &lt;= 0.f) {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            m_subSurfRf[id][j] = qUp;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            m_subSurfRfVol[id][j] = qUpVol;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        }</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        m_soilWtrSto[id][j] += qUp; <span class="comment">// mm</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="comment">//TEST</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">if</span> (m_soilWtrSto[<span class="keywordtype">id</span>][j] != m_soilWtrSto[<span class="keywordtype">id</span>][j] || m_soilWtrSto[<span class="keywordtype">id</span>][j] &lt; 0.f) {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            cout &lt;&lt; <span class="stringliteral">&quot;cell id: &quot;</span> &lt;&lt; <span class="keywordtype">id</span> &lt;&lt; <span class="stringliteral">&quot;, layer: &quot;</span> &lt;&lt; j &lt;&lt; <span class="stringliteral">&quot;, moisture is less than zero: &quot;</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                    &lt;&lt; m_soilWtrSto[id][j] &lt;&lt; <span class="stringliteral">&quot;, previous: &quot;</span> &lt;&lt; smOld &lt;&lt; <span class="stringliteral">&quot;, qUp: &quot;</span> &lt;&lt; qUp &lt;&lt; <span class="stringliteral">&quot;, depth:&quot;</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                    &lt;&lt; m_soilThk[id][j] &lt;&lt; endl;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">if</span> (qUp &lt;= 0.f || qUpVol &lt;= 0.f) {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            qUp = 0.f;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            qUpVol = 0.f;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="comment">// if the flowWidth is less than 0, the subsurface flow from the upstream cells</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="comment">// should be added to stream cell directly, which will be summarized</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="comment">// for channel flow routing. By lj, 2018-4-12</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">if</span> (flowWidth &lt;= 0.f) {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            m_subSurfRf[id][j] = qUp;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            m_subSurfRfVol[id][j] = qUpVol;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">if</span> (m_soilWtrSto[<span class="keywordtype">id</span>][j] != m_soilWtrSto[<span class="keywordtype">id</span>][j] || m_soilWtrSto[<span class="keywordtype">id</span>][j] &lt; 0.f) {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            cout &lt;&lt; <span class="stringliteral">&quot;cell id: &quot;</span> &lt;&lt; <span class="keywordtype">id</span> &lt;&lt; <span class="stringliteral">&quot;, layer: &quot;</span> &lt;&lt; j &lt;&lt; <span class="stringliteral">&quot;, moisture is less than zero: &quot;</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                    &lt;&lt; m_soilWtrSto[id][j] &lt;&lt; <span class="stringliteral">&quot;, previous: &quot;</span> &lt;&lt; smOld &lt;&lt; <span class="stringliteral">&quot;, qUp: &quot;</span> &lt;&lt; qUp &lt;&lt; <span class="stringliteral">&quot;, depth:&quot;</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                    &lt;&lt; m_soilThk[id][j] &lt;&lt; endl;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        m_soilWtrSto[id][j] += qUp; <span class="comment">// mm</span></div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="comment">// if soil moisture is below the field capacity, no interflow will be generated</span></div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">if</span> (m_soilWtrSto[<span class="keywordtype">id</span>][j] &lt;= m_soilFC[<span class="keywordtype">id</span>][j]) <span class="keywordflow">continue</span>;</div>
@@ -474,7 +474,7 @@ $(document).ready(function(){initNavTree('d9/d2a/a00654_source.html','../../');}
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_b89a50a3d6b2f98326f9f3f569cfd788.html">modules</a></li><li class="navelem"><a class="el" href="../../dir_5bf5a4201e7cd7ac6c5f03aeeeae8b2c.html">hydrology_longterm</a></li><li class="navelem"><a class="el" href="../../dir_4ac8341ef401fdb228f6ce198110b93b.html">SSR_DA</a></li><li class="navelem"><b>SSR_DA.cpp</b></li>
-    <li class="footer">Generated on Thu Jun 21 2018 15:56:34 for SEIMS by
+    <li class="footer">Generated on Wed Jun 27 2018 09:53:41 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

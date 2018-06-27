@@ -263,9 +263,6 @@ float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../
 float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d88/a00128.html#a8727d0b39c3f9db1c3c4db8f9809616d">m_petFactor</a></td></tr>
 <tr class="memdesc:a8727d0b39c3f9db1c3c4db8f9809616d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Correction Factor for PET. <br/></td></tr>
 <tr class="separator:a8727d0b39c3f9db1c3c4db8f9809616d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afaf194cefac4110a11600c8e6504c655"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d88/a00128.html#afaf194cefac4110a11600c8e6504c655">m_srMax</a></td></tr>
-<tr class="memdesc:afaf194cefac4110a11600c8e6504c655"><td class="mdescLeft">&#160;</td><td class="mdescRight">temporary variables and output  <a href="#afaf194cefac4110a11600c8e6504c655">More...</a><br/></td></tr>
-<tr class="separator:afaf194cefac4110a11600c8e6504c655"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b1fa049eaa0f37dd9f319291d4f380e"><td class="memItemLeft" align="right" valign="top">float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d88/a00128.html#a6b1fa049eaa0f37dd9f319291d4f380e">m_dayLen</a></td></tr>
 <tr class="memdesc:a6b1fa049eaa0f37dd9f319291d4f380e"><td class="mdescLeft">&#160;</td><td class="mdescRight">output  <a href="#a6b1fa049eaa0f37dd9f319291d4f380e">More...</a><br/></td></tr>
 <tr class="separator:a6b1fa049eaa0f37dd9f319291d4f380e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -348,7 +345,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 <p>check the input data. Make sure all the input data is available. </p>
 <dl class="section return"><dt>Returns</dt><dd>bool The validity of the input data. </dd></dl>
 
-<p>Definition at line <a class="el" href="../../d7/de4/a00634_source.html#l00124">124</a> of file <a class="el" href="../../d7/de4/a00634_source.html">PETHargreaves.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/de4/a00634_source.html#l00126">126</a> of file <a class="el" href="../../d7/de4/a00634_source.html">PETHargreaves.cpp</a>.</p>
 
 </div>
 </div>
@@ -394,7 +391,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool The validity of the dimension </dd></dl>
 
-<p>Definition at line <a class="el" href="../../d7/de4/a00634_source.html#l00108">108</a> of file <a class="el" href="../../d7/de4/a00634_source.html">PETHargreaves.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/de4/a00634_source.html#l00110">110</a> of file <a class="el" href="../../d7/de4/a00634_source.html">PETHargreaves.cpp</a>.</p>
 
 </div>
 </div>
@@ -422,6 +419,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 
 <p>Execute the simulation. </p>
 <p>update phubase of the simulation year.</p>
+<p>calculate the max solar radiation</p>
+<p>maximum solar radiation of current day</p>
 <p>calculate latent heat of vaporization(from swat)</p>
 <p>extraterrestrial radiation equation 1:1.1.6 in SWAT Theory 2009, p33</p>
 <p>calculate potential evapotranspiration, equation 2:2.2.24 in SWAT Theory 2009, p133 Hargreaves et al., 1985. In SWAT Code, 0.0023 is replaced by harg_petco, which range from 0.0019 to 0.0032. by LJ</p>
@@ -465,7 +464,7 @@ Here is the call graph for this function:</div>
 <p>output </p>
 <p>day length (hr) </p>
 
-<p>Definition at line <a class="el" href="../../d4/d10/a00635_source.html#l00088">88</a> of file <a class="el" href="../../d4/d10/a00635_source.html">PETHargreaves.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d4/d10/a00635_source.html#l00083">83</a> of file <a class="el" href="../../d4/d10/a00635_source.html">PETHargreaves.h</a>.</p>
 
 </div>
 </div>
@@ -492,31 +491,6 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a class="anchor" id="afaf194cefac4110a11600c8e6504c655"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">float PETHargreaves::m_srMax</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>temporary variables and output </p>
-<p>maximum solar radiation of current day </p>
-
-<p>Definition at line <a class="el" href="../../d4/d10/a00635_source.html#l00083">83</a> of file <a class="el" href="../../d4/d10/a00635_source.html">PETHargreaves.h</a>.</p>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>seims/src/seims_main/modules/hydrology_longterm/PET_H/<a class="el" href="../../d4/d10/a00635_source.html">PETHargreaves.h</a></li>
 <li>seims/src/seims_main/modules/hydrology_longterm/PET_H/<a class="el" href="../../d7/de4/a00634_source.html">PETHargreaves.cpp</a></li>
@@ -527,7 +501,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d1/d88/a00128.html">PETHargreaves</a></li>
-    <li class="footer">Generated on Thu Jun 21 2018 15:56:35 for SEIMS by
+    <li class="footer">Generated on Wed Jun 27 2018 09:53:42 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
