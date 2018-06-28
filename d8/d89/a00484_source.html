@@ -165,7 +165,7 @@ $(document).ready(function(){initNavTree('d8/d89/a00484_source.html','../../');}
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keywordtype">string</span> SEIMSModuleSetting::channelRoutingMethod(<span class="keywordtype">int</span> methodIndex) {</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">if</span> (!StringMatch(m_moduleId, <span class="stringliteral">&quot;ChannelRouting&quot;</span>)) { <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>; }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">if</span> (<span class="keywordtype">int</span>(m_settings.size()) &lt; methodIndex + 1) {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">if</span> (CVT_INT(m_settings.size()) &lt; methodIndex + 1) {</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../da/d74/a00099.html">ModelException</a>(<span class="stringliteral">&quot;SEIMSModuleSetting&quot;</span>, <span class="stringliteral">&quot;needDoVerticalInterpolation&quot;</span>, <span class="stringliteral">&quot;Module &quot;</span> + m_moduleId +</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                             <span class="stringliteral">&quot; does not appoint vertical interpolation in the third column.&quot;</span>);</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
@@ -197,7 +197,7 @@ $(document).ready(function(){initNavTree('d8/d89/a00484_source.html','../../');}
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keywordtype">string</span> SEIMSModuleSetting::dataType2String(<span class="keyword">const</span> <span class="keywordtype">float</span> data_type) {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">switch</span> (<span class="keywordtype">int</span>(data_type)) {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">switch</span> (CVT_INT(data_type)) {</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">case</span> 1: <span class="keywordflow">return</span> DataType_Precipitation;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">case</span> 2: <span class="keywordflow">return</span> DataType_MeanTemperature;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">case</span> 3: <span class="keywordflow">return</span> DataType_MinimumTemperature;</div>
@@ -216,7 +216,7 @@ $(document).ready(function(){initNavTree('d8/d89/a00484_source.html','../../');}
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_d9d8c03d94c229237348b60b53b769ac.html">base</a></li><li class="navelem"><a class="el" href="../../dir_cce2c0ac50386f26b5b526fa8626cc77.html">module_setting</a></li><li class="navelem"><b>SEIMS_ModuleSetting.cpp</b></li>
-    <li class="footer">Generated on Wed Jun 27 2018 09:53:40 for SEIMS by
+    <li class="footer">Generated on Thu Jun 28 2018 16:22:26 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

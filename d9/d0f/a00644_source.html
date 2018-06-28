@@ -173,7 +173,7 @@ $(document).ready(function(){initNavTree('d9/d0f/a00644_source.html','../../');}
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        GetScurveShapeParameter(0.5f, 0.95f, <a class="code" href="../../d1/db7/a00157.html#a31ec49d96af93d30e97f11abe7cd05f0">m_snowCover50</a>, 0.95f, &amp;<a class="code" href="../../d1/db7/a00157.html#a65763246fee2c8a7fed7bb4bdbbe0a7c">m_snowCoverCoef1</a>, &amp;<a class="code" href="../../d1/db7/a00157.html#aff16de19e9c184a05fb0377f20c58188">m_snowCoverCoef2</a>);</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// which only need to computed once.</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">float</span> sinv = float(sin(2.f * PI / 365.f * (<a class="code" href="../../da/d01/a00153.html#ac578cab4a35a3c2f99be05c520a6dc02">m_dayOfYear</a> - 81.f)));</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">float</span> sinv = CVT_FLT(sin(2.f * PI / 365.f * (<a class="code" href="../../da/d01/a00153.html#ac578cab4a35a3c2f99be05c520a6dc02">m_dayOfYear</a> - 81.f)));</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">float</span> cmelt = (<a class="code" href="../../d1/db7/a00157.html#aaac5b9afcbe7ba40eb7ba1bea6f4d3f6">m_csnow6</a> + <a class="code" href="../../d1/db7/a00157.html#a45aa5b353af47963e025b9c0152864bc">m_csnow12</a>) * 0.5f + (<a class="code" href="../../d1/db7/a00157.html#aaac5b9afcbe7ba40eb7ba1bea6f4d3f6">m_csnow6</a> - <a class="code" href="../../d1/db7/a00157.html#a45aa5b353af47963e025b9c0152864bc">m_csnow12</a>) * 0.5f * sinv;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#pragma omp parallel for</span></div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> rw = 0; rw &lt; <a class="code" href="../../d1/db7/a00157.html#a65f08af75374b964c6a3d88959ec4195">m_nCells</a>; rw++) {</div>
@@ -299,7 +299,7 @@ $(document).ready(function(){initNavTree('d9/d0f/a00644_source.html','../../');}
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_b89a50a3d6b2f98326f9f3f569cfd788.html">modules</a></li><li class="navelem"><a class="el" href="../../dir_5bf5a4201e7cd7ac6c5f03aeeeae8b2c.html">hydrology_longterm</a></li><li class="navelem"><a class="el" href="../../dir_86770438c517686dfc2cabd069979f57.html">SNO_SP</a></li><li class="navelem"><b>SNO_SP.cpp</b></li>
-    <li class="footer">Generated on Wed Jun 27 2018 09:53:41 for SEIMS by
+    <li class="footer">Generated on Thu Jun 28 2018 16:22:27 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

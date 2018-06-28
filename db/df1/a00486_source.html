@@ -266,9 +266,9 @@ $(document).ready(function(){initNavTree('db/df1/a00486_source.html','../../');}
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="preprocessor">                   throw ModelException(moduleID, &quot;CheckInputData&quot;, string(#param) + string(&quot; MUST be greater or equal than zero!&quot;))</span></div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CHECK_NEGATIVE(moduleID, param) if ((param) &gt;= 0) \</span></div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;<span class="preprocessor">                   throw ModelException(moduleID, &quot;CheckInputData&quot;, string(#param) + string(&quot; MUST be negative!&quot;))</span></div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CHECK_ZERO(moduleID, param) if ((param) == 0 || FloatEqual(float(param), 0.f)) \</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CHECK_ZERO(moduleID, param) if ((param) == 0 || FloatEqual(CVT_FLT(param), 0.f)) \</span></div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="preprocessor">                   throw ModelException(moduleID, &quot;CheckInputData&quot;, string(#param) + string(&quot; MUST NOT be zero!&quot;))</span></div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CHECK_NODATA(moduleID, param) if ((param) == NODATA_VALUE || FloatEqual(float(param), NODATA_VALUE)) \</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CHECK_NODATA(moduleID, param) if ((param) == NODATA_VALUE || FloatEqual(CVT_FLT(param), NODATA_VALUE)) \</span></div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="preprocessor">                     throw ModelException(moduleID, &quot;CheckInputData&quot;, string(#param) + string(&quot; MUST NOT be NODATA_VALUE!&quot;))</span></div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif </span><span class="comment">/* SIMULATION_MOUDULE_BASE */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="a00153_html_ac578cab4a35a3c2f99be05c520a6dc02"><div class="ttname"><a href="../../da/d01/a00153.html#ac578cab4a35a3c2f99be05c520a6dc02">SimulationModule::m_dayOfYear</a></div><div class="ttdeci">int m_dayOfYear</div><div class="ttdoc">day of year - [1, 366] </div><div class="ttdef"><b>Definition:</b> <a href="../../db/df1/a00486_source.html#l00186">SimulationModule.h:186</a></div></div>
@@ -311,7 +311,7 @@ $(document).ready(function(){initNavTree('db/df1/a00486_source.html','../../');}
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_d9d8c03d94c229237348b60b53b769ac.html">base</a></li><li class="navelem"><a class="el" href="../../dir_cce2c0ac50386f26b5b526fa8626cc77.html">module_setting</a></li><li class="navelem"><b>SimulationModule.h</b></li>
-    <li class="footer">Generated on Wed Jun 27 2018 09:53:40 for SEIMS by
+    <li class="footer">Generated on Thu Jun 28 2018 16:22:26 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

@@ -155,8 +155,8 @@ $(document).ready(function(){initNavTree('d4/d1e/a00497_source.html','../../');}
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordtype">int</span> group = tmp_reach-&gt;<a class="code" href="../../d0/d33/a00027.html#a56f1475a829b221295d87fd5b4cf5559">GetGroupIndex</a>(GroupMethodString[CVT_INT(group_method)], group_size);</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        subbasins[id] = <span class="keyword">new</span> <a class="code" href="../../d8/df1/a00174.html">SubbasinStruct</a>(<span class="keywordtype">id</span>, group);</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="comment">// set layering order</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        subbasins[id]-&gt;updown_order = int(tmp_reach-&gt;<a class="code" href="../../d0/d33/a00027.html#aad31cf639ea376c52371f6953ed80d79">Get</a>(REACH_UPDOWN_ORDER));</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        subbasins[id]-&gt;downup_order = int(tmp_reach-&gt;<a class="code" href="../../d0/d33/a00027.html#aad31cf639ea376c52371f6953ed80d79">Get</a>(REACH_DOWNUP_ORDER));</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        subbasins[id]-&gt;updown_order = CVT_INT(tmp_reach-&gt;<a class="code" href="../../d0/d33/a00027.html#aad31cf639ea376c52371f6953ed80d79">Get</a>(REACH_UPDOWN_ORDER));</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        subbasins[id]-&gt;downup_order = CVT_INT(tmp_reach-&gt;<a class="code" href="../../d0/d33/a00027.html#aad31cf639ea376c52371f6953ed80d79">Get</a>(REACH_DOWNUP_ORDER));</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        group_set.insert(group);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
@@ -212,7 +212,7 @@ $(document).ready(function(){initNavTree('d4/d1e/a00497_source.html','../../');}
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_c151e3c36c54954dcb4737f82d8a1963.html">main</a></li><li class="navelem"><a class="el" href="../../dir_c959c6c529103227cdb83d2a16e8fd6e.html">main_mpi</a></li><li class="navelem"><b>ReadReachTopology.cpp</b></li>
-    <li class="footer">Generated on Wed Jun 27 2018 09:53:40 for SEIMS by
+    <li class="footer">Generated on Thu Jun 28 2018 16:22:26 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

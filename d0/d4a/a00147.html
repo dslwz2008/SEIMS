@@ -150,9 +150,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d4a/a00147.html#acf7331194a5c8f933fc48057ee13f71d">SetValueByIndex</a> (const char *key, int index, float value) OVERRIDE</td></tr>
 <tr class="memdesc:acf7331194a5c8f933fc48057ee13f71d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set single value to array1D by index, used in MPI version for passing values of subbasins. <br/></td></tr>
 <tr class="separator:acf7331194a5c8f933fc48057ee13f71d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1713fdc288c47a61324787ef6aed6be0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1713fdc288c47a61324787ef6aed6be0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d4a/a00147.html#a1713fdc288c47a61324787ef6aed6be0">Set1DData</a> (const char *key, int n, float *data) OVERRIDE</td></tr>
-<tr class="memdesc:a1713fdc288c47a61324787ef6aed6be0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set 1D data, by default, DT_Raster1D. <br/></td></tr>
+<tr class="memitem:a1713fdc288c47a61324787ef6aed6be0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d4a/a00147.html#a1713fdc288c47a61324787ef6aed6be0">Set1DData</a> (const char *key, int n, float *data) OVERRIDE</td></tr>
+<tr class="memdesc:a1713fdc288c47a61324787ef6aed6be0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set 1D data, by default, DT_Raster1D.  <a href="#a1713fdc288c47a61324787ef6aed6be0">More...</a><br/></td></tr>
 <tr class="separator:a1713fdc288c47a61324787ef6aed6be0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0117e3320b8529d8adf1b1da87a1aed3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0117e3320b8529d8adf1b1da87a1aed3"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d4a/a00147.html#a0117e3320b8529d8adf1b1da87a1aed3">GetValue</a> (const char *key, float *value) OVERRIDE</td></tr>
@@ -374,7 +373,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Sediment routing using variable channel dimension(VCD) method at daily time scale. </p>
 
-<p>Definition at line <a class="el" href="../../d6/d92/a00586_source.html#l00033">33</a> of file <a class="el" href="../../d6/d92/a00586_source.html">SEDR_SBAGNOLD.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d6/d92/a00586_source.html#l00035">35</a> of file <a class="el" href="../../d6/d92/a00586_source.html">SEDR_SBAGNOLD.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a29ec8d5c2b303e8b3b08617573014099"></a>
 <div class="memitem">
@@ -419,7 +418,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 <p>TODO, lj</p>
 <p>downcutting depth, m </p>
 
-<p>Definition at line <a class="el" href="../../dc/dac/a00585_source.html#l00411">411</a> of file <a class="el" href="../../dc/dac/a00585_source.html">SEDR_SBAGNOLD.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../dc/dac/a00585_source.html#l00428">428</a> of file <a class="el" href="../../dc/dac/a00585_source.html">SEDR_SBAGNOLD.cpp</a>.</p>
 
 </div>
 </div>
@@ -450,7 +449,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 
 <p>Reimplemented from <a class="el" href="../../da/d01/a00153.html#a686c39c1c4894cc144699ba0681d509d">SimulationModule</a>.</p>
 
-<p>Definition at line <a class="el" href="../../dc/dac/a00585_source.html#l00124">124</a> of file <a class="el" href="../../dc/dac/a00585_source.html">SEDR_SBAGNOLD.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../dc/dac/a00585_source.html#l00118">118</a> of file <a class="el" href="../../dc/dac/a00585_source.html">SEDR_SBAGNOLD.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -483,7 +482,6 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>ton/m3 * m3/m * m * 1000 = kg</p>
 <p>initialize point source loadings </p>
 
 <p>Definition at line <a class="el" href="../../dc/dac/a00585_source.html#l00063">63</a> of file <a class="el" href="../../dc/dac/a00585_source.html">SEDR_SBAGNOLD.cpp</a>.</p>
@@ -514,7 +512,7 @@ Here is the call graph for this function:</div>
 <p>g/cm3, or Mg/m3</p>
 <p>Mg/m3 ==&gt; kg / timestep, 1. / 86400. = 1.1574074074074073e-05 </p>
 
-<p>Definition at line <a class="el" href="../../dc/dac/a00585_source.html#l00092">92</a> of file <a class="el" href="../../dc/dac/a00585_source.html">SEDR_SBAGNOLD.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../dc/dac/a00585_source.html#l00086">86</a> of file <a class="el" href="../../dc/dac/a00585_source.html">SEDR_SBAGNOLD.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -562,7 +560,54 @@ Here is the call graph for this function:</div>
 <p>kg/m3, i.e., g/L</p>
 <p>in this default sediment routing method, sediment is not tracked by particle size </p>
 
-<p>Definition at line <a class="el" href="../../dc/dac/a00585_source.html#l00275">275</a> of file <a class="el" href="../../dc/dac/a00585_source.html">SEDR_SBAGNOLD.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../dc/dac/a00585_source.html#l00285">285</a> of file <a class="el" href="../../dc/dac/a00585_source.html">SEDR_SBAGNOLD.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1713fdc288c47a61324787ef6aed6be0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SEDR_SBAGNOLD::Set1DData </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set 1D data, by default, DT_Raster1D. </p>
+<p>ton/m3 * m3/m * m * 1000 = kg </p>
+
+<p>Reimplemented from <a class="el" href="../../da/d01/a00153.html#aba2d6fc2b0e4f8ccf202e0752c45d55c">SimulationModule</a>.</p>
+
+<p>Definition at line <a class="el" href="../../dc/dac/a00585_source.html#l00211">211</a> of file <a class="el" href="../../dc/dac/a00585_source.html">SEDR_SBAGNOLD.cpp</a>.</p>
 
 </div>
 </div>
@@ -593,7 +638,7 @@ Here is the call graph for this function:</div>
 
 <p>Reimplemented from <a class="el" href="../../da/d01/a00153.html#a61a80ae537e24396433c9514c75735db">SimulationModule</a>.</p>
 
-<p>Definition at line <a class="el" href="../../dc/dac/a00585_source.html#l00239">239</a> of file <a class="el" href="../../dc/dac/a00585_source.html">SEDR_SBAGNOLD.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../dc/dac/a00585_source.html#l00249">249</a> of file <a class="el" href="../../dc/dac/a00585_source.html">SEDR_SBAGNOLD.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -626,7 +671,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>float *m_chManning; not used! reach cover factor </p>
 
-<p>Definition at line <a class="el" href="../../d6/d92/a00586_source.html#l00106">106</a> of file <a class="el" href="../../d6/d92/a00586_source.html">SEDR_SBAGNOLD.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d6/d92/a00586_source.html#l00108">108</a> of file <a class="el" href="../../d6/d92/a00586_source.html">SEDR_SBAGNOLD.h</a>.</p>
 
 </div>
 </div>
@@ -649,7 +694,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>cross-sectional area of flow in the channel (m^2), not used! float *m_CrAreaCh; initial channel storage per meter of reach length (m^3/m) </p>
 
-<p>Definition at line <a class="el" href="../../d6/d92/a00586_source.html#l00091">91</a> of file <a class="el" href="../../d6/d92/a00586_source.html">SEDR_SBAGNOLD.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d6/d92/a00586_source.html#l00093">93</a> of file <a class="el" href="../../d6/d92/a00586_source.html">SEDR_SBAGNOLD.h</a>.</p>
 
 </div>
 </div>
@@ -672,7 +717,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Index of upstream Ids (The value is -1 if there if no upstream reach) m_reachUpStream.size() = N+1 m_reachUpStream[1] = [2, 3] means Reach 2 and Reach 3 flow into Reach 1. </p>
 
-<p>Definition at line <a class="el" href="../../d6/d92/a00586_source.html#l00119">119</a> of file <a class="el" href="../../d6/d92/a00586_source.html">SEDR_SBAGNOLD.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d6/d92/a00586_source.html#l00121">121</a> of file <a class="el" href="../../d6/d92/a00586_source.html">SEDR_SBAGNOLD.h</a>.</p>
 
 </div>
 </div>
@@ -686,7 +731,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d0/d4a/a00147.html">SEDR_SBAGNOLD</a></li>
-    <li class="footer">Generated on Wed Jun 27 2018 09:53:42 for SEIMS by
+    <li class="footer">Generated on Thu Jun 28 2018 16:22:28 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

@@ -234,7 +234,7 @@ $(document).ready(function(){initNavTree('d9/d4a/a00479_source.html','../../');}
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="comment">/************ INPUT PARAMETERS FROM OTHER MODULES ************/</span></div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordtype">int</span> GetInputCount() { <span class="keywordflow">return</span> int(m_vInputs.size()); }</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordtype">int</span> GetInputCount() { <span class="keywordflow">return</span> CVT_INT(m_vInputs.size()); }</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordtype">int</span> AddInput(<span class="keyword">const</span> <span class="keywordtype">char</span>* name, <span class="keyword">const</span> <span class="keywordtype">char</span>* units, <span class="keyword">const</span> <span class="keywordtype">char</span>* desc, <span class="keyword">const</span> <span class="keywordtype">char</span>* source, <a class="code" href="../../d5/d72/a00803.html#gac6cf78ef837450cfb19495fe34976b8c">dimensionTypes</a> dimType,</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                 <a class="code" href="../../d5/d72/a00803.html#ga44c7aa1266bcfcaebbafc0ffc48fc952">transferTypes</a> tfType = TF_Whole);</div>
@@ -265,7 +265,7 @@ $(document).ready(function(){initNavTree('d9/d4a/a00479_source.html','../../');}
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="comment">/************ OUTPUT PARAMETERS ************/</span></div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keywordtype">int</span> GetOutputCount() { <span class="keywordflow">return</span> int(m_vOutputs.size()); }</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keywordtype">int</span> GetOutputCount() { <span class="keywordflow">return</span> CVT_INT(m_vOutputs.size()); }</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="keywordtype">int</span> AddOutput(<span class="keyword">const</span> <span class="keywordtype">char</span>* name, <span class="keyword">const</span> <span class="keywordtype">char</span>* units, <span class="keyword">const</span> <span class="keywordtype">char</span>* desc, <a class="code" href="../../d5/d72/a00803.html#gac6cf78ef837450cfb19495fe34976b8c">dimensionTypes</a> dimType,</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                  <a class="code" href="../../d5/d72/a00803.html#ga44c7aa1266bcfcaebbafc0ffc48fc952">transferTypes</a> tfType = TF_Whole);</div>
@@ -294,7 +294,7 @@ $(document).ready(function(){initNavTree('d9/d4a/a00479_source.html','../../');}
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="comment">/************ IN/OUTPUT PARAMETERS ************/</span></div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keywordtype">int</span> GetInOutputCount() { <span class="keywordflow">return</span> int(m_vInOutputs.size()); }</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keywordtype">int</span> GetInOutputCount() { <span class="keywordflow">return</span> CVT_INT(m_vInOutputs.size()); }</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="keywordtype">int</span> AddInOutput(<span class="keyword">const</span> <span class="keywordtype">char</span>* name, <span class="keyword">const</span> <span class="keywordtype">char</span>* units, <span class="keyword">const</span> <span class="keywordtype">char</span>* desc, <a class="code" href="../../d5/d72/a00803.html#gac6cf78ef837450cfb19495fe34976b8c">dimensionTypes</a> dimType,</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                    <a class="code" href="../../d5/d72/a00803.html#ga44c7aa1266bcfcaebbafc0ffc48fc952">transferTypes</a> tfType = TF_Whole);</div>
@@ -325,7 +325,7 @@ $(document).ready(function(){initNavTree('d9/d4a/a00479_source.html','../../');}
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="comment">/************ PARAMETERS FROM DATABASE ************/</span></div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="keywordtype">int</span> GetParameterCount() { <span class="keywordflow">return</span> int(m_vParameters.size()); }</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="keywordtype">int</span> GetParameterCount() { <span class="keywordflow">return</span> CVT_INT(m_vParameters.size()); }</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="keywordtype">int</span> AddParameter(<span class="keyword">const</span> <span class="keywordtype">char</span>* name, <span class="keyword">const</span> <span class="keywordtype">char</span>* units, <span class="keyword">const</span> <span class="keywordtype">char</span>* desc, <span class="keyword">const</span> <span class="keywordtype">char</span>* source, <a class="code" href="../../d5/d72/a00803.html#gac6cf78ef837450cfb19495fe34976b8c">dimensionTypes</a> dimType);</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;</div>
@@ -355,7 +355,7 @@ $(document).ready(function(){initNavTree('d9/d4a/a00479_source.html','../../');}
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;</div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <span class="comment">/************ DEPENDENT MODULES ************/</span></div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <span class="keywordtype">int</span> GetDependencyCount() { <span class="keywordflow">return</span> int(m_vDependencies.size()); }</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <span class="keywordtype">int</span> GetDependencyCount() { <span class="keywordflow">return</span> CVT_INT(m_vDependencies.size()); }</div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <span class="keywordtype">int</span> AddDependency(<span class="keyword">const</span> <span class="keywordtype">char</span>* name, <span class="keyword">const</span> <span class="keywordtype">char</span>* description);</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;</div>
@@ -449,7 +449,7 @@ $(document).ready(function(){initNavTree('d9/d4a/a00479_source.html','../../');}
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_d9d8c03d94c229237348b60b53b769ac.html">base</a></li><li class="navelem"><a class="el" href="../../dir_cce2c0ac50386f26b5b526fa8626cc77.html">module_setting</a></li><li class="navelem"><b>MetadataInfo.h</b></li>
-    <li class="footer">Generated on Wed Jun 27 2018 09:53:40 for SEIMS by
+    <li class="footer">Generated on Thu Jun 28 2018 16:22:26 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

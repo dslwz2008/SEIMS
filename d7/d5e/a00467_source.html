@@ -128,7 +128,7 @@ $(document).ready(function(){initNavTree('d7/d5e/a00467_source.html','../../');}
 <div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="../../d5/db1/a00140.html#a836cdbfe4cf57938deeaf4b6640a3410">   11</a></span>&#160;<a class="code" href="../../d5/db1/a00140.html#a836cdbfe4cf57938deeaf4b6640a3410">RegularMeasurement::RegularMeasurement</a>(MongoClient* conn, <span class="keywordtype">string</span> hydroDBName, <span class="keywordtype">string</span> sitesList, <span class="keywordtype">string</span> siteType,</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                                       time_t startTime, time_t endTime, time_t interval)</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    : <a class="code" href="../../d1/dc1/a00092.html">Measurement</a>(conn, hydroDBName, sitesList, siteType, startTime, endTime), m_interval(interval) {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">int</span> nSites = int(<a class="code" href="../../d1/dc1/a00092.html#acffdb39ed0357326cec16264231ae695">m_siteIDList</a>.size());</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">int</span> nSites = CVT_INT(<a class="code" href="../../d1/dc1/a00092.html#acffdb39ed0357326cec16264231ae695">m_siteIDList</a>.size());</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    bson_t* query = bson_new();</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    bson_t* child = bson_new();</div>
@@ -236,7 +236,7 @@ $(document).ready(function(){initNavTree('d7/d5e/a00467_source.html','../../');}
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;}</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
 <div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="../../d5/db1/a00140.html#a0831ae60972d776e431d600aefb3e1e8">  124</a></span>&#160;<span class="keywordtype">float</span>* <a class="code" href="../../d5/db1/a00140.html#a0831ae60972d776e431d600aefb3e1e8">RegularMeasurement::GetSiteDataByTime</a>(time_t t) {</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordtype">int</span> index = int((t - <a class="code" href="../../d1/dc1/a00092.html#a1d95627d0865cc35b930939076aa7da6">m_startTime</a>) / <a class="code" href="../../d5/db1/a00140.html#a6fffb32a797276d7cc6b2bd8b2f369c8">m_interval</a>);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordtype">int</span> index = CVT_INT((t - <a class="code" href="../../d1/dc1/a00092.html#a1d95627d0865cc35b930939076aa7da6">m_startTime</a>) / <a class="code" href="../../d5/db1/a00140.html#a6fffb32a797276d7cc6b2bd8b2f369c8">m_interval</a>);</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordflow">if</span> (index &lt; 0) {</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        index = 0;</div>
@@ -266,7 +266,7 @@ $(document).ready(function(){initNavTree('d7/d5e/a00467_source.html','../../');}
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_d9d8c03d94c229237348b60b53b769ac.html">base</a></li><li class="navelem"><a class="el" href="../../dir_24d0af58b2644ad205aa9a0d9adbb65a.html">data</a></li><li class="navelem"><b>RegularMeasurement.cpp</b></li>
-    <li class="footer">Generated on Wed Jun 27 2018 09:53:40 for SEIMS by
+    <li class="footer">Generated on Thu Jun 28 2018 16:22:26 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

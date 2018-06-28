@@ -387,13 +387,13 @@ $(document).ready(function(){initNavTree('dc/d2f/a00425_source.html','../../');}
 <div class="line"><a name="l00271"></a><span class="lineno"><a class="line" href="../../d4/dee/a00008.html#a399dbcf5e788c29a3d73de021c9d442d">  271</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d4/dee/a00008.html#a399dbcf5e788c29a3d73de021c9d442d">ArealSourceLocations::SetValidCells</a>(<span class="keywordtype">int</span> n, <span class="keywordtype">float</span>* mgtFieldIDs) {</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    <span class="keywordflow">if</span> (n &gt; 0 &amp;&amp; <span class="keyword">nullptr</span> != mgtFieldIDs) {</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; n; i++) {</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;            <span class="keywordflow">if</span> (FloatEqual(<a class="code" href="../../d4/dee/a00008.html#a7d7a2271fde7792c3038005f23c79f99">m_arealSrcID</a>, <span class="keywordtype">int</span>(mgtFieldIDs[i]))) {</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;            <span class="keywordflow">if</span> (FloatEqual(<a class="code" href="../../d4/dee/a00008.html#a7d7a2271fde7792c3038005f23c79f99">m_arealSrcID</a>, CVT_INT(mgtFieldIDs[i]))) {</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                <a class="code" href="../../d4/dee/a00008.html#a3479daf84b1cdf43b85d263874917795">m_cellsIndex</a>.emplace_back(i);</div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            }</div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        }</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        vector&lt;int&gt;(<a class="code" href="../../d4/dee/a00008.html#a3479daf84b1cdf43b85d263874917795">m_cellsIndex</a>).swap(<a class="code" href="../../d4/dee/a00008.html#a3479daf84b1cdf43b85d263874917795">m_cellsIndex</a>);</div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        <span class="comment">// m_cellsIndex.shrink_to_fit();</span></div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        <a class="code" href="../../d4/dee/a00008.html#ae28890e89c0d93b272bd9442dcb975bd">m_nCells</a> = int(<a class="code" href="../../d4/dee/a00008.html#a3479daf84b1cdf43b85d263874917795">m_cellsIndex</a>.size());</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        <a class="code" href="../../d4/dee/a00008.html#ae28890e89c0d93b272bd9442dcb975bd">m_nCells</a> = CVT_INT(<a class="code" href="../../d4/dee/a00008.html#a3479daf84b1cdf43b85d263874917795">m_cellsIndex</a>.size());</div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../da/d74/a00099.html">ModelException</a>(<span class="stringliteral">&quot;ArealSourceLocations&quot;</span>, <span class="stringliteral">&quot;SetValidCells&quot;</span>,</div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                             <span class="stringliteral">&quot;The array size of must be greater than 0 and the array must not be NULL.&quot;</span>);</div>
@@ -460,7 +460,7 @@ $(document).ready(function(){initNavTree('dc/d2f/a00425_source.html','../../');}
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_d9d8c03d94c229237348b60b53b769ac.html">base</a></li><li class="navelem"><a class="el" href="../../dir_c4eaa6a6e6c4ee7b087e3de60cab1bbc.html">bmps</a></li><li class="navelem"><b>BMPArealSourceFactory.cpp</b></li>
-    <li class="footer">Generated on Wed Jun 27 2018 09:53:39 for SEIMS by
+    <li class="footer">Generated on Thu Jun 28 2018 16:22:26 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

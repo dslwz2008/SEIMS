@@ -205,7 +205,7 @@ $(document).ready(function(){initNavTree('da/d65/a00458_source.html','../../');}
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
 <div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="../../db/db6/a00074.html#aa11da83df6f999201bc6d96bc4dd810f">   91</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../db/db6/a00074.html#aa11da83df6f999201bc6d96bc4dd810f">InputStation::ReadSitesInfo</a>(<span class="keywordtype">string</span> siteType, <span class="keywordtype">string</span> hydroDBName, <span class="keywordtype">string</span> sitesList) {</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    vector&lt;string&gt; vecSites = SplitString(sitesList, <span class="charliteral">&#39;,&#39;</span>);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">int</span> nSites = int(vecSites.size());</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">int</span> nSites = CVT_INT(vecSites.size());</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="comment">//convert from string to int, the IDList is in order in MongoDB</span></div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    vector&lt;int&gt; siteIDList;</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">char</span>* end = <span class="keyword">nullptr</span>;</div>
@@ -323,7 +323,7 @@ $(document).ready(function(){initNavTree('da/d65/a00458_source.html','../../');}
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_d9d8c03d94c229237348b60b53b769ac.html">base</a></li><li class="navelem"><a class="el" href="../../dir_24d0af58b2644ad205aa9a0d9adbb65a.html">data</a></li><li class="navelem"><b>InputStation.cpp</b></li>
-    <li class="footer">Generated on Wed Jun 27 2018 09:53:40 for SEIMS by
+    <li class="footer">Generated on Thu Jun 28 2018 16:22:26 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

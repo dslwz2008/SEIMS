@@ -157,8 +157,8 @@ $(document).ready(function(){initNavTree('dc/d19/a00515_source.html','../../');}
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    mdi.AddParameter(VAR_REACH_PARAM, UNIT_NON_DIM, DESC_REACH_PARAM, Source_ParameterDB, DT_Reach);</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    mdi.AddParameter(VAR_SCENARIO, UNIT_NON_DIM, DESC_SCENARIO, Source_ParameterDB, DT_Scenario);</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    mdi.AddInput(VAR_SED_TO_CH, UNIT_KG, DESC_SED_TO_CH, Source_Module, DT_Array1D, TF_SingleValue);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    mdi.AddInput(VAR_QRECH, UNIT_FLOW_CMS, DESC_QRECH, Source_Module, DT_Array1D, TF_SingleValue);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    mdi.AddInput(VAR_SED_TO_CH, UNIT_KG, DESC_SED_TO_CH, Source_Module, DT_Array1D);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    mdi.AddInput(VAR_QRECH, UNIT_FLOW_CMS, DESC_QRECH, Source_Module, DT_Array1D);</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    mdi.AddInput(VAR_CHST, UNIT_VOL_M3, DESC_CHST, Source_Module, DT_Array1D);</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    mdi.AddInput(VAR_PRECHST, UNIT_VOL_M3, DESC_PRECHST, Source_Module, DT_Array1D);</div>
@@ -166,24 +166,23 @@ $(document).ready(function(){initNavTree('dc/d19/a00515_source.html','../../');}
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    mdi.AddInput(VAR_PRECHWTDEPTH, UNIT_LEN_M, DESC_PRECHWTDEPTH, Source_Module, DT_Array1D);</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    mdi.AddInput(VAR_CHWTWIDTH, UNIT_LEN_M, DESC_CHWTWIDTH, Source_Module, DT_Array1D);</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    mdi.AddInOutput(VAR_SED_RECH, UNIT_KG, DESC_SED_RECH, DT_Array1D, TF_SingleValue);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    mdi.AddInOutput(VAR_SED_RECHConc, UNIT_SEDCONC, DESC_SED_RECH, DT_Array1D, TF_SingleValue);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    mdi.AddInOutput(VAR_RCH_BANKERO, UNIT_KG, DESC_RCH_BANKERO, DT_Array1D, TF_SingleValue);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    mdi.AddInOutput(VAR_RCH_DEG, UNIT_KG, DESC_RCH_DEG, DT_Array1D, TF_SingleValue);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    mdi.AddInOutput(VAR_RCH_DEP, UNIT_KG, DESC_RCH_DEP, DT_Array1D, TF_SingleValue);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    mdi.AddInOutput(VAR_FLPLAIN_DEP, UNIT_KG, DESC_FLPLAIN_DEP, DT_Array1D, TF_SingleValue);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// set the dependencies</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    mdi.AddDependency(MCLS_OL_EROSION, MCLSDESC_OL_EROSION);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    mdi.AddDependency(MCLS_CH_ROUTING, MCLSDESC_CH_ROUTING);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    res = mdi.GetXMLDocument();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">char</span>* tmp = <span class="keyword">new</span> <span class="keywordtype">char</span>[res.size() + 1];</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    strprintf(tmp, res.size() + 1, <span class="stringliteral">&quot;%s&quot;</span>, res.c_str());</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">return</span> tmp;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
-<div class="ttc" id="a00147_html"><div class="ttname"><a href="../../d0/d4a/a00147.html">SEDR_SBAGNOLD</a></div><div class="ttdoc">Sediment routing using variable channel dimension(VCD) method at daily time scale. </div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d92/a00586_source.html#l00033">SEDR_SBAGNOLD.h:33</a></div></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    mdi.AddInOutput(VAR_SED_RECH, UNIT_KG, DESC_SED_RECH, DT_Array1D, TF_SingleValue);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    mdi.AddInOutput(VAR_SED_RECHConc, UNIT_SEDCONC, DESC_SED_RECH, DT_Array1D, TF_SingleValue);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    mdi.AddInOutput(VAR_RCH_BANKERO, UNIT_KG, DESC_RCH_BANKERO, DT_Array1D, TF_SingleValue);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    mdi.AddInOutput(VAR_RCH_DEG, UNIT_KG, DESC_RCH_DEG, DT_Array1D, TF_SingleValue);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    mdi.AddInOutput(VAR_RCH_DEP, UNIT_KG, DESC_RCH_DEP, DT_Array1D, TF_SingleValue);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    mdi.AddInOutput(VAR_FLPLAIN_DEP, UNIT_KG, DESC_FLPLAIN_DEP, DT_Array1D, TF_SingleValue);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">// set the dependencies</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    mdi.AddDependency(MCLS_OL_EROSION, MCLSDESC_OL_EROSION);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    mdi.AddDependency(MCLS_CH_ROUTING, MCLSDESC_CH_ROUTING);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    res = mdi.GetXMLDocument();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">char</span>* tmp = <span class="keyword">new</span> <span class="keywordtype">char</span>[res.size() + 1];</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    strprintf(tmp, res.size() + 1, <span class="stringliteral">&quot;%s&quot;</span>, res.c_str());</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">return</span> tmp;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
+<div class="ttc" id="a00147_html"><div class="ttname"><a href="../../d0/d4a/a00147.html">SEDR_SBAGNOLD</a></div><div class="ttdoc">Sediment routing using variable channel dimension(VCD) method at daily time scale. </div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d92/a00586_source.html#l00035">SEDR_SBAGNOLD.h:35</a></div></div>
 <div class="ttc" id="a00094_html"><div class="ttname"><a href="../../dc/d54/a00094.html">MetadataInfo</a></div><div class="ttdoc">Metadata information of module. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d4a/a00479_source.html#l00122">MetadataInfo.h:122</a></div></div>
 <div class="ttc" id="a00153_html"><div class="ttname"><a href="../../da/d01/a00153.html">SimulationModule</a></div><div class="ttdoc">Base module for all simulation modules in SEIMS. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/df1/a00486_source.html#l00041">SimulationModule.h:41</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -192,7 +191,7 @@ $(document).ready(function(){initNavTree('dc/d19/a00515_source.html','../../');}
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_b89a50a3d6b2f98326f9f3f569cfd788.html">modules</a></li><li class="navelem"><a class="el" href="../../dir_0416dddcf4ae60131836efd2402708ae.html">erosion</a></li><li class="navelem"><a class="el" href="../../dir_34fe973cdb6a45ace349877b35bf9e8d.html">SEDR_SBAGNOLD</a></li><li class="navelem"><b>api.cpp</b></li>
-    <li class="footer">Generated on Wed Jun 27 2018 09:53:40 for SEIMS by
+    <li class="footer">Generated on Thu Jun 28 2018 16:22:26 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

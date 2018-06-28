@@ -205,8 +205,8 @@ $(document).ready(function(){initNavTree('d2/d9d/a00464_source.html','../../');}
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">if</span> (FloatEqual(data[i], NODATA_VALUE)) {</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        }</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordtype">int</span> curunit = int(units[i]);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordtype">int</span> curlu = int(lu[i]);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordtype">int</span> curunit = CVT_INT(units[i]);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordtype">int</span> curlu = CVT_INT(lu[i]);</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">if</span> (find(selunits.begin(), selunits.end(), curunit) == selunits.end()) {</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        }</div>
@@ -220,7 +220,7 @@ $(document).ready(function(){initNavTree('d2/d9d/a00464_source.html','../../');}
 <div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="../../de/d36/a00123.html#a25d08aee0e83774468aaebfeb7f6e3e5">  106</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../de/d36/a00123.html#a25d08aee0e83774468aaebfeb7f6e3e5">ParamInfo::Adjust2DArray</a>(<span class="keywordtype">int</span> n, <span class="keywordtype">float</span>** data) {</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="preprocessor">#pragma omp parallel for</span></div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; n; i++) {</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordtype">int</span> curCols = int(data[i][0]);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordtype">int</span> curCols = CVT_INT(data[i][0]);</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <a class="code" href="../../de/d36/a00123.html#aaee91ca6510c999cd689171a704575e8">Adjust1DArray</a>(curCols, data[i] + 1);</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    }</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
@@ -272,7 +272,7 @@ $(document).ready(function(){initNavTree('d2/d9d/a00464_source.html','../../');}
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_d9d8c03d94c229237348b60b53b769ac.html">base</a></li><li class="navelem"><a class="el" href="../../dir_24d0af58b2644ad205aa9a0d9adbb65a.html">data</a></li><li class="navelem"><b>ParamInfo.cpp</b></li>
-    <li class="footer">Generated on Wed Jun 27 2018 09:53:40 for SEIMS by
+    <li class="footer">Generated on Thu Jun 28 2018 16:22:26 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

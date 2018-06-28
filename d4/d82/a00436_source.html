@@ -135,7 +135,7 @@ $(document).ready(function(){initNavTree('d4/d82/a00436_source.html','../../');}
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
 <div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="../../d5/deb/a00132.html#aeb9a28f5c4ded6a13819f2b679751c81">   21</a></span>&#160;<a class="code" href="../../d5/deb/a00132.html#aeb9a28f5c4ded6a13819f2b679751c81">PltOp::PltOp</a>(<span class="keywordtype">int</span> mgtOp, <span class="keywordtype">bool</span> usebaseHU, <span class="keywordtype">float</span> husc, <span class="keywordtype">int</span> year, <span class="keywordtype">int</span> month, <span class="keywordtype">int</span> day, <span class="keywordtype">float</span>* parameters) :</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="../../d7/d06/a00131.html">PltMgtOp</a>(mgtOp, usebaseHU, husc, year, month, day, parameters) {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    m_plantID = int(parameters[0]);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    m_plantID = CVT_INT(parameters[0]);</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    m_curYrMat = parameters[2];</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    m_heatUnits = (parameters[3] &lt; 700.f) ? 1700.f : parameters[3];</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    m_laiInit = parameters[4];</div>
@@ -159,13 +159,13 @@ $(document).ready(function(){initNavTree('d4/d82/a00436_source.html','../../');}
 <div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="../../d1/d51/a00079.html#ac2011bb3ed488e9a08925251b88366da">   45</a></span>&#160;<a class="code" href="../../d1/d51/a00079.html#ac2011bb3ed488e9a08925251b88366da">IrrOp::IrrOp</a>(<span class="keywordtype">int</span> mgtOp, <span class="keywordtype">bool</span> usebaseHU, <span class="keywordtype">float</span> husc, <span class="keywordtype">int</span> year, <span class="keywordtype">int</span> month, <span class="keywordtype">int</span> day,</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;             <span class="keywordtype">float</span>* parameters) :</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="../../d7/d06/a00131.html">PltMgtOp</a>(mgtOp, usebaseHU, husc, year, month, day, parameters) {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    m_irrSrc = int(parameters[1]);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    m_irrSrc = CVT_INT(parameters[1]);</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    m_irrSrc = (m_irrSrc &lt;= 0) ? IRR_SRC_OUTWTSD : m_irrSrc;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    m_irrAmt = parameters[3];</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    m_irrSalt = parameters[4];</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    m_irrEfm = (parameters[5] &lt; UTIL_ZERO) ? 1.0f : parameters[5];</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    m_irrSq = parameters[6];</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    m_irrNo = int(parameters[7]);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    m_irrNo = CVT_INT(parameters[7]);</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
 <div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="../../d1/d51/a00079.html#acb757d59b914fd776b20a7c244bf7ee7">   57</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d1/d51/a00079.html#acb757d59b914fd776b20a7c244bf7ee7">IrrOp::dump</a>(ostream* fs) {</div>
@@ -181,7 +181,7 @@ $(document).ready(function(){initNavTree('d4/d82/a00436_source.html','../../');}
 <div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="../../d4/dca/a00048.html#abb74895e779e24a3120c1ecec5cf518d">   68</a></span>&#160;<a class="code" href="../../d4/dca/a00048.html#abb74895e779e24a3120c1ecec5cf518d">FertOp::FertOp</a>(<span class="keywordtype">int</span> mgtOp, <span class="keywordtype">bool</span> usebaseHU, <span class="keywordtype">float</span> husc, <span class="keywordtype">int</span> year, <span class="keywordtype">int</span> month, <span class="keywordtype">int</span> day,</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;               <span class="keywordtype">float</span>* parameters) :</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="../../d7/d06/a00131.html">PltMgtOp</a>(mgtOp, usebaseHU, husc, year, month, day, parameters) {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    m_fertID = int(parameters[0]);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    m_fertID = CVT_INT(parameters[0]);</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    m_frtKgHa = parameters[3];</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="../../d4/dca/a00048.html#ad74823f7bd1d398f0377199d8187a1e8">m_frtSurface</a> = (parameters[4] &lt; UTIL_ZERO) ? 0.2f : parameters[4];</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
@@ -198,7 +198,7 @@ $(document).ready(function(){initNavTree('d4/d82/a00436_source.html','../../');}
 <div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="../../df/dcd/a00127.html#aa2e95e0ebe36e5264bee3c5edb4c63a4">   86</a></span>&#160;<a class="code" href="../../df/dcd/a00127.html#aa2e95e0ebe36e5264bee3c5edb4c63a4">PestOp::PestOp</a>(<span class="keywordtype">int</span> mgtOp, <span class="keywordtype">bool</span> usebaseHU, <span class="keywordtype">float</span> husc, <span class="keywordtype">int</span> year, <span class="keywordtype">int</span> month, <span class="keywordtype">int</span> day,</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;               <span class="keywordtype">float</span>* parameters) :</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <a class="code" href="../../d7/d06/a00131.html">PltMgtOp</a>(mgtOp, usebaseHU, husc, year, month, day, parameters) {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    m_pestID = int(parameters[0]);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    m_pestID = CVT_INT(parameters[0]);</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    m_pstKg = parameters[3];</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    m_pstDep = parameters[4];</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
@@ -232,7 +232,7 @@ $(document).ready(function(){initNavTree('d4/d82/a00436_source.html','../../');}
 <div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="../../d8/d64/a00181.html#a9efc678c32f08206bcfc7580c90e2755">  122</a></span>&#160;<a class="code" href="../../d8/d64/a00181.html#a9efc678c32f08206bcfc7580c90e2755">TillOp::TillOp</a>(<span class="keywordtype">int</span> mgtOp, <span class="keywordtype">bool</span> usebaseHU, <span class="keywordtype">float</span> husc, <span class="keywordtype">int</span> year, <span class="keywordtype">int</span> month, <span class="keywordtype">int</span> day,</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;               <span class="keywordtype">float</span>* parameters) :</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <a class="code" href="../../d7/d06/a00131.html">PltMgtOp</a>(mgtOp, usebaseHU, husc, year, month, day, parameters) {</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    m_tillID = int(parameters[0]);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    m_tillID = CVT_INT(parameters[0]);</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    m_CNOP = parameters[3];</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;}</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
@@ -275,8 +275,8 @@ $(document).ready(function(){initNavTree('d4/d82/a00436_source.html','../../');}
 <div class="line"><a name="l00168"></a><span class="lineno"><a class="line" href="../../d5/de0/a00050.html#afc961b695ad752c723b31ac8fe2600da">  168</a></span>&#160;<a class="code" href="../../d5/de0/a00050.html#afc961b695ad752c723b31ac8fe2600da">GrazOp::GrazOp</a>(<span class="keywordtype">int</span> mgtOp, <span class="keywordtype">bool</span> usebaseHU, <span class="keywordtype">float</span> husc, <span class="keywordtype">int</span> year, <span class="keywordtype">int</span> month, <span class="keywordtype">int</span> day,</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;               <span class="keywordtype">float</span>* parameters) :</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <a class="code" href="../../d7/d06/a00131.html">PltMgtOp</a>(mgtOp, usebaseHU, husc, year, month, day, parameters) {</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    m_grzDays = int(parameters[0]);</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    m_manureID = int(parameters[1]);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    m_grzDays = CVT_INT(parameters[0]);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    m_manureID = CVT_INT(parameters[1]);</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    m_bioEat = parameters[3];</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    m_bioTrmp = parameters[4];</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    m_manureKg = parameters[5];</div>
@@ -299,13 +299,13 @@ $(document).ready(function(){initNavTree('d4/d82/a00436_source.html','../../');}
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                     <span class="keywordtype">float</span>* parameters)</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    :</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <a class="code" href="../../d7/d06/a00131.html">PltMgtOp</a>(mgtOp, usebaseHU, husc, year, month, day, parameters) {</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    m_wstrsID = int(parameters[0]);</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    m_irrSrc = int(parameters[1]);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    m_wstrsID = CVT_INT(parameters[0]);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    m_irrSrc = CVT_INT(parameters[1]);</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    m_autoWstrs = parameters[3];</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    m_irrEff = parameters[4];</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    m_irrMx = parameters[5];</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    m_irrAsq = parameters[6];</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    m_irrNoa = int(parameters[9]);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    m_irrNoa = CVT_INT(parameters[9]);</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    m_irrSrc = (m_irrSrc &lt;= 0) ? IRR_SRC_OUTWTSD : m_irrSrc;</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="keywordflow">if</span> (m_wstrsID &lt;= 0) m_wstrsID = 1;</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <span class="keywordflow">if</span> (m_irrEff &gt; 1.f) m_irrEff = 0.f;</div>
@@ -327,8 +327,8 @@ $(document).ready(function(){initNavTree('d4/d82/a00436_source.html','../../');}
 <div class="line"><a name="l00222"></a><span class="lineno"><a class="line" href="../../d7/dec/a00010.html#a67df6519e4e3a71aed7deff11b889919">  222</a></span>&#160;<a class="code" href="../../d7/dec/a00010.html#a67df6519e4e3a71aed7deff11b889919">AutoFertOp::AutoFertOp</a>(<span class="keywordtype">int</span> mgtOp, <span class="keywordtype">bool</span> usebaseHU, <span class="keywordtype">float</span> husc, <span class="keywordtype">int</span> year, <span class="keywordtype">int</span> month, <span class="keywordtype">int</span> day,</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                       <span class="keywordtype">float</span>* parameters)</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    : <a class="code" href="../../d7/d06/a00131.html">PltMgtOp</a>(mgtOp, usebaseHU, husc, year, month, day, parameters) {</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    m_afertID = int(parameters[0]);</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    m_NStress = int(parameters[1]);</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    m_afertID = CVT_INT(parameters[0]);</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    m_NStress = CVT_INT(parameters[1]);</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    m_autoNStrs = parameters[3];</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    m_autoNAPP = parameters[4];</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    m_autoNYR = parameters[5];</div>
@@ -354,7 +354,7 @@ $(document).ready(function(){initNavTree('d4/d82/a00436_source.html','../../');}
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                       <span class="keywordtype">float</span>* parameters)</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    :</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <a class="code" href="../../d7/d06/a00131.html">PltMgtOp</a>(mgtOp, usebaseHU, husc, year, month, day, parameters) {</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    m_impTrig = int(parameters[0]);</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    m_impTrig = CVT_INT(parameters[0]);</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <a class="code" href="../../d5/d4e/a00141.html#a3fbf94acca4415d0410c10502a0c606c">m_maxPondDepth</a> = parameters[1];</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <a class="code" href="../../d5/d4e/a00141.html#a462dad655ab0ea4152d72badd5aef796">m_minFitDepth</a> = parameters[2];</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <a class="code" href="../../d5/d4e/a00141.html#a27b15363abd30fc80d4a4d870dbb3d77">m_maxFitDepth</a> = parameters[3];</div>
@@ -372,9 +372,9 @@ $(document).ready(function(){initNavTree('d4/d82/a00436_source.html','../../');}
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                       <span class="keywordtype">int</span> day,</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                       <span class="keywordtype">float</span>* parameters) :</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <a class="code" href="../../d7/d06/a00131.html">PltMgtOp</a>(mgtOp, usebaseHU, husc, year, month, day, parameters) {</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    m_cfertID = int(parameters[1]);</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    m_fertDays = int(parameters[0]);</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    m_ifrtFreq = int(parameters[2]);</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    m_cfertID = CVT_INT(parameters[1]);</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    m_fertDays = CVT_INT(parameters[0]);</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    m_ifrtFreq = CVT_INT(parameters[2]);</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    m_cfrtKg = parameters[3];</div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;}</div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;</div>
@@ -391,9 +391,9 @@ $(document).ready(function(){initNavTree('d4/d82/a00436_source.html','../../');}
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                       <span class="keywordtype">int</span> day,</div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                       <span class="keywordtype">float</span>* parameters) :</div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <a class="code" href="../../d7/d06/a00131.html">PltMgtOp</a>(mgtOp, usebaseHU, husc, year, month, day, parameters) {</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    m_ipstID = int(parameters[0]);</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    m_pstDays = int(parameters[1]);</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    m_pstFreq = int(parameters[2]);</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    m_ipstID = CVT_INT(parameters[0]);</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    m_pstDays = CVT_INT(parameters[1]);</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    m_pstFreq = CVT_INT(parameters[2]);</div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    m_cpstKg = parameters[3];</div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;}</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;</div>
@@ -465,7 +465,7 @@ $(document).ready(function(){initNavTree('d4/d82/a00436_source.html','../../');}
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_d9d8c03d94c229237348b60b53b769ac.html">base</a></li><li class="navelem"><a class="el" href="../../dir_c4eaa6a6e6c4ee7b087e3de60cab1bbc.html">bmps</a></li><li class="navelem"><b>PlantManagementOperation.cpp</b></li>
-    <li class="footer">Generated on Wed Jun 27 2018 09:53:39 for SEIMS by
+    <li class="footer">Generated on Thu Jun 28 2018 16:22:26 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
