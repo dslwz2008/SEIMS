@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims/src/seims_main/modules/climate/TSD_RD/clsTSD_RD.h Source File</title>
+<title>SEIMS: seims/src/seims_main/modules/climate/TSD_RD/clsTSD_RD.cpp Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -112,43 +112,43 @@ $(document).ready(function(){initNavTree('dc/d40/a00568_source.html','../../');}
 
 <div class="header">
   <div class="headertitle">
-<div class="title">clsTSD_RD.h</div>  </div>
+<div class="title">clsTSD_RD.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef SEIMS_MODULE_TSD_RD_H</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SEIMS_MODULE_TSD_RD_H</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;SimulationModule.h&quot;</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;clsTSD_RD.h&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;text.h&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;clsTSD_RD::clsTSD_RD() : m_nStations(-1), m_stationData(nullptr) {</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;}</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;clsTSD_RD::~clsTSD_RD() {</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;}</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="../../df/d61/a00031.html">   20</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../df/d61/a00031.html">clsTSD_RD</a>: <span class="keyword">public</span> <a class="code" href="../../da/d01/a00153.html">SimulationModule</a> {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="../../df/d61/a00031.html">clsTSD_RD</a>();</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    ~<a class="code" href="../../df/d61/a00031.html">clsTSD_RD</a>();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../df/d61/a00031.html#a5b42430983cfa8542be04854e8612b9b">Set1DData</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* key, <span class="keywordtype">int</span> n, <span class="keywordtype">float</span>* data) OVERRIDE;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../df/d61/a00031.html#a6f76ed81c00691617c80974198ea26fb">Get1DData</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* key, <span class="keywordtype">int</span>* n, <span class="keywordtype">float</span>** data) OVERRIDE;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="../../df/d61/a00031.html#a4754e8968ca858275d040fb67c8f8257">   32</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../df/d61/a00031.html#a4754e8968ca858275d040fb67c8f8257">m_nStations</a>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="../../df/d61/a00031.html#a44905545bd698ee830b4aa494e6f6883">   34</a></span>&#160;    <span class="keywordtype">float</span>* <a class="code" href="../../df/d61/a00031.html#a44905545bd698ee830b4aa494e6f6883">m_stationData</a>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SEIMS_MODULE_TSD_RD_H */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="a00031_html_a5b42430983cfa8542be04854e8612b9b"><div class="ttname"><a href="../../df/d61/a00031.html#a5b42430983cfa8542be04854e8612b9b">clsTSD_RD::Set1DData</a></div><div class="ttdeci">void Set1DData(const char *key, int n, float *data) OVERRIDE</div><div class="ttdoc">Set 1D data, by default, DT_Raster1D. </div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dd7/a00567_source.html#l00011">clsTSD_RD.cpp:11</a></div></div>
-<div class="ttc" id="a00031_html_a4754e8968ca858275d040fb67c8f8257"><div class="ttname"><a href="../../df/d61/a00031.html#a4754e8968ca858275d040fb67c8f8257">clsTSD_RD::m_nStations</a></div><div class="ttdeci">int m_nStations</div><div class="ttdoc">data row number, i.e., number of stations </div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d40/a00568_source.html#l00032">clsTSD_RD.h:32</a></div></div>
-<div class="ttc" id="a00031_html_a44905545bd698ee830b4aa494e6f6883"><div class="ttname"><a href="../../df/d61/a00031.html#a44905545bd698ee830b4aa494e6f6883">clsTSD_RD::m_stationData</a></div><div class="ttdeci">float * m_stationData</div><div class="ttdoc">time series data </div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d40/a00568_source.html#l00034">clsTSD_RD.h:34</a></div></div>
-<div class="ttc" id="a00031_html"><div class="ttname"><a href="../../df/d61/a00031.html">clsTSD_RD</a></div><div class="ttdoc">Read Time Series Data, e.g., Maximum temperature. </div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d40/a00568_source.html#l00020">clsTSD_RD.h:20</a></div></div>
-<div class="ttc" id="a00153_html"><div class="ttname"><a href="../../da/d01/a00153.html">SimulationModule</a></div><div class="ttdoc">Base module for all simulation modules in SEIMS. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/df1/a00486_source.html#l00041">SimulationModule.h:41</a></div></div>
-<div class="ttc" id="a00031_html_a6f76ed81c00691617c80974198ea26fb"><div class="ttname"><a href="../../df/d61/a00031.html#a6f76ed81c00691617c80974198ea26fb">clsTSD_RD::Get1DData</a></div><div class="ttdeci">void Get1DData(const char *key, int *n, float **data) OVERRIDE</div><div class="ttdoc">Get 1D data, by default, DT_Raster1D. </div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dd7/a00567_source.html#l00016">clsTSD_RD.cpp:16</a></div></div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="../../df/d61/a00031.html#a5b42430983cfa8542be04854e8612b9b">   11</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../df/d61/a00031.html#a5b42430983cfa8542be04854e8612b9b">clsTSD_RD::Set1DData</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keyword">const</span> <span class="keywordtype">int</span> n, <span class="keywordtype">float</span> *data) {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="../../df/d61/a00031.html#a4754e8968ca858275d040fb67c8f8257">m_nStations</a> = n;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="../../df/d61/a00031.html#a44905545bd698ee830b4aa494e6f6883">m_stationData</a> = data;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="../../df/d61/a00031.html#a6f76ed81c00691617c80974198ea26fb">   16</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../df/d61/a00031.html#a6f76ed81c00691617c80974198ea26fb">clsTSD_RD::Get1DData</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keywordtype">int</span> *n, <span class="keywordtype">float</span> **data) {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../df/d61/a00031.html#a4754e8968ca858275d040fb67c8f8257">m_nStations</a> &lt; 0 || <span class="keyword">nullptr</span> == <a class="code" href="../../df/d61/a00031.html#a44905545bd698ee830b4aa494e6f6883">m_stationData</a>) {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../da/d74/a00099.html">ModelException</a>(MID_TSD_RD, <span class="stringliteral">&quot;Get1DData&quot;</span>, <span class="stringliteral">&quot;The data &quot;</span> + <span class="keywordtype">string</span>(key) + <span class="stringliteral">&quot; is NULL.&quot;</span>);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    }</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    *data = <a class="code" href="../../df/d61/a00031.html#a44905545bd698ee830b4aa494e6f6883">m_stationData</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    *n = <a class="code" href="../../df/d61/a00031.html#a4754e8968ca858275d040fb67c8f8257">m_nStations</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
+<div class="ttc" id="a00031_html_a5b42430983cfa8542be04854e8612b9b"><div class="ttname"><a href="../../df/d61/a00031.html#a5b42430983cfa8542be04854e8612b9b">clsTSD_RD::Set1DData</a></div><div class="ttdeci">void Set1DData(const char *key, int n, float *data) OVERRIDE</div><div class="ttdoc">Set 1D data, by default, DT_Raster1D. </div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d40/a00568_source.html#l00011">clsTSD_RD.cpp:11</a></div></div>
+<div class="ttc" id="a00099_html"><div class="ttname"><a href="../../da/d74/a00099.html">ccgl::ModelException</a></div><div class="ttdoc">Print the exception message. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/d03/a00348_source.html#l00324">basic.h:324</a></div></div>
+<div class="ttc" id="a00031_html_a4754e8968ca858275d040fb67c8f8257"><div class="ttname"><a href="../../df/d61/a00031.html#a4754e8968ca858275d040fb67c8f8257">clsTSD_RD::m_nStations</a></div><div class="ttdeci">int m_nStations</div><div class="ttdoc">data row number, i.e., number of stations </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d9e/a00569_source.html#l00032">clsTSD_RD.h:32</a></div></div>
+<div class="ttc" id="a00031_html_a44905545bd698ee830b4aa494e6f6883"><div class="ttname"><a href="../../df/d61/a00031.html#a44905545bd698ee830b4aa494e6f6883">clsTSD_RD::m_stationData</a></div><div class="ttdeci">float * m_stationData</div><div class="ttdoc">time series data </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d9e/a00569_source.html#l00034">clsTSD_RD.h:34</a></div></div>
+<div class="ttc" id="a00031_html_a6f76ed81c00691617c80974198ea26fb"><div class="ttname"><a href="../../df/d61/a00031.html#a6f76ed81c00691617c80974198ea26fb">clsTSD_RD::Get1DData</a></div><div class="ttdeci">void Get1DData(const char *key, int *n, float **data) OVERRIDE</div><div class="ttdoc">Get 1D data, by default, DT_Raster1D. </div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d40/a00568_source.html#l00016">clsTSD_RD.cpp:16</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_b89a50a3d6b2f98326f9f3f569cfd788.html">modules</a></li><li class="navelem"><a class="el" href="../../dir_1f6eda6caf98ea53d8153999464f137e.html">climate</a></li><li class="navelem"><a class="el" href="../../dir_70fff461dcf604ed58461016f5c39188.html">TSD_RD</a></li><li class="navelem"><b>clsTSD_RD.h</b></li>
-    <li class="footer">Generated on Thu Jun 28 2018 16:22:26 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_b89a50a3d6b2f98326f9f3f569cfd788.html">modules</a></li><li class="navelem"><a class="el" href="../../dir_1f6eda6caf98ea53d8153999464f137e.html">climate</a></li><li class="navelem"><a class="el" href="../../dir_70fff461dcf604ed58461016f5c39188.html">TSD_RD</a></li><li class="navelem"><b>clsTSD_RD.cpp</b></li>
+    <li class="footer">Generated on Wed Jul 11 2018 05:07:29 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

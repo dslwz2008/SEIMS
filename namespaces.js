@@ -1,11 +1,11 @@
 var namespaces =
 [
-    [ "bmps", "de/d4c/a00711.html", "de/d4c/a00711" ],
-    [ "ccgl", "d1/d04/a00713.html", null ],
-    [ "data_raster", "dc/d14/a00720.html", null ],
+    [ "bmps", "d3/dda/a00712.html", "d3/dda/a00712" ],
+    [ "ccgl", "df/d96/a00714.html", null ],
+    [ "data_raster", "dd/dc1/a00721.html", null ],
     [ "seims", null, [
       [ "calibration", null, [
-        [ "sample_lhs", "d6/dc0/a00734.html", null ]
+        [ "sample_lhs", "d0/dab/a00735.html", null ]
       ] ],
       [ "pyseims_check", "d8/dba/a00773.html", null ]
     ] ],

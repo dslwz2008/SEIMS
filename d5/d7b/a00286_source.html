@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims_linux_gcc48/seims/preprocess/db_import_model_parameters.py Source File</title>
+<title>SEIMS: seims/preprocess/db_import_model_parameters.py Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -135,9 +135,9 @@ $(document).ready(function(){initNavTree('d5/d7b/a00286_source.html','../../');}
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">from</span> gridfs <span class="keyword">import</span> GridFS</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">from</span> numpy <span class="keyword">import</span> unique</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">from</span> <a class="code" href="../../d8/db9/a00725.html">pygeoc.hydro</a> <span class="keyword">import</span> FlowModelConst</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">from</span> <a class="code" href="../../d6/d59/a00726.html">pygeoc.raster</a> <span class="keyword">import</span> RasterUtilClass</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">from</span> <a class="code" href="../../dc/ddc/a00727.html">pygeoc.utils</a> <span class="keyword">import</span> StringClass, DEFAULT_NODATA, MathClass</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">from</span> <a class="code" href="../../d6/d59/a00726.html">pygeoc.hydro</a> <span class="keyword">import</span> FlowModelConst</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">from</span> <a class="code" href="../../dc/ddc/a00727.html">pygeoc.raster</a> <span class="keyword">import</span> RasterUtilClass</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">from</span> <a class="code" href="../../df/d3b/a00728.html">pygeoc.utils</a> <span class="keyword">import</span> StringClass, DEFAULT_NODATA, MathClass</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">from</span> pymongo <span class="keyword">import</span> ASCENDING</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">from</span> preprocess.db_mongodb <span class="keyword">import</span> MongoUtil</div>
@@ -146,7 +146,7 @@ $(document).ready(function(){initNavTree('d5/d7b/a00286_source.html','../../');}
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">from</span> preprocess.utility <span class="keyword">import</span> read_data_items_from_txt</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">class </span>ImportParam2Mongo(object):</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="../../de/de1/a00065.html">   32</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../de/de1/a00065.html">ImportParam2Mongo</a>(object):</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;Import model parameters to MongoDB,</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="stringliteral">       including default parameters, model configuration information, etc.</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="stringliteral">    &quot;&quot;&quot;</span></div>
@@ -514,22 +514,23 @@ $(document).ready(function(){initNavTree('d5/d7b/a00286_source.html','../../');}
 <div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;</div>
 <div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;<span class="keywordflow">if</span> __name__ == <span class="stringliteral">&quot;__main__&quot;</span>:</div>
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    main()</div>
-<div class="ttc" id="a00065_html_a58acdec6d24ca689ce0a38b433db5f87"><div class="ttname"><a href="../../de/de1/a00065.html#a58acdec6d24ca689ce0a38b433db5f87">seims.preprocess.db_import_model_parameters.ImportParam2Mongo.model_io_configuration</a></div><div class="ttdeci">def model_io_configuration</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d58/a00285_source.html#l00210">db_import_model_parameters.py:210</a></div></div>
-<div class="ttc" id="a00727_html"><div class="ttname"><a href="../../dc/ddc/a00727.html">utils</a></div></div>
-<div class="ttc" id="a00065_html_a3b8a830c6d701433bb284238bc7abf46"><div class="ttname"><a href="../../de/de1/a00065.html#a3b8a830c6d701433bb284238bc7abf46">seims.preprocess.db_import_model_parameters.ImportParam2Mongo.initial_params_from_txt</a></div><div class="ttdeci">def initial_params_from_txt</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d58/a00285_source.html#l00038">db_import_model_parameters.py:38</a></div></div>
-<div class="ttc" id="a00065_html_a685f6d599e98de96d54ef98eede4dd3a"><div class="ttname"><a href="../../de/de1/a00065.html#a685f6d599e98de96d54ef98eede4dd3a">seims.preprocess.db_import_model_parameters.ImportParam2Mongo.workflow</a></div><div class="ttdeci">def workflow</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d58/a00285_source.html#l00375">db_import_model_parameters.py:375</a></div></div>
-<div class="ttc" id="a00065_html_aa5db12579bd851b9ebb3b3300a47b14f"><div class="ttname"><a href="../../de/de1/a00065.html#aa5db12579bd851b9ebb3b3300a47b14f">seims.preprocess.db_import_model_parameters.ImportParam2Mongo.subbasin_statistics</a></div><div class="ttdeci">def subbasin_statistics</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d58/a00285_source.html#l00127">db_import_model_parameters.py:127</a></div></div>
-<div class="ttc" id="a00726_html"><div class="ttname"><a href="../../d6/d59/a00726.html">raster</a></div></div>
-<div class="ttc" id="a00065_html_ad7eaa00ad430bfd86117a0980f7577b7"><div class="ttname"><a href="../../de/de1/a00065.html#ad7eaa00ad430bfd86117a0980f7577b7">seims.preprocess.db_import_model_parameters.ImportParam2Mongo.lookup_tables_as_collection_and_gridfs</a></div><div class="ttdeci">def lookup_tables_as_collection_and_gridfs</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d58/a00285_source.html#l00306">db_import_model_parameters.py:306</a></div></div>
-<div class="ttc" id="a00725_html"><div class="ttname"><a href="../../d8/db9/a00725.html">hydro</a></div></div>
-<div class="ttc" id="a00065_html_a212c3ecb6fc5b60ba56af70362fda02d"><div class="ttname"><a href="../../de/de1/a00065.html#a212c3ecb6fc5b60ba56af70362fda02d">seims.preprocess.db_import_model_parameters.ImportParam2Mongo.calibrated_params_from_txt</a></div><div class="ttdeci">def calibrated_params_from_txt</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d58/a00285_source.html#l00094">db_import_model_parameters.py:94</a></div></div>
+<div class="ttc" id="a00065_html_a58acdec6d24ca689ce0a38b433db5f87"><div class="ttname"><a href="../../de/de1/a00065.html#a58acdec6d24ca689ce0a38b433db5f87">seims.preprocess.db_import_model_parameters.ImportParam2Mongo.model_io_configuration</a></div><div class="ttdeci">def model_io_configuration</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7b/a00286_source.html#l00210">db_import_model_parameters.py:210</a></div></div>
+<div class="ttc" id="a00727_html"><div class="ttname"><a href="../../dc/ddc/a00727.html">raster</a></div></div>
+<div class="ttc" id="a00065_html_a3b8a830c6d701433bb284238bc7abf46"><div class="ttname"><a href="../../de/de1/a00065.html#a3b8a830c6d701433bb284238bc7abf46">seims.preprocess.db_import_model_parameters.ImportParam2Mongo.initial_params_from_txt</a></div><div class="ttdeci">def initial_params_from_txt</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7b/a00286_source.html#l00038">db_import_model_parameters.py:38</a></div></div>
+<div class="ttc" id="a00065_html_a685f6d599e98de96d54ef98eede4dd3a"><div class="ttname"><a href="../../de/de1/a00065.html#a685f6d599e98de96d54ef98eede4dd3a">seims.preprocess.db_import_model_parameters.ImportParam2Mongo.workflow</a></div><div class="ttdeci">def workflow</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7b/a00286_source.html#l00375">db_import_model_parameters.py:375</a></div></div>
+<div class="ttc" id="a00065_html_aa5db12579bd851b9ebb3b3300a47b14f"><div class="ttname"><a href="../../de/de1/a00065.html#aa5db12579bd851b9ebb3b3300a47b14f">seims.preprocess.db_import_model_parameters.ImportParam2Mongo.subbasin_statistics</a></div><div class="ttdeci">def subbasin_statistics</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7b/a00286_source.html#l00127">db_import_model_parameters.py:127</a></div></div>
+<div class="ttc" id="a00726_html"><div class="ttname"><a href="../../d6/d59/a00726.html">hydro</a></div></div>
+<div class="ttc" id="a00065_html_ad7eaa00ad430bfd86117a0980f7577b7"><div class="ttname"><a href="../../de/de1/a00065.html#ad7eaa00ad430bfd86117a0980f7577b7">seims.preprocess.db_import_model_parameters.ImportParam2Mongo.lookup_tables_as_collection_and_gridfs</a></div><div class="ttdeci">def lookup_tables_as_collection_and_gridfs</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7b/a00286_source.html#l00306">db_import_model_parameters.py:306</a></div></div>
+<div class="ttc" id="a00065_html_a212c3ecb6fc5b60ba56af70362fda02d"><div class="ttname"><a href="../../de/de1/a00065.html#a212c3ecb6fc5b60ba56af70362fda02d">seims.preprocess.db_import_model_parameters.ImportParam2Mongo.calibrated_params_from_txt</a></div><div class="ttdeci">def calibrated_params_from_txt</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7b/a00286_source.html#l00094">db_import_model_parameters.py:94</a></div></div>
+<div class="ttc" id="a00065_html"><div class="ttname"><a href="../../de/de1/a00065.html">seims.preprocess.db_import_model_parameters.ImportParam2Mongo</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7b/a00286_source.html#l00032">db_import_model_parameters.py:32</a></div></div>
+<div class="ttc" id="a00728_html"><div class="ttname"><a href="../../df/d3b/a00728.html">utils</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_483bc1739a16b87563cca23e7a392c1e.html">seims_linux_gcc48</a></li><li class="navelem"><a class="el" href="../../dir_a45053e29f104e67e5be28f13679e3c2.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_88ee9ccb3eda13ad093e0105c15391c0.html">preprocess</a></li><li class="navelem"><b>db_import_model_parameters.py</b></li>
-    <li class="footer">Generated on Thu Jun 28 2018 16:22:25 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_e83ca20770e7fbc90f1c071d86067ace.html">preprocess</a></li><li class="navelem"><b>db_import_model_parameters.py</b></li>
+    <li class="footer">Generated on Wed Jul 11 2018 05:07:27 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

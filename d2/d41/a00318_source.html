@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims_linux_gcc48/seims/preprocess/sd_hillslope.py Source File</title>
+<title>SEIMS: seims/preprocess/sd_hillslope.py Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -130,20 +130,20 @@ $(document).ready(function(){initNavTree('d2/d41/a00318_source.html','../../');}
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">import</span> os</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">import</span> numpy</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">from</span> <a class="code" href="../../d8/db9/a00725.html">pygeoc.hydro</a> <span class="keyword">import</span> FlowModelConst</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">from</span> <a class="code" href="../../d6/d59/a00726.html">pygeoc.hydro</a> <span class="keyword">import</span> FlowModelConst</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">from</span> pygeoc.postTauDEM <span class="keyword">import</span> D8Util</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">from</span> <a class="code" href="../../d6/d59/a00726.html">pygeoc.raster</a> <span class="keyword">import</span> RasterUtilClass</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">from</span> <a class="code" href="../../dc/ddc/a00727.html">pygeoc.utils</a> <span class="keyword">import</span> DEFAULT_NODATA, FileClass</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">from</span> <a class="code" href="../../dc/ddc/a00727.html">pygeoc.raster</a> <span class="keyword">import</span> RasterUtilClass</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">from</span> <a class="code" href="../../df/d3b/a00728.html">pygeoc.utils</a> <span class="keyword">import</span> DEFAULT_NODATA, FileClass</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">class </span>DelineateHillslope(object):</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="../../dd/d32/a00041.html">   22</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../dd/d32/a00041.html">DelineateHillslope</a>(object):</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;Delineate hillslope for each subbasin, include header, left, and right hillslope&quot;&quot;&quot;</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    @staticmethod</div>
 <div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="../../dd/d32/a00041.html#ac6bee90c9da524662948f3cf686e611f">   26</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dd/d32/a00041.html#ac6bee90c9da524662948f3cf686e611f">get_subbasin_from_hillslope_id</a>(hillslp_id, subbsin_num):</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Get subbasin ID from the hillslope ID and the subbasin number.&quot;&quot;&quot;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        remainder = (hillslp_id - subbsin_num) % 3</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        divid = (hillslp_id - subbsin_num) / 3</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        divid = (hillslp_id - subbsin_num) // 3</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">if</span> remainder == 0:</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="keywordflow">return</span> divid</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">else</span>:</div>
@@ -451,19 +451,20 @@ $(document).ready(function(){initNavTree('d2/d41/a00318_source.html','../../');}
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;</div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;<span class="keywordflow">if</span> __name__ == <span class="stringliteral">&#39;__main__&#39;</span>:</div>
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    main()</div>
-<div class="ttc" id="a00041_html_ac6bee90c9da524662948f3cf686e611f"><div class="ttname"><a href="../../dd/d32/a00041.html#ac6bee90c9da524662948f3cf686e611f">seims.preprocess.sd_hillslope.DelineateHillslope.get_subbasin_from_hillslope_id</a></div><div class="ttdeci">def get_subbasin_from_hillslope_id</div><div class="ttdef"><b>Definition:</b> <a href="../../da/de0/a00317_source.html#l00026">sd_hillslope.py:26</a></div></div>
-<div class="ttc" id="a00727_html"><div class="ttname"><a href="../../dc/ddc/a00727.html">utils</a></div></div>
-<div class="ttc" id="a00726_html"><div class="ttname"><a href="../../d6/d59/a00726.html">raster</a></div></div>
-<div class="ttc" id="a00041_html_a3337613103c286a8caa3a9cca3eaba3f"><div class="ttname"><a href="../../dd/d32/a00041.html#a3337613103c286a8caa3a9cca3eaba3f">seims.preprocess.sd_hillslope.DelineateHillslope.downstream_method_whitebox</a></div><div class="ttdeci">def downstream_method_whitebox</div><div class="ttdef"><b>Definition:</b> <a href="../../da/de0/a00317_source.html#l00044">sd_hillslope.py:44</a></div></div>
-<div class="ttc" id="a00725_html"><div class="ttname"><a href="../../d8/db9/a00725.html">hydro</a></div></div>
-<div class="ttc" id="a00041_html_afad0852f7653e84b0fed995a86fb284c"><div class="ttname"><a href="../../dd/d32/a00041.html#afad0852f7653e84b0fed995a86fb284c">seims.preprocess.sd_hillslope.DelineateHillslope.cal_hs_codes</a></div><div class="ttdeci">def cal_hs_codes</div><div class="ttdef"><b>Definition:</b> <a href="../../da/de0/a00317_source.html#l00036">sd_hillslope.py:36</a></div></div>
+<div class="ttc" id="a00041_html_ac6bee90c9da524662948f3cf686e611f"><div class="ttname"><a href="../../dd/d32/a00041.html#ac6bee90c9da524662948f3cf686e611f">seims.preprocess.sd_hillslope.DelineateHillslope.get_subbasin_from_hillslope_id</a></div><div class="ttdeci">def get_subbasin_from_hillslope_id</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d41/a00318_source.html#l00026">sd_hillslope.py:26</a></div></div>
+<div class="ttc" id="a00727_html"><div class="ttname"><a href="../../dc/ddc/a00727.html">raster</a></div></div>
+<div class="ttc" id="a00041_html"><div class="ttname"><a href="../../dd/d32/a00041.html">seims.preprocess.sd_hillslope.DelineateHillslope</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d41/a00318_source.html#l00022">sd_hillslope.py:22</a></div></div>
+<div class="ttc" id="a00726_html"><div class="ttname"><a href="../../d6/d59/a00726.html">hydro</a></div></div>
+<div class="ttc" id="a00041_html_a3337613103c286a8caa3a9cca3eaba3f"><div class="ttname"><a href="../../dd/d32/a00041.html#a3337613103c286a8caa3a9cca3eaba3f">seims.preprocess.sd_hillslope.DelineateHillslope.downstream_method_whitebox</a></div><div class="ttdeci">def downstream_method_whitebox</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d41/a00318_source.html#l00044">sd_hillslope.py:44</a></div></div>
+<div class="ttc" id="a00041_html_afad0852f7653e84b0fed995a86fb284c"><div class="ttname"><a href="../../dd/d32/a00041.html#afad0852f7653e84b0fed995a86fb284c">seims.preprocess.sd_hillslope.DelineateHillslope.cal_hs_codes</a></div><div class="ttdeci">def cal_hs_codes</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d41/a00318_source.html#l00036">sd_hillslope.py:36</a></div></div>
+<div class="ttc" id="a00728_html"><div class="ttname"><a href="../../df/d3b/a00728.html">utils</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_483bc1739a16b87563cca23e7a392c1e.html">seims_linux_gcc48</a></li><li class="navelem"><a class="el" href="../../dir_a45053e29f104e67e5be28f13679e3c2.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_88ee9ccb3eda13ad093e0105c15391c0.html">preprocess</a></li><li class="navelem"><b>sd_hillslope.py</b></li>
-    <li class="footer">Generated on Thu Jun 28 2018 16:22:25 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_e83ca20770e7fbc90f1c071d86067ace.html">preprocess</a></li><li class="navelem"><b>sd_hillslope.py</b></li>
+    <li class="footer">Generated on Wed Jul 11 2018 05:07:28 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

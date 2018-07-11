@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: bmps::plant_management::RelImpndOp Class Reference</title>
+<title>SEIMS: RegularMeasurement Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -116,101 +116,200 @@ $(document).ready(function(){initNavTree('d5/d4e/a00141.html','../../');});
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
-<a href="../../d0/d1f/a01087.html">List of all members</a>  </div>
+<a href="../../d9/d9a/a00998.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">bmps::plant_management::RelImpndOp Class Reference</div>  </div>
+<div class="title">RegularMeasurement Class Reference<div class="ingroups"><a class="el" href="../../d5/dcd/a00802.html">Data</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>ReleaseImpound operation.  
+<p>Regular hydroclimate data, e.g., daily data.  
  <a href="../../d5/d4e/a00141.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="../../d4/da8/a00437_source.html">PlantManagementOperation.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="../../dc/ddf/a00469_source.html">RegularMeasurement.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for bmps::plant_management::RelImpndOp:</div>
+Inheritance diagram for RegularMeasurement:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../da/db7/a01088.png" border="0" usemap="#bmps_1_1plant__management_1_1_rel_impnd_op_inherit__map" alt="Inheritance graph"/></div>
-<map name="bmps_1_1plant__management_1_1_rel_impnd_op_inherit__map" id="bmps_1_1plant__management_1_1_rel_impnd_op_inherit__map">
-<area shape="rect" id="node2" href="../../d7/d06/a00131.html" title="Base class of plant management operation. " alt="" coords="5,307,211,618"/><area shape="rect" id="node3" href="../../db/df8/a00076.html" title="Base type of all interfaces. All interface types are encouraged to be virtual inherited. " alt="" coords="48,173,168,259"/><area shape="rect" id="node4" href="../../d4/d81/a00110.html" title="Base class for classes that cannot be copied. By inheriting this class you can disable copying of you..." alt="" coords="31,5,184,125"/></map>
+<div class="center"><img src="../../de/de2/a00999.png" border="0" usemap="#_regular_measurement_inherit__map" alt="Inheritance graph"/></div>
+<map name="_regular_measurement_inherit__map" id="_regular_measurement_inherit__map">
+<area shape="rect" id="node2" href="../../d1/dc1/a00092.html" title="Get HydroClimate measurement data from MongoDB. " alt="" coords="16,307,203,600"/><area shape="rect" id="node3" href="../../db/df8/a00076.html" title="Base type of all interfaces. All interface types are encouraged to be virtual inherited. " alt="" coords="49,173,169,259"/><area shape="rect" id="node4" href="../../dd/d42/a00109.html" title="Base class for classes that cannot be copied. By inheriting this class you can disable copying of you..." alt="" coords="33,5,185,125"/></map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4cc1261743117c4e345091752e345916"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4cc1261743117c4e345091752e345916"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d4e/a00141.html#a4cc1261743117c4e345091752e345916">RelImpndOp</a> (int mgtOp, bool usebaseHU, float husc, int year, int month, int day, float *parameters)</td></tr>
-<tr class="memdesc:a4cc1261743117c4e345091752e345916"><td class="mdescLeft">&#160;</td><td class="mdescRight">ReleaseImpound. <br/></td></tr>
-<tr class="separator:a4cc1261743117c4e345091752e345916"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c517e4e07b371ddfa696af5ede0314b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9c517e4e07b371ddfa696af5ede0314b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d4e/a00141.html#a9c517e4e07b371ddfa696af5ede0314b">dump</a> (std::ostream *fs) OVERRIDE</td></tr>
-<tr class="memdesc:a9c517e4e07b371ddfa696af5ede0314b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output. <br/></td></tr>
-<tr class="separator:a9c517e4e07b371ddfa696af5ede0314b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_a00131"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a00131')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d7/d06/a00131.html">bmps::plant_management::PltMgtOp</a></td></tr>
-<tr class="memitem:acb6e9d50049e9a847854a3e1c9745c02 inherit pub_methods_a00131"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d06/a00131.html#acb6e9d50049e9a847854a3e1c9745c02">PltMgtOp</a> (int mgtOp, bool usebaseHU, float husc, int year, int month, int day, float *parameters)</td></tr>
-<tr class="memdesc:acb6e9d50049e9a847854a3e1c9745c02 inherit pub_methods_a00131"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#acb6e9d50049e9a847854a3e1c9745c02">More...</a><br/></td></tr>
-<tr class="separator:acb6e9d50049e9a847854a3e1c9745c02 inherit pub_methods_a00131"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6e350df009ea4e28c1c5ff20af5185a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d4e/a00141.html#ad6e350df009ea4e28c1c5ff20af5185a">RegularMeasurement</a> (MongoClient *conn, const string &amp;hydroDBName, const string &amp;sitesList, const string &amp;siteType, time_t startTime, time_t endTime, time_t interval)</td></tr>
+<tr class="memdesc:ad6e350df009ea4e28c1c5ff20af5185a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize NotRegular <a class="el" href="../../d1/dc1/a00092.html" title="Get HydroClimate measurement data from MongoDB. ">Measurement</a> instance from MongoDB.  <a href="#ad6e350df009ea4e28c1c5ff20af5185a">More...</a><br/></td></tr>
+<tr class="separator:ad6e350df009ea4e28c1c5ff20af5185a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06f511cb0f8e143572659a50fd41044a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a06f511cb0f8e143572659a50fd41044a"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d4e/a00141.html#a06f511cb0f8e143572659a50fd41044a">~RegularMeasurement</a> ()</td></tr>
+<tr class="memdesc:a06f511cb0f8e143572659a50fd41044a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br/></td></tr>
+<tr class="separator:a06f511cb0f8e143572659a50fd41044a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0831ae60972d776e431d600aefb3e1e8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0831ae60972d776e431d600aefb3e1e8"></a>
+float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d4e/a00141.html#a0831ae60972d776e431d600aefb3e1e8">GetSiteDataByTime</a> (time_t t) OVERRIDE</td></tr>
+<tr class="memdesc:a0831ae60972d776e431d600aefb3e1e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get site date by time <em>pData</em>. <br/></td></tr>
+<tr class="separator:a0831ae60972d776e431d600aefb3e1e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_a00092"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a00092')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d1/dc1/a00092.html">Measurement</a></td></tr>
+<tr class="memitem:a088f1f42c4d0b4efba53fce45fe9b406 inherit pub_methods_a00092"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dc1/a00092.html#a088f1f42c4d0b4efba53fce45fe9b406">Measurement</a> (MongoClient *conn, const string &amp;hydroDBName, const string &amp;sitesList, const string &amp;siteType, time_t startTime, time_t endTime)</td></tr>
+<tr class="memdesc:a088f1f42c4d0b4efba53fce45fe9b406 inherit pub_methods_a00092"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize <a class="el" href="../../d1/dc1/a00092.html" title="Get HydroClimate measurement data from MongoDB. ">Measurement</a> instance from MongoDB.  <a href="#a088f1f42c4d0b4efba53fce45fe9b406">More...</a><br/></td></tr>
+<tr class="separator:a088f1f42c4d0b4efba53fce45fe9b406 inherit pub_methods_a00092"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac94dd8728fe078e337e9ac4b2187a5dc inherit pub_methods_a00092"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac94dd8728fe078e337e9ac4b2187a5dc"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dc1/a00092.html#ac94dd8728fe078e337e9ac4b2187a5dc">~Measurement</a> ()</td></tr>
+<tr class="memdesc:ac94dd8728fe078e337e9ac4b2187a5dc inherit pub_methods_a00092"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br/></td></tr>
+<tr class="separator:ac94dd8728fe078e337e9ac4b2187a5dc inherit pub_methods_a00092"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5adee45804fa27da97ecf8e5979717ea inherit pub_methods_a00092"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5adee45804fa27da97ecf8e5979717ea"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dc1/a00092.html#a5adee45804fa27da97ecf8e5979717ea">NumberOfSites</a> () const </td></tr>
+<tr class="memdesc:a5adee45804fa27da97ecf8e5979717ea inherit pub_methods_a00092"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get Number of site. <br/></td></tr>
+<tr class="separator:a5adee45804fa27da97ecf8e5979717ea inherit pub_methods_a00092"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb09d02b28576f08d1efc11ffcca370a inherit pub_methods_a00092"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acb09d02b28576f08d1efc11ffcca370a"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dc1/a00092.html#acb09d02b28576f08d1efc11ffcca370a">Type</a> () const </td></tr>
+<tr class="memdesc:acb09d02b28576f08d1efc11ffcca370a inherit pub_methods_a00092"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get HydroClimate site type, "M" or "P". <br/></td></tr>
+<tr class="separator:acb09d02b28576f08d1efc11ffcca370a inherit pub_methods_a00092"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a214d7e87c436997cf98a638f421c9bbd inherit pub_methods_a00092"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a214d7e87c436997cf98a638f421c9bbd"></a>
+time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dc1/a00092.html#a214d7e87c436997cf98a638f421c9bbd">StartTime</a> () const </td></tr>
+<tr class="memdesc:a214d7e87c436997cf98a638f421c9bbd inherit pub_methods_a00092"><td class="mdescLeft">&#160;</td><td class="mdescRight">start time <br/></td></tr>
+<tr class="separator:a214d7e87c436997cf98a638f421c9bbd inherit pub_methods_a00092"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45cd3ae459a5b6fbae4ae97d4398ba78 inherit pub_methods_a00092"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a45cd3ae459a5b6fbae4ae97d4398ba78"></a>
+time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dc1/a00092.html#a45cd3ae459a5b6fbae4ae97d4398ba78">EndTime</a> () const </td></tr>
+<tr class="memdesc:a45cd3ae459a5b6fbae4ae97d4398ba78 inherit pub_methods_a00092"><td class="mdescLeft">&#160;</td><td class="mdescRight">end time <br/></td></tr>
+<tr class="separator:a45cd3ae459a5b6fbae4ae97d4398ba78 inherit pub_methods_a00092"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a3fbf94acca4415d0410c10502a0c606c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3fbf94acca4415d0410c10502a0c606c"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d4e/a00141.html#a3fbf94acca4415d0410c10502a0c606c">m_maxPondDepth</a></td></tr>
-<tr class="memdesc:a3fbf94acca4415d0410c10502a0c606c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum ponding depth, mm. <br/></td></tr>
-<tr class="separator:a3fbf94acca4415d0410c10502a0c606c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27b15363abd30fc80d4a4d870dbb3d77"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a27b15363abd30fc80d4a4d870dbb3d77"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d4e/a00141.html#a27b15363abd30fc80d4a4d870dbb3d77">m_maxFitDepth</a></td></tr>
-<tr class="memdesc:a27b15363abd30fc80d4a4d870dbb3d77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum fitting depth, mm. <br/></td></tr>
-<tr class="separator:a27b15363abd30fc80d4a4d870dbb3d77"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a462dad655ab0ea4152d72badd5aef796"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a462dad655ab0ea4152d72badd5aef796"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d4e/a00141.html#a462dad655ab0ea4152d72badd5aef796">m_minFitDepth</a></td></tr>
-<tr class="memdesc:a462dad655ab0ea4152d72badd5aef796"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum fitting depth, mm. <br/></td></tr>
-<tr class="separator:a462dad655ab0ea4152d72badd5aef796"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fb71444556a70bf7aac4b5af38dd04b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2fb71444556a70bf7aac4b5af38dd04b"></a>
+vector&lt; float * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d4e/a00141.html#a2fb71444556a70bf7aac4b5af38dd04b">m_siteData</a></td></tr>
+<tr class="memdesc:a2fb71444556a70bf7aac4b5af38dd04b"><td class="mdescLeft">&#160;</td><td class="mdescRight">site data : the first dimension is time, and the second dimension is data by sites <br/></td></tr>
+<tr class="separator:a2fb71444556a70bf7aac4b5af38dd04b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fffb32a797276d7cc6b2bd8b2f369c8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6fffb32a797276d7cc6b2bd8b2f369c8"></a>
+time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d4e/a00141.html#a6fffb32a797276d7cc6b2bd8b2f369c8">m_interval</a></td></tr>
+<tr class="memdesc:a6fffb32a797276d7cc6b2bd8b2f369c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">data record interval <br/></td></tr>
+<tr class="separator:a6fffb32a797276d7cc6b2bd8b2f369c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pro_attribs_a00131"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_a00131')"><img src="../../closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="../../d7/d06/a00131.html">bmps::plant_management::PltMgtOp</a></td></tr>
-<tr class="memitem:a4efe57d00c968714317ebe28444b6d88 inherit pro_attribs_a00131"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4efe57d00c968714317ebe28444b6d88"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d06/a00131.html#a4efe57d00c968714317ebe28444b6d88">m_useBaseHUSC</a></td></tr>
-<tr class="memdesc:a4efe57d00c968714317ebe28444b6d88 inherit pro_attribs_a00131"><td class="mdescLeft">&#160;</td><td class="mdescRight">use base hu or plant accumulated hu <br/></td></tr>
-<tr class="separator:a4efe57d00c968714317ebe28444b6d88 inherit pro_attribs_a00131"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43291ea426480483b35c9894747bd7b9 inherit pro_attribs_a00131"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a43291ea426480483b35c9894747bd7b9"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d06/a00131.html#a43291ea426480483b35c9894747bd7b9">m_frHU</a></td></tr>
-<tr class="memdesc:a43291ea426480483b35c9894747bd7b9 inherit pro_attribs_a00131"><td class="mdescLeft">&#160;</td><td class="mdescRight">husc <br/></td></tr>
-<tr class="separator:a43291ea426480483b35c9894747bd7b9 inherit pro_attribs_a00131"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d7937ad39e3961840e6644fcdeea70f inherit pro_attribs_a00131"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6d7937ad39e3961840e6644fcdeea70f"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d06/a00131.html#a6d7937ad39e3961840e6644fcdeea70f">m_year</a></td></tr>
-<tr class="memdesc:a6d7937ad39e3961840e6644fcdeea70f inherit pro_attribs_a00131"><td class="mdescLeft">&#160;</td><td class="mdescRight">year <br/></td></tr>
-<tr class="separator:a6d7937ad39e3961840e6644fcdeea70f inherit pro_attribs_a00131"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e1774938a3cc4a3e83bfb6283624568 inherit pro_attribs_a00131"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1e1774938a3cc4a3e83bfb6283624568"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d06/a00131.html#a1e1774938a3cc4a3e83bfb6283624568">m_month</a></td></tr>
-<tr class="memdesc:a1e1774938a3cc4a3e83bfb6283624568 inherit pro_attribs_a00131"><td class="mdescLeft">&#160;</td><td class="mdescRight">month <br/></td></tr>
-<tr class="separator:a1e1774938a3cc4a3e83bfb6283624568 inherit pro_attribs_a00131"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b988810d1b1d9212bcf7048755a61a2 inherit pro_attribs_a00131"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7b988810d1b1d9212bcf7048755a61a2"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d06/a00131.html#a7b988810d1b1d9212bcf7048755a61a2">m_day</a></td></tr>
-<tr class="memdesc:a7b988810d1b1d9212bcf7048755a61a2 inherit pro_attribs_a00131"><td class="mdescLeft">&#160;</td><td class="mdescRight">day <br/></td></tr>
-<tr class="separator:a7b988810d1b1d9212bcf7048755a61a2 inherit pro_attribs_a00131"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65c47c117173fa9fd208f6bb2855d915 inherit pro_attribs_a00131"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a65c47c117173fa9fd208f6bb2855d915"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d06/a00131.html#a65c47c117173fa9fd208f6bb2855d915">m_mgtOp</a></td></tr>
-<tr class="memdesc:a65c47c117173fa9fd208f6bb2855d915 inherit pro_attribs_a00131"><td class="mdescLeft">&#160;</td><td class="mdescRight">management operation code <br/></td></tr>
-<tr class="separator:a65c47c117173fa9fd208f6bb2855d915 inherit pro_attribs_a00131"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c69b23715eaa5cdf8f9a2d9f6eb68f5 inherit pro_attribs_a00131"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7c69b23715eaa5cdf8f9a2d9f6eb68f5"></a>
-float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d06/a00131.html#a7c69b23715eaa5cdf8f9a2d9f6eb68f5">m_parameters</a></td></tr>
-<tr class="memdesc:a7c69b23715eaa5cdf8f9a2d9f6eb68f5 inherit pro_attribs_a00131"><td class="mdescLeft">&#160;</td><td class="mdescRight">parameters, mgt1~mgt10 <br/></td></tr>
-<tr class="separator:a7c69b23715eaa5cdf8f9a2d9f6eb68f5 inherit pro_attribs_a00131"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_a00092"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_a00092')"><img src="../../closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="../../d1/dc1/a00092.html">Measurement</a></td></tr>
+<tr class="memitem:a853f5ae6c771cfbbf93e7c22fe6fbbf4 inherit pro_attribs_a00092"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a853f5ae6c771cfbbf93e7c22fe6fbbf4"></a>
+MongoClient *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dc1/a00092.html#a853f5ae6c771cfbbf93e7c22fe6fbbf4">m_conn</a></td></tr>
+<tr class="memdesc:a853f5ae6c771cfbbf93e7c22fe6fbbf4 inherit pro_attribs_a00092"><td class="mdescLeft">&#160;</td><td class="mdescRight">MongoDB client object. <br/></td></tr>
+<tr class="separator:a853f5ae6c771cfbbf93e7c22fe6fbbf4 inherit pro_attribs_a00092"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a801eb1c569a843a5326b36e7bb76119e inherit pro_attribs_a00092"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a801eb1c569a843a5326b36e7bb76119e"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dc1/a00092.html#a801eb1c569a843a5326b36e7bb76119e">m_hydroDBName</a></td></tr>
+<tr class="memdesc:a801eb1c569a843a5326b36e7bb76119e inherit pro_attribs_a00092"><td class="mdescLeft">&#160;</td><td class="mdescRight">HydroClimate database name. <br/></td></tr>
+<tr class="separator:a801eb1c569a843a5326b36e7bb76119e inherit pro_attribs_a00092"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acffdb39ed0357326cec16264231ae695 inherit pro_attribs_a00092"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acffdb39ed0357326cec16264231ae695"></a>
+vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dc1/a00092.html#acffdb39ed0357326cec16264231ae695">m_siteIDList</a></td></tr>
+<tr class="memdesc:acffdb39ed0357326cec16264231ae695 inherit pro_attribs_a00092"><td class="mdescLeft">&#160;</td><td class="mdescRight">Site IDs list. <br/></td></tr>
+<tr class="separator:acffdb39ed0357326cec16264231ae695 inherit pro_attribs_a00092"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae17b0ffa8e6e6b5ac42092b485c4f204 inherit pro_attribs_a00092"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae17b0ffa8e6e6b5ac42092b485c4f204"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dc1/a00092.html#ae17b0ffa8e6e6b5ac42092b485c4f204">m_type</a></td></tr>
+<tr class="memdesc:ae17b0ffa8e6e6b5ac42092b485c4f204 inherit pro_attribs_a00092"><td class="mdescLeft">&#160;</td><td class="mdescRight">Site type, M means meteorology, and P means precipitation. <br/></td></tr>
+<tr class="separator:ae17b0ffa8e6e6b5ac42092b485c4f204 inherit pro_attribs_a00092"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d95627d0865cc35b930939076aa7da6 inherit pro_attribs_a00092"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1d95627d0865cc35b930939076aa7da6"></a>
+time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dc1/a00092.html#a1d95627d0865cc35b930939076aa7da6">m_startTime</a></td></tr>
+<tr class="memdesc:a1d95627d0865cc35b930939076aa7da6 inherit pro_attribs_a00092"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start time. <br/></td></tr>
+<tr class="separator:a1d95627d0865cc35b930939076aa7da6 inherit pro_attribs_a00092"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c62f2abba7a613bc6edeca6152751f9 inherit pro_attribs_a00092"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1c62f2abba7a613bc6edeca6152751f9"></a>
+time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dc1/a00092.html#a1c62f2abba7a613bc6edeca6152751f9">m_endTime</a></td></tr>
+<tr class="memdesc:a1c62f2abba7a613bc6edeca6152751f9 inherit pro_attribs_a00092"><td class="mdescLeft">&#160;</td><td class="mdescRight">End time. <br/></td></tr>
+<tr class="separator:a1c62f2abba7a613bc6edeca6152751f9 inherit pro_attribs_a00092"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2114a606e03739f92b2ba8825fc1334c inherit pro_attribs_a00092"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2114a606e03739f92b2ba8825fc1334c"></a>
+float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dc1/a00092.html#a2114a606e03739f92b2ba8825fc1334c">pData</a></td></tr>
+<tr class="memdesc:a2114a606e03739f92b2ba8825fc1334c inherit pro_attribs_a00092"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d1/dc1/a00092.html" title="Get HydroClimate measurement data from MongoDB. ">Measurement</a> data of all sites in given date. <br/></td></tr>
+<tr class="separator:a2114a606e03739f92b2ba8825fc1334c inherit pro_attribs_a00092"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>ReleaseImpound operation. </p>
+<div class="textblock"><p>Regular hydroclimate data, e.g., daily data. </p>
+<dl class="section author"><dt>Author</dt><dd>Junzhi Liu, LiangJun Zhu </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>2.0 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>May 2016  LJ - Replace mongoc_client_t by MongoClient interface</dd></dl>
+<p>Regular hydroclimate data, e.g., daily data </p>
 
-<p>Definition at line <a class="el" href="../../d4/da8/a00437_source.html#l00387">387</a> of file <a class="el" href="../../d4/da8/a00437_source.html">PlantManagementOperation.h</a>.</p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
-<li>seims/src/seims_main/base/bmps/<a class="el" href="../../d4/da8/a00437_source.html">PlantManagementOperation.h</a></li>
-<li>seims/src/seims_main/base/bmps/<a class="el" href="../../d4/d82/a00436_source.html">PlantManagementOperation.cpp</a></li>
+<p>Definition at line <a class="el" href="../../dc/ddf/a00469_source.html#l00019">19</a> of file <a class="el" href="../../dc/ddf/a00469_source.html">RegularMeasurement.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="ad6e350df009ea4e28c1c5ff20af5185a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RegularMeasurement::RegularMeasurement </td>
+          <td>(</td>
+          <td class="paramtype">MongoClient *&#160;</td>
+          <td class="paramname"><em>conn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>hydroDBName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>sitesList</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>siteType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">time_t&#160;</td>
+          <td class="paramname"><em>startTime</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">time_t&#160;</td>
+          <td class="paramname"><em>endTime</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">time_t&#160;</td>
+          <td class="paramname"><em>interval</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize NotRegular <a class="el" href="../../d1/dc1/a00092.html" title="Get HydroClimate measurement data from MongoDB. ">Measurement</a> instance from MongoDB. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">conn</td><td><em>MongoClient</em>, MongoDB client </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">hydroDBName</td><td><em>string</em>, HydroClimate database name </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sitesList</td><td><em>string</em>, site list </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">siteType</td><td><em>string</em>, site type </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">startTime</td><td><em>time_t</em>, start date time </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">endTime</td><td><em>time_t</em>, end date time </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">interval</td><td><em>time_t</em>, time interval </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>build query statement</p>
+<p>startTime &lt;= t &lt;= endTime,</p>
+<p>sort by stationID and time </p>
+
+<p>Definition at line <a class="el" href="../../df/d38/a00468_source.html#l00012">12</a> of file <a class="el" href="../../df/d38/a00468_source.html">RegularMeasurement.cpp</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>seims/src/seims_main/base/data/<a class="el" href="../../dc/ddf/a00469_source.html">RegularMeasurement.h</a></li>
+<li>seims/src/seims_main/base/data/<a class="el" href="../../df/d38/a00468_source.html">RegularMeasurement.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../de/d4c/a00711.html">bmps</a></li><li class="navelem"><a class="el" href="../../d3/dda/a00712.html">plant_management</a></li><li class="navelem"><a class="el" href="../../d5/d4e/a00141.html">RelImpndOp</a></li>
-    <li class="footer">Generated on Thu Jun 28 2018 16:22:28 for SEIMS by
+    <li class="navelem"><a class="el" href="../../d5/d4e/a00141.html">RegularMeasurement</a></li>
+    <li class="footer">Generated on Wed Jul 11 2018 05:07:31 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

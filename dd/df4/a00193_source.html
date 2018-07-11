@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: knowledge/README.md Source File</title>
+<title>SEIMS: buildRel/CMakeFiles/FindOpenMP/OpenMPTryFlag.c Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -93,7 +93,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('dd/df4/a00193.html','../../');});
+$(document).ready(function(){initNavTree('dd/df4/a00193_source.html','../../');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -112,18 +112,23 @@ $(document).ready(function(){initNavTree('dd/df4/a00193.html','../../');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">knowledge/README.md</div>  </div>
+<div class="title">OpenMPTryFlag.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;The involved modeling knowledge of the <span class="keywordflow">case</span> study of Meichuan River rainfall-runoff modeling could be </div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;addressed on Github (https:<span class="comment">//github.com/lreis2415/SEIMS/knowledge)</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;omp.h&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keywordtype">int</span> main() {</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#ifndef _OPENMP</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor"></span>  breaks_on_purpose</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor"></span>}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>README.md</b></li>
-    <li class="footer">Generated on Thu Jun 28 2018 16:22:25 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_cd802f715eac8b5afa0214b2422ad557.html">buildRel</a></li><li class="navelem"><a class="el" href="../../dir_f4aa073b8a0aa25c365e2d9548e13302.html">CMakeFiles</a></li><li class="navelem"><a class="el" href="../../dir_3b5c9b254b049da9ffff76b8584d628f.html">FindOpenMP</a></li><li class="navelem"><b>OpenMPTryFlag.c</b></li>
+    <li class="footer">Generated on Wed Jul 11 2018 05:07:27 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

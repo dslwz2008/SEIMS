@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims_linux_gcc48/seims/preprocess/hydro_climate_utility.py Source File</title>
+<title>SEIMS: seims/preprocess/hydro_climate_utility.py Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -133,12 +133,12 @@ $(document).ready(function(){initNavTree('d0/d39/a00314_source.html','../../');}
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keywordflow">if</span> os.path.abspath(os.path.join(sys.path[0], <span class="stringliteral">&#39;..&#39;</span>)) <span class="keywordflow">not</span> <span class="keywordflow">in</span> sys.path:</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    sys.path.insert(0, os.path.abspath(os.path.join(sys.path[0], <span class="stringliteral">&#39;..&#39;</span>)))</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">from</span> <a class="code" href="../../dc/ddc/a00727.html">pygeoc.utils</a> <span class="keyword">import</span> StringClass, MathClass</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">from</span> <a class="code" href="../../df/d3b/a00728.html">pygeoc.utils</a> <span class="keyword">import</span> StringClass, MathClass</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">from</span> preprocess.text <span class="keyword">import</span> DBTableNames, StationFields, DataValueFields</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">class </span>HydroClimateUtilClass(object):</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="../../d9/d2e/a00056.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d9/d2e/a00056.html">HydroClimateUtilClass</a>(object):</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;Hydro-Climate utility functions.&quot;&quot;&quot;</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
 <div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="../../d9/d2e/a00056.html#a25eea718b66ece4f9581b3c2c41ff509">   27</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d9/d2e/a00056.html#a25eea718b66ece4f9581b3c2c41ff509">__init__</a>(self):</div>
@@ -200,7 +200,7 @@ $(document).ready(function(){initNavTree('d0/d39/a00314_source.html','../../');}
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="stringliteral">           #&lt;time_system&gt; [&lt;time_zone&gt;], e.g., #LOCALTIME 8, #UTCTIME</span></div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        time_sys = <span class="stringliteral">&#39;LOCALTIME&#39;</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        time_zone = time.timezone / -3600</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        time_zone = time.timezone // -3600</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        with open(in_file, <span class="stringliteral">&#39;</span><span class="stringliteral">r&#39;) as f:</span></div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="stringliteral">            lines = f.readlines()</span></div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="stringliteral">        </span><span class="keywordflow">for</span> line <span class="keywordflow">in</span> lines:</div>
@@ -260,7 +260,7 @@ $(document).ready(function(){initNavTree('d0/d39/a00314_source.html','../../');}
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                dt = datetime(cur_y, cur_m, cur_d, cur_hh, cur_mm, cur_ss)</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> StringClass.string_match(tsys, <span class="stringliteral">&#39;UTCTIME&#39;</span>):</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            <span class="keywordflow">if</span> tzone <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                tzone = time.timezone / -3600  <span class="comment"># positive value for EAST</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                tzone = time.timezone // -3600  <span class="comment"># positive value for EAST</span></div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            dt -= timedelta(minutes=tzone * 60)</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="keywordflow">return</span> dt</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;</div>
@@ -282,22 +282,23 @@ $(document).ready(function(){initNavTree('d0/d39/a00314_source.html','../../');}
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="keywordflow">if</span> __name__ == <span class="stringliteral">&quot;__main__&quot;</span>:</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    main()</div>
-<div class="ttc" id="a00727_html"><div class="ttname"><a href="../../dc/ddc/a00727.html">utils</a></div></div>
-<div class="ttc" id="a00056_html_afa4f4b36c01a023d937f5d93e41539df"><div class="ttname"><a href="../../d9/d2e/a00056.html#afa4f4b36c01a023d937f5d93e41539df">seims.preprocess.hydro_climate_utility.HydroClimateUtilClass.get_time_system_from_data_file</a></div><div class="ttdeci">def get_time_system_from_data_file</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/db3/a00313_source.html#l00081">hydro_climate_utility.py:81</a></div></div>
-<div class="ttc" id="a00056_html_a547e1c63cff761e1b59784e3c3667582"><div class="ttname"><a href="../../d9/d2e/a00056.html#a547e1c63cff761e1b59784e3c3667582">seims.preprocess.hydro_climate_utility.HydroClimateUtilClass.query_climate_sites</a></div><div class="ttdeci">def query_climate_sites</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/db3/a00313_source.html#l00064">hydro_climate_utility.py:64</a></div></div>
-<div class="ttc" id="a00056_html_a411a22f4caa902b415844c2a03feb98a"><div class="ttname"><a href="../../d9/d2e/a00056.html#a411a22f4caa902b415844c2a03feb98a">seims.preprocess.hydro_climate_utility.HydroClimateUtilClass.ws</a></div><div class="ttdeci">def ws</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/db3/a00313_source.html#l00042">hydro_climate_utility.py:42</a></div></div>
-<div class="ttc" id="a00056_html_a2c51be21218677a669fe89f9e8bc47bf"><div class="ttname"><a href="../../d9/d2e/a00056.html#a2c51be21218677a669fe89f9e8bc47bf">seims.preprocess.hydro_climate_utility.HydroClimateUtilClass.get_utcdatetime_from_field_values</a></div><div class="ttdeci">def get_utcdatetime_from_field_values</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/db3/a00313_source.html#l00109">hydro_climate_utility.py:109</a></div></div>
-<div class="ttc" id="a00056_html_ac60f9e6420e6576f70a1dba27077116f"><div class="ttname"><a href="../../d9/d2e/a00056.html#ac60f9e6420e6576f70a1dba27077116f">seims.preprocess.hydro_climate_utility.HydroClimateUtilClass.dr</a></div><div class="ttdeci">def dr</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/db3/a00313_source.html#l00032">hydro_climate_utility.py:32</a></div></div>
-<div class="ttc" id="a00056_html_a25eea718b66ece4f9581b3c2c41ff509"><div class="ttname"><a href="../../d9/d2e/a00056.html#a25eea718b66ece4f9581b3c2c41ff509">seims.preprocess.hydro_climate_utility.HydroClimateUtilClass.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/db3/a00313_source.html#l00027">hydro_climate_utility.py:27</a></div></div>
-<div class="ttc" id="a00056_html_a26f2f606968f4e3c6548b1b14bcc605a"><div class="ttname"><a href="../../d9/d2e/a00056.html#a26f2f606968f4e3c6548b1b14bcc605a">seims.preprocess.hydro_climate_utility.HydroClimateUtilClass.dec</a></div><div class="ttdeci">def dec</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/db3/a00313_source.html#l00037">hydro_climate_utility.py:37</a></div></div>
-<div class="ttc" id="a00056_html_a325a25292045b2470b78356d86491dbf"><div class="ttname"><a href="../../d9/d2e/a00056.html#a325a25292045b2470b78356d86491dbf">seims.preprocess.hydro_climate_utility.HydroClimateUtilClass.rs</a></div><div class="ttdeci">def rs</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/db3/a00313_source.html#l00050">hydro_climate_utility.py:50</a></div></div>
+<div class="ttc" id="a00056_html"><div class="ttname"><a href="../../d9/d2e/a00056.html">seims.preprocess.hydro_climate_utility.HydroClimateUtilClass</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d39/a00314_source.html#l00024">hydro_climate_utility.py:24</a></div></div>
+<div class="ttc" id="a00056_html_afa4f4b36c01a023d937f5d93e41539df"><div class="ttname"><a href="../../d9/d2e/a00056.html#afa4f4b36c01a023d937f5d93e41539df">seims.preprocess.hydro_climate_utility.HydroClimateUtilClass.get_time_system_from_data_file</a></div><div class="ttdeci">def get_time_system_from_data_file</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d39/a00314_source.html#l00081">hydro_climate_utility.py:81</a></div></div>
+<div class="ttc" id="a00056_html_a547e1c63cff761e1b59784e3c3667582"><div class="ttname"><a href="../../d9/d2e/a00056.html#a547e1c63cff761e1b59784e3c3667582">seims.preprocess.hydro_climate_utility.HydroClimateUtilClass.query_climate_sites</a></div><div class="ttdeci">def query_climate_sites</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d39/a00314_source.html#l00064">hydro_climate_utility.py:64</a></div></div>
+<div class="ttc" id="a00056_html_a411a22f4caa902b415844c2a03feb98a"><div class="ttname"><a href="../../d9/d2e/a00056.html#a411a22f4caa902b415844c2a03feb98a">seims.preprocess.hydro_climate_utility.HydroClimateUtilClass.ws</a></div><div class="ttdeci">def ws</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d39/a00314_source.html#l00042">hydro_climate_utility.py:42</a></div></div>
+<div class="ttc" id="a00056_html_a2c51be21218677a669fe89f9e8bc47bf"><div class="ttname"><a href="../../d9/d2e/a00056.html#a2c51be21218677a669fe89f9e8bc47bf">seims.preprocess.hydro_climate_utility.HydroClimateUtilClass.get_utcdatetime_from_field_values</a></div><div class="ttdeci">def get_utcdatetime_from_field_values</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d39/a00314_source.html#l00109">hydro_climate_utility.py:109</a></div></div>
+<div class="ttc" id="a00056_html_ac60f9e6420e6576f70a1dba27077116f"><div class="ttname"><a href="../../d9/d2e/a00056.html#ac60f9e6420e6576f70a1dba27077116f">seims.preprocess.hydro_climate_utility.HydroClimateUtilClass.dr</a></div><div class="ttdeci">def dr</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d39/a00314_source.html#l00032">hydro_climate_utility.py:32</a></div></div>
+<div class="ttc" id="a00056_html_a25eea718b66ece4f9581b3c2c41ff509"><div class="ttname"><a href="../../d9/d2e/a00056.html#a25eea718b66ece4f9581b3c2c41ff509">seims.preprocess.hydro_climate_utility.HydroClimateUtilClass.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d39/a00314_source.html#l00027">hydro_climate_utility.py:27</a></div></div>
+<div class="ttc" id="a00056_html_a26f2f606968f4e3c6548b1b14bcc605a"><div class="ttname"><a href="../../d9/d2e/a00056.html#a26f2f606968f4e3c6548b1b14bcc605a">seims.preprocess.hydro_climate_utility.HydroClimateUtilClass.dec</a></div><div class="ttdeci">def dec</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d39/a00314_source.html#l00037">hydro_climate_utility.py:37</a></div></div>
+<div class="ttc" id="a00728_html"><div class="ttname"><a href="../../df/d3b/a00728.html">utils</a></div></div>
+<div class="ttc" id="a00056_html_a325a25292045b2470b78356d86491dbf"><div class="ttname"><a href="../../d9/d2e/a00056.html#a325a25292045b2470b78356d86491dbf">seims.preprocess.hydro_climate_utility.HydroClimateUtilClass.rs</a></div><div class="ttdeci">def rs</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d39/a00314_source.html#l00050">hydro_climate_utility.py:50</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_483bc1739a16b87563cca23e7a392c1e.html">seims_linux_gcc48</a></li><li class="navelem"><a class="el" href="../../dir_a45053e29f104e67e5be28f13679e3c2.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_88ee9ccb3eda13ad093e0105c15391c0.html">preprocess</a></li><li class="navelem"><b>hydro_climate_utility.py</b></li>
-    <li class="footer">Generated on Thu Jun 28 2018 16:22:25 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_e83ca20770e7fbc90f1c071d86067ace.html">preprocess</a></li><li class="navelem"><b>hydro_climate_utility.py</b></li>
+    <li class="footer">Generated on Wed Jul 11 2018 05:07:27 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

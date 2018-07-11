@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: MUSLE_AS</title>
+<title>SEIMS: SEDR_SBAGNOLD</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -108,14 +108,14 @@ $(document).ready(function(){initNavTree('dd/d5f/a00825.html','../../');});
   <div class="summary">
 <a href="#nested-classes">Classes</a>  </div>
   <div class="headertitle">
-<div class="title">MUSLE_AS<div class="ingroups"><a class="el" href="../../de/d9d/a00813.html">Erosion</a></div></div>  </div>
+<div class="title">SEDR_SBAGNOLD<div class="ingroups"><a class="el" href="../../de/d9d/a00813.html">Erosion</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>use MUSLE method to calculate sediment yield of each cell  
+<p>Sediment routing using simplified version of Bagnold(1997) stream power equation which is also the original SWAT method. This module routes sediment from subbasin to basin outlet deposition is based on fall velocity and degradation on stream reWrite from route.f and rtsed.f of SWAT.  
 <a href="#details">More...</a></p>
 <div class="dynheader">
-Collaboration diagram for MUSLE_AS:</div>
+Collaboration diagram for SEDR_SBAGNOLD:</div>
 <div class="dyncontent">
 <center><table><tr><td><img src="../../dd/d5f/a00825.png" border="0" alt="" usemap="#dd_2d5f_2a00825"/>
 <map name="dd_2d5f_2a00825" id="dd_2d5f_2a00825">
@@ -125,22 +125,39 @@ Collaboration diagram for MUSLE_AS:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d42/a00109.html">MUSLE_AS</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">use MUSLE method to calculate sediment yield of each cell  <a href="../../dd/d42/a00109.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d48/a00148.html">SEDR_SBAGNOLD</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sediment routing using variable channel dimension(VCD) method at daily time scale.  <a href="../../db/d48/a00148.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>use MUSLE method to calculate sediment yield of each cell </p>
-<dl class="section author"><dt>Author</dt><dd>Zhiqiang Yu </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>Feb. 2012  2016-05-30 - lj - Code reformat.<br/>
+<p>Sediment routing using simplified version of Bagnold(1997) stream power equation which is also the original SWAT method. This module routes sediment from subbasin to basin outlet deposition is based on fall velocity and degradation on stream reWrite from route.f and rtsed.f of SWAT. </p>
+<dl class="section author"><dt>Author</dt><dd>Hui Wu, Liangjun Zhu, Junzhi Liu  2012-07-31 - wh - Initial implementation.<br/>
+ 2016-05-30 - lj - 1. move m_erodibilityFactor, m_coverFactor, to reach collection of MongoDB as inputs, and is DT_Array1D.<br/>
+<ol type="1">
+<li>add point source loadings from Scenario database.<br/>
+</li>
+<li>add SEDRECHConc output with the unit g/cm3 (i.e., Mg/m3).<br/>
+ 2016-08-31 - jz - Code review.<br/>
+ 2016-09-30 - lj - 1. ReCheck and Update code according to route.f and rtsed.f<br/>
+</li>
+</ol>
+<ol type="1">
+<li>Change the module name from SEDR_VCD to <a class="el" href="../../db/d48/a00148.html" title="Sediment routing using variable channel dimension(VCD) method at daily time scale. ">SEDR_SBAGNOLD</a>.<br/>
  2018-05-14 - lj - Code review and reformat.<br/>
- use MUSLE method to calculate sediment yield of each cell </dd></dl>
+ 2018-06-28 - lj - 1. The initialization of m_sedStorage should be done in Set1DData after m_chStorage.<br/>
+</li>
+</ol>
+<ol type="1">
+<li>Bug fixed about code related to the IN/OUTPUT variables.<br/>
+ Sediment routing using Simplified version of Bagnold(1997) stream power equation </li>
+</ol>
+</dd></dl>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu Jun 28 2018 16:22:27 for SEIMS by
+    <li class="footer">Generated on Wed Jul 11 2018 05:07:30 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: bmps::plant_management::PestOp Class Reference</title>
+<title>SEIMS: Percolation_DARCY Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -115,86 +115,261 @@ $(document).ready(function(){initNavTree('df/dcd/a00127.html','../../');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="../../df/d18/a01071.html">List of all members</a>  </div>
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="../../d4/d95/a00989.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">bmps::plant_management::PestOp Class Reference</div>  </div>
+<div class="title">Percolation_DARCY Class Reference<div class="ingroups"><a class="el" href="../../dd/d70/a00835.html">PERCO_DARCY</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Pesticide operation.  
+<p>Calculate percolation using Darcy law.  
  <a href="../../df/dcd/a00127.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="../../d4/da8/a00437_source.html">PlantManagementOperation.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="../../d0/d1c/a00605_source.html">Percolation.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for bmps::plant_management::PestOp:</div>
+Inheritance diagram for Percolation_DARCY:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d6/d6a/a01072.png" border="0" usemap="#bmps_1_1plant__management_1_1_pest_op_inherit__map" alt="Inheritance graph"/></div>
-<map name="bmps_1_1plant__management_1_1_pest_op_inherit__map" id="bmps_1_1plant__management_1_1_pest_op_inherit__map">
-<area shape="rect" id="node2" href="../../d7/d06/a00131.html" title="Base class of plant management operation. " alt="" coords="5,307,211,618"/><area shape="rect" id="node3" href="../../db/df8/a00076.html" title="Base type of all interfaces. All interface types are encouraged to be virtual inherited. " alt="" coords="48,173,168,259"/><area shape="rect" id="node4" href="../../d4/d81/a00110.html" title="Base class for classes that cannot be copied. By inheriting this class you can disable copying of you..." alt="" coords="31,5,184,125"/></map>
+<div class="center"><img src="../../dd/d7a/a00990.png" border="0" usemap="#_percolation___d_a_r_c_y_inherit__map" alt="Inheritance graph"/></div>
+<map name="_percolation___d_a_r_c_y_inherit__map" id="_percolation___d_a_r_c_y_inherit__map">
+<area shape="rect" id="node2" href="../../d3/df8/a00155.html" title="Base module for all simulation modules in SEIMS. " alt="" coords="9,307,204,687"/><area shape="rect" id="node3" href="../../db/df8/a00076.html" title="Base type of all interfaces. All interface types are encouraged to be virtual inherited. " alt="" coords="47,173,167,259"/><area shape="rect" id="node4" href="../../dd/d42/a00109.html" title="Base class for classes that cannot be copied. By inheriting this class you can disable copying of you..." alt="" coords="30,5,183,125"/></map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa2e95e0ebe36e5264bee3c5edb4c63a4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa2e95e0ebe36e5264bee3c5edb4c63a4"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcd/a00127.html#aa2e95e0ebe36e5264bee3c5edb4c63a4">PestOp</a> (int mgtOp, bool usebaseHU, float husc, int year, int month, int day, float *parameters)</td></tr>
-<tr class="memdesc:aa2e95e0ebe36e5264bee3c5edb4c63a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pesticide. <br/></td></tr>
-<tr class="separator:aa2e95e0ebe36e5264bee3c5edb4c63a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a393088c359bc09ab666f3c952a83bf0a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a393088c359bc09ab666f3c952a83bf0a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcd/a00127.html#a393088c359bc09ab666f3c952a83bf0a">dump</a> (std::ostream *fs) OVERRIDE</td></tr>
-<tr class="memdesc:a393088c359bc09ab666f3c952a83bf0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output. <br/></td></tr>
-<tr class="separator:a393088c359bc09ab666f3c952a83bf0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_a00131"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a00131')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d7/d06/a00131.html">bmps::plant_management::PltMgtOp</a></td></tr>
-<tr class="memitem:acb6e9d50049e9a847854a3e1c9745c02 inherit pub_methods_a00131"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d06/a00131.html#acb6e9d50049e9a847854a3e1c9745c02">PltMgtOp</a> (int mgtOp, bool usebaseHU, float husc, int year, int month, int day, float *parameters)</td></tr>
-<tr class="memdesc:acb6e9d50049e9a847854a3e1c9745c02 inherit pub_methods_a00131"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#acb6e9d50049e9a847854a3e1c9745c02">More...</a><br/></td></tr>
-<tr class="separator:acb6e9d50049e9a847854a3e1c9745c02 inherit pub_methods_a00131"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84f0b196ef639dbea5ce342c529b2034"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a84f0b196ef639dbea5ce342c529b2034"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcd/a00127.html#a84f0b196ef639dbea5ce342c529b2034">Percolation_DARCY</a> (void)</td></tr>
+<tr class="memdesc:a84f0b196ef639dbea5ce342c529b2034"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. <br/></td></tr>
+<tr class="separator:a84f0b196ef639dbea5ce342c529b2034"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60667d5bb9b95854bdb040db602676ef"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a60667d5bb9b95854bdb040db602676ef"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcd/a00127.html#a60667d5bb9b95854bdb040db602676ef">~Percolation_DARCY</a> (void)</td></tr>
+<tr class="memdesc:a60667d5bb9b95854bdb040db602676ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br/></td></tr>
+<tr class="separator:a60667d5bb9b95854bdb040db602676ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab03be89de87565cab283227e101b4b4d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab03be89de87565cab283227e101b4b4d"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcd/a00127.html#ab03be89de87565cab283227e101b4b4d">Set1DData</a> (const char *key, int n, float *data)</td></tr>
+<tr class="memdesc:ab03be89de87565cab283227e101b4b4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set 1D data, by default, DT_Raster1D. <br/></td></tr>
+<tr class="separator:ab03be89de87565cab283227e101b4b4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf099bc54de41d7170d0c8c220eaaa79"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adf099bc54de41d7170d0c8c220eaaa79"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcd/a00127.html#adf099bc54de41d7170d0c8c220eaaa79">Get1DData</a> (const char *key, int *n, float **data)</td></tr>
+<tr class="memdesc:adf099bc54de41d7170d0c8c220eaaa79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get 1D data, by default, DT_Raster1D. <br/></td></tr>
+<tr class="separator:adf099bc54de41d7170d0c8c220eaaa79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71b3bfe33c9cdd7d43af1bea3315306c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a71b3bfe33c9cdd7d43af1bea3315306c"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcd/a00127.html#a71b3bfe33c9cdd7d43af1bea3315306c">SetValue</a> (const char *key, float value)</td></tr>
+<tr class="memdesc:a71b3bfe33c9cdd7d43af1bea3315306c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set data, DT_Single. <br/></td></tr>
+<tr class="separator:a71b3bfe33c9cdd7d43af1bea3315306c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7077d8ca7383647ba502ae4642cef522"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7077d8ca7383647ba502ae4642cef522"></a>
+virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcd/a00127.html#a7077d8ca7383647ba502ae4642cef522">Execute</a> (void)</td></tr>
+<tr class="memdesc:a7077d8ca7383647ba502ae4642cef522"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute the simulation. <br/></td></tr>
+<tr class="separator:a7077d8ca7383647ba502ae4642cef522"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_a00155"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a00155')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d3/df8/a00155.html">SimulationModule</a></td></tr>
+<tr class="memitem:af6d0b8a412ab55dcebe689dd07846465 inherit pub_methods_a00155"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af6d0b8a412ab55dcebe689dd07846465"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#af6d0b8a412ab55dcebe689dd07846465">SimulationModule</a> ()</td></tr>
+<tr class="memdesc:af6d0b8a412ab55dcebe689dd07846465 inherit pub_methods_a00155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. <br/></td></tr>
+<tr class="separator:af6d0b8a412ab55dcebe689dd07846465 inherit pub_methods_a00155"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c993164d7a51ccfbfd33baeda7a44a7 inherit pub_methods_a00155"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0c993164d7a51ccfbfd33baeda7a44a7"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#a0c993164d7a51ccfbfd33baeda7a44a7">SetDate</a> (const time_t t, const int year_idx)</td></tr>
+<tr class="memdesc:a0c993164d7a51ccfbfd33baeda7a44a7 inherit pub_methods_a00155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set date time, as well as the sequence number of the entire simulation. Added by LJ for statistics convenient. <br/></td></tr>
+<tr class="separator:a0c993164d7a51ccfbfd33baeda7a44a7 inherit pub_methods_a00155"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac757e94ac8fd30e3aea6fafcab24ea96 inherit pub_methods_a00155"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac757e94ac8fd30e3aea6fafcab24ea96"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#ac757e94ac8fd30e3aea6fafcab24ea96">SetTheadNumber</a> (const int thread_num)</td></tr>
+<tr class="memdesc:ac757e94ac8fd30e3aea6fafcab24ea96 inherit pub_methods_a00155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set thread number for OpenMP. <br/></td></tr>
+<tr class="separator:ac757e94ac8fd30e3aea6fafcab24ea96 inherit pub_methods_a00155"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7b9caed16e56bf880b171040981403e inherit pub_methods_a00155"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af7b9caed16e56bf880b171040981403e"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#af7b9caed16e56bf880b171040981403e">SetClimateDataType</a> (float value)</td></tr>
+<tr class="memdesc:af7b9caed16e56bf880b171040981403e inherit pub_methods_a00155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set climate data type, P, M, PET etc. <br/></td></tr>
+<tr class="separator:af7b9caed16e56bf880b171040981403e inherit pub_methods_a00155"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a122e815846787e975787021df3708551 inherit pub_methods_a00155"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a122e815846787e975787021df3708551"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#a122e815846787e975787021df3708551">SetValueByIndex</a> (const char *key, int index, float value)</td></tr>
+<tr class="memdesc:a122e815846787e975787021df3708551 inherit pub_methods_a00155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set single value to array1D by index, used in MPI version for passing values of subbasins. <br/></td></tr>
+<tr class="separator:a122e815846787e975787021df3708551 inherit pub_methods_a00155"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02762cb7e236819fd5365ac4cb400fe6 inherit pub_methods_a00155"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a02762cb7e236819fd5365ac4cb400fe6"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#a02762cb7e236819fd5365ac4cb400fe6">Set2DData</a> (const char *key, int nrows, int ncols, float **data)</td></tr>
+<tr class="memdesc:a02762cb7e236819fd5365ac4cb400fe6 inherit pub_methods_a00155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set 2D data, by default, DT_Raster2D. <br/></td></tr>
+<tr class="separator:a02762cb7e236819fd5365ac4cb400fe6 inherit pub_methods_a00155"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafd60bc9d4176a0cf64af01aed881980 inherit pub_methods_a00155"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aafd60bc9d4176a0cf64af01aed881980"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#aafd60bc9d4176a0cf64af01aed881980">GetValue</a> (const char *key, float *value)</td></tr>
+<tr class="memdesc:aafd60bc9d4176a0cf64af01aed881980 inherit pub_methods_a00155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get value, DT_Single. <br/></td></tr>
+<tr class="separator:aafd60bc9d4176a0cf64af01aed881980 inherit pub_methods_a00155"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad327a319166273468db98800501f5946 inherit pub_methods_a00155"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad327a319166273468db98800501f5946"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#ad327a319166273468db98800501f5946">Get2DData</a> (const char *key, int *nrows, int *ncols, float ***data)</td></tr>
+<tr class="memdesc:ad327a319166273468db98800501f5946 inherit pub_methods_a00155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get 2D data, by default, DT_Raster2D. <br/></td></tr>
+<tr class="separator:ad327a319166273468db98800501f5946 inherit pub_methods_a00155"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61a80ae537e24396433c9514c75735db inherit pub_methods_a00155"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a61a80ae537e24396433c9514c75735db"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#a61a80ae537e24396433c9514c75735db">SetScenario</a> (<a class="el" href="../../d0/d4a/a00147.html">Scenario</a> *sce)</td></tr>
+<tr class="memdesc:a61a80ae537e24396433c9514c75735db inherit pub_methods_a00155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set pointer of Scenario class which contains all BMP information. Added by LJ, 2016-6-14. <br/></td></tr>
+<tr class="separator:a61a80ae537e24396433c9514c75735db inherit pub_methods_a00155"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa57cb2bd2e75ba91bba985d2cd1d6221 inherit pub_methods_a00155"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa57cb2bd2e75ba91bba985d2cd1d6221"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#aa57cb2bd2e75ba91bba985d2cd1d6221">SetReaches</a> (<a class="el" href="../../dc/d3c/a00028.html">clsReaches</a> *rches)</td></tr>
+<tr class="memdesc:aa57cb2bd2e75ba91bba985d2cd1d6221 inherit pub_methods_a00155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set pointer of <a class="el" href="../../dc/d3c/a00028.html" title="Read and store all reaches information as input parameters. ">clsReaches</a> class which contains all reaches information. Added by LJ, 2016-7-2. <br/></td></tr>
+<tr class="separator:aa57cb2bd2e75ba91bba985d2cd1d6221 inherit pub_methods_a00155"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad38e9f3ef28b26f42bfaaf834a9a9f32 inherit pub_methods_a00155"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad38e9f3ef28b26f42bfaaf834a9a9f32"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#ad38e9f3ef28b26f42bfaaf834a9a9f32">SetSubbasins</a> (<a class="el" href="../../d5/d79/a00030.html">clsSubbasins</a> *subbsns)</td></tr>
+<tr class="memdesc:ad38e9f3ef28b26f42bfaaf834a9a9f32 inherit pub_methods_a00155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set pointer of <a class="el" href="../../d5/d79/a00030.html" title="Manager all Subbasin related parameters and methods. ">clsSubbasins</a> class which contains all subbasins information. Added by LJ, 2016-7-28. <br/></td></tr>
+<tr class="separator:ad38e9f3ef28b26f42bfaaf834a9a9f32 inherit pub_methods_a00155"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a272481bef46db20353da33e95a5f5426 inherit pub_methods_a00155"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a272481bef46db20353da33e95a5f5426"></a>
+virtual TimeStepType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#a272481bef46db20353da33e95a5f5426">GetTimeStepType</a> ()</td></tr>
+<tr class="memdesc:a272481bef46db20353da33e95a5f5426 inherit pub_methods_a00155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get time step type, default is hillslope process. Remember to OVERRIDE this function to return other time step type for routing modules and others if necessary. <br/></td></tr>
+<tr class="separator:a272481bef46db20353da33e95a5f5426 inherit pub_methods_a00155"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a3a7bd2ff8748ec360e9464c358500b inherit pub_methods_a00155"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1a3a7bd2ff8748ec360e9464c358500b"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#a1a3a7bd2ff8748ec360e9464c358500b">ResetSubTimeStep</a> ()</td></tr>
+<tr class="memdesc:a1a3a7bd2ff8748ec360e9464c358500b inherit pub_methods_a00155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset subtime step. <br/></td></tr>
+<tr class="separator:a1a3a7bd2ff8748ec360e9464c358500b inherit pub_methods_a00155"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2238382a3e1a264218a37b32d3947bd6 inherit pub_methods_a00155"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2238382a3e1a264218a37b32d3947bd6"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#a2238382a3e1a264218a37b32d3947bd6">IsInputsSetDone</a> ()</td></tr>
+<tr class="memdesc:a2238382a3e1a264218a37b32d3947bd6 inherit pub_methods_a00155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the inputs parameters (i.e., parameters derived from other modules) have been set. <br/></td></tr>
+<tr class="separator:a2238382a3e1a264218a37b32d3947bd6 inherit pub_methods_a00155"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac3665a426ed6c4933f3d18a58cdd230 inherit pub_methods_a00155"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aac3665a426ed6c4933f3d18a58cdd230"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#aac3665a426ed6c4933f3d18a58cdd230">SetInputsDone</a> (const bool set_done)</td></tr>
+<tr class="memdesc:aac3665a426ed6c4933f3d18a58cdd230 inherit pub_methods_a00155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the status of setting inputs parameters. <br/></td></tr>
+<tr class="separator:aac3665a426ed6c4933f3d18a58cdd230 inherit pub_methods_a00155"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:abb6090f6b3d55346fca32d2d3a898f87"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcd/a00127.html#abb6090f6b3d55346fca32d2d3a898f87">CheckInputData</a> (void)</td></tr>
+<tr class="memdesc:abb6090f6b3d55346fca32d2d3a898f87"><td class="mdescLeft">&#160;</td><td class="mdescRight">check the input data. Make sure all the input data is available.  <a href="#abb6090f6b3d55346fca32d2d3a898f87">More...</a><br/></td></tr>
+<tr class="separator:abb6090f6b3d55346fca32d2d3a898f87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a143d4b94fb76af864497e1967b03c766"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcd/a00127.html#a143d4b94fb76af864497e1967b03c766">CheckInputSize</a> (const char *, int)</td></tr>
+<tr class="memdesc:a143d4b94fb76af864497e1967b03c766"><td class="mdescLeft">&#160;</td><td class="mdescRight">check the input size. Make sure all the input data have same dimension.  <a href="#a143d4b94fb76af864497e1967b03c766">More...</a><br/></td></tr>
+<tr class="separator:a143d4b94fb76af864497e1967b03c766"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a4739225f554d4e88e458d3c5d4144704"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4739225f554d4e88e458d3c5d4144704"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcd/a00127.html#a4739225f554d4e88e458d3c5d4144704">m_nCells</a></td></tr>
+<tr class="memdesc:a4739225f554d4e88e458d3c5d4144704"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valid cells number. <br/></td></tr>
+<tr class="separator:a4739225f554d4e88e458d3c5d4144704"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a643470992487d07f02262402488f8a7d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a643470992487d07f02262402488f8a7d"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcd/a00127.html#a643470992487d07f02262402488f8a7d">m_CellWidth</a></td></tr>
+<tr class="memdesc:a643470992487d07f02262402488f8a7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Width of cell (m) <br/></td></tr>
+<tr class="separator:a643470992487d07f02262402488f8a7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pro_attribs_a00131"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_a00131')"><img src="../../closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="../../d7/d06/a00131.html">bmps::plant_management::PltMgtOp</a></td></tr>
-<tr class="memitem:a4efe57d00c968714317ebe28444b6d88 inherit pro_attribs_a00131"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4efe57d00c968714317ebe28444b6d88"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d06/a00131.html#a4efe57d00c968714317ebe28444b6d88">m_useBaseHUSC</a></td></tr>
-<tr class="memdesc:a4efe57d00c968714317ebe28444b6d88 inherit pro_attribs_a00131"><td class="mdescLeft">&#160;</td><td class="mdescRight">use base hu or plant accumulated hu <br/></td></tr>
-<tr class="separator:a4efe57d00c968714317ebe28444b6d88 inherit pro_attribs_a00131"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43291ea426480483b35c9894747bd7b9 inherit pro_attribs_a00131"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a43291ea426480483b35c9894747bd7b9"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d06/a00131.html#a43291ea426480483b35c9894747bd7b9">m_frHU</a></td></tr>
-<tr class="memdesc:a43291ea426480483b35c9894747bd7b9 inherit pro_attribs_a00131"><td class="mdescLeft">&#160;</td><td class="mdescRight">husc <br/></td></tr>
-<tr class="separator:a43291ea426480483b35c9894747bd7b9 inherit pro_attribs_a00131"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d7937ad39e3961840e6644fcdeea70f inherit pro_attribs_a00131"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6d7937ad39e3961840e6644fcdeea70f"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d06/a00131.html#a6d7937ad39e3961840e6644fcdeea70f">m_year</a></td></tr>
-<tr class="memdesc:a6d7937ad39e3961840e6644fcdeea70f inherit pro_attribs_a00131"><td class="mdescLeft">&#160;</td><td class="mdescRight">year <br/></td></tr>
-<tr class="separator:a6d7937ad39e3961840e6644fcdeea70f inherit pro_attribs_a00131"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e1774938a3cc4a3e83bfb6283624568 inherit pro_attribs_a00131"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1e1774938a3cc4a3e83bfb6283624568"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d06/a00131.html#a1e1774938a3cc4a3e83bfb6283624568">m_month</a></td></tr>
-<tr class="memdesc:a1e1774938a3cc4a3e83bfb6283624568 inherit pro_attribs_a00131"><td class="mdescLeft">&#160;</td><td class="mdescRight">month <br/></td></tr>
-<tr class="separator:a1e1774938a3cc4a3e83bfb6283624568 inherit pro_attribs_a00131"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b988810d1b1d9212bcf7048755a61a2 inherit pro_attribs_a00131"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7b988810d1b1d9212bcf7048755a61a2"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d06/a00131.html#a7b988810d1b1d9212bcf7048755a61a2">m_day</a></td></tr>
-<tr class="memdesc:a7b988810d1b1d9212bcf7048755a61a2 inherit pro_attribs_a00131"><td class="mdescLeft">&#160;</td><td class="mdescRight">day <br/></td></tr>
-<tr class="separator:a7b988810d1b1d9212bcf7048755a61a2 inherit pro_attribs_a00131"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65c47c117173fa9fd208f6bb2855d915 inherit pro_attribs_a00131"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a65c47c117173fa9fd208f6bb2855d915"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d06/a00131.html#a65c47c117173fa9fd208f6bb2855d915">m_mgtOp</a></td></tr>
-<tr class="memdesc:a65c47c117173fa9fd208f6bb2855d915 inherit pro_attribs_a00131"><td class="mdescLeft">&#160;</td><td class="mdescRight">management operation code <br/></td></tr>
-<tr class="separator:a65c47c117173fa9fd208f6bb2855d915 inherit pro_attribs_a00131"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c69b23715eaa5cdf8f9a2d9f6eb68f5 inherit pro_attribs_a00131"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7c69b23715eaa5cdf8f9a2d9f6eb68f5"></a>
-float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d06/a00131.html#a7c69b23715eaa5cdf8f9a2d9f6eb68f5">m_parameters</a></td></tr>
-<tr class="memdesc:a7c69b23715eaa5cdf8f9a2d9f6eb68f5 inherit pro_attribs_a00131"><td class="mdescLeft">&#160;</td><td class="mdescRight">parameters, mgt1~mgt10 <br/></td></tr>
-<tr class="separator:a7c69b23715eaa5cdf8f9a2d9f6eb68f5 inherit pro_attribs_a00131"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_a00155"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_a00155')"><img src="../../closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="../../d3/df8/a00155.html">SimulationModule</a></td></tr>
+<tr class="memitem:aabd631c05d3e74aa9970f7415f2f5de7 inherit pro_attribs_a00155"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aabd631c05d3e74aa9970f7415f2f5de7"></a>
+time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#aabd631c05d3e74aa9970f7415f2f5de7">m_date</a></td></tr>
+<tr class="memdesc:aabd631c05d3e74aa9970f7415f2f5de7 inherit pro_attribs_a00155"><td class="mdescLeft">&#160;</td><td class="mdescRight">date time <br/></td></tr>
+<tr class="separator:aabd631c05d3e74aa9970f7415f2f5de7 inherit pro_attribs_a00155"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addfe4dd5800efd0bb827338daf65d64c inherit pro_attribs_a00155"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="addfe4dd5800efd0bb827338daf65d64c"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#addfe4dd5800efd0bb827338daf65d64c">m_yearIdx</a></td></tr>
+<tr class="memdesc:addfe4dd5800efd0bb827338daf65d64c inherit pro_attribs_a00155"><td class="mdescLeft">&#160;</td><td class="mdescRight">index of current year of simulation, e.g., the simulation period from 2010 to 2015, m_yearIdx is 2 when simulate 2012. <br/></td></tr>
+<tr class="separator:addfe4dd5800efd0bb827338daf65d64c inherit pro_attribs_a00155"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac603f0cbbe34ec886e3d1a4d0615a1f9 inherit pro_attribs_a00155"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac603f0cbbe34ec886e3d1a4d0615a1f9"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#ac603f0cbbe34ec886e3d1a4d0615a1f9">m_year</a></td></tr>
+<tr class="memdesc:ac603f0cbbe34ec886e3d1a4d0615a1f9 inherit pro_attribs_a00155"><td class="mdescLeft">&#160;</td><td class="mdescRight">year <br/></td></tr>
+<tr class="separator:ac603f0cbbe34ec886e3d1a4d0615a1f9 inherit pro_attribs_a00155"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0efff9f7dbe05079a5ec6c2af220b50e inherit pro_attribs_a00155"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0efff9f7dbe05079a5ec6c2af220b50e"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#a0efff9f7dbe05079a5ec6c2af220b50e">m_month</a></td></tr>
+<tr class="memdesc:a0efff9f7dbe05079a5ec6c2af220b50e inherit pro_attribs_a00155"><td class="mdescLeft">&#160;</td><td class="mdescRight">month since January - [1,12] <br/></td></tr>
+<tr class="separator:a0efff9f7dbe05079a5ec6c2af220b50e inherit pro_attribs_a00155"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab47aa8b8dc82167db775d1cf0d675cb8 inherit pro_attribs_a00155"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab47aa8b8dc82167db775d1cf0d675cb8"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#ab47aa8b8dc82167db775d1cf0d675cb8">m_day</a></td></tr>
+<tr class="memdesc:ab47aa8b8dc82167db775d1cf0d675cb8 inherit pro_attribs_a00155"><td class="mdescLeft">&#160;</td><td class="mdescRight">day of the month - [1,31] <br/></td></tr>
+<tr class="separator:ab47aa8b8dc82167db775d1cf0d675cb8 inherit pro_attribs_a00155"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac578cab4a35a3c2f99be05c520a6dc02 inherit pro_attribs_a00155"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac578cab4a35a3c2f99be05c520a6dc02"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#ac578cab4a35a3c2f99be05c520a6dc02">m_dayOfYear</a></td></tr>
+<tr class="memdesc:ac578cab4a35a3c2f99be05c520a6dc02 inherit pro_attribs_a00155"><td class="mdescLeft">&#160;</td><td class="mdescRight">day of year - [1, 366] <br/></td></tr>
+<tr class="separator:ac578cab4a35a3c2f99be05c520a6dc02 inherit pro_attribs_a00155"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adee1865c86a9761af76cec98cac30a44 inherit pro_attribs_a00155"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adee1865c86a9761af76cec98cac30a44"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#adee1865c86a9761af76cec98cac30a44">m_tsCounter</a></td></tr>
+<tr class="memdesc:adee1865c86a9761af76cec98cac30a44 inherit pro_attribs_a00155"><td class="mdescLeft">&#160;</td><td class="mdescRight">sub-timestep counter <br/></td></tr>
+<tr class="separator:adee1865c86a9761af76cec98cac30a44 inherit pro_attribs_a00155"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68422923210ead26b1651bf0e0a339f6 inherit pro_attribs_a00155"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a68422923210ead26b1651bf0e0a339f6"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#a68422923210ead26b1651bf0e0a339f6">m_inputsSetDone</a></td></tr>
+<tr class="memdesc:a68422923210ead26b1651bf0e0a339f6 inherit pro_attribs_a00155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the inputs parameters (i.e., parameters derived from other modules) have been set. <br/></td></tr>
+<tr class="separator:a68422923210ead26b1651bf0e0a339f6 inherit pro_attribs_a00155"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Pesticide operation. </p>
+<div class="textblock"><p>Calculate percolation using Darcy law. </p>
 
-<p>Definition at line <a class="el" href="../../d4/da8/a00437_source.html#l00175">175</a> of file <a class="el" href="../../d4/da8/a00437_source.html">PlantManagementOperation.h</a>.</p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
-<li>seims/src/seims_main/base/bmps/<a class="el" href="../../d4/da8/a00437_source.html">PlantManagementOperation.h</a></li>
-<li>seims/src/seims_main/base/bmps/<a class="el" href="../../d4/d82/a00436_source.html">PlantManagementOperation.cpp</a></li>
+<p>Definition at line <a class="el" href="../../d0/d1c/a00605_source.html#l00021">21</a> of file <a class="el" href="../../d0/d1c/a00605_source.html">Percolation.h</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="abb6090f6b3d55346fca32d2d3a898f87"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Percolation_DARCY::CheckInputData </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>check the input data. Make sure all the input data is available. </p>
+<dl class="section return"><dt>Returns</dt><dd>bool The validity of the input data. </dd></dl>
+
+<p>Definition at line <a class="el" href="../../d6/d75/a00604_source.html#l00121">121</a> of file <a class="el" href="../../d6/d75/a00604_source.html">Percolation.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a143d4b94fb76af864497e1967b03c766"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Percolation_DARCY::CheckInputSize </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>check the input size. Make sure all the input data have same dimension. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>The key of the input data </td></tr>
+    <tr><td class="paramname">n</td><td>The input data dimension </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool The validity of the dimension </dd></dl>
+
+<p>Definition at line <a class="el" href="../../d6/d75/a00604_source.html#l00154">154</a> of file <a class="el" href="../../d6/d75/a00604_source.html">Percolation.cpp</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>seims/src/seims_main/modules/hydrology/PERCO_DARCY/<a class="el" href="../../d0/d1c/a00605_source.html">Percolation.h</a></li>
+<li>seims/src/seims_main/modules/hydrology/PERCO_DARCY/<a class="el" href="../../d6/d75/a00604_source.html">Percolation.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../de/d4c/a00711.html">bmps</a></li><li class="navelem"><a class="el" href="../../d3/dda/a00712.html">plant_management</a></li><li class="navelem"><a class="el" href="../../df/dcd/a00127.html">PestOp</a></li>
-    <li class="footer">Generated on Thu Jun 28 2018 16:22:28 for SEIMS by
+    <li class="navelem"><a class="el" href="../../df/dcd/a00127.html">Percolation_DARCY</a></li>
+    <li class="footer">Generated on Wed Jul 11 2018 05:07:31 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

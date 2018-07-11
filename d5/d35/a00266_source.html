@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims_linux_gcc48/seims/parameters_sensitivity/sensitivity.py Source File</title>
+<title>SEIMS: seims/parameters_sensitivity/sensitivity.py Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -123,443 +123,487 @@ $(document).ready(function(){initNavTree('d5/d35/a00266_source.html','../../');}
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="stringliteral">                18-1-11   lj - integration of screening method and variant-based method.\n</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="stringliteral">                18-1-16   lj - split tasks when the run_count is very very large.\n</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="stringliteral">                18-02-09  lj - compatible with Python3.\n</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="stringliteral">&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">from</span> __future__ <span class="keyword">import</span> absolute_import</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">import</span> os</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">import</span> sys</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">import</span> json</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">import</span> datetime</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keywordflow">if</span> os.path.abspath(os.path.join(sys.path[0], <span class="stringliteral">&#39;..&#39;</span>)) <span class="keywordflow">not</span> <span class="keywordflow">in</span> sys.path:</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    sys.path.insert(0, os.path.abspath(os.path.join(sys.path[0], <span class="stringliteral">&#39;..&#39;</span>)))</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">import</span> matplotlib</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keywordflow">if</span> os.name != <span class="stringliteral">&#39;nt&#39;</span>:  <span class="comment"># Force matplotlib to not use any Xwindows backend.</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    matplotlib.use(<span class="stringliteral">&#39;Agg&#39;</span>, warn=<span class="keyword">False</span>)</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">import</span> numpy</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">from</span> <a class="code" href="../../dc/ddc/a00727.html">pygeoc.utils</a> <span class="keyword">import</span> FileClass, UtilClass</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"># Morris screening method</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">from</span> SALib.sample.morris <span class="keyword">import</span> sample <span class="keyword">as</span> morris_spl</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">from</span> SALib.analyze.morris <span class="keyword">import</span> analyze <span class="keyword">as</span> morris_alz</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">from</span> SALib.plotting.morris <span class="keyword">import</span> horizontal_bar_plot, covariance_plot</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"># FAST variant-based method</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">from</span> SALib.sample.fast_sampler <span class="keyword">import</span> sample <span class="keyword">as</span> fast_spl</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">from</span> SALib.analyze.fast <span class="keyword">import</span> analyze <span class="keyword">as</span> fast_alz</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">from</span> preprocess.db_mongodb <span class="keyword">import</span> ConnectMongoDB</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">from</span> preprocess.text <span class="keyword">import</span> DBTableNames</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">from</span> preprocess.utility <span class="keyword">import</span> read_data_items_from_txt</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">from</span> postprocess.utility <span class="keyword">import</span> save_png_eps</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">from</span> parameters_sensitivity.config <span class="keyword">import</span> PSAConfig</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">from</span> parameters_sensitivity.userdef <span class="keyword">import</span> evaluate_model_response, get_evaluate_output_name_unit</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">from</span> parameters_sensitivity.figure <span class="keyword">import</span> sample_histograms, empirical_cdf</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">class </span>SpecialJsonEncoder(json.JSONEncoder):</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">def </span>default(self, obj):</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">if</span> isinstance(obj, numpy.ndarray):</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keywordflow">return</span> obj.tolist()</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">elif</span> isinstance(obj, datetime.datetime):</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keywordflow">return</span> obj.strftime(<span class="stringliteral">&#39;%Y-%m-%d %H:%M:%S&#39;</span>)</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">return</span> json.JSONEncoder.default(self, obj)</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">class </span>Sensitivity(object):</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;Base class of Sensitivity Analysis.&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="../../da/d1e/a00149.html#ae74bd6daef5f21ea997378e26bc23740">   57</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../da/d1e/a00149.html#ae74bd6daef5f21ea997378e26bc23740">__init__</a>(self, psa_cfg):</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="stringliteral">        Initialization.</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="stringliteral">        Args:</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="stringliteral">            psa_cfg: PSAConfig object.</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        self.<a class="code" href="../../da/d1e/a00149.html#ace27b15f708960f7930266c0f77849d8">cfg</a> = psa_cfg</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        self.<a class="code" href="../../da/d1e/a00149.html#ad7fb5aac66256256a765241ca67853bb">param_defs</a> = dict()</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        self.<a class="code" href="../../da/d1e/a00149.html#a6d297e429d3af2f13379a780b253e730">param_values</a> = <span class="keywordtype">None</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        self.<a class="code" href="../../da/d1e/a00149.html#a45b6b4fca0062788c0f1f643b4c7189b">run_count</a> = 0</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        self.<a class="code" href="../../da/d1e/a00149.html#ab13b98af3dd992ffd7632e2502451af5">output_values</a> = <span class="keywordtype">None</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        self.<a class="code" href="../../da/d1e/a00149.html#a252ebc7669e1d75ea69bbc3ee6a2730a">psa_si</a> = dict()</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="../../da/d1e/a00149.html#a925f28ae2d604a86b02af39a44fbe193">   70</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../da/d1e/a00149.html#a925f28ae2d604a86b02af39a44fbe193">run</a>(self):</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;PSA workflow.&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        self.<a class="code" href="../../da/d1e/a00149.html#ab1c05d8cd645371800d85f905275edee">reset_simulation_timerange</a>()</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        self.<a class="code" href="../../da/d1e/a00149.html#a92f81d8431fb5c0f4a4b8460c1e19a8a">read_param_ranges</a>()</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        self.<a class="code" href="../../da/d1e/a00149.html#adfc9061ce931f00f26c4bf37f412d1a7">generate_samples</a>()</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        self.<a class="code" href="../../da/d1e/a00149.html#a5202e15a33958810faea108ed54f85e9">write_param_values_to_mongodb</a>()</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        self.<a class="code" href="../../da/d1e/a00149.html#ae9f62cd78766e1f8fd9fe1c59eb191f7">evaluate_models</a>()</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        self.<a class="code" href="../../da/d1e/a00149.html#ad75d94c3d639e5a2067c576800cdf7d9">calculate_sensitivity</a>()</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">def </span>plot(self):</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        self.<a class="code" href="../../da/d1e/a00149.html#a6fd4e10e94a71eb1ce74aee565fb48c3">plot_samples_histogram</a>()</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">if</span> self.cfg.method == <span class="stringliteral">&#39;morris&#39;</span>:</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            self.<a class="code" href="../../da/d1e/a00149.html#ae085f96943825b60e1afa23c2bd2459f">plot_morris</a>()</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            self.<a class="code" href="../../da/d1e/a00149.html#a266bc27fc321e19f1a3e801b779ec3f9">plot_cdf</a>()</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
-<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="../../da/d1e/a00149.html#ab1c05d8cd645371800d85f905275edee">   85</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../da/d1e/a00149.html#ab1c05d8cd645371800d85f905275edee">reset_simulation_timerange</a>(self):</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Update simulation time range in MongoDB [FILE_IN].&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        client = ConnectMongoDB(self.cfg.hostname, self.cfg.port)</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        conn = client.get_conn()</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        db = conn[self.cfg.spatial_db]</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        stime_str = self.cfg.time_start.strftime(<span class="stringliteral">&#39;%Y-%m-%d %H:%M:%S&#39;</span>)</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        etime_str = self.cfg.time_end.strftime(<span class="stringliteral">&#39;%Y-%m-%d %H:%M:%S&#39;</span>)</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        db[DBTableNames.main_filein].find_one_and_update({<span class="stringliteral">&#39;TAG&#39;</span>: <span class="stringliteral">&#39;STARTTIME&#39;</span>},</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                                                         {<span class="stringliteral">&#39;$set&#39;</span>: {<span class="stringliteral">&#39;VALUE&#39;</span>: stime_str}})</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        db[DBTableNames.main_filein].find_one_and_update({<span class="stringliteral">&#39;TAG&#39;</span>: <span class="stringliteral">&#39;ENDTIME&#39;</span>},</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                                                         {<span class="stringliteral">&#39;$set&#39;</span>: {<span class="stringliteral">&#39;VALUE&#39;</span>: etime_str}})</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        client.close()</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
-<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="../../da/d1e/a00149.html#a92f81d8431fb5c0f4a4b8460c1e19a8a">   98</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../da/d1e/a00149.html#a92f81d8431fb5c0f4a4b8460c1e19a8a">read_param_ranges</a>(self):</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Read param_rng.def file</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="stringliteral">           name,lower_bound,upper_bound,group,dist</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="stringliteral">           (group and dist are optional)</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="stringliteral">            e.g.,</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="stringliteral">             Param1,0,1[,Group1][,dist1]</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="stringliteral">             Param2,0,1[,Group2][,dist2]</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="stringliteral">             Param3,0,1[,Group3][,dist3]</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="stringliteral">        Returns:</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="stringliteral">            a dictionary containing:</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="stringliteral">            - names - the names of the parameters</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="stringliteral">            - bounds - a list of lists of lower and upper bounds</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="stringliteral">            - num_vars - a scalar indicating the number of variables</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="stringliteral">                         (the length of names)</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="stringliteral">            - groups - a list of group names (strings) for each variable</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="stringliteral">            - dists - a list of distributions for the problem,</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="stringliteral">                        None if not specified or all uniform</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="comment"># read param_defs.json if already existed</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.<a class="code" href="../../da/d1e/a00149.html#ad7fb5aac66256256a765241ca67853bb">param_defs</a>:</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            <span class="keywordflow">if</span> FileClass.is_file_exists(self.cfg.outfiles.param_defs_json):</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                with open(self.cfg.outfiles.param_defs_json, <span class="stringliteral">&#39;</span><span class="stringliteral">r&#39;) as f:</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="stringliteral">                    self.<a class="code" href="../../da/d1e/a00149.html#ad7fb5aac66256256a765241ca67853bb">param_defs</a> = UtilClass.decode_strs_in_dict(json.load(f))</span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="stringliteral">                </span><span class="keywordflow">return</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="comment"># read param_range_def file and output to json file</span></div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        client = ConnectMongoDB(self.cfg.hostname, self.cfg.port)</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        conn = client.get_conn()</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        db = conn[self.cfg.spatial_db]</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        collection = db[<span class="stringliteral">&#39;PARAMETERS&#39;</span>]</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        names = list()</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        bounds = list()</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        groups = list()</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        dists = list()</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        num_vars = 0</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        items = read_data_items_from_txt(self.cfg.param_range_def)</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="keywordflow">for</span> item <span class="keywordflow">in</span> items:</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            <span class="keywordflow">if</span> len(item) &lt; 3:</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                <span class="keywordflow">continue</span></div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;            <span class="comment"># find parameter name, print warning message if not existed</span></div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;            cursor = collection.find({<span class="stringliteral">&#39;NAME&#39;</span>: item[0]}, no_cursor_timeout=<span class="keyword">True</span>)</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            <span class="keywordflow">if</span> <span class="keywordflow">not</span> cursor.count():</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                print(<span class="stringliteral">&#39;WARNING: parameter %s is not existed!&#39;</span> % item[0])</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                <span class="keywordflow">continue</span></div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            num_vars += 1</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            names.append(item[0])</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            bounds.append([float(item[1]), float(item[2])])</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            <span class="comment"># If the fourth column does not contain a group name, use</span></div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            <span class="comment"># the parameter name</span></div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            <span class="keywordflow">if</span> len(item) &gt;= 4:</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                groups.append(item[3])</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            <span class="keywordflow">else</span>:</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                groups.append(item[0])</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            <span class="keywordflow">if</span> len(item) &gt;= 5:</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                dists.append(item[4])</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            <span class="keywordflow">else</span>:</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                dists.append(<span class="stringliteral">&#39;unif&#39;</span>)</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="keywordflow">if</span> groups == names:</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            groups = <span class="keywordtype">None</span></div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="keywordflow">elif</span> len(set(groups)) == 1:</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            <span class="keywordflow">raise</span> ValueError(<span class="stringliteral">&#39;Only one group defined, results will not bemeaningful&#39;</span>)</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="comment"># setting dists to none if all are uniform</span></div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="comment"># because non-uniform scaling is not needed</span></div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <span class="keywordflow">if</span> all([d == <span class="stringliteral">&#39;unif&#39;</span> <span class="keywordflow">for</span> d <span class="keywordflow">in</span> dists]):</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            dists = <span class="keywordtype">None</span></div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        self.<a class="code" href="../../da/d1e/a00149.html#ad7fb5aac66256256a765241ca67853bb">param_defs</a> = {<span class="stringliteral">&#39;names&#39;</span>: names, <span class="stringliteral">&#39;bounds&#39;</span>: bounds,</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                           <span class="stringliteral">&#39;num_vars&#39;</span>: num_vars, <span class="stringliteral">&#39;groups&#39;</span>: groups, <span class="stringliteral">&#39;dists&#39;</span>: dists}</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="comment"># Save as json, which can be loaded by json.load()</span></div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        json_data = json.dumps(self.<a class="code" href="../../da/d1e/a00149.html#ad7fb5aac66256256a765241ca67853bb">param_defs</a>, indent=4, cls=SpecialJsonEncoder)</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        with open(self.cfg.outfiles.param_defs_json, <span class="stringliteral">&#39;w&#39;</span>) <span class="keyword">as</span> f:</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            f.write(json_data)</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;</div>
-<div class="line"><a name="l00176"></a><span class="lineno"><a class="line" href="../../da/d1e/a00149.html#adfc9061ce931f00f26c4bf37f412d1a7">  176</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../da/d1e/a00149.html#adfc9061ce931f00f26c4bf37f412d1a7">generate_samples</a>(self):</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Sampling and write to a single file and MongoDB &#39;PARAMETERS&#39; collection&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="keywordflow">if</span> self.<a class="code" href="../../da/d1e/a00149.html#a6d297e429d3af2f13379a780b253e730">param_values</a> <span class="keywordflow">is</span> <span class="keywordtype">None</span> <span class="keywordflow">or</span> len(self.<a class="code" href="../../da/d1e/a00149.html#a6d297e429d3af2f13379a780b253e730">param_values</a>) == 0:</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;            <span class="keywordflow">if</span> FileClass.is_file_exists(self.cfg.outfiles.param_values_txt):</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                self.<a class="code" href="../../da/d1e/a00149.html#a6d297e429d3af2f13379a780b253e730">param_values</a> = numpy.loadtxt(self.cfg.outfiles.param_values_txt)</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                self.<a class="code" href="../../da/d1e/a00149.html#a45b6b4fca0062788c0f1f643b4c7189b">run_count</a> = len(self.<a class="code" href="../../da/d1e/a00149.html#a6d297e429d3af2f13379a780b253e730">param_values</a>)</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                <span class="keywordflow">return</span></div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.<a class="code" href="../../da/d1e/a00149.html#ad7fb5aac66256256a765241ca67853bb">param_defs</a>:</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            self.<a class="code" href="../../da/d1e/a00149.html#a92f81d8431fb5c0f4a4b8460c1e19a8a">read_param_ranges</a>()</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <span class="keywordflow">if</span> self.cfg.method == <span class="stringliteral">&#39;morris&#39;</span>:</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            self.<a class="code" href="../../da/d1e/a00149.html#a6d297e429d3af2f13379a780b253e730">param_values</a> = morris_spl(self.<a class="code" href="../../da/d1e/a00149.html#ad7fb5aac66256256a765241ca67853bb">param_defs</a>, self.cfg.morris.N,</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                                           self.cfg.morris.num_levels, self.cfg.morris.grid_jump,</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                                           optimal_trajectories=self.cfg.morris.optimal_t,</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                                           local_optimization=self.cfg.morris.local_opt)</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <span class="keywordflow">elif</span> self.cfg.method == <span class="stringliteral">&#39;fast&#39;</span>:</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            self.<a class="code" href="../../da/d1e/a00149.html#a6d297e429d3af2f13379a780b253e730">param_values</a> = fast_spl(self.<a class="code" href="../../da/d1e/a00149.html#ad7fb5aac66256256a765241ca67853bb">param_defs</a>, self.cfg.fast.N, self.cfg.fast.M)</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="keywordflow">else</span>:</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            <span class="keywordflow">raise</span> ValueError(<span class="stringliteral">&#39;%s method is not supported now!&#39;</span> % self.cfg.method)</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        self.<a class="code" href="../../da/d1e/a00149.html#a45b6b4fca0062788c0f1f643b4c7189b">run_count</a> = len(self.<a class="code" href="../../da/d1e/a00149.html#a6d297e429d3af2f13379a780b253e730">param_values</a>)</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <span class="comment"># Save as txt file, which can be loaded by numpy.loadtxt()</span></div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        numpy.savetxt(self.cfg.outfiles.param_values_txt,</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                      self.<a class="code" href="../../da/d1e/a00149.html#a6d297e429d3af2f13379a780b253e730">param_values</a>, delimiter=<span class="stringliteral">&#39; &#39;</span>, fmt=<span class="stringliteral">&#39;%.4e&#39;</span>)</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;</div>
-<div class="line"><a name="l00199"></a><span class="lineno"><a class="line" href="../../da/d1e/a00149.html#a5202e15a33958810faea108ed54f85e9">  199</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../da/d1e/a00149.html#a5202e15a33958810faea108ed54f85e9">write_param_values_to_mongodb</a>(self):</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Update Parameters collection in MongoDB.</span></div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="stringliteral">        Notes:</span></div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="stringliteral">            The field value of &#39;CALI_VALUES&#39; of all parameters will be deleted first.</span></div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.<a class="code" href="../../da/d1e/a00149.html#ad7fb5aac66256256a765241ca67853bb">param_defs</a>:</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            self.<a class="code" href="../../da/d1e/a00149.html#a92f81d8431fb5c0f4a4b8460c1e19a8a">read_param_ranges</a>()</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <span class="keywordflow">if</span> self.<a class="code" href="../../da/d1e/a00149.html#a6d297e429d3af2f13379a780b253e730">param_values</a> <span class="keywordflow">is</span> <span class="keywordtype">None</span> <span class="keywordflow">or</span> len(self.<a class="code" href="../../da/d1e/a00149.html#a6d297e429d3af2f13379a780b253e730">param_values</a>) == 0:</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            self.<a class="code" href="../../da/d1e/a00149.html#adfc9061ce931f00f26c4bf37f412d1a7">generate_samples</a>()</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        client = ConnectMongoDB(self.cfg.hostname, self.cfg.port)</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        conn = client.get_conn()</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        db = conn[self.cfg.spatial_db]</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        collection = db[<span class="stringliteral">&#39;PARAMETERS&#39;</span>]</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        collection.update_many({}, {<span class="stringliteral">&#39;$unset&#39;</span>: {<span class="stringliteral">&#39;CALI_VALUES&#39;</span>: <span class="stringliteral">&#39;&#39;</span>}})</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        <span class="keywordflow">for</span> idx, pname <span class="keywordflow">in</span> enumerate(self.<a class="code" href="../../da/d1e/a00149.html#ad7fb5aac66256256a765241ca67853bb">param_defs</a>[<span class="stringliteral">&#39;names&#39;</span>]):</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;            v2str = <span class="stringliteral">&#39;,&#39;</span>.join(str(v) <span class="keywordflow">for</span> v <span class="keywordflow">in</span> self.<a class="code" href="../../da/d1e/a00149.html#a6d297e429d3af2f13379a780b253e730">param_values</a>[:, idx])</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;            collection.find_one_and_update({<span class="stringliteral">&#39;NAME&#39;</span>: pname}, {<span class="stringliteral">&#39;$set&#39;</span>: {<span class="stringliteral">&#39;CALI_VALUES&#39;</span>: v2str}})</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        client.close()</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;</div>
-<div class="line"><a name="l00218"></a><span class="lineno"><a class="line" href="../../da/d1e/a00149.html#ae9f62cd78766e1f8fd9fe1c59eb191f7">  218</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../da/d1e/a00149.html#ae9f62cd78766e1f8fd9fe1c59eb191f7">evaluate_models</a>(self):</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Run SEIMS for objective output variables, and write out.</span></div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        <span class="keywordflow">if</span> self.<a class="code" href="../../da/d1e/a00149.html#ab13b98af3dd992ffd7632e2502451af5">output_values</a> <span class="keywordflow">is</span> <span class="keywordtype">None</span> <span class="keywordflow">or</span> len(self.<a class="code" href="../../da/d1e/a00149.html#ab13b98af3dd992ffd7632e2502451af5">output_values</a>) == 0:</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            <span class="keywordflow">if</span> FileClass.is_file_exists(self.cfg.outfiles.output_values_txt):</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                self.<a class="code" href="../../da/d1e/a00149.html#ab13b98af3dd992ffd7632e2502451af5">output_values</a> = numpy.loadtxt(self.cfg.outfiles.output_values_txt)</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                <span class="keywordflow">return</span></div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        <span class="keyword">assert</span> (self.<a class="code" href="../../da/d1e/a00149.html#a45b6b4fca0062788c0f1f643b4c7189b">run_count</a> &gt; 0)</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        <span class="comment"># model configurations</span></div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        model_cfg_dict = {<span class="stringliteral">&#39;bin_dir&#39;</span>: self.cfg.seims_bin, <span class="stringliteral">&#39;model_dir&#39;</span>: self.cfg.model_dir,</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                          <span class="stringliteral">&#39;nthread&#39;</span>: self.cfg.seims_nthread, <span class="stringliteral">&#39;lyrmethod&#39;</span>: self.cfg.seims_lyrmethod,</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                          <span class="stringliteral">&#39;hostname&#39;</span>: self.cfg.hostname, <span class="stringliteral">&#39;port&#39;</span>: self.cfg.port,</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                          <span class="stringliteral">&#39;scenario_id&#39;</span>: 0}</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        <span class="comment"># split tasks if needed</span></div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        task_num = self.<a class="code" href="../../da/d1e/a00149.html#a45b6b4fca0062788c0f1f643b4c7189b">run_count</a> / 1000</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        <span class="keywordflow">if</span> task_num == 0:</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            split_seqs = list(range(self.<a class="code" href="../../da/d1e/a00149.html#a45b6b4fca0062788c0f1f643b4c7189b">run_count</a>))</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        <span class="keywordflow">else</span>:</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;            split_seqs = numpy.array_split(numpy.arange(self.<a class="code" href="../../da/d1e/a00149.html#a45b6b4fca0062788c0f1f643b4c7189b">run_count</a>), task_num)</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;            split_seqs = [a.tolist() <span class="keywordflow">for</span> a <span class="keywordflow">in</span> split_seqs]</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        <span class="comment"># PSA evaluation period</span></div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        psa_period = <span class="stringliteral">&#39;%s,%s&#39;</span> % (self.cfg.psa_stime.strftime(<span class="stringliteral">&#39;%Y-%m-%d %H:%M:%S&#39;</span>),</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                                self.cfg.psa_etime.strftime(<span class="stringliteral">&#39;%Y-%m-%d %H:%M:%S&#39;</span>))</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        <span class="keywordflow">for</span> idx, cali_seqs <span class="keywordflow">in</span> enumerate(split_seqs):</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;            cur_out_file = self.cfg.outfiles.output_values_dir + os.path.sep + <span class="stringliteral">&#39;outputs_%d.txt&#39;</span> % idx</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            <span class="keywordflow">if</span> FileClass.is_file_exists(cur_out_file):</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                <span class="keywordflow">continue</span></div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            <span class="keywordflow">try</span>:  <span class="comment"># parallel on multiprocesor or clusters using SCOOP</span></div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                <span class="keyword">from</span> scoop <span class="keyword">import</span> futures</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                temp_output_values = list(futures.map(evaluate_model_response,</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                                                      [model_cfg_dict] * len(cali_seqs),</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                                                      cali_seqs, [psa_period] * len(cali_seqs)))</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;            <span class="keywordflow">except</span> ImportError <span class="keywordflow">or</span> ImportWarning:  <span class="comment"># serial</span></div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                temp_output_values = list(map(evaluate_model_response,</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                                              [model_cfg_dict] * len(cali_seqs), cali_seqs,</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                                              [psa_period] * len(cali_seqs)))</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;            <span class="keywordflow">if</span> <span class="keywordflow">not</span> isinstance(temp_output_values, numpy.ndarray):</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                temp_output_values = numpy.array(temp_output_values)</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            numpy.savetxt(cur_out_file, temp_output_values, delimiter=<span class="stringliteral">&#39; &#39;</span>, fmt=<span class="stringliteral">&#39;%.4e&#39;</span>)</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        <span class="comment"># load the first part of output values</span></div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        self.<a class="code" href="../../da/d1e/a00149.html#ab13b98af3dd992ffd7632e2502451af5">output_values</a> = numpy.loadtxt(self.cfg.outfiles.output_values_dir + os.path.sep +</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                                           <span class="stringliteral">&#39;outputs_0.txt&#39;</span>)</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        <span class="keywordflow">if</span> task_num == 0:</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;            <span class="keyword">import</span> shutil</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;            shutil.move(self.cfg.outfiles.output_values_dir + os.path.sep + <span class="stringliteral">&#39;outputs_0.txt&#39;</span>,</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                        self.cfg.outfiles.output_values_txt)</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;            shutil.rmtree(self.cfg.outfiles.output_values_dir)</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;            <span class="keywordflow">return</span></div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        <span class="keywordflow">for</span> idx <span class="keywordflow">in</span> range(1, task_num):</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;            tmp_outputs = numpy.loadtxt(self.cfg.outfiles.output_values_dir + os.path.sep +</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                                        <span class="stringliteral">&#39;outputs_%d.txt&#39;</span> % idx)</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            self.<a class="code" href="../../da/d1e/a00149.html#ab13b98af3dd992ffd7632e2502451af5">output_values</a> = numpy.concatenate((self.<a class="code" href="../../da/d1e/a00149.html#ab13b98af3dd992ffd7632e2502451af5">output_values</a>, tmp_outputs))</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        numpy.savetxt(self.cfg.outfiles.output_values_txt,</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                      self.<a class="code" href="../../da/d1e/a00149.html#ab13b98af3dd992ffd7632e2502451af5">output_values</a>, delimiter=<span class="stringliteral">&#39; &#39;</span>, fmt=<span class="stringliteral">&#39;%.4e&#39;</span>)</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;</div>
-<div class="line"><a name="l00275"></a><span class="lineno"><a class="line" href="../../da/d1e/a00149.html#ad75d94c3d639e5a2067c576800cdf7d9">  275</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../da/d1e/a00149.html#ad75d94c3d639e5a2067c576800cdf7d9">calculate_sensitivity</a>(self):</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Calculate Morris elementary effects.</span></div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;<span class="stringliteral">           It is worth to be noticed that evaluate_models() allows to return</span></div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;<span class="stringliteral">           several output variables, hence we should calculate each of them separately.</span></div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.<a class="code" href="../../da/d1e/a00149.html#a252ebc7669e1d75ea69bbc3ee6a2730a">psa_si</a>:</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;            <span class="keywordflow">if</span> FileClass.is_file_exists(self.cfg.outfiles.psa_si_json):</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                with open(self.cfg.outfiles.psa_si_json, <span class="stringliteral">&#39;</span><span class="stringliteral">r&#39;) as f:</span></div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;<span class="stringliteral">                    self.<a class="code" href="../../da/d1e/a00149.html#a252ebc7669e1d75ea69bbc3ee6a2730a">psa_si</a> = UtilClass.decode_strs_in_dict(json.load(f))</span></div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;<span class="stringliteral">                    </span><span class="keywordflow">return</span></div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        <span class="keywordflow">if</span> self.<a class="code" href="../../da/d1e/a00149.html#ab13b98af3dd992ffd7632e2502451af5">output_values</a> <span class="keywordflow">is</span> <span class="keywordtype">None</span> <span class="keywordflow">or</span> len(self.<a class="code" href="../../da/d1e/a00149.html#ab13b98af3dd992ffd7632e2502451af5">output_values</a>) == 0:</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;            self.<a class="code" href="../../da/d1e/a00149.html#ae9f62cd78766e1f8fd9fe1c59eb191f7">evaluate_models</a>()</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        <span class="keywordflow">if</span> self.<a class="code" href="../../da/d1e/a00149.html#a6d297e429d3af2f13379a780b253e730">param_values</a> <span class="keywordflow">is</span> <span class="keywordtype">None</span> <span class="keywordflow">or</span> len(self.<a class="code" href="../../da/d1e/a00149.html#a6d297e429d3af2f13379a780b253e730">param_values</a>) == 0:</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;            self.<a class="code" href="../../da/d1e/a00149.html#adfc9061ce931f00f26c4bf37f412d1a7">generate_samples</a>()</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.<a class="code" href="../../da/d1e/a00149.html#ad7fb5aac66256256a765241ca67853bb">param_defs</a>:</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;            self.<a class="code" href="../../da/d1e/a00149.html#a92f81d8431fb5c0f4a4b8460c1e19a8a">read_param_ranges</a>()</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        row, col = self.output_values.shape</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        <span class="keyword">assert</span> (row == self.<a class="code" href="../../da/d1e/a00149.html#a45b6b4fca0062788c0f1f643b4c7189b">run_count</a>)</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(col):</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;            <span class="keywordflow">if</span> self.cfg.method == <span class="stringliteral">&#39;morris&#39;</span>:</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                tmp_Si = morris_alz(self.<a class="code" href="../../da/d1e/a00149.html#ad7fb5aac66256256a765241ca67853bb">param_defs</a>,</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                                    self.<a class="code" href="../../da/d1e/a00149.html#a6d297e429d3af2f13379a780b253e730">param_values</a>,</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                                    self.<a class="code" href="../../da/d1e/a00149.html#ab13b98af3dd992ffd7632e2502451af5">output_values</a>[:, i],</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                                    conf_level=0.95, print_to_console=<span class="keyword">True</span>,</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                                    num_levels=self.cfg.morris.num_levels,</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                                    grid_jump=self.cfg.morris.grid_jump)</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;            <span class="keywordflow">elif</span> self.cfg.method == <span class="stringliteral">&#39;fast&#39;</span>:</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                tmp_Si = fast_alz(self.<a class="code" href="../../da/d1e/a00149.html#ad7fb5aac66256256a765241ca67853bb">param_defs</a>, self.<a class="code" href="../../da/d1e/a00149.html#ab13b98af3dd992ffd7632e2502451af5">output_values</a>[:, i],</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;                                  print_to_console=<span class="keyword">True</span>)</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;            <span class="keywordflow">else</span>:</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                <span class="keywordflow">raise</span> ValueError(<span class="stringliteral">&#39;%s method is not supported now!&#39;</span> % self.cfg.method)</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;            self.<a class="code" href="../../da/d1e/a00149.html#a252ebc7669e1d75ea69bbc3ee6a2730a">psa_si</a>[i] = tmp_Si</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        <span class="comment"># print(self.psa_si)</span></div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        <span class="comment"># Save as json, which can be loaded by json.load()</span></div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        json_data = json.dumps(self.<a class="code" href="../../da/d1e/a00149.html#a252ebc7669e1d75ea69bbc3ee6a2730a">psa_si</a>, indent=4, cls=SpecialJsonEncoder)</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        with open(self.cfg.outfiles.psa_si_json, <span class="stringliteral">&#39;w&#39;</span>) <span class="keyword">as</span> f:</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;            f.write(json_data)</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        self.<a class="code" href="../../da/d1e/a00149.html#aca94cc7cd6ab2057e24d7ca15414967f">output_psa_si</a>()</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="stringliteral">                18-07-04  lj - support MPI version of SEIMS, and bugs fixed.\n</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">from</span> __future__ <span class="keyword">import</span> absolute_import</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">import</span> os</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">import</span> sys</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">import</span> math</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">import</span> json</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">import</span> datetime</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">import</span> time</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">import</span> pickle</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">from</span> shutil <span class="keyword">import</span> rmtree</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">from</span> copy <span class="keyword">import</span> deepcopy</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keywordflow">if</span> os.path.abspath(os.path.join(sys.path[0], <span class="stringliteral">&#39;..&#39;</span>)) <span class="keywordflow">not</span> <span class="keywordflow">in</span> sys.path:</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    sys.path.insert(0, os.path.abspath(os.path.join(sys.path[0], <span class="stringliteral">&#39;..&#39;</span>)))</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">import</span> matplotlib</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keywordflow">if</span> os.name != <span class="stringliteral">&#39;nt&#39;</span>:  <span class="comment"># Force matplotlib to not use any Xwindows backend.</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    matplotlib.use(<span class="stringliteral">&#39;Agg&#39;</span>, warn=<span class="keyword">False</span>)</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">import</span> numpy</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">from</span> <a class="code" href="../../df/d3b/a00728.html">pygeoc.utils</a> <span class="keyword">import</span> FileClass, UtilClass</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"># Morris screening method</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">from</span> SALib.sample.morris <span class="keyword">import</span> sample <span class="keyword">as</span> morris_spl</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">from</span> SALib.analyze.morris <span class="keyword">import</span> analyze <span class="keyword">as</span> morris_alz</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">from</span> SALib.plotting.morris <span class="keyword">import</span> horizontal_bar_plot, covariance_plot</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"># FAST variant-based method</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">from</span> SALib.sample.fast_sampler <span class="keyword">import</span> sample <span class="keyword">as</span> fast_spl</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">from</span> SALib.analyze.fast <span class="keyword">import</span> analyze <span class="keyword">as</span> fast_alz</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">from</span> preprocess.db_mongodb <span class="keyword">import</span> ConnectMongoDB</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">from</span> preprocess.text <span class="keyword">import</span> DBTableNames</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">from</span> preprocess.utility <span class="keyword">import</span> read_data_items_from_txt</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">from</span> postprocess.utility <span class="keyword">import</span> save_png_eps</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">from</span> parameters_sensitivity.config <span class="keyword">import</span> PSAConfig</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">from</span> parameters_sensitivity.figure <span class="keyword">import</span> sample_histograms, empirical_cdf</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">from</span> run_seims <span class="keyword">import</span> create_run_model</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">class </span>SpecialJsonEncoder(json.JSONEncoder):</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">def </span>default(self, obj):</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">if</span> isinstance(obj, numpy.ndarray):</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordflow">return</span> obj.tolist()</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">elif</span> isinstance(obj, datetime.datetime):</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordflow">return</span> obj.strftime(<span class="stringliteral">&#39;%Y-%m-%d %H:%M:%S&#39;</span>)</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">return</span> json.JSONEncoder.default(self, obj)</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="../../d9/d7d/a00150.html">   60</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d9/d7d/a00150.html">Sensitivity</a>(object):</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;Base class of Sensitivity Analysis.&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="../../d9/d7d/a00150.html#ae74bd6daef5f21ea997378e26bc23740">   63</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d9/d7d/a00150.html#ae74bd6daef5f21ea997378e26bc23740">__init__</a>(self, psa_cfg):</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="stringliteral">        Initialization.</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="stringliteral">        Args:</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="stringliteral">            psa_cfg: PSAConfig object.</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        self.<a class="code" href="../../d9/d7d/a00150.html#ace27b15f708960f7930266c0f77849d8">cfg</a> = psa_cfg</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        self.<a class="code" href="../../d9/d7d/a00150.html#aa0b7f9d2f94c1208ec463708a32baaab">model</a> = psa_cfg.model</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        self.<a class="code" href="../../d9/d7d/a00150.html#ad7fb5aac66256256a765241ca67853bb">param_defs</a> = dict()</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        self.<a class="code" href="../../d9/d7d/a00150.html#a6d297e429d3af2f13379a780b253e730">param_values</a> = <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        self.<a class="code" href="../../d9/d7d/a00150.html#a45b6b4fca0062788c0f1f643b4c7189b">run_count</a> = 0</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        self.<a class="code" href="../../d9/d7d/a00150.html#ab13b98af3dd992ffd7632e2502451af5">output_values</a> = <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        self.<a class="code" href="../../d9/d7d/a00150.html#aeb2f14882d7c297aa2faa08d2500ac4f">objnames</a> = list()  <span class="comment"># Objective names, e.g., NSE-Q, RMSE-Q, PBIAS-SED</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        self.<a class="code" href="../../d9/d7d/a00150.html#a252ebc7669e1d75ea69bbc3ee6a2730a">psa_si</a> = dict()</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="../../d9/d7d/a00150.html#a925f28ae2d604a86b02af39a44fbe193">   78</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d9/d7d/a00150.html#a925f28ae2d604a86b02af39a44fbe193">run</a>(self):</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;PSA workflow.&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        self.<a class="code" href="../../d9/d7d/a00150.html#ab1c05d8cd645371800d85f905275edee">reset_simulation_timerange</a>()</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        self.<a class="code" href="../../d9/d7d/a00150.html#a92f81d8431fb5c0f4a4b8460c1e19a8a">read_param_ranges</a>()</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        self.<a class="code" href="../../d9/d7d/a00150.html#adfc9061ce931f00f26c4bf37f412d1a7">generate_samples</a>()</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        self.<a class="code" href="../../d9/d7d/a00150.html#a5202e15a33958810faea108ed54f85e9">write_param_values_to_mongodb</a>()</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        self.<a class="code" href="../../d9/d7d/a00150.html#ae9f62cd78766e1f8fd9fe1c59eb191f7">evaluate_models</a>()</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        self.<a class="code" href="../../d9/d7d/a00150.html#ad75d94c3d639e5a2067c576800cdf7d9">calculate_sensitivity</a>()</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keyword">def </span>plot(self):</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">try</span>:</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            self.<a class="code" href="../../d9/d7d/a00150.html#a6fd4e10e94a71eb1ce74aee565fb48c3">plot_samples_histogram</a>()</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keywordflow">if</span> self.cfg.method == <span class="stringliteral">&#39;morris&#39;</span>:</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                self.<a class="code" href="../../d9/d7d/a00150.html#ae085f96943825b60e1afa23c2bd2459f">plot_morris</a>()</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                self.<a class="code" href="../../d9/d7d/a00150.html#a266bc27fc321e19f1a3e801b779ec3f9">plot_cdf</a>()</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">except</span> Exception:</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            print(<span class="stringliteral">&#39;Plot failed, please run this function independently.&#39;</span>)</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="../../d9/d7d/a00150.html#ab1c05d8cd645371800d85f905275edee">   96</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d9/d7d/a00150.html#ab1c05d8cd645371800d85f905275edee">reset_simulation_timerange</a>(self):</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Update simulation time range in MongoDB [FILE_IN].&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        client = ConnectMongoDB(self.model.host, self.model.port)</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        conn = client.get_conn()</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        db = conn[self.model.db_name]</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        stime_str = self.model.time_start.strftime(<span class="stringliteral">&#39;%Y-%m-%d %H:%M:%S&#39;</span>)</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        etime_str = self.model.time_end.strftime(<span class="stringliteral">&#39;%Y-%m-%d %H:%M:%S&#39;</span>)</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        db[DBTableNames.main_filein].find_one_and_update({<span class="stringliteral">&#39;TAG&#39;</span>: <span class="stringliteral">&#39;STARTTIME&#39;</span>},</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                                                         {<span class="stringliteral">&#39;$set&#39;</span>: {<span class="stringliteral">&#39;VALUE&#39;</span>: stime_str}})</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        db[DBTableNames.main_filein].find_one_and_update({<span class="stringliteral">&#39;TAG&#39;</span>: <span class="stringliteral">&#39;ENDTIME&#39;</span>},</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                                                         {<span class="stringliteral">&#39;$set&#39;</span>: {<span class="stringliteral">&#39;VALUE&#39;</span>: etime_str}})</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        client.close()</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="../../d9/d7d/a00150.html#a92f81d8431fb5c0f4a4b8460c1e19a8a">  109</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d9/d7d/a00150.html#a92f81d8431fb5c0f4a4b8460c1e19a8a">read_param_ranges</a>(self):</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Read param_rng.def file</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="stringliteral">           name,lower_bound,upper_bound,group,dist</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="stringliteral">           (group and dist are optional)</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="stringliteral">            e.g.,</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="stringliteral">             Param1,0,1[,Group1][,dist1]</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="stringliteral">             Param2,0,1[,Group2][,dist2]</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="stringliteral">             Param3,0,1[,Group3][,dist3]</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="stringliteral">        Returns:</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="stringliteral">            a dictionary containing:</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="stringliteral">            - names - the names of the parameters</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="stringliteral">            - bounds - a list of lists of lower and upper bounds</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="stringliteral">            - num_vars - a scalar indicating the number of variables</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="stringliteral">                         (the length of names)</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="stringliteral">            - groups - a list of group names (strings) for each variable</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="stringliteral">            - dists - a list of distributions for the problem,</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="stringliteral">                        None if not specified or all uniform</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="comment"># read param_defs.json if already existed</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.<a class="code" href="../../d9/d7d/a00150.html#ad7fb5aac66256256a765241ca67853bb">param_defs</a>:</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            <span class="keywordflow">if</span> FileClass.is_file_exists(self.cfg.outfiles.param_defs_json):</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                with open(self.cfg.outfiles.param_defs_json, <span class="stringliteral">&#39;</span><span class="stringliteral">r&#39;) as f:</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="stringliteral">                    self.<a class="code" href="../../d9/d7d/a00150.html#ad7fb5aac66256256a765241ca67853bb">param_defs</a> = UtilClass.decode_strs_in_dict(json.load(f))</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="stringliteral">                </span><span class="keywordflow">return</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="comment"># read param_range_def file and output to json file</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        client = ConnectMongoDB(self.model.host, self.model.port)</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        conn = client.get_conn()</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        db = conn[self.model.db_name]</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        collection = db[<span class="stringliteral">&#39;PARAMETERS&#39;</span>]</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        names = list()</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        bounds = list()</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        groups = list()</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        dists = list()</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        num_vars = 0</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        items = read_data_items_from_txt(self.cfg.param_range_def)</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="keywordflow">for</span> item <span class="keywordflow">in</span> items:</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            <span class="keywordflow">if</span> len(item) &lt; 3:</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                <span class="keywordflow">continue</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            <span class="comment"># find parameter name, print warning message if not existed</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            cursor = collection.find({<span class="stringliteral">&#39;NAME&#39;</span>: item[0]}, no_cursor_timeout=<span class="keyword">True</span>)</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            <span class="keywordflow">if</span> <span class="keywordflow">not</span> cursor.count():</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                print(<span class="stringliteral">&#39;WARNING: parameter %s is not existed!&#39;</span> % item[0])</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                <span class="keywordflow">continue</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            num_vars += 1</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            names.append(item[0])</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            bounds.append([float(item[1]), float(item[2])])</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            <span class="comment"># If the fourth column does not contain a group name, use</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            <span class="comment"># the parameter name</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            <span class="keywordflow">if</span> len(item) &gt;= 4:</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                groups.append(item[3])</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                groups.append(item[0])</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            <span class="keywordflow">if</span> len(item) &gt;= 5:</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                dists.append(item[4])</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                dists.append(<span class="stringliteral">&#39;unif&#39;</span>)</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <span class="keywordflow">if</span> groups == names:</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            groups = <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="keywordflow">elif</span> len(set(groups)) == 1:</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            <span class="keywordflow">raise</span> ValueError(<span class="stringliteral">&#39;Only one group defined, results will not bemeaningful&#39;</span>)</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="comment"># setting dists to none if all are uniform</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <span class="comment"># because non-uniform scaling is not needed</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <span class="keywordflow">if</span> all([d == <span class="stringliteral">&#39;unif&#39;</span> <span class="keywordflow">for</span> d <span class="keywordflow">in</span> dists]):</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            dists = <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        self.<a class="code" href="../../d9/d7d/a00150.html#ad7fb5aac66256256a765241ca67853bb">param_defs</a> = {<span class="stringliteral">&#39;names&#39;</span>: names, <span class="stringliteral">&#39;bounds&#39;</span>: bounds,</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                           <span class="stringliteral">&#39;num_vars&#39;</span>: num_vars, <span class="stringliteral">&#39;groups&#39;</span>: groups, <span class="stringliteral">&#39;dists&#39;</span>: dists}</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <span class="comment"># Save as json, which can be loaded by json.load()</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        json_data = json.dumps(self.<a class="code" href="../../d9/d7d/a00150.html#ad7fb5aac66256256a765241ca67853bb">param_defs</a>, indent=4, cls=SpecialJsonEncoder)</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        with open(self.cfg.outfiles.param_defs_json, <span class="stringliteral">&#39;w&#39;</span>) <span class="keyword">as</span> f:</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            f.write(json_data)</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;</div>
+<div class="line"><a name="l00187"></a><span class="lineno"><a class="line" href="../../d9/d7d/a00150.html#adfc9061ce931f00f26c4bf37f412d1a7">  187</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d9/d7d/a00150.html#adfc9061ce931f00f26c4bf37f412d1a7">generate_samples</a>(self):</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Sampling and write to a single file and MongoDB &#39;PARAMETERS&#39; collection&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <span class="keywordflow">if</span> self.<a class="code" href="../../d9/d7d/a00150.html#a6d297e429d3af2f13379a780b253e730">param_values</a> <span class="keywordflow">is</span> <span class="keywordtype">None</span> <span class="keywordflow">or</span> len(self.<a class="code" href="../../d9/d7d/a00150.html#a6d297e429d3af2f13379a780b253e730">param_values</a>) == 0:</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            <span class="keywordflow">if</span> FileClass.is_file_exists(self.cfg.outfiles.param_values_txt):</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                self.<a class="code" href="../../d9/d7d/a00150.html#a6d297e429d3af2f13379a780b253e730">param_values</a> = numpy.loadtxt(self.cfg.outfiles.param_values_txt)</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                self.<a class="code" href="../../d9/d7d/a00150.html#a45b6b4fca0062788c0f1f643b4c7189b">run_count</a> = len(self.<a class="code" href="../../d9/d7d/a00150.html#a6d297e429d3af2f13379a780b253e730">param_values</a>)</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                <span class="keywordflow">return</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.<a class="code" href="../../d9/d7d/a00150.html#ad7fb5aac66256256a765241ca67853bb">param_defs</a>:</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            self.<a class="code" href="../../d9/d7d/a00150.html#a92f81d8431fb5c0f4a4b8460c1e19a8a">read_param_ranges</a>()</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <span class="keywordflow">if</span> self.cfg.method == <span class="stringliteral">&#39;morris&#39;</span>:</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            self.<a class="code" href="../../d9/d7d/a00150.html#a6d297e429d3af2f13379a780b253e730">param_values</a> = morris_spl(self.<a class="code" href="../../d9/d7d/a00150.html#ad7fb5aac66256256a765241ca67853bb">param_defs</a>, self.cfg.morris.N,</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                                           self.cfg.morris.num_levels, self.cfg.morris.grid_jump,</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                                           optimal_trajectories=self.cfg.morris.optimal_t,</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                                           local_optimization=self.cfg.morris.local_opt)</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="keywordflow">elif</span> self.cfg.method == <span class="stringliteral">&#39;fast&#39;</span>:</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            self.<a class="code" href="../../d9/d7d/a00150.html#a6d297e429d3af2f13379a780b253e730">param_values</a> = fast_spl(self.<a class="code" href="../../d9/d7d/a00150.html#ad7fb5aac66256256a765241ca67853bb">param_defs</a>, self.cfg.fast.N, self.cfg.fast.M)</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            <span class="keywordflow">raise</span> ValueError(<span class="stringliteral">&#39;%s method is not supported now!&#39;</span> % self.cfg.method)</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        self.<a class="code" href="../../d9/d7d/a00150.html#a45b6b4fca0062788c0f1f643b4c7189b">run_count</a> = len(self.<a class="code" href="../../d9/d7d/a00150.html#a6d297e429d3af2f13379a780b253e730">param_values</a>)</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <span class="comment"># Save as txt file, which can be loaded by numpy.loadtxt()</span></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        numpy.savetxt(self.cfg.outfiles.param_values_txt,</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                      self.<a class="code" href="../../d9/d7d/a00150.html#a6d297e429d3af2f13379a780b253e730">param_values</a>, delimiter=<span class="stringliteral">&#39; &#39;</span>, fmt=<span class="stringliteral">&#39;%.4e&#39;</span>)</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;</div>
+<div class="line"><a name="l00210"></a><span class="lineno"><a class="line" href="../../d9/d7d/a00150.html#a5202e15a33958810faea108ed54f85e9">  210</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d9/d7d/a00150.html#a5202e15a33958810faea108ed54f85e9">write_param_values_to_mongodb</a>(self):</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Update Parameters collection in MongoDB.</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="stringliteral">        Notes:</span></div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="stringliteral">            The field value of &#39;CALI_VALUES&#39; of all parameters will be deleted first.</span></div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.<a class="code" href="../../d9/d7d/a00150.html#ad7fb5aac66256256a765241ca67853bb">param_defs</a>:</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;            self.<a class="code" href="../../d9/d7d/a00150.html#a92f81d8431fb5c0f4a4b8460c1e19a8a">read_param_ranges</a>()</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        <span class="keywordflow">if</span> self.<a class="code" href="../../d9/d7d/a00150.html#a6d297e429d3af2f13379a780b253e730">param_values</a> <span class="keywordflow">is</span> <span class="keywordtype">None</span> <span class="keywordflow">or</span> len(self.<a class="code" href="../../d9/d7d/a00150.html#a6d297e429d3af2f13379a780b253e730">param_values</a>) == 0:</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;            self.<a class="code" href="../../d9/d7d/a00150.html#adfc9061ce931f00f26c4bf37f412d1a7">generate_samples</a>()</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        client = ConnectMongoDB(self.model.host, self.model.port)</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        conn = client.get_conn()</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        db = conn[self.model.db_name]</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        collection = db[<span class="stringliteral">&#39;PARAMETERS&#39;</span>]</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        collection.update_many({}, {<span class="stringliteral">&#39;$unset&#39;</span>: {<span class="stringliteral">&#39;CALI_VALUES&#39;</span>: <span class="stringliteral">&#39;&#39;</span>}})</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        <span class="keywordflow">for</span> idx, pname <span class="keywordflow">in</span> enumerate(self.<a class="code" href="../../d9/d7d/a00150.html#ad7fb5aac66256256a765241ca67853bb">param_defs</a>[<span class="stringliteral">&#39;names&#39;</span>]):</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            v2str = <span class="stringliteral">&#39;,&#39;</span>.join(str(v) <span class="keywordflow">for</span> v <span class="keywordflow">in</span> self.<a class="code" href="../../d9/d7d/a00150.html#a6d297e429d3af2f13379a780b253e730">param_values</a>[:, idx])</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            collection.find_one_and_update({<span class="stringliteral">&#39;NAME&#39;</span>: pname}, {<span class="stringliteral">&#39;$set&#39;</span>: {<span class="stringliteral">&#39;CALI_VALUES&#39;</span>: v2str}})</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        client.close()</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;</div>
+<div class="line"><a name="l00229"></a><span class="lineno"><a class="line" href="../../d9/d7d/a00150.html#ae9f62cd78766e1f8fd9fe1c59eb191f7">  229</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d9/d7d/a00150.html#ae9f62cd78766e1f8fd9fe1c59eb191f7">evaluate_models</a>(self):</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Run SEIMS for objective output variables, and write out.</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        <span class="keywordflow">if</span> self.<a class="code" href="../../d9/d7d/a00150.html#ab13b98af3dd992ffd7632e2502451af5">output_values</a> <span class="keywordflow">is</span> <span class="keywordtype">None</span> <span class="keywordflow">or</span> len(self.<a class="code" href="../../d9/d7d/a00150.html#ab13b98af3dd992ffd7632e2502451af5">output_values</a>) == 0:</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;            <span class="keywordflow">if</span> FileClass.is_file_exists(self.cfg.outfiles.output_values_txt):</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                self.<a class="code" href="../../d9/d7d/a00150.html#ab13b98af3dd992ffd7632e2502451af5">output_values</a> = numpy.loadtxt(self.cfg.outfiles.output_values_txt)</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                <span class="keywordflow">return</span></div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        <span class="keyword">assert</span> (self.<a class="code" href="../../d9/d7d/a00150.html#a45b6b4fca0062788c0f1f643b4c7189b">run_count</a> &gt; 0)</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        <span class="comment"># model configurations</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        model_cfg_dict = self.model.ConfigDict</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        <span class="comment"># Parameters to be evaluated</span></div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        input_eva_vars = self.cfg.evaluate_params</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        <span class="comment"># split tasks if needed</span></div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        task_num = self.<a class="code" href="../../d9/d7d/a00150.html#a45b6b4fca0062788c0f1f643b4c7189b">run_count</a> // 1000</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        <span class="keywordflow">if</span> task_num == 0:</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            split_seqs = [range(self.<a class="code" href="../../d9/d7d/a00150.html#a45b6b4fca0062788c0f1f643b4c7189b">run_count</a>)]</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            split_seqs = numpy.array_split(numpy.arange(self.<a class="code" href="../../d9/d7d/a00150.html#a45b6b4fca0062788c0f1f643b4c7189b">run_count</a>), task_num + 1)</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;            split_seqs = [a.tolist() <span class="keywordflow">for</span> a <span class="keywordflow">in</span> split_seqs]</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        <span class="comment"># Loop partitioned tasks</span></div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        run_model_stime = time.time()</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        <span class="keywordflow">for</span> idx, cali_seqs <span class="keywordflow">in</span> enumerate(split_seqs):</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            cur_out_file = <span class="stringliteral">&#39;%s/outputs_%d.txt&#39;</span> % (self.cfg.outfiles.output_values_dir, idx)</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;            <span class="keywordflow">if</span> FileClass.is_file_exists(cur_out_file):</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                <span class="keywordflow">continue</span></div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            model_cfg_dict_list = list()</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            <span class="keywordflow">for</span> i, caliid <span class="keywordflow">in</span> enumerate(cali_seqs):</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                tmpcfg = deepcopy(model_cfg_dict)</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                tmpcfg[<span class="stringliteral">&#39;calibration_id&#39;</span>] = caliid</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                model_cfg_dict_list.append(tmpcfg)</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;            <span class="keywordflow">try</span>:  <span class="comment"># parallel on multiprocesor or clusters using SCOOP</span></div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                <span class="keyword">from</span> scoop <span class="keyword">import</span> futures</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                output_models = list(futures.map(create_run_model, model_cfg_dict_list))</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;            <span class="keywordflow">except</span> ImportError <span class="keywordflow">or</span> ImportWarning:  <span class="comment"># serial</span></div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                output_models = list(map(create_run_model, model_cfg_dict_list))</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;            time.sleep(0.1)  <span class="comment"># Wait a moment in case of unpredictable file system error</span></div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;            <span class="comment"># Read observation data from MongoDB only once</span></div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;            <span class="keywordflow">if</span> len(output_models) &lt; 1:  <span class="comment"># Although this is not gonna happen, just for insurance.</span></div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                <span class="keywordflow">continue</span></div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            obs_vars, obs_data_dict = output_models[0].ReadOutletObservations(input_eva_vars)</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;            <span class="keywordflow">if</span> (len(obs_vars)) &lt; 1:  <span class="comment"># Make sure the observation data exists.</span></div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                <span class="keywordflow">continue</span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;            <span class="comment"># Loop the executed models</span></div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            eva_values = list()</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;            <span class="keywordflow">for</span> imod, mod_obj <span class="keywordflow">in</span> enumerate(output_models):</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                <span class="keywordflow">if</span> imod != 0:  <span class="comment"># Set observation data since there is no need to read from MongoDB.</span></div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                    mod_obj.SetOutletObservations(obs_vars, obs_data_dict)</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                <span class="comment"># Read simulation</span></div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                mod_obj.ReadTimeseriesSimulations(self.cfg.psa_stime, self.cfg.psa_etime)</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                <span class="comment"># Calculate NSE, R2, RMSE, PBIAS, RSR, ln(NSE), NSE1, and NSE3</span></div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                self.<a class="code" href="../../d9/d7d/a00150.html#aeb2f14882d7c297aa2faa08d2500ac4f">objnames</a>, obj_values = mod_obj.CalcTimeseriesStatistics(mod_obj.sim_obs_dict)</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                eva_values.append(obj_values)</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                <span class="comment"># delete model output directory for saving storage</span></div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                rmtree(mod_obj.output_dir)</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;            <span class="keywordflow">if</span> <span class="keywordflow">not</span> isinstance(eva_values, numpy.ndarray):</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                eva_values = numpy.array(eva_values)</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;            numpy.savetxt(cur_out_file, eva_values, delimiter=<span class="stringliteral">&#39; &#39;</span>, fmt=<span class="stringliteral">&#39;%.4e&#39;</span>)</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;            <span class="comment"># Save as pickle data for further usage. DO not save all models which maybe very large!</span></div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;            cur_model_out_file = <span class="stringliteral">&#39;%s/models_%d.pickle&#39;</span> % (self.cfg.outfiles.output_values_dir, idx)</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;            with open(cur_model_out_file, <span class="stringliteral">&#39;wb&#39;</span>) <span class="keyword">as</span> f:</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                pickle.dump(output_models, f)</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        print(<span class="stringliteral">&#39;Running time of executing SEIMS models: %.2fs&#39;</span> % (time.time() - run_model_stime))</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        <span class="comment"># Save objective names as pickle data for further usgae</span></div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        with open(<span class="stringliteral">&#39;%s/objnames.pickle&#39;</span> % self.cfg.psa_outpath, <span class="stringliteral">&#39;wb&#39;</span>) <span class="keyword">as</span> f:</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;            pickle.dump(self.<a class="code" href="../../d9/d7d/a00150.html#aeb2f14882d7c297aa2faa08d2500ac4f">objnames</a>, f)</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        <span class="comment"># load the first part of output values</span></div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        self.<a class="code" href="../../d9/d7d/a00150.html#ab13b98af3dd992ffd7632e2502451af5">output_values</a> = numpy.loadtxt(<span class="stringliteral">&#39;%s/outputs_0.txt&#39;</span> % self.cfg.outfiles.output_values_dir)</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        <span class="keywordflow">if</span> task_num == 0:</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;            <span class="keyword">import</span> shutil</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;            shutil.move(<span class="stringliteral">&#39;%s/outputs_0.txt&#39;</span> % self.cfg.outfiles.output_values_dir,</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                        self.cfg.outfiles.output_values_txt)</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;            shutil.rmtree(self.cfg.outfiles.output_values_dir)</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;            <span class="keywordflow">return</span></div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        <span class="keywordflow">for</span> idx <span class="keywordflow">in</span> range(1, task_num + 1):</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;            tmp_outputs = numpy.loadtxt(<span class="stringliteral">&#39;%s/outputs_%d.txt&#39;</span> % (self.cfg.outfiles.output_values_dir,</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                                                               idx))</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;            self.<a class="code" href="../../d9/d7d/a00150.html#ab13b98af3dd992ffd7632e2502451af5">output_values</a> = numpy.concatenate((self.<a class="code" href="../../d9/d7d/a00150.html#ab13b98af3dd992ffd7632e2502451af5">output_values</a>, tmp_outputs))</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        numpy.savetxt(self.cfg.outfiles.output_values_txt,</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                      self.<a class="code" href="../../d9/d7d/a00150.html#ab13b98af3dd992ffd7632e2502451af5">output_values</a>, delimiter=<span class="stringliteral">&#39; &#39;</span>, fmt=<span class="stringliteral">&#39;%.4e&#39;</span>)</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <span class="keyword">def </span>output_psa_si(self):</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        objnames, objunits = get_evaluate_output_name_unit()</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        psa_sort_txt = self.cfg.outfiles.psa_si_sort_txt</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        psa_sort_dict = dict()</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        param_names = self.param_defs.get(<span class="stringliteral">&#39;names&#39;</span>)</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        psa_sort_dict[<span class="stringliteral">&#39;names&#39;</span>] = param_names[:]</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        <span class="keywordflow">for</span> idx, si_dict <span class="keywordflow">in</span> self.psa_si.items():</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;            <span class="keywordflow">if</span> <span class="stringliteral">&#39;objnames&#39;</span> <span class="keywordflow">not</span> <span class="keywordflow">in</span> psa_sort_dict:</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                psa_sort_dict[<span class="stringliteral">&#39;objnames&#39;</span>] = list()</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;            psa_sort_dict[<span class="stringliteral">&#39;objnames&#39;</span>].append(objnames[idx])</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;            <span class="keywordflow">for</span> param, values <span class="keywordflow">in</span> si_dict.items():</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                <span class="keywordflow">if</span> param == <span class="stringliteral">&#39;names&#39;</span>:</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                    <span class="keywordflow">continue</span></div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                <span class="keywordflow">if</span> param <span class="keywordflow">not</span> <span class="keywordflow">in</span> psa_sort_dict:</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                    psa_sort_dict[param] = list()</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                psa_sort_dict[param].append(values[:])</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        <span class="comment"># print(psa_sort_dict)</span></div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        output_str = <span class="stringliteral">&#39;&#39;</span></div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        header = <span class="stringliteral">&#39; ,&#39;</span> + <span class="stringliteral">&#39;,&#39;</span>.join(psa_sort_dict[<span class="stringliteral">&#39;objnames&#39;</span>]) + <span class="stringliteral">&#39;\n&#39;</span></div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        <span class="keywordflow">for</span> outvar, values <span class="keywordflow">in</span> psa_sort_dict.items():</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;            <span class="keywordflow">if</span> outvar == <span class="stringliteral">&#39;names&#39;</span> <span class="keywordflow">or</span> outvar == <span class="stringliteral">&#39;objnames&#39;</span>:</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;                <span class="keywordflow">continue</span></div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;            mtx = numpy.transpose(numpy.array(values))  <span class="comment"># col is &#39;objnames&#39; and row is &#39;names&#39;</span></div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;            sortidx = numpy.argsort(numpy.argsort(mtx, axis=0), axis=0)</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;            <span class="comment"># concatenate output string</span></div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;            output_str += outvar + <span class="stringliteral">&#39;\n&#39;</span></div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;            output_str += header</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;            <span class="keywordflow">for</span> i, v <span class="keywordflow">in</span> enumerate(mtx):</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                output_str += param_names[i] + <span class="stringliteral">&#39;,&#39;</span> + <span class="stringliteral">&#39;,&#39;</span>.join(<span class="stringliteral">&#39;{}&#39;</span>.format(i) <span class="keywordflow">for</span> i <span class="keywordflow">in</span> v) + <span class="stringliteral">&#39;\n&#39;</span></div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;            output_str += <span class="stringliteral">&#39;\n&#39;</span></div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;            output_str += <span class="stringliteral">&#39;%s-Sorted\n&#39;</span> % outvar</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;            output_str += header</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;            <span class="keywordflow">for</span> i, v <span class="keywordflow">in</span> enumerate(sortidx):</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;                output_str += param_names[i] + <span class="stringliteral">&#39;,&#39;</span> + <span class="stringliteral">&#39;,&#39;</span>.join(<span class="stringliteral">&#39;{}&#39;</span>.format(i) <span class="keywordflow">for</span> i <span class="keywordflow">in</span> v) + <span class="stringliteral">&#39;\n&#39;</span></div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;            output_str += <span class="stringliteral">&#39;\n&#39;</span></div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;            print(output_str)</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        with open(psa_sort_txt, <span class="stringliteral">&#39;w&#39;</span>) <span class="keyword">as</span> f:</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;            f.write(output_str)</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;</div>
-<div class="line"><a name="l00353"></a><span class="lineno"><a class="line" href="../../da/d1e/a00149.html#a6fd4e10e94a71eb1ce74aee565fb48c3">  353</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../da/d1e/a00149.html#a6fd4e10e94a71eb1ce74aee565fb48c3">plot_samples_histogram</a>(self):</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Save plot as png(300 dpi) and eps (vector).&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        <span class="comment"># Plots histogram of all samples</span></div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.<a class="code" href="../../da/d1e/a00149.html#ad7fb5aac66256256a765241ca67853bb">param_defs</a>:</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;            self.<a class="code" href="../../da/d1e/a00149.html#a92f81d8431fb5c0f4a4b8460c1e19a8a">read_param_ranges</a>()</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        <span class="keywordflow">if</span> self.<a class="code" href="../../da/d1e/a00149.html#a6d297e429d3af2f13379a780b253e730">param_values</a> <span class="keywordflow">is</span> <span class="keywordtype">None</span> <span class="keywordflow">or</span> len(self.<a class="code" href="../../da/d1e/a00149.html#a6d297e429d3af2f13379a780b253e730">param_values</a>) == 0:</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;            self.<a class="code" href="../../da/d1e/a00149.html#adfc9061ce931f00f26c4bf37f412d1a7">generate_samples</a>()</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;        sample_histograms(self.<a class="code" href="../../da/d1e/a00149.html#a6d297e429d3af2f13379a780b253e730">param_values</a>, self.param_defs.get(<span class="stringliteral">&#39;names&#39;</span>),</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;                          self.cfg.morris.num_levels, self.cfg.psa_outpath, <span class="stringliteral">&#39;samples_histgram&#39;</span>,</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;                          {<span class="stringliteral">&#39;color&#39;</span>: <span class="stringliteral">&#39;black&#39;</span>, <span class="stringliteral">&#39;histtype&#39;</span>: <span class="stringliteral">&#39;step&#39;</span>})</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;</div>
-<div class="line"><a name="l00364"></a><span class="lineno"><a class="line" href="../../da/d1e/a00149.html#ae085f96943825b60e1afa23c2bd2459f">  364</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../da/d1e/a00149.html#ae085f96943825b60e1afa23c2bd2459f">plot_morris</a>(self):</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Save plot as png(300 dpi) and eps (vector).&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        output_name, output_unit = get_evaluate_output_name_unit()</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.<a class="code" href="../../da/d1e/a00149.html#a252ebc7669e1d75ea69bbc3ee6a2730a">psa_si</a>:</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;            self.<a class="code" href="../../da/d1e/a00149.html#ad75d94c3d639e5a2067c576800cdf7d9">calculate_sensitivity</a>()</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        <span class="keywordflow">for</span> i, v <span class="keywordflow">in</span> enumerate(output_name):</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;            unit = output_unit[i]</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;            fig, (ax1, ax2) = plt.subplots(1, 2)</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;            horizontal_bar_plot(ax1, self.psa_si.get(i), {}, sortby=<span class="stringliteral">&#39;mu_star&#39;</span>, unit=unit)</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;            covariance_plot(ax2, self.psa_si.get(i), {}, unit=unit)</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;            save_png_eps(plt, self.cfg.psa_outpath, <span class="stringliteral">&#39;mu_star_%s&#39;</span> % v)</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;            <span class="comment"># close current plot in case of &#39;figure.max_open_warning&#39;</span></div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;            plt.cla()</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;            plt.clf()</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;            plt.close()</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    <span class="keyword">def </span>plot_cdf(self):</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;        output_name, output_unit = get_evaluate_output_name_unit()</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.<a class="code" href="../../da/d1e/a00149.html#ad7fb5aac66256256a765241ca67853bb">param_defs</a>:</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;            self.<a class="code" href="../../da/d1e/a00149.html#a92f81d8431fb5c0f4a4b8460c1e19a8a">read_param_ranges</a>()</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        <span class="keywordflow">if</span> self.<a class="code" href="../../da/d1e/a00149.html#a6d297e429d3af2f13379a780b253e730">param_values</a> <span class="keywordflow">is</span> <span class="keywordtype">None</span> <span class="keywordflow">or</span> len(self.<a class="code" href="../../da/d1e/a00149.html#a6d297e429d3af2f13379a780b253e730">param_values</a>) == 0:</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;            self.<a class="code" href="../../da/d1e/a00149.html#adfc9061ce931f00f26c4bf37f412d1a7">generate_samples</a>()</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        <span class="keywordflow">if</span> self.<a class="code" href="../../da/d1e/a00149.html#ab13b98af3dd992ffd7632e2502451af5">output_values</a> <span class="keywordflow">is</span> <span class="keywordtype">None</span> <span class="keywordflow">or</span> len(self.<a class="code" href="../../da/d1e/a00149.html#ab13b98af3dd992ffd7632e2502451af5">output_values</a>) == 0:</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;            self.<a class="code" href="../../da/d1e/a00149.html#ae9f62cd78766e1f8fd9fe1c59eb191f7">evaluate_models</a>()</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;        param_names = self.param_defs.get(<span class="stringliteral">&#39;names&#39;</span>)</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;        <span class="keywordflow">for</span> i <span class="keywordflow">in</span> [2, 7, 8, 9, 10, 15, 16, 17]:  <span class="comment"># NSE series, i.e., NSE, lnNSE, NSE1, and NSE3</span></div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;            values = self.<a class="code" href="../../da/d1e/a00149.html#ab13b98af3dd992ffd7632e2502451af5">output_values</a>[:, i]</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;            empirical_cdf(values, [0], self.<a class="code" href="../../da/d1e/a00149.html#a6d297e429d3af2f13379a780b253e730">param_values</a>, param_names,</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;                          self.cfg.morris.num_levels,</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;                          self.cfg.psa_outpath, <span class="stringliteral">&#39;cdf_%s&#39;</span> % output_name[i], {<span class="stringliteral">&#39;histtype&#39;</span>: <span class="stringliteral">&#39;step&#39;</span>})</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;        <span class="keywordflow">for</span> i <span class="keywordflow">in</span> [3, 11]:  <span class="comment"># R-square, equally divided as two classes</span></div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;            values = self.<a class="code" href="../../da/d1e/a00149.html#ab13b98af3dd992ffd7632e2502451af5">output_values</a>[:, i]</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;            empirical_cdf(values, 2, self.<a class="code" href="../../da/d1e/a00149.html#a6d297e429d3af2f13379a780b253e730">param_values</a>, param_names,</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;                          self.cfg.morris.num_levels,</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;                          self.cfg.psa_outpath, <span class="stringliteral">&#39;cdf_%s&#39;</span> % output_name[i], {<span class="stringliteral">&#39;histtype&#39;</span>: <span class="stringliteral">&#39;step&#39;</span>})</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;        <span class="keywordflow">for</span> i <span class="keywordflow">in</span> [6, 14]:  <span class="comment"># RSR</span></div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;            values = self.<a class="code" href="../../da/d1e/a00149.html#ab13b98af3dd992ffd7632e2502451af5">output_values</a>[:, i]</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;            empirical_cdf(values, [1], self.<a class="code" href="../../da/d1e/a00149.html#a6d297e429d3af2f13379a780b253e730">param_values</a>, param_names,</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;                          self.cfg.morris.num_levels,</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;                          self.cfg.psa_outpath, <span class="stringliteral">&#39;cdf_%s&#39;</span> % output_name[i], {<span class="stringliteral">&#39;histtype&#39;</span>: <span class="stringliteral">&#39;step&#39;</span>})</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;<span class="keywordflow">if</span> __name__ == <span class="stringliteral">&#39;__main__&#39;</span>:</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    <span class="keyword">from</span> config <span class="keyword">import</span> get_psa_config</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;</div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    cf, method = get_psa_config()</div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    cfg = PSAConfig(cf, method=method)</div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    print(cfg.param_range_def)</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    saobj = <a class="code" href="../../da/d1e/a00149.html">Sensitivity</a>(cfg)</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    saobj.write_param_values_to_mongodb()</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    <span class="comment"># saobj.calculate_sensitivity()</span></div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    <span class="comment"># saobj.plot_samples_histogram()</span></div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    <span class="comment"># saobj.plot_morris()</span></div>
-<div class="ttc" id="a00149_html_aca94cc7cd6ab2057e24d7ca15414967f"><div class="ttname"><a href="../../da/d1e/a00149.html#aca94cc7cd6ab2057e24d7ca15414967f">seims.parameters_sensitivity.sensitivity.Sensitivity.output_psa_si</a></div><div class="ttdeci">def output_psa_si</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d53/a00265_source.html#l00314">sensitivity.py:314</a></div></div>
-<div class="ttc" id="a00727_html"><div class="ttname"><a href="../../dc/ddc/a00727.html">utils</a></div></div>
-<div class="ttc" id="a00149_html_a92f81d8431fb5c0f4a4b8460c1e19a8a"><div class="ttname"><a href="../../da/d1e/a00149.html#a92f81d8431fb5c0f4a4b8460c1e19a8a">seims.parameters_sensitivity.sensitivity.Sensitivity.read_param_ranges</a></div><div class="ttdeci">def read_param_ranges</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d53/a00265_source.html#l00098">sensitivity.py:98</a></div></div>
-<div class="ttc" id="a00149_html_ae085f96943825b60e1afa23c2bd2459f"><div class="ttname"><a href="../../da/d1e/a00149.html#ae085f96943825b60e1afa23c2bd2459f">seims.parameters_sensitivity.sensitivity.Sensitivity.plot_morris</a></div><div class="ttdeci">def plot_morris</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d53/a00265_source.html#l00364">sensitivity.py:364</a></div></div>
-<div class="ttc" id="a00149_html_ab13b98af3dd992ffd7632e2502451af5"><div class="ttname"><a href="../../da/d1e/a00149.html#ab13b98af3dd992ffd7632e2502451af5">seims.parameters_sensitivity.sensitivity.Sensitivity.output_values</a></div><div class="ttdeci">output_values</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d53/a00265_source.html#l00067">sensitivity.py:67</a></div></div>
-<div class="ttc" id="a00149_html_a252ebc7669e1d75ea69bbc3ee6a2730a"><div class="ttname"><a href="../../da/d1e/a00149.html#a252ebc7669e1d75ea69bbc3ee6a2730a">seims.parameters_sensitivity.sensitivity.Sensitivity.psa_si</a></div><div class="ttdeci">psa_si</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d53/a00265_source.html#l00068">sensitivity.py:68</a></div></div>
-<div class="ttc" id="a00149_html_a6d297e429d3af2f13379a780b253e730"><div class="ttname"><a href="../../da/d1e/a00149.html#a6d297e429d3af2f13379a780b253e730">seims.parameters_sensitivity.sensitivity.Sensitivity.param_values</a></div><div class="ttdeci">param_values</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d53/a00265_source.html#l00065">sensitivity.py:65</a></div></div>
-<div class="ttc" id="a00149_html_a45b6b4fca0062788c0f1f643b4c7189b"><div class="ttname"><a href="../../da/d1e/a00149.html#a45b6b4fca0062788c0f1f643b4c7189b">seims.parameters_sensitivity.sensitivity.Sensitivity.run_count</a></div><div class="ttdeci">run_count</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d53/a00265_source.html#l00066">sensitivity.py:66</a></div></div>
-<div class="ttc" id="a00149_html_ad7fb5aac66256256a765241ca67853bb"><div class="ttname"><a href="../../da/d1e/a00149.html#ad7fb5aac66256256a765241ca67853bb">seims.parameters_sensitivity.sensitivity.Sensitivity.param_defs</a></div><div class="ttdeci">param_defs</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d53/a00265_source.html#l00064">sensitivity.py:64</a></div></div>
-<div class="ttc" id="a00149_html_ab1c05d8cd645371800d85f905275edee"><div class="ttname"><a href="../../da/d1e/a00149.html#ab1c05d8cd645371800d85f905275edee">seims.parameters_sensitivity.sensitivity.Sensitivity.reset_simulation_timerange</a></div><div class="ttdeci">def reset_simulation_timerange</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d53/a00265_source.html#l00085">sensitivity.py:85</a></div></div>
-<div class="ttc" id="a00149_html_ae74bd6daef5f21ea997378e26bc23740"><div class="ttname"><a href="../../da/d1e/a00149.html#ae74bd6daef5f21ea997378e26bc23740">seims.parameters_sensitivity.sensitivity.Sensitivity.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d53/a00265_source.html#l00057">sensitivity.py:57</a></div></div>
-<div class="ttc" id="a00149_html_a266bc27fc321e19f1a3e801b779ec3f9"><div class="ttname"><a href="../../da/d1e/a00149.html#a266bc27fc321e19f1a3e801b779ec3f9">seims.parameters_sensitivity.sensitivity.Sensitivity.plot_cdf</a></div><div class="ttdeci">def plot_cdf</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d53/a00265_source.html#l00380">sensitivity.py:380</a></div></div>
-<div class="ttc" id="a00149_html_a5202e15a33958810faea108ed54f85e9"><div class="ttname"><a href="../../da/d1e/a00149.html#a5202e15a33958810faea108ed54f85e9">seims.parameters_sensitivity.sensitivity.Sensitivity.write_param_values_to_mongodb</a></div><div class="ttdeci">def write_param_values_to_mongodb</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d53/a00265_source.html#l00199">sensitivity.py:199</a></div></div>
-<div class="ttc" id="a00149_html"><div class="ttname"><a href="../../da/d1e/a00149.html">seims.parameters_sensitivity.sensitivity.Sensitivity</a></div><div class="ttdef"><b>Definition:</b> <a href="../../da/d53/a00265_source.html#l00054">sensitivity.py:54</a></div></div>
-<div class="ttc" id="a00149_html_a6fd4e10e94a71eb1ce74aee565fb48c3"><div class="ttname"><a href="../../da/d1e/a00149.html#a6fd4e10e94a71eb1ce74aee565fb48c3">seims.parameters_sensitivity.sensitivity.Sensitivity.plot_samples_histogram</a></div><div class="ttdeci">def plot_samples_histogram</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d53/a00265_source.html#l00353">sensitivity.py:353</a></div></div>
-<div class="ttc" id="a00149_html_ace27b15f708960f7930266c0f77849d8"><div class="ttname"><a href="../../da/d1e/a00149.html#ace27b15f708960f7930266c0f77849d8">seims.parameters_sensitivity.sensitivity.Sensitivity.cfg</a></div><div class="ttdeci">cfg</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d53/a00265_source.html#l00063">sensitivity.py:63</a></div></div>
-<div class="ttc" id="a00149_html_a925f28ae2d604a86b02af39a44fbe193"><div class="ttname"><a href="../../da/d1e/a00149.html#a925f28ae2d604a86b02af39a44fbe193">seims.parameters_sensitivity.sensitivity.Sensitivity.run</a></div><div class="ttdeci">def run</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d53/a00265_source.html#l00070">sensitivity.py:70</a></div></div>
-<div class="ttc" id="a00149_html_ad75d94c3d639e5a2067c576800cdf7d9"><div class="ttname"><a href="../../da/d1e/a00149.html#ad75d94c3d639e5a2067c576800cdf7d9">seims.parameters_sensitivity.sensitivity.Sensitivity.calculate_sensitivity</a></div><div class="ttdeci">def calculate_sensitivity</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d53/a00265_source.html#l00275">sensitivity.py:275</a></div></div>
-<div class="ttc" id="a00149_html_adfc9061ce931f00f26c4bf37f412d1a7"><div class="ttname"><a href="../../da/d1e/a00149.html#adfc9061ce931f00f26c4bf37f412d1a7">seims.parameters_sensitivity.sensitivity.Sensitivity.generate_samples</a></div><div class="ttdeci">def generate_samples</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d53/a00265_source.html#l00176">sensitivity.py:176</a></div></div>
-<div class="ttc" id="a00149_html_ae9f62cd78766e1f8fd9fe1c59eb191f7"><div class="ttname"><a href="../../da/d1e/a00149.html#ae9f62cd78766e1f8fd9fe1c59eb191f7">seims.parameters_sensitivity.sensitivity.Sensitivity.evaluate_models</a></div><div class="ttdeci">def evaluate_models</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d53/a00265_source.html#l00218">sensitivity.py:218</a></div></div>
+<div class="line"><a name="l00314"></a><span class="lineno"><a class="line" href="../../d9/d7d/a00150.html#ad75d94c3d639e5a2067c576800cdf7d9">  314</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d9/d7d/a00150.html#ad75d94c3d639e5a2067c576800cdf7d9">calculate_sensitivity</a>(self):</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Calculate Morris elementary effects.</span></div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;<span class="stringliteral">           It is worth to be noticed that evaluate_models() allows to return</span></div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;<span class="stringliteral">           several output variables, hence we should calculate each of them separately.</span></div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.<a class="code" href="../../d9/d7d/a00150.html#a252ebc7669e1d75ea69bbc3ee6a2730a">psa_si</a>:</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;            <span class="keywordflow">if</span> FileClass.is_file_exists(self.cfg.outfiles.psa_si_json):</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                with open(self.cfg.outfiles.psa_si_json, <span class="stringliteral">&#39;</span><span class="stringliteral">r&#39;) as f:</span></div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;<span class="stringliteral">                    self.<a class="code" href="../../d9/d7d/a00150.html#a252ebc7669e1d75ea69bbc3ee6a2730a">psa_si</a> = UtilClass.decode_strs_in_dict(json.load(f))</span></div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;<span class="stringliteral">                    </span><span class="keywordflow">return</span></div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.<a class="code" href="../../d9/d7d/a00150.html#aeb2f14882d7c297aa2faa08d2500ac4f">objnames</a>:</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;            <span class="keywordflow">if</span> FileClass.is_file_exists(<span class="stringliteral">&#39;%s/objnames.pickle&#39;</span> % self.cfg.psa_outpath):</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                with open(<span class="stringliteral">&#39;%s/objnames.pickle&#39;</span> % self.cfg.psa_outpath, <span class="stringliteral">&#39;</span><span class="stringliteral">r&#39;) as f:</span></div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;<span class="stringliteral">                    self.<a class="code" href="../../d9/d7d/a00150.html#aeb2f14882d7c297aa2faa08d2500ac4f">objnames</a> = pickle.load(f)</span></div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;<span class="stringliteral">        </span><span class="keywordflow">if</span> self.<a class="code" href="../../d9/d7d/a00150.html#ab13b98af3dd992ffd7632e2502451af5">output_values</a> <span class="keywordflow">is</span> <span class="keywordtype">None</span> <span class="keywordflow">or</span> len(self.<a class="code" href="../../d9/d7d/a00150.html#ab13b98af3dd992ffd7632e2502451af5">output_values</a>) == 0:</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;            self.<a class="code" href="../../d9/d7d/a00150.html#ae9f62cd78766e1f8fd9fe1c59eb191f7">evaluate_models</a>()</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        <span class="keywordflow">if</span> self.<a class="code" href="../../d9/d7d/a00150.html#a6d297e429d3af2f13379a780b253e730">param_values</a> <span class="keywordflow">is</span> <span class="keywordtype">None</span> <span class="keywordflow">or</span> len(self.<a class="code" href="../../d9/d7d/a00150.html#a6d297e429d3af2f13379a780b253e730">param_values</a>) == 0:</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;            self.<a class="code" href="../../d9/d7d/a00150.html#adfc9061ce931f00f26c4bf37f412d1a7">generate_samples</a>()</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.<a class="code" href="../../d9/d7d/a00150.html#ad7fb5aac66256256a765241ca67853bb">param_defs</a>:</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;            self.<a class="code" href="../../d9/d7d/a00150.html#a92f81d8431fb5c0f4a4b8460c1e19a8a">read_param_ranges</a>()</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        row, col = self.output_values.shape</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        <span class="keyword">assert</span> (row == self.<a class="code" href="../../d9/d7d/a00150.html#a45b6b4fca0062788c0f1f643b4c7189b">run_count</a>)</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(col):</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;            print(self.<a class="code" href="../../d9/d7d/a00150.html#aeb2f14882d7c297aa2faa08d2500ac4f">objnames</a>[i])</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;            <span class="keywordflow">if</span> self.cfg.method == <span class="stringliteral">&#39;morris&#39;</span>:</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;                tmp_Si = morris_alz(self.<a class="code" href="../../d9/d7d/a00150.html#ad7fb5aac66256256a765241ca67853bb">param_defs</a>,</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                                    self.<a class="code" href="../../d9/d7d/a00150.html#a6d297e429d3af2f13379a780b253e730">param_values</a>,</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                                    self.<a class="code" href="../../d9/d7d/a00150.html#ab13b98af3dd992ffd7632e2502451af5">output_values</a>[:, i],</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                                    conf_level=0.95, print_to_console=<span class="keyword">True</span>,</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                                    num_levels=self.cfg.morris.num_levels,</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                                    grid_jump=self.cfg.morris.grid_jump)</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;            <span class="keywordflow">elif</span> self.cfg.method == <span class="stringliteral">&#39;fast&#39;</span>:</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                tmp_Si = fast_alz(self.<a class="code" href="../../d9/d7d/a00150.html#ad7fb5aac66256256a765241ca67853bb">param_defs</a>, self.<a class="code" href="../../d9/d7d/a00150.html#ab13b98af3dd992ffd7632e2502451af5">output_values</a>[:, i],</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;                                  print_to_console=<span class="keyword">True</span>)</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;            <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;                <span class="keywordflow">raise</span> ValueError(<span class="stringliteral">&#39;%s method is not supported now!&#39;</span> % self.cfg.method)</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;            self.<a class="code" href="../../d9/d7d/a00150.html#a252ebc7669e1d75ea69bbc3ee6a2730a">psa_si</a>[i] = tmp_Si</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        <span class="comment"># print(self.psa_si)</span></div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        <span class="comment"># Save as json, which can be loaded by json.load()</span></div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        json_data = json.dumps(self.<a class="code" href="../../d9/d7d/a00150.html#a252ebc7669e1d75ea69bbc3ee6a2730a">psa_si</a>, indent=4, cls=SpecialJsonEncoder)</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        with open(self.cfg.outfiles.psa_si_json, <span class="stringliteral">&#39;w&#39;</span>) <span class="keyword">as</span> f:</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;            f.write(json_data)</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        self.<a class="code" href="../../d9/d7d/a00150.html#aca94cc7cd6ab2057e24d7ca15414967f">output_psa_si</a>()</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    <span class="keyword">def </span>output_psa_si(self):</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        psa_sort_txt = self.cfg.outfiles.psa_si_sort_txt</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;        psa_sort_dict = dict()</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        param_names = self.param_defs.get(<span class="stringliteral">&#39;names&#39;</span>)</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        psa_sort_dict[<span class="stringliteral">&#39;names&#39;</span>] = param_names[:]</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        <span class="keywordflow">for</span> idx, si_dict <span class="keywordflow">in</span> self.psa_si.items():</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;            <span class="keywordflow">if</span> <span class="stringliteral">&#39;objnames&#39;</span> <span class="keywordflow">not</span> <span class="keywordflow">in</span> psa_sort_dict:</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                psa_sort_dict[<span class="stringliteral">&#39;objnames&#39;</span>] = list()</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;            psa_sort_dict[<span class="stringliteral">&#39;objnames&#39;</span>].append(self.<a class="code" href="../../d9/d7d/a00150.html#aeb2f14882d7c297aa2faa08d2500ac4f">objnames</a>[idx])</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;            <span class="keywordflow">for</span> param, values <span class="keywordflow">in</span> si_dict.items():</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;                <span class="keywordflow">if</span> param == <span class="stringliteral">&#39;names&#39;</span>:</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;                    <span class="keywordflow">continue</span></div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;                <span class="keywordflow">if</span> param <span class="keywordflow">not</span> <span class="keywordflow">in</span> psa_sort_dict:</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;                    psa_sort_dict[param] = list()</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;                psa_sort_dict[param].append(values[:])</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        <span class="comment"># print(psa_sort_dict)</span></div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        output_str = <span class="stringliteral">&#39;&#39;</span></div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        header = <span class="stringliteral">&#39; ,&#39;</span> + <span class="stringliteral">&#39;,&#39;</span>.join(psa_sort_dict[<span class="stringliteral">&#39;objnames&#39;</span>]) + <span class="stringliteral">&#39;\n&#39;</span></div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;        <span class="keywordflow">for</span> outvar, values <span class="keywordflow">in</span> psa_sort_dict.items():</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;            <span class="keywordflow">if</span> outvar == <span class="stringliteral">&#39;names&#39;</span> <span class="keywordflow">or</span> outvar == <span class="stringliteral">&#39;objnames&#39;</span>:</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;                <span class="keywordflow">continue</span></div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;            mtx = numpy.transpose(numpy.array(values))  <span class="comment"># col is &#39;objnames&#39; and row is &#39;names&#39;</span></div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;            sortidx = numpy.argsort(numpy.argsort(mtx, axis=0), axis=0)</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;            <span class="comment"># concatenate output string</span></div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;            output_str += outvar + <span class="stringliteral">&#39;\n&#39;</span></div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;            output_str += header</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;            <span class="keywordflow">for</span> i, v <span class="keywordflow">in</span> enumerate(mtx):</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;                output_str += param_names[i] + <span class="stringliteral">&#39;,&#39;</span> + <span class="stringliteral">&#39;,&#39;</span>.join(<span class="stringliteral">&#39;{}&#39;</span>.format(i) <span class="keywordflow">for</span> i <span class="keywordflow">in</span> v) + <span class="stringliteral">&#39;\n&#39;</span></div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;            output_str += <span class="stringliteral">&#39;\n&#39;</span></div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;            output_str += <span class="stringliteral">&#39;%s-Sorted\n&#39;</span> % outvar</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;            output_str += header</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;            <span class="keywordflow">for</span> i, v <span class="keywordflow">in</span> enumerate(sortidx):</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;                output_str += param_names[i] + <span class="stringliteral">&#39;,&#39;</span> + <span class="stringliteral">&#39;,&#39;</span>.join(<span class="stringliteral">&#39;{}&#39;</span>.format(i) <span class="keywordflow">for</span> i <span class="keywordflow">in</span> v) + <span class="stringliteral">&#39;\n&#39;</span></div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;            output_str += <span class="stringliteral">&#39;\n&#39;</span></div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;            print(output_str)</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        with open(psa_sort_txt, <span class="stringliteral">&#39;w&#39;</span>) <span class="keyword">as</span> f:</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;            f.write(output_str)</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;</div>
+<div class="line"><a name="l00396"></a><span class="lineno"><a class="line" href="../../d9/d7d/a00150.html#a6fd4e10e94a71eb1ce74aee565fb48c3">  396</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d9/d7d/a00150.html#a6fd4e10e94a71eb1ce74aee565fb48c3">plot_samples_histogram</a>(self):</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Save plot as png(300 dpi) and eps (vector).&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;        <span class="comment"># Plots histogram of all samples</span></div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.<a class="code" href="../../d9/d7d/a00150.html#ad7fb5aac66256256a765241ca67853bb">param_defs</a>:</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;            self.<a class="code" href="../../d9/d7d/a00150.html#a92f81d8431fb5c0f4a4b8460c1e19a8a">read_param_ranges</a>()</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        <span class="keywordflow">if</span> self.<a class="code" href="../../d9/d7d/a00150.html#a6d297e429d3af2f13379a780b253e730">param_values</a> <span class="keywordflow">is</span> <span class="keywordtype">None</span> <span class="keywordflow">or</span> len(self.<a class="code" href="../../d9/d7d/a00150.html#a6d297e429d3af2f13379a780b253e730">param_values</a>) == 0:</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;            self.<a class="code" href="../../d9/d7d/a00150.html#adfc9061ce931f00f26c4bf37f412d1a7">generate_samples</a>()</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;        sample_histograms(self.<a class="code" href="../../d9/d7d/a00150.html#a6d297e429d3af2f13379a780b253e730">param_values</a>, self.param_defs.get(<span class="stringliteral">&#39;names&#39;</span>),</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;                          self.cfg.morris.num_levels, self.cfg.psa_outpath, <span class="stringliteral">&#39;samples_histgram&#39;</span>,</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;                          {<span class="stringliteral">&#39;color&#39;</span>: <span class="stringliteral">&#39;black&#39;</span>, <span class="stringliteral">&#39;histtype&#39;</span>: <span class="stringliteral">&#39;step&#39;</span>})</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;</div>
+<div class="line"><a name="l00407"></a><span class="lineno"><a class="line" href="../../d9/d7d/a00150.html#ae085f96943825b60e1afa23c2bd2459f">  407</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d9/d7d/a00150.html#ae085f96943825b60e1afa23c2bd2459f">plot_morris</a>(self):</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Save plot as png(300 dpi) and eps (vector).&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.<a class="code" href="../../d9/d7d/a00150.html#a252ebc7669e1d75ea69bbc3ee6a2730a">psa_si</a>:</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;            self.<a class="code" href="../../d9/d7d/a00150.html#ad75d94c3d639e5a2067c576800cdf7d9">calculate_sensitivity</a>()</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        <span class="keywordflow">for</span> i, v <span class="keywordflow">in</span> enumerate(self.<a class="code" href="../../d9/d7d/a00150.html#aeb2f14882d7c297aa2faa08d2500ac4f">objnames</a>):</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;            fig, (ax1, ax2) = plt.subplots(1, 2)</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;            horizontal_bar_plot(ax1, self.psa_si.get(i), {}, sortby=<span class="stringliteral">&#39;mu_star&#39;</span>)</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;            covariance_plot(ax2, self.psa_si.get(i), {})</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;            save_png_eps(plt, self.cfg.psa_outpath, <span class="stringliteral">&#39;mu_star_%s&#39;</span> % v)</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;            <span class="comment"># close current plot in case of &#39;figure.max_open_warning&#39;</span></div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;            plt.cla()</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;            plt.clf()</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;            plt.close()</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    <span class="keyword">def </span>plot_cdf(self):</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.<a class="code" href="../../d9/d7d/a00150.html#ad7fb5aac66256256a765241ca67853bb">param_defs</a>:</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;            self.<a class="code" href="../../d9/d7d/a00150.html#a92f81d8431fb5c0f4a4b8460c1e19a8a">read_param_ranges</a>()</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;        <span class="keywordflow">if</span> self.<a class="code" href="../../d9/d7d/a00150.html#a6d297e429d3af2f13379a780b253e730">param_values</a> <span class="keywordflow">is</span> <span class="keywordtype">None</span> <span class="keywordflow">or</span> len(self.<a class="code" href="../../d9/d7d/a00150.html#a6d297e429d3af2f13379a780b253e730">param_values</a>) == 0:</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;            self.<a class="code" href="../../d9/d7d/a00150.html#adfc9061ce931f00f26c4bf37f412d1a7">generate_samples</a>()</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;        <span class="keywordflow">if</span> self.<a class="code" href="../../d9/d7d/a00150.html#ab13b98af3dd992ffd7632e2502451af5">output_values</a> <span class="keywordflow">is</span> <span class="keywordtype">None</span> <span class="keywordflow">or</span> len(self.<a class="code" href="../../d9/d7d/a00150.html#ab13b98af3dd992ffd7632e2502451af5">output_values</a>) == 0:</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;            self.<a class="code" href="../../d9/d7d/a00150.html#ae9f62cd78766e1f8fd9fe1c59eb191f7">evaluate_models</a>()</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;        param_names = self.param_defs.get(<span class="stringliteral">&#39;names&#39;</span>)</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;        <span class="keywordflow">for</span> i, objn <span class="keywordflow">in</span> enumerate(self.<a class="code" href="../../d9/d7d/a00150.html#aeb2f14882d7c297aa2faa08d2500ac4f">objnames</a>):</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;            values = self.<a class="code" href="../../d9/d7d/a00150.html#ab13b98af3dd992ffd7632e2502451af5">output_values</a>[:, i]</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;            <span class="keywordflow">if</span> <span class="stringliteral">&#39;NSE&#39;</span> <span class="keywordflow">in</span> objn:  <span class="comment"># NSE series, i.e., NSE, lnNSE, NSE1, and NSE3</span></div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;                empirical_cdf(values, [0], self.<a class="code" href="../../d9/d7d/a00150.html#a6d297e429d3af2f13379a780b253e730">param_values</a>, param_names,</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;                              self.cfg.morris.num_levels,</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;                              self.cfg.psa_outpath, <span class="stringliteral">&#39;cdf_%s&#39;</span> % self.<a class="code" href="../../d9/d7d/a00150.html#aeb2f14882d7c297aa2faa08d2500ac4f">objnames</a>[i],</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;                              {<span class="stringliteral">&#39;histtype&#39;</span>: <span class="stringliteral">&#39;step&#39;</span>})</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;            <span class="keywordflow">elif</span> <span class="stringliteral">&#39;R-square&#39;</span> <span class="keywordflow">in</span> objn:  <span class="comment"># R-square, equally divided as two classes</span></div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;                empirical_cdf(values, 2, self.<a class="code" href="../../d9/d7d/a00150.html#a6d297e429d3af2f13379a780b253e730">param_values</a>, param_names,</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;                              self.cfg.morris.num_levels,</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;                              self.cfg.psa_outpath, <span class="stringliteral">&#39;cdf_%s&#39;</span> % self.<a class="code" href="../../d9/d7d/a00150.html#aeb2f14882d7c297aa2faa08d2500ac4f">objnames</a>[i],</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;                              {<span class="stringliteral">&#39;histtype&#39;</span>: <span class="stringliteral">&#39;step&#39;</span>})</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;            <span class="keywordflow">elif</span> <span class="stringliteral">&#39;RSR&#39;</span> <span class="keywordflow">in</span> objn:  <span class="comment"># RSR</span></div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;                empirical_cdf(values, [1], self.<a class="code" href="../../d9/d7d/a00150.html#a6d297e429d3af2f13379a780b253e730">param_values</a>, param_names,</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;                              self.cfg.morris.num_levels,</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;                              self.cfg.psa_outpath, <span class="stringliteral">&#39;cdf_%s&#39;</span> % self.<a class="code" href="../../d9/d7d/a00150.html#aeb2f14882d7c297aa2faa08d2500ac4f">objnames</a>[i],</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;                              {<span class="stringliteral">&#39;histtype&#39;</span>: <span class="stringliteral">&#39;step&#39;</span>})</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;<span class="keywordflow">if</span> __name__ == <span class="stringliteral">&#39;__main__&#39;</span>:</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;    <span class="keyword">from</span> config <span class="keyword">import</span> get_psa_config</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;    cf, method = get_psa_config()</div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;    cfg = PSAConfig(cf, method=method)</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;    print(cfg.param_range_def)</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;    saobj = <a class="code" href="../../d9/d7d/a00150.html">Sensitivity</a>(cfg)</div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;    saobj.write_param_values_to_mongodb()</div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;    <span class="comment"># saobj.calculate_sensitivity()</span></div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;    <span class="comment"># saobj.plot_samples_histogram()</span></div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;    <span class="comment"># saobj.plot_morris()</span></div>
+<div class="ttc" id="a00150_html_ae74bd6daef5f21ea997378e26bc23740"><div class="ttname"><a href="../../d9/d7d/a00150.html#ae74bd6daef5f21ea997378e26bc23740">seims.parameters_sensitivity.sensitivity.Sensitivity.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d35/a00266_source.html#l00063">sensitivity.py:63</a></div></div>
+<div class="ttc" id="a00150_html_ad75d94c3d639e5a2067c576800cdf7d9"><div class="ttname"><a href="../../d9/d7d/a00150.html#ad75d94c3d639e5a2067c576800cdf7d9">seims.parameters_sensitivity.sensitivity.Sensitivity.calculate_sensitivity</a></div><div class="ttdeci">def calculate_sensitivity</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d35/a00266_source.html#l00314">sensitivity.py:314</a></div></div>
+<div class="ttc" id="a00150_html_ace27b15f708960f7930266c0f77849d8"><div class="ttname"><a href="../../d9/d7d/a00150.html#ace27b15f708960f7930266c0f77849d8">seims.parameters_sensitivity.sensitivity.Sensitivity.cfg</a></div><div class="ttdeci">cfg</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d35/a00266_source.html#l00069">sensitivity.py:69</a></div></div>
+<div class="ttc" id="a00150_html_aeb2f14882d7c297aa2faa08d2500ac4f"><div class="ttname"><a href="../../d9/d7d/a00150.html#aeb2f14882d7c297aa2faa08d2500ac4f">seims.parameters_sensitivity.sensitivity.Sensitivity.objnames</a></div><div class="ttdeci">objnames</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d35/a00266_source.html#l00075">sensitivity.py:75</a></div></div>
+<div class="ttc" id="a00150_html_ae9f62cd78766e1f8fd9fe1c59eb191f7"><div class="ttname"><a href="../../d9/d7d/a00150.html#ae9f62cd78766e1f8fd9fe1c59eb191f7">seims.parameters_sensitivity.sensitivity.Sensitivity.evaluate_models</a></div><div class="ttdeci">def evaluate_models</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d35/a00266_source.html#l00229">sensitivity.py:229</a></div></div>
+<div class="ttc" id="a00150_html_a92f81d8431fb5c0f4a4b8460c1e19a8a"><div class="ttname"><a href="../../d9/d7d/a00150.html#a92f81d8431fb5c0f4a4b8460c1e19a8a">seims.parameters_sensitivity.sensitivity.Sensitivity.read_param_ranges</a></div><div class="ttdeci">def read_param_ranges</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d35/a00266_source.html#l00109">sensitivity.py:109</a></div></div>
+<div class="ttc" id="a00150_html_ab1c05d8cd645371800d85f905275edee"><div class="ttname"><a href="../../d9/d7d/a00150.html#ab1c05d8cd645371800d85f905275edee">seims.parameters_sensitivity.sensitivity.Sensitivity.reset_simulation_timerange</a></div><div class="ttdeci">def reset_simulation_timerange</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d35/a00266_source.html#l00096">sensitivity.py:96</a></div></div>
+<div class="ttc" id="a00150_html"><div class="ttname"><a href="../../d9/d7d/a00150.html">seims.parameters_sensitivity.sensitivity.Sensitivity</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d35/a00266_source.html#l00060">sensitivity.py:60</a></div></div>
+<div class="ttc" id="a00150_html_a6d297e429d3af2f13379a780b253e730"><div class="ttname"><a href="../../d9/d7d/a00150.html#a6d297e429d3af2f13379a780b253e730">seims.parameters_sensitivity.sensitivity.Sensitivity.param_values</a></div><div class="ttdeci">param_values</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d35/a00266_source.html#l00072">sensitivity.py:72</a></div></div>
+<div class="ttc" id="a00150_html_ab13b98af3dd992ffd7632e2502451af5"><div class="ttname"><a href="../../d9/d7d/a00150.html#ab13b98af3dd992ffd7632e2502451af5">seims.parameters_sensitivity.sensitivity.Sensitivity.output_values</a></div><div class="ttdeci">output_values</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d35/a00266_source.html#l00074">sensitivity.py:74</a></div></div>
+<div class="ttc" id="a00150_html_a925f28ae2d604a86b02af39a44fbe193"><div class="ttname"><a href="../../d9/d7d/a00150.html#a925f28ae2d604a86b02af39a44fbe193">seims.parameters_sensitivity.sensitivity.Sensitivity.run</a></div><div class="ttdeci">def run</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d35/a00266_source.html#l00078">sensitivity.py:78</a></div></div>
+<div class="ttc" id="a00150_html_adfc9061ce931f00f26c4bf37f412d1a7"><div class="ttname"><a href="../../d9/d7d/a00150.html#adfc9061ce931f00f26c4bf37f412d1a7">seims.parameters_sensitivity.sensitivity.Sensitivity.generate_samples</a></div><div class="ttdeci">def generate_samples</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d35/a00266_source.html#l00187">sensitivity.py:187</a></div></div>
+<div class="ttc" id="a00150_html_aca94cc7cd6ab2057e24d7ca15414967f"><div class="ttname"><a href="../../d9/d7d/a00150.html#aca94cc7cd6ab2057e24d7ca15414967f">seims.parameters_sensitivity.sensitivity.Sensitivity.output_psa_si</a></div><div class="ttdeci">def output_psa_si</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d35/a00266_source.html#l00358">sensitivity.py:358</a></div></div>
+<div class="ttc" id="a00150_html_a252ebc7669e1d75ea69bbc3ee6a2730a"><div class="ttname"><a href="../../d9/d7d/a00150.html#a252ebc7669e1d75ea69bbc3ee6a2730a">seims.parameters_sensitivity.sensitivity.Sensitivity.psa_si</a></div><div class="ttdeci">psa_si</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d35/a00266_source.html#l00076">sensitivity.py:76</a></div></div>
+<div class="ttc" id="a00150_html_ad7fb5aac66256256a765241ca67853bb"><div class="ttname"><a href="../../d9/d7d/a00150.html#ad7fb5aac66256256a765241ca67853bb">seims.parameters_sensitivity.sensitivity.Sensitivity.param_defs</a></div><div class="ttdeci">param_defs</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d35/a00266_source.html#l00071">sensitivity.py:71</a></div></div>
+<div class="ttc" id="a00150_html_a6fd4e10e94a71eb1ce74aee565fb48c3"><div class="ttname"><a href="../../d9/d7d/a00150.html#a6fd4e10e94a71eb1ce74aee565fb48c3">seims.parameters_sensitivity.sensitivity.Sensitivity.plot_samples_histogram</a></div><div class="ttdeci">def plot_samples_histogram</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d35/a00266_source.html#l00396">sensitivity.py:396</a></div></div>
+<div class="ttc" id="a00150_html_a45b6b4fca0062788c0f1f643b4c7189b"><div class="ttname"><a href="../../d9/d7d/a00150.html#a45b6b4fca0062788c0f1f643b4c7189b">seims.parameters_sensitivity.sensitivity.Sensitivity.run_count</a></div><div class="ttdeci">run_count</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d35/a00266_source.html#l00073">sensitivity.py:73</a></div></div>
+<div class="ttc" id="a00150_html_a5202e15a33958810faea108ed54f85e9"><div class="ttname"><a href="../../d9/d7d/a00150.html#a5202e15a33958810faea108ed54f85e9">seims.parameters_sensitivity.sensitivity.Sensitivity.write_param_values_to_mongodb</a></div><div class="ttdeci">def write_param_values_to_mongodb</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d35/a00266_source.html#l00210">sensitivity.py:210</a></div></div>
+<div class="ttc" id="a00150_html_a266bc27fc321e19f1a3e801b779ec3f9"><div class="ttname"><a href="../../d9/d7d/a00150.html#a266bc27fc321e19f1a3e801b779ec3f9">seims.parameters_sensitivity.sensitivity.Sensitivity.plot_cdf</a></div><div class="ttdeci">def plot_cdf</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d35/a00266_source.html#l00421">sensitivity.py:421</a></div></div>
+<div class="ttc" id="a00728_html"><div class="ttname"><a href="../../df/d3b/a00728.html">utils</a></div></div>
+<div class="ttc" id="a00150_html_aa0b7f9d2f94c1208ec463708a32baaab"><div class="ttname"><a href="../../d9/d7d/a00150.html#aa0b7f9d2f94c1208ec463708a32baaab">seims.parameters_sensitivity.sensitivity.Sensitivity.model</a></div><div class="ttdeci">model</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d35/a00266_source.html#l00070">sensitivity.py:70</a></div></div>
+<div class="ttc" id="a00150_html_ae085f96943825b60e1afa23c2bd2459f"><div class="ttname"><a href="../../d9/d7d/a00150.html#ae085f96943825b60e1afa23c2bd2459f">seims.parameters_sensitivity.sensitivity.Sensitivity.plot_morris</a></div><div class="ttdeci">def plot_morris</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d35/a00266_source.html#l00407">sensitivity.py:407</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_483bc1739a16b87563cca23e7a392c1e.html">seims_linux_gcc48</a></li><li class="navelem"><a class="el" href="../../dir_a45053e29f104e67e5be28f13679e3c2.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_6e2a287799670bf5e0b2275e022fb8f4.html">parameters_sensitivity</a></li><li class="navelem"><b>sensitivity.py</b></li>
-    <li class="footer">Generated on Thu Jun 28 2018 16:22:25 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_0d8da807e04026c309f34c732f0d37c1.html">parameters_sensitivity</a></li><li class="navelem"><b>sensitivity.py</b></li>
+    <li class="footer">Generated on Wed Jul 11 2018 05:07:27 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

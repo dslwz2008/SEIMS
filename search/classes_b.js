@@ -17,6 +17,5 @@ var searchData=
   ['mongoquery',['MongoQuery',['../d3/d32/a00105.html',1,'seims::preprocess::db_mongodb']]],
   ['mongoutil',['MongoUtil',['../d7/d70/a00106.html',1,'seims::preprocess::db_mongodb']]],
   ['morrisconfig',['MorrisConfig',['../df/d98/a00107.html',1,'seims::parameters_sensitivity::config']]],
-  ['musk_5fch',['MUSK_CH',['../d1/dd6/a00108.html',1,'']]],
-  ['musle_5fas',['MUSLE_AS',['../dd/d42/a00109.html',1,'']]]
+  ['musk_5fch',['MUSK_CH',['../d1/dd6/a00108.html',1,'']]]
 ];

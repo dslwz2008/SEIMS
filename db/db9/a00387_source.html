@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims/src/ccgl/test/utils/test_string.cpp Source File</title>
+<title>SEIMS: seims/src/ccgl/test/utils/test_math.cpp Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -112,42 +112,33 @@ $(document).ready(function(){initNavTree('db/db9/a00387_source.html','../../');}
 
 <div class="header">
   <div class="headertitle">
-<div class="title">test_string.cpp</div>  </div>
+<div class="title">test_math.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;gtest/gtest.h&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;../../src/utils_string.h&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;../../src/utils_math.h&quot;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using namespace </span>ccgl::utils_string;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using namespace </span>ccgl::utils_math;</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;TEST(TestutilsString, SplitStringForValuesFlt) {</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keywordtype">string</span> float_strs = <span class="stringliteral">&quot;-1.0,1.0e3,-0.001,2.5e-1&quot;</span>;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    vector&lt;float&gt; floats;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    SplitStringForValues(float_strs, <span class="charliteral">&#39;,&#39;</span>, floats);</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    EXPECT_EQ(4, floats.size());</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    EXPECT_FLOAT_EQ(-1.f, floats[0]);</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    EXPECT_FLOAT_EQ(1000.f, floats[1]);</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    EXPECT_FLOAT_EQ(-0.001f, floats[2]);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    EXPECT_FLOAT_EQ(0.25f, floats[3]);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;TEST(TestutilsString, SplitStringForValuesInt) {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">string</span> int_strs = <span class="stringliteral">&quot;-1,0,1,4&quot;</span>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    vector&lt;int&gt; ints;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    SplitStringForValues(int_strs, <span class="charliteral">&#39;,&#39;</span>, ints);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    EXPECT_EQ(4, ints.size());</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    EXPECT_EQ(-1, ints[0]);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    EXPECT_EQ(0, ints[1]);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    EXPECT_EQ(1, ints[2]);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    EXPECT_EQ(4, ints[3]);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;TEST(TestutilsMath, NumericEqual) {</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keywordtype">int</span> int_a = 10;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keywordtype">int</span> int_b = 10;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keywordtype">int</span> int_c = 11;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    EXPECT_TRUE(FloatEqual(int_a, int_b));</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    EXPECT_FALSE(FloatEqual(int_a, int_c));</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordtype">float</span> float_a = 10.12345f;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordtype">float</span> float_b = 10.12345f;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">float</span> float_c = 11.12345f;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    EXPECT_TRUE(FloatEqual(float_a, float_b));</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    EXPECT_FALSE(FloatEqual(float_a, float_c));</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_1635fbfac89ac2806d51d330c1bf9d4d.html">ccgl</a></li><li class="navelem"><a class="el" href="../../dir_a6c0e548a0bdc35f60ded49e03ac0912.html">test</a></li><li class="navelem"><a class="el" href="../../dir_76c1fb1286096247a413a22b00ef980c.html">utils</a></li><li class="navelem"><b>test_string.cpp</b></li>
-    <li class="footer">Generated on Thu Jun 28 2018 16:22:26 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_1635fbfac89ac2806d51d330c1bf9d4d.html">ccgl</a></li><li class="navelem"><a class="el" href="../../dir_a6c0e548a0bdc35f60ded49e03ac0912.html">test</a></li><li class="navelem"><a class="el" href="../../dir_76c1fb1286096247a413a22b00ef980c.html">utils</a></li><li class="navelem"><b>test_math.cpp</b></li>
+    <li class="footer">Generated on Wed Jul 11 2018 05:07:28 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

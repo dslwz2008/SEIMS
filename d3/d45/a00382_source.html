@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims/src/ccgl/test/test_main.cpp Source File</title>
+<title>SEIMS: seims/src/ccgl/test/raster/test_incst-mask-pos.cpp Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -112,72 +112,149 @@ $(document).ready(function(){initNavTree('d3/d45/a00382_source.html','../../');}
 
 <div class="header">
   <div class="headertitle">
-<div class="title">test_main.cpp</div>  </div>
+<div class="title">test_incst-mask-pos.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#if (defined _DEBUG) &amp;&amp; (defined _MSC_VER) &amp;&amp; (defined VLD)</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;vld.h&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* Run Visual Leak Detector during Debug */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#ifdef _MSC_VER</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define _CRTDBG_MAP_ALLOC</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &lt;crtdbg.h&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#pragma warning(disable : 4996) // &#39;function&#39;: was declared deprecated</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#pragma warning(disable : 4127) // Use exception for catching assert</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;gtest/gtest.h&quot;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifdef USE_GDAL</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &lt;gdal.h&gt;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;../src/basic.h&quot;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;../src/utils_filesystem.h&quot;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">using namespace </span>ccgl;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">using namespace </span>utils_filesystem;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;gtest/gtest.h&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;../../src/utils_array.h&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;../../src/data_raster.h&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;../../src/utils_filesystem.h&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">using namespace </span>ccgl::data_raster;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">using namespace </span>ccgl::utils_filesystem;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">using namespace </span>ccgl::utils_array;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv) {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    ::testing::InitGoogleTest(&amp;argc, argv);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#ifdef SUPPORT_OMP</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor"></span>    <a class="code" href="../../d1/d04/a00713.html#a57cb6a67e8fa61ebbd975531293499b7">SetDefaultOpenMPThread</a>();</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#ifdef USE_GDAL</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor"></span>    GDALAllRegister(); <span class="comment">// Register GDAL drivers!</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor"></span>    <span class="comment">// Create new directory for outputs if not exists.</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">string</span> apppath = GetAppPath();</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">string</span> resultpath = apppath + <span class="stringliteral">&quot;./data/raster/result&quot;</span>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">if</span> (!DirectoryExists(resultpath)) CleanDirectory(resultpath);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#if (defined _DEBUG) &amp;&amp; (defined _MSC_VER) &amp;&amp; (defined VLD)</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor"></span>    <span class="comment">// Get a checkpoint of the memory after Google Test has been initialized. (not finished yet! by lj)</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">// Solving the memory leak problem caused by Google test in an imperfect way in MSVC with VLD.</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">// refers: [1] https://stackoverflow.com/questions/12704543/memory-leak-when-using-google-test-on-windows</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">//         [2] https://github.com/google/googletest/issues/624 (still unsolved by Google Test)</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">//         [3] https://github.com/Tencent/rapidjson/blob/master/test/unittest/unittest.cpp</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    _CrtMemState memoryState = { 0 };</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    (void)memoryState;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    _CrtMemCheckpoint(&amp;memoryState);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* Run Visual Leak Detector during Debug */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">int</span> retval = RUN_ALL_TESTS();</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#if (defined _DEBUG) &amp;&amp; (defined _MSC_VER) &amp;&amp; (defined VLD)</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor"></span>    <span class="comment">// Check for leaks after tests have run</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">// Current Google test constantly leak 2 blocks at exit</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    _CrtMemDumpAllObjectsSince(&amp;memoryState);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* Run Visual Leak Detector during Debug */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">return</span> retval;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
-<div class="ttc" id="a00713_html_a57cb6a67e8fa61ebbd975531293499b7"><div class="ttname"><a href="../../d1/d04/a00713.html#a57cb6a67e8fa61ebbd975531293499b7">ccgl::SetDefaultOpenMPThread</a></div><div class="ttdeci">void SetDefaultOpenMPThread()</div><div class="ttdoc">Set the default omp thread number if necessary. </div><div class="ttdef"><b>Definition:</b> <a href="../../d2/daf/a00346_source.html#l00113">basic.cpp:113</a></div></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">namespace </span>{</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">using</span> testing::TestWithParam;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">using</span> testing::Values;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keywordtype">string</span> apppath = GetAppPath();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keywordtype">string</span> maskcorename = <span class="stringliteral">&quot;mask1&quot;</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keywordtype">string</span> asc_file = apppath + <span class="stringliteral">&quot;./data/raster/&quot;</span> + maskcorename + <span class="stringliteral">&quot;.asc&quot;</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keywordtype">string</span> tif_file = apppath + <span class="stringliteral">&quot;./data/raster/&quot;</span> + maskcorename + <span class="stringliteral">&quot;.tif&quot;</span>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span>* asc_file_chars = asc_file.c_str();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span>* tif_file_chars = tif_file.c_str();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">//Inside the test body, fixture constructor, SetUp(), and TearDown() you</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">//can refer to the test parameter by GetParam().  In this case, the test</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">//parameter is a factory function which we call in fixture&#39;s SetUp() to</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">//create and store an instance of clsRasterData&lt;float&gt;.</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">class </span>clsRasterDataTestIncstMaskPos: <span class="keyword">public</span> TestWithParam&lt;const char *&gt; {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    clsRasterDataTestIncstMaskPos() : maskrs_(nullptr) {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">virtual</span> ~clsRasterDataTestIncstMaskPos() { <span class="keyword">delete</span> maskrs_; }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">void</span> SetUp() OVERRIDE {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        maskrs_ = <a class="code" href="../../d6/d5b/a00026.html#a64db769d823cac39236be7c8423c9288">clsRasterData&lt;int&gt;::Init</a>(GetParam()); <span class="comment">// recommended way</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="comment">//maskrs = new clsRasterData&lt;float&gt;(GetParam());  // unsafe way</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        ASSERT_NE(<span class="keyword">nullptr</span>, maskrs_);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> TearDown() OVERRIDE {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keyword">delete</span> maskrs_;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        maskrs_ = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="../../d6/d5b/a00026.html">clsRasterData&lt;int&gt;</a>* maskrs_;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;};</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">// Since each TEST_P will invoke SetUp() and TearDown()</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">// once, we put all tests in once test case. by lj.</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;TEST_P(clsRasterDataTestIncstMaskPos, RasterIO) {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    EXPECT_EQ(73, maskrs_-&gt;GetDataLength()); <span class="comment">// m_nCells</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    EXPECT_EQ(73, maskrs_-&gt;GetCellNumber()); <span class="comment">// m_nCells</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    EXPECT_EQ(-9999, maskrs_-&gt;GetNoDataValue());  <span class="comment">// m_noDataValue</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    EXPECT_EQ(-9999, maskrs_-&gt;GetDefaultValue()); <span class="comment">// m_defaultValue</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">// m_filePathName depends on the path of build, so no need to test.</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    EXPECT_EQ(maskcorename, maskrs_-&gt;GetCoreName()); <span class="comment">// m_coreFileName</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    EXPECT_TRUE(maskrs_-&gt;Initialized());           <span class="comment">// m_initialized</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    EXPECT_FALSE(maskrs_-&gt;Is2DRaster());           <span class="comment">// m_is2DRaster</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    EXPECT_TRUE(maskrs_-&gt;PositionsCalculated());   <span class="comment">// m_calcPositions</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    EXPECT_TRUE(maskrs_-&gt;PositionsAllocated());    <span class="comment">// m_storePositions</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    EXPECT_FALSE(maskrs_-&gt;MaskExtented());         <span class="comment">// m_useMaskExtent</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    EXPECT_FALSE(maskrs_-&gt;StatisticsCalculated()); <span class="comment">// m_statisticsCalculated</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    ASSERT_TRUE(maskrs_-&gt;ValidateRasterData());</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    EXPECT_NE(<span class="keyword">nullptr</span>, maskrs_-&gt;GetRasterDataPointer());         <span class="comment">// m_rasterData</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    EXPECT_EQ(<span class="keyword">nullptr</span>, maskrs_-&gt;Get2DRasterDataPointer());       <span class="comment">// m_raster2DData</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    EXPECT_NE(<span class="keyword">nullptr</span>, maskrs_-&gt;GetRasterPositionDataPointer()); <span class="comment">// m_rasterPositionData</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    map&lt;string, double&gt; header_info = maskrs_-&gt;<a class="code" href="../../d6/d5b/a00026.html#a93ccee4dc4cceff39706d0ce150c2575">GetRasterHeader</a>();</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    EXPECT_FLOAT_EQ(header_info.at(<span class="stringliteral">&quot;LAYERS&quot;</span>), maskrs_-&gt;GetLayers());</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    EXPECT_FLOAT_EQ(header_info.at(<span class="stringliteral">&quot;CELLSNUM&quot;</span>), maskrs_-&gt;GetCellNumber());</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    EXPECT_EQ(9, maskrs_-&gt;GetRows());</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    EXPECT_EQ(10, maskrs_-&gt;GetCols());</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    EXPECT_FLOAT_EQ(19.f, maskrs_-&gt;GetXllCenter());</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    EXPECT_FLOAT_EQ(25.f, maskrs_-&gt;GetYllCenter());</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    EXPECT_FLOAT_EQ(2.f, maskrs_-&gt;GetCellWidth());</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    EXPECT_EQ(1, maskrs_-&gt;GetLayers());</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    EXPECT_STREQ(<span class="stringliteral">&quot;&quot;</span>, maskrs_-&gt;GetSrs());</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    EXPECT_EQ(<span class="stringliteral">&quot;&quot;</span>, maskrs_-&gt;GetSrsString());</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    EXPECT_EQ(73, maskrs_-&gt;GetValidNumber());</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    EXPECT_FLOAT_EQ(1.f, maskrs_-&gt;GetMinimum());</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    EXPECT_FLOAT_EQ(1.f, maskrs_-&gt;GetMaximum());</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    EXPECT_FLOAT_EQ(1.f, maskrs_-&gt;GetAverage());</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    EXPECT_FLOAT_EQ(0.f, maskrs_-&gt;GetStd());</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    EXPECT_FLOAT_EQ(0.f, maskrs_-&gt;GetRange());</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    EXPECT_TRUE(maskrs_-&gt;StatisticsCalculated());</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordtype">float</span>* vs = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordtype">float</span>** vs2 = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordtype">int</span> validmaskcells = maskrs_-&gt;GetCellNumber();</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    Initialize1DArray(validmaskcells, vs, 0.f);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    Initialize2DArray(validmaskcells, 3, vs2, 0.f);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; validmaskcells; i++) {</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        vs[i] = i;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; 3; j++) {</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            vs2[i][j] = i * (j + 1);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        }</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    }</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <a class="code" href="../../d6/d5b/a00026.html">clsRasterData&lt;float, int&gt;</a>* new1draster = <span class="keyword">new</span> <a class="code" href="../../d6/d5b/a00026.html">clsRasterData&lt;float, int&gt;</a>(maskrs_, vs);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordtype">string</span> oldfullname = maskrs_-&gt;<a class="code" href="../../d6/d5b/a00026.html#adb590cc69bb5e00b88f5ff7ac51d6ba5">GetFilePath</a>();</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordtype">string</span> new1dfullname = GetPathFromFullName(oldfullname) + <span class="stringliteral">&quot;result&quot;</span> + SEP +</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            <span class="stringliteral">&quot;ctor_mask-pos_array_1d&quot;</span> + <span class="stringliteral">&quot;.&quot;</span> + GetSuffix(oldfullname);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    new1draster-&gt;<a class="code" href="../../d6/d5b/a00026.html#aad9cf7077caeb6f1d706c6aef32d8862">OutputToFile</a>(new1dfullname);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <a class="code" href="../../d6/d5b/a00026.html">clsRasterData&lt;float, int&gt;</a>* new2draster = <span class="keyword">new</span> <a class="code" href="../../d6/d5b/a00026.html">clsRasterData&lt;float, int&gt;</a>(maskrs_, vs2, 3);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordtype">string</span> new2dfullname = GetPathFromFullName(oldfullname) + <span class="stringliteral">&quot;result&quot;</span> + SEP +</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            <span class="stringliteral">&quot;ctor_mask-pos_array_2d&quot;</span> + <span class="stringliteral">&quot;.&quot;</span> + GetSuffix(oldfullname);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    new2draster-&gt;<a class="code" href="../../d6/d5b/a00026.html#aad9cf7077caeb6f1d706c6aef32d8862">OutputToFile</a>(new2dfullname);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    Release1DArray(vs);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    Release2DArray(validmaskcells, vs2);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;}</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="preprocessor">#ifdef USE_GDAL</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="preprocessor"></span>INSTANTIATE_TEST_CASE_P(MaskLayer, clsRasterDataTestIncstMaskPos,</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    Values(asc_file_chars, tif_file_chars));</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="preprocessor"></span>INSTANTIATE_TEST_CASE_P(MaskLayer, clsRasterDataTestIncstMaskPos,</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                        Values(asc_file_chars));</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* USE_GDAL */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;} <span class="comment">/* namespace */</span></div>
+<div class="ttc" id="a00026_html_a93ccee4dc4cceff39706d0ce150c2575"><div class="ttname"><a href="../../d6/d5b/a00026.html#a93ccee4dc4cceff39706d0ce150c2575">ccgl::data_raster::clsRasterData::GetRasterHeader</a></div><div class="ttdeci">const map&lt; string, double &gt; &amp; GetRasterHeader() const </div><div class="ttdoc">Get raster header information. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/d10/a00350_source.html#l00534">data_raster.h:534</a></div></div>
+<div class="ttc" id="a00026_html_adb590cc69bb5e00b88f5ff7ac51d6ba5"><div class="ttname"><a href="../../d6/d5b/a00026.html#adb590cc69bb5e00b88f5ff7ac51d6ba5">ccgl::data_raster::clsRasterData::GetFilePath</a></div><div class="ttdeci">string GetFilePath() const </div><div class="ttdoc">Get full path name. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/d10/a00350_source.html#l00543">data_raster.h:543</a></div></div>
+<div class="ttc" id="a00026_html_a64db769d823cac39236be7c8423c9288"><div class="ttname"><a href="../../d6/d5b/a00026.html#a64db769d823cac39236be7c8423c9288">ccgl::data_raster::clsRasterData::Init</a></div><div class="ttdeci">static clsRasterData&lt; T, MASK_T &gt; * Init(const string &amp;filename, bool calc_pos=true, clsRasterData&lt; MASK_T &gt; *mask=nullptr, bool use_mask_ext=true, T default_value=static_cast&lt; T &gt;(NODATA_VALUE))</div><div class="ttdoc">Validation check before the constructor of clsRasterData, i.e., the raster file is existed and suppor...</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d10/a00350_source.html#l01014">data_raster.h:1014</a></div></div>
+<div class="ttc" id="a00026_html"><div class="ttname"><a href="../../d6/d5b/a00026.html">ccgl::data_raster::clsRasterData</a></div><div class="ttdoc">Raster data (1D and 2D) I/O class Support I/O between ASCII file, TIFF, and MongoBD database...</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d10/a00350_source.html#l00157">data_raster.h:157</a></div></div>
+<div class="ttc" id="a00026_html_aad9cf7077caeb6f1d706c6aef32d8862"><div class="ttname"><a href="../../d6/d5b/a00026.html#aad9cf7077caeb6f1d706c6aef32d8862">ccgl::data_raster::clsRasterData::OutputToFile</a></div><div class="ttdeci">bool OutputToFile(const string &amp;filename)</div><div class="ttdoc">Write raster to raster file, if 2D raster, output name will be filename_LyrNum. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/d10/a00350_source.html#l01568">data_raster.h:1568</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_1635fbfac89ac2806d51d330c1bf9d4d.html">ccgl</a></li><li class="navelem"><a class="el" href="../../dir_a6c0e548a0bdc35f60ded49e03ac0912.html">test</a></li><li class="navelem"><b>test_main.cpp</b></li>
-    <li class="footer">Generated on Thu Jun 28 2018 16:22:26 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_1635fbfac89ac2806d51d330c1bf9d4d.html">ccgl</a></li><li class="navelem"><a class="el" href="../../dir_a6c0e548a0bdc35f60ded49e03ac0912.html">test</a></li><li class="navelem"><a class="el" href="../../dir_305817833ff1d9e36c47b32902c74020.html">raster</a></li><li class="navelem"><b>test_incst-mask-pos.cpp</b></li>
+    <li class="footer">Generated on Wed Jul 11 2018 05:07:28 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

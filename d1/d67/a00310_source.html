@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims_linux_gcc48/seims/preprocess/field_alpha/sp_terrain_field.py Source File</title>
+<title>SEIMS: seims/preprocess/field_alpha/sp_terrain_field.py Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -141,8 +141,8 @@ $(document).ready(function(){initNavTree('d1/d67/a00310_source.html','../../');}
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">from</span> osgeo.ogr <span class="keyword">import</span> FieldDefn <span class="keyword">as</span> ogr_FieldDefn</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">from</span> osgeo.ogr <span class="keyword">import</span> OFTReal</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">from</span> osgeo.ogr <span class="keyword">import</span> Open <span class="keyword">as</span> ogr_Open</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">from</span> <a class="code" href="../../d8/db9/a00725.html">pygeoc.hydro</a> <span class="keyword">import</span> FlowModelConst</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">from</span> <a class="code" href="../../d6/d59/a00726.html">pygeoc.raster</a> <span class="keyword">import</span> RasterUtilClass</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">from</span> <a class="code" href="../../d6/d59/a00726.html">pygeoc.hydro</a> <span class="keyword">import</span> FlowModelConst</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">from</span> <a class="code" href="../../dc/ddc/a00727.html">pygeoc.raster</a> <span class="keyword">import</span> RasterUtilClass</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">from</span> preprocess.db_import_stream_parameters <span class="keyword">import</span> ImportReaches2Mongo</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">from</span> preprocess.utility <span class="keyword">import</span> status_output, UTIL_ZERO, DEFAULT_NODATA</div>
@@ -150,16 +150,16 @@ $(document).ready(function(){initNavTree('d1/d67/a00310_source.html','../../');}
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;sys.setrecursionlimit(10000)</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">class </span>TerrainUtilClass(object):</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="../../d7/d25/a00182.html">   36</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d7/d25/a00182.html">TerrainUtilClass</a>(object):</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;Terrain related spatial parameters algorithms.&quot;&quot;&quot;</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="../../db/dd9/a00179.html#ab518ad0ad2734a8b70f3a3cf84277923">   39</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../db/dd9/a00179.html#ab518ad0ad2734a8b70f3a3cf84277923">__init__</a>(self):</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="../../d7/d25/a00182.html#ab518ad0ad2734a8b70f3a3cf84277923">   39</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d7/d25/a00182.html#ab518ad0ad2734a8b70f3a3cf84277923">__init__</a>(self):</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Empty&quot;&quot;&quot;</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">pass</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    @staticmethod</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">def </span><a class="code" href="../../db/dd9/a00179.html#a820c5e7f43d54bc59d83c67dd50b8f7b">flow_length_cell</a>(i, j, ysize, xsize, fdir, cellsize, weight, length,</div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="../../db/dd9/a00179.html#a820c5e7f43d54bc59d83c67dd50b8f7b">   45</a></span>&#160;                         flow_dir_code=<span class="stringliteral">&quot;TauDEM&quot;</span>):</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">def </span><a class="code" href="../../d7/d25/a00182.html#a820c5e7f43d54bc59d83c67dd50b8f7b">flow_length_cell</a>(i, j, ysize, xsize, fdir, cellsize, weight, length,</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="../../d7/d25/a00182.html#a820c5e7f43d54bc59d83c67dd50b8f7b">   45</a></span>&#160;                         flow_dir_code=<span class="stringliteral">&quot;TauDEM&quot;</span>):</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Calculate flow length of cell.&quot;&quot;&quot;</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        celllen = FlowModelConst.get_cell_length(flow_dir_code)</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        differ = FlowModelConst.get_cell_shift(flow_dir_code)</div>
@@ -193,7 +193,7 @@ $(document).ready(function(){initNavTree('d1/d67/a00310_source.html','../../');}
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">return</span> 0</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    @staticmethod</div>
-<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="../../db/dd9/a00179.html#a55054b9d8ee973e80f191f2b05f72eab">   79</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../db/dd9/a00179.html#a55054b9d8ee973e80f191f2b05f72eab">calculate_flow_length</a>(flow_dir_file, weight, flow_dir_code=&quot;TauDEM&quot;):</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="../../d7/d25/a00182.html#a55054b9d8ee973e80f191f2b05f72eab">   79</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d7/d25/a00182.html#a55054b9d8ee973e80f191f2b05f72eab">calculate_flow_length</a>(flow_dir_file, weight, flow_dir_code=&quot;TauDEM&quot;):</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Generate flow length with weight.&quot;&quot;&quot;</span></div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        flow_dir_raster = RasterUtilClass.read_raster(flow_dir_file)</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        fdir_data = flow_dir_raster.data</div>
@@ -214,8 +214,8 @@ $(document).ready(function(){initNavTree('d1/d67/a00310_source.html','../../');}
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">return</span> length</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    @staticmethod</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keyword">def </span><a class="code" href="../../db/dd9/a00179.html#a35e527d90269b82701a76166e111de01">depression_capacity</a>(maindb, landuse_file, slope_file, soil_texture_file,</div>
-<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="../../db/dd9/a00179.html#a35e527d90269b82701a76166e111de01">  101</a></span>&#160;                            depression_file, landuse_shp, imper_perc=0.3):</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keyword">def </span><a class="code" href="../../d7/d25/a00182.html#a35e527d90269b82701a76166e111de01">depression_capacity</a>(maindb, landuse_file, slope_file, soil_texture_file,</div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="../../d7/d25/a00182.html#a35e527d90269b82701a76166e111de01">  101</a></span>&#160;                            depression_file, landuse_shp, imper_perc=0.3):</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Initialize depression capacity according to landuse, soil, and slope.</span></div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="stringliteral">        Args:</span></div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="stringliteral">            maindb: main MongoDatabase</span></div>
@@ -281,7 +281,7 @@ $(document).ready(function(){initNavTree('d1/d67/a00310_source.html','../../');}
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        RasterUtilClass.count_raster_moist(depression_file, landuse_shp, depression_csv, <span class="keyword">True</span>)</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    @staticmethod</div>
-<div class="line"><a name="l00167"></a><span class="lineno"><a class="line" href="../../db/dd9/a00179.html#a4518efb0b5e0585f2f36bd5d8d905742">  167</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../db/dd9/a00179.html#a4518efb0b5e0585f2f36bd5d8d905742">hydrological_radius</a>(acc_file, radius_file, storm_probability=&quot;T2&quot;):</div>
+<div class="line"><a name="l00167"></a><span class="lineno"><a class="line" href="../../d7/d25/a00182.html#a4518efb0b5e0585f2f36bd5d8d905742">  167</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d7/d25/a00182.html#a4518efb0b5e0585f2f36bd5d8d905742">hydrological_radius</a>(acc_file, radius_file, storm_probability=&quot;T2&quot;):</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Calculate hydrological radius.&quot;&quot;&quot;</span></div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        acc_r = RasterUtilClass.read_raster(acc_file)</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        xsize = acc_r.nCols</div>
@@ -309,7 +309,7 @@ $(document).ready(function(){initNavTree('d1/d67/a00310_source.html','../../');}
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                                         DEFAULT_NODATA, GDT_Float32)</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    @staticmethod</div>
-<div class="line"><a name="l00195"></a><span class="lineno"><a class="line" href="../../db/dd9/a00179.html#aa9b3ee38ebfa0e05dc68060ee7c74124">  195</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../db/dd9/a00179.html#aa9b3ee38ebfa0e05dc68060ee7c74124">flow_velocity</a>(slope_file, radius_file, manning_file, velocity_file):</div>
+<div class="line"><a name="l00195"></a><span class="lineno"><a class="line" href="../../d7/d25/a00182.html#aa9b3ee38ebfa0e05dc68060ee7c74124">  195</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d7/d25/a00182.html#aa9b3ee38ebfa0e05dc68060ee7c74124">flow_velocity</a>(slope_file, radius_file, manning_file, velocity_file):</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;velocity.&quot;&quot;&quot;</span></div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        slp_r = RasterUtilClass.read_raster(slope_file)</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        slp_data = slp_r.data</div>
@@ -341,8 +341,8 @@ $(document).ready(function(){initNavTree('d1/d67/a00310_source.html','../../');}
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                                         slp_r.srs, DEFAULT_NODATA, GDT_Float32)</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    @staticmethod</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="keyword">def </span><a class="code" href="../../db/dd9/a00179.html#a93e1e3a5d052f4aea6cc253a8fa8f9a2">flow_time_to_stream</a>(streamlink, velocity, flow_dir_file, t0_s_file,</div>
-<div class="line"><a name="l00228"></a><span class="lineno"><a class="line" href="../../db/dd9/a00179.html#a93e1e3a5d052f4aea6cc253a8fa8f9a2">  228</a></span>&#160;                            flow_dir_code=<span class="stringliteral">&quot;TauDEM&quot;</span>):</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="keyword">def </span><a class="code" href="../../d7/d25/a00182.html#a93e1e3a5d052f4aea6cc253a8fa8f9a2">flow_time_to_stream</a>(streamlink, velocity, flow_dir_file, t0_s_file,</div>
+<div class="line"><a name="l00228"></a><span class="lineno"><a class="line" href="../../d7/d25/a00182.html#a93e1e3a5d052f4aea6cc253a8fa8f9a2">  228</a></span>&#160;                            flow_dir_code=<span class="stringliteral">&quot;TauDEM&quot;</span>):</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Calculate flow time to the workflow channel from each grid cell.&quot;&quot;&quot;</span></div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        strlk_data = RasterUtilClass.read_raster(streamlink).data</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;</div>
@@ -362,8 +362,8 @@ $(document).ready(function(){initNavTree('d1/d67/a00310_source.html','../../');}
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                                         vel_r.srs, DEFAULT_NODATA, GDT_Float32)</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    @staticmethod</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keyword">def </span><a class="code" href="../../db/dd9/a00179.html#a83481b612b7bf91db8ed91b2fb63094a">std_of_flow_time_to_stream</a>(streamlink, flow_dir_file, slope, radius, velocity, delta_s_file,</div>
-<div class="line"><a name="l00249"></a><span class="lineno"><a class="line" href="../../db/dd9/a00179.html#a83481b612b7bf91db8ed91b2fb63094a">  249</a></span>&#160;                                   flow_dir_code=<span class="stringliteral">&quot;TauDEM&quot;</span>):</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keyword">def </span><a class="code" href="../../d7/d25/a00182.html#a83481b612b7bf91db8ed91b2fb63094a">std_of_flow_time_to_stream</a>(streamlink, flow_dir_file, slope, radius, velocity, delta_s_file,</div>
+<div class="line"><a name="l00249"></a><span class="lineno"><a class="line" href="../../d7/d25/a00182.html#a83481b612b7bf91db8ed91b2fb63094a">  249</a></span>&#160;                                   flow_dir_code=<span class="stringliteral">&quot;TauDEM&quot;</span>):</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Generate standard deviation of t0_s (flow time to the workflow channel from each cell).</span></div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        strlk_r = RasterUtilClass.read_raster(streamlink)</div>
@@ -414,7 +414,7 @@ $(document).ready(function(){initNavTree('d1/d67/a00310_source.html','../../');}
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                                         strlk_r.srs, DEFAULT_NODATA, GDT_Float32)</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;</div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    @staticmethod</div>
-<div class="line"><a name="l00300"></a><span class="lineno"><a class="line" href="../../db/dd9/a00179.html#a801593c89556e3ce2db5790c547892e1">  300</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../db/dd9/a00179.html#a801593c89556e3ce2db5790c547892e1">calculate_latitude_dependent_parameters</a>(lat_file, min_dayl_file, dormhr_file, dorm_hr):</div>
+<div class="line"><a name="l00300"></a><span class="lineno"><a class="line" href="../../d7/d25/a00182.html#a801593c89556e3ce2db5790c547892e1">  300</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d7/d25/a00182.html#a801593c89556e3ce2db5790c547892e1">calculate_latitude_dependent_parameters</a>(lat_file, min_dayl_file, dormhr_file, dorm_hr):</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;</span></div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;<span class="stringliteral">        Calculate latitude dependent parameters, include:</span></div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;<span class="stringliteral">           1. minimum daylength (daylmn), 2. day length threshold for dormancy (dormhr)</span></div>
@@ -469,7 +469,7 @@ $(document).ready(function(){initNavTree('d1/d67/a00310_source.html','../../');}
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;                                         cell_lat_r.noDataValue, GDT_Float32)</div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;</div>
 <div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    @staticmethod</div>
-<div class="line"><a name="l00355"></a><span class="lineno"><a class="line" href="../../db/dd9/a00179.html#a8ff2b61b003bb5062761a696b33d54c6">  355</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../db/dd9/a00179.html#a8ff2b61b003bb5062761a696b33d54c6">calculate_channel_width</a>(acc_file, chwidth_file):</div>
+<div class="line"><a name="l00355"></a><span class="lineno"><a class="line" href="../../d7/d25/a00182.html#a8ff2b61b003bb5062761a696b33d54c6">  355</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d7/d25/a00182.html#a8ff2b61b003bb5062761a696b33d54c6">calculate_channel_width</a>(acc_file, chwidth_file):</div>
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Calculate channel width.&quot;&quot;&quot;</span></div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        acc_r = RasterUtilClass.read_raster(acc_file)</div>
 <div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        xsize = acc_r.nCols</div>
@@ -495,7 +495,7 @@ $(document).ready(function(){initNavTree('d1/d67/a00310_source.html','../../');}
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        <span class="keywordflow">return</span> width</div>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;</div>
 <div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    @staticmethod</div>
-<div class="line"><a name="l00381"></a><span class="lineno"><a class="line" href="../../db/dd9/a00179.html#a0b5c7e941b1763b005a1a764bcf4fc6b">  381</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../db/dd9/a00179.html#a0b5c7e941b1763b005a1a764bcf4fc6b">add_channel_width_to_shp</a>(reach_shp_file, stream_link_file, width_data, default_depth=5.):</div>
+<div class="line"><a name="l00381"></a><span class="lineno"><a class="line" href="../../d7/d25/a00182.html#a0b5c7e941b1763b005a1a764bcf4fc6b">  381</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d7/d25/a00182.html#a0b5c7e941b1763b005a1a764bcf4fc6b">add_channel_width_to_shp</a>(reach_shp_file, stream_link_file, width_data, default_depth=5.):</div>
 <div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Add channel/reach width and default depth to ESRI shapefile&quot;&quot;&quot;</span></div>
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;        stream_link = RasterUtilClass.read_raster(stream_link_file)</div>
 <div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        n_rows = stream_link.nRows</div>
@@ -550,7 +550,7 @@ $(document).ready(function(){initNavTree('d1/d67/a00310_source.html','../../');}
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;        del ds_reach</div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;</div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;    @staticmethod</div>
-<div class="line"><a name="l00436"></a><span class="lineno"><a class="line" href="../../db/dd9/a00179.html#a9adf1697b47ef5cdefd4f1310716cd10">  436</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../db/dd9/a00179.html#a9adf1697b47ef5cdefd4f1310716cd10">parameters_extration</a>(cfg, maindb):</div>
+<div class="line"><a name="l00436"></a><span class="lineno"><a class="line" href="../../d7/d25/a00182.html#a9adf1697b47ef5cdefd4f1310716cd10">  436</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d7/d25/a00182.html#a9adf1697b47ef5cdefd4f1310716cd10">parameters_extration</a>(cfg, maindb):</div>
 <div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Main entrance for terrain related spatial parameters extraction.&quot;&quot;&quot;</span></div>
 <div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;        f = cfg.logs.extract_terrain</div>
 <div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;        landuse_shp = cfg.landuse_shp</div>
@@ -619,27 +619,28 @@ $(document).ready(function(){initNavTree('d1/d67/a00310_source.html','../../');}
 <div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;    main()</div>
 <div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;    end_time = time.time()</div>
 <div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;    print(<span class="stringliteral">&#39;SEIMS preprocess done, time-consuming: %.2f seconds.&#39;</span> % (end_time - start_time))</div>
-<div class="ttc" id="a00179_html_a9adf1697b47ef5cdefd4f1310716cd10"><div class="ttname"><a href="../../db/dd9/a00179.html#a9adf1697b47ef5cdefd4f1310716cd10">sp_terrain_field.TerrainUtilClass.parameters_extration</a></div><div class="ttdeci">def parameters_extration</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d71/a00309_source.html#l00436">sp_terrain_field.py:436</a></div></div>
-<div class="ttc" id="a00179_html_a4518efb0b5e0585f2f36bd5d8d905742"><div class="ttname"><a href="../../db/dd9/a00179.html#a4518efb0b5e0585f2f36bd5d8d905742">sp_terrain_field.TerrainUtilClass.hydrological_radius</a></div><div class="ttdeci">def hydrological_radius</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d71/a00309_source.html#l00167">sp_terrain_field.py:167</a></div></div>
-<div class="ttc" id="a00179_html_a801593c89556e3ce2db5790c547892e1"><div class="ttname"><a href="../../db/dd9/a00179.html#a801593c89556e3ce2db5790c547892e1">sp_terrain_field.TerrainUtilClass.calculate_latitude_dependent_parameters</a></div><div class="ttdeci">def calculate_latitude_dependent_parameters</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d71/a00309_source.html#l00300">sp_terrain_field.py:300</a></div></div>
-<div class="ttc" id="a00179_html_a83481b612b7bf91db8ed91b2fb63094a"><div class="ttname"><a href="../../db/dd9/a00179.html#a83481b612b7bf91db8ed91b2fb63094a">sp_terrain_field.TerrainUtilClass.std_of_flow_time_to_stream</a></div><div class="ttdeci">def std_of_flow_time_to_stream</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d71/a00309_source.html#l00249">sp_terrain_field.py:249</a></div></div>
-<div class="ttc" id="a00179_html_ab518ad0ad2734a8b70f3a3cf84277923"><div class="ttname"><a href="../../db/dd9/a00179.html#ab518ad0ad2734a8b70f3a3cf84277923">sp_terrain_field.TerrainUtilClass.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d71/a00309_source.html#l00039">sp_terrain_field.py:39</a></div></div>
-<div class="ttc" id="a00179_html_a93e1e3a5d052f4aea6cc253a8fa8f9a2"><div class="ttname"><a href="../../db/dd9/a00179.html#a93e1e3a5d052f4aea6cc253a8fa8f9a2">sp_terrain_field.TerrainUtilClass.flow_time_to_stream</a></div><div class="ttdeci">def flow_time_to_stream</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d71/a00309_source.html#l00228">sp_terrain_field.py:228</a></div></div>
-<div class="ttc" id="a00726_html"><div class="ttname"><a href="../../d6/d59/a00726.html">raster</a></div></div>
-<div class="ttc" id="a00179_html_a0b5c7e941b1763b005a1a764bcf4fc6b"><div class="ttname"><a href="../../db/dd9/a00179.html#a0b5c7e941b1763b005a1a764bcf4fc6b">sp_terrain_field.TerrainUtilClass.add_channel_width_to_shp</a></div><div class="ttdeci">def add_channel_width_to_shp</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d71/a00309_source.html#l00381">sp_terrain_field.py:381</a></div></div>
-<div class="ttc" id="a00179_html_a35e527d90269b82701a76166e111de01"><div class="ttname"><a href="../../db/dd9/a00179.html#a35e527d90269b82701a76166e111de01">sp_terrain_field.TerrainUtilClass.depression_capacity</a></div><div class="ttdeci">def depression_capacity</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d71/a00309_source.html#l00101">sp_terrain_field.py:101</a></div></div>
-<div class="ttc" id="a00179_html_a8ff2b61b003bb5062761a696b33d54c6"><div class="ttname"><a href="../../db/dd9/a00179.html#a8ff2b61b003bb5062761a696b33d54c6">sp_terrain_field.TerrainUtilClass.calculate_channel_width</a></div><div class="ttdeci">def calculate_channel_width</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d71/a00309_source.html#l00355">sp_terrain_field.py:355</a></div></div>
-<div class="ttc" id="a00179_html_aa9b3ee38ebfa0e05dc68060ee7c74124"><div class="ttname"><a href="../../db/dd9/a00179.html#aa9b3ee38ebfa0e05dc68060ee7c74124">sp_terrain_field.TerrainUtilClass.flow_velocity</a></div><div class="ttdeci">def flow_velocity</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d71/a00309_source.html#l00195">sp_terrain_field.py:195</a></div></div>
-<div class="ttc" id="a00725_html"><div class="ttname"><a href="../../d8/db9/a00725.html">hydro</a></div></div>
-<div class="ttc" id="a00179_html_a820c5e7f43d54bc59d83c67dd50b8f7b"><div class="ttname"><a href="../../db/dd9/a00179.html#a820c5e7f43d54bc59d83c67dd50b8f7b">sp_terrain_field.TerrainUtilClass.flow_length_cell</a></div><div class="ttdeci">def flow_length_cell</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d71/a00309_source.html#l00045">sp_terrain_field.py:45</a></div></div>
-<div class="ttc" id="a00179_html_a55054b9d8ee973e80f191f2b05f72eab"><div class="ttname"><a href="../../db/dd9/a00179.html#a55054b9d8ee973e80f191f2b05f72eab">sp_terrain_field.TerrainUtilClass.calculate_flow_length</a></div><div class="ttdeci">def calculate_flow_length</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d71/a00309_source.html#l00079">sp_terrain_field.py:79</a></div></div>
+<div class="ttc" id="a00182_html_a8ff2b61b003bb5062761a696b33d54c6"><div class="ttname"><a href="../../d7/d25/a00182.html#a8ff2b61b003bb5062761a696b33d54c6">sp_terrain_field.TerrainUtilClass.calculate_channel_width</a></div><div class="ttdeci">def calculate_channel_width</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d67/a00310_source.html#l00355">sp_terrain_field.py:355</a></div></div>
+<div class="ttc" id="a00182_html_a4518efb0b5e0585f2f36bd5d8d905742"><div class="ttname"><a href="../../d7/d25/a00182.html#a4518efb0b5e0585f2f36bd5d8d905742">sp_terrain_field.TerrainUtilClass.hydrological_radius</a></div><div class="ttdeci">def hydrological_radius</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d67/a00310_source.html#l00167">sp_terrain_field.py:167</a></div></div>
+<div class="ttc" id="a00727_html"><div class="ttname"><a href="../../dc/ddc/a00727.html">raster</a></div></div>
+<div class="ttc" id="a00182_html"><div class="ttname"><a href="../../d7/d25/a00182.html">sp_terrain_field.TerrainUtilClass</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d67/a00310_source.html#l00036">sp_terrain_field.py:36</a></div></div>
+<div class="ttc" id="a00182_html_aa9b3ee38ebfa0e05dc68060ee7c74124"><div class="ttname"><a href="../../d7/d25/a00182.html#aa9b3ee38ebfa0e05dc68060ee7c74124">sp_terrain_field.TerrainUtilClass.flow_velocity</a></div><div class="ttdeci">def flow_velocity</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d67/a00310_source.html#l00195">sp_terrain_field.py:195</a></div></div>
+<div class="ttc" id="a00726_html"><div class="ttname"><a href="../../d6/d59/a00726.html">hydro</a></div></div>
+<div class="ttc" id="a00182_html_a9adf1697b47ef5cdefd4f1310716cd10"><div class="ttname"><a href="../../d7/d25/a00182.html#a9adf1697b47ef5cdefd4f1310716cd10">sp_terrain_field.TerrainUtilClass.parameters_extration</a></div><div class="ttdeci">def parameters_extration</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d67/a00310_source.html#l00436">sp_terrain_field.py:436</a></div></div>
+<div class="ttc" id="a00182_html_a93e1e3a5d052f4aea6cc253a8fa8f9a2"><div class="ttname"><a href="../../d7/d25/a00182.html#a93e1e3a5d052f4aea6cc253a8fa8f9a2">sp_terrain_field.TerrainUtilClass.flow_time_to_stream</a></div><div class="ttdeci">def flow_time_to_stream</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d67/a00310_source.html#l00228">sp_terrain_field.py:228</a></div></div>
+<div class="ttc" id="a00182_html_a83481b612b7bf91db8ed91b2fb63094a"><div class="ttname"><a href="../../d7/d25/a00182.html#a83481b612b7bf91db8ed91b2fb63094a">sp_terrain_field.TerrainUtilClass.std_of_flow_time_to_stream</a></div><div class="ttdeci">def std_of_flow_time_to_stream</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d67/a00310_source.html#l00249">sp_terrain_field.py:249</a></div></div>
+<div class="ttc" id="a00182_html_a35e527d90269b82701a76166e111de01"><div class="ttname"><a href="../../d7/d25/a00182.html#a35e527d90269b82701a76166e111de01">sp_terrain_field.TerrainUtilClass.depression_capacity</a></div><div class="ttdeci">def depression_capacity</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d67/a00310_source.html#l00101">sp_terrain_field.py:101</a></div></div>
+<div class="ttc" id="a00182_html_a820c5e7f43d54bc59d83c67dd50b8f7b"><div class="ttname"><a href="../../d7/d25/a00182.html#a820c5e7f43d54bc59d83c67dd50b8f7b">sp_terrain_field.TerrainUtilClass.flow_length_cell</a></div><div class="ttdeci">def flow_length_cell</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d67/a00310_source.html#l00045">sp_terrain_field.py:45</a></div></div>
+<div class="ttc" id="a00182_html_a55054b9d8ee973e80f191f2b05f72eab"><div class="ttname"><a href="../../d7/d25/a00182.html#a55054b9d8ee973e80f191f2b05f72eab">sp_terrain_field.TerrainUtilClass.calculate_flow_length</a></div><div class="ttdeci">def calculate_flow_length</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d67/a00310_source.html#l00079">sp_terrain_field.py:79</a></div></div>
+<div class="ttc" id="a00182_html_a0b5c7e941b1763b005a1a764bcf4fc6b"><div class="ttname"><a href="../../d7/d25/a00182.html#a0b5c7e941b1763b005a1a764bcf4fc6b">sp_terrain_field.TerrainUtilClass.add_channel_width_to_shp</a></div><div class="ttdeci">def add_channel_width_to_shp</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d67/a00310_source.html#l00381">sp_terrain_field.py:381</a></div></div>
+<div class="ttc" id="a00182_html_a801593c89556e3ce2db5790c547892e1"><div class="ttname"><a href="../../d7/d25/a00182.html#a801593c89556e3ce2db5790c547892e1">sp_terrain_field.TerrainUtilClass.calculate_latitude_dependent_parameters</a></div><div class="ttdeci">def calculate_latitude_dependent_parameters</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d67/a00310_source.html#l00300">sp_terrain_field.py:300</a></div></div>
+<div class="ttc" id="a00182_html_ab518ad0ad2734a8b70f3a3cf84277923"><div class="ttname"><a href="../../d7/d25/a00182.html#ab518ad0ad2734a8b70f3a3cf84277923">sp_terrain_field.TerrainUtilClass.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d67/a00310_source.html#l00039">sp_terrain_field.py:39</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_483bc1739a16b87563cca23e7a392c1e.html">seims_linux_gcc48</a></li><li class="navelem"><a class="el" href="../../dir_a45053e29f104e67e5be28f13679e3c2.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_88ee9ccb3eda13ad093e0105c15391c0.html">preprocess</a></li><li class="navelem"><a class="el" href="../../dir_5dd44bc18e6d5479522a0cb13ab3d104.html">field_alpha</a></li><li class="navelem"><b>sp_terrain_field.py</b></li>
-    <li class="footer">Generated on Thu Jun 28 2018 16:22:25 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_e83ca20770e7fbc90f1c071d86067ace.html">preprocess</a></li><li class="navelem"><a class="el" href="../../dir_40479a53b6740e4c2f6d2f281ff17115.html">field_alpha</a></li><li class="navelem"><b>sp_terrain_field.py</b></li>
+    <li class="footer">Generated on Wed Jul 11 2018 05:07:27 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

@@ -115,7 +115,7 @@ $(document).ready(function(){initNavTree('da/d82/a00091.html','../../');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="../../db/d07/a01155.html">List of all members</a>  </div>
+<a href="../../df/db5/a01158.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">seims.run_seims.MainSEIMS Class Reference</div>  </div>
 </div><!--header-->
@@ -127,17 +127,35 @@ $(document).ready(function(){initNavTree('da/d82/a00091.html','../../');});
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a99fb2121e3b6b6d9e9fdd6969a04029f"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d82/a00091.html#a99fb2121e3b6b6d9e9fdd6969a04029f">Command</a></td></tr>
 <tr class="separator:a99fb2121e3b6b6d9e9fdd6969a04029f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e730b6905d3cd004b5052edfa707176"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d82/a00091.html#a3e730b6905d3cd004b5052edfa707176">SetOutletObservations</a></td></tr>
+<tr class="separator:a3e730b6905d3cd004b5052edfa707176"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada4a0d1f8808bf376d2d8f2450376357"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d82/a00091.html#ada4a0d1f8808bf376d2d8f2450376357">run</a></td></tr>
 <tr class="separator:ada4a0d1f8808bf376d2d8f2450376357"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99fb2121e3b6b6d9e9fdd6969a04029f"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d82/a00091.html#a99fb2121e3b6b6d9e9fdd6969a04029f">Command</a></td></tr>
 <tr class="separator:a99fb2121e3b6b6d9e9fdd6969a04029f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e730b6905d3cd004b5052edfa707176"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d82/a00091.html#a3e730b6905d3cd004b5052edfa707176">SetOutletObservations</a></td></tr>
+<tr class="separator:a3e730b6905d3cd004b5052edfa707176"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada4a0d1f8808bf376d2d8f2450376357"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d82/a00091.html#ada4a0d1f8808bf376d2d8f2450376357">run</a></td></tr>
 <tr class="separator:ada4a0d1f8808bf376d2d8f2450376357"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><pre class="fragment">Main entrance to SEIMS model.
+Args:
+    bin_dir: The directory of SEIMS binary.
+    model_dir: The directory of SEIMS model, the directory name MUST existed as one database name.
+    nthread: Thread number for OpenMP.
+    lyrmtd: Layering method, can be 0 (UP_DOWN) or 1 (DOWN_UP).
+    host: MongoDB host address, default is `localhost`
+    port: MongoDB port, default is 27017
+    scenario_id: Scenario ID, which corresponding items in `&lt;model&gt;_Scenario` database
+    calibration_id: Calibration ID used for model auto-calibration
+    version: SEIMS version, can be `MPI` or `OMP` (default)
+    nprocess: Process number for MPI
+    mpi_bin: Full path of MPI executable file, e.g., `./mpiexec` or `./mpirun`
+    hosts_opt: Option for assigning hosts, e.g., `-f`, `-hostfile`, `-machine`, `-machinefile`
+    hostfile: File containing host names, or file mapping process numbers to machines
 </pre> 
-<p>Definition at line <a class="el" href="../../df/d91/a00335_source.html#l00020">20</a> of file <a class="el" href="../../df/d91/a00335_source.html">run_seims.py</a>.</p>
+<p>Definition at line <a class="el" href="../../dd/d1d/a00336_source.html#l00113">113</a> of file <a class="el" href="../../dd/d1d/a00336_source.html">run_seims.py</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a99fb2121e3b6b6d9e9fdd6969a04029f"></a>
 <div class="memitem">
@@ -153,7 +171,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Concatenate command to run SEIMS.</pre> 
-<p>Definition at line <a class="el" href="../../df/d91/a00335_source.html#l00060">60</a> of file <a class="el" href="../../df/d91/a00335_source.html">run_seims.py</a>.</p>
+<p>Definition at line <a class="el" href="../../dd/d1d/a00336_source.html#l00196">196</a> of file <a class="el" href="../../dd/d1d/a00336_source.html">run_seims.py</a>.</p>
 
 </div>
 </div>
@@ -171,7 +189,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Concatenate command to run SEIMS.</pre> 
-<p>Definition at line <a class="el" href="../../dd/d1d/a00336_source.html#l00060">60</a> of file <a class="el" href="../../dd/d1d/a00336_source.html">run_seims.py</a>.</p>
+<p>Definition at line <a class="el" href="../../d4/dce/a00337_source.html#l00196">196</a> of file <a class="el" href="../../d4/dce/a00337_source.html">run_seims.py</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -198,14 +216,14 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Run SEIMS model</pre> 
-<p>Definition at line <a class="el" href="../../dd/d1d/a00336_source.html#l00088">88</a> of file <a class="el" href="../../dd/d1d/a00336_source.html">run_seims.py</a>.</p>
+<p>Definition at line <a class="el" href="../../dd/d1d/a00336_source.html#l00316">316</a> of file <a class="el" href="../../dd/d1d/a00336_source.html">run_seims.py</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../da/d82/a00091_ada4a0d1f8808bf376d2d8f2450376357_cgraph.png" border="0" usemap="#da/d82/a00091_ada4a0d1f8808bf376d2d8f2450376357_cgraph" alt=""/></div>
 <map name="da/d82/a00091_ada4a0d1f8808bf376d2d8f2450376357_cgraph" id="da/d82/a00091_ada4a0d1f8808bf376d2d8f2450376357_cgraph">
-<area shape="rect" id="node2" href="../../da/d82/a00091.html#a0f78fbbe8da47e4ac56795c2dbb3b9f2" title="seims.run_seims.MainSEIMS.\lOutputDirectory" alt="" coords="312,5,547,51"/><area shape="rect" id="node3" href="../../da/d82/a00091.html#a99fb2121e3b6b6d9e9fdd6969a04029f" title="seims.run_seims.MainSEIMS.\lCommand" alt="" coords="312,75,547,122"/></map>
+<area shape="rect" id="node2" href="../../da/d82/a00091.html#a0f78fbbe8da47e4ac56795c2dbb3b9f2" title="seims.run_seims.MainSEIMS.\lOutputDirectory" alt="" coords="312,5,547,51"/><area shape="rect" id="node3" href="../../da/d82/a00091.html#a99fb2121e3b6b6d9e9fdd6969a04029f" title="seims.run_seims.MainSEIMS.\lCommand" alt="" coords="312,75,547,122"/><area shape="rect" id="node4" href="../../da/d82/a00091.html#a9b2867cefec81e2605ddfaf04ec3d71d" title="seims.run_seims.MainSEIMS.\lParseTimespan" alt="" coords="312,146,547,193"/></map>
 </div>
 </p>
 
@@ -225,21 +243,98 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Run SEIMS model</pre> 
-<p>Definition at line <a class="el" href="../../df/d91/a00335_source.html#l00088">88</a> of file <a class="el" href="../../df/d91/a00335_source.html">run_seims.py</a>.</p>
+<p>Definition at line <a class="el" href="../../d4/dce/a00337_source.html#l00316">316</a> of file <a class="el" href="../../d4/dce/a00337_source.html">run_seims.py</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../da/d82/a00091_ada4a0d1f8808bf376d2d8f2450376357_cgraph.png" border="0" usemap="#da/d82/a00091_ada4a0d1f8808bf376d2d8f2450376357_cgraph" alt=""/></div>
 <map name="da/d82/a00091_ada4a0d1f8808bf376d2d8f2450376357_cgraph" id="da/d82/a00091_ada4a0d1f8808bf376d2d8f2450376357_cgraph">
-<area shape="rect" id="node2" href="../../da/d82/a00091.html#a0f78fbbe8da47e4ac56795c2dbb3b9f2" title="seims.run_seims.MainSEIMS.\lOutputDirectory" alt="" coords="312,5,547,51"/><area shape="rect" id="node3" href="../../da/d82/a00091.html#a99fb2121e3b6b6d9e9fdd6969a04029f" title="seims.run_seims.MainSEIMS.\lCommand" alt="" coords="312,75,547,122"/></map>
+<area shape="rect" id="node2" href="../../da/d82/a00091.html#a0f78fbbe8da47e4ac56795c2dbb3b9f2" title="seims.run_seims.MainSEIMS.\lOutputDirectory" alt="" coords="312,5,547,51"/><area shape="rect" id="node3" href="../../da/d82/a00091.html#a99fb2121e3b6b6d9e9fdd6969a04029f" title="seims.run_seims.MainSEIMS.\lCommand" alt="" coords="312,75,547,122"/><area shape="rect" id="node4" href="../../da/d82/a00091.html#a9b2867cefec81e2605ddfaf04ec3d71d" title="seims.run_seims.MainSEIMS.\lParseTimespan" alt="" coords="312,146,547,193"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a3e730b6905d3cd004b5052edfa707176"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.run_seims.MainSEIMS.SetOutletObservations </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>vars_list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>vars_value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Set observation data from the inputs.</pre> 
+<p>Definition at line <a class="el" href="../../dd/d1d/a00336_source.html#l00229">229</a> of file <a class="el" href="../../dd/d1d/a00336_source.html">run_seims.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3e730b6905d3cd004b5052edfa707176"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def seims.run_seims.MainSEIMS.SetOutletObservations </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>vars_list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>vars_value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Set observation data from the inputs.</pre> 
+<p>Definition at line <a class="el" href="../../d4/dce/a00337_source.html#l00229">229</a> of file <a class="el" href="../../d4/dce/a00337_source.html">run_seims.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d82/a00091_a3e730b6905d3cd004b5052edfa707176_cgraph.png" border="0" usemap="#da/d82/a00091_a3e730b6905d3cd004b5052edfa707176_cgraph" alt=""/></div>
+<map name="da/d82/a00091_a3e730b6905d3cd004b5052edfa707176_cgraph" id="da/d82/a00091_a3e730b6905d3cd004b5052edfa707176_cgraph">
+</map>
 </div>
 </p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>seims/<a class="el" href="../../df/d91/a00335_source.html">run_seims.py</a></li>
+<li>seims/<a class="el" href="../../dd/d1d/a00336_source.html">run_seims.py</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -247,7 +342,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><b>seims</b></li><li class="navelem"><b>run_seims</b></li><li class="navelem"><a class="el" href="../../da/d82/a00091.html">MainSEIMS</a></li>
-    <li class="footer">Generated on Thu Jun 28 2018 16:22:29 for SEIMS by
+    <li class="footer">Generated on Wed Jul 11 2018 05:07:31 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

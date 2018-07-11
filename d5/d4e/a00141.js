@@ -1,8 +1,8 @@
 var a00141 =
 [
-    [ "RelImpndOp", "d5/d4e/a00141.html#a4cc1261743117c4e345091752e345916", null ],
-    [ "dump", "d5/d4e/a00141.html#a9c517e4e07b371ddfa696af5ede0314b", null ],
-    [ "m_maxFitDepth", "d5/d4e/a00141.html#a27b15363abd30fc80d4a4d870dbb3d77", null ],
-    [ "m_maxPondDepth", "d5/d4e/a00141.html#a3fbf94acca4415d0410c10502a0c606c", null ],
-    [ "m_minFitDepth", "d5/d4e/a00141.html#a462dad655ab0ea4152d72badd5aef796", null ]
+    [ "RegularMeasurement", "d5/d4e/a00141.html#ad6e350df009ea4e28c1c5ff20af5185a", null ],
+    [ "~RegularMeasurement", "d5/d4e/a00141.html#a06f511cb0f8e143572659a50fd41044a", null ],
+    [ "GetSiteDataByTime", "d5/d4e/a00141.html#a0831ae60972d776e431d600aefb3e1e8", null ],
+    [ "m_interval", "d5/d4e/a00141.html#a6fffb32a797276d7cc6b2bd8b2f369c8", null ],
+    [ "m_siteData", "d5/d4e/a00141.html#a2fb71444556a70bf7aac4b5af38dd04b", null ]
 ];

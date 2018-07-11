@@ -126,13 +126,13 @@ $(document).ready(function(){initNavTree('db/db6/a00074.html','../../');});
 <p>HydroClimate sites information.  
  <a href="../../db/db6/a00074.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="../../d2/d91/a00459_source.html">InputStation.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="../../db/db1/a00460_source.html">InputStation.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for InputStation:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d0/df0/a00934.png" border="0" usemap="#_input_station_inherit__map" alt="Inheritance graph"/></div>
 <map name="_input_station_inherit__map" id="_input_station_inherit__map">
-<area shape="rect" id="node2" href="../../db/df8/a00076.html" title="Base type of all interfaces. All interface types are encouraged to be virtual inherited. " alt="" coords="39,173,159,259"/><area shape="rect" id="node3" href="../../d4/d81/a00110.html" title="Base class for classes that cannot be copied. By inheriting this class you can disable copying of you..." alt="" coords="22,5,175,125"/></map>
+<area shape="rect" id="node2" href="../../db/df8/a00076.html" title="Base type of all interfaces. All interface types are encouraged to be virtual inherited. " alt="" coords="39,173,159,259"/><area shape="rect" id="node3" href="../../dd/d42/a00109.html" title="Base class for classes that cannot be copied. By inheriting this class you can disable copying of you..." alt="" coords="22,5,175,125"/></map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -157,21 +157,21 @@ float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=".
 float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/db6/a00074.html#a18de5cb1a83d3446a2fda16a3550241b">GetLatitude</a> (const char *type) const </td></tr>
 <tr class="memdesc:a18de5cb1a83d3446a2fda16a3550241b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get latitudes of given site type. <br/></td></tr>
 <tr class="separator:a18de5cb1a83d3446a2fda16a3550241b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abdd4eb90118878e83a98a8ba41a87cc5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/db6/a00074.html#abdd4eb90118878e83a98a8ba41a87cc5">GetTimeSeriesData</a> (time_t time, string type, int *nRow, float **data)</td></tr>
-<tr class="memdesc:abdd4eb90118878e83a98a8ba41a87cc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get time series data.  <a href="#abdd4eb90118878e83a98a8ba41a87cc5">More...</a><br/></td></tr>
-<tr class="separator:abdd4eb90118878e83a98a8ba41a87cc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2961669393efba94b2094691f136e0e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/db6/a00074.html#a2961669393efba94b2094691f136e0e7">ReadSitesData</a> (string hydroDBName, string sitesList, string siteType, time_t startDate, time_t endDate, bool stormMode=false)</td></tr>
-<tr class="memdesc:a2961669393efba94b2094691f136e0e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read data of each site type.  <a href="#a2961669393efba94b2094691f136e0e7">More...</a><br/></td></tr>
-<tr class="separator:a2961669393efba94b2094691f136e0e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59537b8c8315503e508d2fcc2a3baa18"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/db6/a00074.html#a59537b8c8315503e508d2fcc2a3baa18">GetTimeSeriesData</a> (time_t time, const string &amp;type, int *nRow, float **data)</td></tr>
+<tr class="memdesc:a59537b8c8315503e508d2fcc2a3baa18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get time series data.  <a href="#a59537b8c8315503e508d2fcc2a3baa18">More...</a><br/></td></tr>
+<tr class="separator:a59537b8c8315503e508d2fcc2a3baa18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8250c479a2575e621b06994b42e9773"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/db6/a00074.html#ab8250c479a2575e621b06994b42e9773">ReadSitesData</a> (const string &amp;hydroDBName, const string &amp;sitesList, const string &amp;siteType, time_t startDate, time_t endDate, bool stormMode=false)</td></tr>
+<tr class="memdesc:ab8250c479a2575e621b06994b42e9773"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read data of each site type.  <a href="#ab8250c479a2575e621b06994b42e9773">More...</a><br/></td></tr>
+<tr class="separator:ab8250c479a2575e621b06994b42e9773"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:aaef33c01b2bb328720173a063312a48c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/db6/a00074.html#aaef33c01b2bb328720173a063312a48c">build_query_bson</a> (int nSites, vector&lt; int &gt; &amp;siteIDList, string &amp;siteType, bson_t *query)</td></tr>
-<tr class="memdesc:aaef33c01b2bb328720173a063312a48c"><td class="mdescLeft">&#160;</td><td class="mdescRight">build BSON query sentences for MongoDB  <a href="#aaef33c01b2bb328720173a063312a48c">More...</a><br/></td></tr>
-<tr class="separator:aaef33c01b2bb328720173a063312a48c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa11da83df6f999201bc6d96bc4dd810f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/db6/a00074.html#aa11da83df6f999201bc6d96bc4dd810f">ReadSitesInfo</a> (string siteType, string hydroDBName, string sitesList)</td></tr>
-<tr class="memdesc:aa11da83df6f999201bc6d96bc4dd810f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read HydroClimate sites information from HydroClimateDB (MongoDB)  <a href="#aa11da83df6f999201bc6d96bc4dd810f">More...</a><br/></td></tr>
-<tr class="separator:aa11da83df6f999201bc6d96bc4dd810f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad676fb6f0ad26b99846e3324d71d42a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/db6/a00074.html#ad676fb6f0ad26b99846e3324d71d42a1">build_query_bson</a> (int nSites, vector&lt; int &gt; &amp;siteIDList, const string &amp;siteType, bson_t *query)</td></tr>
+<tr class="memdesc:ad676fb6f0ad26b99846e3324d71d42a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">build BSON query sentences for MongoDB  <a href="#ad676fb6f0ad26b99846e3324d71d42a1">More...</a><br/></td></tr>
+<tr class="separator:ad676fb6f0ad26b99846e3324d71d42a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23758ec2c8a1559c79d7f5f8b20162ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/db6/a00074.html#a23758ec2c8a1559c79d7f5f8b20162ff">ReadSitesInfo</a> (const string &amp;siteType, const string &amp;hydroDBName, const string &amp;sitesList)</td></tr>
+<tr class="memdesc:a23758ec2c8a1559c79d7f5f8b20162ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read HydroClimate sites information from HydroClimateDB (MongoDB)  <a href="#a23758ec2c8a1559c79d7f5f8b20162ff">More...</a><br/></td></tr>
+<tr class="separator:a23758ec2c8a1559c79d7f5f8b20162ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_a00076"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a00076')"><img src="../../closed.png" alt="-"/>&#160;Private Member Functions inherited from <a class="el" href="../../db/df8/a00076.html">ccgl::Interface</a></td></tr>
 <tr class="memitem:a7325510a5111ae7d2a75662393075e10 inherit pub_methods_a00076"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7325510a5111ae7d2a75662393075e10"></a>
 virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/df8/a00076.html#a7325510a5111ae7d2a75662393075e10">~Interface</a> ()</td></tr>
@@ -211,9 +211,9 @@ map&lt; string, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a c
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>HydroClimate sites information. </p>
 
-<p>Definition at line <a class="el" href="../../d2/d91/a00459_source.html#l00026">26</a> of file <a class="el" href="../../d2/d91/a00459_source.html">InputStation.h</a>.</p>
+<p>Definition at line <a class="el" href="../../db/db1/a00460_source.html#l00026">26</a> of file <a class="el" href="../../db/db1/a00460_source.html">InputStation.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="aaef33c01b2bb328720173a063312a48c"></a>
+<a class="anchor" id="ad676fb6f0ad26b99846e3324d71d42a1"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -235,7 +235,7 @@ map&lt; string, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a c
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">string &amp;&#160;</td>
+          <td class="paramtype">const string &amp;&#160;</td>
           <td class="paramname"><em>siteType</em>, </td>
         </tr>
         <tr>
@@ -270,11 +270,11 @@ map&lt; string, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a c
 <p>build query statement</p>
 <p>sort by site ID </p>
 
-<p>Definition at line <a class="el" href="../../da/d65/a00458_source.html#l00046">46</a> of file <a class="el" href="../../da/d65/a00458_source.html">InputStation.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d2/d91/a00459_source.html#l00046">46</a> of file <a class="el" href="../../d2/d91/a00459_source.html">InputStation.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="abdd4eb90118878e83a98a8ba41a87cc5"></a>
+<a class="anchor" id="a59537b8c8315503e508d2fcc2a3baa18"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -287,7 +287,7 @@ map&lt; string, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a c
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">string&#160;</td>
+          <td class="paramtype">const string &amp;&#160;</td>
           <td class="paramname"><em>type</em>, </td>
         </tr>
         <tr>
@@ -321,39 +321,39 @@ map&lt; string, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a c
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="../../da/d65/a00458_source.html#l00180">180</a> of file <a class="el" href="../../da/d65/a00458_source.html">InputStation.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d2/d91/a00459_source.html#l00172">172</a> of file <a class="el" href="../../d2/d91/a00459_source.html">InputStation.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../db/db6/a00074_abdd4eb90118878e83a98a8ba41a87cc5_cgraph.png" border="0" usemap="#db/db6/a00074_abdd4eb90118878e83a98a8ba41a87cc5_cgraph" alt=""/></div>
-<map name="db/db6/a00074_abdd4eb90118878e83a98a8ba41a87cc5_cgraph" id="db/db6/a00074_abdd4eb90118878e83a98a8ba41a87cc5_cgraph">
+<div class="center"><img src="../../db/db6/a00074_a59537b8c8315503e508d2fcc2a3baa18_cgraph.png" border="0" usemap="#db/db6/a00074_a59537b8c8315503e508d2fcc2a3baa18_cgraph" alt=""/></div>
+<map name="db/db6/a00074_a59537b8c8315503e508d2fcc2a3baa18_cgraph" id="db/db6/a00074_a59537b8c8315503e508d2fcc2a3baa18_cgraph">
 <area shape="rect" id="node2" href="../../d1/dc1/a00092.html#a5adee45804fa27da97ecf8e5979717ea" title="Get Number of site. " alt="" coords="310,5,546,35"/><area shape="rect" id="node3" href="../../d1/dc1/a00092.html#a2195da07e9d304304905d020d32e9760" title="Get site data by time. " alt="" coords="321,59,535,106"/></map>
 </div>
 </p>
 
 </div>
 </div>
-<a class="anchor" id="a2961669393efba94b2094691f136e0e7"></a>
+<a class="anchor" id="ab8250c479a2575e621b06994b42e9773"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void InputStation::ReadSitesData </td>
           <td>(</td>
-          <td class="paramtype">string&#160;</td>
+          <td class="paramtype">const string &amp;&#160;</td>
           <td class="paramname"><em>hydroDBName</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">string&#160;</td>
+          <td class="paramtype">const string &amp;&#160;</td>
           <td class="paramname"><em>sitesList</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">string&#160;</td>
+          <td class="paramtype">const string &amp;&#160;</td>
           <td class="paramname"><em>siteType</em>, </td>
         </tr>
         <tr>
@@ -395,20 +395,20 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="../../da/d65/a00458_source.html#l00153">153</a> of file <a class="el" href="../../da/d65/a00458_source.html">InputStation.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d2/d91/a00459_source.html#l00155">155</a> of file <a class="el" href="../../d2/d91/a00459_source.html">InputStation.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../db/db6/a00074_a2961669393efba94b2094691f136e0e7_cgraph.png" border="0" usemap="#db/db6/a00074_a2961669393efba94b2094691f136e0e7_cgraph" alt=""/></div>
-<map name="db/db6/a00074_a2961669393efba94b2094691f136e0e7_cgraph" id="db/db6/a00074_a2961669393efba94b2094691f136e0e7_cgraph">
-<area shape="rect" id="node2" href="../../db/db6/a00074.html#aa11da83df6f999201bc6d96bc4dd810f" title="Read HydroClimate sites information from HydroClimateDB (MongoDB) " alt="" coords="277,13,493,43"/><area shape="rect" id="node3" href="../../db/db6/a00074.html#aaef33c01b2bb328720173a063312a48c" title="build BSON query sentences for MongoDB " alt="" coords="542,5,693,51"/></map>
+<div class="center"><img src="../../db/db6/a00074_ab8250c479a2575e621b06994b42e9773_cgraph.png" border="0" usemap="#db/db6/a00074_ab8250c479a2575e621b06994b42e9773_cgraph" alt=""/></div>
+<map name="db/db6/a00074_ab8250c479a2575e621b06994b42e9773_cgraph" id="db/db6/a00074_ab8250c479a2575e621b06994b42e9773_cgraph">
+<area shape="rect" id="node2" href="../../db/db6/a00074.html#a23758ec2c8a1559c79d7f5f8b20162ff" title="Read HydroClimate sites information from HydroClimateDB (MongoDB) " alt="" coords="277,13,493,43"/><area shape="rect" id="node3" href="../../db/db6/a00074.html#ad676fb6f0ad26b99846e3324d71d42a1" title="build BSON query sentences for MongoDB " alt="" coords="542,5,693,51"/></map>
 </div>
 </p>
 
 </div>
 </div>
-<a class="anchor" id="aa11da83df6f999201bc6d96bc4dd810f"></a>
+<a class="anchor" id="a23758ec2c8a1559c79d7f5f8b20162ff"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -418,19 +418,19 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname">void InputStation::ReadSitesInfo </td>
           <td>(</td>
-          <td class="paramtype">string&#160;</td>
+          <td class="paramtype">const string &amp;&#160;</td>
           <td class="paramname"><em>siteType</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">string&#160;</td>
+          <td class="paramtype">const string &amp;&#160;</td>
           <td class="paramname"><em>hydroDBName</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">string&#160;</td>
+          <td class="paramtype">const string &amp;&#160;</td>
           <td class="paramname"><em>sitesList</em>&#160;</td>
         </tr>
         <tr>
@@ -456,14 +456,14 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="../../da/d65/a00458_source.html#l00091">91</a> of file <a class="el" href="../../da/d65/a00458_source.html">InputStation.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d2/d91/a00459_source.html#l00092">92</a> of file <a class="el" href="../../d2/d91/a00459_source.html">InputStation.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../db/db6/a00074_aa11da83df6f999201bc6d96bc4dd810f_cgraph.png" border="0" usemap="#db/db6/a00074_aa11da83df6f999201bc6d96bc4dd810f_cgraph" alt=""/></div>
-<map name="db/db6/a00074_aa11da83df6f999201bc6d96bc4dd810f_cgraph" id="db/db6/a00074_aa11da83df6f999201bc6d96bc4dd810f_cgraph">
-<area shape="rect" id="node2" href="../../db/db6/a00074.html#aaef33c01b2bb328720173a063312a48c" title="build BSON query sentences for MongoDB " alt="" coords="270,5,421,51"/></map>
+<div class="center"><img src="../../db/db6/a00074_a23758ec2c8a1559c79d7f5f8b20162ff_cgraph.png" border="0" usemap="#db/db6/a00074_a23758ec2c8a1559c79d7f5f8b20162ff_cgraph" alt=""/></div>
+<map name="db/db6/a00074_a23758ec2c8a1559c79d7f5f8b20162ff_cgraph" id="db/db6/a00074_a23758ec2c8a1559c79d7f5f8b20162ff_cgraph">
+<area shape="rect" id="node2" href="../../db/db6/a00074.html#ad676fb6f0ad26b99846e3324d71d42a1" title="build BSON query sentences for MongoDB " alt="" coords="270,5,421,51"/></map>
 </div>
 </p>
 
@@ -491,13 +491,13 @@ Here is the call graph for this function:</div>
 <p><a class="el" href="../../d1/dc1/a00092.html" title="Get HydroClimate measurement data from MongoDB. ">Measurement</a> object of each data type. </p>
 <dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../d1/dc1/a00092.html" title="Get HydroClimate measurement data from MongoDB. ">Measurement</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="../../d2/d91/a00459_source.html#l00094">94</a> of file <a class="el" href="../../d2/d91/a00459_source.html">InputStation.h</a>.</p>
+<p>Definition at line <a class="el" href="../../db/db1/a00460_source.html#l00094">94</a> of file <a class="el" href="../../db/db1/a00460_source.html">InputStation.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>seims/src/seims_main/base/data/<a class="el" href="../../d2/d91/a00459_source.html">InputStation.h</a></li>
-<li>seims/src/seims_main/base/data/<a class="el" href="../../da/d65/a00458_source.html">InputStation.cpp</a></li>
+<li>seims/src/seims_main/base/data/<a class="el" href="../../db/db1/a00460_source.html">InputStation.h</a></li>
+<li>seims/src/seims_main/base/data/<a class="el" href="../../d2/d91/a00459_source.html">InputStation.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -505,7 +505,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../db/db6/a00074.html">InputStation</a></li>
-    <li class="footer">Generated on Thu Jun 28 2018 16:22:28 for SEIMS by
+    <li class="footer">Generated on Wed Jul 11 2018 05:07:30 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

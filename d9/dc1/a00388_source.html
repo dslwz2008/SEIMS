@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SEIMS: seims/src/ccgl/test/utils/test_time.cpp Source File</title>
+<title>SEIMS: seims/src/ccgl/test/utils/test_string.cpp Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -112,120 +112,42 @@ $(document).ready(function(){initNavTree('d9/dc1/a00388_source.html','../../');}
 
 <div class="header">
   <div class="headertitle">
-<div class="title">test_time.cpp</div>  </div>
+<div class="title">test_string.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;gtest/gtest.h&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;../../src/utils_time.h&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;../../src/utils_string.h&quot;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using namespace </span>ccgl::utils_time;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using namespace </span>ccgl::utils_string;</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;TEST(TestutilsTime, isLeapYear) {</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    EXPECT_TRUE(IsLeapYear(2000));</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    EXPECT_FALSE(IsLeapYear(1800));</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    EXPECT_TRUE(IsLeapYear(2004));</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;}</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// Date time for tests of TestutilsTime</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// UTC+08:00, 2018-06-09 07:04:58</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">// UTC+00:00, 2018-06-08 23:04:58</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">//    tm_year=2018, tm_mon=6, tm_mday=9, tm_hour=7, tm_min=4, tm_sec=58, tm_wday=5, tm_yday=160</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keywordtype">double</span> get_utc_offset() {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    time_t t = 1528499098;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">struct </span>tm *utc = <span class="keyword">new</span> tm();</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">struct </span>tm *local = <span class="keyword">new</span> tm();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    GetDateTime(t, utc);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    GetDateTime(t, local, <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">return</span> difftime(mktime(utc), mktime(local));</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keywordtype">double</span> tzone_offset = get_utc_offset();</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;TEST(TestutilsTime, ConvertToString) {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    time_t t = 1528499098;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">string</span> utc_t = ConvertToString(t); <span class="comment">// By default, the input and output is UTC time</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    EXPECT_STREQ(<span class="stringliteral">&quot;2018-06-08&quot;</span>, utc_t.c_str());</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">if</span> (tzone_offset == -8 * 3600) {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordtype">string</span> local_t = ConvertToString(t, <span class="keyword">false</span>); <span class="comment">// The input and output is local time</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        EXPECT_STREQ(<span class="stringliteral">&quot;2018-06-09&quot;</span>, local_t.c_str());</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;TEST(TestutilsTime, ConvertToString2) {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    time_t t = 1528499098;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">string</span> utc_t = ConvertToString2(t);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    EXPECT_STREQ(<span class="stringliteral">&quot;2018-06-08 23:04:58&quot;</span>, utc_t.c_str());</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">if</span> (tzone_offset == -8 * 3600) {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordtype">string</span> local_t = ConvertToString2(t, <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        EXPECT_STREQ(<span class="stringliteral">&quot;2018-06-09 07:04:58&quot;</span>, local_t.c_str());</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;TEST(TestutilsTime, ConvertToTime) {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">string</span> time_str_blank = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    EXPECT_EQ(0, ConvertToTime(time_str_blank, <span class="stringliteral">&quot;%d-%d-%d&quot;</span>, <span class="keyword">true</span>));</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">string</span> time_str = <span class="stringliteral">&quot;2018-06-09&quot;</span>; <span class="comment">// UTC: 1528502400, UTC+8: 1528473600</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    EXPECT_EQ(1528502400, ConvertToTime(time_str, <span class="stringliteral">&quot;%d-%d-%d&quot;</span>, <span class="keyword">false</span>));</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    EXPECT_EQ(1528502400, ConvertToTime(time_str, <span class="stringliteral">&quot;%4d-%2d-%2d&quot;</span>, <span class="keyword">false</span>));</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">string</span> time_str_hour = <span class="stringliteral">&quot;2018-06-09 07:04:58&quot;</span>; <span class="comment">// UTC+8: 1528499098, UTC+0:  1528527898</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    EXPECT_EQ(1528527898, ConvertToTime(time_str_hour, <span class="stringliteral">&quot;%d-%d-%d %d:%d:%d&quot;</span>, <span class="keyword">true</span>));</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    EXPECT_EQ(1528527898, ConvertToTime(time_str_hour, <span class="stringliteral">&quot;%4d-%2d-%2d %2d:%2d:%2d&quot;</span>, <span class="keyword">true</span>));</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">if</span> (tzone_offset == -8 * 3600) {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        EXPECT_EQ(1528473600, ConvertToTime(time_str, <span class="stringliteral">&quot;%d-%d-%d&quot;</span>, <span class="keyword">false</span>, <span class="keyword">false</span>));</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        EXPECT_EQ(1528473600, ConvertToTime(time_str, <span class="stringliteral">&quot;%4d-%2d-%2d&quot;</span>, <span class="keyword">false</span>, <span class="keyword">false</span>));</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        EXPECT_EQ(1528499098, ConvertToTime(time_str_hour, <span class="stringliteral">&quot;%d-%d-%d %d:%d:%d&quot;</span>, <span class="keyword">true</span>, <span class="keyword">false</span>));</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        EXPECT_EQ(1528499098, ConvertToTime(time_str_hour, <span class="stringliteral">&quot;%4d-%2d-%2d %2d:%2d:%2d&quot;</span>, <span class="keyword">true</span>, <span class="keyword">false</span>));</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;TEST(TestutilsTime, ConvertYMDToTime) {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">int</span> yr = 2018;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">int</span> mon = 6;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">int</span> day = 9;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    EXPECT_EQ(1528502400, ConvertYMDToTime(yr, mon, day));</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">if</span> (tzone_offset == -8 * 3600) {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        EXPECT_EQ(1528473600, ConvertYMDToTime(yr, mon, day,<span class="keyword">false</span>));</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;TEST(TestutilsTime, GetDateInfoFromTimet) {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    time_t t = 1528499098;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">int</span> yr, mon, day;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    EXPECT_EQ(0, GetDateInfoFromTimet(t, &amp;yr, &amp;mon, &amp;day));</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    EXPECT_EQ(2018, yr);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    EXPECT_EQ(6, mon);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    EXPECT_EQ(8, day);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">if</span> (tzone_offset == -8 * 3600) {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        EXPECT_EQ(0, GetDateInfoFromTimet(t, &amp;yr, &amp;mon, &amp;day, <span class="keyword">false</span>));</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        EXPECT_EQ(2018, yr);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        EXPECT_EQ(6, mon);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        EXPECT_EQ(9, day);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;TEST(TestutilsTime, GetYearMonthDay) {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    EXPECT_EQ(2018, GetYear(1528499098));</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    EXPECT_EQ(6, GetMonth(1528499098));</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    EXPECT_EQ(8, GetDay(1528499098));</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    EXPECT_EQ(159, DayOfYear(1528499098));</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    EXPECT_EQ(159, DayOfYear(2018, 6, 8));</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    EXPECT_EQ(JulianDay(2018, 6, 8), JulianDay(1528499098));</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">if</span> (tzone_offset == -8 * 3600) {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        EXPECT_EQ(2018, GetYear(1528499098,<span class="keyword">false</span>));</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        EXPECT_EQ(6, GetMonth(1528499098,<span class="keyword">false</span>));</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        EXPECT_EQ(9, GetDay(1528499098,<span class="keyword">false</span>));</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        EXPECT_EQ(160, DayOfYear(1528499098,<span class="keyword">false</span>));</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        EXPECT_EQ(160, DayOfYear(2018, 6, 9));</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        EXPECT_EQ(JulianDay(2018, 6, 9), JulianDay(1528499098, <span class="keyword">false</span>));</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;TEST(TestutilsString, SplitStringForValuesFlt) {</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keywordtype">string</span> float_strs = <span class="stringliteral">&quot;-1.0,1.0e3,-0.001,2.5e-1&quot;</span>;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    vector&lt;float&gt; floats;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    SplitStringForValues(float_strs, <span class="charliteral">&#39;,&#39;</span>, floats);</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    EXPECT_EQ(4, floats.size());</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    EXPECT_FLOAT_EQ(-1.f, floats[0]);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    EXPECT_FLOAT_EQ(1000.f, floats[1]);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    EXPECT_FLOAT_EQ(-0.001f, floats[2]);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    EXPECT_FLOAT_EQ(0.25f, floats[3]);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;TEST(TestutilsString, SplitStringForValuesInt) {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">string</span> int_strs = <span class="stringliteral">&quot;-1,0,1,4&quot;</span>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    vector&lt;int&gt; ints;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    SplitStringForValues(int_strs, <span class="charliteral">&#39;,&#39;</span>, ints);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    EXPECT_EQ(4, ints.size());</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    EXPECT_EQ(-1, ints[0]);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    EXPECT_EQ(0, ints[1]);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    EXPECT_EQ(1, ints[2]);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    EXPECT_EQ(4, ints[3]);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_1635fbfac89ac2806d51d330c1bf9d4d.html">ccgl</a></li><li class="navelem"><a class="el" href="../../dir_a6c0e548a0bdc35f60ded49e03ac0912.html">test</a></li><li class="navelem"><a class="el" href="../../dir_76c1fb1286096247a413a22b00ef980c.html">utils</a></li><li class="navelem"><b>test_time.cpp</b></li>
-    <li class="footer">Generated on Thu Jun 28 2018 16:22:26 for SEIMS by
+    <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_1635fbfac89ac2806d51d330c1bf9d4d.html">ccgl</a></li><li class="navelem"><a class="el" href="../../dir_a6c0e548a0bdc35f60ded49e03ac0912.html">test</a></li><li class="navelem"><a class="el" href="../../dir_76c1fb1286096247a413a22b00ef980c.html">utils</a></li><li class="navelem"><b>test_string.cpp</b></li>
+    <li class="footer">Generated on Wed Jul 11 2018 05:07:28 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
