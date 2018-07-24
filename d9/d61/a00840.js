@@ -27,6 +27,7 @@ var a00840 =
       [ "m_nSoilLyrs", "d7/dce/a00143.html#ad405b3f6f567f39adf3579b339061085", null ],
       [ "m_nSubbsns", "d7/dce/a00143.html#a74cbb907e79a9327f23e1981c83e1bce", null ],
       [ "m_pet", "d7/dce/a00143.html#a174c182cbe1c6264b4c276a1085ffd39", null ],
+      [ "m_revap", "d7/dce/a00143.html#a8cfc2cfd099ea6deb25d8b9e7093a3f4", null ],
       [ "m_slope", "d7/dce/a00143.html#afd9e566842138266d5ba8423a7870942", null ],
       [ "m_soilDepth", "d7/dce/a00143.html#a08e9b063919c4813a1dea5be6845bfa1", null ],
       [ "m_soilET", "d7/dce/a00143.html#a7aa3484b25d4d38e855a7ef70f88484e", null ],

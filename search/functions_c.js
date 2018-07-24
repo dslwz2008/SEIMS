@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['manningq',['manningQ',['../d1/dd6/a00108.html#a6c7bf3e1611044a45c0125af58b8fa1c',1,'MUSK_CH']]],
   ['mask_5forigin_5fdelineated_5fdata',['mask_origin_delineated_data',['../dc/de6/a00167.html#a4560c6f3b28dca2285eb6b3be69b6be5',1,'seims.preprocess.sd_delineation.SpatialDelineation.mask_origin_delineated_data'],['../dc/de6/a00167.html#a4560c6f3b28dca2285eb6b3be69b6be5',1,'seims.preprocess.sd_delineation.SpatialDelineation.mask_origin_delineated_data']]],
   ['mask_5fraster_5fcpp',['mask_raster_cpp',['../dc/de6/a00167.html#a8021ee8331581632fd89d6916a2ae9de',1,'seims.preprocess.sd_delineation.SpatialDelineation.mask_raster_cpp'],['../dc/de6/a00167.html#a8021ee8331581632fd89d6916a2ae9de',1,'seims.preprocess.sd_delineation.SpatialDelineation.mask_raster_cpp']]],
   ['maskandcalculatevalidposition',['MaskAndCalculateValidPosition',['../d6/d5b/a00026.html#a2a235512f4f3590fc17e43c45fb4c4c1',1,'ccgl::data_raster::clsRasterData']]],

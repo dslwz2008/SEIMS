@@ -153,14 +153,15 @@ $(document).ready(function(){initNavTree('dd/d5a/a00538_source.html','../../');}
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    mdi.AddInput(VAR_SOL_SW, UNIT_DEPTH_MM, DESC_SOL_SW, Source_Module, DT_Raster1D);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    mdi.AddInput(VAR_SURU, UNIT_DEPTH_MM, DESC_SURU, Source_Module, DT_Raster1D);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    mdi.AddInput(VAR_POT_VOL, UNIT_DEPTH_MM, DESC_POT_VOL, Source_Module_Optional, DT_Raster1D);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="comment">// set the output variables</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    mdi.AddOutput(VAR_PERCO, UNIT_DEPTH_MM, DESC_PERCO, DT_Raster2D);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">string</span> res = mdi.GetXMLDocument();</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">char</span>* tmp = <span class="keyword">new</span> <span class="keywordtype">char</span>[res.size() + 1];</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    strprintf(tmp, res.size() + 1, <span class="stringliteral">&quot;%s&quot;</span>, res.c_str());</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">return</span> tmp;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    mdi.AddInput(VAR_IMPOUND_TRIG, UNIT_NON_DIM, DESC_IMPOUND_TRIG, Source_Module_Optional, DT_Raster1D);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">// set the output variables</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    mdi.AddOutput(VAR_PERCO, UNIT_DEPTH_MM, DESC_PERCO, DT_Raster2D);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">string</span> res = mdi.GetXMLDocument();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">char</span>* tmp = <span class="keyword">new</span> <span class="keywordtype">char</span>[res.size() + 1];</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    strprintf(tmp, res.size() + 1, <span class="stringliteral">&quot;%s&quot;</span>, res.c_str());</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">return</span> tmp;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
 <div class="ttc" id="a00155_html"><div class="ttname"><a href="../../d3/df8/a00155.html">SimulationModule</a></div><div class="ttdoc">Base module for all simulation modules in SEIMS. </div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d9c/a00487_source.html#l00041">SimulationModule.h:41</a></div></div>
 <div class="ttc" id="a00126_html"><div class="ttname"><a href="../../d7/d12/a00126.html">PER_STR</a></div><div class="ttdoc">Percolation calculated by storage routing method. </div><div class="ttdef"><b>Definition:</b> <a href="../../d7/de4/a00634_source.html#l00028">PER_STR.h:28</a></div></div>
 <div class="ttc" id="a00094_html"><div class="ttname"><a href="../../dc/d54/a00094.html">MetadataInfo</a></div><div class="ttdoc">Metadata information of module. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dc5/a00480_source.html#l00122">MetadataInfo.h:122</a></div></div>
@@ -170,7 +171,7 @@ $(document).ready(function(){initNavTree('dd/d5a/a00538_source.html','../../');}
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="../../dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="../../dir_b89a50a3d6b2f98326f9f3f569cfd788.html">modules</a></li><li class="navelem"><a class="el" href="../../dir_5bf5a4201e7cd7ac6c5f03aeeeae8b2c.html">hydrology_longterm</a></li><li class="navelem"><a class="el" href="../../dir_468fd735445cfbc96976726ed50358ef.html">PER_STR</a></li><li class="navelem"><b>api.cpp</b></li>
-    <li class="footer">Generated on Wed Jul 11 2018 05:07:29 for SEIMS by
+    <li class="footer">Generated on Tue Jul 24 2018 11:59:16 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

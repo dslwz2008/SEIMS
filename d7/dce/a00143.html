@@ -285,6 +285,10 @@ float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=".
 float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dce/a00143.html#a174c182cbe1c6264b4c276a1085ffd39">m_pet</a></td></tr>
 <tr class="memdesc:a174c182cbe1c6264b4c276a1085ffd39"><td class="mdescLeft">&#160;</td><td class="mdescRight">PET(mm) from the PET modules. <br/></td></tr>
 <tr class="separator:a174c182cbe1c6264b4c276a1085ffd39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cfc2cfd099ea6deb25d8b9e7093a3f4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8cfc2cfd099ea6deb25d8b9e7093a3f4"></a>
+float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dce/a00143.html#a8cfc2cfd099ea6deb25d8b9e7093a3f4">m_revap</a></td></tr>
+<tr class="memdesc:a8cfc2cfd099ea6deb25d8b9e7093a3f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">revap needed of cell <br/></td></tr>
+<tr class="separator:a8cfc2cfd099ea6deb25d8b9e7093a3f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf6217afdea218d53fd4665aa9c77c85"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaf6217afdea218d53fd4665aa9c77c85"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dce/a00143.html#aaf6217afdea218d53fd4665aa9c77c85">m_GW0</a></td></tr>
 <tr class="memdesc:aaf6217afdea218d53fd4665aa9c77c85"><td class="mdescLeft">&#160;</td><td class="mdescRight">initial ground water storage (or at time t-1) <br/></td></tr>
@@ -368,7 +372,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Reservoir Method to calculate groundwater balance and baseflow of longterm model. </p>
 
-<p>Definition at line <a class="el" href="../../dc/d4d/a00620_source.html#l00053">53</a> of file <a class="el" href="../../dc/d4d/a00620_source.html">ReservoirMethod.h</a>.</p>
+<p>Definition at line <a class="el" href="../../dc/d4d/a00620_source.html#l00054">54</a> of file <a class="el" href="../../dc/d4d/a00620_source.html">ReservoirMethod.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="acfd51435b7a38bce13756528fec8ee37"></a>
 <div class="memitem">
@@ -395,7 +399,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 <p>check the input data. Make sure all the input data is available. </p>
 <dl class="section return"><dt>Returns</dt><dd>bool The validity of the input data. </dd></dl>
 
-<p>Definition at line <a class="el" href="../../d6/d6a/a00619_source.html#l00190">190</a> of file <a class="el" href="../../d6/d6a/a00619_source.html">ReservoirMethod.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d6/d6a/a00619_source.html#l00187">187</a> of file <a class="el" href="../../d6/d6a/a00619_source.html">ReservoirMethod.cpp</a>.</p>
 
 </div>
 </div>
@@ -441,7 +445,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool The validity of the dimension </dd></dl>
 
-<p>Definition at line <a class="el" href="../../d6/d6a/a00619_source.html#l00213">213</a> of file <a class="el" href="../../d6/d6a/a00619_source.html">ReservoirMethod.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d6/d6a/a00619_source.html#l00210">210</a> of file <a class="el" href="../../d6/d6a/a00619_source.html">ReservoirMethod.cpp</a>.</p>
 
 </div>
 </div>
@@ -468,7 +472,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 </div><div class="memdoc">
 
 <p>Execute the simulation. </p>
-<p>percolated water ==&gt; vadose zone ==&gt; shallow aquifer ==&gt; deep aquifer currently, for convenience, we assume a small portion of the percolated water will enter groundwater. By LJ. 2016-9-2 </p>
+<p>percolated water ==&gt; vadose zone ==&gt; shallow aquifer ==&gt; deep aquifer currently, for convenience, we assume a small portion of the percolated water will enter groundwater. By LJ. 2016-9-2</p>
+<p>&lt; deep percolation </p>
 
 <p>Reimplemented from <a class="el" href="../../d3/df8/a00155.html#a686c39c1c4894cc144699ba0681d509d">SimulationModule</a>.</p>
 
@@ -509,7 +514,7 @@ Here is the call graph for this function:</div>
 <dd>
 <a class="el" href="../../de/d45/a00175.html" title="Subbasin related parameters and methods. ">Subbasin</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="../../dc/d4d/a00620_source.html#l00176">176</a> of file <a class="el" href="../../dc/d4d/a00620_source.html">ReservoirMethod.h</a>.</p>
+<p>Definition at line <a class="el" href="../../dc/d4d/a00620_source.html#l00175">175</a> of file <a class="el" href="../../dc/d4d/a00620_source.html">ReservoirMethod.h</a>.</p>
 
 </div>
 </div>
@@ -523,7 +528,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d7/dce/a00143.html">ReservoirMethod</a></li>
-    <li class="footer">Generated on Wed Jul 11 2018 05:07:31 for SEIMS by
+    <li class="footer">Generated on Tue Jul 24 2018 11:59:19 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

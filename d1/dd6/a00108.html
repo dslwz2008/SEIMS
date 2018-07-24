@@ -132,7 +132,7 @@ Inheritance diagram for MUSK_CH:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../da/d17/a00964.png" border="0" usemap="#_m_u_s_k___c_h_inherit__map" alt="Inheritance graph"/></div>
 <map name="_m_u_s_k___c_h_inherit__map" id="_m_u_s_k___c_h_inherit__map">
-<area shape="rect" id="node2" href="../../d3/df8/a00155.html" title="Base module for all simulation modules in SEIMS. " alt="" coords="16,307,211,687"/><area shape="rect" id="node3" href="../../db/df8/a00076.html" title="Base type of all interfaces. All interface types are encouraged to be virtual inherited. " alt="" coords="53,173,173,259"/><area shape="rect" id="node4" href="../../dd/d42/a00109.html" title="Base class for classes that cannot be copied. By inheriting this class you can disable copying of you..." alt="" coords="37,5,189,125"/></map>
+<area shape="rect" id="node2" href="../../d3/df8/a00155.html" title="Base module for all simulation modules in SEIMS. " alt="" coords="29,307,224,687"/><area shape="rect" id="node3" href="../../db/df8/a00076.html" title="Base type of all interfaces. All interface types are encouraged to be virtual inherited. " alt="" coords="67,173,187,259"/><area shape="rect" id="node4" href="../../dd/d42/a00109.html" title="Base class for classes that cannot be copied. By inheriting this class you can disable copying of you..." alt="" coords="50,5,203,125"/></map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -219,8 +219,11 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:ac55bd9b70d637718be78c183d421e6b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a792b4ea7d679f08e9fca6c15b5ffa8ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dd6/a00108.html#a792b4ea7d679f08e9fca6c15b5ffa8ae">PointSourceLoading</a> ()</td></tr>
 <tr class="separator:a792b4ea7d679f08e9fca6c15b5ffa8ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f81ae3bdf3790fa4393925b987f73ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dd6/a00108.html#a1f81ae3bdf3790fa4393925b987f73ec">ChannelFlow</a> (int i)</td></tr>
-<tr class="separator:a1f81ae3bdf3790fa4393925b987f73ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84c349f5f03082d2a5a324e09e39d3f4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dd6/a00108.html#a84c349f5f03082d2a5a324e09e39d3f4">ChannelFlow</a> (int i)</td></tr>
+<tr class="separator:a84c349f5f03082d2a5a324e09e39d3f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c7bf3e1611044a45c0125af58b8fa1c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dd6/a00108.html#a6c7bf3e1611044a45c0125af58b8fa1c">manningQ</a> (float x1, float x2, float x3, float x4)</td></tr>
+<tr class="memdesc:a6c7bf3e1611044a45c0125af58b8fa1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates flow rate or flow velocity using Manning's equation. If x1 is set to 1, the velocity is calculated. If x1 is set to cross-sectional area of flow, the flow rate is calculated.  <a href="#a6c7bf3e1611044a45c0125af58b8fa1c">More...</a><br/></td></tr>
+<tr class="separator:a6c7bf3e1611044a45c0125af58b8fa1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a495febdea1d47dee525642831ca65eea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dd6/a00108.html#a495febdea1d47dee525642831ca65eea">updateWaterWidthDepth</a> (int i)</td></tr>
 <tr class="separator:a495febdea1d47dee525642831ca65eea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -246,6 +249,14 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../..
 float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dd6/a00108.html#a32656938dbc3602b49e6eb90264773aa">m_ptSub</a></td></tr>
 <tr class="memdesc:a32656938dbc3602b49e6eb90264773aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">The point source discharge (m3/s), m_ptSub[id], id is the reach id, load from m_Scenario. <br/></td></tr>
 <tr class="separator:a32656938dbc3602b49e6eb90264773aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8b4e76bda07c64e48d196c15cc0d85b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac8b4e76bda07c64e48d196c15cc0d85b"></a>
+float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dd6/a00108.html#ac8b4e76bda07c64e48d196c15cc0d85b">m_chMan</a></td></tr>
+<tr class="memdesc:ac8b4e76bda07c64e48d196c15cc0d85b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manning's "n" value for the main channel. <br/></td></tr>
+<tr class="separator:ac8b4e76bda07c64e48d196c15cc0d85b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a0790c8e633e754f3fd19bfa6714add"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6a0790c8e633e754f3fd19bfa6714add"></a>
+float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dd6/a00108.html#a6a0790c8e633e754f3fd19bfa6714add">m_chSlope</a></td></tr>
+<tr class="memdesc:a6a0790c8e633e754f3fd19bfa6714add"><td class="mdescLeft">&#160;</td><td class="mdescRight">average slope of main channel <br/></td></tr>
+<tr class="separator:a6a0790c8e633e754f3fd19bfa6714add"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adbca162b508ce5d6f2a982c26db30980"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adbca162b508ce5d6f2a982c26db30980"></a>
 float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dd6/a00108.html#adbca162b508ce5d6f2a982c26db30980">m_Kchb</a></td></tr>
 <tr class="memdesc:adbca162b508ce5d6f2a982c26db30980"><td class="mdescLeft">&#160;</td><td class="mdescRight">hydraulic conductivity of the channel bed (mm/h) <br/></td></tr>
@@ -311,8 +322,14 @@ float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=".
 <tr class="separator:a5c6f6f7a893763d661afa40bb810020e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad375286f9c0a1921df8ef58b6b5666e7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad375286f9c0a1921df8ef58b6b5666e7"></a>
 float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dd6/a00108.html#ad375286f9c0a1921df8ef58b6b5666e7">m_qsCh</a></td></tr>
-<tr class="memdesc:ad375286f9c0a1921df8ef58b6b5666e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">channel outflow <br/></td></tr>
+<tr class="memdesc:ad375286f9c0a1921df8ef58b6b5666e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">surface part of channel outflow <br/></td></tr>
 <tr class="separator:ad375286f9c0a1921df8ef58b6b5666e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad15e4cca204a53335f18e557ed280415"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad15e4cca204a53335f18e557ed280415"></a>
+float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dd6/a00108.html#ad15e4cca204a53335f18e557ed280415">m_qiCh</a></td></tr>
+<tr class="memdesc:ad15e4cca204a53335f18e557ed280415"><td class="mdescLeft">&#160;</td><td class="mdescRight">subsurface part of channel outflow <br/></td></tr>
+<tr class="separator:ad15e4cca204a53335f18e557ed280415"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1c64f5421ca0102049c09e5312dd9ae"><td class="memItemLeft" align="right" valign="top">float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dd6/a00108.html#ac1c64f5421ca0102049c09e5312dd9ae">m_qgCh</a></td></tr>
+<tr class="separator:ac1c64f5421ca0102049c09e5312dd9ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20f2469d09efe86e65fd2568c4a911ec"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a20f2469d09efe86e65fd2568c4a911ec"></a>
 float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dd6/a00108.html#a20f2469d09efe86e65fd2568c4a911ec">m_chWidth</a></td></tr>
 <tr class="memdesc:a20f2469d09efe86e65fd2568c4a911ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">channel width (m) <br/></td></tr>
@@ -424,8 +441,11 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>channel flow routing using Muskingum method </p>
+<ul>
+<li></li>
+</ul>
 
-<p>Definition at line <a class="el" href="../../dc/d66/a00630_source.html#l00049">49</a> of file <a class="el" href="../../dc/d66/a00630_source.html">MUSK_CH.h</a>.</p>
+<p>Definition at line <a class="el" href="../../dc/d66/a00630_source.html#l00048">48</a> of file <a class="el" href="../../dc/d66/a00630_source.html">MUSK_CH.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a792ec85a79cce80040b13c8e655bb625"></a>
 <div class="memitem">
@@ -449,12 +469,12 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 </div><div class="memdoc">
 <p>reaches related variables will be released in ~clsReaches(). By lj, 2017-12-26. </p>
 
-<p>Definition at line <a class="el" href="../../da/dd1/a00629_source.html#l00025">25</a> of file <a class="el" href="../../da/dd1/a00629_source.html">MUSK_CH.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../da/dd1/a00629_source.html#l00026">26</a> of file <a class="el" href="../../da/dd1/a00629_source.html">MUSK_CH.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a1f81ae3bdf3790fa4393925b987f73ec"></a>
+<a class="anchor" id="a84c349f5f03082d2a5a324e09e39d3f4"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -462,7 +482,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void MUSK_CH::ChannelFlow </td>
+          <td class="memname">bool MUSK_CH::ChannelFlow </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>i</em></td><td>)</td>
@@ -481,14 +501,14 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 <p>m^3/s</p>
 <p>update channel water depth and width according to channel water storage </p>
 
-<p>Definition at line <a class="el" href="../../da/dd1/a00629_source.html#l00414">414</a> of file <a class="el" href="../../da/dd1/a00629_source.html">MUSK_CH.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../da/dd1/a00629_source.html#l00443">443</a> of file <a class="el" href="../../da/dd1/a00629_source.html">MUSK_CH.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d1/dd6/a00108_a1f81ae3bdf3790fa4393925b987f73ec_cgraph.png" border="0" usemap="#d1/dd6/a00108_a1f81ae3bdf3790fa4393925b987f73ec_cgraph" alt=""/></div>
-<map name="d1/dd6/a00108_a1f81ae3bdf3790fa4393925b987f73ec_cgraph" id="d1/dd6/a00108_a1f81ae3bdf3790fa4393925b987f73ec_cgraph">
-<area shape="rect" id="node2" href="../../d1/dd6/a00108.html#a495febdea1d47dee525642831ca65eea" title="MUSK_CH::updateWaterWidth\lDepth" alt="" coords="261,5,504,51"/></map>
+<div class="center"><img src="../../d1/dd6/a00108_a84c349f5f03082d2a5a324e09e39d3f4_cgraph.png" border="0" usemap="#d1/dd6/a00108_a84c349f5f03082d2a5a324e09e39d3f4_cgraph" alt=""/></div>
+<map name="d1/dd6/a00108_a84c349f5f03082d2a5a324e09e39d3f4_cgraph" id="d1/dd6/a00108_a84c349f5f03082d2a5a324e09e39d3f4_cgraph">
+<area shape="rect" id="node2" href="../../d1/dd6/a00108.html#a495febdea1d47dee525642831ca65eea" title="MUSK_CH::updateWaterWidth\lDepth" alt="" coords="261,5,504,51"/><area shape="rect" id="node3" href="../../d1/dd6/a00108.html#a6c7bf3e1611044a45c0125af58b8fa1c" title="Calculates flow rate or flow velocity using Manning&#39;s equation. If x1 is set to 1, the velocity is calculated. If x1 is set to cross&#45;sectional area of flow, the flow rate is calculated. " alt="" coords="291,76,475,105"/></map>
 </div>
 </p>
 
@@ -521,14 +541,14 @@ Here is the call graph for this function:</div>
 
 <p>Reimplemented from <a class="el" href="../../d3/df8/a00155.html#a686c39c1c4894cc144699ba0681d509d">SimulationModule</a>.</p>
 
-<p>Definition at line <a class="el" href="../../da/dd1/a00629_source.html#l00154">154</a> of file <a class="el" href="../../da/dd1/a00629_source.html">MUSK_CH.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../da/dd1/a00629_source.html#l00164">164</a> of file <a class="el" href="../../da/dd1/a00629_source.html">MUSK_CH.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d1/dd6/a00108_ae45fdc4e214bdb46a2a9c84b0aaebe3d_cgraph.png" border="0" usemap="#d1/dd6/a00108_ae45fdc4e214bdb46a2a9c84b0aaebe3d_cgraph" alt=""/></div>
 <map name="d1/dd6/a00108_ae45fdc4e214bdb46a2a9c84b0aaebe3d_cgraph" id="d1/dd6/a00108_ae45fdc4e214bdb46a2a9c84b0aaebe3d_cgraph">
-<area shape="rect" id="node2" href="../../d1/dd6/a00108.html#ac55bd9b70d637718be78c183d421e6b1" title="MUSK_CH::InitialOutputs" alt="" coords="248,137,451,167"/><area shape="rect" id="node3" href="../../d1/dd6/a00108.html#a792b4ea7d679f08e9fca6c15b5ffa8ae" title="MUSK_CH::PointSourceLoading" alt="" coords="221,191,477,220"/><area shape="rect" id="node9" href="../../d1/dd6/a00108.html#a1f81ae3bdf3790fa4393925b987f73ec" title="MUSK_CH::ChannelFlow" alt="" coords="246,288,453,317"/><area shape="rect" id="node4" href="../../d5/d5b/a00135.html#ab180864d91a4d222bf7255956c417d38" title="Get start date of the current management operation. " alt="" coords="527,5,766,51"/><area shape="rect" id="node5" href="../../d5/d5b/a00135.html#aa24d8b7d5fceb52b352bba97cf7cee74" title="Get end date. " alt="" coords="527,75,766,122"/><area shape="rect" id="node6" href="../../d5/d5b/a00135.html#a0ca155bae13eeb30f26922e36fd55ef1" title="Get water volume. " alt="" coords="527,146,766,193"/><area shape="rect" id="node7" href="../../de/d76/a00134.html#adf67edbfe94ed3622dbd532e436864b3" title="Located subbasin ID. " alt="" coords="533,217,760,263"/><area shape="rect" id="node8" href="../../de/d76/a00134.html#a92fa08eb80efd62885da3acb40ffd7d7" title="size " alt="" coords="533,287,760,334"/><area shape="rect" id="node10" href="../../d1/dd6/a00108.html#a495febdea1d47dee525642831ca65eea" title="MUSK_CH::updateWaterWidth\lDepth" alt="" coords="525,358,768,405"/></map>
+<area shape="rect" id="node2" href="../../d1/dd6/a00108.html#ac55bd9b70d637718be78c183d421e6b1" title="MUSK_CH::InitialOutputs" alt="" coords="248,137,451,167"/><area shape="rect" id="node3" href="../../d1/dd6/a00108.html#a792b4ea7d679f08e9fca6c15b5ffa8ae" title="MUSK_CH::PointSourceLoading" alt="" coords="221,191,477,220"/><area shape="rect" id="node9" href="../../d1/dd6/a00108.html#a84c349f5f03082d2a5a324e09e39d3f4" title="MUSK_CH::ChannelFlow" alt="" coords="246,367,453,396"/><area shape="rect" id="node4" href="../../d5/d5b/a00135.html#ab180864d91a4d222bf7255956c417d38" title="Get start date of the current management operation. " alt="" coords="527,5,766,51"/><area shape="rect" id="node5" href="../../d5/d5b/a00135.html#aa24d8b7d5fceb52b352bba97cf7cee74" title="Get end date. " alt="" coords="527,75,766,122"/><area shape="rect" id="node6" href="../../d5/d5b/a00135.html#a0ca155bae13eeb30f26922e36fd55ef1" title="Get water volume. " alt="" coords="527,146,766,193"/><area shape="rect" id="node7" href="../../de/d76/a00134.html#adf67edbfe94ed3622dbd532e436864b3" title="Located subbasin ID. " alt="" coords="533,217,760,263"/><area shape="rect" id="node8" href="../../de/d76/a00134.html#a92fa08eb80efd62885da3acb40ffd7d7" title="size " alt="" coords="533,287,760,334"/><area shape="rect" id="node10" href="../../d1/dd6/a00108.html#a495febdea1d47dee525642831ca65eea" title="MUSK_CH::updateWaterWidth\lDepth" alt="" coords="525,358,768,405"/><area shape="rect" id="node11" href="../../d1/dd6/a00108.html#a6c7bf3e1611044a45c0125af58b8fa1c" title="Calculates flow rate or flow velocity using Manning&#39;s equation. If x1 is set to 1, the velocity is calculated. If x1 is set to cross&#45;sectional area of flow, the flow rate is calculated. " alt="" coords="555,429,739,459"/></map>
 </div>
 </p>
 
@@ -571,7 +591,7 @@ Here is the call graph for this function:</div>
 
 <p>Reimplemented from <a class="el" href="../../d3/df8/a00155.html#aafd60bc9d4176a0cf64af01aed881980">SimulationModule</a>.</p>
 
-<p>Definition at line <a class="el" href="../../da/dd1/a00629_source.html#l00259">259</a> of file <a class="el" href="../../da/dd1/a00629_source.html">MUSK_CH.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../da/dd1/a00629_source.html#l00276">276</a> of file <a class="el" href="../../da/dd1/a00629_source.html">MUSK_CH.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -606,7 +626,67 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>initialize point source loadings </p>
 
-<p>Definition at line <a class="el" href="../../da/dd1/a00629_source.html#l00065">65</a> of file <a class="el" href="../../da/dd1/a00629_source.html">MUSK_CH.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../da/dd1/a00629_source.html#l00069">69</a> of file <a class="el" href="../../da/dd1/a00629_source.html">MUSK_CH.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6c7bf3e1611044a45c0125af58b8fa1c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float MUSK_CH::manningQ </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x4</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculates flow rate or flow velocity using Manning's equation. If x1 is set to 1, the velocity is calculated. If x1 is set to cross-sectional area of flow, the flow rate is calculated. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x1</td><td>cross-sectional flow area or 1, m^2 or none. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x2</td><td>hydraulic radius, m. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x3</td><td>Manning's "n" value for channel. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x4</td><td>average slope of channel, m/m. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>flow rate or flow velocity, m^3/s or m/s. </dd></dl>
+
+<p>Definition at line <a class="el" href="../../da/dd1/a00629_source.html#l00374">374</a> of file <a class="el" href="../../da/dd1/a00629_source.html">MUSK_CH.cpp</a>.</p>
 
 </div>
 </div>
@@ -635,7 +715,7 @@ Here is the call graph for this function:</div>
 <p>m3/'size'/day</p>
 <p>m3/'size'/day ==&gt; m3/s </p>
 
-<p>Definition at line <a class="el" href="../../da/dd1/a00629_source.html#l00119">119</a> of file <a class="el" href="../../da/dd1/a00629_source.html">MUSK_CH.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../da/dd1/a00629_source.html#l00129">129</a> of file <a class="el" href="../../da/dd1/a00629_source.html">MUSK_CH.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -675,7 +755,7 @@ Here is the call graph for this function:</div>
 
 <p>Reimplemented from <a class="el" href="../../d3/df8/a00155.html#a61a80ae537e24396433c9514c75735db">SimulationModule</a>.</p>
 
-<p>Definition at line <a class="el" href="../../da/dd1/a00629_source.html#l00319">319</a> of file <a class="el" href="../../da/dd1/a00629_source.html">MUSK_CH.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../da/dd1/a00629_source.html#l00334">334</a> of file <a class="el" href="../../da/dd1/a00629_source.html">MUSK_CH.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -732,7 +812,7 @@ Here is the call graph for this function:</div>
 
 <p>Reimplemented from <a class="el" href="../../d3/df8/a00155.html#a122e815846787e975787021df3708551">SimulationModule</a>.</p>
 
-<p>Definition at line <a class="el" href="../../da/dd1/a00629_source.html#l00213">213</a> of file <a class="el" href="../../da/dd1/a00629_source.html">MUSK_CH.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../da/dd1/a00629_source.html#l00230">230</a> of file <a class="el" href="../../da/dd1/a00629_source.html">MUSK_CH.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -768,7 +848,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>update channel water depth and width according to channel water storage </p>
 
-<p>Definition at line <a class="el" href="../../da/dd1/a00629_source.html#l00402">402</a> of file <a class="el" href="../../da/dd1/a00629_source.html">MUSK_CH.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../da/dd1/a00629_source.html#l00423">423</a> of file <a class="el" href="../../da/dd1/a00629_source.html">MUSK_CH.cpp</a>.</p>
 
 </div>
 </div>
@@ -792,9 +872,32 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>initial channel storage per meter of reach length (m3/m) </p>
-<p>inverse of the channel side slope, by default is 2. </p>
+<p>inverse of the channel side slope, by default is 2. chside in SWAT. </p>
 
-<p>Definition at line <a class="el" href="../../dc/d66/a00630_source.html#l00113">113</a> of file <a class="el" href="../../dc/d66/a00630_source.html">MUSK_CH.h</a>.</p>
+<p>Definition at line <a class="el" href="../../dc/d66/a00630_source.html#l00130">130</a> of file <a class="el" href="../../dc/d66/a00630_source.html">MUSK_CH.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac1c64f5421ca0102049c09e5312dd9ae"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float* MUSK_CH::m_qgCh</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>groundwater part of channel outflow </p>
+
+<p>Definition at line <a class="el" href="../../dc/d66/a00630_source.html#l00159">159</a> of file <a class="el" href="../../dc/d66/a00630_source.html">MUSK_CH.h</a>.</p>
 
 </div>
 </div>
@@ -817,7 +920,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Index of upstream Ids (The value is -1 if there if no upstream reach) m_reachUpStream.size() = N+1 m_reachUpStream[1] = [2, 3] means Reach 2 and Reach 3 flow into Reach 1. </p>
 
-<p>Definition at line <a class="el" href="../../dc/d66/a00630_source.html#l00174">174</a> of file <a class="el" href="../../dc/d66/a00630_source.html">MUSK_CH.h</a>.</p>
+<p>Definition at line <a class="el" href="../../dc/d66/a00630_source.html#l00191">191</a> of file <a class="el" href="../../dc/d66/a00630_source.html">MUSK_CH.h</a>.</p>
 
 </div>
 </div>
@@ -841,7 +944,7 @@ Here is the call graph for this function:</div>
 <p>reach layers key: computing order, </p>
 <dl class="section see"><dt>See Also</dt><dd>LayeringMethod value: reach ID </dd></dl>
 
-<p>Definition at line <a class="el" href="../../dc/d66/a00630_source.html#l00201">201</a> of file <a class="el" href="../../dc/d66/a00630_source.html">MUSK_CH.h</a>.</p>
+<p>Definition at line <a class="el" href="../../dc/d66/a00630_source.html#l00222">222</a> of file <a class="el" href="../../dc/d66/a00630_source.html">MUSK_CH.h</a>.</p>
 
 </div>
 </div>
@@ -855,7 +958,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d1/dd6/a00108.html">MUSK_CH</a></li>
-    <li class="footer">Generated on Wed Jul 11 2018 05:07:30 for SEIMS by
+    <li class="footer">Generated on Tue Jul 24 2018 11:59:18 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

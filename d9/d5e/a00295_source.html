@@ -538,100 +538,101 @@ $(document).ready(function(){initNavTree('d9/d5e/a00295_source.html','../../');}
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;            dic[ImportReaches2Mongo._DEPTH] = rchdata[<span class="stringliteral">&#39;depth&#39;</span>]</div>
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;            dic[ImportReaches2Mongo._AREA] = rchdata[ImportReaches2Mongo._AREA]</div>
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;            dic[ImportReaches2Mongo._SIDESLP] = 2.</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;            dic[</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;                ImportReaches2Mongo._KBANK] = 1.  <span class="comment"># hydraulic conductivity of the channel bank (mm/h)</span></div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;            dic[ImportReaches2Mongo._KBED] = 0.5</div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;            dic[ImportReaches2Mongo._BC1] = 0.55</div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;            dic[ImportReaches2Mongo._BC2] = 1.1</div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;            dic[ImportReaches2Mongo._BC3] = 0.21</div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;            dic[ImportReaches2Mongo._BC4] = 0.35</div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;            dic[ImportReaches2Mongo._RK1] = 1.71</div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;            dic[ImportReaches2Mongo._RK2] = 50</div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;            dic[ImportReaches2Mongo._RK3] = 0.36</div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;            dic[ImportReaches2Mongo._RK4] = 2</div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;            dic[ImportReaches2Mongo._RS1] = 1</div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;            dic[ImportReaches2Mongo._RS2] = 0.05</div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;            dic[ImportReaches2Mongo._RS3] = 0.5</div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;            dic[ImportReaches2Mongo._RS4] = 0.05</div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;            dic[ImportReaches2Mongo._RS5] = 0.05</div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;            dic[ImportReaches2Mongo._COVER] = 0.1</div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;            dic[ImportReaches2Mongo._EROD] = 0.1</div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;            dic[ImportReaches2Mongo._DISOX] = 10</div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;            dic[ImportReaches2Mongo._BOD] = 10</div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;            dic[ImportReaches2Mongo._ALGAE] = 0</div>
-<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;            dic[ImportReaches2Mongo._ORGN] = 0</div>
-<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;            dic[ImportReaches2Mongo._NH4] = 0</div>
-<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;            dic[ImportReaches2Mongo._NO2] = 0</div>
-<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;            dic[ImportReaches2Mongo._NO3] = 0</div>
-<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;            dic[ImportReaches2Mongo._ORGP] = 0</div>
-<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;            dic[ImportReaches2Mongo._SOLP] = 0</div>
-<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;            dic[ImportReaches2Mongo._GWNO3] = 0</div>
-<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;            dic[ImportReaches2Mongo._GWSOLP] = 0</div>
-<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;</div>
-<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;            cur_filter = {ImportReaches2Mongo._SUBBASIN: subbsn_id}</div>
-<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;            maindb[ImportReaches2Mongo._TAB_REACH].find_one_and_replace(cur_filter, dic,</div>
-<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;                                                                        upsert=<span class="keyword">True</span>)</div>
-<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;</div>
-<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;        maindb[ImportReaches2Mongo._TAB_REACH].create_index([(ImportReaches2Mongo._SUBBASIN,</div>
-<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;                                                              ASCENDING)])</div>
-<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;            <span class="comment"># hydraulic conductivity of the channel bank (mm/h)</span></div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;            dic[ImportReaches2Mongo._KBANK] = 0.</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;            <span class="comment"># hydraulic conductivity of the channel bed (mm/h)</span></div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;            dic[ImportReaches2Mongo._KBED] = 0.</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;            dic[ImportReaches2Mongo._BC1] = 0.55</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;            dic[ImportReaches2Mongo._BC2] = 1.1</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;            dic[ImportReaches2Mongo._BC3] = 0.21</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;            dic[ImportReaches2Mongo._BC4] = 0.35</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;            dic[ImportReaches2Mongo._RK1] = 1.71</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;            dic[ImportReaches2Mongo._RK2] = 50</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;            dic[ImportReaches2Mongo._RK3] = 0.36</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;            dic[ImportReaches2Mongo._RK4] = 2</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;            dic[ImportReaches2Mongo._RS1] = 1</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;            dic[ImportReaches2Mongo._RS2] = 0.05</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;            dic[ImportReaches2Mongo._RS3] = 0.5</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;            dic[ImportReaches2Mongo._RS4] = 0.05</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;            dic[ImportReaches2Mongo._RS5] = 0.05</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;            dic[ImportReaches2Mongo._COVER] = 0.1</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;            dic[ImportReaches2Mongo._EROD] = 0.1</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;            dic[ImportReaches2Mongo._DISOX] = 10</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;            dic[ImportReaches2Mongo._BOD] = 10</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;            dic[ImportReaches2Mongo._ALGAE] = 0</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;            dic[ImportReaches2Mongo._ORGN] = 0</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;            dic[ImportReaches2Mongo._NH4] = 0</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;            dic[ImportReaches2Mongo._NO2] = 0</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;            dic[ImportReaches2Mongo._NO3] = 0</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;            dic[ImportReaches2Mongo._ORGP] = 0</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;            dic[ImportReaches2Mongo._SOLP] = 0</div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;            dic[ImportReaches2Mongo._GWNO3] = 0</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;            dic[ImportReaches2Mongo._GWSOLP] = 0</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;            cur_filter = {ImportReaches2Mongo._SUBBASIN: subbsn_id}</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;            maindb[ImportReaches2Mongo._TAB_REACH].find_one_and_replace(cur_filter, dic,</div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;                                                                        upsert=<span class="keyword">True</span>)</div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;        maindb[ImportReaches2Mongo._TAB_REACH].create_index([(ImportReaches2Mongo._SUBBASIN,</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;                                                              ASCENDING)])</div>
 <div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;</div>
-<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;<span class="keyword">def </span>get_max_weight(group_weight_dic, group_dic):</div>
-<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;Get max. weight&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;    max_id = -1</div>
-<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;    max_weight = -1</div>
-<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;    <span class="keywordflow">for</span> cur_id <span class="keywordflow">in</span> group_weight_dic:</div>
-<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;        <span class="keywordflow">if</span> len(group_dic[cur_id]) &gt; 1 <span class="keywordflow">and</span> max_weight &lt; group_weight_dic[cur_id]:</div>
-<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;            max_weight = group_weight_dic[cur_id]</div>
-<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;            max_id = cur_id</div>
-<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;    <span class="keywordflow">return</span> max_id, max_weight</div>
-<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;<span class="keyword">def </span>get_max_weight(group_weight_dic, group_dic):</div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;Get max. weight&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;    max_id = -1</div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;    max_weight = -1</div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;    <span class="keywordflow">for</span> cur_id <span class="keywordflow">in</span> group_weight_dic:</div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;        <span class="keywordflow">if</span> len(group_dic[cur_id]) &gt; 1 <span class="keywordflow">and</span> max_weight &lt; group_weight_dic[cur_id]:</div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;            max_weight = group_weight_dic[cur_id]</div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;            max_id = cur_id</div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;    <span class="keywordflow">return</span> max_id, max_weight</div>
 <div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;</div>
-<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;<span class="keyword">def </span>adjust_group_result(weight_dic, group_list, n_groups):</div>
-<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;Adjust group result&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;    group_dic = dict()  <span class="comment"># group tmpid from 0</span></div>
-<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;    group_weight_dic = dict()  <span class="comment"># subbasin tmpid form 1</span></div>
-<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;    n = len(weight_dic.keys())</div>
-<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;    <span class="keywordflow">for</span> sub_id <span class="keywordflow">in</span> range(1, n + 1):</div>
-<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;        group_id = group_list[sub_id - 1]</div>
-<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;        group_dic.setdefault(group_id, []).append(sub_id)</div>
-<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;        <span class="keywordflow">if</span> group_id <span class="keywordflow">not</span> <span class="keywordflow">in</span> group_weight_dic:</div>
-<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;            group_weight_dic[group_id] = 0</div>
-<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;        group_weight_dic[group_id] += weight_dic[sub_id][ImportReaches2Mongo._NUMCELLS]</div>
-<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;    <span class="comment"># get average weight for each group, which is the ideal aim of task scheduling</span></div>
-<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;    ave_eight = 0</div>
-<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;    <span class="keywordflow">for</span> tmpid <span class="keywordflow">in</span> group_weight_dic:</div>
-<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;        ave_eight += group_weight_dic[tmpid]</div>
-<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;    ave_eight /= n_groups</div>
-<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;</div>
-<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;    <span class="keywordflow">for</span> iGroup <span class="keywordflow">in</span> range(n_groups):</div>
-<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;        <span class="keywordflow">if</span> iGroup <span class="keywordflow">not</span> <span class="keywordflow">in</span> group_dic:</div>
-<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;            max_id, max_weight = get_max_weight(group_weight_dic, group_dic)</div>
-<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;            <span class="keywordflow">if</span> max_id &lt; 0:</div>
-<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;                <span class="keywordflow">continue</span></div>
-<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;            sub_list = group_dic[max_id]</div>
-<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;            sub_id = sub_list[0]</div>
-<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;            group_dic[iGroup] = [sub_id, ]</div>
-<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;            group_list[sub_id - 1] = iGroup</div>
-<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;            group_dic[max_id].remove(sub_id)</div>
-<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;</div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;</div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;<span class="keyword">def </span>adjust_group_result(weight_dic, group_list, n_groups):</div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;Adjust group result&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;    group_dic = dict()  <span class="comment"># group tmpid from 0</span></div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;    group_weight_dic = dict()  <span class="comment"># subbasin tmpid form 1</span></div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;    n = len(weight_dic.keys())</div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;    <span class="keywordflow">for</span> sub_id <span class="keywordflow">in</span> range(1, n + 1):</div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;        group_id = group_list[sub_id - 1]</div>
+<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;        group_dic.setdefault(group_id, []).append(sub_id)</div>
+<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;        <span class="keywordflow">if</span> group_id <span class="keywordflow">not</span> <span class="keywordflow">in</span> group_weight_dic:</div>
+<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;            group_weight_dic[group_id] = 0</div>
+<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;        group_weight_dic[group_id] += weight_dic[sub_id][ImportReaches2Mongo._NUMCELLS]</div>
+<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;    <span class="comment"># get average weight for each group, which is the ideal aim of task scheduling</span></div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;    ave_eight = 0</div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;    <span class="keywordflow">for</span> tmpid <span class="keywordflow">in</span> group_weight_dic:</div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;        ave_eight += group_weight_dic[tmpid]</div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;    ave_eight /= n_groups</div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;</div>
+<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;    <span class="keywordflow">for</span> iGroup <span class="keywordflow">in</span> range(n_groups):</div>
+<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;        <span class="keywordflow">if</span> iGroup <span class="keywordflow">not</span> <span class="keywordflow">in</span> group_dic:</div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;            max_id, max_weight = get_max_weight(group_weight_dic, group_dic)</div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;            <span class="keywordflow">if</span> max_id &lt; 0:</div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;                <span class="keywordflow">continue</span></div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;            sub_list = group_dic[max_id]</div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;            sub_id = sub_list[0]</div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;            group_dic[iGroup] = [sub_id, ]</div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;            group_list[sub_id - 1] = iGroup</div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;            group_dic[max_id].remove(sub_id)</div>
 <div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;</div>
-<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;<span class="keyword">def </span>main():</div>
-<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;TEST CODE&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;    <span class="keyword">from</span> preprocess.config <span class="keyword">import</span> parse_ini_configuration</div>
-<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;    <span class="keyword">from</span> preprocess.db_mongodb <span class="keyword">import</span> ConnectMongoDB</div>
-<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;    seims_cfg = parse_ini_configuration()</div>
-<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;    client = ConnectMongoDB(seims_cfg.hostname, seims_cfg.port)</div>
-<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;    conn = client.get_conn()</div>
-<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;    maindb = conn[seims_cfg.spatial_db]</div>
-<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;</div>
-<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;    ImportReaches2Mongo.generate_reach_table(seims_cfg, maindb)</div>
-<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;</div>
-<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;    client.close()</div>
-<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;</div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;</div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;<span class="keyword">def </span>main():</div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;TEST CODE&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;    <span class="keyword">from</span> preprocess.config <span class="keyword">import</span> parse_ini_configuration</div>
+<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;    <span class="keyword">from</span> preprocess.db_mongodb <span class="keyword">import</span> ConnectMongoDB</div>
+<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;    seims_cfg = parse_ini_configuration()</div>
+<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;    client = ConnectMongoDB(seims_cfg.hostname, seims_cfg.port)</div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;    conn = client.get_conn()</div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;    maindb = conn[seims_cfg.spatial_db]</div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;</div>
+<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;    ImportReaches2Mongo.generate_reach_table(seims_cfg, maindb)</div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;</div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;    client.close()</div>
 <div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;</div>
-<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;<span class="keywordflow">if</span> __name__ == <span class="stringliteral">&quot;__main__&quot;</span>:</div>
-<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;    main()</div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;</div>
+<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;<span class="keywordflow">if</span> __name__ == <span class="stringliteral">&quot;__main__&quot;</span>:</div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;    main()</div>
 <div class="ttc" id="a00727_html"><div class="ttname"><a href="../../dc/ddc/a00727.html">raster</a></div></div>
 <div class="ttc" id="a00067_html_a7c2d0b848b24d6d4e60216baa50ef95f"><div class="ttname"><a href="../../dc/ddf/a00067.html#a7c2d0b848b24d6d4e60216baa50ef95f">seims.preprocess.db_import_stream_parameters.ImportReaches2Mongo.import_reach_info</a></div><div class="ttdeci">def import_reach_info</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d5b/a00294_source.html#l00400">db_import_stream_parameters.py:400</a></div></div>
 <div class="ttc" id="a00067_html_ae80cc47205593f7d181f0cd22809155a"><div class="ttname"><a href="../../dc/ddf/a00067.html#ae80cc47205593f7d181f0cd22809155a">seims.preprocess.db_import_stream_parameters.ImportReaches2Mongo.metis_partition</a></div><div class="ttdeci">def metis_partition</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d5b/a00294_source.html#l00137">db_import_stream_parameters.py:137</a></div></div>
@@ -647,7 +648,7 @@ $(document).ready(function(){initNavTree('d9/d5e/a00295_source.html','../../');}
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_483bc1739a16b87563cca23e7a392c1e.html">seims_linux_gcc48</a></li><li class="navelem"><a class="el" href="../../dir_a45053e29f104e67e5be28f13679e3c2.html">seims</a></li><li class="navelem"><a class="el" href="../../dir_88ee9ccb3eda13ad093e0105c15391c0.html">preprocess</a></li><li class="navelem"><b>db_import_stream_parameters.py</b></li>
-    <li class="footer">Generated on Wed Jul 11 2018 05:07:27 for SEIMS by
+    <li class="footer">Generated on Tue Jul 24 2018 11:59:15 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

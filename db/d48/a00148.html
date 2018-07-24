@@ -389,7 +389,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 </div><div class="memdoc">
 <p>reaches related variables will be released in ~clsReaches(). By lj, 2017-12-26. </p>
 
-<p>Definition at line <a class="el" href="../../d7/d21/a00584_source.html#l00024">24</a> of file <a class="el" href="../../d7/d21/a00584_source.html">SEDR_SBAGNOLD.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d21/a00584_source.html#l00027">27</a> of file <a class="el" href="../../d7/d21/a00584_source.html">SEDR_SBAGNOLD.cpp</a>.</p>
 
 </div>
 </div>
@@ -418,7 +418,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 <p>TODO, lj</p>
 <p>downcutting depth, m </p>
 
-<p>Definition at line <a class="el" href="../../d7/d21/a00584_source.html#l00427">427</a> of file <a class="el" href="../../d7/d21/a00584_source.html">SEDR_SBAGNOLD.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d21/a00584_source.html#l00437">437</a> of file <a class="el" href="../../d7/d21/a00584_source.html">SEDR_SBAGNOLD.cpp</a>.</p>
 
 </div>
 </div>
@@ -449,7 +449,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 
 <p>Reimplemented from <a class="el" href="../../d3/df8/a00155.html#a686c39c1c4894cc144699ba0681d509d">SimulationModule</a>.</p>
 
-<p>Definition at line <a class="el" href="../../d7/d21/a00584_source.html#l00118">118</a> of file <a class="el" href="../../d7/d21/a00584_source.html">SEDR_SBAGNOLD.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d21/a00584_source.html#l00121">121</a> of file <a class="el" href="../../d7/d21/a00584_source.html">SEDR_SBAGNOLD.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -484,7 +484,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>initialize point source loadings </p>
 
-<p>Definition at line <a class="el" href="../../d7/d21/a00584_source.html#l00063">63</a> of file <a class="el" href="../../d7/d21/a00584_source.html">SEDR_SBAGNOLD.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d21/a00584_source.html#l00066">66</a> of file <a class="el" href="../../d7/d21/a00584_source.html">SEDR_SBAGNOLD.cpp</a>.</p>
 
 </div>
 </div>
@@ -512,7 +512,7 @@ Here is the call graph for this function:</div>
 <p>g/cm3, or Mg/m3</p>
 <p>Mg/m3 ==&gt; kg / timestep, 1. / 86400. = 1.1574074074074073e-05 </p>
 
-<p>Definition at line <a class="el" href="../../d7/d21/a00584_source.html#l00086">86</a> of file <a class="el" href="../../d7/d21/a00584_source.html">SEDR_SBAGNOLD.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d21/a00584_source.html#l00089">89</a> of file <a class="el" href="../../d7/d21/a00584_source.html">SEDR_SBAGNOLD.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -546,7 +546,11 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>&lt; water volume (m^3) of flow out</p>
+<p>&lt; water in reach during time step, qdin in SWAT</p>
 <p>sediment from upstream reaches</p>
+<p>&lt; all sediment in reach, kg, sedin</p>
+<p>&lt; sediment from upstream channels, kg</p>
 <p>add point source loadings</p>
 <p>do not perform sediment routing when:</p>
 <ol type="1">
@@ -554,13 +558,18 @@ Here is the call graph for this function:</div>
 <li>if no water in reach</li>
 </ol>
 <p>calculate tbase |none |flow duration (fraction of 24 hr)</p>
-<p>New improved method for sediment transport</p>
+<p>&lt; cyin</p>
+<p>&lt; cych</p>
+<p>&lt; depnet, and dep</p>
+<p>&lt; deg</p>
+<p>&lt; deg1</p>
+<p>&lt; deg2</p>
 <p>kg</p>
 <p>calculate sediment concentration</p>
 <p>kg/m3, i.e., g/L</p>
 <p>in this default sediment routing method, sediment is not tracked by particle size </p>
 
-<p>Definition at line <a class="el" href="../../d7/d21/a00584_source.html#l00285">285</a> of file <a class="el" href="../../d7/d21/a00584_source.html">SEDR_SBAGNOLD.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d21/a00584_source.html#l00288">288</a> of file <a class="el" href="../../d7/d21/a00584_source.html">SEDR_SBAGNOLD.cpp</a>.</p>
 
 </div>
 </div>
@@ -607,7 +616,7 @@ Here is the call graph for this function:</div>
 
 <p>Reimplemented from <a class="el" href="../../d3/df8/a00155.html#aba2d6fc2b0e4f8ccf202e0752c45d55c">SimulationModule</a>.</p>
 
-<p>Definition at line <a class="el" href="../../d7/d21/a00584_source.html#l00211">211</a> of file <a class="el" href="../../d7/d21/a00584_source.html">SEDR_SBAGNOLD.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d21/a00584_source.html#l00214">214</a> of file <a class="el" href="../../d7/d21/a00584_source.html">SEDR_SBAGNOLD.cpp</a>.</p>
 
 </div>
 </div>
@@ -638,7 +647,7 @@ Here is the call graph for this function:</div>
 
 <p>Reimplemented from <a class="el" href="../../d3/df8/a00155.html#a61a80ae537e24396433c9514c75735db">SimulationModule</a>.</p>
 
-<p>Definition at line <a class="el" href="../../d7/d21/a00584_source.html#l00249">249</a> of file <a class="el" href="../../d7/d21/a00584_source.html">SEDR_SBAGNOLD.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d21/a00584_source.html#l00252">252</a> of file <a class="el" href="../../d7/d21/a00584_source.html">SEDR_SBAGNOLD.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -731,7 +740,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../db/d48/a00148.html">SEDR_SBAGNOLD</a></li>
-    <li class="footer">Generated on Wed Jul 11 2018 05:07:31 for SEIMS by
+    <li class="footer">Generated on Tue Jul 24 2018 11:59:19 for SEIMS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
