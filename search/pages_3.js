@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['prerequisites',['Prerequisites',['../md_doc_en_doc_intro_prerequisites.html',1,'']]],
-  ['publications',['Publications',['../md_doc_en_doc_intro_publications.html',1,'']]]
+  ['modular_20structure',['Modular structure',['../md_doc_en_doc_technical_modular.html',1,'']]]
 ];

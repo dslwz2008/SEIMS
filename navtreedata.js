@@ -53,6 +53,55 @@ var NAVTREE =
       ] ],
       [ "Dissertations", "md_doc_en_doc_intro_publications.html#Dissertations", null ]
     ] ],
+    [ "SEIMS organization", "md_doc_en_doc_guide_organization.html", [
+      [ "Program structure", "md_doc_en_doc_guide_organization.html#ProgramStructure", null ],
+      [ "Call format of main program", "md_doc_en_doc_guide_organization.html#MainInvoke", null ]
+    ] ],
+    [ "Data preparation", "md_doc_en_doc_guide_datapreparation.html", [
+      [ "Basic text format", "md_doc_en_doc_guide_datapreparation.html#BasicTextFormat", null ],
+      [ "Precipitation data", "md_doc_en_doc_guide_datapreparation.html#Precipitation", null ],
+      [ "Climate data", "md_doc_en_doc_guide_datapreparation.html#Climate", null ],
+      [ "Spatial data", "md_doc_en_doc_guide_datapreparation.html#Spatial", [
+        [ "DEM", "md_doc_en_doc_guide_datapreparation.html#DEM", null ],
+        [ "Climate stations", "md_doc_en_doc_guide_datapreparation.html#Stations", null ],
+        [ "Soil data", "md_doc_en_doc_guide_datapreparation.html#Soil", null ],
+        [ "Landuse data", "md_doc_en_doc_guide_datapreparation.html#Landuse", null ],
+        [ "Landcover data", "md_doc_en_doc_guide_datapreparation.html#Landcover", null ]
+      ] ]
+    ] ],
+    [ "IDE and coding protocol", "md_doc_en_doc_technical_codeprotocol.html", [
+      [ "Recommended IDE", "md_doc_en_doc_technical_codeprotocol.html#RecommendedIDE", null ],
+      [ "Git branch", "md_doc_en_doc_technical_codeprotocol.html#GitBranch", null ],
+      [ "Coding style", "md_doc_en_doc_technical_codeprotocol.html#CodingStyle", [
+        [ "C++", "md_doc_en_doc_technical_codeprotocol.html#CppStyle", null ],
+        [ "Python", "md_doc_en_doc_technical_codeprotocol.html#PythonStyle", null ]
+      ] ]
+    ] ],
+    [ "SEIMS code structure", "md_doc_en_doc_technical_codestructure.html", [
+      [ "Overall code tree", "md_doc_en_doc_technical_codestructure.html#OverallCodeTree", null ],
+      [ "CMake structure", "md_doc_en_doc_technical_codestructure.html#CMakeStructure", null ],
+      [ "Python tools", "md_doc_en_doc_technical_codestructure.html#PythonTools", null ]
+    ] ],
+    [ "Workflow of main simulation", "md_doc_en_doc_technical_simulationworkflow.html", [
+      [ "OpenMP version", "md_doc_en_doc_technical_simulationworkflow.html#OpenMPVersion", null ],
+      [ "MPI&OpenMP version", "md_doc_en_doc_technical_simulationworkflow.html#MPIOpenMPVersion", null ]
+    ] ],
+    [ "Modular structure", "md_doc_en_doc_technical_modular.html", [
+      [ "Module interface", "md_doc_en_doc_technical_modular.html#ModuleInterface", null ],
+      [ "Steps of developing a new module", "md_doc_en_doc_technical_modular.html#ModuleDevSteps", null ]
+    ] ],
+    [ "Parallel computing middleware", "md_doc_en_doc_technical_parallelcomputing.html", [
+      [ "Spatial discritization", "md_doc_en_doc_technical_parallelcomputing.html#SpatialDiscretization", null ],
+      [ "Basic-unit level parallelization", "md_doc_en_doc_technical_parallelcomputing.html#BasicUnitLevel", null ],
+      [ "Subbasin level parallelization", "md_doc_en_doc_technical_parallelcomputing.html#SubbasinLevel", null ],
+      [ "Model level parallelization", "md_doc_en_doc_technical_parallelcomputing.html#ModelLevel", null ]
+    ] ],
+    [ "Database design", "md_doc_en_doc_technical_database.html", [
+      [ "Requirement analysis", "md_doc_en_doc_technical_database.html#Requirements", null ],
+      [ "Data structure", "md_doc_en_doc_technical_database.html#DataStructure", null ],
+      [ "Database selection", "md_doc_en_doc_technical_database.html#DBSelection", null ],
+      [ "Implementation and extension", "md_doc_en_doc_technical_database.html#Implementation", null ]
+    ] ],
     [ "Todo List", "todo.html", null ],
     [ "Namespaces", null, [
       [ "Namespace List", "namespaces.html", "namespaces" ],
@@ -82,7 +131,7 @@ var NAVTREEINDEX =
 ".html",
 "class_settings.html#a71cf2b1d87f7dc7951b67216df565dff",
 "classbmps_1_1plant__management_1_1_plt_mgt_op.html#a43291ea426480483b35c9894747bd7b9",
-"namespacebmps.html"
+"md_doc_en_doc_intro_prerequisites.html#MongoDB"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -43,6 +43,62 @@ var NAVTREE =
       ] ],
       [ "学位论文", "md_doc_zh-cn_doc_intro_publications_8zh-cn.html#Dissertations", null ]
     ] ],
+    [ "SEIMS组织结构", "md_doc_zh-cn_doc_guide_organization_8zh-cn.html", [
+      [ "程序目录结构", "md_doc_zh-cn_doc_guide_organization_8zh-cn.html#ProgramStructure", null ],
+      [ "主程序调用格式", "md_doc_zh-cn_doc_guide_organization_8zh-cn.html#MainInvoke", null ]
+    ] ],
+    [ "数据准备", "md_doc_zh-cn_doc_guide_datapreparation_8zh-cn.html", [
+      [ "文本数据基本格式", "md_doc_zh-cn_doc_guide_datapreparation_8zh-cn.html#BasicTextFormat", null ],
+      [ "降水数据", "md_doc_zh-cn_doc_guide_datapreparation_8zh-cn.html#Precipitation", null ],
+      [ "气象数据", "md_doc_zh-cn_doc_guide_datapreparation_8zh-cn.html#Climate", null ],
+      [ "空间数据", "md_doc_zh-cn_doc_guide_datapreparation_8zh-cn.html#Spatial", [
+        [ "DEM", "md_doc_zh-cn_doc_guide_datapreparation_8zh-cn.html#DEM", null ],
+        [ "降水气象站点位置", "md_doc_zh-cn_doc_guide_datapreparation_8zh-cn.html#Stations", null ],
+        [ "土壤数据", "md_doc_zh-cn_doc_guide_datapreparation_8zh-cn.html#Soil", null ],
+        [ "土地利用数据", "md_doc_zh-cn_doc_guide_datapreparation_8zh-cn.html#Landuse", null ],
+        [ "植被覆盖数据", "md_doc_zh-cn_doc_guide_datapreparation_8zh-cn.html#Landcover", null ]
+      ] ]
+    ] ],
+    [ "开发环境及代码规范", "md_doc_zh-cn_doc_technical_codeprotocol_8zh-cn.html", [
+      [ "开发环境推荐", "md_doc_zh-cn_doc_technical_codeprotocol_8zh-cn.html#RecommendedIDE", null ],
+      [ "Git分支管理", "md_doc_zh-cn_doc_technical_codeprotocol_8zh-cn.html#GitBranch", null ],
+      [ "代码风格规范", "md_doc_zh-cn_doc_technical_codeprotocol_8zh-cn.html#CodingStyle", [
+        [ "C++", "md_doc_zh-cn_doc_technical_codeprotocol_8zh-cn.html#CppStyle", null ],
+        [ "Python", "md_doc_zh-cn_doc_technical_codeprotocol_8zh-cn.html#PythonStyle", null ]
+      ] ]
+    ] ],
+    [ "SEIMS代码结构", "md_doc_zh-cn_doc_technical_codestructure_8zh-cn.html", [
+      [ "整体代码文件树", "md_doc_zh-cn_doc_technical_codestructure_8zh-cn.html#OverallCodeTree", null ],
+      [ "CMake结构", "md_doc_zh-cn_doc_technical_codestructure_8zh-cn.html#CMakeStructure", null ],
+      [ "Python工具", "md_doc_zh-cn_doc_technical_codestructure_8zh-cn.html#PythonTools", null ]
+    ] ],
+    [ "SEIMS主程序模拟工作流", "md_doc_zh-cn_doc_technical_simulationworkflow_8zh-cn.html", [
+      [ "OpenMP版本", "md_doc_zh-cn_doc_technical_simulationworkflow_8zh-cn.html#OpenMPVersion", null ],
+      [ "MPI&OpenMP版本", "md_doc_zh-cn_doc_technical_simulationworkflow_8zh-cn.html#MPIOpenMPVersion", null ]
+    ] ],
+    [ "模块化结构", "md_doc_zh-cn_doc_technical_modular_8zh-cn.html", [
+      [ "模块接口", "md_doc_zh-cn_doc_technical_modular_8zh-cn.html#ModuleInterface", null ],
+      [ "开发新模块的一般步骤", "md_doc_zh-cn_doc_technical_modular_8zh-cn.html#ModuleDevSteps", null ]
+    ] ],
+    [ "并行计算中间件", "md_doc_zh-cn_doc_technical_parallelcomputing_8zh-cn.html", [
+      [ "空间离散化", "md_doc_zh-cn_doc_technical_parallelcomputing_8zh-cn.html#SpatialDiscretization", null ],
+      [ "基本计算单元层次的并行化", "md_doc_zh-cn_doc_technical_parallelcomputing_8zh-cn.html#BasicUnitLevel", null ],
+      [ "子流域层次的并行化", "md_doc_zh-cn_doc_technical_parallelcomputing_8zh-cn.html#SubbasinLevel", null ],
+      [ "模型层次的并行化", "md_doc_zh-cn_doc_technical_parallelcomputing_8zh-cn.html#ModelLevel", null ]
+    ] ],
+    [ "数据库设计", "md_doc_zh-cn_doc_technical_database_8zh-cn.html", [
+      [ "需求分析", "md_doc_zh-cn_doc_technical_database_8zh-cn.html#Requirements", null ],
+      [ "数据结构", "md_doc_zh-cn_doc_technical_database_8zh-cn.html#DataStructure", null ],
+      [ "数据库选型", "md_doc_zh-cn_doc_technical_database_8zh-cn.html#DBSelection", null ],
+      [ "代码实现和扩展", "md_doc_zh-cn_doc_technical_database_8zh-cn.html#Implementation", null ]
+    ] ],
+    [ "主要流域过程", "md_doc_zh-cn_doc_theory_watershedprocesses_8zh-cn.html", [
+      [ "分布式流域过程模型基本框架", "md_doc_zh-cn_doc_theory_watershedprocesses_8zh-cn.html#BaseFrame", null ],
+      [ "水文过程", "md_doc_zh-cn_doc_theory_watershedprocesses_8zh-cn.html#Hydrology", null ],
+      [ "侵蚀过程", "md_doc_zh-cn_doc_theory_watershedprocesses_8zh-cn.html#Erosion", null ],
+      [ "植物生长过程", "md_doc_zh-cn_doc_theory_watershedprocesses_8zh-cn.html#PlantGrowth", null ],
+      [ "养分循环过程", "md_doc_zh-cn_doc_theory_watershedprocesses_8zh-cn.html#NutrientCycling", null ]
+    ] ],
     [ "待办事项列表", "todo.html", null ],
     [ "命名空间", null, [
       [ "命名空间列表", "namespaces.html", "namespaces" ],
@@ -72,7 +128,7 @@ var NAVTREEINDEX =
 ".html",
 "class_settings.html#a71cf2b1d87f7dc7951b67216df565dff",
 "classbmps_1_1plant__management_1_1_plt_mgt_op.html#a43291ea426480483b35c9894747bd7b9",
-"namespacemembers_func.html"
+"md_doc_zh-cn_doc_intro_quickstart_8zh-cn.html"
 ];
 
 var SYNCONMSG = '点击 关闭 面板同步';

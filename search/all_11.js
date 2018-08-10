@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['seims_20organization',['SEIMS organization',['../md_doc_en_doc_guide_organization.html',1,'']]],
+  ['seims_20code_20structure',['SEIMS code structure',['../md_doc_en_doc_technical_codestructure.html',1,'']]],
   ['scenario',['Scenario',['../classbmps_1_1_scenario.html',1,'bmps::Scenario'],['../classbmps_1_1_scenario.html#adb6fa6fa45182e3c7595e2ad72f36761',1,'bmps::Scenario::Scenario()']]],
   ['scenario_5f',['scenario_',['../class_data_center.html#afee4a60eed2ad461b7b082039e90f58e',1,'DataCenter']]],
   ['scenario_5fid',['scenario_id',['../class_input_args.html#ac6ef0075aa18d4afe65984b5c12fa487',1,'InputArgs']]],
