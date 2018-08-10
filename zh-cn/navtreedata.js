@@ -1,7 +1,7 @@
 var NAVTREE =
 [
   [ "SEIMS", "index.html", [
-    [ "SEIMS：轻量化、模块化、并行化的流域建模框架", "index.html", null ],
+    [ "SEIMS：轻量级、模块化、并行化的流域建模框架", "index.html", null ],
     [ "下载", "md_doc_zh-cn_doc_intro_download_8zh-cn.html", [
       [ "直接下载Zip", "md_doc_zh-cn_doc_intro_download_8zh-cn.html#DownloadZip", null ],
       [ "利用Git管理源码", "md_doc_zh-cn_doc_intro_download_8zh-cn.html#UsingGit", [

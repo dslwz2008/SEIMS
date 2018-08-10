@@ -119,17 +119,20 @@ Git中AutoCRLF与SafeCRLF换行符问题</h2>
 <div class="fragment"><div class="line"># AutoCRLF, 提交（commit）时转换为LF，检出（checkout）时不转换</div><div class="line">git config --global core.autocrlf input</div><div class="line"># SafeCRLF, 设置拒绝提交包含混合换行符的文件，并且在提交混合换行符的文件时给出警告，从而手动转换为LF换行符后提交</div><div class="line">git config --global core.safecrlf warn</div><div class="line"># 同时，在SEIMS/.gitattributes里我们已经设置了一些例外，如Windows批处理文件`.bat`运行为CRLF</div></div><!-- fragment --><h2><a class="anchor" id="CloneRepo"></a>
 从Github中克隆代码库及代码修改</h2>
 <p>配置好本地的Git环境之后，我们需要将代码库从Github上克隆到本地计算机。</p><ul>
-<li>首先在Github.com上注册一个账号。注册好之后，需要设置SSH key，在<code>git bash</code>中输入： <div class="fragment"><div class="line">ssh-keygen -t rsa -C youremail@example.com</div><div class="line"></div><div class="line">e.g.,</div><div class="line">ssh-keygen -t rsa -C crazyzlj@gmail.com</div></div><!-- fragment --></li>
+<li>首先在Github.com上注册一个账号。注册好之后，需要设置SSH key，在<code>git bash</code>中输入：</li>
 </ul>
-<p>一路回车，如果顺利的话，在用户目录（如<code>C:\Users\ZhuLJ</code>）里能找到&lt;tt&gt;.ssh目录，里面有<code>id_rsa</code>和<code>id_rsa.pub</code>两个文件，这两个就是SSH Key的密钥对，前者是私钥，后者是公钥。</p><ul>
+<div class="fragment"><div class="line">ssh-keygen -t rsa -C youremail@example.com</div><div class="line"></div><div class="line">e.g.,</div><div class="line">ssh-keygen -t rsa -C crazyzlj@gmail.com</div></div><!-- fragment --><p>一路回车，如果顺利的话，在用户目录（如<code>C:\Users\ZhuLJ</code>）里能找到&lt;tt&gt;.ssh目录，里面有<code>id_rsa</code>和<code>id_rsa.pub</code>两个文件，这两个就是SSH Key的密钥对，前者是私钥，后者是公钥。</p><ul>
 <li>然后，登录Github，打开 Account Settings，SSH key页面，点Add SSH Key，Title任意填，在Key文本框里填上<code>id_rsa.pub</code>的内容，点击Add key就好啦。</li>
 <li>打开<a href="https://github.com/lreis2415/SEIMS">SEIMS模型的首页</a>， 点击<code>Fork</code>，来创建自己账户下的SEIMS克隆，克隆结束之后，复制克隆库的**SSH**地址。下一步，我们将克隆一份代码库到本地计算机。</li>
 </ul>
 <div class="fragment"><div class="line">cd &lt;destination folder&gt;</div><div class="line">git clone git@github.com:&lt;yourname&gt;/SEIMS.git</div><div class="line">#推荐只克隆dev分支，用法（需要有git-1.7.10以上版本）：</div><div class="line">git clone &lt;url&gt; --branch &lt;branch&gt; --single-branch</div><div class="line">e.g.,</div><div class="line">cd e:/code/hydro</div><div class="line">git clone git@github.com:crazyzlj/SEIMS.git</div><div class="line">#只克隆dev分支示例：</div><div class="line">git clone git@github.com:crazyzlj/SEIMS.git --branch dev --single-branch</div></div><!-- fragment --><ul>
-<li>随后，<code>cd</code>到克隆库目录，添加上游远程仓库，这一步**很重要**，关系到之后的代码同步和更新： <div class="fragment"><div class="line">cd SEIMS</div><div class="line">git remote add upstream git@github.com:seims/SEIMS.git</div></div><!-- fragment --></li>
+<li>随后，<code>cd</code>到克隆库目录，添加上游远程仓库，这一步**很重要**，关系到之后的代码同步和更新：</li>
+</ul>
+<div class="fragment"><div class="line">cd SEIMS</div><div class="line">git remote add upstream git@github.com:seims/SEIMS.git</div></div><!-- fragment --><ul>
 <li>这样，我们就将SEIMS代码克隆到了本地计算机一份。接下来，我们尝试对本地SEIMS文件做一下修改，然后提交到远程库（你自己的，如<code>crazyzlj/SEIMS</code>，而不是<code>seims/SEIMS</code>），最后通过提交<code>pull request</code> 提交给SEIMS代码拥有者（即seims）。</li>
 </ul>
-<p>为了说明问题，我简单修改了一下<code>README</code>文件，然后 <code>git status</code> 查看本地和远程的差别 随后 </p><div class="fragment"><div class="line">Git add README.md</div><div class="line">Git commit –m &quot;modification test”</div><div class="line">Git push –u origin master</div></div><!-- fragment --><p>这样就把本地的本次修改提交到了**你自己的远程库**中。</p>
+<p>为了说明问题，我简单修改了一下<code>README</code>文件，然后 <code>git status</code> 查看本地和远程的差别 随后</p>
+<div class="fragment"><div class="line">git add README.md</div><div class="line">git commit –m &quot;modification test”</div><div class="line">git push –u origin master</div></div><!-- fragment --><p>这样就把本地的本次修改提交到了**你自己的远程库**中。</p>
 <ul>
 <li>在Github目录下可以看到刚才提交的修改，这时候，如果想把这个修改，提交到<code>seims/SEIMS</code>，需要点击网页上的<code>pull request</code>按钮,然后点击<code>Create pull request</code>，Github会自动判断能否“自动合并”，如果可以，便把本次修改提交完成了，如果不能，就需要我们进行手动解决冲突。 此时，<code>SEIMS</code>拥有者<code>seims</code>就会收到你的<code>pull request</code>并处理了。</li>
 </ul>
@@ -137,22 +140,23 @@ Git中AutoCRLF与SafeCRLF换行符问题</h2>
 代码同步与更新</h2>
 <p>以上我们知道了如何将本地的修改提交到源代码库，接下来，看看如何将**源代码库中的更新**同步到本地库中。</p>
 <p>比如其他人在<code>seims/SEIMS</code>下修改了README.md文件，现在同步到本地。</p><ul>
-<li>查看远程主机地址 <div class="fragment"><div class="line">git remote -v</div></div><!-- fragment --> 经过以上的设置，正常情况应该看到类似结果,如果没有upstream则需添加上游远程库</li>
+<li>查看远程主机地址</li>
 </ul>
+<div class="fragment"><div class="line">git remote -v</div></div><!-- fragment --><p>经过以上的设置，正常情况应该看到类似结果,如果没有upstream则需添加上游远程库</p>
 <div class="image">
-<img src="http://zhulj-blog.oss-cn-beijing.aliyuncs.com/seims-img%2Fgitremotev.png"/>
+<img src="doc/zh-cn/doc/intro/../../../img/intro/gitremotev.png" alt="check-git-remote-v"/>
 </div>
 <ul>
-<li>将源代码库更新的内容同步到本地，检查差异，然后再和本机分支合并，注意，下列代码同步的是<code>upstream</code>库的<code>master</code>分支，如果想同步其他分支，只需将第一行的<code>master</code>替换为相应分支名即可。 <div class="fragment"><div class="line">git fetch upstream master</div><div class="line">git checkout master</div><div class="line">git merge upstream/master</div></div><!-- fragment --></li>
+<li>将源代码库更新的内容同步到本地，检查差异，然后再和本机分支合并，注意，下列代码同步的是<code>upstream</code>库的<code>master</code>分支，如果想同步其他分支，只需将第一行的<code>master</code>替换为相应分支名即可。</li>
 </ul>
-<blockquote class="doxtable">
+<div class="fragment"><div class="line">git fetch upstream master</div><div class="line">git checkout master</div><div class="line">git merge upstream/master</div></div><!-- fragment --><blockquote class="doxtable">
 <p>fetch远程库的时候注意，如果仅用git fetch upstream命令，会把所有远程库分支下载，速度慢，因此推荐使用 git fetch upstream master </p>
 </blockquote>
 <ul>
 <li>多数情况下，Git可以自动合并，如果出现冲突，则需手动处理后，再<code>commit</code>提交，冲突结果类似：</li>
 </ul>
 <div class="image">
-<img src="http://zhulj-blog.oss-cn-beijing.aliyuncs.com/seims-img%2Fconflictwhenmerge.png"/>
+<img src="doc/zh-cn/doc/intro/../../../img/intro/conflictwhenmerge.png" alt="conflict-when-merge"/>
 </div>
 <ul>
 <li>处理步骤为：<ul>
@@ -181,7 +185,7 @@ Subtree操作</h2>
 </ul>
 <p>解释：<code>--squash</code>意思是把subtree的改动合并成一次commit，这样就不用拉取子项目完整的历史记录。<code>--prefix</code>之后的=等号也可以用空格。</p>
 <p><b>示例</b>:</p>
-<div class="fragment"><div class="line">$git remote add -f wiki https://github.com/lreis2415/SEIMS2017.wiki.git</div><div class="line">$git subtree add --prefix=doc/wiki wiki master --squash</div></div><!-- fragment --><h2><a class="anchor" id="FetchUpstream"></a>
+<div class="fragment"><div class="line">git remote add -f wiki https://github.com/lreis2415/SEIMS2017.wiki.git</div><div class="line">git subtree add --prefix=doc/wiki wiki master --squash</div></div><!-- fragment --><h2><a class="anchor" id="FetchUpstream"></a>
 从远程仓库更新子目录</h2>
 <p>更新子目录有2条命令:</p>
 <ul>
@@ -189,14 +193,14 @@ Subtree操作</h2>
 <li>语法：<code>git subtree pull --prefix=&lt;子目录名&gt; &lt;远程分支&gt; &lt;分支&gt; --squash</code></li>
 </ul>
 <p><b>示例</b>:</p>
-<div class="fragment"><div class="line">$git fetch wiki master</div><div class="line">$git subtree pull --prefix=doc/wiki wiki master --squash</div></div><!-- fragment --><h2><a class="anchor" id="PushOrigin"></a>
+<div class="fragment"><div class="line">git fetch wiki master</div><div class="line">git subtree pull --prefix=doc/wiki wiki master --squash</div></div><!-- fragment --><h2><a class="anchor" id="PushOrigin"></a>
 从子目录push到远程仓库（确认你有写权限）</h2>
 <p>推送子目录的变更有1条命令:</p>
 <ul>
 <li>语法：<code>git subtree push --prefix=&lt;子目录名&gt; &lt;远程分支名&gt; 分支</code></li>
 </ul>
 <p><b>示例</b>:</p>
-<div class="fragment"><div class="line">$git subtree push --prefix=doc/wiki wiki master</div></div><!-- fragment --> </div></div><!-- contents -->
+<div class="fragment"><div class="line">git subtree push --prefix=doc/wiki wiki master</div></div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->

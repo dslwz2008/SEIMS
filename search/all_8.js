@@ -24,5 +24,5 @@ var searchData=
   ['isoutput',['IsOutput',['../class_param_info.html#a42595f7deafb51cf7d6853afb23d46f7',1,'ParamInfo']]],
   ['isstormmode',['isStormMode',['../class_settings_input.html#a6b467dd2cfa003c57e1609f59cd23c5b',1,'SettingsInput']]],
   ['itpweightdata',['ItpWeightData',['../class_itp_weight_data.html',1,'ItpWeightData'],['../class_itp_weight_data.html#a30e95a3f7ab6b94b99a05c99283d916d',1,'ItpWeightData::ItpWeightData()']]],
-  ['install',['install',['../md_doc_en_doc_intro_install.html',1,'']]]
+  ['installation',['Installation',['../md_doc_en_doc_intro_install.html',1,'']]]
 ];

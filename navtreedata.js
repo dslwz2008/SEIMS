@@ -26,24 +26,24 @@ var NAVTREE =
         [ "Push modification to upstream", "md_doc_en_doc_intro_download.html#PushOrigin", null ]
       ] ]
     ] ],
-    [ "prerequisites", "md_doc_en_doc_intro_prerequisites.html", [
+    [ "Prerequisites", "md_doc_en_doc_intro_prerequisites.html", [
       [ "CMake", "md_doc_en_doc_intro_prerequisites.html#CMake", null ],
-      [ "C++编译环境", "md_doc_en_doc_intro_prerequisites.html#CppCompiler", null ],
-      [ "MPI库", "md_doc_en_doc_intro_prerequisites.html#MPI", null ],
-      [ "GDAL库", "md_doc_en_doc_intro_prerequisites.html#GDAL", null ],
-      [ "MongoDB数据库及mongo-c-driver库", "md_doc_en_doc_intro_prerequisites.html#MongoDB", null ],
-      [ "Python及第三方包", "md_doc_en_doc_intro_prerequisites.html#PythonPackages", null ]
+      [ "C++ compiler", "md_doc_en_doc_intro_prerequisites.html#CppCompiler", null ],
+      [ "MPI library", "md_doc_en_doc_intro_prerequisites.html#MPI", null ],
+      [ "GDAL library", "md_doc_en_doc_intro_prerequisites.html#GDAL", null ],
+      [ "MongoDB database and mongo-c-driver library", "md_doc_en_doc_intro_prerequisites.html#MongoDB", null ],
+      [ "Python and 3rd-party packages", "md_doc_en_doc_intro_prerequisites.html#PythonPackages", null ]
     ] ],
-    [ "install", "md_doc_en_doc_intro_install.html", [
-      [ "Windows和Visual Studio", "md_doc_en_doc_intro_install.html#WindowsVisualStudio", null ],
-      [ "Linux和GCC", "md_doc_en_doc_intro_install.html#LinuxGCC", null ],
-      [ "macOS和Clang", "md_doc_en_doc_intro_install.html#macOSClang", null ]
+    [ "Installation", "md_doc_en_doc_intro_install.html", [
+      [ "Windows with Visual Studio", "md_doc_en_doc_intro_install.html#WindowsVisualStudio", null ],
+      [ "Linux with GCC", "md_doc_en_doc_intro_install.html#LinuxGCC", null ],
+      [ "macOS with Clang", "md_doc_en_doc_intro_install.html#macOSClang", null ]
     ] ],
-    [ "quickstart", "md_doc_en_doc_intro_quickstart.html", [
-      [ "数据预处理", "md_doc_en_doc_intro_quickstart.html#Preprocessing", null ],
-      [ "运行模型", "md_doc_en_doc_intro_quickstart.html#RunModel", null ],
-      [ "查看结果", "md_doc_en_doc_intro_quickstart.html#Postprocessing", null ],
-      [ "模型率定", "md_doc_en_doc_intro_quickstart.html#Calibration", null ]
+    [ "Quick Start", "md_doc_en_doc_intro_quickstart.html", [
+      [ "Data preprocessing", "md_doc_en_doc_intro_quickstart.html#Preprocessing", null ],
+      [ "Run SEIMS-based model", "md_doc_en_doc_intro_quickstart.html#RunModel", null ],
+      [ "Postprocessing", "md_doc_en_doc_intro_quickstart.html#Postprocessing", null ],
+      [ "Calibration", "md_doc_en_doc_intro_quickstart.html#Calibration", null ]
     ] ],
     [ "Publications", "md_doc_en_doc_intro_publications.html", [
       [ "Peer-reviewed journal papers", "md_doc_en_doc_intro_publications.html#PeerReviewedJournalPapers", [
