@@ -27,7 +27,7 @@
     extensions: ["tex2jax.js"],
     jax: ["input/TeX","output/HTML-CSS"],
 });
-</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygenextra.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -131,9 +131,8 @@ vector&lt; int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a 
 map&lt; int, <a class="el" href="class_subbasin.html">Subbasin</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcls_subbasins.html#af8a8a0d3fae8ee4547b5a23e5925c277">GetSubbasinObjects</a> ()</td></tr>
 <tr class="memdesc:af8a8a0d3fae8ee4547b5a23e5925c277"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get map of subbasin objects. <br /></td></tr>
 <tr class="separator:af8a8a0d3fae8ee4547b5a23e5925c277"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab01720b5995670df40d06f9bc5bc0f34"><td class="memItemLeft" align="right" valign="top"><a id="ab01720b5995670df40d06f9bc5bc0f34"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcls_subbasins.html#ab01720b5995670df40d06f9bc5bc0f34">SetSlopeCoefficient</a> (float *rs_slope)</td></tr>
-<tr class="memdesc:ab01720b5995670df40d06f9bc5bc0f34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set slope coefficient for each subbasin according to the basin slope  This function will set slope_coef_ to 1.f in MPI version. Currently, the real slope_coef_ is calculated in <code>seims_mpi/CalculateProcess.cpp/line 77~</code>. In the future, we should think of an elegant way to deal with this issue. By lj. 06/28/18. <br /></td></tr>
+<tr class="memitem:ab01720b5995670df40d06f9bc5bc0f34"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcls_subbasins.html#ab01720b5995670df40d06f9bc5bc0f34">SetSlopeCoefficient</a> (float *rs_slope)</td></tr>
+<tr class="memdesc:ab01720b5995670df40d06f9bc5bc0f34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set slope coefficient for each subbasin according to the basin slope.  <a href="#ab01720b5995670df40d06f9bc5bc0f34">More...</a><br /></td></tr>
 <tr class="separator:ab01720b5995670df40d06f9bc5bc0f34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99197275572399f71c94e7d3b6e6f267"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcls_subbasins.html#a99197275572399f71c94e7d3b6e6f267">Subbasin2Basin</a> (const string &amp;key)</td></tr>
 <tr class="memdesc:a99197275572399f71c94e7d3b6e6f267"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get basin (watershed) scale variable (key) value.  <a href="#a99197275572399f71c94e7d3b6e6f267">More...</a><br /></td></tr>
@@ -231,6 +230,27 @@ Static Public Member Functions</h2></td></tr>
 <p>Check input parameters to ensure the successful constructor. </p>
 <p>Mask raster data is prerequisite.</p>
 <p>Required rasters to initialize <a class="el" href="classcls_subbasins.html" title="Manager all Subbasin related parameters and methods. ">clsSubbasins</a>. </p>
+
+</div>
+</div>
+<a id="ab01720b5995670df40d06f9bc5bc0f34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab01720b5995670df40d06f9bc5bc0f34">&#9670;&nbsp;</a></span>SetSlopeCoefficient()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void clsSubbasins::SetSlopeCoefficient </td>
+          <td>(</td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>rs_slope</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set slope coefficient for each subbasin according to the basin slope. </p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd>This function will set slope_coef_ to 1.f in MPI version. Currently, the real slope_coef_ is calculated in <code>seims_mpi/CalculateProcess.cpp/line 77~</code>. In the future, we should think of an elegant way to deal with this issue. By lj. 06/28/18 </dd></dl>
 
 </div>
 </div>

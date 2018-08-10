@@ -27,7 +27,7 @@
     extensions: ["tex2jax.js"],
     jax: ["input/TeX","output/HTML-CSS"],
 });
-</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygenextra.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -142,15 +142,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memdesc:af82631bff13f9442fbb505d4b72d73c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read 1D array data.  <a href="#af82631bff13f9442fbb505d4b72d73c0">More...</a><br /></td></tr>
 <tr class="separator:af82631bff13f9442fbb505d4b72d73c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3132283a3171db0f27936ce4db38b621"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_center.html#a3132283a3171db0f27936ce4db38b621">Read2DArrayData</a> (const string &amp;remote_filename, int &amp;rows, int &amp;cols, float **&amp;data)=0</td></tr>
-<tr class="memdesc:a3132283a3171db0f27936ce4db38b621"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read 2D array data and insert to m_2DArrayMap The matrix format is as follows:<br />
- 5 (Row number) <br />
- RowIdx 0 1 2 3 4 (ColIdx) <br />
- 0 1 9. <br />
- 1 2 8. 1. <br />
- 2 2 5. 2. <br />
- 3 1 2. <br />
- 4 4 2. 5. 1. 8. <br />
-i.e., the first element in each row is the valid number of the current row.  <a href="#a3132283a3171db0f27936ce4db38b621">More...</a><br /></td></tr>
+<tr class="memdesc:a3132283a3171db0f27936ce4db38b621"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read 2D array data and insert to m_2DArrayMap.  <a href="#a3132283a3171db0f27936ce4db38b621">More...</a><br /></td></tr>
 <tr class="separator:a3132283a3171db0f27936ce4db38b621"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a68c55287d7e2ae8f73ceee7e5d19b91d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_center.html#a68c55287d7e2ae8f73ceee7e5d19b91d">ReadIuhData</a> (const string &amp;remote_filename, int &amp;n, float **&amp;data)=0</td></tr>
 <tr class="memdesc:a68c55287d7e2ae8f73ceee7e5d19b91d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read IUH data and insert to m_2DArrayMap.  <a href="#a68c55287d7e2ae8f73ceee7e5d19b91d">More...</a><br /></td></tr>
@@ -484,10 +476,10 @@ map&lt; string, <a class="el" href="class_itp_weight_data.html">ItpWeightData</a
 <p>Read 1D array data. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">param_name</td><td>parameter name </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">remote_filename</td><td>data file name </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">num</td><td>&amp;, data length </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">data</td><td>*&amp;, returned data </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">param_name</td><td><a class="el" href="struct_parameter.html" title="Model parameter information class. ">Parameter</a> name </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">remote_filename</td><td>Data file name </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">num</td><td>Data length </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">data</td><td>returned data </td></tr>
   </table>
   </dd>
 </dl>
@@ -542,7 +534,8 @@ map&lt; string, <a class="el" href="class_itp_weight_data.html">ItpWeightData</a
 </table>
 </div><div class="memdoc">
 
-<p>Read 2D array data and insert to m_2DArrayMap The matrix format is as follows:<br />
+<p>Read 2D array data and insert to m_2DArrayMap. </p>
+<p>The matrix format is as follows:<br />
  5 (Row number) <br />
  RowIdx 0 1 2 3 4 (ColIdx) <br />
  0 1 9. <br />
@@ -550,13 +543,13 @@ map&lt; string, <a class="el" href="class_itp_weight_data.html">ItpWeightData</a
  2 2 5. 2. <br />
  3 1 2. <br />
  4 4 2. 5. 1. 8. <br />
-i.e., the first element in each row is the valid number of the current row. </p>
+ i.e., the first element in each row is the valid number of the current row.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">remote_filename</td><td>data file name </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">rows</td><td>&amp;, first dimension of the 2D Array, i.e., Rows </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">cols</td><td>&amp;, second dimension of the 2D Array, i.e., Cols. If each col are different, set cols to 1. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">data</td><td>**&amp;, returned data </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">rows</td><td>first dimension of the 2D Array, i.e., Rows </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">cols</td><td>second dimension of the 2D Array, i.e., Cols. If each col are different, set cols to 1. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">data</td><td>returned data </td></tr>
   </table>
   </dd>
 </dl>
@@ -608,9 +601,9 @@ i.e., the first element in each row is the valid number of the current row. </p>
 <p>Read interpolated weight data and insert to m_weightDataMap. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">remote_filename</td><td>data file name </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">num</td><td>&amp;, data length </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">data</td><td>*&amp;, returned data </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">remote_filename</td><td>Data file name </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">num</td><td>Data length </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">data</td><td>returned data </td></tr>
   </table>
   </dd>
 </dl>
@@ -663,8 +656,8 @@ i.e., the first element in each row is the valid number of the current row. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">remote_filename</td><td>data file name </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">n</td><td>&amp;, valid cell number </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">data</td><td>*&amp;, returned data </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">n</td><td>valid cell number </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">data</td><td>returned data </td></tr>
   </table>
   </dd>
 </dl>
@@ -850,9 +843,9 @@ i.e., the first element in each row is the valid number of the current row. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">remote_filename</td><td>data file name </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">rows</td><td>&amp;, first dimension of the 2D Array, i.e., Rows </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">cols</td><td>&amp;, second dimension of the 2D Array, i.e., Cols </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">data</td><td>**&amp;, returned data </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">rows</td><td>first dimension of the 2D Array, i.e., Rows </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">cols</td><td>second dimension of the 2D Array, i.e., Cols </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">data</td><td>returned data </td></tr>
   </table>
   </dd>
 </dl>
@@ -1008,10 +1001,10 @@ i.e., the first element in each row is the valid number of the current row. </p>
 </div><div class="memdoc">
 
 <p>Update model parameters (value, 1D raster, and 2D raster, etc.) by Scenario, e.g., areal BMPs. </p>
-<dl class="section see"><dt>See also</dt><dd>BMPArealStructFactory, and </dd>
+<p>Added by Huiran GAO, Feb. 2017 Redesigned by Liangjun Zhu, 08/16/17</p>
+<dl class="section see"><dt>See also</dt><dd>BMPArealStructFactory </dd>
 <dd>
-BMPArealStruct</dd></dl>
-<p>added by Huiran GAO, Feb. 2017 redesigned by Liangjun Zhu, 08/16/17 </p>
+BMPArealStruct </dd></dl>
 <p>Key is uniqueBMPID, which is calculated by BMP_ID * 100000 + subScenario;</p>
 <p>Get landuse data of current subbasin ("0_" for the whole basin)</p>
 <p>Check whether the parameter is existed in m_parametersInDB. If existed, update the missing values, otherwise, print warning message and continue. </p>

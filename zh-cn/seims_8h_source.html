@@ -1,0 +1,100 @@
+<!-- HTML header for doxygen 1.8.7-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<title>SEIMS: seims/src/seims_main/base/seims.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygenextra.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="topbanner"><a href="https://github.com/lreis2415/SEIMS" title="SEIMS GitHub"><i class="githublogo"></i></a></div>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('seims_8h_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">seims.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*!</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * \brief The SEIMS related definitions and utilities header.</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * \author Liang-Jun Zhu</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * \date 2017-3-22</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef SEIMS_HEADER</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#define SEIMS_HEADER</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;data_raster.h&quot;</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"></span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/*!</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> * \enum LayeringMethod</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * \brief Grid layering method for routing and parallel computing.</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> *        Reference: Liu et al., 2014, EM&amp;S, 51, 221�C227. https://doi.org/10.1016/j.envsoft.2013.10.005</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">enum</span> LayeringMethod {</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    UP_DOWN, <span class="comment">///&lt; layering-from-source method, default</span></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"></span>    DOWN_UP  <span class="comment">///&lt; layering-from-outlet method</span></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"></span>};</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"></span></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">/*!</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * \enum GroupMethod</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * \brief Group method for parallel task scheduling.</span></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">enum</span> GroupMethod {</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    KMETIS = 0, <span class="comment">///&lt; KMETIS, default</span></div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"></span>    PMETIS = 1  <span class="comment">///&lt; PMETIS</span></div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"></span>};</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span>* <span class="keyword">const</span> GroupMethodString[] = {<span class="stringliteral">&quot;KMETIS&quot;</span>, <span class="stringliteral">&quot;PMETIS&quot;</span>};</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"></span></div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">/*!</span></div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> * \enum ScheduleMethod</span></div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> * \brief Parallel task scheduling strategy at subbasin level by MPI.</span></div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">enum</span> ScheduleMethod {</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    SPATIAL = 0,          <span class="comment">///&lt; Sceduled by spatial, default, refers to Liu et al., 2016, EM&amp;S</span></div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"></span>    TEMPOROSPATIAL = 1    <span class="comment">///&lt; Sceduled by temporal-spatial discretization method, refers to Wang et al., 2013, C&amp;G</span></div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"></span>};</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span>* <span class="keyword">const</span> ScheduleMethodString[] = {<span class="stringliteral">&quot;SPATIAL&quot;</span>, <span class="stringliteral">&quot;TEMPOROSPATIAL&quot;</span>};</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment"></span></div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">/*!</span></div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"> *\brief Whether diagonal counter clockwise from east</span></div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"> *       the first element is set to 0, for indexing convenient.</span></div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"> *          1  0  1</span></div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"> *          0     0</span></div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"> *          1  0  1</span></div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment"> *       e.g. the corresponding D8 flow direction of TauDEM rule:</span></div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment"> *          4  3  2</span></div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment"> *          5     1</span></div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment"> *          6  7  8</span></div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> DiagonalCCW[9] = {0, 0, 1, 0, 1, 0, 1, 0, 1};<span class="comment"></span></div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">/*!</span></div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment"> * \brief Common used const.</span></div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">const</span> <span class="keywordtype">float</span> _1div3 = 0.3333333333333333f; <span class="comment">/// 1. / 3.</span></div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment"></span><span class="keyword">const</span> <span class="keywordtype">float</span> _2div3 = 0.6666666666666666f; <span class="comment">/// 2. / 3.</span></div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment"></span><span class="keyword">const</span> <span class="keywordtype">float</span> _8div3 = 2.6666666666666665f; <span class="comment">/// 8. / 3.</span></div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment"></span><span class="keyword">const</span> <span class="keywordtype">float</span> SQ2 = 1.4142135623730951f;</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">const</span> <span class="keywordtype">float</span> deg2rad = 0.017453292519943295f; <span class="comment">/// PI / 180.</span></div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment"></span><span class="keyword">const</span> <span class="keywordtype">float</span> rad2deg = 57.29577951308232f; <span class="comment">/// 180. / PI</span></div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment"></span></div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#define MIN_FLUX        1e-12f </span><span class="comment">/// \def minimum flux (m3/s) in kinematic wave</span></div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment"></span>#define MAX_ITERS_KW    10     <span class="comment">/// \def maximum iterate number in kinematic wave method</span></div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment"></span>#define MIN_SLOPE       1e-4f  <span class="comment">/// \def minimum slope (tan value)</span></div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment"></span></div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#define IntRaster       ccgl::data_raster::clsRasterData&lt;int&gt;</span></div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#define FloatRaster     ccgl::data_raster::clsRasterData&lt;float&gt;</span></div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SEIMS_HEADER */</span><span class="preprocessor"></span></div></div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- HTML footer for doxygen 1.8.7-->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ce650b3ee6c8ee1902ad5d9b217fa743.html">seims</a></li><li class="navelem"><a class="el" href="dir_f9d338a7544abb673b2d39dcadbe364c.html">src</a></li><li class="navelem"><a class="el" href="dir_64f8a13685b9f2f1d5623a66b281a23c.html">seims_main</a></li><li class="navelem"><a class="el" href="dir_d9d8c03d94c229237348b60b53b769ac.html">base</a></li><li class="navelem"><b>seims.h</b></li>
+  </ul>
+</div>
+</body>
+</html>

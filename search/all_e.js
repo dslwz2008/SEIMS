@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['prerequisites',['prerequisites',['../md_doc_en_doc_intro_prerequisites.html',1,'']]],
+  ['publications',['Publications',['../md_doc_en_doc_intro_publications.html',1,'']]],
   ['parameter',['Parameter',['../struct_parameter.html',1,'']]],
   ['paraminfo',['ParamInfo',['../class_param_info.html',1,'ParamInfo'],['../class_param_info.html#a90e95e39beb27cac26b7fedea5129c1f',1,'ParamInfo::ParamInfo()'],['../class_param_info.html#af02e871349e1ba0c5fd68af77edd03d8',1,'ParamInfo::ParamInfo(const ParamInfo &amp;another)']]],
   ['pdata',['pData',['../class_measurement.html#a2114a606e03739f92b2ba8825fc1334c',1,'Measurement']]],

@@ -19,5 +19,5 @@ var searchData=
   ['author',['Author',['../struct_information.html#a1b8fa5ae955f80cbd549cd3186788d3f',1,'Information']]],
   ['autofertop',['AutoFertOp',['../classbmps_1_1plant__management_1_1_auto_fert_op.html',1,'bmps::plant_management::AutoFertOp'],['../classbmps_1_1plant__management_1_1_auto_fert_op.html#a67df6519e4e3a71aed7deff11b889919',1,'bmps::plant_management::AutoFertOp::AutoFertOp()']]],
   ['autoirrop',['AutoIrrOp',['../classbmps_1_1plant__management_1_1_auto_irr_op.html',1,'bmps::plant_management::AutoIrrOp'],['../classbmps_1_1plant__management_1_1_auto_irr_op.html#a34dff73d6b608b4ab85ef5aaebb41f0c',1,'bmps::plant_management::AutoIrrOp::AutoIrrOp()']]],
-  ['a_20lightweighted_2c_20modular_2c_20and_20parallelized_20watershed_20modeling_20framework',['A lightweighted, modular, and parallelized watershed modeling framework',['../index.html',1,'']]]
+  ['a_20lightweight_2c_20modular_2c_20and_20parallelized_20watershed_20modeling_20framework',['A lightweight, modular, and parallelized watershed modeling framework',['../index.html',1,'']]]
 ];
