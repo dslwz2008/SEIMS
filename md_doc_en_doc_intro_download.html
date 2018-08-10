@@ -132,7 +132,7 @@ Clone SEIMS from Github</h2>
 <li>这样，我们就将SEIMS代码克隆到了本地计算机一份。接下来，我们尝试对本地SEIMS文件做一下修改，然后提交到远程库（你自己的，如<code>crazyzlj/SEIMS</code>，而不是<code>seims/SEIMS</code>），最后通过提交<code>pull request</code> 提交给SEIMS代码拥有者（即seims）。</li>
 </ul>
 <p>为了说明问题，我简单修改了一下<code>README</code>文件，然后 <code>git status</code> 查看本地和远程的差别 随后</p>
-<div class="fragment"><div class="line">git add README.md</div><div class="line">git commit –m &quot;modification test”</div><div class="line">git push –u origin master</div></div><!-- fragment --><p>这样就把本地的本次修改提交到了**你自己的远程库**中。</p>
+<div class="fragment"><div class="line">git add README.md</div><div class="line">git commit –m &quot;modification test&quot;</div><div class="line">git push –u origin master</div></div><!-- fragment --><p>这样就把本地的本次修改提交到了**你自己的远程库**中。</p>
 <ul>
 <li>在Github目录下可以看到刚才提交的修改，这时候，如果想把这个修改，提交到<code>seims/SEIMS</code>，需要点击网页上的<code>pull request</code>按钮,然后点击<code>Create pull request</code>，Github会自动判断能否“自动合并”，如果可以，便把本次修改提交完成了，如果不能，就需要我们进行手动解决冲突。 此时，<code>SEIMS</code>拥有者<code>seims</code>就会收到你的<code>pull request</code>并处理了。</li>
 </ul>
@@ -144,8 +144,9 @@ Synchronization and update</h2>
 </ul>
 <div class="fragment"><div class="line">git remote -v</div></div><!-- fragment --><p>经过以上的设置，正常情况应该看到类似结果,如果没有upstream则需添加上游远程库</p>
 <div class="image">
-<img src="doc/en/doc/intro/../../../img/intro/gitremotev.png" alt="check-git-remote-v"/>
-</div>
+<img src="doc/en/doc/intro" alt="intro"/>
+<div class="caption">
+/../../../img/intro/gitremotev.png "check-git-remote-v"</div></div>
 <ul>
 <li>将源代码库更新的内容同步到本地，检查差异，然后再和本机分支合并，注意，下列代码同步的是<code>upstream</code>库的<code>master</code>分支，如果想同步其他分支，只需将第一行的<code>master</code>替换为相应分支名即可。</li>
 </ul>
@@ -156,8 +157,9 @@ Synchronization and update</h2>
 <li>多数情况下，Git可以自动合并，如果出现冲突，则需手动处理后，再<code>commit</code>提交，冲突结果类似：</li>
 </ul>
 <div class="image">
-<img src="doc/en/doc/intro/../../../img/intro/conflictwhenmerge.png" alt="conflict-when-merge"/>
-</div>
+<img src="doc/en/doc/intro" alt="intro"/>
+<div class="caption">
+/../../../img/intro/conflictwhenmerge.png "conflict-when-merge"</div></div>
 <ul>
 <li>处理步骤为：<ul>
 <li>打开出现合并冲突的文件</li>

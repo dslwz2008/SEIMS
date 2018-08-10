@@ -16,7 +16,7 @@ var NAVTREE =
         [ "从子目录push到远程仓库（确认你有写权限）", "md_doc_zh-cn_doc_intro_download_8zh-cn.html#PushOrigin", null ]
       ] ]
     ] ],
-    [ "prerequisites", "md_doc_zh-cn_doc_intro_prerequisites_8zh-cn.html", [
+    [ "依赖环境", "md_doc_zh-cn_doc_intro_prerequisites_8zh-cn.html", [
       [ "CMake", "md_doc_zh-cn_doc_intro_prerequisites_8zh-cn.html#CMake", null ],
       [ "C++编译环境", "md_doc_zh-cn_doc_intro_prerequisites_8zh-cn.html#CppCompiler", null ],
       [ "MPI库", "md_doc_zh-cn_doc_intro_prerequisites_8zh-cn.html#MPI", null ],
@@ -24,12 +24,12 @@ var NAVTREE =
       [ "MongoDB数据库及mongo-c-driver库", "md_doc_zh-cn_doc_intro_prerequisites_8zh-cn.html#MongoDB", null ],
       [ "Python及第三方包", "md_doc_zh-cn_doc_intro_prerequisites_8zh-cn.html#PythonPackages", null ]
     ] ],
-    [ "install", "md_doc_zh-cn_doc_intro_install_8zh-cn.html", [
+    [ "安装", "md_doc_zh-cn_doc_intro_install_8zh-cn.html", [
       [ "Windows和Visual Studio", "md_doc_zh-cn_doc_intro_install_8zh-cn.html#WindowsVisualStudio", null ],
       [ "Linux和GCC", "md_doc_zh-cn_doc_intro_install_8zh-cn.html#LinuxGCC", null ],
       [ "macOS和Clang", "md_doc_zh-cn_doc_intro_install_8zh-cn.html#macOSClang", null ]
     ] ],
-    [ "quickstart", "md_doc_zh-cn_doc_intro_quickstart_8zh-cn.html", [
+    [ "快速开始", "md_doc_zh-cn_doc_intro_quickstart_8zh-cn.html", [
       [ "数据预处理", "md_doc_zh-cn_doc_intro_quickstart_8zh-cn.html#Preprocessing", null ],
       [ "运行模型", "md_doc_zh-cn_doc_intro_quickstart_8zh-cn.html#RunModel", null ],
       [ "查看结果", "md_doc_zh-cn_doc_intro_quickstart_8zh-cn.html#Postprocessing", null ],

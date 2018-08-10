@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['seims：轻量级、模块化、并行化的流域建模框架',['SEIMS：轻量级、模块化、并行化的流域建模框架',['../index.html',1,'']]]
+  ['文章著作',['文章著作',['../md_doc_zh-cn_doc_intro_publications_8zh-cn.html',1,'']]]
 ];
