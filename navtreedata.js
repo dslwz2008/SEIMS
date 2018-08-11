@@ -102,6 +102,13 @@ var NAVTREE =
       [ "Database selection", "md_doc_en_doc_technical_database.html#DBSelection", null ],
       [ "Implementation and extension", "md_doc_en_doc_technical_database.html#Implementation", null ]
     ] ],
+    [ "Main watershed processes", "md_doc_en_doc_theory_watershedprocesses.html", [
+      [ "Basic framework of distributed watershed process-based models", "md_doc_en_doc_theory_watershedprocesses.html#BaseFrame", null ],
+      [ "Hydrology", "md_doc_en_doc_theory_watershedprocesses.html#Hydrology", null ],
+      [ "Erosion", "md_doc_en_doc_theory_watershedprocesses.html#Erosion", null ],
+      [ "Plant growth", "md_doc_en_doc_theory_watershedprocesses.html#PlantGrowth", null ],
+      [ "Nutrient cycling", "md_doc_en_doc_theory_watershedprocesses.html#NutrientCycling", null ]
+    ] ],
     [ "Todo List", "todo.html", null ],
     [ "Namespaces", null, [
       [ "Namespace List", "namespaces.html", "namespaces" ],
