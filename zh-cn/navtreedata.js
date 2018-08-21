@@ -100,6 +100,7 @@ var NAVTREE =
       [ "养分循环过程", "md_doc_zh-cn_doc_theory_watershedprocesses_8zh-cn.html#NutrientCycling", null ]
     ] ],
     [ "待办事项列表", "todo.html", null ],
+    [ "模块", "modules.html", "modules" ],
     [ "命名空间", null, [
       [ "命名空间列表", "namespaces.html", "namespaces" ],
       [ "命名空间成员", "namespacemembers.html", [
@@ -118,17 +119,28 @@ var NAVTREE =
       ] ]
     ] ],
     [ "文件", null, [
-      [ "文件列表", "files.html", "files" ]
+      [ "文件列表", "files.html", "files" ],
+      [ "文件成员", "globals.html", [
+        [ "全部", "globals.html", null ],
+        [ "函数", "globals_func.html", null ],
+        [ "变量", "globals_vars.html", null ],
+        [ "类型定义", "globals_type.html", null ],
+        [ "枚举", "globals_enum.html", null ],
+        [ "枚举值", "globals_eval.html", null ],
+        [ "宏定义", "globals_defs.html", null ]
+      ] ]
     ] ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-".html",
-"class_settings.html#a71cf2b1d87f7dc7951b67216df565dff",
-"classbmps_1_1plant__management_1_1_plt_mgt_op.html#a43291ea426480483b35c9894747bd7b9",
-"md_doc_zh-cn_doc_intro_quickstart_8zh-cn.html"
+"_b_m_p_areal_source_factory_8h.html",
+"classbmps_1_1_b_m_p_plant_mgt_factory.html#a3ebb8ae1dec184906e0f987d2a5f2a04",
+"dir_c4eaa6a6e6c4ee7b087e3de60cab1bbc.html",
+"group__data.html#a9008da40f8e418b817446df7fc67d406",
+"group__seims__mpi.html",
+"utils__string_8h.html#ab72e5cc543c35b9ce8a1ef08a43a8811"
 ];
 
 var SYNCONMSG = '点击 关闭 面板同步';

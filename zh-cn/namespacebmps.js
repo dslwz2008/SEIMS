@@ -11,5 +11,5 @@ var namespacebmps =
     [ "BMPPointSrcFactory", "classbmps_1_1_b_m_p_point_src_factory.html", "classbmps_1_1_b_m_p_point_src_factory" ],
     [ "PointSourceLocations", "classbmps_1_1_point_source_locations.html", "classbmps_1_1_point_source_locations" ],
     [ "PointSourceMgtParams", "classbmps_1_1_point_source_mgt_params.html", "classbmps_1_1_point_source_mgt_params" ],
-    [ "Scenario", "classbmps_1_1_scenario.html", "classbmps_1_1_scenario" ]
+    [ "Scenario", "group__scenarios.html#classbmps_1_1_scenario", "group__scenarios_classbmps_1_1_scenario" ]
 ];

@@ -92,7 +92,7 @@ $(document).ready(function(){initNavTree('classbmps_1_1_b_m_p_factory.html','');
 </div><!--header-->
 <div class="contents">
 
-<p>Base class to initiate a BMP data  
+<p>Base class of all kind of BMPs Factory. Read from BMP_SCENARIOS collection of MongoDB  
  <a href="classbmps_1_1_b_m_p_factory.html#details">更多...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_b_m_p_factory_8h_source.html">BMPFactory.h</a>&gt;</code></p>
@@ -112,15 +112,16 @@ $(document).ready(function(){initNavTree('classbmps_1_1_b_m_p_factory.html','');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
-<tr class="memitem:ac8ddd579b441a978b60532a86bc4ee8e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbmps_1_1_b_m_p_factory.html#ac8ddd579b441a978b60532a86bc4ee8e">BMPFactory</a> (int scenario_id, int bmp_id, int sub_scenario, int bmp_type, int bmp_priority, vector&lt; string &gt; &amp;distribution, const string &amp;collection, const string &amp;location)</td></tr>
-<tr class="memdesc:ac8ddd579b441a978b60532a86bc4ee8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor  <a href="#ac8ddd579b441a978b60532a86bc4ee8e">更多...</a><br /></td></tr>
-<tr class="separator:ac8ddd579b441a978b60532a86bc4ee8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7029d61729ae507855ecab93539dd4e0"><td class="memItemLeft" align="right" valign="top"><a id="a7029d61729ae507855ecab93539dd4e0"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbmps_1_1_b_m_p_factory.html#a7029d61729ae507855ecab93539dd4e0">BMPFactory</a> (int scenario_id, int bmp_id, int sub_scenario, int bmp_type, int bmp_priority, vector&lt; string &gt; &amp;distribution, const string &amp;collection, const string &amp;location)</td></tr>
+<tr class="memdesc:a7029d61729ae507855ecab93539dd4e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor <br /></td></tr>
+<tr class="separator:a7029d61729ae507855ecab93539dd4e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7d59d8b0ebb42a514a5b3e13343a1e0"><td class="memItemLeft" align="right" valign="top"><a id="af7d59d8b0ebb42a514a5b3e13343a1e0"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbmps_1_1_b_m_p_factory.html#af7d59d8b0ebb42a514a5b3e13343a1e0">loadBMP</a> (MongoClient *conn, const string &amp;bmpDBName)=0</td></tr>
 <tr class="memdesc:af7d59d8b0ebb42a514a5b3e13343a1e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load BMP parameters from MongoDB <br /></td></tr>
 <tr class="separator:af7d59d8b0ebb42a514a5b3e13343a1e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e4ce7ba73436e843f01f5d1eac286e6"><td class="memItemLeft" align="right" valign="top"><a id="a1e4ce7ba73436e843f01f5d1eac286e6"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbmps_1_1_b_m_p_factory.html#a1e4ce7ba73436e843f01f5d1eac286e6">setRasterData</a> (map&lt; string, FloatRaster *&gt; &amp;sceneRsMap)</td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbmps_1_1_b_m_p_factory.html#a1e4ce7ba73436e843f01f5d1eac286e6">setRasterData</a> (map&lt; string, <a class="el" href="seims_8h.html#adaa9d165585cdab4d21b25ac0b8e369b">FloatRaster</a> *&gt; &amp;sceneRsMap)</td></tr>
 <tr class="memdesc:a1e4ce7ba73436e843f01f5d1eac286e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set raster data if needed This function is not required for each BMP, so DO NOT define as pure virtual function. <br /></td></tr>
 <tr class="separator:a1e4ce7ba73436e843f01f5d1eac286e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f65b37b34a2db62935b64e89c036ffb"><td class="memItemLeft" align="right" valign="top"><a id="a8f65b37b34a2db62935b64e89c036ffb"></a>
@@ -146,7 +147,7 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 Protected 属性</h2></td></tr>
 <tr class="memitem:ac72dd7b703de3957dcd01eb2a589da5d"><td class="memItemLeft" align="right" valign="top"><a id="ac72dd7b703de3957dcd01eb2a589da5d"></a>
 const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbmps_1_1_b_m_p_factory.html#ac72dd7b703de3957dcd01eb2a589da5d">m_scenarioId</a></td></tr>
-<tr class="memdesc:ac72dd7b703de3957dcd01eb2a589da5d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classbmps_1_1_scenario.html" title="Main class of scenario in BMP database ">Scenario</a> ID <br /></td></tr>
+<tr class="memdesc:ac72dd7b703de3957dcd01eb2a589da5d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="group__scenarios.html#classbmps_1_1_scenario" title="Main class of scenario in BMP database ">Scenario</a> ID <br /></td></tr>
 <tr class="separator:ac72dd7b703de3957dcd01eb2a589da5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa210e4bd20b6dc6355be6de4fe4da6ac"><td class="memItemLeft" align="right" valign="top"><a id="aa210e4bd20b6dc6355be6de4fe4da6ac"></a>
 const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbmps_1_1_b_m_p_factory.html#aa210e4bd20b6dc6355be6de4fe4da6ac">m_bmpId</a></td></tr>
@@ -176,76 +177,8 @@ const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <tr class="separator:a3d696be862035eb056340670ff8838ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
-<div class="textblock"><p>Base class to initiate a BMP data </p>
-</div><h2 class="groupheader">构造及析构函数说明</h2>
-<a id="ac8ddd579b441a978b60532a86bc4ee8e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac8ddd579b441a978b60532a86bc4ee8e">&#9670;&nbsp;</a></span>BMPFactory()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">BMPFactory::BMPFactory </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>scenario_id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>bmp_id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>sub_scenario</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>bmp_type</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>bmp_priority</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">vector&lt; string &gt; &amp;&#160;</td>
-          <td class="paramname"><em>distribution</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const string &amp;&#160;</td>
-          <td class="paramname"><em>collection</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const string &amp;&#160;</td>
-          <td class="paramname"><em>location</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Constructor </p>
-<p>Do nothing. </p>
-
-</div>
-</div>
-<h2 class="groupheader">成员函数说明</h2>
+<div class="textblock"><p>Base class of all kind of BMPs Factory. Read from BMP_SCENARIOS collection of MongoDB </p>
+</div><h2 class="groupheader">成员函数说明</h2>
 <a id="a34f6e2bf0ecb57f11002280a31fb48f8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a34f6e2bf0ecb57f11002280a31fb48f8">&#9670;&nbsp;</a></span>bmpType()</h2>
 
@@ -298,7 +231,6 @@ const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 </div>
 <hr/>该类的文档由以下文件生成:<ul>
 <li>seims/src/seims_main/base/bmps/<a class="el" href="_b_m_p_factory_8h_source.html">BMPFactory.h</a></li>
-<li>seims/src/seims_main/base/bmps/BMPFactory.cpp</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -14,5 +14,6 @@ var structccgl_1_1utils__time_1_1_date_time =
     [ "minute", "structccgl_1_1utils__time_1_1_date_time.html#a4d7bc96f794ed4055fcc604f362c5c95", null ],
     [ "month", "structccgl_1_1utils__time_1_1_date_time.html#a458e98e91f7a4ed3ff1bb3498fd35a3b", null ],
     [ "second", "structccgl_1_1utils__time_1_1_date_time.html#a88f625f13d70409c80dd0a3d7052b233", null ],
-    [ "total_milliseconds", "structccgl_1_1utils__time_1_1_date_time.html#af95029bf5bd0704b807eeeef1cb37787", null ]
+    [ "total_milliseconds", "structccgl_1_1utils__time_1_1_date_time.html#af95029bf5bd0704b807eeeef1cb37787", null ],
+    [ "year", "structccgl_1_1utils__time_1_1_date_time.html#a9a3f518814aad3fb4b0e584758aaf454", null ]
 ];

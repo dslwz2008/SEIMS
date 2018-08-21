@@ -110,6 +110,7 @@ var NAVTREE =
       [ "Nutrient cycling", "md_doc_en_doc_theory_watershedprocesses.html#NutrientCycling", null ]
     ] ],
     [ "Todo List", "todo.html", null ],
+    [ "Modules", "modules.html", "modules" ],
     [ "Namespaces", null, [
       [ "Namespace List", "namespaces.html", "namespaces" ],
       [ "Namespace Members", "namespacemembers.html", [
@@ -128,17 +129,28 @@ var NAVTREE =
       ] ]
     ] ],
     [ "Files", null, [
-      [ "File List", "files.html", "files" ]
+      [ "File List", "files.html", "files" ],
+      [ "File Members", "globals.html", [
+        [ "All", "globals.html", null ],
+        [ "Functions", "globals_func.html", null ],
+        [ "Variables", "globals_vars.html", null ],
+        [ "Typedefs", "globals_type.html", null ],
+        [ "Enumerations", "globals_enum.html", null ],
+        [ "Enumerator", "globals_eval.html", null ],
+        [ "Macros", "globals_defs.html", null ]
+      ] ]
     ] ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-".html",
-"class_settings.html#a71cf2b1d87f7dc7951b67216df565dff",
-"classbmps_1_1plant__management_1_1_plt_mgt_op.html#a43291ea426480483b35c9894747bd7b9",
-"md_doc_en_doc_intro_prerequisites.html#MongoDB"
+"_b_m_p_areal_source_factory_8h.html",
+"classbmps_1_1_b_m_p_plant_mgt_factory.html#a3ebb8ae1dec184906e0f987d2a5f2a04",
+"dir_c4eaa6a6e6c4ee7b087e3de60cab1bbc.html",
+"group__data.html#a9008da40f8e418b817446df7fc67d406",
+"group__seims__mpi.html",
+"utils__math_8h.html#af20e7b88a1be2b79ba671870dbc488f6"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
