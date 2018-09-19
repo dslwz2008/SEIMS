@@ -5,7 +5,8 @@ var group__data =
       [ "~ItpWeightData", "group__data.html#aea2893a0c75f14357e8aea49fe39fbbc", null ],
       [ "Dump", "group__data.html#a7656e6485dd03f94c16d8abd617608fe", null ],
       [ "Dump", "group__data.html#ab5a9fbff2d82120b9b518cc850fc57c8", null ],
-      [ "GetWeightData", "group__data.html#a448b8fb33bbd44024d4e85d2152f373c", null ]
+      [ "GetWeightData", "group__data.html#a448b8fb33bbd44024d4e85d2152f373c", null ],
+      [ "Initialized", "group__data.html#a09ca88194e26d044f62f7018d4925fd9", null ]
     ] ],
     [ "clsReach", "group__data.html#classcls_reach", [
       [ "clsReach", "group__data.html#a8b7f8340bb575ce5f459b4011b38f19d", null ],
@@ -90,11 +91,11 @@ var group__data =
       [ "ReadIuhData", "group__data.html#a68c55287d7e2ae8f73ceee7e5d19b91d", null ],
       [ "ReadParametersInDB", "group__data.html#ac9be833513368cf7306613f9d5254c10", null ],
       [ "ReadRasterData", "group__data.html#a0bf0785ae2dac466a689abdacba7ffab", null ],
-      [ "Set1DData", "group__data.html#a09807ec403996b50c978e426447cde50", null ],
-      [ "Set2DData", "group__data.html#af70255b824f96dbb29687158e3c3fd2b", null ],
+      [ "Set1DData", "group__data.html#a75078a1985085550c35c6a01e0c30ce0", null ],
+      [ "Set2DData", "group__data.html#a538504defa7f16788c62aa5a2c2aff8f", null ],
       [ "SetData", "group__data.html#aa2e71d901f979e9342c0d12cb5467d11", null ],
       [ "SetLapseData", "group__data.html#ad52e2391764be46dbd8cdad042520a4b", null ],
-      [ "SetRaster", "group__data.html#a9dedcab359fe8d882c4d452d7ae6ee41", null ],
+      [ "SetRaster", "group__data.html#a10cf9030765954f3bdf437f83d27b7b5", null ],
       [ "SetRasterForScenario", "group__data.html#aa0781c5bd7926f81bd43d9fb7236f437", null ],
       [ "SetReaches", "group__data.html#aadd7c9ecd30639719008312492b998c2", null ],
       [ "SetScenario", "group__data.html#aee2bd45e4ab62ccea67381782493f265", null ],

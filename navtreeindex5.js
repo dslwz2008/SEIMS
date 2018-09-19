@@ -1,5 +1,6 @@
 var NAVTREEINDEX5 =
 {
+"utils__math_8h.html#ae844cf1f68f4264f23f3a1a9fd3abfc9":[19,0,0,0,0,0,6,3],
 "utils__math_8h.html#af20e7b88a1be2b79ba671870dbc488f6":[19,0,0,0,0,0,6,6],
 "utils__math_8h_source.html":[19,0,0,0,0,0,6],
 "utils__string_8h.html":[19,0,0,0,0,0,7],
