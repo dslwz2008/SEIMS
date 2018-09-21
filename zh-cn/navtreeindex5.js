@@ -1,5 +1,8 @@
 var NAVTREEINDEX5 =
 {
+"utils__string_8h.html#a1558468be432a29fdfc4d88516326a68":[19,0,0,0,0,0,7,8],
+"utils__string_8h.html#a52a487558f5dcb93599d4801efa268e7":[19,0,0,0,0,0,7,6],
+"utils__string_8h.html#a7669a7c67e45ce9827a49a9cc435def6":[19,0,0,0,0,0,7,2],
 "utils__string_8h.html#a8d1f69ac2a38e84904ce525c48c11e48":[19,0,0,0,0,0,7,0],
 "utils__string_8h.html#ab72e5cc543c35b9ce8a1ef08a43a8811":[19,0,0,0,0,0,7,7],
 "utils__string_8h.html#ab8bc75becdc2a37b6e3a5b8de45a76eb":[19,0,0,0,0,0,7,1],

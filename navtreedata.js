@@ -148,9 +148,9 @@ var NAVTREEINDEX =
 "_b_m_p_areal_source_factory_8h.html",
 "classbmps_1_1_b_m_p_plant_mgt_factory.html#a3ebb8ae1dec184906e0f987d2a5f2a04",
 "dir_c4eaa6a6e6c4ee7b087e3de60cab1bbc.html",
-"group__data.html#a8c91777f8bb88d908bc8c77dbfc25060",
-"group__scenarios.html#classbmps_1_1_scenario",
-"utils__math_8h.html#ae844cf1f68f4264f23f3a1a9fd3abfc9"
+"group__data.html#a8ba90716f872be2b109849da2ee4cabf",
+"group__scenarios.html#adb6fa6fa45182e3c7595e2ad72f36761",
+"utils__math_8h.html#aae000fe6178a38d7aaf285a20c5c31f0"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

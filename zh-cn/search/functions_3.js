@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['datacenter',['DataCenter',['../group__data.html#a94f8bbd69e9108f0c745940f5868b7f7',1,'DataCenter']]],
+  ['datacenter',['DataCenter',['../group__data.html#aa95f790a589369f22ee55e5c58da7d89',1,'DataCenter']]],
   ['datacentermongodb',['DataCenterMongoDB',['../group__data.html#a28aa22622b8cd816dfceb4788d7f220b',1,'DataCenterMongoDB']]],
   ['datetime',['DateTime',['../structccgl_1_1utils__time_1_1_date_time.html#ac580e77a19b760abf6ee3d2ac9b0b701',1,'ccgl::utils_time::DateTime']]],
   ['dayofyear',['DayOfYear',['../namespaceccgl_1_1utils__time.html#a9163c6ac7cc98fb169c42f57ebcd0954',1,'ccgl::utils_time::DayOfYear(time_t date, bool utc_time=true)'],['../namespaceccgl_1_1utils__time.html#ac1b53db45b3b4a8bb0485db9df4869a4',1,'ccgl::utils_time::DayOfYear(int year, int month, int day)']]],

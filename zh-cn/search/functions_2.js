@@ -7,6 +7,7 @@ var searchData=
   ['channelcrosssectionalarea',['ChannelCrossSectionalArea',['../group___channel_routing.html#ga2f0bf5cabfb858e8e5e3c1399969337c',1,'ChannelCrossSectionalArea(float ch_btmwth, float ch_depth, float wtr_depth, float ch_sideslp, float ch_wth, float fps=4.f):&#160;ChannelRoutingCommon.h'],['../group___channel_routing.html#ga9cfac4056f21710371c3040f54e72baa',1,'ChannelCrossSectionalArea(float ch_btmwth, float wtr_depth, float ch_sideslp):&#160;ChannelRoutingCommon.h']]],
   ['channelwettingperimeter',['ChannelWettingPerimeter',['../group___channel_routing.html#ga4ef091a699f5a16808a03a4603e27279',1,'ChannelWettingPerimeter(float ch_btmwth, float ch_depth, float wtr_depth, float ch_sideslp, float ch_wth, float fps=4.f):&#160;ChannelRoutingCommon.h'],['../group___channel_routing.html#ga367baaf0a741e8e3073fe0547938c8be',1,'ChannelWettingPerimeter(float ch_btmwth, float wtr_depth, float ch_sideslp):&#160;ChannelRoutingCommon.h']]],
   ['channlebottomwidth',['ChannleBottomWidth',['../group___channel_routing.html#ga37f755470d1e3c7c9a8fbce8bd0961c3',1,'ChannelRoutingCommon.h']]],
+  ['checkadjustment',['CheckAdjustment',['../group__data.html#a072e2ef9242473c053e67b0f3391c99b',1,'DataCenter']]],
   ['checkavailableoutput',['CheckAvailableOutput',['../group__seims__omp.html#aeb8f3e05b13c4b24eeb631ed6f8bbe79',1,'ModelMain']]],
   ['checkdate',['checkDate',['../group__data.html#a9e3a72a065618df35c9988f6affe9654',1,'SettingsOutput']]],
   ['checkinputdata',['CheckInputData',['../group__seims__mpi.html#a4fac7407463e72fad149729a3f74107a',1,'TaskInfo']]],

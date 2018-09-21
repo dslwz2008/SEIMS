@@ -23,6 +23,7 @@ var searchData=
   ['check_5fpointer',['CHECK_POINTER',['../_simulation_module_8h.html#a340c09a1ec3acadb25f8fd022d93347c',1,'SimulationModule.h']]],
   ['check_5fpositive',['CHECK_POSITIVE',['../_simulation_module_8h.html#adc19a5dd108d1aad1a449108d1d2711c',1,'SimulationModule.h']]],
   ['check_5fzero',['CHECK_ZERO',['../_simulation_module_8h.html#ab81c97426f96d84ef37f3acaa42800b1',1,'SimulationModule.h']]],
+  ['checkadjustment',['CheckAdjustment',['../group__data.html#a072e2ef9242473c053e67b0f3391c99b',1,'DataCenter']]],
   ['checkavailableoutput',['CheckAvailableOutput',['../group__seims__omp.html#aeb8f3e05b13c4b24eeb631ed6f8bbe79',1,'ModelMain']]],
   ['checkdate',['checkDate',['../group__data.html#a9e3a72a065618df35c9988f6affe9654',1,'SettingsOutput']]],
   ['checkinputdata',['CheckInputData',['../group__seims__mpi.html#a4fac7407463e72fad149729a3f74107a',1,'TaskInfo']]],
