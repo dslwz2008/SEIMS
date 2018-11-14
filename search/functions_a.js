@@ -17,6 +17,6 @@ var searchData=
   ['modelmain',['ModelMain',['../group__seims__omp.html#ab51df1801514632aaec1ee932021ab31',1,'ModelMain']]],
   ['modulefactory',['ModuleFactory',['../group__module__setting.html#a8e74144cb4cdfea176093fc46708c228',1,'ModuleFactory']]],
   ['mongoclient',['MongoClient',['../classccgl_1_1db__mongoc_1_1_mongo_client.html#a9165ef4b38bc4eee1462dc62b524aa29',1,'ccgl::db_mongoc::MongoClient']]],
-  ['mongodatabase',['MongoDatabase',['../classccgl_1_1db__mongoc_1_1_mongo_database.html#a4157303c00d2bf96f23a688f76fdac44',1,'ccgl::db_mongoc::MongoDatabase::MongoDatabase(mongoc_database_t *db)'],['../classccgl_1_1db__mongoc_1_1_mongo_database.html#af6ae3f2d8d5d3ae6ddd33cd2b3e6185a',1,'ccgl::db_mongoc::MongoDatabase::MongoDatabase(mongoc_client_t *conn, string const &amp;dbname)']]],
+  ['mongodatabase',['MongoDatabase',['../classccgl_1_1db__mongoc_1_1_mongo_database.html#a4157303c00d2bf96f23a688f76fdac44',1,'ccgl::db_mongoc::MongoDatabase::MongoDatabase(mongoc_database_t *db)'],['../classccgl_1_1db__mongoc_1_1_mongo_database.html#a6c3a1a0d48a3530edbac407aa5de9d7e',1,'ccgl::db_mongoc::MongoDatabase::MongoDatabase(mongoc_client_t *conn, string &amp;dbname)']]],
   ['mongogridfs',['MongoGridFs',['../classccgl_1_1db__mongoc_1_1_mongo_grid_fs.html#a60ccf9217ea1dcc49aa3b4d23dff5084',1,'ccgl::db_mongoc::MongoGridFs']]]
 ];

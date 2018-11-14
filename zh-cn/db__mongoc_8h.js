@@ -3,6 +3,7 @@ var db__mongoc_8h =
     [ "MongoClient", "classccgl_1_1db__mongoc_1_1_mongo_client.html", "classccgl_1_1db__mongoc_1_1_mongo_client" ],
     [ "MongoDatabase", "classccgl_1_1db__mongoc_1_1_mongo_database.html", "classccgl_1_1db__mongoc_1_1_mongo_database" ],
     [ "MongoGridFs", "classccgl_1_1db__mongoc_1_1_mongo_grid_fs.html", "classccgl_1_1db__mongoc_1_1_mongo_grid_fs" ],
+    [ "AppendStringOptionsToBson", "db__mongoc_8h.html#afe7afe4050c476be0db020235bcff25a", null ],
     [ "GetBoolFromBson", "db__mongoc_8h.html#ab512e4a316a90bd5b8253539867ae1d3", null ],
     [ "GetBoolFromBsonIterator", "db__mongoc_8h.html#a47af0116fbfd4e55712390abf99250d9", null ],
     [ "GetDatetimeFromBson", "db__mongoc_8h.html#aa109442047963b196787c2362be33362", null ],

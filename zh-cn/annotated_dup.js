@@ -25,6 +25,7 @@ var annotated_dup =
     [ "OutputVariable", "group__module__setting.html#struct_output_variable", null ],
     [ "Parameter", "group__module__setting.html#struct_parameter", "group__module__setting_struct_parameter" ],
     [ "ParamInfo", "group__data.html#class_param_info", "group__data_class_param_info" ],
+    [ "PrintInfo", "group__module__setting.html#class_print_info", "group__module__setting_class_print_info" ],
     [ "PrintInfoItem", "group__module__setting.html#class_print_info_item", "group__module__setting_class_print_info_item" ],
     [ "RegularMeasurement", "group__data.html#class_regular_measurement", "group__data_class_regular_measurement" ],
     [ "Settings", "group__data.html#class_settings", "group__data_class_settings" ],

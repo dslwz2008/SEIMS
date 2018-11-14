@@ -100,6 +100,7 @@ var NAVTREE =
       [ "养分循环过程", "md_doc_zh-cn_doc_theory_watershedprocesses_8zh-cn.html#NutrientCycling", null ]
     ] ],
     [ "待办事项列表", "todo.html", null ],
+    [ "弃用列表", "deprecated.html", null ],
     [ "模块", "modules.html", "modules" ],
     [ "命名空间", null, [
       [ "命名空间列表", "namespaces.html", "namespaces" ],
@@ -137,10 +138,10 @@ var NAVTREEINDEX =
 [
 "_b_m_p_areal_source_factory_8h.html",
 "classbmps_1_1_b_m_p_plant_mgt_factory.html#a3ebb8ae1dec184906e0f987d2a5f2a04",
-"dir_c4eaa6a6e6c4ee7b087e3de60cab1bbc.html",
-"group__data.html#a8ba90716f872be2b109849da2ee4cabf",
-"group__scenarios.html#adb6fa6fa45182e3c7595e2ad72f36761",
-"utils__string_8h.html#a1558468be432a29fdfc4d88516326a68"
+"dir_0346555d3ab8b65a5051eedf2d137b94.html",
+"group__data.html#a7fff4547600ebc1df4054a5337aaeab3",
+"group__module__setting.html#af7b9caed16e56bf880b171040981403e",
+"utils__filesystem_8h.html#a08783cfa1f1152b3ad61adb8d164f0fe"
 ];
 
 var SYNCONMSG = '点击 关闭 面板同步';

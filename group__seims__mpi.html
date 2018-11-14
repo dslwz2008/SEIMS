@@ -172,32 +172,15 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group
 float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__seims__mpi.html#a77ec0a3b413fd150ee8a546a717fe7ec">transfer_values</a></td></tr>
 <tr class="memdesc:a77ec0a3b413fd150ee8a546a717fe7ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">transferred values <br /></td></tr>
 <tr class="separator:a77ec0a3b413fd150ee8a546a717fe7ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad418fd3779d9d01bff9c014575b2fb7b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__seims__mpi.html#class_subbasin_struct">SubbasinStruct</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__seims__mpi.html#ad418fd3779d9d01bff9c014575b2fb7b">down_stream</a></td></tr>
-<tr class="memdesc:ad418fd3779d9d01bff9c014575b2fb7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">down stream subbasin  <a href="#ad418fd3779d9d01bff9c014575b2fb7b">More...</a><br /></td></tr>
+<tr class="memitem:ad418fd3779d9d01bff9c014575b2fb7b"><td class="memItemLeft" align="right" valign="top"><a id="ad418fd3779d9d01bff9c014575b2fb7b"></a>
+<a class="el" href="group__seims__mpi.html#class_subbasin_struct">SubbasinStruct</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__seims__mpi.html#ad418fd3779d9d01bff9c014575b2fb7b">down_stream</a></td></tr>
+<tr class="memdesc:ad418fd3779d9d01bff9c014575b2fb7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">down stream subbasin, <a class="el" href="group__seims__mpi.html#class_subbasin_struct" title="Simple struct of subbasin information for task allocation. ">SubbasinStruct</a> <br /></td></tr>
 <tr class="separator:ad418fd3779d9d01bff9c014575b2fb7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6d07f01de147113e5d7d57dd6199ae4"><td class="memItemLeft" align="right" valign="top"><a id="aa6d07f01de147113e5d7d57dd6199ae4"></a>
 vector&lt; <a class="el" href="group__seims__mpi.html#class_subbasin_struct">SubbasinStruct</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__seims__mpi.html#aa6d07f01de147113e5d7d57dd6199ae4">up_streams</a></td></tr>
 <tr class="memdesc:aa6d07f01de147113e5d7d57dd6199ae4"><td class="mdescLeft">&#160;</td><td class="mdescRight">up stream subbasins <br /></td></tr>
 <tr class="separator:aa6d07f01de147113e5d7d57dd6199ae4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h4 class="groupheader">Member Data Documentation</h4>
-<a id="ad418fd3779d9d01bff9c014575b2fb7b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad418fd3779d9d01bff9c014575b2fb7b">&#9670;&nbsp;</a></span>down_stream</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__seims__mpi.html#class_subbasin_struct">SubbasinStruct</a>* SubbasinStruct::down_stream</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>down stream subbasin </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__seims__mpi.html#class_subbasin_struct" title="Simple struct of subbasin information for task allocation. ">SubbasinStruct</a> </dd></dl>
-
-</div>
-</div>
 
 </div>
 </div>
@@ -366,13 +349,7 @@ int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gro
 <p>Calculation process. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">input_args</td><td>Input arguments, </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__module__setting.html#class_input_args" title="Parse the input arguments of SEIMS. ">InputArgs</a> </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
+    <tr><td class="paramname">input_args</td><td>Input arguments </td></tr>
     <tr><td class="paramname">rank</td><td>Rank number </td></tr>
     <tr><td class="paramname">size</td><td>Number of all processors, including one management rank and N-1 slave ranks </td></tr>
   </table>
@@ -434,35 +411,11 @@ int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gro
 <p>Read reach table from MongoDB and create reach topology for task allocation. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">client</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also</dt><dd>MongoClient </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">client</td><td>MongoClient </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">dbname</td><td>database name which stored the reach collection </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">group_method</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="seims_8h.html#ab0fa86be43bbacdea6c4de5d7018535d" title="Group method for parallel task scheduling. ">GroupMethod</a> </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">group_size</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also</dt><dd>number of parallel tasks, i.e., number of processes </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">subbasins</td><td>Map of subbasin data struct, </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__seims__mpi.html#class_subbasin_struct" title="Simple struct of subbasin information for task allocation. ">SubbasinStruct</a> </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">group_method</td><td>GroupMethod </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">group_size</td><td>number of parallel tasks, i.e., number of processes </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">subbasins</td><td>Map of subbasin data struct, <a class="el" href="group__seims__mpi.html#class_subbasin_struct" title="Simple struct of subbasin information for task allocation. ">SubbasinStruct</a> </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">group_set</td><td>Group ID set, e.g., 1, 2, 3, 4 </td></tr>
   </table>
   </dd>
@@ -517,11 +470,11 @@ int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gro
 <p>Read reach topology data by master rank and scatter to each ranks. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">client</td><td>MongoDB client, MongoClient </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">input_args</td><td>Input arguments, <a class="el" href="group__module__setting.html#class_input_args">InputArgs</a> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">client</td><td>MongoDB client </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">input_args</td><td>Input arguments </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>Number of process </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">rank</td><td>Process ID </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">task</td><td>Task information, <a class="el" href="group__seims__mpi.html#class_task_info">TaskInfo</a> </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">task</td><td>Task information </td></tr>
   </table>
   </dd>
 </dl>
@@ -570,10 +523,10 @@ int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gro
 <p>Management process. Read reach topology data and scatter to each ranks. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">mclient</td><td>MongoDB client, MongoClient </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">input_args</td><td>Input arguments, <a class="el" href="group__module__setting.html#class_input_args">InputArgs</a> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mclient</td><td>MongoDB client </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">input_args</td><td>Input arguments </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>Number of process </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">task</td><td>Task information, <a class="el" href="group__seims__mpi.html#class_task_info">TaskInfo</a> </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">task</td><td>Task information </td></tr>
   </table>
   </dd>
 </dl>

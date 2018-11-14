@@ -77,5 +77,6 @@ var hierarchy =
     [ "ccgl::Object", "classccgl_1_1_object.html", null ],
     [ "OrgOutItem", "group__data.html#struct_org_out_item", null ],
     [ "ParamInfo", "group__data.html#class_param_info", null ],
+    [ "PrintInfo", "group__module__setting.html#class_print_info", null ],
     [ "PrintInfoItem", "group__module__setting.html#class_print_info_item", null ]
 ];

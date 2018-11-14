@@ -246,7 +246,7 @@ var group__data =
     ] ],
     [ "OrgOutItem", "group__data.html#struct_org_out_item", null ],
     [ "SettingsOutput", "group__data.html#class_settings_output", [
-      [ "SettingsOutput", "group__data.html#aed4096a1fbfe81c4d9b359fed56fca22", null ],
+      [ "SettingsOutput", "group__data.html#a59d42341ffbb5c83d646f20351b159e1", null ],
       [ "~SettingsOutput", "group__data.html#a6f479ee895b14ce6e476aa61dacba1df", null ],
       [ "checkDate", "group__data.html#a9e3a72a065618df35c9988f6affe9654", null ],
       [ "Dump", "group__data.html#ae3448a645d313f103098867abefb7586", null ],

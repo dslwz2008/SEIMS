@@ -106,10 +106,10 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classccgl_1_1db__mongoc_1_1_mongo_grid_fs.html#a59d0babadc3a87ced984cc4c171c654b">~MongoGridFs</a> ()</td></tr>
 <tr class="memdesc:a59d0babadc3a87ced984cc4c171c654b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor by Destroy function. <br /></td></tr>
 <tr class="separator:a59d0babadc3a87ced984cc4c171c654b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56afd7202c565021fc53ec9f86187cb6"><td class="memItemLeft" align="right" valign="top"><a id="a56afd7202c565021fc53ec9f86187cb6"></a>
-mongoc_gridfs_file_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classccgl_1_1db__mongoc_1_1_mongo_grid_fs.html#a56afd7202c565021fc53ec9f86187cb6">GetFile</a> (string const &amp;gfilename, mongoc_gridfs_t *gfs=NULL)</td></tr>
-<tr class="memdesc:a56afd7202c565021fc53ec9f86187cb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get GridFS file by name. <br /></td></tr>
-<tr class="separator:a56afd7202c565021fc53ec9f86187cb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abaf929045e71d1deb5d473beee0a8cf8"><td class="memItemLeft" align="right" valign="top"><a id="abaf929045e71d1deb5d473beee0a8cf8"></a>
+mongoc_gridfs_file_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classccgl_1_1db__mongoc_1_1_mongo_grid_fs.html#abaf929045e71d1deb5d473beee0a8cf8">GetFile</a> (string const &amp;gfilename, mongoc_gridfs_t *gfs=NULL, STRING_MAP opts=STRING_MAP())</td></tr>
+<tr class="memdesc:abaf929045e71d1deb5d473beee0a8cf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get GridFS file by name. <br /></td></tr>
+<tr class="separator:abaf929045e71d1deb5d473beee0a8cf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7027939d4bebbdbada2c5d2181b30f6c"><td class="memItemLeft" align="right" valign="top"><a id="a7027939d4bebbdbada2c5d2181b30f6c"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classccgl_1_1db__mongoc_1_1_mongo_grid_fs.html#a7027939d4bebbdbada2c5d2181b30f6c">RemoveFile</a> (string const &amp;gfilename, mongoc_gridfs_t *gfs=NULL)</td></tr>
 <tr class="memdesc:a7027939d4bebbdbada2c5d2181b30f6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove GridFS file by name. <br /></td></tr>
@@ -118,14 +118,14 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classccgl_1_1db__mongoc_1_1_mongo_grid_fs.html#a0a77c6916184e47a598c3bec247feedf">GetFileNames</a> (vector&lt; string &gt; &amp;files_existed, mongoc_gridfs_t *gfs=NULL)</td></tr>
 <tr class="memdesc:a0a77c6916184e47a598c3bec247feedf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get GridFS file names. <br /></td></tr>
 <tr class="separator:a0a77c6916184e47a598c3bec247feedf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9815e4f02975adf90d0d8dc907162cb4"><td class="memItemLeft" align="right" valign="top"><a id="a9815e4f02975adf90d0d8dc907162cb4"></a>
-bson_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classccgl_1_1db__mongoc_1_1_mongo_grid_fs.html#a9815e4f02975adf90d0d8dc907162cb4">GetFileMetadata</a> (string const &amp;gfilename, mongoc_gridfs_t *gfs=NULL)</td></tr>
-<tr class="memdesc:a9815e4f02975adf90d0d8dc907162cb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get metadata of a given GridFS file name. <br /></td></tr>
-<tr class="separator:a9815e4f02975adf90d0d8dc907162cb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e7b558cc6ff2c0569f1a260328c293b"><td class="memItemLeft" align="right" valign="top"><a id="a9e7b558cc6ff2c0569f1a260328c293b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classccgl_1_1db__mongoc_1_1_mongo_grid_fs.html#a9e7b558cc6ff2c0569f1a260328c293b">GetStreamData</a> (string const &amp;gfilename, char *&amp;databuf, size_t &amp;datalength, mongoc_gridfs_t *gfs=NULL)</td></tr>
-<tr class="memdesc:a9e7b558cc6ff2c0569f1a260328c293b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get stream data of a given GridFS file name. <br /></td></tr>
-<tr class="separator:a9e7b558cc6ff2c0569f1a260328c293b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add0ad2f518bfde327962320766bf46c6"><td class="memItemLeft" align="right" valign="top"><a id="add0ad2f518bfde327962320766bf46c6"></a>
+bson_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classccgl_1_1db__mongoc_1_1_mongo_grid_fs.html#add0ad2f518bfde327962320766bf46c6">GetFileMetadata</a> (string const &amp;gfilename, mongoc_gridfs_t *gfs=NULL, STRING_MAP opts=STRING_MAP())</td></tr>
+<tr class="memdesc:add0ad2f518bfde327962320766bf46c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get metadata of a given GridFS file name. <br /></td></tr>
+<tr class="separator:add0ad2f518bfde327962320766bf46c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7557b967a4417660e038b56965f91ae"><td class="memItemLeft" align="right" valign="top"><a id="ac7557b967a4417660e038b56965f91ae"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classccgl_1_1db__mongoc_1_1_mongo_grid_fs.html#ac7557b967a4417660e038b56965f91ae">GetStreamData</a> (string const &amp;gfilename, char *&amp;databuf, size_t &amp;datalength, mongoc_gridfs_t *gfs=NULL, STRING_MAP opts=STRING_MAP())</td></tr>
+<tr class="memdesc:ac7557b967a4417660e038b56965f91ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get stream data of a given GridFS file name. <br /></td></tr>
+<tr class="separator:ac7557b967a4417660e038b56965f91ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48c54091b6f12e00d8d2a66d432a0513"><td class="memItemLeft" align="right" valign="top"><a id="a48c54091b6f12e00d8d2a66d432a0513"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classccgl_1_1db__mongoc_1_1_mongo_grid_fs.html#a48c54091b6f12e00d8d2a66d432a0513">WriteStreamData</a> (const string &amp;gfilename, char *&amp;buf, size_t length, const bson_t *p, mongoc_gridfs_t *gfs=NULL)</td></tr>
 <tr class="memdesc:a48c54091b6f12e00d8d2a66d432a0513"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write stream data to a GridFS file. <br /></td></tr>

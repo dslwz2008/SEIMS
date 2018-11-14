@@ -110,6 +110,7 @@ var NAVTREE =
       [ "Nutrient cycling", "md_doc_en_doc_theory_watershedprocesses.html#NutrientCycling", null ]
     ] ],
     [ "Todo List", "todo.html", null ],
+    [ "Deprecated List", "deprecated.html", null ],
     [ "Modules", "modules.html", "modules" ],
     [ "Namespaces", null, [
       [ "Namespace List", "namespaces.html", "namespaces" ],
@@ -147,10 +148,10 @@ var NAVTREEINDEX =
 [
 "_b_m_p_areal_source_factory_8h.html",
 "classbmps_1_1_b_m_p_plant_mgt_factory.html#a3ebb8ae1dec184906e0f987d2a5f2a04",
-"dir_c4eaa6a6e6c4ee7b087e3de60cab1bbc.html",
-"group__data.html#a8ba90716f872be2b109849da2ee4cabf",
-"group__scenarios.html#adb6fa6fa45182e3c7595e2ad72f36761",
-"utils__math_8h.html#aae000fe6178a38d7aaf285a20c5c31f0"
+"dir_0346555d3ab8b65a5051eedf2d137b94.html",
+"group__data.html#a7fff4547600ebc1df4054a5337aaeab3",
+"group__module__setting.html#af7b9caed16e56bf880b171040981403e",
+"utils__array_8h.html#a80682bf3a51bf20466ce0bf1720ca7be"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

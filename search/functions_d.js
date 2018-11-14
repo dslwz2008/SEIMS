@@ -8,6 +8,7 @@ var searchData=
   ['positionsallocated',['PositionsAllocated',['../classccgl_1_1data__raster_1_1cls_raster_data.html#a676c96fb8c377536b91c6f75b2bb4258',1,'ccgl::data_raster::clsRasterData']]],
   ['positionscalculated',['PositionsCalculated',['../classccgl_1_1data__raster_1_1cls_raster_data.html#adaf6663a1367ef0c729f6c66ea354e80',1,'ccgl::data_raster::clsRasterData']]],
   ['power',['Power',['../namespaceccgl_1_1utils__math.html#adcc5c61d95bb66d927efcc538f280b01',1,'ccgl::utils_math']]],
-  ['printinfoitem',['PrintInfoItem',['../group__module__setting.html#ad3b1545735e318d783c4b3ff5c28d945',1,'PrintInfoItem']]],
+  ['printinfo',['PrintInfo',['../group__module__setting.html#ad9e5101a17aa115b55babe2f3c777bbb',1,'PrintInfo']]],
+  ['printinfoitem',['PrintInfoItem',['../group__module__setting.html#a6560794aa3835c897d080f0b75060177',1,'PrintInfoItem']]],
   ['psychrometricconst',['PsychrometricConst',['../group___climate_parameters.html#ga76260aa5d1cf1d697e688a6179051922',1,'ClimateParams.h']]]
 ];

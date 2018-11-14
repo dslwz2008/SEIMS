@@ -22,5 +22,6 @@ var data__raster_8h =
     [ "XY_COOR", "data__raster_8h.html#aecc2aa82b198c86e5cc78ae76cda691e", null ],
     [ "CheckRasterFilesExist", "data__raster_8h.html#ac827628fb02410f3531421d900ae0183", null ],
     [ "CheckRasterFilesExist", "data__raster_8h.html#ad5aa37504aeeaf85ddce904afd20a9e4", null ],
+    [ "Copy2DRasterDataTo1DArray", "data__raster_8h.html#a49416919c1b963623aac9baeeb6fd88c", null ],
     [ "StatusNoUnitTest", "data__raster_8h.html#ae7d5aa20b93208366beb24e8d3d3bb92", null ]
 ];
