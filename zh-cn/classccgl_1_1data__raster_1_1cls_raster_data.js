@@ -35,7 +35,7 @@ var classccgl_1_1data__raster_1_1cls_raster_data =
     [ "GetMinimum", "classccgl_1_1data__raster_1_1cls_raster_data.html#ad57ce1787d5d69e1d2dd9302f2e8e34a", null ],
     [ "GetNoDataValue", "classccgl_1_1data__raster_1_1cls_raster_data.html#a87e114aeb3fac247220764f1f118d795", null ],
     [ "GetOption", "classccgl_1_1data__raster_1_1cls_raster_data.html#ac867bc0c97ef558f842bd41524486d89", null ],
-    [ "GetOptions", "classccgl_1_1data__raster_1_1cls_raster_data.html#a420d17bee20d34a845b20836aec3bd10", null ],
+    [ "GetOptions", "classccgl_1_1data__raster_1_1cls_raster_data.html#a8cb884abcdbb9844f1ee25b9c751edc2", null ],
     [ "GetPosition", "classccgl_1_1data__raster_1_1cls_raster_data.html#a4296f46307438525a53b9634ab2235bd", null ],
     [ "GetPosition", "classccgl_1_1data__raster_1_1cls_raster_data.html#ae42a6102c82b13d8df2d3ab6da11446b", null ],
     [ "GetPosition", "classccgl_1_1data__raster_1_1cls_raster_data.html#aa7fe83d25c3dcfffabc4f4733ab87c11", null ],
