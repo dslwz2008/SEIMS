@@ -193,8 +193,6 @@ Enumerations</h2></td></tr>
 <br />
 &#160;&#160;<a class="el" href="group__module__setting.html#gad2dde160974c283ccf8f0ce280f791baa4df7462501d1a9e2d2799cfdda3cdf4c">TIMESTEP_CHANNEL</a>, 
 <br />
-&#160;&#160;<a class="el" href="group__module__setting.html#gad2dde160974c283ccf8f0ce280f791baa1c1736570b6e4cbb0118b07b67b2c3ce">TIMESTEP_ECOLOGY</a>, 
-<br />
 &#160;&#160;<a class="el" href="group__module__setting.html#gad2dde160974c283ccf8f0ce280f791baacae2e9dd50b3d6851e8660aad89963f5">TIMESTEP_SIMULATION</a>
 <br />
  }<tr class="memdesc:gad2dde160974c283ccf8f0ce280f791ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time step types.  <a href="group__module__setting.html#gad2dde160974c283ccf8f0ce280f791ba">More...</a><br /></td></tr>
@@ -1379,7 +1377,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group
 <tr class="separator:abf5e025ba1752d920d1b16810bdb22bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaec38350aafcbda00374186f3bf318ec"><td class="memItemLeft" align="right" valign="top"><a id="aaec38350aafcbda00374186f3bf318ec"></a>
 string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__module__setting.html#aaec38350aafcbda00374186f3bf318ec">m_OutputID</a></td></tr>
-<tr class="memdesc:aaec38350aafcbda00374186f3bf318ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique Output ID, which should be one of "VAR_" defined in <a class="el" href="text_8h_source.html">text.h</a> and Output of any modules. <br /></td></tr>
+<tr class="memdesc:aaec38350aafcbda00374186f3bf318ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique Output ID, which should be one of "VAR_" defined in <a class="el" href="text_8h.html" title="Predefined string constants used in the code BE CAUTION, constant value must be aligned by SPACE...">text.h</a> and Output of any modules. <br /></td></tr>
 <tr class="separator:aaec38350aafcbda00374186f3bf318ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a609f307a63a1c9fd084f26b7682b1d67"><td class="memItemLeft" align="right" valign="top"><a id="a609f307a63a1c9fd084f26b7682b1d67"></a>
 <a class="el" href="group__data.html#class_param_info">ParamInfo</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__module__setting.html#a609f307a63a1c9fd084f26b7682b1d67">m_param</a></td></tr>
@@ -1422,7 +1420,7 @@ Inheritance diagram for SimulationModule:</div>
 <tr class="separator:af6d0b8a412ab55dcebe689dd07846465"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a686c39c1c4894cc144699ba0681d509d"><td class="memItemLeft" align="right" valign="top"><a id="a686c39c1c4894cc144699ba0681d509d"></a>
 virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__module__setting.html#a686c39c1c4894cc144699ba0681d509d">Execute</a> ()</td></tr>
-<tr class="memdesc:a686c39c1c4894cc144699ba0681d509d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute the simulation. <br /></td></tr>
+<tr class="memdesc:a686c39c1c4894cc144699ba0681d509d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute the simulation. Return 0 for success. <br /></td></tr>
 <tr class="separator:a686c39c1c4894cc144699ba0681d509d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c993164d7a51ccfbfd33baeda7a44a7"><td class="memItemLeft" align="right" valign="top"><a id="a0c993164d7a51ccfbfd33baeda7a44a7"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__module__setting.html#a0c993164d7a51ccfbfd33baeda7a44a7">SetDate</a> (const time_t t, const int year_idx)</td></tr>
@@ -1476,6 +1474,18 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__module__setting.html#ad38e9f3ef28b26f42bfaaf834a9a9f32">SetSubbasins</a> (<a class="el" href="group__data.html#classcls_subbasins">clsSubbasins</a> *subbsns)</td></tr>
 <tr class="memdesc:ad38e9f3ef28b26f42bfaaf834a9a9f32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set pointer of <a class="el" href="group__data.html#classcls_subbasins" title="Manager all Subbasin related parameters and methods. ">clsSubbasins</a> class which contains all subbasins information. Added by LJ, 2016-7-28. <br /></td></tr>
 <tr class="separator:ad38e9f3ef28b26f42bfaaf834a9a9f32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab688068bef20c2c342642aea7925fa6e"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__module__setting.html#ab688068bef20c2c342642aea7925fa6e">CheckInputData</a> ()</td></tr>
+<tr class="memdesc:ab688068bef20c2c342642aea7925fa6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check the input data. Make sure all the input data is available.  <a href="#ab688068bef20c2c342642aea7925fa6e">More...</a><br /></td></tr>
+<tr class="separator:ab688068bef20c2c342642aea7925fa6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a461ac8385153dcf4b7c357116dd9bfab"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__module__setting.html#a461ac8385153dcf4b7c357116dd9bfab">CheckInputSize</a> (const char *module_id, const char *key, int nrows, int &amp;m_nrows)</td></tr>
+<tr class="memdesc:a461ac8385153dcf4b7c357116dd9bfab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check data length of the first dimension (i.e., nRows) of the input array-based data.  <a href="#a461ac8385153dcf4b7c357116dd9bfab">More...</a><br /></td></tr>
+<tr class="separator:a461ac8385153dcf4b7c357116dd9bfab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b4816a000798a120498251155d58ca0"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__module__setting.html#a3b4816a000798a120498251155d58ca0">CheckInputSize2D</a> (const char *module_id, const char *key, int nrows, int ncols, int &amp;m_nrows, int &amp;m_ncols)</td></tr>
+<tr class="memdesc:a3b4816a000798a120498251155d58ca0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check data length of the two dimensions (i.e., nRows and nCols) of the input array-based data.  <a href="#a3b4816a000798a120498251155d58ca0">More...</a><br /></td></tr>
+<tr class="separator:a3b4816a000798a120498251155d58ca0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae7b48a64366111419f5762ed29c4c30"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__module__setting.html#aae7b48a64366111419f5762ed29c4c30">InitialOutputs</a> ()</td></tr>
+<tr class="memdesc:aae7b48a64366111419f5762ed29c4c30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize output variables.  <a href="#aae7b48a64366111419f5762ed29c4c30">More...</a><br /></td></tr>
+<tr class="separator:aae7b48a64366111419f5762ed29c4c30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a272481bef46db20353da33e95a5f5426"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__module__setting.html#gad2dde160974c283ccf8f0ce280f791ba">TimeStepType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__module__setting.html#a272481bef46db20353da33e95a5f5426">GetTimeStepType</a> ()</td></tr>
 <tr class="memdesc:a272481bef46db20353da33e95a5f5426"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get time step type, default is hillslope process.  <a href="#a272481bef46db20353da33e95a5f5426">More...</a><br /></td></tr>
 <tr class="separator:a272481bef46db20353da33e95a5f5426"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1526,6 +1536,167 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 <tr class="separator:a68422923210ead26b1651bf0e0a339f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h4 class="groupheader">Member Function Documentation</h4>
+<a id="ab688068bef20c2c342642aea7925fa6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab688068bef20c2c342642aea7925fa6e">&#9670;&nbsp;</a></span>CheckInputData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool SimulationModule::CheckInputData </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check the input data. Make sure all the input data is available. </p>
+<p>This function is optional to be overridden.</p>
+<dl class="section return"><dt>Returns</dt><dd>bool The validity of the input data. </dd></dl>
+
+</div>
+</div>
+<a id="a461ac8385153dcf4b7c357116dd9bfab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a461ac8385153dcf4b7c357116dd9bfab">&#9670;&nbsp;</a></span>CheckInputSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool SimulationModule::CheckInputSize </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>module_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nrows</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>m_nrows</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check data length of the first dimension (i.e., nRows) of the input array-based data. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">module_id</td><td>Module ID used to print exception message </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>the key to identify the requested data </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nrows</td><td>size of the first dimension </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">m_nrows</td><td>the expected size, if m_nrows less or equal to 0, then m_nrows = mrows </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3b4816a000798a120498251155d58ca0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b4816a000798a120498251155d58ca0">&#9670;&nbsp;</a></span>CheckInputSize2D()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool SimulationModule::CheckInputSize2D </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>module_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nrows</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ncols</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>m_nrows</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>m_ncols</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check data length of the two dimensions (i.e., nRows and nCols) of the input array-based data. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">module_id</td><td>Module ID used to print exception message </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>the key to identify the requested data </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nrows</td><td>size of the first dimension </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ncols</td><td>size of the second dimension </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">m_nrows</td><td>the expected rows size, if m_nrows less or equal to 0, then m_nrows = mrows </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">m_ncols</td><td>the expected cols size, if m_ncols less or equal to 0, then m_ncols = ncols </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a272481bef46db20353da33e95a5f5426"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a272481bef46db20353da33e95a5f5426">&#9670;&nbsp;</a></span>GetTimeStepType()</h2>
 
@@ -1551,6 +1722,34 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 
 <p>Get time step type, default is hillslope process. </p>
 <p>Remember to OVERRIDE this function to return other time step type for routing modules and others if necessary. </p>
+
+</div>
+</div>
+<a id="aae7b48a64366111419f5762ed29c4c30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae7b48a64366111419f5762ed29c4c30">&#9670;&nbsp;</a></span>InitialOutputs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void SimulationModule::InitialOutputs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialize output variables. </p>
+<p>This function is optional to be overridden. </p>
 
 </div>
 </div>
@@ -1643,8 +1842,6 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gad2dde160974c283ccf8f0ce280f791baadc40c96edcf1d8300170f1bef61f49ff"></a>TIMESTEP_HILLSLOPE&#160;</td><td class="fielddoc"><p>Hillslope scale. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="gad2dde160974c283ccf8f0ce280f791baa4df7462501d1a9e2d2799cfdda3cdf4c"></a>TIMESTEP_CHANNEL&#160;</td><td class="fielddoc"><p>Channel scale. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="gad2dde160974c283ccf8f0ce280f791baa1c1736570b6e4cbb0118b07b67b2c3ce"></a>TIMESTEP_ECOLOGY&#160;</td><td class="fielddoc"><p>Ecology scale, currently not necessary? </p>
 </td></tr>
 <tr><td class="fieldname"><a id="gad2dde160974c283ccf8f0ce280f791baacae2e9dd50b3d6851e8660aad89963f5"></a>TIMESTEP_SIMULATION&#160;</td><td class="fielddoc"><p>Whole simulation scale. </p>
 </td></tr>

@@ -10,7 +10,6 @@ var _simulation_module_8h =
     [ "TimeStepType", "group__module__setting.html#gad2dde160974c283ccf8f0ce280f791ba", [
       [ "TIMESTEP_HILLSLOPE", "_simulation_module_8h.html#gad2dde160974c283ccf8f0ce280f791baadc40c96edcf1d8300170f1bef61f49ff", null ],
       [ "TIMESTEP_CHANNEL", "_simulation_module_8h.html#gad2dde160974c283ccf8f0ce280f791baa4df7462501d1a9e2d2799cfdda3cdf4c", null ],
-      [ "TIMESTEP_ECOLOGY", "_simulation_module_8h.html#gad2dde160974c283ccf8f0ce280f791baa1c1736570b6e4cbb0118b07b67b2c3ce", null ],
       [ "TIMESTEP_SIMULATION", "_simulation_module_8h.html#gad2dde160974c283ccf8f0ce280f791baacae2e9dd50b3d6851e8660aad89963f5", null ]
     ] ]
 ];

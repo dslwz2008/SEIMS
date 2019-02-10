@@ -2,6 +2,8 @@ var searchData=
 [
   ['rad2deg',['rad2deg',['../seims_8h.html#a42fdcce21279a53c52f9fced68058dc7',1,'seims.h']]],
   ['radiationuseefficiencyadjustbyvpd',['RadiationUseEfficiencyAdjustByVPD',['../group___plant_growth_common.html#gaf9c4fdd0369be468d21a5b00573bb9b8',1,'PlantGrowthCommon.h']]],
+  ['reach_5fbedtc',['REACH_BEDTC',['../text_8h.html#af27a5aae3658ca8ecd1faf3eec04513b',1,'text.h']]],
+  ['reach_5fsubbasin',['REACH_SUBBASIN',['../text_8h.html#acd78fdb764182ed107203bd184fe848e',1,'text.h']]],
   ['reaches_5f',['reaches_',['../group__data.html#a4a2e566061cdf12007fec76d07ee767d',1,'DataCenter']]],
   ['read1darraydata',['Read1DArrayData',['../group__data.html#a20841d146ab7f8fba09f981313f6564f',1,'DataCenter::Read1DArrayData()'],['../group__data.html#a7873384c97964e3feaa8b216666104cb',1,'DataCenterMongoDB::Read1DArrayData()']]],
   ['read1darrayfromtxtfile',['Read1DArrayFromTxtFile',['../namespaceccgl_1_1utils__array.html#aed9871de5acbea173827a487925c6022',1,'ccgl::utils_array']]],

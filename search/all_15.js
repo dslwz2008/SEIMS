@@ -2,6 +2,8 @@ var searchData=
 [
   ['u64toa',['u64toa',['../namespaceccgl_1_1utils__string.html#a92250d1e13c6e421b062899e3581b3a8',1,'ccgl::utils_string']]],
   ['u64tow',['u64tow',['../namespaceccgl_1_1utils__string.html#a52b3d0a6e70a2f8014f180fc67e768f5',1,'ccgl::utils_string']]],
+  ['unit_5farea_5fha',['UNIT_AREA_HA',['../text_8h.html#a193602f3e7e18344996bdfe1f6e9ee4e',1,'text.h']]],
+  ['unit_5fdvr',['UNIT_DVR',['../text_8h.html#a41fb1c59de12e0fbe426c176bdffcef8',1,'text.h']]],
   ['units',['Units',['../group__data.html#ad24cdb755575319abde9c186a34920de',1,'ParamInfo::Units()'],['../group__module__setting.html#a5d7787b19474e3fe73db9cc7218808ea',1,'baseParameter::Units()']]],
   ['up_5fcount',['up_count',['../group__seims__mpi.html#a81b06c49ba57a9c5d6f2372c4c6eb9d3',1,'TaskInfo']]],
   ['up_5fdown',['UP_DOWN',['../seims_8h.html#ac6f61231d36d327c1c46e9d46c47b9a6ad5ff8bdca15f138286e3f5ebf04681ec',1,'seims.h']]],

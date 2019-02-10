@@ -1,11 +1,15 @@
 var group__module__setting_class_simulation_module =
 [
     [ "SimulationModule", "group__module__setting.html#af6d0b8a412ab55dcebe689dd07846465", null ],
+    [ "CheckInputData", "group__module__setting.html#ab688068bef20c2c342642aea7925fa6e", null ],
+    [ "CheckInputSize", "group__module__setting.html#a461ac8385153dcf4b7c357116dd9bfab", null ],
+    [ "CheckInputSize2D", "group__module__setting.html#a3b4816a000798a120498251155d58ca0", null ],
     [ "Execute", "group__module__setting.html#a686c39c1c4894cc144699ba0681d509d", null ],
     [ "Get1DData", "group__module__setting.html#ad834fe6ed6d11b333fd34e1ff605ebb7", null ],
     [ "Get2DData", "group__module__setting.html#ad327a319166273468db98800501f5946", null ],
     [ "GetTimeStepType", "group__module__setting.html#a272481bef46db20353da33e95a5f5426", null ],
     [ "GetValue", "group__module__setting.html#aafd60bc9d4176a0cf64af01aed881980", null ],
+    [ "InitialOutputs", "group__module__setting.html#aae7b48a64366111419f5762ed29c4c30", null ],
     [ "IsInputsSetDone", "group__module__setting.html#a2238382a3e1a264218a37b32d3947bd6", null ],
     [ "ResetSubTimeStep", "group__module__setting.html#a1a3a7bd2ff8748ec360e9464c358500b", null ],
     [ "Set1DData", "group__module__setting.html#aba2d6fc2b0e4f8ccf202e0752c45d55c", null ],

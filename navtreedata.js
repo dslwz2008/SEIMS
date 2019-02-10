@@ -132,7 +132,7 @@ var NAVTREE =
     [ "Files", null, [
       [ "File List", "files.html", "files" ],
       [ "File Members", "globals.html", [
-        [ "All", "globals.html", null ],
+        [ "All", "globals.html", "globals_dup" ],
         [ "Functions", "globals_func.html", null ],
         [ "Variables", "globals_vars.html", null ],
         [ "Typedefs", "globals_type.html", null ],
@@ -147,11 +147,11 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_b_m_p_areal_source_factory_8h.html",
-"classbmps_1_1_b_m_p_plant_mgt_factory.html#a3ebb8ae1dec184906e0f987d2a5f2a04",
-"dir_0346555d3ab8b65a5051eedf2d137b94.html",
-"group__data.html#a7fff4547600ebc1df4054a5337aaeab3",
-"group__module__setting.html#af7b9caed16e56bf880b171040981403e",
-"utils__array_8h.html#a80682bf3a51bf20466ce0bf1720ca7be"
+"classbmps_1_1_b_m_p_plant_mgt_factory.html#a709730f39091345fcc8f12a151e70c6b",
+"dir_24d0af58b2644ad205aa9a0d9adbb65a.html",
+"group__data.html#a6b467dd2cfa003c57e1609f59cd23c5b",
+"group__module__setting.html#ad38e9f3ef28b26f42bfaaf834a9a9f32",
+"structccgl_1_1utils__time_1_1_date_time.html#a7f49ca75536c0a9de52d409e1481f372"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

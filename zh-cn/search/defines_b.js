@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['override',['OVERRIDE',['../basic_8h.html#a5dea698950629d9e51d19c1a25be1c30',1,'basic.h']]]
+  ['nodata_5fvalue',['NODATA_VALUE',['../basic_8h.html#a7f9a29dd05181e9150cc9a1c157ee228',1,'basic.h']]],
+  ['noexcept',['NOEXCEPT',['../basic_8h.html#a10a59554805ac7ce3905fd3540f98137',1,'basic.h']]]
 ];

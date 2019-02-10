@@ -8,6 +8,7 @@ var searchData=
   ['initialize1darray',['Initialize1DArray',['../namespaceccgl_1_1utils__array.html#a17074531a0188d063e36bc4f6dba69cb',1,'ccgl::utils_array::Initialize1DArray(int row, T *&amp;data, INI_T init_value)'],['../namespaceccgl_1_1utils__array.html#a7e3cc69521ed181466b49632e2b7c15d',1,'ccgl::utils_array::Initialize1DArray(int row, T *&amp;data, INI_T *init_data)']]],
   ['initialize2darray',['Initialize2DArray',['../namespaceccgl_1_1utils__array.html#a1ee0f7b07a60310045bd354d251dff1a',1,'ccgl::utils_array::Initialize2DArray(int row, int col, T **&amp;data, INI_T init_value)'],['../namespaceccgl_1_1utils__array.html#a89516e62b5a053e6f989d826123f352e',1,'ccgl::utils_array::Initialize2DArray(int row, int col, T **&amp;data, INI_T **init_data)']]],
   ['initialized',['Initialized',['../classccgl_1_1data__raster_1_1cls_raster_data.html#ae374718c2489724f2e343b92001f7d12',1,'ccgl::data_raster::clsRasterData::Initialized()'],['../group__data.html#a09ca88194e26d044f62f7018d4925fd9',1,'ItpWeightData::Initialized()']]],
+  ['initialoutputs',['InitialOutputs',['../group__module__setting.html#aae7b48a64366111419f5762ed29c4c30',1,'SimulationModule']]],
   ['inputargs',['InputArgs',['../group__module__setting.html#ad6005c8d4ca0918aa02916a8b29735cd',1,'InputArgs']]],
   ['inputstation',['InputStation',['../group__data.html#aec49b5af2605cf8ffa2f33863f373256',1,'InputStation']]],
   ['is2draster',['Is2DRaster',['../classccgl_1_1data__raster_1_1cls_raster_data.html#ae7f0bf111534474c59659c291ff5f337',1,'ccgl::data_raster::clsRasterData']]],

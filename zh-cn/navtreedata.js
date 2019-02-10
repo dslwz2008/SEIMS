@@ -122,7 +122,7 @@ var NAVTREE =
     [ "文件", null, [
       [ "文件列表", "files.html", "files" ],
       [ "文件成员", "globals.html", [
-        [ "全部", "globals.html", null ],
+        [ "全部", "globals.html", "globals_dup" ],
         [ "函数", "globals_func.html", null ],
         [ "变量", "globals_vars.html", null ],
         [ "类型定义", "globals_type.html", null ],
@@ -137,11 +137,11 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_b_m_p_areal_source_factory_8h.html",
-"classbmps_1_1_b_m_p_plant_mgt_factory.html#a3ebb8ae1dec184906e0f987d2a5f2a04",
-"dir_0346555d3ab8b65a5051eedf2d137b94.html",
-"group__data.html#a7fff4547600ebc1df4054a5337aaeab3",
-"group__module__setting.html#af7b9caed16e56bf880b171040981403e",
-"utils__filesystem_8h.html#a08783cfa1f1152b3ad61adb8d164f0fe"
+"classbmps_1_1_b_m_p_plant_mgt_factory.html#a709730f39091345fcc8f12a151e70c6b",
+"dir_24d0af58b2644ad205aa9a0d9adbb65a.html",
+"group__data.html#a6b467dd2cfa003c57e1609f59cd23c5b",
+"group__module__setting.html#ad38e9f3ef28b26f42bfaaf834a9a9f32",
+"structccgl_1_1utils__time_1_1_date_time.html#aeaf742c83e00def43e48ca61d65f4944"
 ];
 
 var SYNCONMSG = '点击 关闭 面板同步';

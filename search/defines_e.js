@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['tillage_5fparam_5fcount',['TILLAGE_PARAM_COUNT',['../_b_m_p_text_8h.html#a94ec3d21cefa831b2468fd3c67ab6704',1,'BMPText.h']]],
-  ['tillage_5fparam_5fitnum_5fidx',['TILLAGE_PARAM_ITNUM_IDX',['../_b_m_p_text_8h.html#ad587b0b45697e4f084566960edff95d8',1,'BMPText.h']]]
+  ['reach_5fbedtc',['REACH_BEDTC',['../text_8h.html#af27a5aae3658ca8ecd1faf3eec04513b',1,'text.h']]],
+  ['reach_5fsubbasin',['REACH_SUBBASIN',['../text_8h.html#acd78fdb764182ed107203bd184fe848e',1,'text.h']]]
 ];
