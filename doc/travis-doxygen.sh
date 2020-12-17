@@ -4,7 +4,7 @@
 
 set -e
 
-DOXYGEN_VERSION=1.8.13
+DOXYGEN_VERSION=1.8.15
 DOXYGEN_VER=doxygen-${DOXYGEN_VERSION}
 DOXYGEN_TAR=${DOXYGEN_VER}.linux.bin.tar.gz
 # ftp.stack.nl has been shutdown, so I changed to sourceforge.net.
@@ -82,6 +82,11 @@ gh_pages_commit() {
 	cd "${TRAVIS_BUILD_DIR}/build/doc/html";
 	# This line can be uncommented when we have a domain address.
 	# echo "seims.lreis.ac.cn" > CNAME
+	# In my case, I had folders whose names started with _ (like _css and _js),
+	#   which GH Pages ignores as per Jekyll processing rules. If you don't use Jekyll,
+	#   the workaround is to place a file named .nojekyll in the root directory.
+	#   See https://stackoverflow.com/a/39691475
+	touch .nojekyll
 	git add --all;
 	git diff-index --quiet HEAD || git commit -m "Automatic doxygen build";
 }

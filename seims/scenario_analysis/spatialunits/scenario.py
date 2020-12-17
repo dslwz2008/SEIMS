@@ -1,16 +1,15 @@
-#! /usr/bin/env python
-# -*- coding: utf-8 -*-
 """Scenario for optimizing BMPs based on slope position units.
 
     @author   : Liangjun Zhu, Huiran Gao
 
     @changelog:
-    - 16-10-29  hr - initial implementation.
-    - 17-08-18  lj - redesign and rewrite.
-    - 18-02-09  lj - compatible with Python3.
+    - 16-10-29  - hr - initial implementation.
+    - 17-08-18  - lj - redesign and rewrite.
+    - 18-02-09  - lj - compatible with Python3.
 """
 from __future__ import absolute_import, division, unicode_literals
 from future.utils import viewitems
+
 
 import array
 from collections import OrderedDict
@@ -21,6 +20,7 @@ import random
 import time
 from struct import unpack
 
+from typing import Union, Dict, List, Tuple, Optional, Any, AnyStr
 import numpy
 from gridfs import GridFS
 from osgeo import osr
@@ -31,9 +31,9 @@ from pymongo.errors import NetworkTimeout
 if os.path.abspath(os.path.join(sys.path[0], '../..')) not in sys.path:
     sys.path.insert(0, os.path.abspath(os.path.join(sys.path[0], '../..')))
 
-from typing import Union, Dict, List, Tuple, Optional, Any, AnyStr
+import global_mongoclient as MongoDBObj
+
 from utility import read_simulation_from_txt
-from preprocess.db_mongodb import ConnectMongoDB
 from preprocess.text import DBTableNames, RasterMetadata
 from preprocess.sd_slopeposition_units import DelinateSlopePositionByThreshold
 from scenario_analysis import _DEBUG, BMPS_CFG_UNITS, BMPS_CFG_METHODS
@@ -68,8 +68,9 @@ class SUScenario(Scenario):
         Each BMP is stored in Collection as one item identified by 'SUBSCENARIO' field,
         so the `self.bmps_params` is dict with BMP_ID ('SUBSCENARIO') as key.
         """
-        client = ConnectMongoDB(self.modelcfg.host, self.modelcfg.port)
-        conn = client.get_conn()
+        # client = ConnectMongoDB(self.modelcfg.host, self.modelcfg.port)
+        # conn = client.get_conn()
+        conn = MongoDBObj.client
         scenariodb = conn[self.scenario_db]
 
         bmpcoll = scenariodb[self.cfg.bmps_coll]
@@ -106,7 +107,7 @@ class SUScenario(Scenario):
                     self.bmps_params[curid][k] = v[:]
                 else:
                     self.bmps_params[curid][k] = v
-        client.close()
+        # client.close()
 
     def get_suitable_bmps(self, types='LANDUSE'):
         # type: (Union[AnyStr, List[AnyStr]]) -> None
@@ -145,7 +146,7 @@ class SUScenario(Scenario):
                 typenum = self.cfg.slppos_types_num
                 tnum = self.cfg.thresh_num
                 for idx, gv in enumerate(input_genes):
-                    gidx = idx // typenum * (typenum + tnum) + idx % self.cfg.slppos_types_num
+                    gidx = idx // typenum * (typenum + tnum) + idx % typenum
                     self.gene_values[gidx] = gv
             return self.gene_values
         else:
@@ -529,7 +530,9 @@ class SUScenario(Scenario):
             self.economy = self.worst_econ
             self.environment = self.worst_env
             # model clean
+            self.model.SetMongoClient()
             self.model.clean(delete_scenario=True)
+            self.model.UnsetMongoClient()
             return
 
         base_amount = self.eval_info['BASE_ENV']
@@ -614,8 +617,9 @@ class SUScenario(Scenario):
         if len(dist_list) >= 2 and dist_list[0] == 'RASTER':
             dist_name = '0_' + dist_list[1]  # prefix 0_ means the whole basin
             # read dist_name from MongoDB
-            client = ConnectMongoDB(self.modelcfg.host, self.modelcfg.port)
-            conn = client.get_conn()
+            # client = ConnectMongoDB(self.modelcfg.host, self.modelcfg.port)
+            # conn = client.get_conn()
+            conn = MongoDBObj.client
             maindb = conn[self.modelcfg.db_name]
             spatial_gfs = GridFS(maindb, DBTableNames.gridfs_spatial)
             # read file from mongodb
@@ -627,7 +631,7 @@ class SUScenario(Scenario):
                                                                          no_cursor_timeout=True)[0]
             except NetworkTimeout or Exception:
                 # In case of unexpected raise
-                client.close()
+                # client.close()
                 return
 
             ysize = int(slpposf['metadata'][RasterMetadata.nrows])
@@ -665,7 +669,7 @@ class SUScenario(Scenario):
                 outpath = self.scenario_dir + os.path.sep + 'Scenario_%d.tif' % self.ID
             RasterUtilClass.write_gtiff_file(outpath, ysize, xsize, slppos_data, geotransform,
                                              srs, nodata_value)
-            client.close()
+            # client.close()
 
 
 def select_potential_bmps(unitid,  # type: int
@@ -979,7 +983,6 @@ def main_manual_timeext(sceid, gene_values):
     print('Effectiveness:\n\teconomy: %f\n\tenvironment: %f\n' % (sce.economy, sce.environment))
 
     sce.clean(delete_scenario=False, delete_spatial_gfs=False)
-
 
 if __name__ == '__main__':
     # main_single()
