@@ -1,4 +1,5 @@
 #!/GPUFS/app_GPU/application/anaconda3/5.3.1/envs/python-3.6/bin/python
+# coding:utf-8
 import os
 import argparse
 import subprocess

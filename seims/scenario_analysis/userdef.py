@@ -1,3 +1,4 @@
+# coding:utf-8
 """Base classes of user defined tools for NSAG-II.
 
     @author   : Huiran Gao, Liangjun Zhu

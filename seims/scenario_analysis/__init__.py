@@ -1,3 +1,4 @@
+# coding:utf-8
 """@package scenario_analysis
 Scenario Analysis by NSGA-II algorithm of DEAP, parallelized by SCOOP
 

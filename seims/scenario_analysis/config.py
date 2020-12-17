@@ -1,3 +1,4 @@
+# coding:utf-8
 """Base configuration of Scenario Analysis.
 
     @author   : Liangjun Zhu, Huiran Gao

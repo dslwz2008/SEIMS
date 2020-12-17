@@ -1,3 +1,4 @@
+# coding:utf-8
 """User defined operation for optimizing BMPs based on slope position units.
 
     @author   : Liangjun Zhu, Huiran Gao

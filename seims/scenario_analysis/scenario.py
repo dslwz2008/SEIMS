@@ -1,3 +1,4 @@
+# coding:utf-8
 """@package scenario
 Base class of Scenario for coupling NSGA-II.
 
