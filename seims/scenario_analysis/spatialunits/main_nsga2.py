@@ -1,3 +1,4 @@
+# coding:utf-8
 """BMPs optimization based on different BMP configuration units.
 
     @author   : Liangjun Zhu, Huiran Gao
